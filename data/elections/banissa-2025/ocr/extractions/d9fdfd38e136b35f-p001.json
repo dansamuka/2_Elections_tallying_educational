@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "d9fdfd38e136b35f-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019902401/v1_d9fdfd38e136.pdf",
+  "source_sha256": "d9fdfd38e136b35f02ac8761a80ce4e67d1ea1c7441bcbb2156472628af3a12d",
+  "source_filename": "v1_d9fdfd38e136.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/d9fdfd38e136b35f.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0199-024-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.41309523809523807,
+  "text_length": 2253,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BISIQ MOBILE POLLING STATION 4 of Code __009040019902401\nWard MALKAMARI Godennc OT EC Ton SSIONINDE\nConstituency BANISSA Code __ 040\nCounty MANDERA Code __ 009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MALIN YY\n2. MOHAMED NURDIN MAALIM |_|\nTotal number of valid votes cast _———— 5\nPolling Station Counts Decision{s} on disputed votes if any\n1] Totl Numero Reiterates in the Paling Staton\nTad sci Wace AK Ss SR I Hs SoI cons anon egonce RSTO TOBOUND Oe\nTotal Number of Rejection Objected to Ballot Papers; +0 OO] BERS CONN ANOBOUse ADEN ELEC Peano PemOn NOARIESC ELEY\nTotal Number isp Vas errs 2181+ CE RORSSD ceaRa SRSN NA ee ERTS\n5 | Tot Naber ali Votes Cast accor eyo SE ae ANT SRO AT lt\nDeclaration\nWe, the undersigned, being present “ee the results of the count were announced, do hereby declare that the results shown aboyeSi® e\nand accurate count of the ballots in \\Si MosiLe Polling Station Miss Q WES\nPresiding Officer: Mot DARE DRAKA NE Signature: Msbs—_ Aaae a : ;\n_ Deputy Presiding Officer: SH44B4N ARN] HSS Aw signature: ABO Date ZARedbs ES b\n_ Agents or Candidates {if present)\n| etGnaaevion [hse | Poy ant a\nLi [IpLe pAKANE ALi |Z250z53) UDA lotz5es2527 Fee? ap (tas\nPeter eo Oui e oauDe eae got RES Sh Sigs SOU Tel cae ON ans nt ENDRUARIESCONR PNG ao IC PENDEN\naE ee SoH eee ea Oe’ ee ON CPE NORMS nn vce ger NON EL EC COMMISSIONUNON co SaM EEC On\neee ANDAR SCORN BACK NOEPENDEDTE Les COMMISSION SRN SoCo ure EC ORAL aya MINDEPENDET MN NU NU CDM RNDEO!\nec eae ae\nNg BOP EN TELECTON a7 98/ONINDEEPE CeO exe SCORALANPEOU 7) ENDENTELES ON OCA GON IMDARES Ouse C | ORALANODRDEN I SATROE Nid\nRO Fe ORAL ANDBO LCE PE ABENTEL EONS Caco gUNDARIESC GELECTORALANT we ONG pC fc OMMSS Ong A OBOUNDART CONGO eo Onn\nESBS eon eeOUNna iesCONY HSN On NOMEN Te eS COM CIMINO ROLES ONION Tree SINE ANO NDEN GRR ORRE on oy\nee or nen reece caIONN GONG NINOS Ec one SoIOuat ANDE NOES Sonn OM U OEP SUNDARI ORG Fe CRNA\nReasons for Refusal to Sign {if any)\nPresiding Officer's Comments:\nTHE el ECLich| a ConbecTe® S006 HLY\n= MoHanmed Gree DACA NE\n. p e #\n.E.B.C,\nQl — \\\\-2O*ARResioins\nAFEICEB",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 2527,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.82
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "Li [IpLe pAKANE ALi |Z250z53) UDA lotz5es2527 Fee? ap (tas",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM |_|",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "Total number of valid votes cast _———— 5",
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "FAIL",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-13T19:57:06.902746Z"
+}

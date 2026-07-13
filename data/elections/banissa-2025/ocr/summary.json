@@ -1,17 +1,22 @@
 {
   "schema": "kenya.election.ocr-summary.v1",
   "election_id": "banissa-2025",
-  "generated_at": "2026-07-13T15:28:47.097282Z",
-  "engine_mode": "embedded",
-  "engines_available": [],
-  "documents_total": 0,
-  "pages_total": 0,
-  "pages_processed": 0,
-  "form35a_detected": 0,
+  "generated_at": "2026-07-13T20:02:02.549490Z",
+  "engine_mode": "auto",
+  "engines_available": [
+    "tesseract"
+  ],
+  "documents_total": 72,
+  "pages_total": 72,
+  "pages_processed": 72,
+  "form35a_detected": 71,
   "form35b_detected": 0,
-  "streams_matched": 0,
-  "review_rows": 0,
-  "routes": {},
+  "streams_matched": 66,
+  "review_rows": 66,
+  "routes": {
+    "QUARANTINE": 71,
+    "UNCLASSIFIED": 1
+  },
   "errors": [],
   "review_queue": "data/elections/banissa-2025/ocr/review_queue.csv",
   "inventory": "data/elections/banissa-2025/ocr/document_inventory.json",

@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "56caa9e5b7064ba4-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019604101/v1_56caa9e5b706.pdf",
+  "source_sha256": "56caa9e5b7064ba4f2e277f6a8d0c8196c784c890b59d4ebdecfc3f19b810af5",
+  "source_filename": "v1_56caa9e5b706.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/56caa9e5b7064ba4.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-041-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.4338970588235294,
+  "text_length": 2298,
+  "text_preview": "= a6 : j 2 | enc O}4o)\nsoctt2501306 Da 2 ee [al\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station HARDAWA PRIMARY SCHOOL POLLING STATION 1 of 1 Code __009040019604101\nWard BANISSA Goes EBIS6 ECTon SSIONINDE\nResi Stituaray SS Cx BANISSA COMMISSION WOENTELECTON SAC NEO AONE sTELECTOR a? SHONINDEPEND aCOP@EN CofE cL EMMOORAL Ay VINOEPENI\nPOG T Ry ONINDEPET <cO nS MARBER EL ECTORA:. ENDENTELEC TA OM Win hh ECTORALA Nn NDE PENDENTE ai WO OH e7 1 0008 ANOBGS PENDENTE\nNumber of votes cast in favour of each candidate:\n| Name of Candidate Nf Valid Votes Obtained\n1, HASSAN AHMED MAALIM | ofoetipee errr resrommoe saree espe tirrceeron gold\n2. MOHAMED NURDIN MAALIM\nTotal number of valid votes cast Seer dntueerpesie npauciaaseercaetaumonsaereaumeseear ¢ 9°\nPolling Station Counts Decision{s) on disputed votes if any\nA | oa Number of Registered Votes inthe Paling Staion; | ——— 0]\nToll Number of Rete Balt Papers a Ta RR TTS ee TOE\n[3. | Total Number of Rejection Objected toBallot Papers; —|----_©00 [2 —<~*~drCC<CSCS<7SN OY\né.|ToaNunberofOepiedies, OOO [2\nS| Tt Number oFVaiVoesCast EOD) [gee\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the res@ffts Be eee are true\nand accurate count of the ballots in HARDAWA IMAR Polling Station BANISSAL Ae 2B. “Con tituency.\noe\nPresiding Officer: ci ASSAN. DAN Signature: gm iv D anes 1¢ZO25\nDeputy Presiding Officer: _| SSAC N IRREIN Signature: << Ad a pt D 1-20,\nAgents or Candidates (if present)\nRe ere ESC OMe Supe ae ach ORES ren | STON OILS pee ee NRG aiseIg er NOCH ARES Ona DOPE PENCE\nPe oe Oe arn ea ep uM SSC MEE, MAME S smn t veaescONe ENte ELEC MPSS ON UNON eceOuU TELE\nBOR SENTELECTORg/ SSIONINDEPENE SC CPG Late oRALANPEGU yp ENOENTELEE ONTO CaN NOARIESC OME LORAL ANDROS AN ng OL ould\neS ee ee\nAg Ne Senne? UN AR SCO GOGO NINOS ADEN Te £°COna ONIN DELCO HON EcTOnaL SS MNINDr pENDEN Wa ROTRRLOMN |\nSOE se rae eso tSsION OMe SO NUNON, foTona! SSTOMUA DE NOES GeO OM DROLOeP ENTE Non pcTO NNO CC ONNRY\nReasons for Refusal to Sign (if any)\nPresiding Officer's Comments:\nZION AIL OS Se OFFICIALL (e)\nAT 1 [OOHOURS DPpo- IssAck ADAN (BZLEIN\nPO. ALI HASSAN RDAN 27-l|- 2025\n7-{|- 2024 £.B.C:\nBs yt. NO\nPyino pREsid\"\n4) re + ACTICER",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": 0,
+        "confidence": 0.82
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 9,
+        "confidence": 0.82
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1, HASSAN AHMED MAALIM | ofoetipee errr resrommoe saree espe tirrceeron gold",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM",
+      "registered": "A | oa Number of Registered Votes inthe Paling Staion; | ——— 0]",
+      "rejected": null,
+      "total_valid": "Total number of valid votes cast Seer dntueerpesie npauciaaseercaetaumonsaereaumeseear ¢ 9°",
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "FAIL",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "FAIL"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-13T19:55:40.307237Z"
+}

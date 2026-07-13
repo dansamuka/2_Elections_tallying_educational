@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "af206977220ea712-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019802001/v1_af206977220e.pdf",
+  "source_sha256": "af206977220ea7124f9f1c72229b53f5e05bbd555e82b0c178a29e74e4218a99",
+  "source_filename": "v1_af206977220e.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/af206977220ea712.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0198-020-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.3711336032388664,
+  "text_length": 2647,
+  "text_preview": "= | ™ ec J OR¥D|\n= ky He\n1\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MURITHOW CENTRE POLLING STATION ( of 1 Code __ 009040019802001\nBOR TOW CENTRE ROT UNG STAT Inte COPS DARIESCOMp) WOEPENDENTE ENT CAO _009040019802001\nWard GUBA Code 0198\nPARAS STO ae TTT Rae MIS SIO TsO 0% Pia cDENDENTELESSNINDEPENDEN ht, €0e°\nConstituency BANISSA Gote cL SMOORALANAYNOEPENE\nSeenON. ENTELECTO™ CNY NaC OU en TELECTOR«; S/ONINDEPEND TE COLer\nCounty MANDERA Corie 0008. ANDRD | PENDENTE\nSF SS ae tec TOR AY 4 SNDENTELES 7 ON eVin@ BRT eCTORALA MA NDEPENDENTEL New\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1, HASSAN AHMED MAALIM ee\n2. MOHAMED NUROIN MAALIM eae ae pe rare\nTotal number of valid votes cast pr)\nPolling Station Counts Decision{s} on disputed votes if any\n1. | Total Number of RegsteredVatarsin he Paling Stans [————74\nToll Numer of Rejected Bal Papers Eecemommem BNE MOOI ona on ee RS CENT\nTotal Number of Rejection Objected to Ballot Papers; | —————-400 RPE LOSC OFA ANOB Ouse NDENTELEC TP aNOG Ne eERONOARIES ELEY\nToll Nanber of isted Vt -——— 00d |.\n5] ota Naber Vales Cs Pareertene al pear ocr nme use goo\nDeclaration if 3 {\nWe, the undersigned, being present when the results of the count were announced, do hereby declare agin § shown above are true\nand accurate count of the ballots in MUBITHow PRimPgs Scitoor Polling Station ____ BA) Ss i =e oan Constituency.\nPresiding Officer: MAM nmOvD Hrccre) ADAM Signature: (AWG Go pinatg 2) -ll- ders\nSRAL to.\nDeputy Presiding Officer: MU utini E> DVALE © Signature: SBAROFFICE bte 27-11-2025\nAgents or Candidates {if present} iTELECT :\n1 OSMPe Tinta srteT 13979657 21UNi TED Dewocentec Aly de72ubIWe6i| GES | a7\naerate eS Ot anDe e SC ohNO IE SC Ca A NOBOUNT Cee cciGuMDETASADARE SCOMN SSOTROC ON I peNDENTY\nSS Se ER NC CRSA Sa ERS UGS TET ACSA BET\nEi cate neat OARESS ante ee geanoe? NORTEL: SCOMMISSIOPRRRI COUN ETON. aS OMRSERE NOE SUMRORSEL NT DE\nec Se Nave Seed EP MR SE\nFAEN LET Ray S SONNEI ECC oeP ae St onAL AMEE OUAEE Hoe NTELECISON SONS GO NRARE SCORE CTO NT AOD CEN A CMTSOEN ng\nRor or. ANDBG Lee GENTE COON NCS SO NDP IESCeL er TORAL ANDROL Ne STONE oMMSBIOR SATS ECU RARE NOS PCO\neS Se Cae eS RORE Me Re\nEo Se onions Ounnan sco PON OO ben NT eSC omc ono RAC ON LORE To Sag LANOSCS NEE ated\nBE en er naen crate aon NGC NON Lau M Sg CAALANDE OC GCOS OMS NNR SEECUNDARTE San oeh qe TENG\nReasons for Refusal to Sign {if any)\nPresiding Officer's Comments:\n3 [Pre COUNTING PReoCess” WAcs spreo7 H-\n‘ 2 WiSb SS PAIN Th :\nRo NAME: NinHAN tee ko —\n(DO Ne, {eos\n: Gast— Bea cece\n‘ . Oo",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1, HASSAN AHMED MAALIM ee",
+      "candidate_UPA": "2. MOHAMED NUROIN MAALIM eae ae pe rare",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-13T19:56:44.164078Z"
+}

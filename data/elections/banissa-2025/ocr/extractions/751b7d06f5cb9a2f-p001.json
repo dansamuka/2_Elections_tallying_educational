@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "751b7d06f5cb9a2f-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040020003701/v1_751b7d06f5cb.pdf",
+  "source_sha256": "751b7d06f5cb9a2fcd90ad9add5a4041854c3b961f52b780712b62fc43419cab",
+  "source_filename": "v1_751b7d06f5cb.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/751b7d06f5cb9a2f.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-037-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.47652452025586356,
+  "text_length": 2451,
+  "text_preview": "we :\n- == = = = ZE = ===, : Ss == — —— = qa a ae = =\n2 4 esc | OPA ae\n: = i = == as = & 4 = : ————\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station DAKA BOR PRIMARY SCHOOL POLLING STATION 1 of 4 Code __ 009040020003701\nWard KILIWEHIRI Code __0200\nConstituency BANISSA Code __040\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM\n2. MOHAMED NURDIN MAALIM\nTotal number of valid votes cast {Sac CrORALANDUG EPenuEN TE LEGcepemeeremepeooe fp a7 Cg\nPolling Station Counts Decision{s} on disputed votes if any\n1. [Tot Number of Regjtered oes inthe Paling Staion, | [“]73\n2 |Talal Number of Reed Bat Papers ea 1's eae. SS RR SOTO\nTotal Number of Rejection Objected to Ballot Papers; IRONY RNOBOUND A PRENT ELEC TD aan SZe sO NDAR NGC LEG\n[Teta NumberfOspted Votes aca 6 0.0 UPTO inneariigtias Wt Cae Sa ecu Os\nTotal Number of Vaid Votes Cast EORCEC Tom be sip ch eer Ds con sce LAN DENRA cC ONS eC ONINDE PEON\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby de: clare that the results shown above are true\nand accurate count of the ballots in “BAKA Bre Pemapy Set Polling Station POATAS SA Constituency.\np \\ yy D é - —F —j a\nPresiding Officer: ADIKALIVIAW ABDUL oy Signature WA 7 pate 2 J-l—-2vas-\nDeputy Presiding Officer: WA AGS, : id Signature: (asm Date bj +20 2S\"\nAgents or Candidates {if present} 3s\nName of Candidate or Agent | 10/Passport No, | Party Name/Independent Candidate\n| 2IRCEAL AB OW BRA Sopeség A207 ee — 7-11\nSE eat SION KNOB OSENT OSC PCO MISSION BEE ND MARR 5 onhLh voc RONDE Moen LEC TCO MH SSO NON eeRO NN TELECON\nSe ee nae oe Oe ee eee\n7\nSGP Bo nen TELEC TO] SSIONINDEP ENT CAMP cee OwALANDEOUHys “ NOENTELECTION NOL CoD ATIESCOnns CL ORAL ANDENOE NN ROLL OWN\nKofeok'S TORAL ANOS OOF PENDE BME c IOI Cree OUNDA ESC GELECTORALANSE WO Sh Joye utc OMMBDCALLAADBOUNDAN CKORNOON ECON\nBOP Ne SecfOnIN0 RE OUI a sie SCOMN NNO ON NOE DENTE, SSC Ons clONN ORES OS HON EcToRAL SS DVIVDr PENDENCE GS OV ag\nRn Srnpenrres escriaue Calon GON oN INONE Ec roma? SS/OMEANDENDEN Gu RERNOE OMDB LCe Eu ee ecTORNOe CCG NMRY\nReasons for Refusal te Sign (if any) us\nPresiding Officer's Com 3 a aT\nNo BE pU TE RESAMA ANDRE An\\Ab0NCED 7 !\nPOLLING F< TATIONS\nPo FODRAAMAN AGouLuH DEN\nQ7-i-ZoZs _\nit Given P HAcwr [Sspk-Amoid\n7 WES 2-2 S$\nLE Bc. fare\nDING\nde\"",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 7,
+        "confidence": 0.82
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "Total number of valid votes cast {Sac CrORALANDUG EPenuEN TE LEGcepemeeremepeooe fp a7 Cg",
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "FAIL",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-13T19:58:10.143039Z"
+}

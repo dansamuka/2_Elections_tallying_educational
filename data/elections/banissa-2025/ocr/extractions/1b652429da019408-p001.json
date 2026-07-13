@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "1b652429da019408-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/unmatched/v1_1b652429da01.pdf",
+  "source_sha256": "1b652429da0194084ad1f5e0f2a4eed88cf1f3525a0fa66dc37d94f1cdd2c40b",
+  "source_filename": "v1_1b652429da01.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/1b652429da019408.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract",
+  "confidence": 0.40512195121951217,
+  "text_length": 2119,
+  "text_preview": "a a ee, neal ——— -_\n— 4 EBC OF OO}\n| MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station CHIRACHA PRIMARY SCHOOL POLLING STATION 1 of 2 Code __ 009040019600404\nWAP ENDENTEL ce? ac SoeHAMISSA PENDENTE] SCOMMISSION \\WORS® phe DENDEN TELE CONINDEPENDE oh Sco Go denDE 0198-1 Oe 2 SIONINDE\nConstituency BANISSA ode; <. OaORAL gy W/NOEPEN'\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate: CyONIh\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM $f 0\n2. MOHAMED NURDIN MAALIM [_ ONG\nTotal number of valid votes cast ee eo oe\nPolling Station Counts Decision(s} on disputed votes if any\n[Toa Number of Registered Vtersin he Poling Staion, | E19\nTela Number of Rete Balt Paes Pacer eer N HE Tes con er Tora ann nc hoe sof ON aNOB OLN Or\n| YottNunberof Recon Oeced oBslotPaes —|———gql|2 I\nTt Number of sped oes or teat te Sor oan Le oem SON To scoMmnS\nTaal Numer fai ots at Pree MELT ES) ERS roe Rams haan en nad On eo ORO Re oUNOCHE\nDeclaration ra\nWe, the undersigned, being present when the results of the count were announced, do hereby dec! ten shown above are true\nand accurate count of the ballots in TCM ACH PC AE Poting Station 6 ait ss © Constituency.\nPresiding Officer: AQE \\SS'B-0c. AS Signature: eae Date eet :\nDeputy Presiding Officer: Vic & (Sav _SHEKY — signature: ere Bx: 2_/ Date — XE= ly mROA*S-\nAgents or Candidates (if present} e\n[Ti rishaman SWery [assrits| ORR [orelebbee3 F 7g cf |a8-\\raw”\naaa SF eS\nBias iss ONNDE POUND ARIESC ORNL) SEC oR pe PENDELITE ZAC OMMIS RN NO lg NNATEL Seon AL ANON DE eco NaC\nage haes an ane ie PenbeNTE UO TSN yep UNDARIEGC ELECTOR ALANS NT NOISE OMMISSIONAAADBOUNDES CONOR CONN\n5 na HOPS SOR, NER a RR OS\nBES aOR an PENTEL onan ONTE | nS SIO LANE NDEN NEN L OW pn DBO UML NoEaTe ECONO, C0 Na\nReasons for Refusal to Sign [if any)\nPresiding Officer's Comments:\nWERE OR OS OFS OLIN. ENDewre OTOP OE SCT ANINOS, oie SCs SCT op as aN BOW AC OI DEN ei SSIONINA A BO ARIES a Bh\n“We vans DAC PuneB VYoVEs:\nBaewARe \\ssate \\pastan\nay A} as\nQ Dh P iy\nws pits i “RB ¢ \\\nFEW hye P-O 1S\ni Fee, Se",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 0,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM $f 0",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM [_ ONG",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-13T19:59:48.239505Z"
+}
