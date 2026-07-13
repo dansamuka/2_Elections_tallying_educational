@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1783971396348,
-  "generated_at": "2026-07-13T19:36:36.348981Z",
+  "seq": 1783971798800,
+  "generated_at": "2026-07-13T19:43:18.800194Z",
   "mode": "ARCHIVE",
   "election_id": "banissa-2025",
   "election": {
@@ -24,10 +24,10 @@
     "ballot_order_verified": true
   },
   "pipeline_health": {
-    "watcher": "NEVER_RUN",
+    "watcher": "ERROR",
     "extractor": "MANUAL_REVIEW",
     "last_portal_ok": null,
-    "last_sync_completed": null,
+    "last_sync_completed": "2026-07-13T19:43:18.799313Z",
     "last_sync_changed": null,
     "worker_id": "github-actions-or-manual"
   },
@@ -142,10 +142,13 @@
     "portal_sync": {
       "schema": "kenya.election.portal-sync.v1",
       "election_id": "banissa-2025",
-      "state": "NEVER_RUN",
-      "last_completed_at": null,
+      "state": "ERROR",
+      "last_started_at": "2026-07-13T19:42:48.121967Z",
+      "last_completed_at": "2026-07-13T19:43:18.799313Z",
       "last_changed_at": null,
-      "message": "The IEBC portal sync has not run for this election."
+      "portal_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
+      "engine_mode": "auto",
+      "message": "Server disconnected without sending a response."
     },
     "portal_discovered": 0,
     "portal_downloaded": 0,

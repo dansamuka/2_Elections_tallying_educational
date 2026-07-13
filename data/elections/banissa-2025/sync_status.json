@@ -1,0 +1,11 @@
+{
+  "schema": "kenya.election.portal-sync.v1",
+  "election_id": "banissa-2025",
+  "state": "ERROR",
+  "last_started_at": "2026-07-13T19:42:48.121967Z",
+  "last_completed_at": "2026-07-13T19:43:18.799313Z",
+  "last_changed_at": null,
+  "portal_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
+  "engine_mode": "auto",
+  "message": "Server disconnected without sending a response."
+}
