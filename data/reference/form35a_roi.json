@@ -1,9 +1,235 @@
 {
   "schema": "olkalou.form35a.roi.v1",
+  "status": "AWAITING_CALIBRATION",
+  "reference_image": "form35a-reference.png",
   "reference_size": null,
-  "fields": {},
-  "status": "UNMAPPED",
+  "allow_resize_fallback": false,
+  "fields": {
+    "candidate_UDA.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_UDA.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_DCP.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_DCP.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_JUBILEE.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_JUBILEE.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_PNU.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_PNU.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_PDP.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_PDP.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_KMM.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_KMM.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_FPK.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_FPK.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_PRP.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_PRP.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_NLP.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_NLP.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "registered.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "registered.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "rejected.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "rejected.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "total_valid.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "total_valid.words": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "total_cast.numeral": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "total_cast.words": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "textract_queries": [
+    {
+      "Text": "How many votes did Samuel Muchina Nyagah of United Democratic Alliance receive?",
+      "Alias": "candidate_UDA.numeral"
+    },
+    {
+      "Text": "How many votes did Sammy Kamau Ngotho of Democracy for the Citizens Party receive?",
+      "Alias": "candidate_DCP.numeral"
+    },
+    {
+      "Text": "How many votes did Wilson Kigwa of Jubilee Party receive?",
+      "Alias": "candidate_JUBILEE.numeral"
+    },
+    {
+      "Text": "How many votes did Edwin Muchiri of Party of National Unity receive?",
+      "Alias": "candidate_PNU.numeral"
+    },
+    {
+      "Text": "How many votes did Rachel Wangui Njoroge of People's Democratic Party receive?",
+      "Alias": "candidate_PDP.numeral"
+    },
+    {
+      "Text": "How many votes did Mathenge Mwaniki of Kenya Moja Movement receive?",
+      "Alias": "candidate_KMM.numeral"
+    },
+    {
+      "Text": "How many votes did Abdifatah Hussein of Federal Party of Kenya receive?",
+      "Alias": "candidate_FPK.numeral"
+    },
+    {
+      "Text": "How many votes did Timothy Kamau of People's Renaissance Party receive?",
+      "Alias": "candidate_PRP.numeral"
+    },
+    {
+      "Text": "How many votes did Stephen Wanyoike of National Liberal Party receive?",
+      "Alias": "candidate_NLP.numeral"
+    },
+    {
+      "Text": "How many registered voters does this polling station have?",
+      "Alias": "registered.numeral"
+    },
+    {
+      "Text": "How many rejected votes were recorded?",
+      "Alias": "rejected.numeral"
+    },
+    {
+      "Text": "What is the total number of valid votes?",
+      "Alias": "total_valid.numeral"
+    },
+    {
+      "Text": "What is the total number of votes cast?",
+      "Alias": "total_cast.numeral"
+    }
+  ],
+  "candidate_field_map": {
+    "UDA": "Samuel Muchina Nyagah",
+    "DCP": "Sammy Kamau Ngotho",
+    "JUBILEE": "Wilson Kigwa",
+    "PNU": "Edwin Muchiri",
+    "PDP": "Rachel Wangui Njoroge",
+    "KMM": "Mathenge Mwaniki",
+    "FPK": "Abdifatah Hussein",
+    "PRP": "Timothy Kamau",
+    "NLP": "Stephen Wanyoike"
+  },
   "notes": [
-    "Populate only after obtaining the exact nine-candidate Form 35A template. Coordinates are [x,y,width,height] in the rectified reference frame."
+    "Field NAMES below are real (all 9 actual Ol Kalou candidates, from data/reference/candidates.json). Every COORDINATE is the sentinel [0,0,0,0] -- deliberately invalid, not measured. ocr/preprocess.py's enhanced_crop() raises on a zero-size crop, and prepare_rois() separately refuses to run unless status == 'VERIFIED'. Both stay engaged with this file as-is.",
+    "To calibrate: get a real scanned Form 35A (2022 Ol Kalou, or the Emurua Dikirr dress-rehearsal corpus -- same portal, same era, same layout), set reference_size to its [width, height], and either measure each field's [x,y,width,height] by hand in an image editor, or run scripts/suggest_roi_template.py for an assisted starting guess that still requires visual verification before it can be trusted.",
+    "Do not set status to VERIFIED until every coordinate has actually been checked against the real form. This file controls what the OCR pipeline reads on election night."
   ]
 }

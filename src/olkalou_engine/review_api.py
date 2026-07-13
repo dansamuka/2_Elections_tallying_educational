@@ -105,6 +105,14 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             "items": [serialize_queue_item(row) for row in rows],
         }
 
+    @app.get("/api/provisional", dependencies=[Depends(require_token)])
+    def provisional() -> dict:
+        # Internal QA tool only -- see provisional.py module docstring for
+        # why this is authenticated-only and never touches data/public/.
+        from .provisional import build_provisional
+
+        return build_provisional(db, reference)
+
     @app.get("/api/review/{stream_key}/{version}", dependencies=[Depends(require_token)])
     def review_item(stream_key: str, version: int) -> dict:
         row = db.get_form(stream_key, version)

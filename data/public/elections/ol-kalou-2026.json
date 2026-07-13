@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1783976350220,
-  "generated_at": "2026-07-13T20:59:10.220063Z",
+  "seq": 1783977918980,
+  "generated_at": "2026-07-13T21:25:18.980647Z",
   "mode": "LIVE",
   "election_id": "ol-kalou-2026",
   "election": {

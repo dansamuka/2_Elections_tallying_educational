@@ -25,6 +25,13 @@ jobs:
       # schedule, so it silently went stale for hours without any check
       # catching it. Make sure it at least always runs cleanly.
       - run: python -m olkalou_engine.cli --root . publish
+      # Regression coverage for the OCR-extraction enhancement: the ROI
+      # template builder must keep producing a structurally complete,
+      # NOT-VERIFIED map (all 9 real candidates, sentinel coordinates), and
+      # the calibration tool must keep producing a NEEDS_VISUAL_VERIFICATION
+      # candidate file without ever touching the live ROI map.
+      - run: python scripts/build_form35a_roi_template.py
+      - run: python -c "import json; d=json.load(open('data/reference/form35a_roi.json')); assert d['status'] != 'VERIFIED', 'ROI template builder must never auto-verify'; assert len(d['fields']) == 26"
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

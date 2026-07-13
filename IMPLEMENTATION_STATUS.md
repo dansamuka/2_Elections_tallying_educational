@@ -28,6 +28,7 @@
 | Historical OCR safety gate | Implemented | OCR never writes verified results or public candidate totals; two-person review plus V01/V02/V03/V07 import remains mandatory. |
 | Same-repository updater | Implemented | One-click publisher defaults to `dansamuka/2_Elections_tallying_educational`, fetches `origin/main`, replaces changed files and does not create a new repo when it already exists. |
 | Deployment assets | Implemented | Docker, Compose, systemd, CI and GitHub Pages workflow. |
+| Provisional (unverified) OCR aggregate | Implemented, internal-only by design | `GET /api/provisional` (authenticated), `cli provisional`, and a QA-only modal in the review console. Sums every extracted form regardless of trust state, for operator sanity-checking. Never wired into `publisher.py` or `data/public/` -- see `OCR_EXTRACTION_AND_PROVISIONAL_TOTALS_NOTES.md` for why. |
 
 ## Historical-data posture
 
@@ -38,7 +39,7 @@ Banissa is usable immediately as an official constituency-level archive and comp
 1. **Certified 144-row polling-unit register.** Ward totals and the constituency total are staged, but each atomic row remains unresolved until imported from the official Gazette/register.
 2. **Certified candidate legal names and ballot/Form 35A order.** Provisional names are visible for pre-poll design work; the production gate remains closed.
 3. **Exact live IEBC result-detail HTML fixture.** Run a controlled parser rehearsal against the live portal and preserve a fixture before code freeze.
-4. **OCR certification.** Google Vision/Textract adapters and template rectification are implemented, but the exact nine-row ROI map and measured accuracy on a real by-election corpus are still required. Until then, use human entry.
+4. **OCR certification.** Google Vision/Textract adapters and template rectification are implemented. `data/reference/form35a_roi.json` now names all 9 real candidates plus control totals (`scripts/build_form35a_roi_template.py`, generated from `data/reference/candidates.json` so it can't drift from the roster) -- but every coordinate is still an intentional sentinel; the exact nine-row pixel positions and measured accuracy on a real by-election corpus are still required. `scripts/suggest_roi_template.py` gives an assisted starting guess once a real scanned form is available (2022 Ol Kalou or the Emurua Dikirr dress rehearsal), but it explicitly cannot mark itself verified -- a human must check it against the real image first. Until `status: "VERIFIED"` is set by hand, `prepare_rois()` refuses to run and the pipeline uses human entry, same as before.
 5. **V05 calibration.** Replace the provisional rejected-ballot band with an empirical band from the rehearsal corpus.
 6. **Operational credentials and people.** R2/S3, alert webhook, TLS/private review access, two reviewers plus relief, and two independent worker deployments.
 

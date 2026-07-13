@@ -13,6 +13,7 @@ src/olkalou_engine/historical_sync.py
 src/olkalou_engine/models.py
 src/olkalou_engine/portal.py
 src/olkalou_engine/projections.py
+src/olkalou_engine/provisional.py
 src/olkalou_engine/publisher.py
 src/olkalou_engine/reconciliation.py
 src/olkalou_engine/reference.py
@@ -39,6 +40,7 @@ tests/test_historical_sync.py
 tests/test_ocr_merge.py
 tests/test_portal.py
 tests/test_projection.py
+tests/test_provisional.py
 tests/test_publisher.py
 tests/test_reference.py
 tests/test_review.py

@@ -66,3 +66,25 @@ def test_protected_endpoint_accepts_correct_token():
     client = TestClient(app)
     resp = client.get("/api/reference", headers={"Authorization": "Bearer a-real-secret-token"})
     assert resp.status_code == 200
+
+
+def test_provisional_endpoint_requires_auth():
+    """The provisional/unverified OCR aggregate is exactly as protected as
+    everything else -- it must never be reachable without the operator
+    token, since it's raw unverified data (see provisional.py)."""
+    settings = _settings("a-real-secret-token")
+    app = create_app(settings)
+    client = TestClient(app)
+    resp = client.get("/api/provisional")
+    assert resp.status_code == 401
+
+
+def test_provisional_endpoint_works_with_correct_token():
+    settings = _settings("a-real-secret-token")
+    app = create_app(settings)
+    client = TestClient(app)
+    resp = client.get("/api/provisional", headers={"Authorization": "Bearer a-real-secret-token"})
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["PROVISIONAL_UNVERIFIED"] is True
+    assert "NOT AN ELECTION RESULT" in body["warning"]

@@ -36,6 +36,11 @@ def build_parser() -> argparse.ArgumentParser:
     publish = sub.add_parser("publish", help="Build and publish live.json from current state")
     publish.add_argument("--simulations", type=int, default=1000)
 
+    sub.add_parser(
+        "provisional",
+        help="Print the internal-only, unverified OCR aggregate (operator/QA tool -- never published)",
+    )
+
     sub.add_parser("worker", help="Run the 60-second portal watcher and archiver")
     sub.add_parser("tick", help="Run one watcher cycle")
 
@@ -218,6 +223,17 @@ def main() -> None:
         payload = publisher.publish(simulations=args.simulations)
         print(json.dumps({"seq": payload["seq"], "coverage": payload["coverage"]}, indent=2))
         return
+
+    if args.command == "provisional":
+        from .provisional import build_provisional
+
+        result = build_provisional(EngineDB(settings.db_path), reference)
+        print("=" * 70)
+        print(result["warning"])
+        print("=" * 70)
+        print(json.dumps(result, indent=2))
+        return
+
 
     if args.command in {"worker", "tick"}:
         worker = Worker(settings)
