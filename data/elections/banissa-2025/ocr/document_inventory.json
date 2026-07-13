@@ -1,15 +1,1102 @@
 {
   "schema": "kenya.election.ocr-inventory.v1",
   "election_id": "banissa-2025",
-  "generated_at": "2026-07-13T15:28:47.096132Z",
+  "generated_at": "2026-07-13T21:02:33.986209Z",
   "roots": [
     "data/elections/banissa-2025/documents",
     "data/elections/banissa-2025/forms",
     "data/uploads/banissa-2025",
     "data/public/elections/banissa-2025/forms"
   ],
-  "documents_total": 0,
-  "pages_total": 0,
-  "duplicates_collapsed": 0,
-  "documents": []
+  "documents_total": 72,
+  "pages_total": 72,
+  "duplicates_collapsed": 6,
+  "documents": [
+    {
+      "sha256": "3bc92f931330a1cd938e263bf3e213cd5e610e9d1bf6a93c562706c9fdf12206",
+      "path": "data/public/elections/banissa-2025/forms/009040019600501/v1_3bc92f931330.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019600501/v1_3bc92f931330.pdf",
+        "data/public/elections/banissa-2025/forms/009040019801501/v1_3bc92f931330.pdf"
+      ],
+      "filename": "v1_3bc92f931330.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1542551,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:47.748759Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/3bc92f931330a1cd.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/3bc92f931330a1cd.pdf"
+    },
+    {
+      "sha256": "df652db915c1b5533171133b85030b130608aad780478624785dadb951b60f35",
+      "path": "data/public/elections/banissa-2025/forms/009040019600601/v1_df652db915c1.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019600601/v1_df652db915c1.pdf"
+      ],
+      "filename": "v1_df652db915c1.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1515603,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:48.403085Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/df652db915c1b553.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/df652db915c1b553.pdf"
+    },
+    {
+      "sha256": "438f0d64c24c5f681468064045beb118633bf14934329238bf9cd9286428fa05",
+      "path": "data/public/elections/banissa-2025/forms/009040019600801/v1_438f0d64c24c.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019600801/v1_438f0d64c24c.pdf",
+        "data/public/elections/banissa-2025/forms/009040020003801/v1_438f0d64c24c.pdf"
+      ],
+      "filename": "v1_438f0d64c24c.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1540218,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:51.025472Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/438f0d64c24c5f68.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/438f0d64c24c5f68.pdf"
+    },
+    {
+      "sha256": "6812d0f345db14061f7f6b4186f752d4b8bdf94a39c87f5a9455091aa0755742",
+      "path": "data/public/elections/banissa-2025/forms/009040019604001/v1_6812d0f345db.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019604001/v1_6812d0f345db.pdf"
+      ],
+      "filename": "v1_6812d0f345db.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1457996,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:52.992355Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/6812d0f345db1406.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/6812d0f345db1406.pdf"
+    },
+    {
+      "sha256": "56caa9e5b7064ba4f2e277f6a8d0c8196c784c890b59d4ebdecfc3f19b810af5",
+      "path": "data/public/elections/banissa-2025/forms/009040019604101/v1_56caa9e5b706.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019604101/v1_56caa9e5b706.pdf"
+      ],
+      "filename": "v1_56caa9e5b706.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1469073,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:53.645680Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/56caa9e5b7064ba4.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/56caa9e5b7064ba4.pdf"
+    },
+    {
+      "sha256": "a063ac09b29f05985e40bbbabd42a0ebb223e3499b2764582c2e285905de372f",
+      "path": "data/public/elections/banissa-2025/forms/009040019701101/v1_a063ac09b29f.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019701101/v1_a063ac09b29f.pdf"
+      ],
+      "filename": "v1_a063ac09b29f.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1461973,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:57.573703Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/a063ac09b29f0598.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/a063ac09b29f0598.pdf"
+    },
+    {
+      "sha256": "7b1b8e280ebe26c9349f64ae1cb225de51315bcdf9817c645bfe11e4193e2fa7",
+      "path": "data/public/elections/banissa-2025/forms/009040019701201/v1_7b1b8e280ebe.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019701201/v1_7b1b8e280ebe.pdf"
+      ],
+      "filename": "v1_7b1b8e280ebe.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1506303,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:58.228493Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/7b1b8e280ebe26c9.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/7b1b8e280ebe26c9.pdf"
+    },
+    {
+      "sha256": "adcdbf8a54c08c8ba7cd9054764bc6c8c0e3a337f39950cdf6b9b7edb0a46dae",
+      "path": "data/public/elections/banissa-2025/forms/009040019701301/v1_adcdbf8a54c0.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019701301/v1_adcdbf8a54c0.pdf"
+      ],
+      "filename": "v1_adcdbf8a54c0.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1496782,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:58.884997Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/adcdbf8a54c08c8b.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/adcdbf8a54c08c8b.pdf"
+    },
+    {
+      "sha256": "28a61983440622e23644e1f4fba9639d33510e33c9c890267d31828593e608f3",
+      "path": "data/public/elections/banissa-2025/forms/009040019704201/v1_28a619834406.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019704201/v1_28a619834406.pdf",
+        "data/public/elections/banissa-2025/forms/unmatched/v1_28a619834406.pdf"
+      ],
+      "filename": "v1_28a619834406.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1479150,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:01.500324Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/28a61983440622e2.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/28a61983440622e2.pdf"
+    },
+    {
+      "sha256": "e1cf1b1a7560202927b06698187083ea4646882ad92a4a3c072733734924d3c0",
+      "path": "data/public/elections/banissa-2025/forms/009040019704301/v1_e1cf1b1a7560.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019704301/v1_e1cf1b1a7560.pdf",
+        "data/public/elections/banissa-2025/forms/unmatched/v1_e1cf1b1a7560.pdf"
+      ],
+      "filename": "v1_e1cf1b1a7560.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1412966,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:02.152533Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/e1cf1b1a75602029.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/e1cf1b1a75602029.pdf"
+    },
+    {
+      "sha256": "435e0992fe1cbe2b280144c397e14fff472c6e5e5eabc0b6b3dfab05b2b312df",
+      "path": "data/public/elections/banissa-2025/forms/009040019704401/v1_435e0992fe1c.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019704401/v1_435e0992fe1c.pdf"
+      ],
+      "filename": "v1_435e0992fe1c.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1548755,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:02.807820Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/435e0992fe1cbe2b.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/435e0992fe1cbe2b.pdf"
+    },
+    {
+      "sha256": "a82784016b4135017de3032687d0a1d613e04b9c213df23864c6b77d776aa04c",
+      "path": "data/public/elections/banissa-2025/forms/009040019801601/v1_a82784016b41.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019801601/v1_a82784016b41.pdf"
+      ],
+      "filename": "v1_a82784016b41.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1524800,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:06.641494Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/a82784016b413501.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/a82784016b413501.pdf"
+    },
+    {
+      "sha256": "83887619fa3b2d010e1aab40270ca71f96fbd2150651850d3733b0d785e36bea",
+      "path": "data/public/elections/banissa-2025/forms/009040019801701/v1_83887619fa3b.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019801701/v1_83887619fa3b.pdf"
+      ],
+      "filename": "v1_83887619fa3b.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1556094,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:07.282402Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/83887619fa3b2d01.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/83887619fa3b2d01.pdf"
+    },
+    {
+      "sha256": "1662eab46629f17ac2744687ba9d92f1ecf43bb00ad6baa6cf79f452490220c9",
+      "path": "data/public/elections/banissa-2025/forms/009040019801801/v1_1662eab46629.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019801801/v1_1662eab46629.pdf",
+        "data/public/elections/banissa-2025/forms/unmatched/v1_1662eab46629.pdf"
+      ],
+      "filename": "v1_1662eab46629.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1422251,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:07.916322Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/1662eab46629f17a.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/1662eab46629f17a.pdf"
+    },
+    {
+      "sha256": "36a2edab636c343d29cc81a5cd250c796cd125845d243f042610b26788ac43de",
+      "path": "data/public/elections/banissa-2025/forms/009040019801901/v1_36a2edab636c.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019801901/v1_36a2edab636c.pdf"
+      ],
+      "filename": "v1_36a2edab636c.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1534227,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:08.551783Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/36a2edab636c343d.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/36a2edab636c343d.pdf"
+    },
+    {
+      "sha256": "af206977220ea7124f9f1c72229b53f5e05bbd555e82b0c178a29e74e4218a99",
+      "path": "data/public/elections/banissa-2025/forms/009040019802001/v1_af206977220e.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019802001/v1_af206977220e.pdf"
+      ],
+      "filename": "v1_af206977220e.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1503007,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:09.186759Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/af206977220ea712.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/af206977220ea712.pdf"
+    },
+    {
+      "sha256": "cbe251d7f2c12f572f702f8401d490ad5d718386419d5536d96da8db0b6d6003",
+      "path": "data/public/elections/banissa-2025/forms/009040019802101/v1_cbe251d7f2c1.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019802101/v1_cbe251d7f2c1.pdf"
+      ],
+      "filename": "v1_cbe251d7f2c1.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1536277,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:09.820696Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/cbe251d7f2c12f57.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/cbe251d7f2c12f57.pdf"
+    },
+    {
+      "sha256": "7479c9b565c4cc490f21aba6a5ef2b221b8f6113cd01b92c3effe96393512bfc",
+      "path": "data/public/elections/banissa-2025/forms/009040019902201/v1_7479c9b565c4.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019902201/v1_7479c9b565c4.pdf"
+      ],
+      "filename": "v1_7479c9b565c4.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1491586,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:10.261260Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/7479c9b565c4cc49.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/7479c9b565c4cc49.pdf"
+    },
+    {
+      "sha256": "0c9fbfb1ed6eb5b48425b5fa3094a04f6e2892afc69a2d965345b3d09b4ed643",
+      "path": "data/public/elections/banissa-2025/forms/009040019902301/v1_0c9fbfb1ed6e.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019902301/v1_0c9fbfb1ed6e.pdf"
+      ],
+      "filename": "v1_0c9fbfb1ed6e.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1531704,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:10.701443Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/0c9fbfb1ed6eb5b4.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/0c9fbfb1ed6eb5b4.pdf"
+    },
+    {
+      "sha256": "d9fdfd38e136b35f02ac8761a80ce4e67d1ea1c7441bcbb2156472628af3a12d",
+      "path": "data/public/elections/banissa-2025/forms/009040019902401/v1_d9fdfd38e136.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019902401/v1_d9fdfd38e136.pdf"
+      ],
+      "filename": "v1_d9fdfd38e136.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1459714,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:11.340359Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/d9fdfd38e136b35f.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/d9fdfd38e136b35f.pdf"
+    },
+    {
+      "sha256": "41f30f22efd0b96c2a15fb93bc1c56784013996aab1847f2618372c6f537029b",
+      "path": "data/public/elections/banissa-2025/forms/009040019902501/v1_41f30f22efd0.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019902501/v1_41f30f22efd0.pdf"
+      ],
+      "filename": "v1_41f30f22efd0.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1454724,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:11.981308Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/41f30f22efd0b96c.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/41f30f22efd0b96c.pdf"
+    },
+    {
+      "sha256": "d3006b2a77157b3c24ba0f79a9c8b135430b19a33fdf3bbe705b57119963b601",
+      "path": "data/public/elections/banissa-2025/forms/009040019902601/v1_d3006b2a7715.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019902601/v1_d3006b2a7715.pdf",
+        "data/public/elections/banissa-2025/forms/009040019902701/v1_d3006b2a7715.pdf"
+      ],
+      "filename": "v1_d3006b2a7715.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1419838,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:12.618435Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/d3006b2a77157b3c.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/d3006b2a77157b3c.pdf"
+    },
+    {
+      "sha256": "b5975139c57a437f0b940e1c5a23eddacc067b636c2da92288b877b61aea11ac",
+      "path": "data/public/elections/banissa-2025/forms/009040019902801/v1_b5975139c57a.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019902801/v1_b5975139c57a.pdf"
+      ],
+      "filename": "v1_b5975139c57a.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1495739,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:13.901201Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/b5975139c57a437f.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/b5975139c57a437f.pdf"
+    },
+    {
+      "sha256": "2eb2ebc1e67f771f63d5e4d2553c8fe643fb4647bc914494b91d2ffe9d2a44f6",
+      "path": "data/public/elections/banissa-2025/forms/009040019903001/v1_2eb2ebc1e67f.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019903001/v1_2eb2ebc1e67f.pdf"
+      ],
+      "filename": "v1_2eb2ebc1e67f.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1476846,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:17.528084Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/2eb2ebc1e67f771f.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/2eb2ebc1e67f771f.pdf"
+    },
+    {
+      "sha256": "8d92e3731bd069b02db39abfbbe6524b30dbbff9ec94eae347ffcdc536401a1b",
+      "path": "data/public/elections/banissa-2025/forms/009040019903101/v1_8d92e3731bd0.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019903101/v1_8d92e3731bd0.pdf"
+      ],
+      "filename": "v1_8d92e3731bd0.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1429746,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:18.164260Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/8d92e3731bd069b0.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/8d92e3731bd069b0.pdf"
+    },
+    {
+      "sha256": "b368e9236968964f844d3be614969a0710caaa25d910672b53c09840d8824b17",
+      "path": "data/public/elections/banissa-2025/forms/009040019904801/v1_b368e9236968.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019904801/v1_b368e9236968.pdf"
+      ],
+      "filename": "v1_b368e9236968.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1501156,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:18.802969Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/b368e9236968964f.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/b368e9236968964f.pdf"
+    },
+    {
+      "sha256": "24b6c986e248b21a7b2ecc349c8218a83eff88a5328248f4f908c4e13ef96c20",
+      "path": "data/public/elections/banissa-2025/forms/009040019904901/v1_24b6c986e248.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040019904901/v1_24b6c986e248.pdf"
+      ],
+      "filename": "v1_24b6c986e248.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1464152,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:19.441939Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/24b6c986e248b21a.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/24b6c986e248b21a.pdf"
+    },
+    {
+      "sha256": "830fa897b4ca72b1618d3693e86424912f00bbd9a81cf8596b315f71a2f90580",
+      "path": "data/public/elections/banissa-2025/forms/009040020003401/v1_830fa897b4ca.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020003401/v1_830fa897b4ca.pdf"
+      ],
+      "filename": "v1_830fa897b4ca.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1518942,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:23.269927Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/830fa897b4ca72b1.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/830fa897b4ca72b1.pdf"
+    },
+    {
+      "sha256": "11512295d7dd70303cd3cd55643f4098fe3c9442583bf0b8ded5361708f6b25e",
+      "path": "data/public/elections/banissa-2025/forms/009040020003501/v1_11512295d7dd.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020003501/v1_11512295d7dd.pdf"
+      ],
+      "filename": "v1_11512295d7dd.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1526950,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:23.909703Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/11512295d7dd7030.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/11512295d7dd7030.pdf"
+    },
+    {
+      "sha256": "79da4187ef993e1f39d003d291e32bb2e905dd9f3a8bd4e707e4c96e91ccbfbd",
+      "path": "data/public/elections/banissa-2025/forms/009040020003601/v1_79da4187ef99.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020003601/v1_79da4187ef99.pdf"
+      ],
+      "filename": "v1_79da4187ef99.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1510741,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:24.548000Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/79da4187ef993e1f.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/79da4187ef993e1f.pdf"
+    },
+    {
+      "sha256": "751b7d06f5cb9a2fcd90ad9add5a4041854c3b961f52b780712b62fc43419cab",
+      "path": "data/public/elections/banissa-2025/forms/009040020003701/v1_751b7d06f5cb.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020003701/v1_751b7d06f5cb.pdf"
+      ],
+      "filename": "v1_751b7d06f5cb.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1551666,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:25.186226Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/751b7d06f5cb9a2f.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/751b7d06f5cb9a2f.pdf"
+    },
+    {
+      "sha256": "53fdd63c764fa5bf5e04f80e29c43f2295757d91b82e1708eaaece9bed195f6f",
+      "path": "data/public/elections/banissa-2025/forms/009040020004501/v1_53fdd63c764f.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020004501/v1_53fdd63c764f.pdf"
+      ],
+      "filename": "v1_53fdd63c764f.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1461064,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:26.456827Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/53fdd63c764fa5bf.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/53fdd63c764fa5bf.pdf"
+    },
+    {
+      "sha256": "80b39a53d120757f90ac52f1e39bf4b644f28a4390025ff5e2419aacabd7db98",
+      "path": "data/public/elections/banissa-2025/forms/009040020005001/v1_80b39a53d120.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020005001/v1_80b39a53d120.pdf"
+      ],
+      "filename": "v1_80b39a53d120.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1558804,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:27.096824Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/80b39a53d120757f.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/80b39a53d120757f.pdf"
+    },
+    {
+      "sha256": "13f710f4f2e6d1f994c6771e8dafa2695d2a02bb1925207382ca1c5157a9dc4a",
+      "path": "data/public/elections/banissa-2025/forms/009040020005101/v1_13f710f4f2e6.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020005101/v1_13f710f4f2e6.pdf"
+      ],
+      "filename": "v1_13f710f4f2e6.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1551399,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:27.735475Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/13f710f4f2e6d1f9.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/13f710f4f2e6d1f9.pdf"
+    },
+    {
+      "sha256": "5f18f74883caa0bcc16012fb2c1016deceb89507b4d7fedb81dd8c2efb72c5d6",
+      "path": "data/public/elections/banissa-2025/forms/009040020005201/v1_5f18f74883ca.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020005201/v1_5f18f74883ca.pdf"
+      ],
+      "filename": "v1_5f18f74883ca.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1524627,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:28.372475Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/5f18f74883caa0bc.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/5f18f74883caa0bc.pdf"
+    },
+    {
+      "sha256": "8ddd0aa9b312238b6ba24be599e89ac1229515a1f01e7a7253b92eb8252c9c08",
+      "path": "data/public/elections/banissa-2025/forms/009040020005301/v1_8ddd0aa9b312.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020005301/v1_8ddd0aa9b312.pdf"
+      ],
+      "filename": "v1_8ddd0aa9b312.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1537352,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:29.007787Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/8ddd0aa9b312238b.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/8ddd0aa9b312238b.pdf"
+    },
+    {
+      "sha256": "5ecdb61d8a6f82817f3ac64e58d0502b003e089cf9c191eb7795725de62c6c3c",
+      "path": "data/public/elections/banissa-2025/forms/009040020005401/v1_5ecdb61d8a6f.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020005401/v1_5ecdb61d8a6f.pdf"
+      ],
+      "filename": "v1_5ecdb61d8a6f.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1483273,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:29.445838Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/5ecdb61d8a6f8281.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/5ecdb61d8a6f8281.pdf"
+    },
+    {
+      "sha256": "707524c3d49e66d25e0cf32d9966487d9b2c3fcf398265e5e2c5d81d5b1ca199",
+      "path": "data/public/elections/banissa-2025/forms/009040020005501/v1_707524c3d49e.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020005501/v1_707524c3d49e.pdf"
+      ],
+      "filename": "v1_707524c3d49e.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1515360,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:29.885284Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/707524c3d49e66d2.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/707524c3d49e66d2.pdf"
+    },
+    {
+      "sha256": "715b25c1d732096a3dbe828464a731e00085904c40c141bfb27162c57d5d5710",
+      "path": "data/public/elections/banissa-2025/forms/009040020005601/v1_715b25c1d732.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020005601/v1_715b25c1d732.pdf"
+      ],
+      "filename": "v1_715b25c1d732.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1548228,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:30.521668Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/715b25c1d732096a.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/715b25c1d732096a.pdf"
+    },
+    {
+      "sha256": "85e8f9fafa84d2b5da64b7ff6708ddd8718a6e3060b46d6027eb0c0c8b9da706",
+      "path": "data/public/elections/banissa-2025/forms/009040020005701/v1_85e8f9fafa84.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020005701/v1_85e8f9fafa84.pdf"
+      ],
+      "filename": "v1_85e8f9fafa84.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1540519,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:31.161133Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/85e8f9fafa84d2b5.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/85e8f9fafa84d2b5.pdf"
+    },
+    {
+      "sha256": "a77fad9423c0c980527cf7ebef6bb01aacfd27b9a8fbb9ae904df624e9ccf594",
+      "path": "data/public/elections/banissa-2025/forms/009040020005801/v1_a77fad9423c0.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020005801/v1_a77fad9423c0.pdf"
+      ],
+      "filename": "v1_a77fad9423c0.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1516032,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:31.798501Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/a77fad9423c0c980.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/a77fad9423c0c980.pdf"
+    },
+    {
+      "sha256": "4c1c826af75e8058c0934a12840496a4e2008c02c1df8527d5291180e5400e56",
+      "path": "data/public/elections/banissa-2025/forms/009040020006001/v1_4c1c826af75e.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020006001/v1_4c1c826af75e.pdf"
+      ],
+      "filename": "v1_4c1c826af75e.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1472972,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:33.072965Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/4c1c826af75e8058.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/4c1c826af75e8058.pdf"
+    },
+    {
+      "sha256": "75a22cd42b94c345a6c3d3d50a6f7408c51d8f3372de40706613d2a68183f5e8",
+      "path": "data/public/elections/banissa-2025/forms/009040020006101/v1_75a22cd42b94.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/009040020006101/v1_75a22cd42b94.pdf"
+      ],
+      "filename": "v1_75a22cd42b94.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1524012,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:33.711828Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/75a22cd42b94c345.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/75a22cd42b94c345.pdf"
+    },
+    {
+      "sha256": "02fbde30884416fc5734f0e1e13f95604d18a7af4e9bd85f4d8080d08cc11d54",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_02fbde308844.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_02fbde308844.pdf"
+      ],
+      "filename": "v1_02fbde308844.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1510085,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:47.088779Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/02fbde30884416fc.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/02fbde30884416fc.pdf"
+    },
+    {
+      "sha256": "0a4001b5ba17f8482f62bc93c5e029fe9332094e2c14cf76eeb49041e0eb496f",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_0a4001b5ba17.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_0a4001b5ba17.pdf"
+      ],
+      "filename": "v1_0a4001b5ba17.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1729269,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:50.370389Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/0a4001b5ba17f848.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/0a4001b5ba17f848.pdf"
+    },
+    {
+      "sha256": "17ee251caf38947331371d3d7ce3ccce6ae76f101ef881e623181cfbbe9b8003",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_17ee251caf38.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_17ee251caf38.pdf"
+      ],
+      "filename": "v1_17ee251caf38.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1482475,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:22.631269Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/17ee251caf389473.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/17ee251caf389473.pdf"
+    },
+    {
+      "sha256": "195d18ea8371baee948054b77835b5f34332a3ca15186bc11100d0978d6387fb",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_195d18ea8371.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_195d18ea8371.pdf"
+      ],
+      "filename": "v1_195d18ea8371.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1444692,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:56.261073Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/195d18ea8371baee.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/195d18ea8371baee.pdf"
+    },
+    {
+      "sha256": "1b652429da0194084ad1f5e0f2a4eed88cf1f3525a0fa66dc37d94f1cdd2c40b",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_1b652429da01.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_1b652429da01.pdf"
+      ],
+      "filename": "v1_1b652429da01.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1431752,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:46.429481Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/1b652429da019408.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/1b652429da019408.pdf"
+    },
+    {
+      "sha256": "23fad44f980b89bd168ef27549b4ad25613f23636cdc4899545b88cab65827dc",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_23fad44f980b.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_23fad44f980b.pdf"
+      ],
+      "filename": "v1_23fad44f980b.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1496265,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:42.895311Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/23fad44f980b89bd.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/23fad44f980b89bd.pdf"
+    },
+    {
+      "sha256": "4722cd4c02dd56306ad8b684698f43106785a1954336e922ced5462eceebd689",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_4722cd4c02dd.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_4722cd4c02dd.pdf"
+      ],
+      "filename": "v1_4722cd4c02dd.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1463361,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:55.608268Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/4722cd4c02dd5630.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/4722cd4c02dd5630.pdf"
+    },
+    {
+      "sha256": "4a6a516eefdf371852618f8395a8afd4d77efed5b7156d6f4c7cfe3aa022050a",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_4a6a516eefdf.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_4a6a516eefdf.pdf"
+      ],
+      "filename": "v1_4a6a516eefdf.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1476562,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:21.358766Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/4a6a516eefdf3718.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/4a6a516eefdf3718.pdf"
+    },
+    {
+      "sha256": "525e7de0fc98afa40846f5e1b6d79404d1b436d99811ac3a30f8c4f7a143f810",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_525e7de0fc98.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_525e7de0fc98.pdf"
+      ],
+      "filename": "v1_525e7de0fc98.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1451236,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:52.337105Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/525e7de0fc98afa4.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/525e7de0fc98afa4.pdf"
+    },
+    {
+      "sha256": "5824d681b61bf1313eb094ffcad8bc2195813b1471f307e7a5c9cac404f86914",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_5824d681b61b.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_5824d681b61b.pdf"
+      ],
+      "filename": "v1_5824d681b61b.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1441364,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:45.118068Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/5824d681b61bf131.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/5824d681b61bf131.pdf"
+    },
+    {
+      "sha256": "64992b21ea1079dd11d57f2f0750114ecf792fdc181d012b98844ce5270fd32a",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_64992b21ea10.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_64992b21ea10.pdf"
+      ],
+      "filename": "v1_64992b21ea10.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1486353,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:20.081976Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/64992b21ea1079dd.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/64992b21ea1079dd.pdf"
+    },
+    {
+      "sha256": "78ec219f1c8a889a584b19b4bcd5c45a5ed30d7419c1fde6044b0d5667a98a4c",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_78ec219f1c8a.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_78ec219f1c8a.pdf"
+      ],
+      "filename": "v1_78ec219f1c8a.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1492384,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:49.058496Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/78ec219f1c8a889a.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/78ec219f1c8a889a.pdf"
+    },
+    {
+      "sha256": "7a59c99e5fc02b9cad579976f1fc1fbc7872e15333cae06b0eec81a7b0e05d42",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_7a59c99e5fc0.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_7a59c99e5fc0.pdf"
+      ],
+      "filename": "v1_7a59c99e5fc0.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1470999,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:15.612017Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/7a59c99e5fc02b9c.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/7a59c99e5fc02b9c.pdf"
+    },
+    {
+      "sha256": "7d96ce34bc30fd82f50eb0b2550ead745572d5c03c12a4ae8a1a254655a15e8d",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_7d96ce34bc30.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_7d96ce34bc30.pdf"
+      ],
+      "filename": "v1_7d96ce34bc30.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1457387,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:54.300564Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/7d96ce34bc30fd82.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/7d96ce34bc30fd82.pdf"
+    },
+    {
+      "sha256": "879bca08a7927158dc65fbcc8e747b35dd03312b5b7996aff197c1b325f6bed9",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_879bca08a792.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_879bca08a792.pdf"
+      ],
+      "filename": "v1_879bca08a792.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1493732,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:16.890337Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/879bca08a7927158.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/879bca08a7927158.pdf"
+    },
+    {
+      "sha256": "896e98d644fcc2806d89607a98b03f48f88607788942e9b2db57f62a2d04d454",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_896e98d644fc.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_896e98d644fc.pdf"
+      ],
+      "filename": "v1_896e98d644fc.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1467353,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:41.616802Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/896e98d644fcc280.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/896e98d644fcc280.pdf"
+    },
+    {
+      "sha256": "8a8909bc3f9fa67afdfc8ad8d627b3704f7eaf4532294ad492808f119b21476a",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_8a8909bc3f9f.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_8a8909bc3f9f.pdf"
+      ],
+      "filename": "v1_8a8909bc3f9f.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1422913,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:21.994595Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/8a8909bc3f9fa67a.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/8a8909bc3f9fa67a.pdf"
+    },
+    {
+      "sha256": "8ba7438afeaaef9a84a915f973c9a4f8fc391853473808002fa9fe198f68a5df",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_8ba7438afeaa.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_8ba7438afeaa.pdf"
+      ],
+      "filename": "v1_8ba7438afeaa.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1482419,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:40.297778Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/8ba7438afeaaef9a.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/8ba7438afeaaef9a.pdf"
+    },
+    {
+      "sha256": "8e3af80565e0afcd792d10f9d04f1d409b7690871a72f345e30bc767d643a5c1",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_8e3af80565e0.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_8e3af80565e0.pdf"
+      ],
+      "filename": "v1_8e3af80565e0.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1420273,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:45.774569Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/8e3af80565e0afcd.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/8e3af80565e0afcd.pdf"
+    },
+    {
+      "sha256": "9422d529d060c32c1f1ab7f68c9268091213b19f7a71eab31ddd94ce3f7675c6",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_9422d529d060.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_9422d529d060.pdf"
+      ],
+      "filename": "v1_9422d529d060.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1164576,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:14.336923Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/9422d529d060c32c.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/9422d529d060c32c.pdf"
+    },
+    {
+      "sha256": "a569e1303455a13a007b08117fabb45b964f6247594a9bcfc3ecca93aafeb8fa",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_a569e1303455.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_a569e1303455.pdf"
+      ],
+      "filename": "v1_a569e1303455.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1471348,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:56.918462Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/a569e1303455a13a.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/a569e1303455a13a.pdf"
+    },
+    {
+      "sha256": "b0c2f18689d73f3a9ab8773a63cf096822a1439c0c496fda633a5b2eadce4672",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_b0c2f18689d7.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_b0c2f18689d7.pdf"
+      ],
+      "filename": "v1_b0c2f18689d7.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1446240,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:00.195457Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/b0c2f18689d73f3a.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/b0c2f18689d73f3a.pdf"
+    },
+    {
+      "sha256": "d07b9f35c47b9ce9eebca8a1ecbb807ced0d5d101154092ea1ebf9b0afca10af",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_d07b9f35c47b.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_d07b9f35c47b.pdf"
+      ],
+      "filename": "v1_d07b9f35c47b.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1470060,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:44.666956Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/d07b9f35c47b9ce9.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/d07b9f35c47b9ce9.pdf"
+    },
+    {
+      "sha256": "e1a72f2774c3b8a986f71cbf9c6c6c5929b8c8a044e964d319e53a91187dd854",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_e1a72f2774c3.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_e1a72f2774c3.pdf"
+      ],
+      "filename": "v1_e1a72f2774c3.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1537142,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:51.681340Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/e1a72f2774c3b8a9.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/e1a72f2774c3b8a9.pdf"
+    },
+    {
+      "sha256": "e49a988ee1a22e3372799ebe614493e70dc5426d0f68bc14b27374a593a12c19",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_e49a988ee1a2.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_e49a988ee1a2.pdf"
+      ],
+      "filename": "v1_e49a988ee1a2.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1508779,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:40.956084Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/e49a988ee1a22e33.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/e49a988ee1a22e33.pdf"
+    },
+    {
+      "sha256": "eb943122ac9d440f7476457f5b9227ff2bbc29effed6f98f435ca45990e969c2",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_eb943122ac9d.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_eb943122ac9d.pdf"
+      ],
+      "filename": "v1_eb943122ac9d.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1492302,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:16.251402Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/eb943122ac9d440f.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/eb943122ac9d440f.pdf"
+    },
+    {
+      "sha256": "ebb3826e26cc467455b733953b512b4429473cfaaa5c2cc6b291b156431a5e50",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_ebb3826e26cc.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_ebb3826e26cc.pdf"
+      ],
+      "filename": "v1_ebb3826e26cc.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1572117,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:32.436148Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/ebb3826e26cc4674.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/ebb3826e26cc4674.pdf"
+    },
+    {
+      "sha256": "ecf71c5bbaac94bd1f9e386cb1bc32bcf2ffd1ea7fdfaa62be865c1b8156473e",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_ecf71c5bbaac.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_ecf71c5bbaac.pdf"
+      ],
+      "filename": "v1_ecf71c5bbaac.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1456122,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:01:43.555931Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/ecf71c5bbaac94bd.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/ecf71c5bbaac94bd.pdf"
+    },
+    {
+      "sha256": "fa2d5d135e7adc51f5b6fe8b1bf3959cfbb409e579dfd825cdd3569095d2c732",
+      "path": "data/public/elections/banissa-2025/forms/unmatched/v1_fa2d5d135e7a.pdf",
+      "aliases": [
+        "data/public/elections/banissa-2025/forms/unmatched/v1_fa2d5d135e7a.pdf"
+      ],
+      "filename": "v1_fa2d5d135e7a.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 1427979,
+      "pages": 1,
+      "modified_at": "2026-07-13T21:02:14.974608Z",
+      "public_path": "data/public/elections/banissa-2025/forms/uploaded/fa2d5d135e7adc51.pdf",
+      "public_url": "../data/public/elections/banissa-2025/forms/uploaded/fa2d5d135e7adc51.pdf"
+    }
+  ]
 }

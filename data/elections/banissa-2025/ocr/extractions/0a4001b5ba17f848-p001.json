@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "0a4001b5ba17f848-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/unmatched/v1_0a4001b5ba17.pdf",
+  "source_sha256": "0a4001b5ba17f8482f62bc93c5e029fe9332094e2c14cf76eeb49041e0eb496f",
+  "source_filename": "v1_0a4001b5ba17.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/0a4001b5ba17f848.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-007-03",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.27375206611570246,
+  "text_length": 2992,
+  "text_preview": "= ae : eo\n= = : — \"i\n= = - = xs = ui =\nons bed aE\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS |\nDUR ELECS Nea, ANOEMIO NNR EL! _ AT THE POLLING STATION COM\nANDRE COUN ARESCO ESA Eo Ce ramia COND anit One MMISE/GENTEL ECTORAL EC ex RPS RIE\n- Name of Polling Station’ HAJ MOHAMED GIRA PRIMARY SCHOOL POLLING STATION 3:03 Pode © 009040019600703\n7 IN yy ORNS ER GES nee as OE LARD, VOUARIES Sang rene AR ain ; eran ena cual 7 : :\nOND ARfAGAPENDENTE ot cco aMIRB PENDENTEL «SC Onis SION INOS Nau \"Dr DENDEN TELE CON/NDEPENDE NOM 6c Belg D EOE EC TON SSIONINDE\nGes OB CaN eee a NTR acoA PEGE uy MR ROE\n| Name of Candidate ©] No. of Valid Votes Obtained\n“PA /HASSANAHMED MAALIM DHINDEPE ES ba Bid\nSo) 2. MOHAMED NURONMAAUME coc ep Onno on ee OS ge |\n[Total number of valid votes cast Ps Sh GE Se LORALANDE GLE PENIDEN TELE Gensou OMe ANOBOUS ODEN a\nCTORALAND gS EPENDENIES Ano WO CSCS te: r Coe cnoe TE ses A\n~~ Polling Station Counts» SSONINDEP Ey ¢ Decision{s} on disputed votesifany\n[Tet Numero ReisteredVtersin he Poling Sion [Seater ester Popei wih cued NanealCndoe asin rie\nee EA aS ee 6 CdS\n[inate jcton DjecedtobalotPapas, oe CO] fe\nog Abbe ab tp Vasko oS on ut mc aBerrre OLN IRN NOMR CO Rese gLh ToaaT APOC Oe Oe aos |\n[S| ott Number Vat ies ass 5 A\n8 ROMs ce une? Nee CORON ECroR La ON eee LEC TONGA On RN ag\n©... We, the undersigned, being present when the results of the ‘count were announced, do hereby declare that the results shown above are true\n«and accurate count of the ballots in! it Ait fonu ss Co Ns Polling Station |S Constituency.\n€2ROR A DEPENDEN ARIES CRAMER PH CORA DPC DAITTELSOTON WS aucnmIBETE) oOo Od A OERERDENTEN< REGO CALF:\n» Presiding BitBipere dos ee 8 Wee CAPO Root a ao uae AAA oh pre Laban AE Sighatben nicer OP Ree oo Bates enh rane oy\nSu Ar anemia SSTONINDE nase CCSD ECT OR ANDE OGG oP ENDENT SiS OO NDE OUN OAR SELECTOR She Ono pale SCOMMIS Sg tt\n(oS DSR es ranna ES Fiecat OLS Got VET FA OPP ARIES YS She Bignatare: SECT SSO mbit a oat\nFE ee ee One NO ARIES Cua eC OCNO Er Cg LEC Ne MISSION UNO Cs CORON ELECTORAL AND gINDEPENDT OM pC aC nL ANOEOUN\n“Agents or Candidates {if present) _ TELECTORA/ s SIONINDEPENDE SON BSAC ON LT ANOBOUING NDE NTELECT Oyun ts eas0' NDARIESC.\nex INo.| Name of Candidate or Agent <i 1D/Passport No..| Party Name/Independent Candidate Tel. Contact © Sionatire | Date | A\nRS RS Eee LN RAT EAL Ee SRG aT Le) OE ORE OE ENEET TRL eet SRR SRT\nIRAE IRAN oa AY PEOS wes A eI I eee RADAR ompte a Scone’ gy s ROE ANE CPSNGRON Og Cp att\nES os Sea eS SSI Sc YE ee DN SOE\nAMEE NCO SSHONINDE De OUNGAiESCONN BSOOSDCO pa BN OPNDENTE ESC Ons TONING APLC MNHON ec [ORAL SS NINE PEND ARORO OM\n~ Reasons for Refusal to Sign fif any) RA ePENT ; ELE INDEPEN COE\n\"Presiding Officer's Comments: Soe ott A NOB EN Ter ; OK Se\nDARE CIORNDE RR CONNOENeesc gate Clon REARS OFN SIO CANOE NO ARIES TORE DEPEND OAR Fee ots oc RS,\nRies COMMS WACK PUA PE NDENTEL EC) OMMIRGIONS OL Te CNN LEC TOCA ay oMNDEPENDE SA Sosy ANOBODNT MOEN TEL EC ORNS pS a",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_UPA": {
+        "value": 3,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_UPA": "- Name of Polling Station’ HAJ MOHAMED GIRA PRIMARY SCHOOL POLLING STATION 3:03 Pode © 009040019600703",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-13T21:06:34.485020Z"
+}
