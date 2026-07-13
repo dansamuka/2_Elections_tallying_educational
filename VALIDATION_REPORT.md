@@ -5,8 +5,9 @@ Validated on 13 July 2026 against the GitHub-ready source tree.
 | Check | Result |
 |---|---|
 | Python compile | Pass — application and scripts compile cleanly |
+| Windows timezone regression | Pass — `tzdata` installed and forced missing-IANA fallback resolves to EAT/UTC+03:00 |
 | Ruff static analysis | Pass — no findings |
-| Unit tests | Pass — 23 tests |
+| Unit tests | Pass — 25 tests |
 | Historical reference validation | Pass — Banissa 81 streams sum exactly to 32,703 registered voters |
 | Historical publication safety | Pass — official totals are separated from Form 35A sums and replay remains withheld while stream evidence is incomplete |
 | Historical import gates | Pass — V01, V02, V03 and V07 failures are rejected |

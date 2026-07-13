@@ -22,6 +22,9 @@
 | Staleness/LKG/rollback | Implemented | 3/10-minute banners, browser cache and monotonic sequence rejection. |
 | T1/T2/T3 analytics | Implemented | Hard bound, turnout-capped bound and ward-stratified simulation. |
 | Form 35B reconciliation | Implemented | CLI and Markdown generator. |
+| Historical OCR ingestion | Implemented | Recursively inventories PDF/images, SHA-256 deduplicates, mirrors originals, processes every page, classifies 35A/35B, matches streams and creates a review CSV. |
+| Historical OCR safety gate | Implemented | OCR never writes verified results or public candidate totals; two-person review plus V01/V02/V03/V07 import remains mandatory. |
+| Same-repository updater | Implemented | One-click publisher defaults to `dansamuka/2_Elections_tallying_educational`, fetches `origin/main`, replaces changed files and does not create a new repo when it already exists. |
 | Deployment assets | Implemented | Docker, Compose, systemd, CI and GitHub Pages workflow. |
 
 ## Historical-data posture
@@ -40,3 +43,10 @@ Banissa is usable immediately as an official constituency-level archive and comp
 ## Current live-reference correction
 
 The code uses 73,480 as the 2026 Ol Kalou register total and explicitly warns against using the 2022 total of 72,997. It treats 144 as the expected atomic denominator but does not assume that the old 142-station explanation remains valid.
+
+## Windows Python 3.13 hotfix — 13 July 2026
+
+- Added `tzdata` as a core dependency.
+- Added a fixed UTC+03:00 East Africa Time fallback when Windows cannot load `Africa/Nairobi`.
+- Added regression tests for normal and deliberately missing timezone databases.
+- Added a one-click preflight assertion before payload generation.

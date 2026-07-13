@@ -17,6 +17,7 @@ from .archive import (
 )
 from .config import Settings
 from .db import EngineDB
+from .historical_ocr import inventory_documents, run_historical_ocr, tesseract_install_hint
 from .publisher import Publisher
 from .reconciliation import reconcile, render_markdown
 from .reference import load_reference
@@ -65,6 +66,32 @@ def build_parser() -> argparse.ArgumentParser:
     archive_run.add_argument("election_id")
     archive_run.add_argument("--links-only", action="store_true", help="Discover links without downloading scans")
     archive_run.set_defaults(_archive_command=True)
+
+    archive_documents = sub.add_parser(
+        "archive-documents", help="Inventory every PDF/image available for a historical election"
+    )
+    archive_documents.add_argument("election_id")
+    archive_documents.add_argument(
+        "--include", action="append", default=[], help="Additional file or directory to scan"
+    )
+    archive_documents.set_defaults(_archive_command=True)
+
+    archive_ocr = sub.add_parser(
+        "archive-ocr", help="OCR all historical-election documents into a human review queue"
+    )
+    archive_ocr.add_argument("election_id")
+    archive_ocr.add_argument(
+        "--engine",
+        default="auto",
+        choices=["auto", "embedded", "tesseract", "gcv", "textract", "dual-cloud"],
+    )
+    archive_ocr.add_argument(
+        "--include", action="append", default=[], help="Additional file or directory to scan"
+    )
+    archive_ocr.add_argument("--rebuild", action="store_true", help="Re-run existing extraction records")
+    archive_ocr.set_defaults(_archive_command=True)
+
+    sub.add_parser("ocr-doctor", help="Report local OCR capability and install hints")
     return parser
 
 
@@ -83,7 +110,17 @@ def main() -> None:
         print(json.dumps(catalog, indent=2))
         return
 
-    if args.command in {"archive-build", "archive-import", "archive-run"}:
+    if args.command == "ocr-doctor":
+        print(json.dumps(tesseract_install_hint(), indent=2))
+        return
+
+    if args.command in {
+        "archive-build",
+        "archive-import",
+        "archive-run",
+        "archive-documents",
+        "archive-ocr",
+    }:
         bundle = load_historical_bundle(settings.root, args.election_id)
         if args.command == "archive-import":
             csv_path = args.results_csv if args.results_csv.is_absolute() else settings.root / args.results_csv
@@ -107,6 +144,24 @@ def main() -> None:
                 raise SystemExit(2) from None
             build_catalog(settings.root)
             print(json.dumps(result, indent=2))
+            return
+        if args.command == "archive-documents":
+            include = [Path(value) for value in args.include]
+            inventory = inventory_documents(bundle, include)
+            print(json.dumps(inventory, indent=2))
+            return
+        if args.command == "archive-ocr":
+            include = [Path(value) for value in args.include]
+            summary = run_historical_ocr(
+                bundle,
+                settings,
+                engine_mode=args.engine,
+                extra_paths=include,
+                rebuild=args.rebuild,
+            )
+            payload = build_archive_payload(bundle)
+            build_catalog(settings.root)
+            print(json.dumps({"ocr": summary, "coverage": payload["coverage"]}, indent=2))
             return
         payload = build_archive_payload(bundle)
         build_catalog(settings.root)

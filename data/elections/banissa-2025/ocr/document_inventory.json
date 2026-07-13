@@ -1,0 +1,15 @@
+{
+  "schema": "kenya.election.ocr-inventory.v1",
+  "election_id": "banissa-2025",
+  "generated_at": "2026-07-13T15:28:47.096132Z",
+  "roots": [
+    "data/elections/banissa-2025/documents",
+    "data/elections/banissa-2025/forms",
+    "data/uploads/banissa-2025",
+    "data/public/elections/banissa-2025/forms"
+  ],
+  "documents_total": 0,
+  "pages_total": 0,
+  "duplicates_collapsed": 0,
+  "documents": []
+}

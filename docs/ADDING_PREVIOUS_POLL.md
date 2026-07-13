@@ -9,6 +9,7 @@ data/elections/example-2024/
   election.json
   streams.json
   results_template.csv
+  documents/
 ```
 
 Use a lowercase, URL-safe ID such as `banissa-2025`.
@@ -45,7 +46,17 @@ Every row needs:
 
 The loader rejects duplicate keys, duplicate polling-station codes, the wrong number of streams, or a register sum that differs from `election.json`.
 
-## 4. Generate and review the transcription CSV
+## 4. Add and OCR source documents
+
+Place all available Form 35A, Form 35B, Gazette and supporting election PDFs/images under `documents/`. Then run:
+
+```bash
+python -m olkalou_engine.cli --root . archive-ocr example-2024 --engine auto
+```
+
+This creates `ocr/review_queue.csv`. It is a pre-fill only; OCR never updates the verified ledger. See `docs/HISTORICAL_OCR.md`.
+
+## 5. Generate and review the transcription CSV
 
 Copy the Banissa CSV header and create one row per stream. Candidate columns must use the candidate IDs from `election.json`. Each completed row contains:
 
@@ -58,7 +69,7 @@ Copy the Banissa CSV header and create one row per stream. Candidate columns mus
 
 The importer rejects rows failing V01, V02, V03 or V07.
 
-## 5. Run the pipeline
+## 6. Run the pipeline
 
 ```bash
 python -m olkalou_engine.cli --root . archive-run example-2024
@@ -70,7 +81,7 @@ python -m olkalou_engine.cli --root . archive-list
 
 `archive-run` performs portal discovery and immutable downloads. `archive-import` creates the verified stream ledger. `archive-build` regenerates the public election payload. `archive-list` rebuilds the website catalog.
 
-## 6. Publish
+## 7. Publish
 
 Double-click `PUSH_TO_GITHUB.cmd`. The Pages workflow publishes every file under `data/public`, including the new election payload and archived forms.
 

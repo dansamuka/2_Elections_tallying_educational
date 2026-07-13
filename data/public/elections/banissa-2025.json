@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1783955050005,
-  "generated_at": "2026-07-13T15:04:10.005494Z",
+  "seq": 1783957082791,
+  "generated_at": "2026-07-13T15:38:02.791843Z",
   "mode": "ARCHIVE",
   "election_id": "banissa-2025",
   "election": {
@@ -35,6 +35,7 @@
     "awaiting": 81,
     "reference_only": 81,
     "archived_untranscribed": 0,
+    "ocr_review": 0,
     "registered_total": 32703,
     "registered_reported": 0,
     "registered_pct": 0.0,
@@ -113,7 +114,27 @@
     "tally_source": "OFFICIAL_DECLARATION",
     "replay_available": false,
     "replay_events": [],
-    "methodology_note": "The official register and constituency totals are loaded. Stream-level Form 35A figures remain untranscribed until the historical pipeline is run and independently reviewed."
+    "methodology_note": "The official register and constituency totals are loaded. Stream-level Form 35A figures remain untranscribed until the historical pipeline is run and independently reviewed.",
+    "ocr": {
+      "schema": "kenya.election.ocr-summary.v1",
+      "election_id": "banissa-2025",
+      "generated_at": "2026-07-13T15:28:47.097282Z",
+      "engine_mode": "embedded",
+      "engines_available": [],
+      "documents_total": 0,
+      "pages_total": 0,
+      "pages_processed": 0,
+      "form35a_detected": 0,
+      "form35b_detected": 0,
+      "streams_matched": 0,
+      "review_rows": 0,
+      "routes": {},
+      "errors": [],
+      "review_queue": "data/elections/banissa-2025/ocr/review_queue.csv",
+      "inventory": "data/elections/banissa-2025/ocr/document_inventory.json",
+      "auto_publication": false,
+      "note": "OCR output is a pre-fill only. No historical stream is added to the public tally until two-person review and statutory validation are complete."
+    }
   },
   "wards": [
     {
@@ -199,6 +220,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -217,6 +239,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -235,6 +258,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -253,6 +277,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -271,6 +296,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -289,6 +315,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -307,6 +334,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -325,6 +353,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -343,6 +372,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -361,6 +391,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -379,6 +410,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -397,6 +429,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -415,6 +448,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -433,6 +467,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -451,6 +486,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -469,6 +505,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -487,6 +524,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -505,6 +543,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -523,6 +562,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -541,6 +581,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -559,6 +600,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -577,6 +619,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -595,6 +638,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -613,6 +657,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -631,6 +676,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -649,6 +695,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -667,6 +714,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -685,6 +733,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -703,6 +752,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -721,6 +771,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -739,6 +790,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -757,6 +809,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -775,6 +828,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -793,6 +847,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -811,6 +866,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -829,6 +885,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -847,6 +904,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -865,6 +923,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -883,6 +942,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -901,6 +961,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -919,6 +980,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -937,6 +999,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -955,6 +1018,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -973,6 +1037,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -991,6 +1056,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1009,6 +1075,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1027,6 +1094,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1045,6 +1113,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1063,6 +1132,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1081,6 +1151,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1099,6 +1170,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1117,6 +1189,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1135,6 +1208,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1153,6 +1227,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1171,6 +1246,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1189,6 +1265,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1207,6 +1284,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1225,6 +1303,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1243,6 +1322,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1261,6 +1341,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1279,6 +1360,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1297,6 +1379,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1315,6 +1398,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1333,6 +1417,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1351,6 +1436,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1369,6 +1455,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1387,6 +1474,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1405,6 +1493,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1423,6 +1512,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1441,6 +1531,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1459,6 +1550,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1477,6 +1569,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1495,6 +1588,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1513,6 +1607,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1531,6 +1626,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1549,6 +1645,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1567,6 +1664,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1585,6 +1683,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1603,6 +1702,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1621,6 +1721,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     },
     {
@@ -1639,6 +1740,7 @@
       "turnout": null,
       "checks": {},
       "form_url": null,
+      "ocr": null,
       "published_at": null
     }
   ],

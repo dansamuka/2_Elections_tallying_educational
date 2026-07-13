@@ -1,0 +1,20 @@
+{
+  "schema": "kenya.election.ocr-summary.v1",
+  "election_id": "banissa-2025",
+  "generated_at": "2026-07-13T15:28:47.097282Z",
+  "engine_mode": "embedded",
+  "engines_available": [],
+  "documents_total": 0,
+  "pages_total": 0,
+  "pages_processed": 0,
+  "form35a_detected": 0,
+  "form35b_detected": 0,
+  "streams_matched": 0,
+  "review_rows": 0,
+  "routes": {},
+  "errors": [],
+  "review_queue": "data/elections/banissa-2025/ocr/review_queue.csv",
+  "inventory": "data/elections/banissa-2025/ocr/document_inventory.json",
+  "auto_publication": false,
+  "note": "OCR output is a pre-fill only. No historical stream is added to the public tally until two-person review and statutory validation are complete."
+}

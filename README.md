@@ -28,7 +28,8 @@ See `GITHUB_ONE_CLICK_GUIDE.md` for the exact flow.
 
 - 60-second watcher with conditional requests, backoff, structural canary and manifest.
 - Immutable SHA-256 form archive with versioned metadata and optional R2/S3 mirroring.
-- Optional Google Vision + AWS Textract ROI/Queries consensus adapter; the safe default is `OCR_MODE=none`, which archives and quarantines rather than guessing.
+- Historical document OCR that recursively inventories PDF/image uploads, hashes and mirrors originals, classifies Form 35A/35B pages, generates a statutory-check review queue, and never auto-publishes.
+- Optional Google Vision + AWS Textract ROI/Queries consensus adapter; local Tesseract and embedded-PDF extraction are available for historical pre-fill.
 - V01–V12 validation framework and a hard publication gate.
 - Keyboard-driven double-entry review console with explicit third-person adjudication.
 - Immutable amended-form versions, conflict detection, anomaly feed and append-only corrections ledger.
@@ -49,7 +50,15 @@ Historical contests use the same provenance model without contaminating the live
 
 Banissa 2025 is included as the first profile. Its 81-stream, 32,703-voter register and declared constituency totals are visible immediately. Stream-by-stream replay remains withheld until all 81 Form 35As and genuine reporting timestamps have been archived and independently entered.
 
+Place every available Banissa PDF/image under `data/elections/banissa-2025/documents/`, then double-click `RUN_HISTORICAL_OCR.cmd`. The OCR pass scans every page, collapses exact duplicates, creates immutable public source mirrors, and writes `data/elections/banissa-2025/ocr/review_queue.csv`. No OCR value enters the tally until two-person review and `archive-import` validation.
+
 ```bash
+# Inventory all historical source documents
+python -m olkalou_engine.cli --root . archive-documents banissa-2025
+
+# OCR all eligible files into a human review queue
+python -m olkalou_engine.cli --root . archive-ocr banissa-2025 --engine auto
+
 # List configured historical elections and rebuild the website catalog
 python -m olkalou_engine.cli --root . archive-list
 
@@ -97,7 +106,7 @@ Review console: `http://127.0.0.1:8080/`
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install -U pip
-pip install -e '.[dev,pdf,s3]'
+pip install -e '.[dev,pdf,s3,historical-ocr]'
 pytest
 python -m olkalou_engine.cli --root . publish --simulations 100
 python -m olkalou_engine.cli --root . serve-static --port 8000
@@ -198,7 +207,7 @@ src/olkalou_engine/     ingestion, archive, validation, review, publication, pro
 frontend/               live dashboard, previous-polls archive and methodology pages
 review_console/         private keyboard-driven review UI
 data/reference/         guarded live-election candidates, streams and Form 35A ROI map
-data/elections/         self-contained previous-poll profiles and transcription frames
+data/elections/         previous-poll profiles, documents, OCR queues and verified ledgers
 data/raw/               local immutable raw archive
 data/public/            generated public JSON and local mirrored forms
 docs/                   operations, deployment, OCR rehearsal and methodology notes
@@ -209,7 +218,13 @@ tests/                  safety-critical unit tests
 
 ## Deliberate limitations
 
-- Cloud OCR adapters are implemented but disabled by default. Credentials, a verified ROI/homography template and a dress-rehearsal accuracy report are required before machine-assisted use; auto-publication remains separately gated.
+- Historical OCR is always pre-fill-only. Local Tesseract helps with typed and clear scanned text, while handwriting may require cloud OCR and always requires human review.
+- Live-election cloud OCR remains disabled by default. Credentials, a verified ROI/homography template and a dress-rehearsal accuracy report are required before machine-assisted use; auto-publication remains separately gated.
 - The Gazette parser produces a review artifact; it never silently certifies rows.
 - The watcher parser is defensive but must be tested against the exact live IEBC detail page before code freeze.
 - Authentication is a bearer token, suitable behind TLS and a private access layer; it is not a full identity system.
+
+
+### Windows timezone compatibility
+
+`tzdata` is installed as a core dependency, and the worker has a fixed UTC+03:00 fallback for East Africa Time when the Windows IANA timezone database is unavailable.

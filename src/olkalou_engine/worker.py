@@ -4,8 +4,8 @@ import hashlib
 import json
 import logging
 import time
-from datetime import datetime
-from zoneinfo import ZoneInfo
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from .alerts import AlertSink
 from .corrections import result_deltas
@@ -20,7 +20,18 @@ from .storage import archive_form, build_store
 from .validation import Validator
 
 LOGGER = logging.getLogger(__name__)
-EAT = ZoneInfo("Africa/Nairobi")
+
+
+def load_eat_timezone(zoneinfo_factory=ZoneInfo):
+    """Return Nairobi time even when Windows has no system IANA timezone database."""
+    try:
+        return zoneinfo_factory("Africa/Nairobi")
+    except ZoneInfoNotFoundError:
+        # Nairobi is UTC+03:00 year-round and does not observe daylight saving time.
+        return timezone(timedelta(hours=3), name="EAT")
+
+
+EAT = load_eat_timezone()
 
 
 class Worker:

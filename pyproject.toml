@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "olkalou-live-engine"
-version = "0.2.0"
+version = "0.3.0"
 description = "Provenance-first live tracking engine for the 2026 Ol Kalou parliamentary by-election"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -15,16 +15,22 @@ dependencies = [
   "pydantic>=2.8,<3",
   "pydantic-settings>=2.4,<3",
   "python-multipart>=0.0.9,<1",
+  "tzdata>=2025.2",
   "uvicorn[standard]>=0.30,<1",
 ]
 
 [project.optional-dependencies]
 ocr = [
-  "Pillow>=10,<12",
+  "Pillow>=10,<13",
   "opencv-python-headless>=4.10,<5",
-  "pypdfium2>=4.30,<5",
+  "pypdfium2>=4.30,<6",
   "google-cloud-vision>=3.8,<4",
   "boto3>=1.35,<2",
+]
+historical-ocr = [
+  "Pillow>=10,<13",
+  "pypdfium2>=4.30,<6",
+  "pytesseract>=0.3.13,<1",
 ]
 pdf = ["pdfplumber>=0.11,<1"]
 s3 = ["boto3>=1.35,<2"]

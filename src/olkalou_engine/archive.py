@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from .historical_ocr import load_ocr_stream_extractions, load_ocr_summary
 from .portal import PortalClient, extension_from_response
 
 
@@ -203,6 +204,8 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
     manifest_by_stream = _manifest_by_stream(bundle)
     candidate_ids = [str(c["id"]) for c in bundle.candidates]
     official = bundle.profile.get("official_declaration", {})
+    ocr_summary = load_ocr_summary(bundle)
+    ocr_by_stream = load_ocr_stream_extractions(bundle)
     stream_payloads: list[dict[str, Any]] = []
     candidate_totals = {cid: 0 for cid in candidate_ids}
     published_registered = 0
@@ -251,7 +254,8 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
                     "rejected": rejected,
                 })
         else:
-            state = "ARCHIVED" if archived else "REFERENCE_ONLY"
+            ocr_record = ocr_by_stream.get(stream_key)
+            state = "OCR_REVIEW" if ocr_record else ("ARCHIVED" if archived else "REFERENCE_ONLY")
             payload = {
                 "stream_key": stream_key,
                 "polling_station_code": reference.get("polling_station_code"),
@@ -267,7 +271,12 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
                 "cast": None,
                 "turnout": None,
                 "checks": {},
-                "form_url": (archived or {}).get("public_url"),
+                "form_url": (ocr_record or {}).get("public_url") or (archived or {}).get("public_url"),
+                "ocr": {
+                    "route": (ocr_record or {}).get("route"),
+                    "confidence": (ocr_record or {}).get("confidence"),
+                    "checks": (ocr_record or {}).get("checks", {}),
+                } if ocr_record else None,
                 "published_at": None,
             }
         stream_payloads.append(payload)
@@ -305,6 +314,7 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
         "replay_available": stream_results_complete and len(replay_events) == len(results),
         "replay_events": replay_events if stream_results_complete else [],
         "methodology_note": bundle.profile.get("methodology", {}).get("note"),
+        "ocr": ocr_summary,
     }
     coverage = {
         "streams_total": len(bundle.streams),
@@ -314,6 +324,7 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
         "awaiting": max(0, len(bundle.streams) - len(manifest_by_stream)),
         "reference_only": sum(1 for row in stream_payloads if row["state"] == "REFERENCE_ONLY"),
         "archived_untranscribed": sum(1 for row in stream_payloads if row["state"] == "ARCHIVED"),
+        "ocr_review": sum(1 for row in stream_payloads if row["state"] == "OCR_REVIEW"),
         "registered_total": int(bundle.profile["register"]["total"]),
         "registered_reported": published_registered,
         "registered_pct": published_registered / int(bundle.profile["register"]["total"]) if published_registered else 0.0,
@@ -349,7 +360,14 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
             "register_source_url": bundle.profile["register"].get("source_url"),
             "candidate_source": "Kenya Gazette Notice No. 15731, 29 October 2025",
         },
-        "pipeline_health": {"watcher": "ARCHIVE", "extractor": "MANUAL_REVIEW", "last_portal_ok": None, "worker_id": "archive"},
+        "pipeline_health": {
+            "watcher": "ARCHIVE",
+            "extractor": (
+                "OCR_REVIEW_READY" if ocr_summary.get("pages_processed", 0) else "MANUAL_REVIEW"
+            ),
+            "last_portal_ok": None,
+            "worker_id": "archive",
+        },
         "coverage": coverage,
         "totals": {
             "valid_votes": valid_votes,

@@ -58,12 +58,13 @@
     $("archiveStreams").textContent = `${coverage.streams_total || 0}/${coverage.streams_total || 0}`;
     $("archiveForms").textContent = `${archive.forms_archived || 0}/${archive.forms_expected || coverage.streams_total || 0}`;
     $("archiveTranscribed").textContent = `${archive.stream_results_transcribed || 0}/${coverage.streams_total || 0}`;
+    $("archiveOcrReview").textContent = `${archive.ocr?.review_rows || 0}`;
     $("archiveRegistered").textContent = number(coverage.registered_total);
     $("archiveReplayState").textContent = archive.replay_available ? "READY" : "WITHHELD";
     $("archiveValid").textContent = `${number(payload.totals?.valid_votes)} valid`;
     $("archiveStatus").textContent = archive.stream_results_complete
       ? "All stream results are source-linked and the historical count can be replayed."
-      : `${archive.forms_archived || 0} of ${archive.forms_expected || coverage.streams_total || 0} forms archived; ${archive.stream_results_transcribed || 0} stream tallies independently transcribed. Declared constituency totals are shown separately from the incomplete Form 35A sum.`;
+      : `${archive.forms_archived || 0} of ${archive.forms_expected || coverage.streams_total || 0} forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows awaiting human review; ${archive.stream_results_transcribed || 0} stream tallies independently transcribed. Declared constituency totals remain separate from the incomplete Form 35A sum.`;
     renderCandidates(payload.candidates || []);
     renderDeclaration();
     renderReplay();
@@ -182,7 +183,8 @@
       const leader = votes[0];
       const colour = candidateMap.get(leader?.[0])?.colour || "#3FA76B";
       style = `background:${colour};opacity:.85`;
-    } else if (stream.state === "ARCHIVED") className += " archived";
+    } else if (stream.state === "OCR_REVIEW") className += " ocr-review";
+    else if (stream.state === "ARCHIVED") className += " archived";
     else className += " reference-only";
     return `<button type="button" class="${className}" style="${style}" data-stream-key="${escapeHtml(stream.stream_key)}" title="${escapeHtml(stream.station_name)} · ${escapeHtml(stream.state)}" aria-label="${escapeHtml(stream.station_name)} stream ${stream.stream_no}: ${escapeHtml(stream.state)}"></button>`;
   }
@@ -190,8 +192,13 @@
   function renderReadiness() {
     const archive = payload.archive || {};
     const total = payload.coverage?.streams_total || 0;
+    const ocr = archive.ocr || {};
     const checks = [
       ["Certified stream register", total, total],
+      ["Source documents inventoried", ocr.documents_total || 0, ocr.documents_total || 0],
+      ["OCR pages processed", ocr.pages_processed || 0, ocr.pages_total || 0],
+      ["Form 35A streams matched", ocr.streams_matched || 0, total],
+      ["OCR rows ready for review", ocr.review_rows || 0, total],
       ["IEBC forms archived", archive.forms_archived || 0, archive.forms_expected || total],
       ["Independent transcription", archive.stream_results_transcribed || 0, total],
       ["Replay timestamps", archive.replay_available ? total : 0, total],
@@ -215,7 +222,7 @@
     $("archiveTable").innerHTML = filtered.map(stream => `<tr>
       <td><button type="button" class="text-button archive-table-open" data-stream-key="${escapeHtml(stream.stream_key)}">${escapeHtml(stream.stream_key)}</button><br><span class="muted">${escapeHtml(stream.station_name)}</span></td>
       <td>${escapeHtml(stream.ward)}</td>
-      <td><span class="state-badge state-${escapeHtml(stream.state)}">${escapeHtml(stream.state)}</span></td>
+      <td><span class="state-badge state-${escapeHtml(stream.state)}">${escapeHtml(stream.state)}</span>${stream.ocr?.route ? `<br><span class="muted">${escapeHtml(stream.ocr.route)}</span>` : ""}</td>
       <td>${number(stream.registered)}</td><td>${number(stream.valid)}</td>
       <td>${stream.form_url ? `<a href="${escapeHtml(stream.form_url)}" target="_blank" rel="noopener">Form 35A ↗</a>` : "—"}</td>
     </tr>`).join("");
@@ -230,6 +237,7 @@
     $("archiveDialogBody").innerHTML = `<p class="eyebrow">${escapeHtml(stream.stream_key)} · ${escapeHtml(stream.ward)}</p><h2>${escapeHtml(stream.station_name)}</h2>
       <p><span class="state-badge state-${escapeHtml(stream.state)}">${escapeHtml(stream.state)}</span></p>
       <table class="detail-table"><tbody><tr><td>Registered</td><td class="numeric">${number(stream.registered)}</td></tr>${votes || `<tr><td colspan="2" class="muted">No independently verified stream tally has been imported.</td></tr>`}</tbody></table>
+      ${stream.ocr ? `<p class="microcopy">OCR prefill: <strong>${escapeHtml(stream.ocr.route || "REVIEW")}</strong> · confidence ${stream.ocr.confidence == null ? "—" : percent(stream.ocr.confidence)}</p>` : ""}
       ${stream.form_url ? `<p><a href="${escapeHtml(stream.form_url)}" target="_blank" rel="noopener">Open archived Form 35A ↗</a></p>` : `<p class="muted">The form has not yet been archived by this repository.</p>`}`;
     $("archiveStreamDialog").showModal();
   }

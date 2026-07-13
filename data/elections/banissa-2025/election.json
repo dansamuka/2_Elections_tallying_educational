@@ -73,5 +73,14 @@
     "stream_results_complete": false,
     "replay_available": false,
     "note": "The official register and constituency totals are loaded. Stream-level Form 35A figures remain untranscribed until the historical pipeline is run and independently reviewed."
+  },
+  "ocr": {
+    "default_engine": "auto",
+    "documents_dir": "documents",
+    "auto_publication": false,
+    "review_policy": "TWO_PERSON_INDEPENDENT",
+    "notes": [
+      "OCR is a pre-fill only. No stream enters the historical tally until independent human review and statutory checks pass."
+    ]
   }
 }
