@@ -16,12 +16,12 @@ The updater refuses to create a different repository.
 
 ## Automated operation
 
-The workflow checks the configured IEBC portal elections every five minutes. It follows the constituency detail view and pagination, downloads new or amended Form 35A/35B files, archives each SHA-256 version, runs embedded-text/Tesseract OCR, rebuilds the historical payload, commits meaningful changes and deploys the updated Pages site.
+The workflow checks Banissa and Ol Kalou on the configured IEBC portal every five minutes. It follows the constituency detail view and pagination, downloads new or amended Form 35A/35B files, archives each SHA-256 version, runs embedded-text/Tesseract OCR, rebuilds the historical or live/OCR payload, commits meaningful changes and deploys the updated Pages site.
 
 ## Manual operation
 
 - On the archive webpage, click **Update now**, then select **Run workflow** in GitHub Actions.
-- On Windows, double-click `UPDATE_IEBC_FORMS_NOW.cmd` for an authenticated direct workflow dispatch.
+- On Windows, double-click `UPDATE_IEBC_FORMS_NOW.cmd` for both elections or `UPDATE_OL_KALOU_NOW.cmd` for Ol Kalou only.
 
 ## Publication gate
 

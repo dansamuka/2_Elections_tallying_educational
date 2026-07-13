@@ -28,7 +28,7 @@ def test_sync_plan_targets_existing_repository() -> None:
     plan = load_sync_plan(REPO_ROOT)
     assert plan.enabled is True
     assert plan.interval_minutes == 5
-    assert plan.election_ids == ("banissa-2025",)
+    assert plan.election_ids == ("banissa-2025", "ol-kalou-2026")
     assert plan.repository == "dansamuka/2_Elections_tallying_educational"
     assert plan.workflow_url.endswith("sync-historical-forms.yml")
 
@@ -186,3 +186,64 @@ def test_historical_archive_rejects_wrong_sized_download_all_bundle_before_archi
         assert "expected exactly 81" in str(exc)
     assert not bundle.manifest_path.exists()
     assert not any((root / "data" / "public" / "elections" / "banissa-2025" / "forms").rglob("*"))
+
+
+def test_sync_plan_includes_banissa_and_ol_kalou() -> None:
+    plan = load_sync_plan(REPO_ROOT)
+    assert plan.election_ids == ("banissa-2025", "ol-kalou-2026")
+
+
+def test_ol_kalou_live_profile_allows_unresolved_atomic_reference() -> None:
+    bundle = load_historical_bundle(REPO_ROOT, "ol-kalou-2026")
+    assert bundle.profile["mode"] == "LIVE"
+    assert bundle.profile["election"]["county"] == "NYANDARUA"
+    assert bundle.profile["portal"]["detail_url"].endswith("id=141&ft=&p=2&es=")
+    assert len(bundle.streams) == 144
+    assert sum(1 for row in bundle.streams if row["registered"] is None) == 144
+    assert sum(row["expected_forms"] for row in bundle.profile["portal"]["hierarchy"]["wards"]) == 144
+
+
+def test_ol_kalou_public_payload_is_pre_poll_and_reference_gated() -> None:
+    from olkalou_engine.archive import build_archive_payload
+
+    bundle = load_historical_bundle(REPO_ROOT, "ol-kalou-2026")
+    payload = build_archive_payload(bundle)
+    assert payload["mode"] == "LIVE"
+    assert payload["status"] == "PRE_POLL"
+    assert payload["reference"]["complete"] is False
+    assert payload["coverage"]["streams_total"] == 144
+    assert payload["archive"]["forms_expected"] == 144
+    assert payload["archive"]["tally_source"] == "NO_VERIFIED_TALLY"
+
+
+def test_ol_kalou_pre_poll_zero_forms_is_a_valid_sync_state(tmp_path: Path, monkeypatch) -> None:
+    root = tmp_path / "repo"
+    target_parent = root / "data" / "elections"
+    target_parent.mkdir(parents=True)
+    shutil.copytree(REPO_ROOT / "data" / "elections" / "ol-kalou-2026", target_parent / "ol-kalou-2026")
+    bundle = load_historical_bundle(root, "ol-kalou-2026")
+
+    class FakeClient:
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def conditional_get(self, url, etag=None, last_modified=None):
+            return FetchResult(200, b"<html>OL KALOU 0 of 144</html>", {}, url)
+
+        def reported_counts(self, html):
+            return 0, 144
+
+        def discover(self, html, base_url=None):
+            return []
+
+        def close(self):
+            return None
+
+    monkeypatch.setattr("olkalou_engine.archive.PortalClient", FakeClient)
+    result = run_historical_archive(bundle, user_agent="test", download=True)
+    assert result["status"] == "UPDATED"
+    assert result["discovered"] == 0
+    assert result["downloaded"] == 0
+    manifest = json.loads(bundle.manifest_path.read_text(encoding="utf-8"))
+    assert manifest["portal_reported"] == 0
+    assert manifest["portal_expected"] == 144

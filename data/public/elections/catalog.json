@@ -1,7 +1,15 @@
 {
   "schema": "kenya.election.catalog.v1",
-  "default": "banissa-2025",
+  "default": "ol-kalou-2026",
   "elections": [
+    {
+      "id": "ol-kalou-2026",
+      "label": "Ol Kalou · 16 Jul 2026",
+      "mode": "LIVE",
+      "constituency": "OL KALOU",
+      "date": "2026-07-16",
+      "data_url": "../data/public/elections/ol-kalou-2026.json"
+    },
     {
       "id": "banissa-2025",
       "label": "Banissa · 27 Nov 2025",

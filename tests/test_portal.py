@@ -145,3 +145,249 @@ def test_detail_redirect_back_to_national_index_is_rejected(monkeypatch):
         assert "lost its row id" in str(exc)
     finally:
         client.close()
+
+
+def test_hierarchy_selects_configured_county_only():
+    client = PortalClient(
+        "https://forms.example/index.php?r=site%2Findex&p=2&l=2",
+        "BANISSA",
+        "test",
+        constituency_code="040",
+        county="MANDERA",
+    )
+    soup = BeautifulSoup(
+        '''<html><body><ul class="breadcrumb"><li>KENYA</li></ul>
+        <table><thead><tr><th>County</th><th>Reported</th></tr></thead><tbody>
+        <tr id="4" onclick='let id="4"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>KILIFI</td><td>193 of 193</td></tr>
+        <tr id="10" onclick='let id="10"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>MANDERA</td><td>81 of 81</td></tr>
+        </tbody></table></body></html>''',
+        "html.parser",
+    )
+    urls = client._hierarchy_child_urls(soup, "https://forms.example/index.php?r=site%2Findex&p=2")
+    client.close()
+    assert urls == ["https://forms.example/index.php?r=site%2Findex&id=10&p=2"]
+
+
+def test_hierarchy_selects_configured_constituency_inside_county():
+    client = PortalClient(
+        "https://forms.example/index.php?r=site%2Findex&p=2&l=2",
+        "BANISSA",
+        "test",
+        constituency_code="040",
+        county="MANDERA",
+    )
+    soup = BeautifulSoup(
+        '''<html><body><ul class="breadcrumb"><li>KENYA</li><li>MANDERA</li></ul>
+        <table><thead><tr><th>Constituency</th><th>Reported</th></tr></thead><tbody>
+        <tr id="90" onclick='let id="90"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>BANISSA</td><td>81 of 81</td></tr>
+        </tbody></table></body></html>''',
+        "html.parser",
+    )
+    urls = client._hierarchy_child_urls(soup, "https://forms.example/index.php?r=site%2Findex&id=10&p=2")
+    client.close()
+    assert urls == ["https://forms.example/index.php?r=site%2Findex&id=90&p=2"]
+
+
+def test_hierarchy_descends_all_rows_after_constituency_breadcrumb():
+    client = PortalClient(
+        "https://forms.example/index.php?r=site%2Findex&p=2&l=2",
+        "BANISSA",
+        "test",
+        constituency_code="040",
+        county="MANDERA",
+    )
+    soup = BeautifulSoup(
+        '''<html><body><ul class="breadcrumb"><li>KENYA</li><li>MANDERA</li><li>BANISSA</li></ul>
+        <table><thead><tr><th>Ward</th><th>Reported</th></tr></thead><tbody>
+        <tr id="701" onclick='let id="701"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>GUBA</td><td>20 of 20</td></tr>
+        <tr id="702" onclick='let id="702"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>MALKAMARI</td><td>17 of 17</td></tr>
+        </tbody></table></body></html>''',
+        "html.parser",
+    )
+    urls = client._hierarchy_child_urls(soup, "https://forms.example/index.php?r=site%2Findex&id=90&p=2")
+    client.close()
+    assert urls == [
+        "https://forms.example/index.php?r=site%2Findex&id=701&p=2",
+        "https://forms.example/index.php?r=site%2Findex&id=702&p=2",
+    ]
+
+
+def test_leaf_page_prefers_download_icon_and_ignores_preview_and_download_all():
+    client = PortalClient(
+        "https://forms.example/index.php?r=site%2Findex&p=2&l=2",
+        "BANISSA",
+        "test",
+        constituency_code="040",
+        county="MANDERA",
+    )
+    soup = BeautifulSoup(
+        '''<html><body>
+        <ul class="breadcrumb"><li>KENYA</li><li>MANDERA</li><li>BANISSA</li><li>GUBA</li><li>GUBA PRIMARY SCHOOL</li></ul>
+        <a href="/index.php?r=site%2Fdownload-all&ft=1">Download All</a>
+        <table><thead><tr><th>Election/Date</th><th>Polling Station</th><th>Status</th><th>Download</th></tr></thead>
+        <tbody><tr><td>27/11/2025 - MNA</td><td>GUBA PRIMARY SCHOOL 01</td><td>Reported</td><td>
+        <a href="/index.php?r=site%2Fview&id=abc" title="View"><i class="fa fa-eye"></i></a>
+        <a href="/index.php?r=site%2Fdownload&id=abc" title="Download"><i class="fa fa-cloud-download"></i></a>
+        </td></tr></tbody></table></body></html>''',
+        "html.parser",
+    )
+    forms = client._extract_form_links(
+        soup,
+        "https://forms.example/index.php?r=site%2Findex&id=999&p=2",
+        constituency_scoped=True,
+        include_bulk=False,
+    )
+    client.close()
+    assert len(forms) == 1
+    assert "site%2Fdownload&id=abc" in forms[0].source_url
+    assert "GUBA PRIMARY SCHOOL 01" in forms[0].source_label
+
+
+def test_discover_walks_county_constituency_ward_centre_and_leaf(monkeypatch):
+    from olkalou_engine.portal import FetchResult
+
+    index_url = "https://forms.example/index.php?r=site%2Findex&p=2&l=2"
+    initial_detail = "https://forms.example/index.php?r=site%2Findex&id=90&p=2"
+    client = PortalClient(
+        index_url,
+        "BANISSA",
+        "test",
+        constituency_code="040",
+        detail_url=initial_detail,
+        county="MANDERA",
+    )
+    pages = {
+        initial_detail: '''<html><body><ul class="breadcrumb"><li>KENYA</li></ul>
+          <table><thead><tr><th>County</th></tr></thead><tbody>
+          <tr id="10" onclick='let id="10"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>MANDERA</td></tr>
+          </tbody></table></body></html>''',
+        "https://forms.example/index.php?r=site%2Findex&id=10&p=2": '''<html><body><ul class="breadcrumb"><li>KENYA</li><li>MANDERA</li></ul>
+          <table><thead><tr><th>Constituency</th></tr></thead><tbody>
+          <tr id="91" onclick='let id="91"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>BANISSA</td></tr>
+          </tbody></table></body></html>''',
+        "https://forms.example/index.php?r=site%2Findex&id=91&p=2": '''<html><body><ul class="breadcrumb"><li>KENYA</li><li>MANDERA</li><li>BANISSA</li></ul>
+          <table><tbody><tr id="701" onclick='let id="701"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>GUBA</td></tr></tbody></table></body></html>''',
+        "https://forms.example/index.php?r=site%2Findex&id=701&p=2": '''<html><body><ul class="breadcrumb"><li>KENYA</li><li>MANDERA</li><li>BANISSA</li><li>GUBA</li></ul>
+          <table><tbody><tr id="801" onclick='let id="801"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>GUBA PRIMARY SCHOOL</td></tr></tbody></table></body></html>''',
+        "https://forms.example/index.php?r=site%2Findex&id=801&p=2": '''<html><body><ul class="breadcrumb"><li>KENYA</li><li>MANDERA</li><li>BANISSA</li><li>GUBA</li><li>GUBA PRIMARY SCHOOL</li></ul>
+          <table><tbody><tr><td>27/11/2025 - MNA</td><td>GUBA PRIMARY SCHOOL 01</td><td>Reported</td><td>
+          <a href="/index.php?r=site%2Fview&id=abc">View</a>
+          <a href="/index.php?r=site%2Fdownload&id=abc">Download</a>
+          </td></tr></tbody></table></body></html>''',
+    }
+
+    def fake_get(url, attempts=5):
+        body = pages[url].encode()
+        return FetchResult(200, body, {"content-type": "text/html"}, url)
+
+    monkeypatch.setattr(client, "get_with_backoff", fake_get)
+    forms = client.discover(b"<html><body>BANISSA 81 of 81</body></html>", index_url)
+    client.close()
+    assert len(forms) == 1
+    assert forms[0].source_url.endswith("site%2Fdownload&id=abc")
+
+
+def test_ol_kalou_current_index_count_is_read() -> None:
+    client = PortalClient(
+        "https://forms.iebc.or.ke/index.php?r=site%2Findex&p=2&l=2",
+        "OL KALOU",
+        "test",
+        constituency_code="091",
+        county="NYANDARUA",
+    )
+    reported, expected = client.reported_counts(
+        b"<html><body>OL KALOU 0 of 144 (0%)</body></html>"
+    )
+    client.close()
+    assert (reported, expected) == (0, 144)
+
+
+def test_ol_kalou_hierarchy_selects_nyandarua_then_constituency() -> None:
+    client = PortalClient(
+        "https://forms.example/index.php?r=site%2Findex&p=2&l=2",
+        "OL KALOU",
+        "test",
+        constituency_code="091",
+        county="NYANDARUA",
+    )
+    county_soup = BeautifulSoup(
+        '''<html><body><ul class="breadcrumb"><li>KENYA</li></ul>
+        <table><thead><tr><th>County</th><th>Reported</th></tr></thead><tbody>
+        <tr id="18" onclick='let id="18"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>NYANDARUA</td><td>0 of 144</td></tr>
+        <tr id="19" onclick='let id="19"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>NYERI</td><td>0 of 0</td></tr>
+        </tbody></table></body></html>''',
+        "html.parser",
+    )
+    assert client._hierarchy_child_urls(
+        county_soup, "https://forms.example/index.php?r=site%2Findex&p=2"
+    ) == ["https://forms.example/index.php?r=site%2Findex&id=18&p=2"]
+
+    constituency_soup = BeautifulSoup(
+        '''<html><body><ul class="breadcrumb"><li>KENYA</li><li>NYANDARUA</li></ul>
+        <table><thead><tr><th>Constituency</th><th>Reported</th></tr></thead><tbody>
+        <tr id="141" onclick='let id="141"; location.href="/index.php?r=site%2Findex&id=" + id + "&ft=&p=2&es=";'><td>OL KALOU</td><td>0 of 144</td></tr>
+        </tbody></table></body></html>''',
+        "html.parser",
+    )
+    assert client._hierarchy_child_urls(
+        constituency_soup, "https://forms.example/index.php?r=site%2Findex&id=18&p=2"
+    ) == ["https://forms.example/index.php?r=site%2Findex&id=141&ft=&p=2&es="]
+    client.close()
+
+
+def test_ol_kalou_hierarchy_descends_all_five_wards() -> None:
+    client = PortalClient(
+        "https://forms.example/index.php?r=site%2Findex&p=2&l=2",
+        "OL KALOU",
+        "test",
+        constituency_code="091",
+        county="NYANDARUA",
+    )
+    soup = BeautifulSoup(
+        '''<html><body><ul class="breadcrumb"><li>KENYA</li><li>NYANDARUA</li><li>OL KALOU</li></ul>
+        <table><thead><tr><th>County Assembly Ward</th><th>Reported</th></tr></thead><tbody>
+        <tr id="457" onclick='let id="457"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>RURII</td><td>0 of 33</td></tr>
+        <tr id="454" onclick='let id="454"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>KANJUIRI RANGE</td><td>0 of 32</td></tr>
+        <tr id="453" onclick='let id="453"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>KARAU</td><td>0 of 27</td></tr>
+        <tr id="456" onclick='let id="456"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>KAIMBAGA</td><td>0 of 27</td></tr>
+        <tr id="455" onclick='let id="455"; location.href="/index.php?r=site%2Findex&id=" + id + "&p=2";'><td>MIRANGINE</td><td>0 of 25</td></tr>
+        </tbody></table></body></html>''',
+        "html.parser",
+    )
+    urls = client._hierarchy_child_urls(
+        soup, "https://forms.example/index.php?r=site%2Findex&id=141&p=2"
+    )
+    client.close()
+    assert len(urls) == 5
+    assert urls[0].endswith("id=457&p=2")
+    assert urls[-1].endswith("id=455&p=2")
+
+
+def test_ol_kalou_leaf_prefers_individual_cloud_download() -> None:
+    client = PortalClient(
+        "https://forms.example/index.php?r=site%2Findex&p=2&l=2",
+        "OL KALOU",
+        "test",
+        constituency_code="091",
+        county="NYANDARUA",
+    )
+    soup = BeautifulSoup(
+        '''<html><body>
+        <ul class="breadcrumb"><li>KENYA</li><li>NYANDARUA</li><li>OL KALOU</li><li>RURII</li><li>EXAMPLE PRIMARY SCHOOL</li></ul>
+        <a href="/index.php?r=site%2Fdownload-all&ft=1">Download All</a>
+        <table><tbody><tr><td>16/07/2026 - MNA</td><td>EXAMPLE PRIMARY SCHOOL 01</td><td>Reported</td><td>
+        <a href="/index.php?r=site%2Fview&id=xyz" title="View"><i class="fa fa-eye"></i></a>
+        <a href="/index.php?r=site%2Fdownload&id=xyz" title="Download"><i class="fa fa-cloud-download"></i></a>
+        </td></tr></tbody></table></body></html>''',
+        "html.parser",
+    )
+    forms = client._extract_form_links(
+        soup,
+        "https://forms.example/index.php?r=site%2Findex&id=999&p=2",
+        constituency_scoped=True,
+        include_bulk=False,
+    )
+    client.close()
+    assert len(forms) == 1
+    assert "site%2Fdownload&id=xyz" in forms[0].source_url
+    assert forms[0].stream_no == 1

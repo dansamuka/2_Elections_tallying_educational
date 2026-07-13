@@ -94,10 +94,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     archive_sync = sub.add_parser(
         "archive-sync",
-        help="Check the IEBC portal, download new forms, run OCR, and rebuild the archive dashboard",
+        help="Check the IEBC portal, download new forms, run OCR, and rebuild election dashboards",
     )
     archive_sync.add_argument("election_id", nargs="?", help="Election id, or omit with --all")
-    archive_sync.add_argument("--all", action="store_true", help="Sync every election enabled in data/elections/sync.json")
+    archive_sync.add_argument("--all", action="store_true", help="Sync every live or historical election enabled in data/elections/sync.json")
     archive_sync.add_argument(
         "--engine",
         default=None,

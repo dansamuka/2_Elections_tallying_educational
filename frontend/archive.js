@@ -78,15 +78,18 @@
       ? `Portal sync ${sync.state || "UNKNOWN"} · ${lastSync}`
       : `Portal sync not yet run · scheduled every ${syncMinutes} min`;
     $("archiveStreams").textContent = `${coverage.streams_total || 0}/${coverage.streams_total || 0}`;
-    $("archiveForms").textContent = `${archive.forms_archived || 0}/${archive.forms_expected || coverage.streams_total || 0}`;
+    const sourceForms = Math.max(Number(archive.forms_archived || 0), Number(archive.portal_downloaded || 0));
+    $("archiveForms").textContent = `${sourceForms}/${archive.forms_expected || coverage.streams_total || 0}`;
     $("archiveTranscribed").textContent = `${archive.stream_results_transcribed || 0}/${coverage.streams_total || 0}`;
     $("archiveOcrReview").textContent = `${archive.ocr?.review_rows || 0}`;
     $("archiveRegistered").textContent = number(coverage.registered_total);
     $("archiveReplayState").textContent = archive.replay_available ? "READY" : "WITHHELD";
     $("archiveValid").textContent = `${number(payload.totals?.valid_votes)} valid`;
     $("archiveStatus").textContent = archive.stream_results_complete
-      ? "All stream results are source-linked and the historical count can be replayed."
-      : `${archive.forms_archived || 0} of ${archive.forms_expected || coverage.streams_total || 0} forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows awaiting human review; ${archive.stream_results_transcribed || 0} stream tallies independently transcribed. Declared constituency totals remain separate from the incomplete Form 35A sum.`;
+      ? "All stream results are source-linked and the count can be replayed."
+      : payload.mode === "LIVE"
+        ? `${sourceForms} of ${archive.forms_expected || coverage.streams_total || 0} IEBC forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows await human review; ${archive.stream_results_transcribed || 0} stream tallies are independently verified. No OCR figure enters the live tally automatically.`
+        : `${sourceForms} of ${archive.forms_expected || coverage.streams_total || 0} forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows awaiting human review; ${archive.stream_results_transcribed || 0} stream tallies independently transcribed. Declared constituency totals remain separate from the incomplete Form 35A sum.`;
     renderCandidates(payload.candidates || []);
     renderDeclaration();
     renderReplay();
@@ -122,7 +125,8 @@
       $("replayPosition").textContent = `${replayPosition} / ${total}`;
       $("archiveGridCounter").textContent = `${snapshot.coverage.published}/${snapshot.coverage.streams_total}`;
     } else {
-      $("archiveGridCounter").textContent = `${payload.archive?.forms_archived || 0}/${payload.coverage?.streams_total || 0} forms`;
+      const archivedSourceCount = Math.max(Number(payload.archive?.forms_archived || 0), Number(payload.archive?.portal_downloaded || 0));
+      $("archiveGridCounter").textContent = `${archivedSourceCount}/${payload.coverage?.streams_total || 0} forms`;
     }
   }
 

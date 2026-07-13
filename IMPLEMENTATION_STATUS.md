@@ -52,3 +52,13 @@ The code uses 73,480 as the 2026 Ol Kalou register total and explicitly warns ag
 - Added a fixed UTC+03:00 East Africa Time fallback when Windows cannot load `Africa/Nairobi`.
 - Added regression tests for normal and deliberately missing timezone databases.
 - Added a one-click preflight assertion before payload generation.
+
+## July 2026 Ol Kalou hierarchy extension
+
+- Added `ol-kalou-2026` to the same five-minute portal/OCR plan as Banissa.
+- Configured `KENYA → NYANDARUA → OL KALOU → ward → polling centre → stream`.
+- Pinned the current IEBC constituency row id to `141`.
+- Added the five ward denominators totalling 144 forms.
+- Added an Ol Kalou-only manual GitHub Actions trigger.
+- Preserved a hard reference gate: unresolved atomic register rows may support source archiving and OCR review, but not tally publication.
+

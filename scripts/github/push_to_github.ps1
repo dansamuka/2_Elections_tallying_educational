@@ -111,6 +111,8 @@ if (-not $SkipTests) {
     Assert-LastExitCode "Could not generate the live site payload."
     & $Python -m olkalou_engine.cli --root . archive-build banissa-2025
     Assert-LastExitCode "Could not generate the Banissa archive payload."
+    & $Python -m olkalou_engine.cli --root . archive-build ol-kalou-2026
+    Assert-LastExitCode "Could not generate the Ol Kalou live/OCR payload."
 }
 
 Write-Step "Synchronizing the existing repository history"
@@ -153,7 +155,7 @@ Write-Step "Committing the replacement snapshot"
 Assert-LastExitCode "Could not stage the repository files."
 & git diff --cached --quiet
 if ($LASTEXITCODE -ne 0) {
-    & git commit -m "Fix IEBC constituency discovery and bundle validation"
+    & git commit -m "Add Banissa and Ol Kalou hierarchical IEBC form sync"
     Assert-LastExitCode "Could not create the Git commit."
 } else {
     Write-Host "No changed files were found. The existing repository is already current." -ForegroundColor DarkGray

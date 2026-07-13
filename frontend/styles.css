@@ -53,3 +53,5 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .secondary-action{background:var(--surface-2);color:var(--ink)}
 .update-block small+small{margin-top:3px}
 @media(max-width:760px){.archive-picker{align-items:stretch;flex-direction:column}.archive-picker-actions{min-width:0}.sync-actions{display:grid;grid-template-columns:1fr 1fr}.sync-actions small{grid-column:1/-1}.primary-action,.secondary-action{width:100%}}
+
+.live-sync-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}.live-sync-actions .primary-action,.live-sync-actions .secondary-action{min-height:34px;padding:7px 10px;font-size:.64rem}@media(max-width:720px){.live-sync-actions{justify-content:flex-start;flex-wrap:wrap}.live-sync-actions .primary-action,.live-sync-actions .secondary-action{width:auto}}

@@ -3,13 +3,15 @@
   "enabled": true,
   "interval_minutes": 5,
   "elections": [
-    "banissa-2025"
+    "banissa-2025",
+    "ol-kalou-2026"
   ],
   "engine": "auto",
   "repository": "dansamuka/2_Elections_tallying_educational",
   "workflow_file": "sync-historical-forms.yml",
   "notes": [
-    "The scheduled workflow checks the IEBC portal every five minutes, but GitHub may delay scheduled jobs under load.",
-    "OCR output is review-only and never enters the published tally automatically."
+    "The scheduled workflow checks both Banissa and Ol Kalou through the IEBC county-to-stream hierarchy every five minutes; GitHub may delay scheduled jobs under load.",
+    "Ol Kalou is a live/pre-poll target. OCR output is review-only and cannot enter the tally while atomic reference rows or ballot order remain unverified.",
+    "Individual cloud-download links are used. Download All and eye/preview controls are ignored."
   ]
 }

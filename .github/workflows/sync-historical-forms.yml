@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       election_id:
-        description: "Historical election id, or all"
+        description: "Election id, or all"
         required: true
         default: "all"
         type: string
@@ -43,7 +43,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     env:
       ENGINE_ROOT: .
       PORTAL_USER_AGENT: "KenyaElectionTallyingWall/0.4 (+https://dansamuka.github.io/2_Elections_tallying_educational/methodology.html)"
@@ -135,7 +135,7 @@ jobs:
         shell: bash
         run: |
           {
-            echo "## IEBC historical forms sync"
+            echo "## IEBC forms and OCR sync"
             echo
             echo "- Portal: https://forms.iebc.or.ke/index.php?r=site%2Findex&p=2&l=2"
             echo "- Target: ${{ steps.target.outputs.election }}"

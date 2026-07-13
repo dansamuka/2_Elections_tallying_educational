@@ -1,0 +1,196 @@
+{
+  "schema": "kenya.election.profile.v1",
+  "id": "ol-kalou-2026",
+  "mode": "LIVE",
+  "election": {
+    "title": "Ol Kalou Parliamentary By-Election 2026",
+    "constituency": "OL KALOU",
+    "code": "091",
+    "county": "NYANDARUA",
+    "county_code": "018",
+    "date": "2026-07-16",
+    "position": "Member of the National Assembly"
+  },
+  "portal": {
+    "index_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
+    "constituency": "OL KALOU",
+    "expected_forms": 144,
+    "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Findex&p=2&l=2",
+    "sync_enabled": true,
+    "sync_interval_minutes": 5,
+    "recheck_existing": true,
+    "download_policy": "INDIVIDUAL_HIERARCHY_ONLY",
+    "detail_url": "https://forms.iebc.or.ke/index.php?r=site%2Findex&id=141&ft=&p=2&es=",
+    "hierarchy": {
+      "county": "NYANDARUA",
+      "constituency": "OL KALOU",
+      "wards": [
+        {
+          "name": "RURII",
+          "expected_forms": 33
+        },
+        {
+          "name": "KANJUIRI RANGE",
+          "expected_forms": 32
+        },
+        {
+          "name": "KARAU",
+          "expected_forms": 27
+        },
+        {
+          "name": "KAIMBAGA",
+          "expected_forms": 27
+        },
+        {
+          "name": "MIRANGINE",
+          "expected_forms": 25
+        }
+      ],
+      "leaf_download": "INDIVIDUAL_CLOUD_ICON",
+      "ignore": [
+        "DOWNLOAD_ALL",
+        "PREVIEW_EYE_ICON"
+      ]
+    }
+  },
+  "register": {
+    "total": 73480,
+    "streams_total": 144,
+    "source": "IEBC certified by-election register / polling-stations Gazette, 5 June 2026",
+    "source_url": "https://www.iebc.or.ke/uploads/resources/OsfnFvMWui.pdf",
+    "verified": false,
+    "atomic_rows_verified": false,
+    "notes": [
+      "Ward totals and the constituency total are loaded, but the 144 atomic stream rows remain unresolved until certified source rows replace placeholders."
+    ]
+  },
+  "candidates": [
+    {
+      "id": "UDA",
+      "ballot_no": 1,
+      "name": "Samuel Muchina Nyagah",
+      "party": "United Democratic Alliance",
+      "abbr": "UDA",
+      "colour": "#F4C542",
+      "bloc": "GOVERNMENT"
+    },
+    {
+      "id": "DCP",
+      "ballot_no": 2,
+      "name": "Sammy Kamau Ngotho",
+      "party": "Democracy for the Citizens Party",
+      "abbr": "DCP",
+      "colour": "#F28C28",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "JUBILEE",
+      "ballot_no": 3,
+      "name": "Wilson Kigwa",
+      "party": "Jubilee Party",
+      "abbr": "JUBILEE",
+      "colour": "#E85D5D",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "PNU",
+      "ballot_no": 4,
+      "name": "Edwin Muchiri",
+      "party": "Party of National Unity",
+      "abbr": "PNU",
+      "colour": "#4C9BE8",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "PDP",
+      "ballot_no": 5,
+      "name": "Rachel Wangui Njoroge",
+      "party": "People's Democratic Party",
+      "abbr": "PDP",
+      "colour": "#B784F7",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "KMM",
+      "ballot_no": 6,
+      "name": "Mathenge Mwaniki",
+      "party": "Kenya Moja Movement",
+      "abbr": "KMM",
+      "colour": "#4FC3B1",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "FPK",
+      "ballot_no": 7,
+      "name": "Abdifatah Hussein",
+      "party": "Federal Party of Kenya",
+      "abbr": "FPK",
+      "colour": "#57C7E3",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "PRP",
+      "ballot_no": 8,
+      "name": "Timothy Kamau",
+      "party": "People's Renaissance Party",
+      "abbr": "PRP",
+      "colour": "#E57AB2",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "NLP",
+      "ballot_no": 9,
+      "name": "Stephen Wanyoike",
+      "party": "National Liberal Party",
+      "abbr": "NLP",
+      "colour": "#7BC96F",
+      "bloc": "OPPOSITION"
+    }
+  ],
+  "candidate_reference": {
+    "source": "IEBC Gazette Notice, 5 June 2026 — candidate list requires final operator verification of legal names and Form 35A row order",
+    "source_url": "https://www.iebc.or.ke/uploads/resources/OsfnFvMWui.pdf",
+    "source_verified": false,
+    "ballot_order_verified": false
+  },
+  "official_declaration": {
+    "candidate_totals": {},
+    "valid_votes": null,
+    "winner_id": null,
+    "winner_votes": null,
+    "rejected_votes": null,
+    "total_cast": null,
+    "notes": [
+      "No declaration is loaded. This profile is a live/pre-poll ingestion target."
+    ]
+  },
+  "blocs": {
+    "GOVERNMENT": [
+      "UDA"
+    ],
+    "OPPOSITION": [
+      "DCP",
+      "JUBILEE",
+      "PNU",
+      "PDP",
+      "KMM",
+      "FPK",
+      "PRP",
+      "NLP"
+    ]
+  },
+  "methodology": {
+    "stream_results_complete": false,
+    "replay_available": false,
+    "note": "Live Ol Kalou forms are downloaded and OCR-prefilled through the same county-to-stream hierarchy used for Banissa. OCR remains review-only; unresolved reference rows prevent automatic publication."
+  },
+  "ocr": {
+    "default_engine": "auto",
+    "documents_dir": "documents",
+    "auto_publication": false,
+    "review_policy": "TWO_PERSON_INDEPENDENT",
+    "notes": [
+      "OCR is a pre-fill only. No stream enters the live tally until the stream reference, candidate order, independent review and statutory checks pass."
+    ]
+  }
+}

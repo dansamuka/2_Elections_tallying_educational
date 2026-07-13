@@ -90,6 +90,8 @@ def validate_historical_bundle(bundle: HistoricalBundle) -> None:
         raise ValueError("profile id does not match directory/election id")
     expected = int(profile["register"]["streams_total"])
     register_total = int(profile["register"]["total"])
+    reference_verified = bool(profile.get("register", {}).get("verified", True))
+    live_mode = str(profile.get("mode", "ARCHIVE")).upper() == "LIVE"
     if len(streams) != expected:
         raise ValueError(f"expected {expected} streams, found {len(streams)}")
     keys = [str(row["stream_key"]) for row in streams]
@@ -98,9 +100,13 @@ def validate_historical_bundle(bundle: HistoricalBundle) -> None:
         raise ValueError("historical stream keys must be unique")
     if len(set(codes)) != len(codes):
         raise ValueError("historical polling-station codes must be unique")
-    actual_total = sum(int(row["registered"]) for row in streams)
-    if actual_total != register_total:
-        raise ValueError(f"register total mismatch: {actual_total} != {register_total}")
+    known_registered = [row.get("registered") for row in streams if row.get("registered") is not None]
+    if len(known_registered) == len(streams):
+        actual_total = sum(int(value) for value in known_registered)
+        if actual_total != register_total:
+            raise ValueError(f"register total mismatch: {actual_total} != {register_total}")
+    elif reference_verified or not live_mode:
+        raise ValueError("verified historical profiles require registered voters for every stream")
     candidate_ids = [str(c["id"]) for c in bundle.candidates]
     if not candidate_ids or len(candidate_ids) != len(set(candidate_ids)):
         raise ValueError("candidate ids must be present and unique")
@@ -172,7 +178,12 @@ def import_verified_results(bundle: HistoricalBundle, csv_path: Path) -> dict[st
                 "reviewer_b": (raw.get("reviewer_b") or "").strip() or None,
                 "notes": (raw.get("notes") or "").strip() or None,
             }
-            checks = _checks_for_row(row, int(references[stream_key]["registered"]), candidate_ids)
+            reference_registered = references[stream_key].get("registered")
+            if reference_registered is None:
+                raise ValueError(
+                    f"line {line_no}: stream reference is unresolved; certify its registered-voter row before publication"
+                )
+            checks = _checks_for_row(row, int(reference_registered), candidate_ids)
             failed = [code for code, status in checks.items() if status == "FAIL"]
             if failed:
                 raise ValueError(f"line {line_no}: statutory checks failed: {', '.join(failed)}")
@@ -301,9 +312,14 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
         stream_payloads.append(payload)
 
     stream_results_complete = len(results) == len(bundle.streams)
-    tally_source = "FORM_35A_SUM" if stream_results_complete else "OFFICIAL_DECLARATION"
+    official_totals = official.get("candidate_totals", {})
+    if stream_results_complete:
+        tally_source = "FORM_35A_SUM"
+    elif official_totals:
+        tally_source = "OFFICIAL_DECLARATION"
+    else:
+        tally_source = "NO_VERIFIED_TALLY"
     if not stream_results_complete:
-        official_totals = official.get("candidate_totals", {})
         candidate_totals = {cid: official_totals.get(cid) for cid in candidate_ids}
 
     numeric_totals = [value for value in candidate_totals.values() if value is not None]
@@ -353,35 +369,62 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
         "registered_pct": published_registered / int(bundle.profile["register"]["total"]) if published_registered else 0.0,
         "excluded": {"count": 0, "reason": None},
     }
+    ward_summary = {
+        str(row.get("name", "")).upper(): row
+        for row in bundle.streams_doc.get("ward_summary", [])
+    }
     ward_rows = []
     for ward in sorted({row["ward_name"] for row in bundle.streams}):
         refs = [row for row in bundle.streams if row["ward_name"] == ward]
         pubs = [row for row in stream_payloads if row["ward"] == ward and row["state"] == "PUBLISHED"]
+        known_ward_registered = [row.get("registered") for row in refs if row.get("registered") is not None]
+        summary_registered = ward_summary.get(str(ward).upper(), {}).get("registered")
+        ward_registered = (
+            sum(int(value) for value in known_ward_registered)
+            if len(known_ward_registered) == len(refs)
+            else summary_registered
+        )
         ward_rows.append({
             "code": refs[0]["ward_code"],
             "name": ward,
             "streams_total": len(refs),
             "published": len(pubs),
-            "registered": sum(int(row["registered"]) for row in refs),
-            "registered_reported": sum(int(row["registered"]) for row in pubs),
+            "registered": ward_registered,
+            "registered_reported": sum(int(row["registered"]) for row in pubs if row.get("registered") is not None),
             "turnout": None,
             "candidates": {cid: sum(int(row["votes"].get(cid, 0)) for row in pubs) for cid in candidate_ids},
         })
+
+    reference_verified = bool(bundle.profile.get("register", {}).get("verified", True))
+    reference_errors = [] if reference_verified else [
+        "The certified 144-row atomic register is not yet loaded; downloaded forms and OCR remain review-only.",
+        "Candidate legal names and Form 35A row order remain subject to final source verification.",
+    ]
+    profile_mode = str(bundle.profile.get("mode", "ARCHIVE")).upper()
+    payload_status = "FINAL" if profile_mode == "ARCHIVE" else (
+        "COUNTING" if int(manifest.get("discovered_count", 0)) > 0 else "PRE_POLL"
+    )
 
     payload = {
         "schema": "kenya.election.archive.v1",
         "seq": int(datetime.now(timezone.utc).timestamp() * 1000),
         "generated_at": utc_now_iso(),
-        "mode": "ARCHIVE",
+        "mode": profile_mode,
         "election_id": bundle.election_id,
         "election": bundle.profile["election"],
-        "status": "FINAL",
+        "status": payload_status,
         "reference": {
-            "complete": True,
-            "errors": [],
+            "complete": reference_verified,
+            "errors": reference_errors,
             "register_source": bundle.profile["register"]["source"],
             "register_source_url": bundle.profile["register"].get("source_url"),
-            "candidate_source": "Kenya Gazette Notice No. 15731, 29 October 2025",
+            "candidate_source": bundle.profile.get("candidate_reference", {}).get(
+                "source", "Election profile candidate source"
+            ),
+            "candidate_source_url": bundle.profile.get("candidate_reference", {}).get("source_url"),
+            "ballot_order_verified": bundle.profile.get("candidate_reference", {}).get(
+                "ballot_order_verified", reference_verified
+            ),
         },
         "pipeline_health": {
             "watcher": sync_status.get("state", "NEVER_RUN"),
@@ -560,6 +603,7 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
         user_agent,
         constituency_code=bundle.profile["election"]["code"],
         detail_url=portal.get("detail_url"),
+        county=bundle.profile.get("election", {}).get("county"),
     )
     manifest = load_manifest(bundle)
     index_meta = manifest.get("index", {})

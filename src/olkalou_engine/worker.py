@@ -47,6 +47,9 @@ class Worker:
             settings.portal_index_url,
             settings.portal_constituency,
             settings.portal_user_agent,
+            constituency_code=settings.portal_constituency_code,
+            detail_url=settings.portal_detail_url,
+            county=settings.portal_county,
         )
         self.manifest = Manifest(settings.manifest_path)
         self.extractor = build_extractor(settings)

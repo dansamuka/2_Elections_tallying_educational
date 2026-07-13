@@ -211,6 +211,19 @@
     $("streamDialog").showModal();
   }
 
+  if ($("liveUpdateNow")) {
+    $("liveUpdateNow").href = config.archiveUpdateWorkflowUrl || "https://github.com/dansamuka/2_Elections_tallying_educational/actions/workflows/sync-historical-forms.yml";
+  }
+  if ($("liveRefresh")) {
+    $("liveRefresh").addEventListener("click", async () => {
+      $("liveRefresh").disabled = true;
+      $("liveRefresh").textContent = "Refreshing…";
+      try { await refresh(); } finally {
+        $("liveRefresh").disabled = false;
+        $("liveRefresh").textContent = "Refresh data";
+      }
+    });
+  }
   [$("wardFilter"), $("stateFilter"), $("streamSearch")].forEach(control => control.addEventListener("input", () => current && renderTable(current.streams || [])));
   $("closeDialog").addEventListener("click", () => $("streamDialog").close());
   $("gridHelp").addEventListener("click", () => $("legendDialog").showModal());

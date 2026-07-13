@@ -6,7 +6,7 @@ This module checks the IEBC by-election forms portal:
 
 `https://forms.iebc.or.ke/index.php?r=site%2Findex&p=2&l=2`
 
-It is designed for both historical elections such as Banissa and future election profiles stored under `data/elections/<election-id>/`.
+It is configured for Banissa 2025 and the live/pre-poll Ol Kalou 2026 contest, and remains reusable for future profiles under `data/elections/<election-id>/`.
 
 ## Scheduled operation
 
@@ -47,6 +47,7 @@ The script uses the authenticated GitHub CLI session to run the workflow and ope
 
 ```bash
 python -m olkalou_engine.cli --root . archive-sync banissa-2025 --engine auto
+python -m olkalou_engine.cli --root . archive-sync ol-kalou-2026 --engine auto
 python -m olkalou_engine.cli --root . archive-sync --all --engine auto
 ```
 
@@ -58,7 +59,7 @@ python -m olkalou_engine.cli --root . archive-sync --all --engine auto
 {
   "enabled": true,
   "interval_minutes": 5,
-  "elections": ["banissa-2025"],
+  "elections": ["banissa-2025", "ol-kalou-2026"],
   "engine": "auto",
   "repository": "dansamuka/2_Elections_tallying_educational",
   "workflow_file": "sync-historical-forms.yml"
@@ -70,8 +71,16 @@ Each election profile must provide:
 - `portal.index_url`;
 - `portal.constituency` exactly as shown on the IEBC portal;
 - `portal.expected_forms`;
-- the complete certified stream register; and
-- the candidate list used for OCR field extraction.
+- the certified stream register for publication, or an explicitly incomplete live reference for archive/OCR-only operation; and
+- the candidate list used for OCR field extraction, with an explicit ballot-order verification flag.
+
+
+## Configured hierarchy routes
+
+- Banissa: `KENYA → MANDERA → BANISSA → ward → polling centre → stream`.
+- Ol Kalou: `KENYA → NYANDARUA → OL KALOU → ward → polling centre → stream`.
+
+Both routes ignore bulk Download All controls and eye/preview links. Only individual cloud-download actions at polling-stream leaves are accepted.
 
 ## Discovery safeguards
 

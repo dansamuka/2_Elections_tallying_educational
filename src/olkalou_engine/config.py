@@ -17,6 +17,12 @@ class Settings(BaseSettings):
         alias="PORTAL_INDEX_URL",
     )
     portal_constituency: str = Field(default="OL KALOU", alias="PORTAL_CONSTITUENCY")
+    portal_constituency_code: str = Field(default="091", alias="PORTAL_CONSTITUENCY_CODE")
+    portal_county: str = Field(default="NYANDARUA", alias="PORTAL_COUNTY")
+    portal_detail_url: str | None = Field(
+        default="https://forms.iebc.or.ke/index.php?r=site%2Findex&id=141&ft=&p=2&es=",
+        alias="PORTAL_DETAIL_URL",
+    )
     portal_poll_seconds: int = Field(default=60, ge=10, alias="PORTAL_POLL_SECONDS")
     portal_user_agent: str = Field(
         default="OlKalouCivicVerifier/0.2 (+https://example.org/methodology)",

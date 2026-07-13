@@ -40,6 +40,17 @@ See `GITHUB_ONE_CLICK_GUIDE.md` for the exact flow.
 - Form 35B reconciliation command and Markdown report generator.
 - Reference-data importers that refuse to certify anything except exactly 144 rows summing to the official register total.
 
+
+## Ol Kalou five-minute hierarchy sync
+
+The same scheduled and manual portal engine now covers the live Ol Kalou 2026 profile as well as Banissa. Ol Kalou follows `KENYA → NYANDARUA → OL KALOU → ward → polling centre → polling stream`, accepts only the individual cloud-download action, and expects 144 Form 35As across Rurii (33), Kanjuiri Range (32), Karau (27), Kaimbaga (27), and Mirangine (25).
+
+```bat
+UPDATE_OL_KALOU_NOW.cmd
+```
+
+The Ol Kalou archive/OCR payload is deliberately reference-gated. Forms may be archived and OCR-prefilled, but no OCR number is automatically published while the certified atomic register or final ballot/Form 35A order remains unresolved.
+
 ## Previous-polls module
 
 Historical contests use the same provenance model without contaminating the live Ol Kalou state. Each election is a self-contained folder under `data/elections/<election-id>/` with:
@@ -256,3 +267,7 @@ tests/                  safety-critical unit tests
 ## IEBC portal sync hotfix v0.4.1
 
 The parser supports the current IEBC JavaScript constituency rows and verified constituency-scoped Download All ZIPs. It refuses redirects to the national index and rejects a ZIP unless its supported form count exactly matches the portal's reported count. See `SYNC_FAILURE_FIX_NOTES.md`.
+
+## Hierarchical IEBC form discovery
+
+For historical elections such as Banissa, the engine follows the portal route from county to constituency, ward, polling centre and polling stream. It downloads the individual cloud-link file shown on each leaf row and deliberately ignores higher-level `Download All` controls, which can return broader HTML selector pages instead of constituency form files. See `IEBC_HIERARCHY_FIX_NOTES.md`.

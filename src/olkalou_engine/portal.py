@@ -37,11 +37,13 @@ class PortalClient:
         timeout: float = 30,
         constituency_code: str = "091",
         detail_url: str | None = None,
+        county: str | None = None,
     ):
         self.index_url = index_url
         self.constituency = constituency.upper().strip()
         self.constituency_code = str(constituency_code).zfill(3)
         self.detail_url = detail_url
+        self.county = (county or "").upper().strip()
         self.client = httpx.Client(
             timeout=timeout,
             follow_redirects=True,
@@ -95,6 +97,16 @@ class PortalClient:
         )
 
     def discover(self, html: bytes, base_url: str | None = None) -> list[PortalForm]:
+        """Discover constituency form downloads by walking IEBC's full hierarchy.
+
+        The IEBC site is stateful and exposes navigation rows rather than durable
+        hyperlinks. A constituency page can lead through county, constituency,
+        ward, polling centre and finally polling-stream pages. We therefore crawl
+        only the exact configured route until the constituency breadcrumb is
+        reached, then descend every child row inside that constituency. Bulk
+        ``Download All`` controls are deliberately ignored because an ordinary GET
+        can fall back to a broader county/national HTML page.
+        """
         base_url = base_url or self.index_url
         soup = BeautifulSoup(html, "html.parser")
         page_text = " ".join(soup.stripped_strings).upper()
@@ -103,41 +115,146 @@ class PortalClient:
                 f"portal structure canary failed: constituency {self.constituency!r} not found"
             )
 
-        forms = self._extract_form_links(soup, base_url, constituency_scoped=False)
+        forms: list[PortalForm] = []
         queue = (
             [urljoin(base_url, self.detail_url)]
             if self.detail_url
             else list(self._constituency_detail_urls(soup, base_url))
         )
-        visited: set[str] = set()
-        # The IEBC portal uses Yii pagination on some result views. Crawl every
-        # pagination page so "download all" means all forms for this constituency,
-        # not just the first visible page.
-        while queue and len(visited) < 40:
+        visit_counts: dict[str, int] = {}
+        pages_fetched = 0
+        max_pages = 500
+        while queue and pages_fetched < max_pages:
             detail_url = queue.pop(0)
-            if detail_url in visited:
+            # IEBC reuses the same id URL at different hierarchy levels and keeps
+            # the current level in session state. Permit a small bounded revisit.
+            if visit_counts.get(detail_url, 0) >= 3:
                 continue
-            visited.add(detail_url)
+            visit_counts[detail_url] = visit_counts.get(detail_url, 0) + 1
+            pages_fetched += 1
             result = self.get_with_backoff(detail_url)
             if result.status_code != 200 or not result.body:
                 continue
             requested_ids = parse_qs(urlparse(detail_url).query).get("id", [])
             final_ids = parse_qs(urlparse(result.url).query).get("id", [])
-            if requested_ids and final_ids != requested_ids:
-                raise RuntimeError(
-                    "IEBC constituency detail request lost its row id after redirect; "
-                    "refusing to treat the national Download All control as constituency-scoped"
-                )
             detail_soup = BeautifulSoup(result.body, "html.parser")
-            forms.extend(self._extract_form_links(detail_soup, result.url, constituency_scoped=True))
+            if requested_ids and final_ids != requested_ids:
+                # IEBC sometimes drops the id while returning a legitimate county
+                # selector. Allow that only when the page exposes a safe next hop
+                # matching the configured county/constituency route.
+                safe_children = self._hierarchy_child_urls(detail_soup, result.url)
+                if not safe_children:
+                    raise RuntimeError(
+                        "IEBC hierarchy request lost its row id or changed it after redirect; "
+                        "refusing to widen the crawl beyond the configured constituency"
+                    )
+
+            forms.extend(
+                self._extract_form_links(
+                    detail_soup,
+                    result.url,
+                    constituency_scoped=True,
+                    include_bulk=False,
+                )
+            )
+
+            for child_url in self._hierarchy_child_urls(detail_soup, result.url):
+                if visit_counts.get(child_url, 0) < 3 and child_url not in queue:
+                    queue.append(child_url)
             for page_url in self._pagination_urls(detail_soup, result.url):
-                if page_url not in visited and page_url not in queue:
+                if visit_counts.get(page_url, 0) < 3 and page_url not in queue:
                     queue.append(page_url)
+
+        if queue:
+            raise RuntimeError(
+                f"IEBC hierarchy crawl exceeded {max_pages} pages for {self.constituency}; "
+                "refusing to publish a potentially incomplete archive"
+            )
 
         unique: dict[str, PortalForm] = {}
         for form in forms:
             unique[form.source_url] = form
         return list(unique.values())
+
+    @staticmethod
+    def _breadcrumb_text(soup: BeautifulSoup) -> str:
+        nodes = soup.select("ul.breadcrumb li, ol.breadcrumb li, .breadcrumb li")
+        return " ".join(" ".join(node.stripped_strings) for node in nodes).upper()
+
+    @staticmethod
+    def _row_label(row: object) -> str:
+        cells = getattr(row, "find_all", lambda *args, **kwargs: [])("td", recursive=False)
+        if not cells:
+            cells = getattr(row, "find_all", lambda *args, **kwargs: [])("td")
+        if not cells:
+            return ""
+        return " ".join(cells[0].stripped_strings).upper().strip()
+
+    def _navigation_rows(self, soup: BeautifulSoup, base_url: str) -> list[tuple[str, str]]:
+        output: list[tuple[str, str]] = []
+        base_host = urlparse(base_url).netloc
+        for row in soup.find_all("tr"):
+            label = self._row_label(row)
+            if not label:
+                continue
+            # Leaf polling-stream rows carry explicit view/download anchors and
+            # should not be treated as another hierarchy level.
+            row_marker = f"{label} {' '.join(row.stripped_strings)}".lower()
+            if row.find("a", href=re.compile(r"(?:download|view)", re.I)) and "reported" in row_marker:
+                continue
+            urls = self._candidate_urls(row, base_url)
+            for url in urls:
+                parsed = urlparse(url)
+                if parsed.netloc != base_host or url == base_url:
+                    continue
+                if not parse_qs(parsed.query).get("id"):
+                    continue
+                output.append((label, url))
+                break
+        # Preserve portal order while deduplicating by URL.
+        seen: set[str] = set()
+        result: list[tuple[str, str]] = []
+        for label, url in output:
+            if url not in seen:
+                seen.add(url)
+                result.append((label, url))
+        return result
+
+    def _hierarchy_child_urls(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        """Choose only safe child rows for the configured election route."""
+        rows = self._navigation_rows(soup, base_url)
+        if not rows:
+            return []
+        breadcrumb = self._breadcrumb_text(soup)
+        page_headers = " ".join(
+            " ".join(node.stripped_strings) for node in soup.select("table thead th")
+        ).upper()
+
+        # Once BANISSA is present in the breadcrumb, all navigation rows are
+        # descendants (wards, polling centres, then stations) and are safe to crawl.
+        if self.constituency in breadcrumb:
+            return [url for _, url in rows]
+
+        # Some portal responses fall back to the county selector. Follow only the
+        # configured county, never every county.
+        if self.county:
+            county_matches = [url for label, url in rows if self._label_matches(label, self.county)]
+            if county_matches and ("COUNTY" in page_headers or self.county not in breadcrumb):
+                return county_matches[:1]
+
+        # At county level follow only the configured constituency row.
+        constituency_matches = [
+            url for label, url in rows if self._label_matches(label, self.constituency)
+        ]
+        if constituency_matches:
+            return constituency_matches[:1]
+        return []
+
+    @staticmethod
+    def _label_matches(label: str, target: str) -> bool:
+        normal = re.sub(r"[^A-Z0-9]", "", label.upper())
+        wanted = re.sub(r"[^A-Z0-9]", "", target.upper())
+        return bool(wanted and normal == wanted)
 
     @staticmethod
     def _candidate_urls(node: object, base_url: str) -> list[str]:
@@ -226,24 +343,37 @@ class PortalClient:
         return list(dict.fromkeys(urls))
 
     def _extract_form_links(
-        self, soup: BeautifulSoup, base_url: str, *, constituency_scoped: bool = False
+        self,
+        soup: BeautifulSoup,
+        base_url: str,
+        *,
+        constituency_scoped: bool = False,
+        include_bulk: bool = False,
     ) -> list[PortalForm]:
         output: list[PortalForm] = []
-        candidates: list[tuple[str, str, str]] = []
+        candidates: list[tuple[str, str, str, str]] = []
         for node in soup.find_all(["a", "button", "iframe", "embed", "object", "form"]):
             label = " ".join(node.stripped_strings) or node.get("title", "") or node.get("aria-label", "")
-            surrounding = " ".join(node.parent.stripped_strings) if node.parent else label
+            row = node.find_parent("tr")
+            station_hint = ""
+            if row is not None:
+                surrounding = " ".join(row.stripped_strings)
+                cells = row.find_all("td")
+                if len(cells) >= 2:
+                    station_hint = " ".join(cells[1].stripped_strings).strip()
+            else:
+                surrounding = " ".join(node.parent.stripped_strings) if node.parent else label
             for href in self._candidate_urls(node, base_url):
-                candidates.append((href, label or href, surrounding or label or href))
+                candidates.append((href, label or href, surrounding or label or href, station_hint))
         # Some Yii views embed endpoints in scripts or row attributes. Parse them as
         # candidates, but retain the same strict form/download marker below.
         script_text = "\n".join(node.get_text(" ", strip=False) for node in soup.find_all("script"))
         for raw in re.findall(r"(?:https?://[^'\"<>\s]+|(?:/|index\.php\?)[^'\"<>\s]+)", script_text):
             href = urljoin(base_url, raw.replace("&amp;", "&"))
-            candidates.append((href, href, href))
+            candidates.append((href, href, href, ""))
 
         seen_urls: set[str] = set()
-        for href, label, surrounding in candidates:
+        for href, label, surrounding, station_hint in candidates:
             if href in seen_urls:
                 continue
             seen_urls.add(href)
@@ -267,9 +397,24 @@ class PortalClient:
             )
             if not is_file and not is_form_action:
                 continue
-            # Exclude the top-level Download All endpoint unless an election profile
-            # explicitly points to it; it can contain forms for every constituency.
-            if "download-all" in marker and not constituency_scoped:
+            href_marker = href.lower()
+            is_direct_download = is_file or any(
+                token in href_marker
+                for token in (
+                    "site%2fdownload",
+                    "site/download",
+                    "download-form",
+                    "download&id=",
+                    "download=" ,
+                )
+            ) or "download" in label.lower()
+            # The eye icon usually opens an HTML preview. Prefer the cloud/download
+            # icon so the archive receives the original PDF or image bytes.
+            if not is_direct_download:
+                continue
+            # Never treat a bulk control as an individual form unless a caller
+            # explicitly opts in. IEBC may return a broader HTML selector page.
+            if "download-all" in marker and not include_bulk:
                 continue
             if (
                 not constituency_scoped
@@ -278,14 +423,21 @@ class PortalClient:
                 and "35b" not in marker
             ):
                 continue
-            stream_key, stream_no = infer_stream_identity(marker, self.constituency_code)
+            identity_marker = station_hint or marker
+            stream_key, stream_no = infer_stream_identity(identity_marker, self.constituency_code)
+            station_name = extract_station_name(station_hint or surrounding)
+            if station_hint:
+                suffix = re.search(r"\s+0?([0-9]{1,2})\s*$", station_hint)
+                if suffix:
+                    stream_no = int(suffix.group(1))
+                    station_name = re.sub(r"\s+0?[0-9]{1,2}\s*$", "", station_hint).strip() or station_name
             form_type = "35B" if "35b" in marker or "form b" in marker else "35A"
             output.append(
                 PortalForm(
                     source_url=href,
                     source_label=surrounding[:500],
                     stream_key=stream_key,
-                    station_name=extract_station_name(surrounding),
+                    station_name=station_name,
                     stream_no=stream_no,
                     form_type=form_type,
                 )

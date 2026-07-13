@@ -12,6 +12,11 @@ The deployed website contains:
 - `/archive.html` — past-polls module, initially seeded with Banissa 2025.
 - `/methodology.html` — public methodology.
 
+
+## Elections updated by the workflow
+
+The same existing-repository workflow now checks `banissa-2025` and `ol-kalou-2026`. Use `UPDATE_IEBC_FORMS_NOW.cmd` for both targets or `UPDATE_OL_KALOU_NOW.cmd` for Ol Kalou only.
+
 ## Existing repository
 
 The same button is safe to run again. It is locked to `dansamuka/2_Elections_tallying_educational`, reuses its existing `main` history, commits changed files, and pushes them back. It refuses to create a different repository.
