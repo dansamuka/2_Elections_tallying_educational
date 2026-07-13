@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "17ee251caf389473-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/unmatched/v1_17ee251caf38.pdf",
+  "source_sha256": "17ee251caf38947331371d3d7ce3ccce6ae76f101ef881e623181cfbbe9b8003",
+  "source_filename": "v1_17ee251caf38.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/17ee251caf389473.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-033-02",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.4125465838509317,
+  "text_length": 2551,
+  "text_preview": "—ECNpR II S as . Sa | iF =\nae ec | ORC\n= = = = = > 2\n: X ee\nart 01814 os WD eS\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS ;\nAT THE POLLING STATION\nName of Polling Station KILIWEHIRI PRIMARY SCHOOL POLLING STATION 2 of 2 Code __009040020003302\nee re A TAN NG DEAT OPE. MOARIESC OM ys pOEPENDENT neh CS.c8 _909040020003302\nWard KILIWEHIRI Code __0200\nConstituency SSN CBBNIBSA. COMMIS On OENTELECTORT CAD ph COUN WTELECTORa SSIONINDEPENDTACONa) Code __ 040\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1, HASSAN AHMED MAALIM pS SOREADENTELEC YASS oMINDEE WeScXo,ncuN TEL EC TORS SELIG\n2. MOHAMED NURDIN MALIN es na arty\nTotal number of valid votes cast fer GR ec rORALAND EC PENOENTEL EG SOB COON NOSOUNEN aM\nPolling Station Counts Decision{s} on disputed votes if any ;\nToa Number of Registered Volos inthe Paling Station, [ES CEO[=ROESR] | ei mbwoftlt Pager wihdsnte wt] Renee Gane anid wei)\nTell Nurber of Reected Balt Papers Ris ote cionA an ounce gente MEE CS OTONN honoUNGENORT\nTotal Number of Rejection Objected to Ballot Papers; LaEOe LON A NDBOUMENDENT ELEC H SUNOE eeyON DARIESC Led\nTt Number of Ospted Ves Noe OSE PS ce ontagints 7c on nposooe SUN ea fe\n5. | Tol Nur ofa Votes at ie Ue a CPR e cng CARON NFOARTC Onna Dea\nDeclaration 3\n. We, the undersigned, being present when the results of the count were announced, do hereby declare thatthe results shown above are true\nand accurate count of the ballots in Vit WEN Polling Station _4 LB AN a Constituency.\nPresiding Officer: lave Peneadam 2 Signature: 7th Bz od -tlr 202\nDeputy Presiding Officer: #PDRAStD bale) - Signature: _NCMNNEre = 1D Rate DT || -2OS\ny EEC\nAgents or Candidates (if present) Ss he\nie] tortie [Ps | Pe\nPl AsbiHaMs AZ] \\Bbosbewy PA pyaysiade Sx a aieaou\nPenn Ae Geet See SS OATES nares ote SOP eLeC eM SS OMRON SO reco ;\nne Fee UMDARIEST aM Ie Kua PeNDERTELE SC OtMaSION NOt CeO. CORAL AON DEPENDET MURS NOT p0OH\nSeq unoepeNOEN TE: SCOMMISSIG ON sehoe OonTELECTPRACaS/ONINDEDENEEON Nye ecg ANDPOUN ND] nr EC OMMOsHTEC PNUD ARIEFCOy\nPB Caen £C[0ney SSIOnINDE RRC Oe conn ABOU AE ENDENTELEC YON OL PBS RDAMIESC onLE COR NL ANDDCE NAM SGOT Cw\nRats OPM OSCE eget a SN Gus gg OMICS Sale cTOMAL Or Sve ONG Af DoDUNOAR ONO cco\neter a eR eS RA IC Se\na en Sine nes cans aI GON ONO oT gu SI oLAL AMDB EN Gahan fon SSTC NIDEM OUNDARIES Gah ec Ocal\nReasons for Refusal to Sign [if any)\nPresiding Officer's Comments: p, from / f\nFa a SS he a NBO a A Te a OE i SO aE ORT eu NO ap DENTELE 2 ONO TOOT",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1, HASSAN AHMED MAALIM pS SOREADENTELEC YASS oMINDEE WeScXo,ncuN TEL EC TORS SELIG",
+      "candidate_UPA": "2. MOHAMED NURDIN MALIN es na arty",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-13T21:47:41.010178Z"
+}

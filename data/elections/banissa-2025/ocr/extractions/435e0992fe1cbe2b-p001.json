@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "435e0992fe1cbe2b-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019704401/v1_435e0992fe1c.pdf",
+  "source_sha256": "435e0992fe1cbe2b280144c397e14fff472c6e5e5eabc0b6b3dfab05b2b312df",
+  "source_filename": "v1_435e0992fe1c.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/435e0992fe1cbe2b.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0197-044-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.4786352357320099,
+  "text_length": 2149,
+  "text_preview": "== = : - > = IEBCN OFA _ a\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station DAKAR PRIMARY SCHOOL POLLING STATION 1 of 4 Code __.009040019704401\nWard DERKHALE Cadenct OF FCron SSIONINOE\nConstituency BANISSA Cote ci ta00RAL 4) V/NOEPENL\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate: ?\n‘| Name of Candidate No. of Valid Votes Obtained CG\n1. HASSAN AHMED MAALIM 7]\n2. MOHAMED NURDIN MALIN _——— 8\nTotal number of valid votes cast SonaueTALuserenncleauaaueeertercnensemeaeest OL) ee\nPolling Station Counts : Decision{s} on disputed votes if any\n[Total Numero Reiter Voarsin the Paling Station,\nTl Number of Rete Balt Papers Poe ec ioms ns nO penteN CRS OST ONT pnsOUNC Ror\nTotal Number of Rejection Objected to Ballot Papers; |—. 0D O.0) [POC CONN NOBLE ARDENT ELECTOR NOS PN SESON IDARIESCLELEG\nTl Numer of isp Ves: Frac ae FXG) § CRIN et SUTRA COR Se ae ee RE\n5. [Tot Numer ofa Ves Cat AE SS i Sg eC RRC\nDeclaration : : ;\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in / Polling Station tam d Constituency.\nPresiding Officer: £» 3 SSA CA CAM ON Signature: LEG Date 27= Wl=2026\naed\nDeputy Presiding Officer: 13S Acl< fh} =K} Di IKAt_ Signature: = Date 27-((~2025\nAgents or Candidates {if present)\nne] ranean [Wap |Pyincnaencnaaoe [Tato [Spawn | Ow |\nHiiADOW Bittow/s |sersagi | LIPA lomeqestsh Aas 2 7-ti-2b25\n[2 |Aban Hassan) [S39boGu09 ~~ URA otogposoud ice. ap ti-zda<\nPe a at SION nee NT eS MSS SN ge Hc NDABIES REBT OR oe ENDE NneLEC po MMISSION NON CCS OM ELEC TONG\nEee mee Sore wot a ee ee ee\n=\nBRE certo eo OUNnaginsCOMN [SRO C On. MACE NEN Te eSCOMiE GiONNOR NESS ONO NTE c Toma, SSIDnnnSENDEN ath ORSON\nSOO oenDenit eScrumsncaION oN ce SNORE cope SoM GAN aE NDEN NSS LOM pou ENT ATCTORROe DEC ORIN\nReasons for Refusal to Sign [if any)\nPresiding Officer's Comments:\n. “Wo RETE Ss RACLE Papers AND Dip ch \\/OTES:\n~ “THe Poli G Oreic Woe cUesen ar [9 He <:\nPays (SSAck OG\nae - BM PD |\nCNA 5a\n: Stat % ear aes sh ees Ola, ) ‘\nlope \\ - :\n: Va",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 8,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM 7]",
+      "candidate_UPA": "2. MOHAMED NURDIN MALIN _——— 8",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-13T21:44:18.744955Z"
+}

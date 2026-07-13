@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "a063ac09b29f0598-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019701101/v1_a063ac09b29f.pdf",
+  "source_sha256": "a063ac09b29f05985e40bbbabd42a0ebb223e3499b2764582c2e285905de372f",
+  "source_filename": "v1_a063ac09b29f.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/a063ac09b29f0598.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0197-011-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.3710925925925926,
+  "text_length": 2806,
+  "text_preview": "eS = : IEBC ToT\nZa Z Z Ze = Z 22 = :\naOR\n01307 WwW Se\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station GOLJO PRIMARY SCHOOL POLLING STATION 4 of 4 Code __009040019701101\nWarHPENDENTE 06 <C° AUERKHMESNDENTE/ <-SCOMMISSION WwOlO% aN cPENDENTEL Ene M/NDEPENDE Toh, Ce Bg denDeO Ter EC Ton SSIONINDE\nsis Gbaaercg SS 8 Cc cBANISSA.c OMM'SS/00 10 9ENTELECTOREAC NaC QO TELECTOR A) S/ONINDEPEND <CO eR gilt c: FOMDORAL Ay VINDEPENL\nCounty MANDERA Codé =< B09 ANDRG -PENOENTE\nNumber of votes cast in favour of each candidate: :\nName of Candidate No. of Valid Votes Obtained\n1, HASSAN AHMED MAALIM leprae i coro reac eee eereee rors | Olin\n2. MOHAMED NURDIN MAALIM Seca TT 4\nTotal number of valid votes cast 928 |\nPolling Station Counts Decision{s) on disputed votes if any\n1. | Yot Number of Reistered Vrs nt PlingSaions [LPB\nTl Number Rete Elo Papers Ris SCAR ANAL FESO Eons anNSESeRO | OPC OM om\nTotal Number of Rejection Objected to Ballot Papers; | = == A OO POOe CON NOB OLR NDE NT ELEC ON NOSIS CoM INDARIESCCRLEGTORA\nTl Nabe of Opt es, nC Bias Scouser Torn noe oe OO C\nTl Numb oa les as Fs seer eI eeepeaiencteatt\nDeclaration ; ; ; a\n__. We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shownabOve Sretrue\nand accurate count of the ballots in Golo PRimKRY ScHoaiPoiting Station BARK a\nPresiding Officer: —SAbaAM JBRAtIn ABD) Signature: Date §2 {= ATED ag\nDeputy Presiding officer: MAHAD IBRAHIM] —ALIO Signature: Yast Date MW) sili ERY? :\nAgents or Candidates (if present} oe\nia] Nealtineoer [Wawra] Pca coatie | wove | — Sup | owe |\nq ——\nP| BIN Apa | 24632079 IBA Gepgann 8] | 29-1\nRT eae TEL FS COm Ip caINOEP oe ache A RE Seon 5 ON ADSENSE ce QO NGS NUN NOE He aR ALN YORE ENO ig\nEee SION NNO e CSE NTE SECS ga SSO CDE ADARIES RAL Ra ORE! Ear ELEC GoM MISS OU UNO CON CLEC ou\nEE. uiss ONNDE FeV UNDARIE SDN Te 8 RCL OEE MMR TELE COMMISSION NOLO. CORD EA ALAND NADEPENDE CONUS CCE nL ANON\nEB INDE ENOENTE, I SCOMMISS COSC S PENTEL CID CALag/ONNDET est foes APANO SOUND ah DENTELEC ONO cap UNOS\nPR ae EL ECT On a SIONINDE eS aah ok cat ANDOU gE NOENTEL ECON DOTS ENOMRE SeGidy C[ORALAN NOS SS padNOR COM\nPERO gic SOMBRE ORAL anDBOUNDE GSO AIONNOEPEEC UNO ARIES COM gNOGGS Ow oe NDENTELES Chis eIONNOSDRLCENNON ECT\nABS Ce Se STONIND Ee OUN pase SCOMY ANCROCOANOE ube TE/ <°COMMEGIONINO NEL ONION: ECTORA/ eS PNINDEPENDEN GR ORR OFM ag\nSn A Se NDeN esc riancgION GONE gM NONE: roma SIOM LA DENDEN GANA SNL 8M OR gUUEAN DE eT cTOR OSC GUND\nReasons for Refusal to Sign (if za ae Seer\nPresiding Officer's Comments:\nWe Acave THE STAT GN AT (Toc H. 2\nO NAME , 7\nFONAME -SADAM [Zeatin neo! DPO MAdddD IedHtim ALw\nDATE 3 LEB SAS 1TO NRE -\nFiil-20 257 PREC OFS\n3 ree ae _\ni alinap 2 ht Soa al rn toa",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 4,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 928,
+        "confidence": 0.82
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1, HASSAN AHMED MAALIM leprae i coro reac eee eereee rors | Olin",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM Seca TT 4",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "Total number of valid votes cast 928 |",
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "FAIL",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-13T21:43:49.939785Z"
+}

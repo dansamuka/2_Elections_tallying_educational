@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "715b25c1d732096a-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040020005601/v1_715b25c1d732.pdf",
+  "source_sha256": "715b25c1d732096a3dbe828464a731e00085904c40c141bfb27162c57d5d5710",
+  "source_filename": "v1_715b25c1d732.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/715b25c1d732096a.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-056-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.4135205183585313,
+  "text_length": 2438,
+  "text_preview": "5.22% ‘\n| — e a4 eee El\n- Za = \\\nEO Z Ze Za > [=]\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station QARARIDERTU PRIMARY SCHOOL POLLING STATION 1 of 4 Code _009040020005601\nWard KILIWEHIRI Code __0200\nConstituency BANISSA Cotte cL LUNRAL awn NOEPENE\nPoliti y:owmne PENS COW pS MANBERA c\\ ECTORA 1 ENDENTELEC “OM MoM oN eCTORALAun SOEPENDEN TT sa COdG 0008_ANDB on PENDENTE\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM _—$$$ $078 |\n2. MOHAMED NURDIN MAALIM 12 a\nTotal numberof vali vate cast [OF\nPolling Station Counts Decision{s} on disputed votes if any\n[Til Numer of RegteredVters inthe PaingStaions | _—— 2-7 |\nTal Nbr Reece Balt Papers Pete: 1 Peeper oy em\n3. |Tal Number ofReeion tected fo Blot Papers Paar partie atlas Sencar wun ater\nTt Noir of ispted Votes BAGGY Pato CF NRO rere aan ORE\nS| tal Naber aes as Pris COpm chat ieeemtrooe uns One aoa goN a OOO oc amNOe\nDeclaration NIN ho!\nWe, the undersigned, being present when,the results of count were announced, do hereby declare thatthe re sults shown above are true .\nand accurate count of the ballots in yitcd b A v2) ra Polling Station ioAw A Constituency.\na“ e » ey “Uh ¥ had 9 op ho:\nPresiding Officer: 2 jab) RACHIN A MAALL M. Signature: AV Wy . Date 27-N-RORB\n== CAS ra f f=\nDeputy Presiding Officer: oHAMES K USO Signature: CUESEMES EF ICERDfe 277 M/-2ORE\nAgents or Candidates [if present)\n|e. Name of Candidate or Agent _ | 4D/Passport No. | Party Name/Independent Candidate [Tet contact | Signature | Date |\nI RAID AGB (341063 UPA piiltetae pee 7-1-4\naiAtt ABDt jace2aea, UB A lo rzeemene Rap” loy-ir-goze\nReg’ aruescOMMSS RAL ANoBOUN reat fOpN GuHeSIONNGE ME UBM gna ye oCOROEE Pas tuaLC Tomi oaUN STS oa ceca\nPigs Torn sSioNNOE eOUNDARIESCO Rn Tet Le sce per ENDERDET ¢SCOMMISSION NINOS COO wtHh SG NAAN A MOE Nn CON Nace iaa cud\na foe Sorat ander eNDe Penge NTE OS ence NINA GC EL ECTORALAN Worl oy COMMISSION ANE OUNOAC COROT SC ONNG\nBape. co omen Ono DET EN UC ow RRO CON MN OCUREN TT, oC One GIgNINOE DLC OURO NS ecTORAL gS DMinE ENOL NNO ON al\nBRS cee DEON ae PENTEL ECON Re RONT Scio ANE NDE GUM SASL OM DBO UE ENREae ECONO Coa\nReasons for Refusal to Sign {if any) ¢ :\nPresiding Officer's Comments: :\n3 THE VOTIN. fas Succes folks\nCf\nLap reAsind ABBE KA }\nA RS xo EN AKA) wiry\nFS Ae . z fn\n. UV By E. B.C.\n7 PRESIDING |\nOFFICER ‘Siuya¥Gour",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 78,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 12,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM _—$$$ $078 |",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM 12 a",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-13T21:47:00.431642Z"
+}
