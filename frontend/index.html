@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0E1116">
+  <meta name="description" content="Unofficial, provenance-first Ol Kalou by-election Form 35A tracker.">
+  <title>Ol Kalou Tallying Wall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="legal-header">
+    <strong>UNOFFICIAL</strong>
+    <span>Independent parallel tally compiled from IEBC-published Form 35A scans. Only the Returning Officer may declare the result.</span>
+    <nav><a href="archive.html">Past polls</a><a href="methodology.html">Methodology</a></nav>
+  </header>
+
+  <div id="staleBanner" class="stale-banner" hidden></div>
+  <div id="referenceBanner" class="reference-banner" hidden></div>
+
+  <main class="shell">
+    <section class="masthead">
+      <div>
+        <p class="eyebrow">OL KALOU · CONSTITUENCY 091 · 16 JULY 2026</p>
+        <h1>The tallying wall</h1>
+        <p id="statusLine" class="status-line">Loading the latest verified ledger…</p>
+      </div>
+      <div class="update-block">
+        <span>LAST UPDATED</span>
+        <strong id="updatedAt" class="numeric">—</strong>
+        <small id="pipelineHealth">Pipeline status unknown</small>
+      </div>
+    </section>
+
+    <section class="coverage-strip" aria-label="Coverage">
+      <div><span>PUBLISHED</span><strong id="publishedCount" class="numeric">0</strong></div>
+      <div><span>IN REVIEW</span><strong id="reviewCount" class="numeric">0</strong></div>
+      <div><span>AWAITING</span><strong id="awaitingCount" class="numeric">144</strong></div>
+      <div><span>REGISTER ACCOUNTED</span><strong id="registeredPct" class="numeric">0.0%</strong></div>
+      <div><span>TURNOUT OF REPORTED</span><strong id="turnout" class="numeric">0.0%</strong></div>
+    </section>
+
+    <div class="desktop-grid">
+      <section class="panel result-panel">
+        <header class="panel-header">
+          <div><p class="eyebrow">VERIFIED RESULT BAR</p><h2>Candidate tally</h2></div>
+          <span id="validVotes" class="numeric panel-total">0 valid</span>
+        </header>
+        <div id="candidateList" class="candidate-list" aria-live="polite"></div>
+        <div id="blocPanel" class="bloc-panel"></div>
+      </section>
+
+      <section class="panel stream-panel">
+        <header class="panel-header">
+          <div><p class="eyebrow">SIGNATURE VIEW</p><h2>144-stream grid</h2></div>
+          <button id="gridHelp" class="text-button" type="button">Legend</button>
+        </header>
+        <div id="streamGrid" class="stream-grid" aria-label="Polling stream status grid"></div>
+      </section>
+
+      <aside class="panel intelligence-panel">
+        <header class="panel-header"><div><p class="eyebrow">OUTSTANDING VOTE</p><h2>Race arithmetic</h2></div></header>
+        <div id="projectionPanel"></div>
+        <hr>
+        <div>
+          <h3>Anomaly feed</h3>
+          <p class="microcopy">Flags route forms for attention. Statistical flags are not fraud conclusions.</p>
+          <div id="anomalyFeed" class="feed"></div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="panel table-panel">
+      <header class="panel-header table-heading">
+        <div><p class="eyebrow">SOURCE LEDGER</p><h2>Every stream, every form</h2></div>
+        <div class="table-controls">
+          <label>Ward <select id="wardFilter"><option value="">All wards</option></select></label>
+          <label>Status <select id="stateFilter"><option value="">All states</option></select></label>
+          <label>Search <input id="streamSearch" type="search" placeholder="Station or stream"></label>
+        </div>
+      </header>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Stream</th><th>Ward</th><th>Status</th><th>Verification</th><th>Registered</th><th>Cast</th><th>Turnout</th><th>Source</th></tr></thead>
+          <tbody id="streamTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel corrections-panel">
+      <header class="panel-header"><div><p class="eyebrow">APPEND-ONLY</p><h2>Corrections log</h2></div></header>
+      <div id="correctionsLog" class="feed"></div>
+    </section>
+  </main>
+
+  <dialog id="streamDialog" class="stream-dialog">
+    <button id="closeDialog" class="dialog-close" type="button" aria-label="Close">×</button>
+    <div id="streamDialogBody"></div>
+  </dialog>
+
+  <dialog id="legendDialog" class="legend-dialog">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+    <h2>Stream grid legend</h2>
+    <div class="legend-list">
+      <span><i class="legend awaiting"></i> Awaiting IEBC form</span>
+      <span><i class="legend published"></i> Published and counted</span>
+      <span><i class="legend review"></i> Held for review</span>
+      <span><i class="legend conflicted"></i> Conflicting form/version</span>
+    </div>
+    <p>Published cells use the leading candidate’s colour. Opacity reflects the winning margin in that stream.</p>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

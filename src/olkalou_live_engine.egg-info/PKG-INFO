@@ -1,0 +1,243 @@
+Metadata-Version: 2.4
+Name: olkalou-live-engine
+Version: 0.2.0
+Summary: Provenance-first live tracking engine for the 2026 Ol Kalou parliamentary by-election
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: beautifulsoup4<5,>=4.12
+Requires-Dist: fastapi<1,>=0.115
+Requires-Dist: httpx<1,>=0.27
+Requires-Dist: pydantic<3,>=2.8
+Requires-Dist: pydantic-settings<3,>=2.4
+Requires-Dist: python-multipart<1,>=0.0.9
+Requires-Dist: uvicorn[standard]<1,>=0.30
+Provides-Extra: ocr
+Requires-Dist: Pillow<12,>=10; extra == "ocr"
+Requires-Dist: opencv-python-headless<5,>=4.10; extra == "ocr"
+Requires-Dist: pypdfium2<5,>=4.30; extra == "ocr"
+Requires-Dist: google-cloud-vision<4,>=3.8; extra == "ocr"
+Requires-Dist: boto3<2,>=1.35; extra == "ocr"
+Provides-Extra: pdf
+Requires-Dist: pdfplumber<1,>=0.11; extra == "pdf"
+Provides-Extra: s3
+Requires-Dist: boto3<2,>=1.35; extra == "s3"
+Provides-Extra: dev
+Requires-Dist: pytest<9,>=8; extra == "dev"
+Requires-Dist: pytest-cov<6,>=5; extra == "dev"
+Requires-Dist: ruff<1,>=0.6; extra == "dev"
+
+# Kenya Election Tallying Wall
+
+Ol Kalou live engine v2 + reusable historical-election archive and replay module.
+
+A provenance-first implementation of the Ol Kalou parliamentary by-election tracking specification. The system archives every IEBC-published result form immutably, routes untrusted extraction through statutory checks and independent human review, publishes only gated figures, and makes every public number traceable to its source form.
+
+> **UNOFFICIAL — Independent parallel tally compiled from IEBC-published Form 35A scans. Only the Returning Officer may declare the result of this election.**
+
+## One-click GitHub publishing
+
+On Windows, extract the ZIP and double-click:
+
+```bat
+PUSH_TO_GITHUB.cmd
+```
+
+The script checks or installs Git and GitHub CLI, opens secure browser login when necessary, runs the test suite, regenerates the public datasets, creates or reconnects the GitHub repository, pushes `main`, and enables the GitHub Pages workflow. It is safe to run again when you have updates.
+
+The deployed site exposes:
+
+- `/` — Ol Kalou live tallying wall.
+- `/archive.html` — previous-polls module.
+- `/methodology.html` — public methods and trust rules.
+
+See `GITHUB_ONE_CLICK_GUIDE.md` for the exact flow.
+
+## What is implemented
+
+- 60-second watcher with conditional requests, backoff, structural canary and manifest.
+- Immutable SHA-256 form archive with versioned metadata and optional R2/S3 mirroring.
+- Optional Google Vision + AWS Textract ROI/Queries consensus adapter; the safe default is `OCR_MODE=none`, which archives and quarantines rather than guessing.
+- V01–V12 validation framework and a hard publication gate.
+- Keyboard-driven double-entry review console with explicit third-person adjudication.
+- Immutable amended-form versions, conflict detection, anomaly feed and append-only corrections ledger.
+- `live.json` publisher with monotonic sequence protection, worker-specific objects and last-writer safety.
+- T1/T2 outstanding-vote bounds, ward-stratified Monte Carlo projection and bloc arithmetic.
+- Mobile-first static dashboard with the 144-cell Stream Grid, stale-feed warnings, last-known-good cache, form links, stream table and public correction log.
+- Form 35B reconciliation command and Markdown report generator.
+- Reference-data importers that refuse to certify anything except exactly 144 rows summing to the official register total.
+
+## Previous-polls module
+
+Historical contests use the same provenance model without contaminating the live Ol Kalou state. Each election is a self-contained folder under `data/elections/<election-id>/` with:
+
+- `election.json` — contest, candidates, official declaration and source notes;
+- `streams.json` — the complete certified polling-stream register;
+- `results_template.csv` — independent Form 35A transcription frame;
+- optional immutable archived forms and `verified_results.json`.
+
+Banissa 2025 is included as the first profile. Its 81-stream, 32,703-voter register and declared constituency totals are visible immediately. Stream-by-stream replay remains withheld until all 81 Form 35As and genuine reporting timestamps have been archived and independently entered.
+
+```bash
+# List configured historical elections and rebuild the website catalog
+python -m olkalou_engine.cli --root . archive-list
+
+# Discover and archive Banissa Form 35As from the configured IEBC portal
+python -m olkalou_engine.cli --root . archive-run banissa-2025
+
+# Import independently checked stream figures
+python -m olkalou_engine.cli --root . archive-import banissa-2025 \
+  data/elections/banissa-2025/results_template.csv
+
+# Rebuild the public payload without network access
+python -m olkalou_engine.cli --root . archive-build banissa-2025
+```
+
+The importer enforces candidate-sum, cast-total, turnout and official-register checks before accepting a stream. The replay control switches on only when every stream has a verified result and a real timestamp.
+
+### Add another previous poll
+
+Copy `data/elections/banissa-2025` to a new election ID, replace the profile and certified stream rows, then run `archive-build`. No frontend code change is required; the catalog discovers every valid election folder automatically. See `docs/ADDING_PREVIOUS_POLL.md` for the field-by-field guide.
+
+## Production safety state
+
+The repository intentionally ships with **unresolved atomic polling rows and provisional ballot ordering**. Current public official information gives 144 expected polling units and 73,480 registered voters, but the production worker will not start until the certified 144-row register and ballot order are imported and explicitly verified.
+
+This is deliberate. Set neither `ALLOW_INCOMPLETE_REFERENCE=true` nor the verification flags merely to make the worker run on election night.
+
+## Windows: one-command setup
+
+```bat
+implement.cmd
+```
+
+Then:
+
+```bat
+run-local.cmd
+```
+
+Dashboard: `http://127.0.0.1:8000/frontend/`  
+Review console: `http://127.0.0.1:8080/`
+
+## Linux/macOS
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -U pip
+pip install -e '.[dev,pdf,s3]'
+pytest
+python -m olkalou_engine.cli --root . publish --simulations 100
+python -m olkalou_engine.cli --root . serve-static --port 8000
+```
+
+In a second terminal:
+
+```bash
+. .venv/bin/activate
+python -m olkalou_engine.cli --root . review --port 8080
+```
+
+## Close the two reference-data gates
+
+1. Extract the official Gazette into review CSVs:
+
+```bash
+python scripts/extract_gazette_tables.py path/to/gazette.pdf --output-dir data/review/gazette
+```
+
+2. Review and populate `scripts/streams_template.csv`, then import:
+
+```bash
+python scripts/import_streams_csv.py scripts/streams_template.csv \
+  --source "IEBC Gazette Notice <number>, 5 June 2026" \
+  --source-url "https://official-source.example/gazette.pdf"
+```
+
+The importer requires exactly 144 unique stream keys, non-negative registered-voter counts, verified rows and a sum of exactly 73,480.
+
+3. Review and populate `scripts/candidates_template.csv`, then import:
+
+```bash
+python scripts/import_candidates_csv.py scripts/candidates_template.csv \
+  --source "IEBC certified candidate list, Ol Kalou by-election" \
+  --source-url "https://official-source.example/candidate-list.pdf"
+```
+
+The importer requires exactly nine unique candidate IDs and ballot positions 1–9.
+
+4. Confirm the gate:
+
+```bash
+python -m olkalou_engine.cli --root . check-reference
+```
+
+It must return `"complete": true` before production ingestion.
+
+## Run the worker
+
+```bash
+cp .env.example .env
+# Set a real contact User-Agent, review token, R2/S3 credentials and alert webhook.
+python -m olkalou_engine.cli --root . worker
+```
+
+A single cycle is available for controlled testing:
+
+```bash
+python -m olkalou_engine.cli --root . tick
+```
+
+## Review workflow
+
+- Reviewer A enters all nine candidate totals plus registered, rejected, PO-valid and PO-cast controls.
+- Reviewer B independently enters the same fields.
+- Exact matches are run through V01–V12. Critical failures remain quarantined.
+- Mismatches become `CONFLICTED` and require an adjudicator.
+- Explicit adjudication can publish an internally inconsistent official form only as `DISPUTED`; the failed checks stay public.
+
+## Object storage and redundancy
+
+Configure R2/S3-compatible storage in `.env`. Run workers with different `WORKER_ID` values and, ideally, in different regions. Each publishes:
+
+- `workers/<worker-id>/live.json`
+- `live.json` only when its sequence exceeds the current alias
+
+Configure both worker URLs in `frontend/config.js`; the browser accepts only the highest sequence and rejects rollback payloads.
+
+## Form 35B reconciliation
+
+Create a JSON object keyed by candidate ID:
+
+```json
+{"UDA": 0, "DCP": 0, "JUBILEE": 0, "PNU": 0, "PDP": 0, "KMM": 0, "FPK": 0, "PRP": 0, "NLP": 0}
+```
+
+Then run:
+
+```bash
+python -m olkalou_engine.cli --root . reconcile form35b_totals.json --output RECONCILIATION.md
+```
+
+## Repository map
+
+```text
+src/olkalou_engine/     ingestion, archive, validation, review, publication, projections
+frontend/               live dashboard, previous-polls archive and methodology pages
+review_console/         private keyboard-driven review UI
+data/reference/         guarded live-election candidates, streams and Form 35A ROI map
+data/elections/         self-contained previous-poll profiles and transcription frames
+data/raw/               local immutable raw archive
+data/public/            generated public JSON and local mirrored forms
+docs/                   operations, deployment, OCR rehearsal and methodology notes
+deploy/                 container and systemd deployment assets
+scripts/                certified-reference import and extraction helpers
+tests/                  safety-critical unit tests
+```
+
+## Deliberate limitations
+
+- Cloud OCR adapters are implemented but disabled by default. Credentials, a verified ROI/homography template and a dress-rehearsal accuracy report are required before machine-assisted use; auto-publication remains separately gated.
+- The Gazette parser produces a review artifact; it never silently certifies rows.
+- The watcher parser is defensive but must be tested against the exact live IEBC detail page before code freeze.
+- Authentication is a bearer token, suitable behind TLS and a private access layer; it is not a full identity system.

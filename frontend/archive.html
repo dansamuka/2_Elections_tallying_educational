@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0E1116">
+  <meta name="description" content="Verified archive and replay workspace for Kenyan by-elections.">
+  <title>Past Polls · Election Tallying Wall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="legal-header archive-header">
+    <strong>ARCHIVE</strong>
+    <span>Historical election records. Stream totals appear only after source-form transcription and validation.</span>
+    <nav><a href="index.html">Live tally</a><a href="methodology.html">Methodology</a></nav>
+  </header>
+
+  <main class="shell archive-shell">
+    <section class="archive-picker panel">
+      <div>
+        <p class="eyebrow">PAST POLLS MODULE</p>
+        <h1>Run a previous election</h1>
+        <p class="status-line">Load a certified register, archive its IEBC forms, independently transcribe the streams, then replay the count through the same public ledger.</p>
+      </div>
+      <label>Election
+        <select id="electionSelect" aria-label="Choose a historical election"></select>
+      </label>
+    </section>
+
+    <section class="masthead archive-masthead">
+      <div>
+        <p id="archiveEyebrow" class="eyebrow">LOADING ARCHIVE</p>
+        <h1 id="archiveTitle">Election archive</h1>
+        <p id="archiveStatus" class="status-line">Loading…</p>
+      </div>
+      <div class="update-block">
+        <span>DATASET BUILT</span>
+        <strong id="archiveUpdated" class="numeric">—</strong>
+        <small id="archiveSourceState">Source status unknown</small>
+      </div>
+    </section>
+
+    <section class="coverage-strip archive-coverage" aria-label="Archive readiness">
+      <div><span>REGISTER STREAMS</span><strong id="archiveStreams" class="numeric">0</strong></div>
+      <div><span>FORMS ARCHIVED</span><strong id="archiveForms" class="numeric">0</strong></div>
+      <div><span>TRANSCRIBED</span><strong id="archiveTranscribed" class="numeric">0</strong></div>
+      <div><span>REGISTERED VOTERS</span><strong id="archiveRegistered" class="numeric">0</strong></div>
+      <div><span>REPLAY</span><strong id="archiveReplayState">WITHHELD</strong></div>
+    </section>
+
+    <div class="archive-grid">
+      <section class="panel archive-result-panel">
+        <header class="panel-header">
+          <div><p class="eyebrow">DECLARED CONSTITUENCY TOTALS</p><h2>Candidate result</h2></div>
+          <span id="archiveValid" class="numeric panel-total">— valid</span>
+        </header>
+        <div id="archiveCandidates" class="candidate-list"></div>
+        <div id="declarationNote" class="declaration-note"></div>
+      </section>
+
+      <section class="panel archive-stream-panel">
+        <header class="panel-header">
+          <div><p class="eyebrow">FORM 35A FRAME</p><h2 id="archiveGridTitle">Polling streams</h2></div>
+          <span id="archiveGridCounter" class="numeric panel-total">0/0</span>
+        </header>
+        <div id="archiveStreamGrid" class="stream-grid"></div>
+      </section>
+
+      <aside class="panel archive-run-panel">
+        <header class="panel-header"><div><p class="eyebrow">HISTORICAL PIPELINE</p><h2>Replay controls</h2></div></header>
+        <div id="replayUnavailable" class="archive-callout"></div>
+        <div id="replayControls" hidden>
+          <div class="replay-buttons">
+            <button id="replayPlay" type="button">Play</button>
+            <button id="replayReset" type="button">Reset</button>
+          </div>
+          <label class="replay-slider">Reported streams
+            <input id="replayRange" type="range" min="0" max="0" value="0">
+            <span id="replayPosition" class="numeric">0 / 0</span>
+          </label>
+        </div>
+        <hr>
+        <div id="archiveReadiness" class="metric-stack"></div>
+      </aside>
+    </div>
+
+    <section class="panel table-panel">
+      <header class="panel-header table-heading">
+        <div><p class="eyebrow">HISTORICAL SOURCE LEDGER</p><h2>Register and form status</h2></div>
+        <div class="table-controls">
+          <label>Ward <select id="archiveWard"><option value="">All wards</option></select></label>
+          <label>Status <select id="archiveState"><option value="">All states</option></select></label>
+          <label>Search <input id="archiveSearch" type="search" placeholder="Station or stream"></label>
+        </div>
+      </header>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Stream</th><th>Ward</th><th>Status</th><th>Registered</th><th>Valid votes</th><th>Form</th></tr></thead>
+          <tbody id="archiveTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel sources-panel">
+      <header class="panel-header"><div><p class="eyebrow">PROVENANCE</p><h2>Sources and limitations</h2></div></header>
+      <div id="archiveSources"></div>
+    </section>
+  </main>
+
+  <dialog id="archiveStreamDialog" class="stream-dialog">
+    <button id="archiveDialogClose" class="dialog-close" type="button" aria-label="Close">×</button>
+    <div id="archiveDialogBody"></div>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="archive.js" defer></script>
+</body>
+</html>

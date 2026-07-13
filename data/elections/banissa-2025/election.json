@@ -1,0 +1,77 @@
+{
+  "schema": "kenya.election.profile.v1",
+  "id": "banissa-2025",
+  "mode": "ARCHIVE",
+  "election": {
+    "title": "Banissa By-Election 2025",
+    "constituency": "BANISSA",
+    "code": "040",
+    "county": "MANDERA",
+    "county_code": "009",
+    "date": "2025-11-27",
+    "position": "Member of the National Assembly"
+  },
+  "portal": {
+    "index_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
+    "constituency": "BANISSA",
+    "expected_forms": 81
+  },
+  "register": {
+    "total": 32703,
+    "streams_total": 81,
+    "source": "Kenya Gazette Notice No. 15731, 29 October 2025",
+    "source_url": "https://www.iebc.or.ke/uploads/resources/AFVVhpNrgj.pdf",
+    "verified": true
+  },
+  "candidates": [
+    {
+      "id": "UDA",
+      "ballot_no": 1,
+      "name": "Hassan Ahmed Maalim",
+      "party": "United Democratic Alliance",
+      "abbr": "UDA",
+      "colour": "#F4C542",
+      "bloc": "GOVERNMENT"
+    },
+    {
+      "id": "UPA",
+      "ballot_no": 2,
+      "name": "Mohamed Nurdin Maalim",
+      "party": "United Progressive Alliance",
+      "abbr": "UPA",
+      "colour": "#5C8FC7",
+      "bloc": "OPPOSITION"
+    }
+  ],
+  "official_declaration": {
+    "candidate_totals": {
+      "UDA": 10431,
+      "UPA": 1240
+    },
+    "valid_votes": 11671,
+    "winner_id": "UDA",
+    "winner_votes": 10431,
+    "winner_source": "Kenya Gazette Notice No. 17611, 1 December 2025",
+    "winner_source_url": "https://www.iebc.or.ke/uploads/resources/EHWTStffeC.pdf",
+    "runner_up_source": "Returning Officer declaration reported by Nation Africa, 28 November 2025",
+    "runner_up_source_url": "https://nation.africa/kenya/news/politics/uda-ahmed-maalim-hassan-elected-banissa-mp-5280024",
+    "rejected_votes": null,
+    "total_cast": null,
+    "notes": [
+      "The official Gazette confirms the elected candidate and 10,431 votes. The 1,240 runner-up total is a published report of the Returning Officer declaration; it should be reconciled to Form 35B before being labelled form-certified."
+    ]
+  },
+  "blocs": {
+    "GOVERNMENT": [
+      "UDA"
+    ],
+    "OPPOSITION": [
+      "UPA"
+    ]
+  },
+  "methodology": {
+    "stream_results_complete": false,
+    "replay_available": false,
+    "note": "The official register and constituency totals are loaded. Stream-level Form 35A figures remain untranscribed until the historical pipeline is run and independently reviewed."
+  }
+}

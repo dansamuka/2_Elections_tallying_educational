@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/olkalou.live.v2.json",
+  "title": "Ol Kalou live payload v2",
+  "type": "object",
+  "required": ["schema", "seq", "generated_at", "election", "coverage", "totals", "candidates", "streams", "corrections"],
+  "properties": {
+    "schema": {"const": "olkalou.live.v2"},
+    "seq": {"type": "integer", "minimum": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "status": {"enum": ["PRE_POLL", "POLLING", "COUNTING", "DECLARED", "CLOSED"]},
+    "coverage": {
+      "type": "object",
+      "required": ["streams_total", "published", "in_review", "awaiting", "registered_total", "registered_reported"],
+      "properties": {
+        "streams_total": {"const": 144},
+        "published": {"type": "integer", "minimum": 0, "maximum": 144},
+        "in_review": {"type": "integer", "minimum": 0, "maximum": 144},
+        "awaiting": {"type": "integer", "minimum": 0, "maximum": 144},
+        "registered_total": {"type": "integer", "minimum": 0},
+        "registered_reported": {"type": "integer", "minimum": 0}
+      }
+    },
+    "candidates": {"type": "array", "minItems": 9, "maxItems": 9},
+    "streams": {"type": "array", "minItems": 144, "maxItems": 144},
+    "anomaly_feed": {"type": "array"},
+    "corrections": {"type": "array"}
+  }
+}

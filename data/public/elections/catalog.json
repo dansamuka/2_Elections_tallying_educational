@@ -1,0 +1,14 @@
+{
+  "schema": "kenya.election.catalog.v1",
+  "default": "banissa-2025",
+  "elections": [
+    {
+      "id": "banissa-2025",
+      "label": "Banissa · 27 Nov 2025",
+      "mode": "ARCHIVE",
+      "constituency": "BANISSA",
+      "date": "2025-11-27",
+      "data_url": "../data/public/elections/banissa-2025.json"
+    }
+  ]
+}

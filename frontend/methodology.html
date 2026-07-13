@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Methodology · Ol Kalou Tallying Wall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>.method{max-width:860px;margin:auto}.method h1{font:700 clamp(2.4rem,7vw,5rem)/.95 "Space Grotesk";letter-spacing:-.05em}.method h2{font:700 1.6rem "Space Grotesk";margin-top:2.5rem}.method p,.method li{color:#C7CDD5}.method code{font-family:"IBM Plex Mono";background:#171C24;padding:.12em .3em}.method table{margin:1rem 0}.callout{border-left:4px solid #D9873A;background:#171C24;padding:14px 18px}.method a{color:#B8D7FF}</style>
+</head>
+<body>
+<header class="legal-header"><strong>UNOFFICIAL</strong><span>Only the Returning Officer may declare the election result.</span><a href="index.html">Back to tally</a></header>
+<main class="shell method">
+  <p class="eyebrow">PUBLISHED BEFORE POLLS CLOSE · VERSION 2</p>
+  <h1>How this ledger earns trust</h1>
+  <p class="status-line">The product is provenance, not speed: every counted number must link to the immutable IEBC-published form from which it was verified.</p>
+  <div class="callout"><strong>Publication gate:</strong> only streams in <code>PUBLISHED</code> count in the headline tally. Forms in review remain visible as a count but their figures are excluded.</div>
+
+  <h2>Source and atomic unit</h2>
+  <p>The source is IEBC-published Form 35A scans. The atomic key is the polling stream, not a station name: <code>(station_code, stream_no)</code>. A Form 35B is ingested after the Returning Officer’s declaration and reconciled against the sum of all verified Form 35As.</p>
+
+  <h2>Reference-data safety gate</h2>
+  <p>Turnout and V07 require the certified by-election register per stream. The engine refuses production ingestion when candidate row order, stream identity, or registered-voter values are incomplete unless an operator explicitly overrides the gate. The current by-election total is 73,480 registered voters across 144 expected streams; the older 2022 total is not used as the live denominator.</p>
+
+  <h2>Human verification and double entry</h2>
+  <p>OCR is a pre-fill only. The safe baseline requires two different reviewers to independently key the same form. Matching entries publish as human-verified. A mismatch enters <code>CONFLICTED</code> and requires third-person adjudication. Reviewer identity and timestamps are retained in the internal ledger.</p>
+
+  <h2>Validation checks</h2>
+  <table><thead><tr><th>Code</th><th>Rule</th><th>Routing</th></tr></thead><tbody>
+    <tr><td>V01</td><td>Candidate sum equals the Presiding Officer’s stated valid votes</td><td>Critical quarantine</td></tr>
+    <tr><td>V02</td><td>Valid plus rejected equals total cast</td><td>Critical quarantine</td></tr>
+    <tr><td>V03</td><td>Total cast does not exceed the certified register</td><td>Critical quarantine and public flag</td></tr>
+    <tr><td>V04</td><td>Turnout above 95%</td><td>Human review</td></tr>
+    <tr><td>V05</td><td>Rejected rate outside the calibrated band</td><td>Human review</td></tr>
+    <tr><td>V06</td><td>Any candidate recorded as zero</td><td>Human review</td></tr>
+    <tr><td>V07</td><td>Form registered-voter value equals the certified stream register</td><td>Critical quarantine</td></tr>
+    <tr><td>V08</td><td>Amended version differs from a prior version</td><td>Conflicted</td></tr>
+    <tr><td>V09</td><td>Mean extraction confidence below threshold</td><td>Human review</td></tr>
+    <tr><td>V11–V12</td><td>Statistical curiosities</td><td>Attention only; never presented as fraud evidence</td></tr>
+  </tbody></table>
+
+  <h2 id="projection">Outstanding-vote arithmetic</h2>
+  <p><strong>T1 hard bound:</strong> no assumptions. If the current lead exceeds every remaining registered voter, the race is mathematically decided. <strong>T2:</strong> caps outstanding turnout at the observed 95th percentile. <strong>T3:</strong> a ward-stratified Monte Carlo model samples turnout and candidate shares within wards to reduce early-reporting bias. T3 is labelled as a model and never overrides T1.</p>
+
+  <h2>Corrections and amended forms</h2>
+  <p>Raw forms are archived before processing, hashed with SHA-256, and never overwritten. An amended IEBC upload creates a new form version. Any public change creates a permanent correction entry with the prior and replacement source links.</p>
+
+  <h2>Staleness and redundancy</h2>
+  <p>The dashboard fetches multiple worker outputs where configured and selects the payload with the highest monotonic sequence. It retains the last-known-good payload on network failure. Updates older than three minutes are marked amber; older than ten minutes are marked red.</p>
+
+  <h2>Editorial posture</h2>
+  <p>The site uses “leads” and, only when the no-assumption hard bound is satisfied, “mathematically decided.” It does not use “winner,” “declared,” or “elected” before the Returning Officer’s declaration. Bloc totals are arithmetic sums and do not imply transferable voter behaviour.</p>
+</main>
+</body></html>

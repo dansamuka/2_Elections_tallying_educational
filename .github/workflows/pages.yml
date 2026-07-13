@@ -1,0 +1,37 @@
+name: Deploy dashboard
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "frontend/**"
+      - "data/public/**"
+      - ".github/workflows/pages.yml"
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble static site
+        run: |
+          mkdir -p _site/data/public
+          cp -R frontend/. _site/
+          cp -R data/public/. _site/data/public/
+          sed -i 's#../data/public/#./data/public/#g' _site/config.js
+          find _site/data/public -type f -name '*.json' -exec sed -i 's#../data/public/#./data/public/#g' {} +
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

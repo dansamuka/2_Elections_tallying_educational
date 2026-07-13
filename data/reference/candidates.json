@@ -1,0 +1,109 @@
+{
+  "source": "IEBC Gazette Notice, 5 June 2026 \u2014 candidate list requires final operator verification of legal names and Form 35A row order",
+  "source_url": "https://www.iebc.or.ke/uploads/resources/OsfnFvMWui.pdf",
+  "source_verified": false,
+  "ballot_order_verified": false,
+  "last_checked_at": "2026-07-13T13:00:00Z",
+  "candidates": [
+    {
+      "id": "UDA",
+      "ballot_no": 1,
+      "name": "Samuel Muchina Nyagah",
+      "party": "United Democratic Alliance",
+      "abbr": "UDA",
+      "colour": "#F4C542",
+      "bloc": "GOVERNMENT"
+    },
+    {
+      "id": "DCP",
+      "ballot_no": 2,
+      "name": "Sammy Kamau Ngotho",
+      "party": "Democracy for the Citizens Party",
+      "abbr": "DCP",
+      "colour": "#F28C28",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "JUBILEE",
+      "ballot_no": 3,
+      "name": "Wilson Kigwa",
+      "party": "Jubilee Party",
+      "abbr": "JUBILEE",
+      "colour": "#E85D5D",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "PNU",
+      "ballot_no": 4,
+      "name": "Edwin Muchiri",
+      "party": "Party of National Unity",
+      "abbr": "PNU",
+      "colour": "#4C9BE8",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "PDP",
+      "ballot_no": 5,
+      "name": "Rachel Wangui Njoroge",
+      "party": "People's Democratic Party",
+      "abbr": "PDP",
+      "colour": "#B784F7",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "KMM",
+      "ballot_no": 6,
+      "name": "Mathenge Mwaniki",
+      "party": "Kenya Moja Movement",
+      "abbr": "KMM",
+      "colour": "#4FC3B1",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "FPK",
+      "ballot_no": 7,
+      "name": "Abdifatah Hussein",
+      "party": "Federal Party of Kenya",
+      "abbr": "FPK",
+      "colour": "#57C7E3",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "PRP",
+      "ballot_no": 8,
+      "name": "Timothy Kamau",
+      "party": "People's Renaissance Party",
+      "abbr": "PRP",
+      "colour": "#E57AB2",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "NLP",
+      "ballot_no": 9,
+      "name": "Stephen Wanyoike",
+      "party": "National Liberal Party",
+      "abbr": "NLP",
+      "colour": "#7BC96F",
+      "bloc": "OPPOSITION"
+    }
+  ],
+  "blocs": {
+    "GOVERNMENT": [
+      "UDA"
+    ],
+    "OPPOSITION": [
+      "DCP",
+      "JUBILEE",
+      "PNU",
+      "PDP",
+      "KMM",
+      "FPK",
+      "PRP",
+      "NLP"
+    ]
+  },
+  "notes": [
+    "The public pre-poll page may display these provisional names, but the production worker remains blocked until source_verified and ballot_order_verified are explicitly set true after checking the certified list and Form 35A row order.",
+    "Do not derive ballot order from media reporting."
+  ]
+}

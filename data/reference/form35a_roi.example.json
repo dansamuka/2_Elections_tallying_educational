@@ -1,0 +1,21 @@
+{
+  "schema": "olkalou.form35a.roi.v1",
+  "status": "VERIFIED",
+  "reference_image": "form35a-reference.png",
+  "reference_size": [2480, 3508],
+  "allow_resize_fallback": false,
+  "fields": {
+    "candidate_UDA.numeral": [0, 0, 0, 0],
+    "candidate_UDA.words": [0, 0, 0, 0],
+    "registered.numeral": [0, 0, 0, 0],
+    "rejected.numeral": [0, 0, 0, 0],
+    "total_valid.numeral": [0, 0, 0, 0],
+    "total_cast.numeral": [0, 0, 0, 0]
+  },
+  "textract_queries": [
+    {"Text": "How many votes did the UDA candidate receive?", "Alias": "candidate_UDA.numeral"}
+  ],
+  "notes": [
+    "This is a naming example only. Zero-size coordinates are invalid. Map all nine candidate numeral/words rows and control totals against the certified by-election Form 35A."
+  ]
+}

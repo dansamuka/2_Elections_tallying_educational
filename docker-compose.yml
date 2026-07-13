@@ -1,0 +1,22 @@
+services:
+  dashboard:
+    build: .
+    command: ["python", "-m", "olkalou_engine.cli", "--root", ".", "serve-static", "--host", "0.0.0.0", "--port", "8000"]
+    ports: ["8000:8000"]
+    volumes: ["./data:/app/data"]
+
+  review:
+    build: .
+    command: ["python", "-m", "olkalou_engine.cli", "--root", ".", "review", "--host", "0.0.0.0", "--port", "8080"]
+    env_file: [.env]
+    ports: ["8080:8080"]
+    volumes: ["./data:/app/data"]
+
+  worker-a:
+    build: .
+    command: ["python", "-m", "olkalou_engine.cli", "--root", ".", "worker"]
+    env_file: [.env]
+    environment:
+      WORKER_ID: worker-a
+    restart: unless-stopped
+    volumes: ["./data:/app/data"]

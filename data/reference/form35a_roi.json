@@ -1,0 +1,9 @@
+{
+  "schema": "olkalou.form35a.roi.v1",
+  "reference_size": null,
+  "fields": {},
+  "status": "UNMAPPED",
+  "notes": [
+    "Populate only after obtaining the exact nine-candidate Form 35A template. Coordinates are [x,y,width,height] in the rectified reference frame."
+  ]
+}
