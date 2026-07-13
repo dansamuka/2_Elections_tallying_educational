@@ -88,3 +88,37 @@ def test_provisional_endpoint_works_with_correct_token():
     body = resp.json()
     assert body["PROVISIONAL_UNVERIFIED"] is True
     assert "NOT AN ELECTION RESULT" in body["warning"]
+
+
+def test_historical_provisional_endpoint_requires_auth():
+    settings = _settings("a-real-secret-token")
+    app = create_app(settings)
+    client = TestClient(app)
+    resp = client.get("/api/historical-provisional/banissa-2025")
+    assert resp.status_code == 401
+
+
+def test_historical_provisional_endpoint_works_with_correct_token():
+    settings = _settings("a-real-secret-token")
+    app = create_app(settings)
+    client = TestClient(app)
+    resp = client.get(
+        "/api/historical-provisional/banissa-2025",
+        headers={"Authorization": "Bearer a-real-secret-token"},
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["PROVISIONAL_UNVERIFIED"] is True
+    assert body["election_id"] == "banissa-2025"
+    assert "NOT A CERTIFIED RESULT" in body["warning"]
+
+
+def test_historical_provisional_endpoint_404s_on_unknown_election():
+    settings = _settings("a-real-secret-token")
+    app = create_app(settings)
+    client = TestClient(app)
+    resp = client.get(
+        "/api/historical-provisional/does-not-exist",
+        headers={"Authorization": "Bearer a-real-secret-token"},
+    )
+    assert resp.status_code == 404

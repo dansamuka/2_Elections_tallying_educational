@@ -113,6 +113,20 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
         return build_provisional(db, reference)
 
+    @app.get("/api/historical-provisional/{election_id}", dependencies=[Depends(require_token)])
+    def historical_provisional(election_id: str) -> dict:
+        # Same authenticated, internal-only scoping as /api/provisional, for
+        # historical elections (Banissa etc.) -- see
+        # historical_provisional.py module docstring.
+        from .archive import load_historical_bundle
+        from .historical_provisional import build_historical_provisional
+
+        try:
+            bundle = load_historical_bundle(settings.root, election_id)
+        except FileNotFoundError as exc:
+            raise HTTPException(status_code=404, detail=str(exc)) from exc
+        return build_historical_provisional(bundle)
+
     @app.get("/api/review/{stream_key}/{version}", dependencies=[Depends(require_token)])
     def review_item(stream_key: str, version: int) -> dict:
         row = db.get_form(stream_key, version)

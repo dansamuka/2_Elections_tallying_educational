@@ -63,6 +63,13 @@ def build_parser() -> argparse.ArgumentParser:
     archive_build.add_argument("election_id")
     archive_build.set_defaults(_archive_command=True)
 
+    archive_provisional = sub.add_parser(
+        "archive-provisional",
+        help="Print the internal-only, unverified OCR aggregate for a historical election (operator/QA tool -- never published)",
+    )
+    archive_provisional.add_argument("election_id")
+    archive_provisional.set_defaults(_archive_command=True)
+
     archive_import = sub.add_parser("archive-import", help="Import verified stream results CSV")
     archive_import.add_argument("election_id")
     archive_import.add_argument("results_csv", type=Path)
@@ -158,8 +165,18 @@ def main() -> None:
         "archive-run",
         "archive-documents",
         "archive-ocr",
+        "archive-provisional",
     }:
         bundle = load_historical_bundle(settings.root, args.election_id)
+        if args.command == "archive-provisional":
+            from .historical_provisional import build_historical_provisional
+
+            result = build_historical_provisional(bundle)
+            print("=" * 70)
+            print(result["warning"])
+            print("=" * 70)
+            print(json.dumps(result, indent=2))
+            return
         if args.command == "archive-import":
             csv_path = args.results_csv if args.results_csv.is_absolute() else settings.root / args.results_csv
             imported = import_verified_results(bundle, csv_path)

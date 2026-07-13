@@ -9,6 +9,7 @@ src/olkalou_engine/corrections.py
 src/olkalou_engine/db.py
 src/olkalou_engine/extraction.py
 src/olkalou_engine/historical_ocr.py
+src/olkalou_engine/historical_provisional.py
 src/olkalou_engine/historical_sync.py
 src/olkalou_engine/models.py
 src/olkalou_engine/portal.py
@@ -36,6 +37,7 @@ src/olkalou_live_engine.egg-info/top_level.txt
 tests/test_archive.py
 tests/test_colours.py
 tests/test_historical_ocr.py
+tests/test_historical_provisional.py
 tests/test_historical_sync.py
 tests/test_ocr_merge.py
 tests/test_portal.py

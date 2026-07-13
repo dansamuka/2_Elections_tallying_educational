@@ -28,7 +28,7 @@
 | Historical OCR safety gate | Implemented | OCR never writes verified results or public candidate totals; two-person review plus V01/V02/V03/V07 import remains mandatory. |
 | Same-repository updater | Implemented | One-click publisher defaults to `dansamuka/2_Elections_tallying_educational`, fetches `origin/main`, replaces changed files and does not create a new repo when it already exists. |
 | Deployment assets | Implemented | Docker, Compose, systemd, CI and GitHub Pages workflow. |
-| Provisional (unverified) OCR aggregate | Implemented, internal-only by design | `GET /api/provisional` (authenticated), `cli provisional`, and a QA-only modal in the review console. Sums every extracted form regardless of trust state, for operator sanity-checking. Never wired into `publisher.py` or `data/public/` -- see `OCR_EXTRACTION_AND_PROVISIONAL_TOTALS_NOTES.md` for why. |
+| Provisional (unverified) OCR aggregate | Implemented, internal-only by design | `GET /api/provisional` + `GET /api/historical-provisional/{id}` (both authenticated), `cli provisional` + `cli archive-provisional <id>`, and matching QA-only modal buttons in the review console for both Ol Kalou (live) and Banissa (historical). Sums every extracted form/stream regardless of trust state, for operator sanity-checking. Never wired into `publisher.py`, `archive.py`, or `data/public/` -- see `OCR_EXTRACTION_AND_PROVISIONAL_TOTALS_NOTES.md` for why. |
 
 ## Historical-data posture
 
