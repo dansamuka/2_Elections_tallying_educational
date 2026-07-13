@@ -96,3 +96,52 @@ def test_global_download_all_is_not_treated_as_a_constituency_form():
     forms = client._extract_form_links(soup, "https://forms.example/index")
     client.close()
     assert forms == []
+
+
+def test_current_iebc_javascript_row_url_is_reconstructed_with_row_id():
+    client = PortalClient(
+        "https://forms.iebc.or.ke/index.php?r=site%2Findex&p=2&l=2",
+        "BANISSA",
+        "test",
+        constituency_code="040",
+    )
+    soup = BeautifulSoup(
+        '''<table><tr id="90" onclick='\n            let id = "90";\n            location.href = "/index.php?r=site%2Findex&amp;id=" + id + "&amp;ft=" + "" + "&amp;p=2"+ "&amp;es=";\n        '><td>BANISSA</td><td>81 of 81 (100%)</td></tr></table>''',
+        "html.parser",
+    )
+    urls = client._constituency_detail_urls(
+        soup, "https://forms.iebc.or.ke/index.php?r=site%2Findex&p=2&l=2"
+    )
+    client.close()
+    assert urls == [
+        "https://forms.iebc.or.ke/index.php?r=site%2Findex&id=90&ft=&p=2&es="
+    ]
+
+
+def test_detail_redirect_back_to_national_index_is_rejected(monkeypatch):
+    client = PortalClient(
+        "https://forms.example/index.php?r=site%2Findex&p=2&l=2",
+        "BANISSA",
+        "test",
+        constituency_code="040",
+        detail_url="https://forms.example/index.php?r=site%2Findex&id=90&p=2",
+    )
+
+    def fake_get(url, attempts=5):
+        from olkalou_engine.portal import FetchResult
+
+        return FetchResult(
+            200,
+            b'<html><body>BANISSA 81 of 81 <a href="/download-all">Download All</a></body></html>',
+            {"content-type": "text/html"},
+            "https://forms.example/index.php?r=site%2Findex&p=2&l=2",
+        )
+
+    monkeypatch.setattr(client, "get_with_backoff", fake_get)
+    try:
+        client.discover(b"<html><body>BANISSA 81 of 81</body></html>")
+        raise AssertionError("redirect to national index should be rejected")
+    except RuntimeError as exc:
+        assert "lost its row id" in str(exc)
+    finally:
+        client.close()

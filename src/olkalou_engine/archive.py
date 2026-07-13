@@ -525,6 +525,33 @@ def _archive_download(
     return entry, changed
 
 
+def _is_constituency_bundle(form: Any) -> bool:
+    marker = f"{getattr(form, 'source_label', '')} {getattr(form, 'source_url', '')}".lower()
+    return any(token in marker for token in ("download-all", "download all", "bulk download", ".zip"))
+
+
+def _bundle_member_count(entry: dict[str, Any]) -> int:
+    return sum(
+        1
+        for name in entry.get("extracted_files", [])
+        if Path(str(name)).suffix.lower() in {".pdf", ".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff"}
+    )
+
+
+def _zip_supported_member_count(data: bytes) -> int:
+    try:
+        with zipfile.ZipFile(BytesIO(data)) as archive:
+            return sum(
+                1
+                for member in archive.infolist()
+                if not member.is_dir()
+                and Path(member.filename).suffix.lower()
+                in {".pdf", ".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff"}
+            )
+    except zipfile.BadZipFile:
+        return 0
+
+
 def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, download: bool = True) -> dict[str, Any]:
     portal = bundle.profile["portal"]
     client = PortalClient(
@@ -532,6 +559,7 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
         portal["constituency"],
         user_agent,
         constituency_code=bundle.profile["election"]["code"],
+        detail_url=portal.get("detail_url"),
     )
     manifest = load_manifest(bundle)
     index_meta = manifest.get("index", {})
@@ -563,14 +591,19 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
         portal_reported, portal_expected = client.reported_counts(index.body)
         discovered = client.discover(index.body, index.url)
         discovered_35a = [form for form in discovered if form.form_type == "35A"]
-        if portal_reported and len(discovered_35a) < portal_reported:
+        bundle_links = [form for form in discovered_35a if _is_constituency_bundle(form)]
+        # The IEBC constituency view may expose either one link per form or a
+        # constituency-scoped Download All ZIP. One verified bundle is therefore
+        # a valid discovery result, but its extracted member count is checked after
+        # download before the run is accepted.
+        if portal_reported and len(discovered_35a) < portal_reported and not bundle_links:
             debug_path = bundle.election_dir / "portal_debug" / "index_latest.html"
             debug_path.parent.mkdir(parents=True, exist_ok=True)
             debug_path.write_bytes(index.body)
             raise RuntimeError(
                 "portal discovery incomplete: "
                 f"the IEBC index reports {portal_reported} Form 35As for {portal['constituency']}, "
-                f"but only {len(discovered_35a)} download links were found. "
+                f"but only {len(discovered_35a)} download links were found and no constituency bundle was discovered. "
                 f"Saved the index snapshot to {debug_path.relative_to(bundle.root)}."
             )
         previous_urls = set(manifest.get("forms", {}))
@@ -616,12 +649,43 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
                     "checked_at": utc_now_iso(),
                 }
                 continue
+            if _is_constituency_bundle(form) and portal_reported:
+                extension = extension_from_response(response.url, response.headers)
+                member_count = _zip_supported_member_count(response.body) if extension == "zip" else 0
+                if member_count != portal_reported:
+                    debug_path = bundle.election_dir / "portal_debug" / "bundle_response_latest.bin"
+                    debug_path.parent.mkdir(parents=True, exist_ok=True)
+                    debug_path.write_bytes(response.body[:2_000_000])
+                    raise RuntimeError(
+                        "constituency Download All response rejected: "
+                        f"expected exactly {portal_reported} Form 35A files for {portal['constituency']}, "
+                        f"but received {member_count} supported files (content type "
+                        f"{response.headers.get('content-type', 'unknown')}). "
+                        f"Saved a bounded response sample to {debug_path.relative_to(bundle.root)}."
+                    )
             entry, changed = _archive_download(bundle, form, response, reference, existing)
             manifest["forms"][form.source_url] = entry
             if existing is None:
                 new_downloads += 1
             elif changed:
                 changed_downloads += 1
+        if download and portal_reported and bundle_links:
+            bundle_entries = [
+                manifest.get("forms", {}).get(form.source_url, {})
+                for form in bundle_links
+            ]
+            bundle_members = sum(_bundle_member_count(entry) for entry in bundle_entries)
+            if bundle_members != portal_reported:
+                debug_path = bundle.election_dir / "portal_debug" / "index_latest.html"
+                debug_path.parent.mkdir(parents=True, exist_ok=True)
+                debug_path.write_bytes(index.body)
+                raise RuntimeError(
+                    "constituency bundle incomplete: "
+                    f"the IEBC index reports {portal_reported} Form 35As for {portal['constituency']}, "
+                    f"but the downloaded bundle yielded {bundle_members} supported form files instead of exactly {portal_reported}. "
+                    f"Saved the index snapshot to {debug_path.relative_to(bundle.root)}."
+                )
+
         matched_count = len(
             {
                 item.get("stream_key")
@@ -630,13 +694,20 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
             }
         )
         downloaded_count = sum(
-            1 for item in manifest.get("forms", {}).values() if item.get("sha256")
+            max(1, _bundle_member_count(item))
+            for item in manifest.get("forms", {}).values()
+            if item.get("sha256")
         )
+        bundle_member_total = sum(
+            _bundle_member_count(manifest.get("forms", {}).get(form.source_url, {}))
+            for form in bundle_links
+        )
+        effective_discovered_count = max(len(discovered), bundle_member_total)
         discovered_urls = {form.source_url for form in discovered}
         metadata_changed = (
             previous_index != next_index
             or discovered_urls - previous_urls
-            or int(manifest.get("discovered_count", -1)) != len(discovered)
+            or int(manifest.get("discovered_count", -1)) != effective_discovered_count
             or int(manifest.get("matched_count", -1)) != matched_count
             or int(manifest.get("downloaded_count", -1)) != downloaded_count
             or manifest.get("portal_reported") != portal_reported
@@ -649,7 +720,7 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
                 {
                     "index": next_index,
                     "last_portal_ok": utc_now_iso(),
-                    "discovered_count": len(discovered),
+                    "discovered_count": effective_discovered_count,
                     "matched_count": matched_count,
                     "downloaded_count": downloaded_count,
                     "portal_reported": portal_reported,
@@ -662,7 +733,7 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
             "election_id": bundle.election_id,
             "status": "UPDATED" if changed else "NO_CHANGE",
             "changed": changed,
-            "discovered": len(discovered),
+            "discovered": effective_discovered_count,
             "matched": matched_count,
             "downloaded": downloaded_count,
             "new_downloads": new_downloads,

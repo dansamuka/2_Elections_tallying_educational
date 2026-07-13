@@ -30,3 +30,9 @@ Validated on 13 July 2026 against the existing-repository update source tree.
 ## External portal test note
 
 The public IEBC page was independently confirmed to list Banissa as 81 of 81 reported and Ol Kalou as 0 of 144 at validation time. The execution container itself could not resolve the external IEBC hostname, so it could not download the live files during packaging. This limitation is not hidden: the scheduled workflow runs on GitHub's internet-connected runner, and the parser refuses success when the portal's reported count exceeds the number of discovered Form 35A links.
+
+## v0.4.1 IEBC constituency discovery hotfix
+
+The first production workflow run exposed the current IEBC index's JavaScript-generated constituency route. Version 0.4.1 reconstructs that route, verifies the final constituency row id, and validates any Download All ZIP against the exact reported form count before archival.
+
+Final checks: **44 tests passed**, Ruff passed, Python compilation passed, and frontend JavaScript syntax checks passed.

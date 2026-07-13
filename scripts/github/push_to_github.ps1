@@ -153,7 +153,7 @@ Write-Step "Committing the replacement snapshot"
 Assert-LastExitCode "Could not stage the repository files."
 & git diff --cached --quiet
 if ($LASTEXITCODE -ne 0) {
-    & git commit -m "Add five-minute IEBC forms sync and OCR dashboard updates"
+    & git commit -m "Fix IEBC constituency discovery and bundle validation"
     Assert-LastExitCode "Could not create the Git commit."
 } else {
     Write-Host "No changed files were found. The existing repository is already current." -ForegroundColor DarkGray

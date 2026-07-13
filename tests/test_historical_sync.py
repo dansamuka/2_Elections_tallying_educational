@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import shutil
+import zipfile
+from io import BytesIO
 from pathlib import Path
 
 from olkalou_engine.archive import load_historical_bundle, run_historical_archive
@@ -92,3 +94,95 @@ def test_scheduled_workflow_is_five_minute_and_manual() -> None:
     assert "workflow_dispatch:" in workflow
     assert "archive-sync" in workflow
     assert "tesseract-ocr" in workflow
+
+
+def test_historical_archive_accepts_verified_constituency_download_all_bundle(tmp_path: Path, monkeypatch) -> None:
+    root = copy_banissa(tmp_path)
+    bundle = load_historical_bundle(root, "banissa-2025")
+    form = PortalForm(
+        source_url="https://forms.example/index.php?r=site%2Fdownload-all&p=2&ft=1&lv=2",
+        source_label="BANISSA Download All",
+        stream_key=None,
+        station_name=None,
+        stream_no=None,
+        form_type="35A",
+    )
+    payload = BytesIO()
+    with zipfile.ZipFile(payload, "w") as archive:
+        for index in range(81):
+            archive.writestr(f"banissa-form-35a-{index + 1:03d}.pdf", b"%PDF-1.4 fixture")
+
+    class FakeClient:
+        def __init__(self, *args, **kwargs):
+            self.calls = 0
+
+        def conditional_get(self, url, etag=None, last_modified=None):
+            self.calls += 1
+            if self.calls == 1:
+                return FetchResult(200, b"<html>BANISSA 81 of 81</html>", {"etag": "index-1"}, url)
+            return FetchResult(
+                200, payload.getvalue(), {"content-type": "application/zip"}, url
+            )
+
+        def reported_counts(self, html):
+            return 81, 81
+
+        def discover(self, html, base_url=None):
+            return [form]
+
+        def close(self):
+            return None
+
+    monkeypatch.setattr("olkalou_engine.archive.PortalClient", FakeClient)
+    result = run_historical_archive(bundle, user_agent="test", download=True)
+    assert result["changed"] is True
+    assert result["discovered"] == 81
+    assert result["downloaded"] == 81
+    manifest = json.loads(bundle.manifest_path.read_text(encoding="utf-8"))
+    entry = manifest["forms"][form.source_url]
+    assert len(entry["extracted_files"]) == 81
+
+
+def test_historical_archive_rejects_wrong_sized_download_all_bundle_before_archiving(tmp_path: Path, monkeypatch) -> None:
+    root = copy_banissa(tmp_path)
+    bundle = load_historical_bundle(root, "banissa-2025")
+    form = PortalForm(
+        source_url="https://forms.example/index.php?r=site%2Fdownload-all&p=2&ft=1&lv=2",
+        source_label="BANISSA Download All",
+        stream_key=None,
+        station_name=None,
+        stream_no=None,
+        form_type="35A",
+    )
+    payload = BytesIO()
+    with zipfile.ZipFile(payload, "w") as archive:
+        for index in range(82):
+            archive.writestr(f"form-{index + 1:03d}.pdf", b"%PDF fixture")
+
+    class FakeClient:
+        def __init__(self, *args, **kwargs):
+            self.calls = 0
+
+        def conditional_get(self, url, etag=None, last_modified=None):
+            self.calls += 1
+            if self.calls == 1:
+                return FetchResult(200, b"<html>BANISSA 81 of 81</html>", {}, url)
+            return FetchResult(200, payload.getvalue(), {"content-type": "application/zip"}, url)
+
+        def reported_counts(self, html):
+            return 81, 81
+
+        def discover(self, html, base_url=None):
+            return [form]
+
+        def close(self):
+            return None
+
+    monkeypatch.setattr("olkalou_engine.archive.PortalClient", FakeClient)
+    try:
+        run_historical_archive(bundle, user_agent="test", download=True)
+        raise AssertionError("wrong-sized bundle must be rejected")
+    except RuntimeError as exc:
+        assert "expected exactly 81" in str(exc)
+    assert not bundle.manifest_path.exists()
+    assert not any((root / "data" / "public" / "elections" / "banissa-2025" / "forms").rglob("*"))

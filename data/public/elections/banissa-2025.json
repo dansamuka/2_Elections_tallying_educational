@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1783960014743,
-  "generated_at": "2026-07-13T16:26:54.743485Z",
+  "seq": 1783961506058,
+  "generated_at": "2026-07-13T16:51:46.058610Z",
   "mode": "ARCHIVE",
   "election_id": "banissa-2025",
   "election": {
@@ -22,10 +22,10 @@
     "candidate_source": "Kenya Gazette Notice No. 15731, 29 October 2025"
   },
   "pipeline_health": {
-    "watcher": "ERROR",
+    "watcher": "NEVER_RUN",
     "extractor": "MANUAL_REVIEW",
     "last_portal_ok": null,
-    "last_sync_completed": "2026-07-13T16:26:54.742727Z",
+    "last_sync_completed": null,
     "last_sync_changed": null,
     "worker_id": "github-actions-or-manual"
   },
@@ -140,13 +140,10 @@
     "portal_sync": {
       "schema": "kenya.election.portal-sync.v1",
       "election_id": "banissa-2025",
-      "state": "ERROR",
-      "last_started_at": "2026-07-13T16:26:52.428181Z",
-      "last_completed_at": "2026-07-13T16:26:54.742727Z",
+      "state": "NEVER_RUN",
+      "last_completed_at": null,
       "last_changed_at": null,
-      "portal_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
-      "engine_mode": "auto",
-      "message": "portal discovery incomplete: the IEBC index reports 81 Form 35As for BANISSA, but only 1 download links were found. Saved the index snapshot to data/elections/banissa-2025/portal_debug/index_latest.html."
+      "message": "The IEBC portal sync has not run for this election."
     },
     "portal_discovered": 0,
     "portal_downloaded": 0,

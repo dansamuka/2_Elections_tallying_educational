@@ -5,9 +5,10 @@ import random
 import re
 import time
 from dataclasses import dataclass
+from html import unescape
 from pathlib import Path
 from typing import Iterable
-from urllib.parse import urljoin, urlparse
+from urllib.parse import parse_qs, urljoin, urlparse
 
 import httpx
 from bs4 import BeautifulSoup
@@ -35,10 +36,12 @@ class PortalClient:
         user_agent: str,
         timeout: float = 30,
         constituency_code: str = "091",
+        detail_url: str | None = None,
     ):
         self.index_url = index_url
         self.constituency = constituency.upper().strip()
         self.constituency_code = str(constituency_code).zfill(3)
+        self.detail_url = detail_url
         self.client = httpx.Client(
             timeout=timeout,
             follow_redirects=True,
@@ -101,7 +104,11 @@ class PortalClient:
             )
 
         forms = self._extract_form_links(soup, base_url, constituency_scoped=False)
-        queue = list(self._constituency_detail_urls(soup, base_url))
+        queue = (
+            [urljoin(base_url, self.detail_url)]
+            if self.detail_url
+            else list(self._constituency_detail_urls(soup, base_url))
+        )
         visited: set[str] = set()
         # The IEBC portal uses Yii pagination on some result views. Crawl every
         # pagination page so "download all" means all forms for this constituency,
@@ -114,6 +121,13 @@ class PortalClient:
             result = self.get_with_backoff(detail_url)
             if result.status_code != 200 or not result.body:
                 continue
+            requested_ids = parse_qs(urlparse(detail_url).query).get("id", [])
+            final_ids = parse_qs(urlparse(result.url).query).get("id", [])
+            if requested_ids and final_ids != requested_ids:
+                raise RuntimeError(
+                    "IEBC constituency detail request lost its row id after redirect; "
+                    "refusing to treat the national Download All control as constituency-scoped"
+                )
             detail_soup = BeautifulSoup(result.body, "html.parser")
             forms.extend(self._extract_form_links(detail_soup, result.url, constituency_scoped=True))
             for page_url in self._pagination_urls(detail_soup, result.url):
@@ -135,25 +149,63 @@ class PortalClient:
                 values.append(urljoin(base_url, value.strip()))
         onclick = attrs.get("onclick")
         if isinstance(onclick, str):
-            for match in re.findall(r"(?:https?://[^'\"\s]+|(?:/|index\.php\?)[^'\"\s,)]+)", onclick):
-                values.append(urljoin(base_url, match.replace("&amp;", "&")))
+            decoded = unescape(onclick)
+            # The current IEBC index builds the constituency URL by concatenating
+            # the table-row id inside JavaScript, for example:
+            #   location.href = "/index.php?...&id=" + id + "&p=2";
+            # Extracting quoted fragments independently loses the id and sends the
+            # crawler back to the national index. Reconstruct the complete RHS.
+            assignment = re.search(r"location\.href\s*=\s*(.*?);", decoded, re.I | re.S)
+            row_id = attrs.get("id")
+            reconstructed = None
+            if assignment and row_id:
+                pieces: list[str] = []
+                used_variable = False
+                for token in re.finditer(
+                    r'"(?P<double>[^"\\]*(?:\\.[^"\\]*)*)"'
+                    r"|'(?P<single>[^'\\]*(?:\\.[^'\\]*)*)'"
+                    r"|(?P<variable>\bid\b)",
+                    assignment.group(1),
+                ):
+                    if token.group("variable"):
+                        pieces.append(str(row_id))
+                        used_variable = True
+                    else:
+                        pieces.append(token.group("double") or token.group("single") or "")
+                if used_variable and pieces:
+                    reconstructed = "".join(pieces)
+                    values.append(urljoin(base_url, reconstructed))
+            if reconstructed is None:
+                for match in re.findall(r"(?:https?://[^'\"\s]+|(?:/|index\.php\?)[^'\"\s,)]+)", decoded):
+                    values.append(urljoin(base_url, match.replace("&amp;", "&")))
         return values
 
     def _constituency_detail_urls(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         urls: list[str] = []
         for text_node in soup.find_all(string=re.compile(re.escape(self.constituency), re.I)):
             node = text_node.parent
-            for ancestor in [node, *list(node.parents)[:6]]:
-                if not ancestor:
+            row = node.find_parent("tr") if node else None
+            # Prefer the exact constituency row. Ascending to the whole table can
+            # accidentally collect the national Download All control.
+            scopes = [row] if row else [node, *list(node.parents)[:3]]
+            for scope in scopes:
+                if not scope:
                     continue
-                urls.extend(self._candidate_urls(ancestor, base_url))
-                for descendant in ancestor.find_all(["a", "button", "tr", "td", "form"]):
+                urls.extend(self._candidate_urls(scope, base_url))
+                for descendant in scope.find_all(["a", "button", "tr", "td", "form"]):
                     urls.extend(self._candidate_urls(descendant, base_url))
                 if urls:
                     break
-        filtered = []
+            if urls:
+                break
+        filtered: list[str] = []
         for url in urls:
             if url == base_url or url.startswith("javascript:") or url.startswith("#"):
+                continue
+            # A valid constituency detail URL must retain the row id. Discard
+            # malformed JavaScript fragments such as URLs ending in '&id='.
+            parsed = urlparse(url)
+            if re.search(r"(?:[?&])id=$", parsed.query):
                 continue
             filtered.append(url)
         return list(dict.fromkeys(filtered))[:12]

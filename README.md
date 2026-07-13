@@ -252,3 +252,7 @@ tests/                  safety-critical unit tests
 ### Windows timezone compatibility
 
 `tzdata` is installed as a core dependency, and the worker has a fixed UTC+03:00 fallback for East Africa Time when the Windows IANA timezone database is unavailable.
+
+## IEBC portal sync hotfix v0.4.1
+
+The parser supports the current IEBC JavaScript constituency rows and verified constituency-scoped Download All ZIPs. It refuses redirects to the national index and rejects a ZIP unless its supported form count exactly matches the portal's reported count. See `SYNC_FAILURE_FIX_NOTES.md`.
