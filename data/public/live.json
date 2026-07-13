@@ -1,7 +1,7 @@
 {
   "schema": "olkalou.live.v2",
-  "seq": 1783971395502,
-  "generated_at": "2026-07-13T19:36:35.502142Z",
+  "seq": 1783976348692,
+  "generated_at": "2026-07-13T20:59:08.692769Z",
   "election": {
     "constituency": "OL KALOU",
     "code": "091",
@@ -17,7 +17,7 @@
       "144 stream rows have no registered-voter value"
     ],
     "register_source": "IEBC certified by-election register / polling-stations Gazette, 5 June 2026",
-    "candidate_source": "IEBC Gazette Notice, 5 June 2026 — candidate list requires final operator verification of legal names and Form 35A row order"
+    "candidate_source": "IEBC Gazette Notice, 5 June 2026 (clearance) -- candidate list requires final operator verification of legal names and Form 35A row order against the certified list itself"
   },
   "pipeline_health": {
     "watcher": "UNKNOWN",

@@ -18,6 +18,13 @@ jobs:
       - run: python -m olkalou_engine.cli --root . archive-documents banissa-2025
       - run: python -m olkalou_engine.cli --root . archive-ocr banissa-2025 --engine embedded
       - run: python -m olkalou_engine.cli --root . archive-build banissa-2025
+      # Regression coverage for the 13 Jul 2026 sync-error fix: `publish` is
+      # the ONLY thing that regenerates data/public/live.json (the file
+      # frontend/index.html actually reads -- see SYNC_ERROR_DIAGNOSIS_NOTES.md).
+      # It previously worked perfectly but was never invoked by anything on a
+      # schedule, so it silently went stale for hours without any check
+      # catching it. Make sure it at least always runs cleanly.
+      - run: python -m olkalou_engine.cli --root . publish
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

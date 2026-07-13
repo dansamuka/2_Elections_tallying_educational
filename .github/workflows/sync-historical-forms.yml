@@ -120,6 +120,27 @@ jobs:
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
           exit 0
 
+      # SYNC-ERROR FIX (13 Jul 2026): archive-sync above only ever touched
+      # data/elections + data/public/elections (the kenya.election.archive.v1
+      # pipeline that feeds archive.html). It never regenerated
+      # data/public/live.json, which is the ONLY file frontend/index.html
+      # ("Ol Kalou Tallying Wall") reads (see frontend/config.js liveUrls and
+      # the hard schema check at frontend/app.js:25). That left live.json
+      # frozen at its last manual run (16:02) while archive.html kept
+      # updating every 5 minutes -- the two pages silently diverged.
+      # `publish` is a lightweight, no-network rebuild from the already-
+      # current data/reference/*.json + data/state/engine.sqlite3 (EngineDB),
+      # so it's safe and cheap to run on every tick alongside archive-sync.
+      - name: Republish live.json (Tallying Wall)
+        id: publish
+        shell: bash
+        run: |
+          set +e
+          python -m olkalou_engine.cli --root . publish | tee /tmp/publish-result.json
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
       - name: Reject oversized Git objects
         shell: bash
         run: |
@@ -147,6 +168,13 @@ jobs:
               cat /tmp/sync-result.json
               echo '```'
             fi
+            echo
+            echo "### live.json republish"
+            if [[ -f /tmp/publish-result.json ]]; then
+              echo '```json'
+              cat /tmp/publish-result.json
+              echo '```'
+            fi
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit only meaningful changes
@@ -155,7 +183,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/elections data/public/elections
+          git add data/elections data/public/elections data/public/live.json data/public/workers
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No new or changed form files were found."
@@ -165,6 +193,7 @@ jobs:
           git pull --rebase origin main
           git push origin main
           echo "changed=true" >> "$GITHUB_OUTPUT"
+
 
       - name: Assemble updated Pages site
         if: ${{ steps.commit.outputs.changed == 'true' }}

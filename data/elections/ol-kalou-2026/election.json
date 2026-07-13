@@ -61,6 +61,7 @@
     "verified": false,
     "atomic_rows_verified": false,
     "notes": [
+      "Register TOTAL (73,480) is independently verified: Ol Kalou Returning Officer Anthony Njiraini is on-record stating 73,480 voters are eligible to cast ballots in the 16 July 2026 by-election (Daily Nation, 'Shared childhoods and old rivals: Personal ties shaping Ol Kalou by-election race', ~10 Jul 2026). A second Nation piece independently references 'the area's 73,000 registered voters' ('Ol-Kalou by-election: Murima referendum on who's calling the shots'), consistent with 73,480 rounded. The per-ward breakdown and the 144 individual atomic stream rows below remain NOT independently verified -- only their sum (73,480) is confirmed. Do not mark ward_total_verified true until each ward figure is checked against the certified Gazette/RO register directly.",
       "Ward totals and the constituency total are loaded, but the 144 atomic stream rows remain unresolved until certified source rows replace placeholders."
     ]
   },
@@ -148,7 +149,7 @@
     }
   ],
   "candidate_reference": {
-    "source": "IEBC Gazette Notice, 5 June 2026 — candidate list requires final operator verification of legal names and Form 35A row order",
+    "source": "IEBC Gazette Notice, 5 June 2026 \u2014 candidate list requires final operator verification of legal names and Form 35A row order",
     "source_url": "https://www.iebc.or.ke/uploads/resources/OsfnFvMWui.pdf",
     "source_verified": false,
     "ballot_order_verified": false

@@ -11,35 +11,35 @@
       "name": "RURII",
       "streams_total": 33,
       "registered": 15663,
-      "ward_total_verified": true
+      "ward_total_verified": false
     },
     {
       "code": "0454",
       "name": "KANJUIRI RANGE",
       "streams_total": 32,
       "registered": 15585,
-      "ward_total_verified": true
+      "ward_total_verified": false
     },
     {
       "code": "0453",
       "name": "KARAU",
       "streams_total": 27,
       "registered": 13795,
-      "ward_total_verified": true
+      "ward_total_verified": false
     },
     {
       "code": "0456",
       "name": "KAIMBAGA",
       "streams_total": 27,
       "registered": 13766,
-      "ward_total_verified": true
+      "ward_total_verified": false
     },
     {
       "code": "0455",
       "name": "MIRANGINE",
       "streams_total": 25,
       "registered": 14671,
-      "ward_total_verified": true
+      "ward_total_verified": false
     }
   ],
   "streams": [

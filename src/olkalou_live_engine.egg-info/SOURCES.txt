@@ -42,6 +42,7 @@ tests/test_projection.py
 tests/test_publisher.py
 tests/test_reference.py
 tests/test_review.py
+tests/test_review_api_auth.py
 tests/test_timezone.py
 tests/test_validation.py
 tests/test_words.py

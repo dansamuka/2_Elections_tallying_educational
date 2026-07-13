@@ -1,6 +1,5 @@
 {
-  "source": "IEBC Gazette Notice, 5 June 2026 \u2014 candidate list requires final operator verification of legal names and Form 35A row order",
-  "source_url": "https://www.iebc.or.ke/uploads/resources/OsfnFvMWui.pdf",
+  "source": "IEBC Gazette Notice, 5 June 2026 (clearance) -- candidate list requires final operator verification of legal names and Form 35A row order against the certified list itself",
   "source_verified": false,
   "ballot_order_verified": false,
   "last_checked_at": "2026-07-13T13:00:00Z",
@@ -103,7 +102,9 @@
     ]
   },
   "notes": [
+    "Roster corroborated (not primary-document-verified) across seven independent outlets reporting consistently on these 9 names/parties: Daily Nation, KBC Digital, The Standard, Kahawatungu, Kenyans.co.ke, People Daily, AVDelta News (May-Jul 2026 campaign coverage). source_url previously pointed at the same PDF as the polling-station register, which is not a plausible source for a candidate list -- removed rather than left implying false precision. Ballot order and legal-name spelling remain unverified against the certified list; notes below on that are unchanged and still binding.",
     "The public pre-poll page may display these provisional names, but the production worker remains blocked until source_verified and ballot_order_verified are explicitly set true after checking the certified list and Form 35A row order.",
     "Do not derive ballot order from media reporting."
-  ]
+  ],
+  "roster_corroborated": true
 }

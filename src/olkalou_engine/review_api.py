@@ -35,6 +35,20 @@ class AdjudicationRequest(ReviewRequest):
 
 def create_app(settings: Settings | None = None) -> FastAPI:
     settings = settings or get_settings()
+    if settings.review_api_token == "change-me":
+        # SECURITY FIX (13 Jul 2026 audit): this used to silently disable
+        # auth entirely whenever the token was left at its default. Combined
+        # with REVIEW_HOST defaulting to 0.0.0.0 (all interfaces) and CORS
+        # allow_origins=["*"], an operator who forgot to set
+        # REVIEW_API_TOKEN would unknowingly run a review console -- which
+        # can publish election results -- open to anyone on the network
+        # with zero authentication. Refuse to start instead of failing open.
+        raise RuntimeError(
+            "REVIEW_API_TOKEN is still the default 'change-me'. Set a real, "
+            "unique token via the REVIEW_API_TOKEN environment variable "
+            "before starting the review console -- this is not optional, "
+            "the console can publish election results. See .env.example."
+        )
     db = EngineDB(settings.db_path)
     reference = load_reference(settings.candidates_path, settings.streams_path)
     publisher = Publisher(
@@ -60,9 +74,11 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     def require_token(
         authorization: Annotated[str | None, Header()] = None,
     ) -> None:
+        # No default-token bypass here: create_app() above already refuses
+        # to start with the default token, so `expected` is always an
+        # operator-chosen value by the time this runs, and must always be
+        # checked -- no early return.
         expected = settings.review_api_token
-        if expected == "change-me":
-            return
         if authorization != f"Bearer {expected}":
             raise HTTPException(status_code=401, detail="Invalid review API token")
 
@@ -195,5 +211,11 @@ def serialize_queue_item(row: dict) -> dict:
         "review_count": row.get("review_count", 0),
     }
 
-
-app = create_app()
+# NOTE: no module-level `app = create_app()` here on purpose. Every actual
+# entrypoint (docker-compose's `review` service, deploy/systemd, and
+# `cli.py`'s `review` subcommand) calls create_app(settings) explicitly with
+# real settings resolved from the environment. A module-level call here
+# would run at *import* time with whatever default settings happen to be
+# present -- which is exactly the footgun that let the auth-bypass bug (see
+# the fix above) go unnoticed: the app instance existed and was importable
+# with a default/insecure token before anyone had a chance to configure one.

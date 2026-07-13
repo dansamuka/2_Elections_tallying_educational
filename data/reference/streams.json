@@ -15,35 +15,35 @@
       "name": "RURII",
       "streams_total": 33,
       "registered": 15663,
-      "ward_total_verified": true
+      "ward_total_verified": false
     },
     {
       "code": "0454",
       "name": "KANJUIRI RANGE",
       "streams_total": 32,
       "registered": 15585,
-      "ward_total_verified": true
+      "ward_total_verified": false
     },
     {
       "code": "0453",
       "name": "KARAU",
       "streams_total": 27,
       "registered": 13795,
-      "ward_total_verified": true
+      "ward_total_verified": false
     },
     {
       "code": "0456",
       "name": "KAIMBAGA",
       "streams_total": 27,
       "registered": 13766,
-      "ward_total_verified": true
+      "ward_total_verified": false
     },
     {
       "code": "0455",
       "name": "MIRANGINE",
       "streams_total": 25,
       "registered": 14671,
-      "ward_total_verified": true
+      "ward_total_verified": false
     }
   ],
   "streams": [
@@ -1633,7 +1633,7 @@
     }
   ],
   "notes": [
-    "Current IEBC public information states 73,480 registered voters and 144 polling stations/streams for the 16 July 2026 by-election.",
+    "Register TOTAL (73,480) is independently verified: Ol Kalou Returning Officer Anthony Njiraini is on-record stating 73,480 voters are eligible to cast ballots in the 16 July 2026 by-election (Daily Nation, 'Shared childhoods and old rivals: Personal ties shaping Ol Kalou by-election race', ~10 Jul 2026). A second Nation piece independently references 'the area's 73,000 registered voters' ('Ol-Kalou by-election: Murima referendum on who's calling the shots'), consistent with 73,480 rounded. The per-ward breakdown and the 144 individual atomic stream rows below remain NOT independently verified -- only their sum (73,480) is confirmed. Do not mark ward_total_verified true until each ward figure is checked against the certified Gazette/RO register directly.",
     "Ward totals are loaded, but the 144 atomic stream rows are intentionally unresolved placeholders. Import the official Gazette table before production; the worker safety gate will otherwise refuse to run.",
     "The 2022 total of 72,997 must not be used for the 2026 by-election turnout denominator."
   ]
