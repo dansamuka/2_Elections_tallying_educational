@@ -1,0 +1,196 @@
+name: Sync IEBC forms and OCR
+
+on:
+  schedule:
+    - cron: "2/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      election_id:
+        description: "Historical election id, or all"
+        required: true
+        default: "all"
+        type: string
+      engine:
+        description: "OCR engine"
+        required: true
+        default: "auto"
+        type: choice
+        options:
+          - auto
+          - embedded
+          - tesseract
+          - gcv
+          - textract
+          - dual-cloud
+      rebuild:
+        description: "Re-run existing OCR extraction records"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: historical-forms-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      ENGINE_ROOT: .
+      PORTAL_USER_AGENT: "KenyaElectionTallyingWall/0.4 (+https://dansamuka.github.io/2_Elections_tallying_educational/methodology.html)"
+      OCR_MODE: none
+      AWS_REGION: af-south-1
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install local OCR runtime
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends tesseract-ocr
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[historical-ocr,pdf]'
+
+      - name: Configure optional cloud OCR credentials
+        shell: bash
+        env:
+          GCV_SERVICE_ACCOUNT_JSON: ${{ secrets.GCV_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [[ -n "$GCV_SERVICE_ACCOUNT_JSON" ]]; then
+            printf '%s' "$GCV_SERVICE_ACCOUNT_JSON" > /tmp/gcv-service-account.json
+          else
+            rm -f /tmp/gcv-service-account.json
+            unset GCV_CREDENTIALS_JSON
+          fi
+
+      - name: Select sync target
+        id: target
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "election=${{ inputs.election_id }}" >> "$GITHUB_OUTPUT"
+            echo "engine=${{ inputs.engine }}" >> "$GITHUB_OUTPUT"
+            echo "rebuild=${{ inputs.rebuild }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "election=all" >> "$GITHUB_OUTPUT"
+            echo "engine=auto" >> "$GITHUB_OUTPUT"
+            echo "rebuild=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download new forms, OCR, and rebuild dashboard
+        id: sync
+        shell: bash
+        run: |
+          set +e
+          set -o pipefail
+          args=(--root . archive-sync --engine "${{ steps.target.outputs.engine }}")
+          if [[ "${{ steps.target.outputs.election }}" == "all" ]]; then
+            args+=(--all)
+          else
+            args+=("${{ steps.target.outputs.election }}")
+          fi
+          if [[ "${{ steps.target.outputs.rebuild }}" == "true" ]]; then
+            args+=(--rebuild)
+          fi
+          if [[ -f /tmp/gcv-service-account.json ]]; then
+            export GCV_CREDENTIALS_JSON=/tmp/gcv-service-account.json
+          else
+            unset GCV_CREDENTIALS_JSON
+          fi
+          python -m olkalou_engine.cli "${args[@]}" | tee /tmp/sync-result.json
+          code=${PIPESTATUS[0]}
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Reject oversized Git objects
+        shell: bash
+        run: |
+          oversized="$(find data/elections data/public/elections -type f -size +95M -print -quit)"
+          if [[ -n "$oversized" ]]; then
+            echo "A downloaded file exceeds GitHub's 100 MB file limit: $oversized" >&2
+            echo "Configure R2/S3 archival before syncing this file." >&2
+            exit 1
+          fi
+
+      - name: Record run summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## IEBC historical forms sync"
+            echo
+            echo "- Portal: https://forms.iebc.or.ke/index.php?r=site%2Findex&p=2&l=2"
+            echo "- Target: ${{ steps.target.outputs.election }}"
+            echo "- OCR engine: ${{ steps.target.outputs.engine }}"
+            echo "- Trigger: ${{ github.event_name }}"
+            echo
+            if [[ -f /tmp/sync-result.json ]]; then
+              echo '```json'
+              cat /tmp/sync-result.json
+              echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit only meaningful changes
+        id: commit
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/elections data/public/elections
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No new or changed form files were found."
+            exit 0
+          fi
+          git commit -m "Sync IEBC historical forms and OCR review data"
+          git pull --rebase origin main
+          git push origin main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Assemble updated Pages site
+        if: ${{ steps.commit.outputs.changed == 'true' }}
+        run: |
+          mkdir -p _site/data/public
+          cp -R frontend/. _site/
+          cp -R data/public/. _site/data/public/
+          sed -i 's#../data/public/#./data/public/#g' _site/config.js
+          find _site/data/public -type f -name '*.json' -exec sed -i 's#../data/public/#./data/public/#g' {} +
+
+      - uses: actions/configure-pages@v5
+        if: ${{ steps.commit.outputs.changed == 'true' }}
+
+      - uses: actions/upload-pages-artifact@v3
+        if: ${{ steps.commit.outputs.changed == 'true' }}
+        with:
+          path: _site
+
+      - name: Deploy updated dashboard
+        id: deployment
+        if: ${{ steps.commit.outputs.changed == 'true' }}
+        uses: actions/deploy-pages@v4
+
+      - name: Fail workflow when portal sync failed
+        if: ${{ steps.sync.outputs.exit_code != '0' }}
+        run: |
+          echo "The sync command failed after its status and diagnostics were committed." >&2
+          exit 1
+

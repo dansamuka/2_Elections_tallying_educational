@@ -1,6 +1,8 @@
 (() => {
   const config = window.OLKALOU_CONFIG || {};
   const catalogUrl = config.archiveCatalogUrl || "../data/public/elections/catalog.json";
+  const updateWorkflowUrl = config.archiveUpdateWorkflowUrl || "https://github.com/dansamuka/2_Elections_tallying_educational/actions/workflows/sync-historical-forms.yml";
+  const syncMinutes = Number(config.archiveSyncMinutes || 5);
   const $ = (id) => document.getElementById(id);
   const number = (value) => value == null ? "—" : new Intl.NumberFormat("en-KE").format(Number(value));
   const percent = (value, digits = 1) => value == null ? "—" : `${(Number(value) * 100).toFixed(digits)}%`;
@@ -21,6 +23,21 @@
   }
 
   async function init() {
+    $("archiveUpdateNow").href = updateWorkflowUrl;
+    $("archiveUpdateNow").addEventListener("click", () => {
+      $("archiveUpdateNow").textContent = "Open GitHub Actions ↗";
+    });
+    $("archiveRefresh").addEventListener("click", async () => {
+      if (!catalog) return;
+      $("archiveRefresh").disabled = true;
+      $("archiveRefresh").textContent = "Refreshing…";
+      try {
+        await loadElection($("electionSelect").value, false);
+      } finally {
+        $("archiveRefresh").disabled = false;
+        $("archiveRefresh").textContent = "Refresh data";
+      }
+    });
     try {
       catalog = await fetchJson(catalogUrl);
       if (catalog.schema !== "kenya.election.catalog.v1") throw new Error("Unexpected archive catalog schema");
@@ -55,6 +72,11 @@
     $("archiveTitle").textContent = election.title || `${election.constituency || "Election"} archive`;
     $("archiveUpdated").textContent = new Date(payload.generated_at).toLocaleString("en-KE", {dateStyle:"medium", timeStyle:"short"});
     $("archiveSourceState").textContent = payload.reference?.complete ? "Certified register loaded" : "Reference incomplete";
+    const sync = archive.portal_sync || {};
+    const lastSync = sync.last_completed_at ? new Date(sync.last_completed_at).toLocaleString("en-KE", {dateStyle:"medium", timeStyle:"short"}) : null;
+    $("archiveSyncState").textContent = lastSync
+      ? `Portal sync ${sync.state || "UNKNOWN"} · ${lastSync}`
+      : `Portal sync not yet run · scheduled every ${syncMinutes} min`;
     $("archiveStreams").textContent = `${coverage.streams_total || 0}/${coverage.streams_total || 0}`;
     $("archiveForms").textContent = `${archive.forms_archived || 0}/${archive.forms_expected || coverage.streams_total || 0}`;
     $("archiveTranscribed").textContent = `${archive.stream_results_transcribed || 0}/${coverage.streams_total || 0}`;
@@ -193,7 +215,11 @@
     const archive = payload.archive || {};
     const total = payload.coverage?.streams_total || 0;
     const ocr = archive.ocr || {};
+    const sync = archive.portal_sync || {};
     const checks = [
+      ["Scheduled portal sync", sync.state && sync.state !== "NEVER_RUN" ? 1 : 0, 1],
+      ["Portal links discovered", archive.portal_discovered || 0, archive.forms_expected || total],
+      ["Portal files downloaded", archive.portal_downloaded || 0, archive.forms_expected || total],
       ["Certified stream register", total, total],
       ["Source documents inventoried", ocr.documents_total || 0, ocr.documents_total || 0],
       ["OCR pages processed", ocr.pages_processed || 0, ocr.pages_total || 0],
@@ -255,5 +281,10 @@
 
   [$("archiveWard"), $("archiveState"), $("archiveSearch")].forEach(control => control.addEventListener("input", () => payload && renderTable()));
   $("archiveDialogClose").addEventListener("click", () => $("archiveStreamDialog").close());
+  setInterval(() => {
+    if (catalog && payload && !replayTimer && !document.hidden) {
+      loadElection($("electionSelect").value, false).catch(error => console.warn("Archive refresh failed", error));
+    }
+  }, 60000);
   init();
 })();

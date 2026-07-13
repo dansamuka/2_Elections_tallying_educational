@@ -18,6 +18,7 @@ from .archive import (
 from .config import Settings
 from .db import EngineDB
 from .historical_ocr import inventory_documents, run_historical_ocr, tesseract_install_hint
+from .historical_sync import load_sync_plan, sync_elections
 from .publisher import Publisher
 from .reconciliation import reconcile, render_markdown
 from .reference import load_reference
@@ -91,6 +92,20 @@ def build_parser() -> argparse.ArgumentParser:
     archive_ocr.add_argument("--rebuild", action="store_true", help="Re-run existing extraction records")
     archive_ocr.set_defaults(_archive_command=True)
 
+    archive_sync = sub.add_parser(
+        "archive-sync",
+        help="Check the IEBC portal, download new forms, run OCR, and rebuild the archive dashboard",
+    )
+    archive_sync.add_argument("election_id", nargs="?", help="Election id, or omit with --all")
+    archive_sync.add_argument("--all", action="store_true", help="Sync every election enabled in data/elections/sync.json")
+    archive_sync.add_argument(
+        "--engine",
+        default=None,
+        choices=["auto", "embedded", "tesseract", "gcv", "textract", "dual-cloud"],
+    )
+    archive_sync.add_argument("--rebuild", action="store_true", help="Re-run existing OCR extraction records")
+    archive_sync.add_argument("--links-only", action="store_true", help="Discover links without downloading or OCR")
+
     sub.add_parser("ocr-doctor", help="Report local OCR capability and install hints")
     return parser
 
@@ -113,6 +128,24 @@ def main() -> None:
     if args.command == "ocr-doctor":
         print(json.dumps(tesseract_install_hint(), indent=2))
         return
+
+    if args.command == "archive-sync":
+        plan = load_sync_plan(settings.root)
+        if args.all:
+            election_ids = list(plan.election_ids)
+        elif args.election_id:
+            election_ids = [args.election_id]
+        else:
+            raise SystemExit("archive-sync requires an election_id or --all")
+        result = sync_elections(
+            settings,
+            election_ids,
+            engine_mode=args.engine or plan.engine,
+            rebuild=args.rebuild,
+            links_only=args.links_only,
+        )
+        print(json.dumps(result, indent=2))
+        raise SystemExit(2 if result["failures"] else 0)
 
     if args.command in {
         "archive-build",

@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1783957082791,
-  "generated_at": "2026-07-13T15:38:02.791843Z",
+  "seq": 1783959869336,
+  "generated_at": "2026-07-13T16:24:29.336832Z",
   "mode": "ARCHIVE",
   "election_id": "banissa-2025",
   "election": {
@@ -22,10 +22,12 @@
     "candidate_source": "Kenya Gazette Notice No. 15731, 29 October 2025"
   },
   "pipeline_health": {
-    "watcher": "ARCHIVE",
+    "watcher": "NEVER_RUN",
     "extractor": "MANUAL_REVIEW",
     "last_portal_ok": null,
-    "worker_id": "archive"
+    "last_sync_completed": null,
+    "last_sync_changed": null,
+    "worker_id": "github-actions-or-manual"
   },
   "coverage": {
     "streams_total": 81,
@@ -134,7 +136,18 @@
       "inventory": "data/elections/banissa-2025/ocr/document_inventory.json",
       "auto_publication": false,
       "note": "OCR output is a pre-fill only. No historical stream is added to the public tally until two-person review and statutory validation are complete."
-    }
+    },
+    "portal_sync": {
+      "schema": "kenya.election.portal-sync.v1",
+      "election_id": "banissa-2025",
+      "state": "NEVER_RUN",
+      "last_completed_at": null,
+      "last_changed_at": null,
+      "message": "The IEBC portal sync has not run for this election."
+    },
+    "portal_discovered": 0,
+    "portal_downloaded": 0,
+    "portal_unmatched": 0
   },
   "wards": [
     {

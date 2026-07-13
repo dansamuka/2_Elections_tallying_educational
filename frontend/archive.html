@@ -25,9 +25,16 @@
         <h1>Explore a previous election</h1>
         <p class="status-line">Load a certified register, archive its IEBC forms, independently transcribe the streams, then replay the count through the same public ledger.</p>
       </div>
-      <label>Election
-        <select id="electionSelect" aria-label="Choose a historical election"></select>
-      </label>
+      <div class="archive-picker-actions">
+        <label>Election
+          <select id="electionSelect" aria-label="Choose a historical election"></select>
+        </label>
+        <div class="sync-actions">
+          <a id="archiveUpdateNow" class="primary-action" href="#" target="_blank" rel="noopener">Update now</a>
+          <button id="archiveRefresh" class="secondary-action" type="button">Refresh data</button>
+          <small>Scheduled portal check every five minutes. Manual runs require repository-owner sign-in.</small>
+        </div>
+      </div>
     </section>
 
     <section class="masthead archive-masthead">
@@ -40,6 +47,7 @@
         <span>DATASET BUILT</span>
         <strong id="archiveUpdated" class="numeric">—</strong>
         <small id="archiveSourceState">Source status unknown</small>
+        <small id="archiveSyncState">Portal sync has not run</small>
       </div>
     </section>
 

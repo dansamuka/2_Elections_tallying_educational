@@ -14,7 +14,7 @@ On Windows, extract the ZIP and double-click:
 PUSH_TO_GITHUB.cmd
 ```
 
-The script checks or installs Git and GitHub CLI, opens secure browser login when necessary, runs the test suite, regenerates the public datasets, creates or reconnects the GitHub repository, pushes `main`, and enables the GitHub Pages workflow. It is safe to run again when you have updates.
+The script checks or installs Git and GitHub CLI, opens secure browser login when necessary, runs the test suite, regenerates the public datasets, reconnects to `dansamuka/2_Elections_tallying_educational`, replaces changed files on `main`, and enables the GitHub Pages workflow. It refuses to create a different repository.
 
 The deployed site exposes:
 
@@ -28,7 +28,8 @@ See `GITHUB_ONE_CLICK_GUIDE.md` for the exact flow.
 
 - 60-second watcher with conditional requests, backoff, structural canary and manifest.
 - Immutable SHA-256 form archive with versioned metadata and optional R2/S3 mirroring.
-- Historical document OCR that recursively inventories PDF/image uploads, hashes and mirrors originals, classifies Form 35A/35B pages, generates a statutory-check review queue, and never auto-publishes.
+- Five-minute IEBC portal synchronization through GitHub Actions, plus a secure manual workflow and Windows one-click trigger. New links are discovered across paginated constituency pages, forms are downloaded immutably, and only meaningful changes are committed and redeployed.
+- Historical document OCR that recursively inventories portal downloads and PDF/image uploads, hashes and mirrors originals, classifies Form 35A/35B pages, generates a statutory-check review queue, and never auto-publishes.
 - Optional Google Vision + AWS Textract ROI/Queries consensus adapter; local Tesseract and embedded-PDF extraction are available for historical pre-fill.
 - V01–V12 validation framework and a hard publication gate.
 - Keyboard-driven double-entry review console with explicit third-person adjudication.
@@ -74,6 +75,29 @@ python -m olkalou_engine.cli --root . archive-build banissa-2025
 ```
 
 The importer enforces candidate-sum, cast-total, turnout and official-register checks before accepting a stream. The replay control switches on only when every stream has a verified result and a real timestamp.
+
+### Automatic IEBC portal updates
+
+The repository includes `.github/workflows/sync-historical-forms.yml`. It checks the configured IEBC result-form portal every five minutes and can also be run manually. For each enabled election it:
+
+1. reads the constituency row and reported-form count;
+2. follows the constituency detail page and every Yii pagination page;
+3. downloads all newly discovered Form 35A/35B files into immutable, SHA-256-versioned paths;
+4. inventories PDFs/images and runs embedded-text extraction or Tesseract OCR;
+5. writes the OCR review queue and rebuilds the archive dashboard;
+6. commits and deploys only when files, extraction records, or status meaningfully change.
+
+The public archive's **Update now** button opens the repository-owner GitHub Actions screen. GitHub requires an authenticated user with write access to press **Run workflow**. From Windows, `UPDATE_IEBC_FORMS_NOW.cmd` triggers the same workflow directly through GitHub CLI.
+
+```bash
+# Full portal download → OCR → dashboard refresh for Banissa
+python -m olkalou_engine.cli --root . archive-sync banissa-2025 --engine auto
+
+# Process every election enabled in data/elections/sync.json
+python -m olkalou_engine.cli --root . archive-sync --all --engine auto
+```
+
+OCR remains a pre-fill. The automated workflow updates form coverage and the review queue, but candidate figures do not enter the verified historical tally until the existing independent-review and statutory-validation gate is completed. See `docs/AUTOMATED_IEBC_SYNC.md`.
 
 ### Add another previous poll
 

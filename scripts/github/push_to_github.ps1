@@ -1,13 +1,13 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
-    [string]$RepositoryName = "2_Elections_tallying_educational",
-    [ValidateSet("public", "private")]
-    [string]$Visibility = "public",
     [switch]$SkipTests
 )
 
 $ErrorActionPreference = "Stop"
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
+$FullRepo = "dansamuka/2_Elections_tallying_educational"
+$RepositoryName = "2_Elections_tallying_educational"
+$RemoteUrl = "https://github.com/$FullRepo.git"
 Set-Location $RepoRoot
 
 function Write-Step([string]$Text) {
@@ -57,8 +57,8 @@ function Assert-LastExitCode([string]$Message) {
 }
 
 Write-Host "Kenya Election Tallying Wall - existing repository updater" -ForegroundColor Green
-Write-Host "Target repository: dansamuka/$RepositoryName"
-Write-Host "This updater replaces changed project files in the same repository and does not create a new repository when the target already exists."
+Write-Host "Target repository: $FullRepo"
+Write-Host "This updater only replaces changed files in that existing repository. It will never create a new repository."
 
 Refresh-ProcessPath
 if (-not (Test-Command "git")) { Install-WithWinget "Git.Git" "Git" }
@@ -77,14 +77,11 @@ if ($LASTEXITCODE -ne 0) {
 $Owner = ((& gh api user --jq .login) | Out-String).Trim()
 Assert-LastExitCode "Could not read the authenticated GitHub account."
 if (-not $Owner) { throw "Could not determine the authenticated GitHub username." }
-if ($RepositoryName -notmatch '^[A-Za-z0-9._-]+$') {
-    throw "Repository name may contain only letters, numbers, dots, underscores, and hyphens."
-}
-
-$FullRepo = "$Owner/$RepositoryName"
-$RemoteUrl = "https://github.com/$FullRepo.git"
 & gh repo view $FullRepo --json name 1>$null 2>$null
-$RepoExists = $LASTEXITCODE -eq 0
+if ($LASTEXITCODE -ne 0) {
+    throw "The existing target repository $FullRepo is not accessible. This updater will not create a replacement repository."
+}
+$RepoExists = $true
 
 if (-not $SkipTests) {
     Write-Step "Preparing and testing the repository"
@@ -156,21 +153,12 @@ Write-Step "Committing the replacement snapshot"
 Assert-LastExitCode "Could not stage the repository files."
 & git diff --cached --quiet
 if ($LASTEXITCODE -ne 0) {
-    & git commit -m "Add historical election OCR ingestion and review pipeline"
+    & git commit -m "Add five-minute IEBC forms sync and OCR dashboard updates"
     Assert-LastExitCode "Could not create the Git commit."
 } else {
     Write-Host "No changed files were found. The existing repository is already current." -ForegroundColor DarkGray
 }
 
-if (-not $RepoExists) {
-    Write-Step "Creating $FullRepo"
-    if ($Visibility -eq "private") {
-        & gh repo create $FullRepo --private --description "Provenance-first Kenyan election tallying wall" --source .
-    } else {
-        & gh repo create $FullRepo --public --description "Provenance-first Kenyan election tallying wall" --source .
-    }
-    Assert-LastExitCode "GitHub repository creation failed."
-}
 
 Write-Step "Pushing replacement files to main"
 & git push --set-upstream origin main
@@ -191,7 +179,7 @@ try {
 }
 
 $RepoUrl = "https://github.com/$FullRepo"
-$PagesUrl = "https://$($Owner.ToLowerInvariant()).github.io/$RepositoryName/"
+$PagesUrl = "https://dansamuka.github.io/$RepositoryName/"
 Write-Host "`nRepository updated: $RepoUrl" -ForegroundColor Green
 Write-Host "Pages URL: $PagesUrl" -ForegroundColor Green
 Write-Host "GitHub Actions: $RepoUrl/actions" -ForegroundColor Green

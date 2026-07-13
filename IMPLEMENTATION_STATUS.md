@@ -22,6 +22,8 @@
 | Staleness/LKG/rollback | Implemented | 3/10-minute banners, browser cache and monotonic sequence rejection. |
 | T1/T2/T3 analytics | Implemented | Hard bound, turnout-capped bound and ward-stratified simulation. |
 | Form 35B reconciliation | Implemented | CLI and Markdown generator. |
+| Historical five-minute portal sync | Implemented | GitHub Actions schedule and workflow dispatch discover every constituency form page, download new/changed files, run OCR, commit meaningful changes and deploy Pages. |
+| Manual update controls | Implemented | Public archive button opens the secured workflow; `UPDATE_IEBC_FORMS_NOW.cmd` triggers it directly through authenticated GitHub CLI. |
 | Historical OCR ingestion | Implemented | Recursively inventories PDF/images, SHA-256 deduplicates, mirrors originals, processes every page, classifies 35A/35B, matches streams and creates a review CSV. |
 | Historical OCR safety gate | Implemented | OCR never writes verified results or public candidate totals; two-person review plus V01/V02/V03/V07 import remains mandatory. |
 | Same-repository updater | Implemented | One-click publisher defaults to `dansamuka/2_Elections_tallying_educational`, fetches `origin/main`, replaces changed files and does not create a new repo when it already exists. |

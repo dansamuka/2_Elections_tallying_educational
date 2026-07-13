@@ -3,8 +3,8 @@
 1. Extract the ZIP into a normal folder. Do **not** upload the ZIP itself into GitHub.
 2. Double-click **`PUSH_TO_GITHUB.cmd`**.
 3. Sign into GitHub in the browser when prompted.
-4. Accept the default repository name or type another one.
-5. The script runs the tests, creates/updates the repository, pushes `main`, and enables the GitHub Pages workflow.
+4. The updater verifies access to **`dansamuka/2_Elections_tallying_educational`**.
+5. It runs the tests, replaces changed files in that repository, pushes `main`, and enables the GitHub Pages workflow.
 
 The deployed website contains:
 
@@ -14,12 +14,12 @@ The deployed website contains:
 
 ## Existing repository
 
-The same button is safe to run again. It reuses the existing remote, commits changed files, and pushes `main`.
+The same button is safe to run again. It is locked to `dansamuka/2_Elections_tallying_educational`, reuses its existing `main` history, commits changed files, and pushes them back. It refuses to create a different repository.
 
 ## Command-line alternative
 
 ```powershell
-PowerShell -ExecutionPolicy Bypass -File scripts/github/push_to_github.ps1 -RepositoryName kenya-election-tallying-wall
+PowerShell -ExecutionPolicy Bypass -File scripts/github/push_to_github.ps1
 ```
 
 ## Windows PowerShell compatibility
@@ -33,3 +33,10 @@ The package installs Python's `tzdata` database automatically. It also falls bac
 ## Historical OCR update
 
 Place historical PDFs/images under `data/elections/<election-id>/documents/` and double-click `RUN_HISTORICAL_OCR.cmd`. It creates a human review queue, rebuilds the archive dataset, and offers to push the changed files back to the same repository. It never creates a new repository or publishes OCR figures automatically.
+
+
+## Five-minute IEBC form synchronization
+
+After this update is pushed, GitHub Actions runs `Sync IEBC forms and OCR` every five minutes. The website's **Update now** button opens that workflow for a secure owner-initiated run. You can also double-click `UPDATE_IEBC_FORMS_NOW.cmd`, which dispatches the workflow using the already authenticated GitHub CLI.
+
+The scheduled job only commits when it discovers new links, downloads a new/amended file, produces a new OCR extraction, or changes a pipeline error state. A no-change check is recorded in the workflow summary without creating an empty Git commit.

@@ -4,6 +4,8 @@ import csv
 import hashlib
 import json
 import re
+import zipfile
+from io import BytesIO
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -199,6 +201,20 @@ def _manifest_by_stream(bundle: HistoricalBundle) -> dict[str, dict[str, Any]]:
     return output
 
 
+def _load_sync_status(bundle: HistoricalBundle) -> dict[str, Any]:
+    path = bundle.election_dir / "sync_status.json"
+    if not path.exists():
+        return {
+            "schema": "kenya.election.portal-sync.v1",
+            "election_id": bundle.election_id,
+            "state": "NEVER_RUN",
+            "last_completed_at": None,
+            "last_changed_at": None,
+            "message": "The IEBC portal sync has not run for this election.",
+        }
+    return _read_json(path)
+
+
 def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
     results = _load_results(bundle)
     manifest_by_stream = _manifest_by_stream(bundle)
@@ -206,6 +222,9 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
     official = bundle.profile.get("official_declaration", {})
     ocr_summary = load_ocr_summary(bundle)
     ocr_by_stream = load_ocr_stream_extractions(bundle)
+    sync_status = _load_sync_status(bundle)
+    manifest = load_manifest(bundle)
+    archived_stream_keys = set(manifest_by_stream) | set(ocr_by_stream)
     stream_payloads: list[dict[str, Any]] = []
     candidate_totals = {cid: 0 for cid in candidate_ids}
     published_registered = 0
@@ -307,7 +326,7 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
     replay_events.sort(key=lambda row: row["at"])
     archive_info = {
         "forms_expected": int(bundle.profile["portal"]["expected_forms"]),
-        "forms_archived": len(manifest_by_stream),
+        "forms_archived": len(archived_stream_keys),
         "stream_results_transcribed": len(results),
         "stream_results_complete": stream_results_complete,
         "tally_source": tally_source,
@@ -315,13 +334,17 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
         "replay_events": replay_events if stream_results_complete else [],
         "methodology_note": bundle.profile.get("methodology", {}).get("note"),
         "ocr": ocr_summary,
+        "portal_sync": sync_status,
+        "portal_discovered": int(manifest.get("discovered_count", 0)),
+        "portal_downloaded": int(manifest.get("downloaded_count", 0)),
+        "portal_unmatched": len(manifest.get("unmatched", [])),
     }
     coverage = {
         "streams_total": len(bundle.streams),
         "published": len(results),
-        "in_review": max(0, len(manifest_by_stream) - len(results)),
+        "in_review": max(0, len(archived_stream_keys) - len(results)),
         "conflicted": 0,
-        "awaiting": max(0, len(bundle.streams) - len(manifest_by_stream)),
+        "awaiting": max(0, len(bundle.streams) - len(archived_stream_keys)),
         "reference_only": sum(1 for row in stream_payloads if row["state"] == "REFERENCE_ONLY"),
         "archived_untranscribed": sum(1 for row in stream_payloads if row["state"] == "ARCHIVED"),
         "ocr_review": sum(1 for row in stream_payloads if row["state"] == "OCR_REVIEW"),
@@ -361,12 +384,14 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
             "candidate_source": "Kenya Gazette Notice No. 15731, 29 October 2025",
         },
         "pipeline_health": {
-            "watcher": "ARCHIVE",
+            "watcher": sync_status.get("state", "NEVER_RUN"),
             "extractor": (
                 "OCR_REVIEW_READY" if ocr_summary.get("pages_processed", 0) else "MANUAL_REVIEW"
             ),
-            "last_portal_ok": None,
-            "worker_id": "archive",
+            "last_portal_ok": manifest.get("last_portal_ok"),
+            "last_sync_completed": sync_status.get("last_completed_at"),
+            "last_sync_changed": sync_status.get("last_changed_at"),
+            "worker_id": "github-actions-or-manual",
         },
         "coverage": coverage,
         "totals": {
@@ -419,6 +444,87 @@ def _match_form(bundle: HistoricalBundle, source_label: str, source_url: str) ->
     return None
 
 
+def _safe_extract_zip(bundle: HistoricalBundle, data: bytes, digest: str) -> list[str]:
+    """Extract supported form files from a portal ZIP without allowing path traversal."""
+    target_root = bundle.election_dir / "documents" / "portal" / digest[:16]
+    target_root.mkdir(parents=True, exist_ok=True)
+    extracted: list[str] = []
+    with zipfile.ZipFile(BytesIO(data)) as archive:
+        for member in archive.infolist():
+            if member.is_dir():
+                continue
+            safe_name = Path(member.filename).name
+            if not safe_name or Path(safe_name).suffix.lower() not in {".pdf", ".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff"}:
+                continue
+            output = target_root / safe_name
+            if not output.exists():
+                output.write_bytes(archive.read(member))
+            extracted.append(str(output.relative_to(bundle.root)).replace("\\", "/"))
+    return extracted
+
+
+def _archive_download(
+    bundle: HistoricalBundle,
+    form: Any,
+    response: Any,
+    reference: dict[str, Any] | None,
+    existing: dict[str, Any] | None,
+) -> tuple[dict[str, Any], bool]:
+    body = response.body or b""
+    digest = hashlib.sha256(body).hexdigest()
+    extension = extension_from_response(response.url, response.headers)
+    previous_sha = (existing or {}).get("sha256")
+    version = int((existing or {}).get("version", 0)) + (0 if previous_sha == digest else 1)
+    version = max(version, 1)
+    identity = str(reference["polling_station_code"]) if reference else "unmatched"
+    relative = (
+        Path("elections")
+        / bundle.election_id
+        / "forms"
+        / identity
+        / f"v{version}_{digest[:12]}.{extension}"
+    )
+    public_path = bundle.root / "data" / "public" / relative
+    public_path.parent.mkdir(parents=True, exist_ok=True)
+    if not public_path.exists():
+        public_path.write_bytes(body)
+    extracted_files: list[str] = []
+    if extension == "zip":
+        extracted_files = _safe_extract_zip(bundle, body, digest)
+    changed = previous_sha != digest
+    versions = list((existing or {}).get("versions", []))
+    if not any(item.get("sha256") == digest for item in versions):
+        versions.append(
+            {
+                "version": version,
+                "sha256": digest,
+                "archive_path": str(public_path.relative_to(bundle.root)).replace("\\", "/"),
+                "public_url": f"../data/public/{relative.as_posix()}",
+                "downloaded_at": utc_now_iso(),
+            }
+        )
+    entry: dict[str, Any] = {
+        "stream_key": reference.get("stream_key") if reference else None,
+        "polling_station_code": reference.get("polling_station_code") if reference else None,
+        "source_url": form.source_url,
+        "source_label": form.source_label,
+        "form_type": form.form_type,
+        "discovered_at": (existing or {}).get("discovered_at") or utc_now_iso(),
+        "checked_at": utc_now_iso(),
+        "sha256": digest,
+        "version": version,
+        "archive_path": str(public_path.relative_to(bundle.root)).replace("\\", "/"),
+        "public_url": f"../data/public/{relative.as_posix()}",
+        "downloaded_at": utc_now_iso(),
+        "content_type": response.headers.get("content-type"),
+        "etag": response.headers.get("etag"),
+        "last_modified": response.headers.get("last-modified"),
+        "versions": versions,
+        "extracted_files": extracted_files,
+    }
+    return entry, changed
+
+
 def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, download: bool = True) -> dict[str, Any]:
     portal = bundle.profile["portal"]
     client = PortalClient(
@@ -427,59 +533,143 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
         user_agent,
         constituency_code=bundle.profile["election"]["code"],
     )
+    manifest = load_manifest(bundle)
+    index_meta = manifest.get("index", {})
     try:
-        index = client.get_with_backoff(portal["index_url"])
+        index = client.conditional_get(
+            portal["index_url"],
+            etag=index_meta.get("etag"),
+            last_modified=index_meta.get("last_modified"),
+        )
+        if index.status_code == 304:
+            return {
+                "election_id": bundle.election_id,
+                "status": "NOT_MODIFIED",
+                "changed": False,
+                "discovered": int(manifest.get("discovered_count", 0)),
+                "matched": int(manifest.get("matched_count", 0)),
+                "downloaded": int(manifest.get("downloaded_count", 0)),
+                "new_downloads": 0,
+                "changed_downloads": 0,
+                "unmatched": len(manifest.get("unmatched", [])),
+            }
         if index.status_code != 200 or not index.body:
             raise RuntimeError(f"portal returned HTTP {index.status_code}")
-        discovered = [form for form in client.discover(index.body, index.url) if form.form_type == "35A"]
-        manifest = load_manifest(bundle)
+        previous_index = dict(manifest.get("index", {}))
+        next_index = {
+            "etag": index.headers.get("etag"),
+            "last_modified": index.headers.get("last-modified"),
+        }
+        portal_reported, portal_expected = client.reported_counts(index.body)
+        discovered = client.discover(index.body, index.url)
+        discovered_35a = [form for form in discovered if form.form_type == "35A"]
+        if portal_reported and len(discovered_35a) < portal_reported:
+            debug_path = bundle.election_dir / "portal_debug" / "index_latest.html"
+            debug_path.parent.mkdir(parents=True, exist_ok=True)
+            debug_path.write_bytes(index.body)
+            raise RuntimeError(
+                "portal discovery incomplete: "
+                f"the IEBC index reports {portal_reported} Form 35As for {portal['constituency']}, "
+                f"but only {len(discovered_35a)} download links were found. "
+                f"Saved the index snapshot to {debug_path.relative_to(bundle.root)}."
+            )
+        previous_urls = set(manifest.get("forms", {}))
         unmatched: list[dict[str, str]] = []
+        new_downloads = 0
+        changed_downloads = 0
         for form in discovered:
             reference = _match_form(bundle, form.source_label, form.source_url)
-            if reference is None:
+            if reference is None and form.form_type == "35A":
                 unmatched.append({"source_url": form.source_url, "source_label": form.source_label})
+            existing = manifest.setdefault("forms", {}).get(form.source_url)
+            if not download:
+                manifest["forms"][form.source_url] = {
+                    **(existing or {}),
+                    "stream_key": reference.get("stream_key") if reference else None,
+                    "polling_station_code": reference.get("polling_station_code") if reference else None,
+                    "source_url": form.source_url,
+                    "source_label": form.source_label,
+                    "form_type": form.form_type,
+                    "discovered_at": (existing or {}).get("discovered_at") or utc_now_iso(),
+                }
                 continue
-            entry: dict[str, Any] = {
-                "stream_key": reference["stream_key"],
-                "polling_station_code": reference["polling_station_code"],
-                "source_url": form.source_url,
-                "source_label": form.source_label,
-                "discovered_at": utc_now_iso(),
-            }
-            if download:
-                response = client.get_with_backoff(form.source_url)
-                if response.status_code != 200 or response.body is None:
-                    entry["download_error"] = f"HTTP {response.status_code}"
-                else:
-                    digest = hashlib.sha256(response.body).hexdigest()
-                    extension = extension_from_response(response.url, response.headers)
-                    relative = Path("elections") / bundle.election_id / "forms" / f"{reference['polling_station_code']}_{digest[:12]}.{extension}"
-                    public_path = bundle.root / "data" / "public" / relative
-                    public_path.parent.mkdir(parents=True, exist_ok=True)
-                    if not public_path.exists():
-                        public_path.write_bytes(response.body)
-                    entry.update({
-                        "sha256": digest,
-                        "archive_path": str(public_path.relative_to(bundle.root)),
-                        "public_url": f"../data/public/{relative.as_posix()}",
-                        "downloaded_at": utc_now_iso(),
-                    })
+            archive_path = (existing or {}).get("archive_path")
+            archive_exists = bool(archive_path and (bundle.root / archive_path).exists())
+            # Known immutable files are not downloaded every five minutes. When the
+            # index changes, new URLs are fetched; amended URLs can be rechecked by
+            # setting recheck_existing=true in the election profile.
+            if existing and archive_exists and not bool(portal.get("recheck_existing", False)):
+                continue
+            response = client.conditional_get(
+                form.source_url,
+                etag=(existing or {}).get("etag"),
+                last_modified=(existing or {}).get("last_modified"),
+            )
+            if response.status_code == 304:
+                continue
+            if response.status_code != 200 or response.body is None:
+                manifest["forms"][form.source_url] = {
+                    **(existing or {}),
+                    "source_url": form.source_url,
+                    "source_label": form.source_label,
+                    "download_error": f"HTTP {response.status_code}",
+                    "checked_at": utc_now_iso(),
+                }
+                continue
+            entry, changed = _archive_download(bundle, form, response, reference, existing)
             manifest["forms"][form.source_url] = entry
-        manifest.update({
-            "last_portal_ok": utc_now_iso(),
-            "discovered_count": len(discovered),
-            "matched_count": sum(1 for item in manifest["forms"].values() if item.get("stream_key")),
-            "unmatched": unmatched,
-        })
-        _write_json(bundle.manifest_path, manifest)
-        payload = build_archive_payload(bundle)
+            if existing is None:
+                new_downloads += 1
+            elif changed:
+                changed_downloads += 1
+        matched_count = len(
+            {
+                item.get("stream_key")
+                for item in manifest.get("forms", {}).values()
+                if item.get("stream_key") and item.get("form_type", "35A") == "35A"
+            }
+        )
+        downloaded_count = sum(
+            1 for item in manifest.get("forms", {}).values() if item.get("sha256")
+        )
+        discovered_urls = {form.source_url for form in discovered}
+        metadata_changed = (
+            previous_index != next_index
+            or discovered_urls - previous_urls
+            or int(manifest.get("discovered_count", -1)) != len(discovered)
+            or int(manifest.get("matched_count", -1)) != matched_count
+            or int(manifest.get("downloaded_count", -1)) != downloaded_count
+            or manifest.get("portal_reported") != portal_reported
+            or manifest.get("portal_expected") != portal_expected
+            or manifest.get("unmatched", []) != unmatched
+        )
+        changed = bool(new_downloads or changed_downloads or metadata_changed or not bundle.manifest_path.exists())
+        if changed:
+            manifest.update(
+                {
+                    "index": next_index,
+                    "last_portal_ok": utc_now_iso(),
+                    "discovered_count": len(discovered),
+                    "matched_count": matched_count,
+                    "downloaded_count": downloaded_count,
+                    "portal_reported": portal_reported,
+                    "portal_expected": portal_expected,
+                    "unmatched": unmatched,
+                }
+            )
+            _write_json(bundle.manifest_path, manifest)
         return {
             "election_id": bundle.election_id,
+            "status": "UPDATED" if changed else "NO_CHANGE",
+            "changed": changed,
             "discovered": len(discovered),
-            "matched": manifest["matched_count"],
+            "matched": matched_count,
+            "downloaded": downloaded_count,
+            "new_downloads": new_downloads,
+            "changed_downloads": changed_downloads,
             "unmatched": len(unmatched),
-            "public_path": str(bundle.public_path),
-            "coverage": payload["coverage"],
+            "portal_reported": portal_reported,
+            "portal_expected": portal_expected,
         }
     finally:
         client.close()

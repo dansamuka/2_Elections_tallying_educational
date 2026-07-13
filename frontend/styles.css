@@ -44,3 +44,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 @media(max-width:720px){.legal-header nav{grid-column:2;justify-content:flex-start;flex-wrap:wrap}.archive-picker{display:block}.archive-picker label{margin-top:18px;min-width:0}.archive-grid{grid-template-columns:1fr}.archive-result-panel,.archive-stream-panel,.archive-run-panel{min-height:auto}}
 
 .stream-cell.ocr-review{border-color:var(--review);background:repeating-linear-gradient(45deg,rgba(217,135,58,.08) 0 4px,rgba(217,135,58,.34) 4px 6px)}
+
+.archive-picker-actions{display:grid;gap:12px;min-width:min(420px,100%)}
+.sync-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.sync-actions small{flex-basis:100%;color:var(--ink-dim);font-size:.7rem;line-height:1.35}
+.primary-action,.secondary-action{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 14px;border:1px solid var(--rule);font:600 .72rem "IBM Plex Mono";letter-spacing:.05em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.primary-action{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.secondary-action{background:var(--surface-2);color:var(--ink)}
+.update-block small+small{margin-top:3px}
+@media(max-width:760px){.archive-picker{align-items:stretch;flex-direction:column}.archive-picker-actions{min-width:0}.sync-actions{display:grid;grid-template-columns:1fr 1fr}.sync-actions small{grid-column:1/-1}.primary-action,.secondary-action{width:100%}}

@@ -1,0 +1,15 @@
+{
+  "schema": "kenya.election.portal-sync-config.v1",
+  "enabled": true,
+  "interval_minutes": 5,
+  "elections": [
+    "banissa-2025"
+  ],
+  "engine": "auto",
+  "repository": "dansamuka/2_Elections_tallying_educational",
+  "workflow_file": "sync-historical-forms.yml",
+  "notes": [
+    "The scheduled workflow checks the IEBC portal every five minutes, but GitHub may delay scheduled jobs under load.",
+    "OCR output is review-only and never enters the published tally automatically."
+  ]
+}
