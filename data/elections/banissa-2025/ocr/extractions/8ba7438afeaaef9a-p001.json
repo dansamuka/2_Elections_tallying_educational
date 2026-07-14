@@ -1,0 +1,72 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "8ba7438afeaaef9a-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019600101/v1_8ba7438afeaa.pdf",
+  "source_sha256": "8ba7438afeaaef9a84a915f973c9a4f8fc391853473808002fa9fe198f68a5df",
+  "source_filename": "v1_8ba7438afeaa.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/8ba7438afeaaef9a.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-001-01",
+  "match_method": "POLLING_CODE_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.43115294117647057,
+  "text_length": 2249,
+  "text_preview": "eS ; «csp fA\n| mos\n: MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station LULIS PRIMARY SCHOOL POLLING STATION 1 of 2 Code __009040019600101\nWard BANISSA Geferve 0196 Cros SSiOninDE\nConstituency BANISSA Code c LOMRAL A VINDEPENT\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n|_1. HASSAN AHMED MAALIM\n2. MOHAMED NURDIN MAALIM Pee NReLEC TORT N NOE PEROETT OM PaaS ORONO MEDS\nTotal number of valid votes cast\nPolling Station Counts Decision{s} on disputed votes if any\n1 [Total Number of Registered Voters inthe Paling Satin\n2. ott Number o Recto Balt Papers Fionn NOE AS SoIS Toca aneicn sana RT Sa EON Sno OUNC Tod\nTotal Number of Rejection Objected to Ballot Papers; | ——— 600 EROS OF NNDB OL ENDE NT ELEC PONDS Semon NDARIESC ELE\nota Nurer of Opie tes qecronnte DOO das gattorncc a crons nee MOTO ig cra\n5 [Tata Naber lites Cos ero e ong Oka a foAt ec ONO nena\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in 4 Lig PRivi tA Potling Station = A ASS Pe Constituency.\nPresiding Officer: ABRAtHM patie AQD Signature: ‘ Date 27 N-2str\nDeputy Presiding Officer: __ \\-Stat Go U chy Signature: nny Date DI4iea4 or\nAgents or Candidates {if present) !\n[te] watnaaaeion [Pert | Ponca [Tet [smn \"fem\neran SON MANDO O ETC eee ne’ auloS On Temeng NOARIES sr nog OMaer A NOL MIELEC COMMISSION NON CCSO Nye EC TOF\nSe ee ee ee\nPROP MENTELECTORa, SSIONINDEPES aCe OeSexe 5c onal ANPEGU ys ENDENTELEC KONO BSR NOARIESCOet C fORALANDBIGEN WN SRO’ SOMMTY\nScot ANSEL ee ects aoe aU MOAR SCause CrORA SENG, Oye) oe tcOMMASL AM DOOUNONS COSCO EC ou\nPBB eaROnWon eC OUNaanie SCO HOCUS OE AbeN Te eSCOM GONE EC ONTON Ec TORATSSIDNINAN SE NOES REE OWN Sg\nOEE en A ENDEN TES ranncalON GOH CC SON UNON Ee Tone SSO MILAM SE NDEN MOO NOY ON NOPE RTE ct ONE SC SANDY\nReasons for Refusal to Sign (if any) .\nPresiding Officer's Comments: - se\n“Tee So cegy Gubl REL DH =LEcTion)\nBOR eS CANO ie OL Be BOBO IOP ENTE cet AM NDE Bre SC oP nee ORAL ce un MOA e ONTELE CeOW WAT AM nL\n€ :\nPpa On See}\nBNDAR SE ya E:\nOF, OM MB! t)",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.82
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 600,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "|_1. HASSAN AHMED MAALIM",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM Pee NReLEC TORT N NOE PEROETT OM PaaS ORONO MEDS",
+      "registered": "1 [Total Number of Registered Voters inthe Paling Satin",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "Total Number of Rejection Objected to Ballot Papers; | ——— 600 EROS OF NNDB OL ENDE NT ELEC PONDS Semon NDARIESC ELE",
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "FAIL"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T07:50:09.866897Z"
+}

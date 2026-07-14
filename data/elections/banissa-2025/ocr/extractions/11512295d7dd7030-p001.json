@@ -1,0 +1,72 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "11512295d7dd7030-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040020003501/v1_11512295d7dd.pdf",
+  "source_sha256": "11512295d7dd70303cd3cd55643f4098fe3c9442583bf0b8ded5361708f6b25e",
+  "source_filename": "v1_11512295d7dd.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/11512295d7dd7030.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-035-01",
+  "match_method": "POLLING_CODE_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.4212295081967213,
+  "text_length": 2670,
+  "text_preview": ": ae 22 Ee\n1125.01318 — wo\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BIRKAN PRIMARY SCHOOL POLLING STATION 1 of 1 Code __009040020003501\nWard KILIWEHIRI Caden 00200 EC Ton SSIONINDE\nORS Htreniay SS uN. CBANIBOR c OMMISSIow WOENTEL ECTORZCAC ph a0 OUN WTELECTOR«» SIONINDEPEND cc e ht pde, ci SMDORALA OVINE DENI\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM 2G\n2 MOHAMED NUROIN MAALIM Pa ra sone ah wy ease a\n{Total number of valid votes cast Pica rormenrmag arr HUET Tn ERO SROEOON\nPolling Station Counts Decision{s} on disputed votes if any\n[Teta Nurer of ReisteredVatarsin he Paling Staion; | ——— 7p]\n2. ot Number of Rete Balt Papers RaSSOMMO BAL des CoN ec rona ata so gaat ow ON ToBOUNE\nTotal Number of Rejection Objected to Ballot Papers; +000] [2 —“‘<‘wYSC i CS”\n[Tota Numer of Ose Vas Fran 1 30 SSRSnSSS cot gaa at ESR NM TTY\n5 | Tota Number ofa Ves ast Pg OT Soo Neonat\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the rege qwn above are true\nand accurate count of the ballots in Bikkanl pRimaky SC too. Polling Station & TN £A CN eonattenay.\nPresiding Officer: Apulia AO Eb Lj Signature: Aiud) f Datei A-li- ZO25\nzs sor aoe\n_ Deputy Presiding Officer: Eins (3) MuKSAL signature: po Cite A iJ- 2025°\nEN GM oy\nAgents or Candidates {if present) wy ;\nName of Candidate or Agent Party Name/Independent Candidate | Tet.contact | Signature | Date |\nHasse) AD) Da@ASO |12429245| UDA byzus7993 SS --28\nPee aio MOEN eee gS Gums ENN NOARIEST en Nye gt geh | NOE NT ELECREMBISSION NON CON ECT\nee UNDARIESS Gate’ Re Otager ENDEPTELE #COWTMEG!ON UNOLe GOON ELEC ORAL aye NNDEPENDEL OMS Sucp nn ANOSOS\nBSS PeanDerENDEN Tar SCOMMISS GON age Dent ELEC DRAL ays ONNDEPE Nabe Pees aah ANOBOUND a NDENTELEC ONO GC DN NOARIE\nPoh Coen TELECTORa/ SS/ONINOE PENSE apo aie cmALANPSOUy? ENDENTELEC ON OC SGENDARIES Coie C | ORAL ANODE WN RARE SOM\nin ana ae Re eo een Noy CORD Pacts Poe o SHURA OOO NAECON\neas a ee\nIONS EONS CUNsanie SCO BOSCO RO ben rH, eSCOmnie GIONINO CNEL NON SE croreArS SIN ANOENDE eR Ce oul SE Sp\nene OEM HES cans IONN DICE NIHON, Tot SSCS AND ENDEN GROSSO NO Oi eC NDA c yO Ree SEN\nReasons for Refusal to Sign [if any)\nPresiding Officer's C t\nresiding Officer’s Comments: a =\nPollitt ENDED Successfully WiTH No CHaiLen/Gés\n* G OFC: ABduLLath Mottamer ab) Sigwn (pliak DATE- 27-122\nPRE pr TOT ERO TORS\n6b * Husserr’ MoffAmed Mebsq St6a - Age AGES 27-i[-209.-\nEPUTY PRESIPAS Fricee: NSNDARE ZS atlantis\nD r 1 HPRESIRIS Sy :\nMR GFFICERS *",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM 2G",
+      "candidate_UPA": "2 MOHAMED NUROIN MAALIM Pa ra sone ah wy ease a",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "Total Number of Rejection Objected to Ballot Papers; +000] [2 —“‘<‘wYSC i CS”",
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T07:55:23.638390Z"
+}

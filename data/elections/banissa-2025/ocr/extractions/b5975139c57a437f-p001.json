@@ -1,0 +1,72 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "b5975139c57a437f-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019902801/v1_b5975139c57a.pdf",
+  "source_sha256": "b5975139c57a437f0b940e1c5a23eddacc067b636c2da92288b877b61aea11ac",
+  "source_filename": "v1_b5975139c57a.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/b5975139c57a437f.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0199-028-01",
+  "match_method": "POLLING_CODE_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.44923456790123456,
+  "text_length": 2269,
+  "text_preview": "= ee eee OFA\n= | Ry ae\n: MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station GARAB JIQLE CENTRE POLLING STATION 1 of 4 Code ___009040019902801\nWard MALKAMARI Code __0199\nENDEN TOE oe CEN AMRINOENTEL cS COMMISSIO~. WOT O% WAN cDENDENTELE-SMINDEPENDEN oP ics \\DEOTEB-ECTon SSIONINDE\nCancpitrenuysS tcc BANISSA COMMISS/Oy ADENTEL ECTORI CAO SNA OUN WTELECTORA, SIONINDEPENDSS One Nye 1 BORA A OVNDEPENL\nCounty MANDERA Code __ 009\nNumber of votes cast in favour of each candidate:\n|_Name of Candidate : No. of Valid Votes Obtained PNING\n1, HASSAN AHMED MAALIM 5]\n2. MOHAMED NUROIN MALIN ese ea ene NE\nTotal number of valid votes cast SoRGoeTalusnrenclonmeauaeeeriee Ne case a\nPolling Station Counts Decision{s) on disputed votes if any\n1. | Toa Number of Regstered Votes inthe Paling Siafons [1 |\n2 | Tea Number of Rejsed Balt Papers Honma SECC Te tona algH NO ScmBERT ENR O OME OBOUNE ol\nTotal Number of Rejection Objected toBaliot Papers; | gal ae ON AND BOLE MOEN TELEC TP RaNOO Ns Semon UNDARIESCEELEG\n[Tot Namib fisted oes BRIA & PRINS ere aria COR RCTS\n5] Tt Numer ofa Ves Cat AIRES CES oR Sa ena tt\nDeclaration\nWe, the undersigned, being present when ne results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in RAG | @LE _ Polling Station POR! ISSA Constituency.\nPresiding Officer: LiiZAs Hie DI ao Signature: ON Date AT-/- 2\nDeputy Presiding Officer: Hmebd BActhe AGIKAL Signature: _(¢ PRRoH one 3 J date Z27-i-2Qv015\nAgents or Candidates {if present) Nerriven 7\n3 Ee Cae ae\noe ere UNDARIE SCO aN eR OR NOEPEUPER ELE SCOMMISSIONEROL COON EC ORAL ayo VABEPENDET MRE NCY\nSSE Bob en TELECTORay S/ONNDEP CoCo ec ona ANEBOUnt ENDENTELEC GON WOO NBWGARIESC MAE CT ORALANOSNDES NTS\noS SS ORAL ANB a, OE PennENgEM nO INC 9 oUNDARIESC TEL EC ToRAL AND OL ON Sp comtlsonanaL A CBOUNDAR OOO, ON\neS SONOS oP OUnna eC HSNO ORL OPM EN TEL eSCOMmmeTIONNOE ECON TONE crop Seiya NSE uDEN ee owed\nRe A orDEN Aeon ca ONGC SHON fe Tae SOIL GAN DENDEN WSO NO OMIM ST UN DERL UNDAPTE TORE RC aR\nReasons for Refusal to Sign {if any)\nPresiding Officer's Comments:\nhe Etec Tio Ks FREE AND FF\nPO AligasHit A’d! BALE\nLE.B.ch.\nSIGN Mutbs DATE. 27-)-as- PRESIDING\nOFF iCEP .",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 5,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1, HASSAN AHMED MAALIM 5]",
+      "candidate_UPA": "2. MOHAMED NUROIN MALIN ese ea ene NE",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T07:53:59.528510Z"
+}

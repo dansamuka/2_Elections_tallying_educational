@@ -1,0 +1,72 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "0c9fbfb1ed6eb5b4-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019902301/v1_0c9fbfb1ed6e.pdf",
+  "source_sha256": "0c9fbfb1ed6eb5b48425b5fa3094a04f6e2892afc69a2d965345b3d09b4ed643",
+  "source_filename": "v1_0c9fbfb1ed6e.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/0c9fbfb1ed6eb5b4.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0199-023-01",
+  "match_method": "POLLING_CODE_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.40262443438914025,
+  "text_length": 2406,
+  "text_preview": "= 22 = S iEBC 10) [=] Se\ney ee\nWD Era)\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MALKAMARI PRIMARY SCHOOL POLLING STATION 1 of 4 Code __009040019902301\nWard MALKAMARI Code __0199\nCans htwenny'S2 wc <-BANISOA cOMMISS (Onin OENTELECTORS AO pO ,OU WTELECTOR a» SONINDEPENO Se COL@ na GAD ci EOMDDRAL AAD VINDE PEN\nCORB Rp ONDER ETc OL SMANBERA £L ECTORA) 1 ENDENTELECTT OW Toe APRN E CTORALANA NDE PENDENTEL ayn Wo en DOOSLANDA SS PENDENTE\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained |\n1. HASSAN AHMED MAALIN\n2. MOHAMED NUROIN MAALIM\nTotal number of valid votes cast Fes ACS CLORALANDU GE PENDENTELE GES SCE ON ANDO Odette Ee\nKoaeere a pnpeouk 4s\nPolling Station Counts Decision{s} on disputed votes if any\n1. | Tots Number ofReystered Voters inte PalingSiatons |__- 2 TO]\nTall Number feet Bao Papers Fi SSioun Olde PCOS Ec osaLanen Ngee oes Sea ON NDE Toe\n3.|TottNumberfReeciontheced oBaletPapes | BOO||z\nToa Numer of ised oes ROBOUN ES NOE TERE CIGD co ON NOAM IRL Toe PORE TN nce\n5 | Tota Numer ofa ates Cas IEEE © SREY ARTI alle SERS NR RAN\nDeclaration A G: ‘\nWe, the undersigned, being present when the results of the coup were announced, do hereby declare that the results s Ringe true\nand accurate count of the ballots in MAEAMAR Bat MAC] Poiting Station PA Voletiiings ® *Constit JeBeyy\nf\\ po Fe,\nPresiding Officer: O\\ZA MED BLLAH She MNSignature: Ft Dates, a7 — U 02\nDeputy Presiding Officer: AcGiiaziz. DAKAWA Olow Signature: _ Hwdiad, €. &: 7J=\\ 2.015\nAgents or Candidates {if present} ‘Sy\nNore Fy cn nn\nSS PS NS RSG fee NEE tr gg RUSS,\nae a en et ee nen eet uM Men PENG NOAMER inven ger NDE N ELECT OMMISSION RON CcOOaNMp ELEC On\n[2 decane ee ees Se eed ee ee\nGoh ew ELEC ona SS/ONNDEPENCEC ORT OCS Con AMSG ENOENTELEC WON NOLEN PNDARIESCORuEC FORALAND™ CORI RNROS ou\nRGIS LORALANDEo, UE PENDENT EAeSION Co QOUNDARIESC ELEC TORALANSS WONG geNG COMMIS nga ADEOUNDAN NOSIS ONIN\nA ea Ce\neS SONIND ROU SABIE SCOMN PSOE On Nor ben TE, eSCOM ECL ONINCE ELEN GLON EcTORNy SINAN CE NDEN EE OM Sd\nRe END ed esc crsse Calon Goh cs INON dc Tommt SSIGuauN NOES WIN SRONOLOMM ne COS EEE NENA ETON De CRIN\nReasons for Refusal to Sign {if any)\nPresiding Officer's Comments:\nPLE CTTONS —CONRUCTED “WAS FREE An tm\nPo) Molkamen ARDBUCLAtH SULEIMAN = +40 Aqd-W-\n: Ge\nSERIEFTS) &\n“NIGISANY Ve ‘\neo ay és\nieee",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIN",
+      "candidate_UPA": "2. MOHAMED NUROIN MAALIM",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T07:53:37.416158Z"
+}

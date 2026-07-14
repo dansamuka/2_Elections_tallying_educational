@@ -1,0 +1,72 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "8e3af80565e0afcd-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019600305/v1_8e3af80565e0.pdf",
+  "source_sha256": "8e3af80565e0afcd792d10f9d04f1d409b7690871a72f345e30bc767d643a5c1",
+  "source_filename": "v1_8e3af80565e0.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/8e3af80565e0afcd.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-003-05",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.44329383886255924,
+  "text_length": 2312,
+  "text_preview": "EE ——e—«——ee—sss OOO EEE TT Ses\nos —s ee [ORO\n3 = = = - = == /Z Ox ——= :\n7 eso\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BANISA PRIMARY SCHOOL POLLING STATION 5 of 5 Code __ 909040019600305\nWard BANISSA Code __0196 p 2 SIONINDE\nSH St tereniay SS wi <<c BANISSA COMMISSION AOENTELEC TORE AC NOU WTELECTOR a) SIONINDEPEND Te CORD@ EAT pif c MOIRAL A VINOEPENT\nCounty MANDERA Code __ 009\nNumber of votes cast in favour of each candidate:\n[_Name of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MALIN\n2 MOHAMED NUROIN MAALIM\nTotal number of valid votes cast Seequernleiusens oea lucas our” Fore\nPolling Station Counts Decision{s} on disputed votes if any\nTt Number of RepteredVatarsin he Paling Satin\n2 [Tea Number of Rete Balt Papers (RSet me COR TINS\nTotal Number of Rejection Objected to Ballot Papers; DROS ON NR NOBO aE NDENTELEC TPR andes Coon DARIES CREE\n4 [oat Number isp Vis, ETSRDESD comeecatnari SORRY\nsaa Number of Vaid aes tat FO piesa COT ESE Naa\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby déclare that the results shown above are true\nand accurate count of the ballots in ANISA PRIMAL Petting Staion AN ISSTE Constituency.\nPresiding Officer: MO BAM EOIVODR 404A 7a BiG pwr t-— pate 2V- UA 2s\n‘ Gp ~\nDeputy Presiding Officer: JARIRA MAKIN [SsAi4 one pts Date 27 [u[20\nC\nAgents or Candidates (if present) ZF\nNo. Name of Candidate or Agent | sorPassport Wo. Party Name/Independent Candidate | Tel.contact | signature | ate |\nL2H USSEIN ORAM Seroque | UPA spaeobed Apli> ——pari)os\nRares Sign LAND OU EN eeeg ON MISSIN iy OARIES eng eg sco gEP ENO MTELEC FC OMMISS Ion NON Coon TELECON\nPSP ENT ELECT Osea $ SIONINDEPEN Zale > RAL ANP SOU yd ENDENTELEC ON WROD BSCR INDARIESC Oss CHORALANDENQEN WN RGROET OMNI\nRage ORALANDBO CE PE NaRrETEL EG ONIN C65 DUNO RIESE QaL ECTORALAN NOC NiyeN COMMAS On 174 NDEQUNDART TONOON EC ONING\nBEE LE SSONINONS SUN asiEsCOMN BNO NOP ben Ey <SCOn i ciONINO PEL OSURON EcTOnA| Soi DiINnL PEND WPSRSOK OWN ag\nER SenDEN He esc ate CaIONN PNG ONO NE TORN SOTO LRAT DE NEN SNEED LOM DRO ULE A Noa pcTORNO CC SRN\nReasons for Refusal to Sign {if any}\nPresiding Officer's Comments: Att GC ElLéchoan Wis Ofte / ALY CLeESseo\nwar oxen Fa IND ERAN CE (R92 Ble m",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MALIN",
+      "candidate_UPA": "2 MOHAMED NUROIN MAALIM",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T07:50:50.261066Z"
+}
