@@ -2,6 +2,10 @@ name: CI
 on:
   push:
   pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -36,7 +40,12 @@ jobs:
       - run: python -c "import json; d=json.load(open('data/reference/form35a_roi.json')); assert d['status'] != 'VERIFIED', 'ROI template builder must never auto-verify'; assert len(d['fields']) == 26"
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          # Node 20 is the current conservative LTS target for this tiny jsdom
+          # suite. The previous Node 22/npm combination hung for almost eight
+          # minutes and ended with "Exit handler never called".
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: tests/frontend/package-lock.json
       - run: node --check frontend/app.js
       - run: node --check frontend/archive.js
       - run: node --check frontend/config.js
@@ -44,4 +53,16 @@ jobs:
       # display, editable draft inputs, CSV export) -- loads the real
       # frontend files into jsdom and drives them through actual DOM
       # interaction, not a syntax check. See tests/frontend/README.md.
-      - run: cd tests/frontend && npm install && npm test
+      - name: Install frontend test dependencies
+        working-directory: tests/frontend
+        timeout-minutes: 4
+        env:
+          npm_config_registry: https://registry.npmjs.org/
+        run: |
+          npm --version
+          npm config get registry
+          npm ci --ignore-scripts --no-audit --no-fund --fetch-retries=2 --fetch-timeout=60000
+      - name: Run frontend workbench tests
+        working-directory: tests/frontend
+        timeout-minutes: 3
+        run: npm test

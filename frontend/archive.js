@@ -183,6 +183,7 @@
     const election = payload.election || {};
     const archive = payload.archive || {};
     const coverage = payload.coverage || {};
+    const benchmark = Boolean(payload.reference?.benchmark_only);
     $("archiveEyebrow").textContent = `${election.constituency || "ELECTION"} · CONSTITUENCY ${election.code || "—"} · ${election.date || "—"}`;
     $("archiveTitle").textContent = election.title || `${election.constituency || "Election"} archive`;
     $("archiveUpdated").textContent = new Date(payload.generated_at).toLocaleString("en-KE", {dateStyle:"medium", timeStyle:"short"});
@@ -206,15 +207,20 @@
     $("archiveForms").textContent = `${formsArchived}/${archive.forms_expected || coverage.streams_total || 0}`;
     $("archiveTranscribed").textContent = `${archive.stream_results_transcribed || 0}/${coverage.streams_total || 0}`;
     $("archiveOcrReview").textContent = `${archive.ocr?.review_rows || 0}`;
-    $("archiveRegistered").textContent = number(coverage.registered_total);
-    $("archiveReplayState").textContent = archive.replay_available ? "READY" : "WITHHELD";
-    $("archiveValid").textContent = `${number(payload.totals?.valid_votes)} valid`;
+    $("archiveRegistered").textContent = benchmark && !coverage.registered_total ? "PENDING" : number(coverage.registered_total);
+    $("archiveReplayLabel").textContent = benchmark ? "OCR BENCHMARK" : "REPLAY";
+    $("archiveReplayState").textContent = benchmark
+      ? (Number(archive.ocr?.review_rows || 0) > 0 ? "REVIEW READY" : "AWAITING FORMS")
+      : (archive.replay_available ? "READY" : "WITHHELD");
+    $("archiveValid").textContent = benchmark ? "truth set" : `${number(payload.totals?.valid_votes)} valid`;
     renderGapNote(archive, coverage);
-    $("archiveStatus").textContent = archive.stream_results_complete
-      ? "All stream results are source-linked and the count can be replayed."
-      : payload.mode === "LIVE"
-        ? `${formsArchived} of ${archive.forms_expected || coverage.streams_total || 0} IEBC forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows await human review; ${archive.stream_results_transcribed || 0} stream tallies are independently verified. No OCR figure enters the live tally automatically.`
-        : `${formsArchived} of ${archive.forms_expected || coverage.streams_total || 0} forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows awaiting human review; ${archive.stream_results_transcribed || 0} stream tallies independently transcribed. Declared constituency totals remain separate from the incomplete Form 35A sum.`;
+    $("archiveStatus").textContent = benchmark
+      ? `${coverage.stream_rows_loaded || 0} of ${coverage.streams_total || 0} Malava stream identities loaded; ${formsArchived} forms archived and ${archive.ocr?.review_rows || 0} OCR rows ready for human validation. Placeholder boxes remain visible until the first portal sync hydrates the real polling-centre roster.`
+      : archive.stream_results_complete
+        ? "All stream results are source-linked and the count can be replayed."
+        : payload.mode === "LIVE"
+          ? `${formsArchived} of ${archive.forms_expected || coverage.streams_total || 0} IEBC forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows await human review; ${archive.stream_results_transcribed || 0} stream tallies are independently verified. No OCR figure enters the live tally automatically.`
+          : `${formsArchived} of ${archive.forms_expected || coverage.streams_total || 0} forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows awaiting human review; ${archive.stream_results_transcribed || 0} stream tallies independently transcribed. Declared constituency totals remain separate from the incomplete Form 35A sum.`;
     renderCandidates(payload.candidates || []);
     renderDeclaration();
     renderReplay();
@@ -252,7 +258,11 @@
       $("archiveGridCounter").textContent = `${snapshot.coverage.published}/${snapshot.coverage.streams_total}`;
     } else {
       const archivedSourceCount = Number(payload.archive?.forms_archived || 0);
-      $("archiveGridCounter").textContent = `${archivedSourceCount}/${payload.coverage?.streams_total || 0} forms`;
+      const totalStreams = Number(payload.coverage?.streams_total || 0);
+      const rosterLoaded = Number(payload.coverage?.stream_rows_loaded ?? (payload.streams || []).length);
+      $("archiveGridCounter").textContent = payload.reference?.benchmark_only && rosterLoaded === 0
+        ? `0/${totalStreams} roster pending`
+        : `${archivedSourceCount}/${totalStreams} forms`;
     }
   }
 
@@ -271,6 +281,12 @@
 
   function renderDeclaration() {
     const official = payload.official_declaration || {};
+    if (payload.reference?.benchmark_only) {
+      $("declarationNote").innerHTML = `<p class="eyebrow">OCR VALIDATION DATASET</p>
+        <p><strong>No constituency result is being asserted here.</strong> Candidate fields and PO control totals are shown only so human-reviewed rows can be compared with the OCR output.</p>
+        <p class="microcopy">Benchmark source state: <strong>${escapeHtml(payload.archive?.tally_source || "NO_VERIFIED_TALLY")}</strong>. ${escapeHtml(payload.archive?.methodology_note || "")}</p>`;
+      return;
+    }
     const winner = (payload.candidates || []).find(candidate => candidate.id === official.winner_id);
     $("declarationNote").innerHTML = `<p class="eyebrow">OFFICIAL DECLARATION</p>
       <p><strong>${escapeHtml(winner?.name || official.winner_id || "—")}</strong> was gazetted with <span class="numeric">${number(official.winner_votes)}</span> votes.</p>
@@ -279,8 +295,17 @@
 
   function renderReplay() {
     const available = Boolean(payload.archive?.replay_available);
+    const benchmark = Boolean(payload.reference?.benchmark_only);
     $("replayControls").hidden = !available;
     $("replayUnavailable").hidden = available;
+    if (benchmark) {
+      $("replayControls").hidden = true;
+      $("replayUnavailable").hidden = false;
+      const rowsLoaded = Number(payload.coverage?.stream_rows_loaded ?? (payload.streams || []).length);
+      const reviewRows = Number(payload.archive?.ocr?.review_rows || 0);
+      $("replayUnavailable").innerHTML = `<strong>OCR benchmark mode</strong><p>This module is a handwriting-accuracy test, not an election replay. ${rowsLoaded ? `${number(rowsLoaded)} stream identities are loaded and ${number(reviewRows)} OCR rows are ready for checking.` : `The first IEBC portal sync must hydrate all ${number(payload.coverage?.streams_total)} stream identities before the boxes become reviewable.`}</p><p>After checking a form, save the row: its box turns green and it enters the browser-local benchmark truth tally above.</p>`;
+      return;
+    }
     if (!available) {
       $("replayUnavailable").innerHTML = `<strong>Replay withheld</strong><p>A genuine replay needs all ${number(payload.coverage?.streams_total)} stream-level Form 35A totals and reporting timestamps. The engine will not invent either.</p><code>python -m olkalou_engine.cli --root . archive-run ${escapeHtml(payload.election_id)}</code><code>python -m olkalou_engine.cli --root . archive-import ${escapeHtml(payload.election_id)} data/elections/${escapeHtml(payload.election_id)}/results_template.csv</code>`;
       return;
@@ -312,17 +337,29 @@
   }
 
   function renderGrid(snapshot) {
+    const streams = snapshot.streams || [];
+    const total = Number(snapshot.coverage?.streams_total || streams.length);
+    $("archiveGridTitle").textContent = `${total}-stream grid`;
+    if (!streams.length && total > 0) {
+      const benchmark = Boolean(payload.reference?.benchmark_only);
+      const label = benchmark ? "PORTAL ROSTER PENDING" : "STREAM REGISTER PENDING";
+      const cells = Array.from({length: total}, (_, index) =>
+        `<button type="button" class="stream-cell roster-placeholder" disabled title="Stream ${index + 1}: awaiting portal roster" aria-label="Stream ${index + 1} awaiting portal roster"></button>`
+      ).join("");
+      $("archiveStreamGrid").innerHTML = `<section class="ward-block pending-roster"><h3><span>${label}</span><span>0/${total}</span></h3><p class="grid-empty-note">${benchmark ? `The IEBC reports ${number(total)} Malava Form 35A assignments. These placeholders will be replaced with named, clickable polling-centre boxes when the first sync completes.` : "Named stream boxes will appear when the register is loaded."}</p><div class="ward-cells">${cells}</div></section>`;
+      return;
+    }
+
     const byWard = new Map();
-    (snapshot.streams || []).forEach(stream => {
+    streams.forEach(stream => {
       if (!byWard.has(stream.ward)) byWard.set(stream.ward, []);
       byWard.get(stream.ward).push(stream);
     });
     const candidateMap = new Map((snapshot.candidates || []).map(candidate => [candidate.id, candidate]));
-    $("archiveGridTitle").textContent = `${snapshot.coverage?.streams_total || 0}-stream grid`;
     const drafts = payload ? loadAllDrafts(payload.election_id) : {};
-    $("archiveStreamGrid").innerHTML = [...byWard.entries()].map(([ward, streams]) => {
-      const completed = streams.filter(stream => stream.state === "PUBLISHED" || isConfirmed(drafts[stream.stream_key])).length;
-      return `<section class="ward-block"><h3><span>${escapeHtml(ward)}</span><span>${completed}/${streams.length}</span></h3><div class="ward-cells">${streams.map(stream => archiveCell(stream, candidateMap, drafts[stream.stream_key])).join("")}</div></section>`;
+    $("archiveStreamGrid").innerHTML = [...byWard.entries()].map(([ward, wardStreams]) => {
+      const completed = wardStreams.filter(stream => stream.state === "PUBLISHED" || isConfirmed(drafts[stream.stream_key])).length;
+      return `<section class="ward-block"><h3><span>${escapeHtml(ward)}</span><span>${completed}/${wardStreams.length}</span></h3><div class="ward-cells">${wardStreams.map(stream => archiveCell(stream, candidateMap, drafts[stream.stream_key])).join("")}</div></section>`;
     }).join("");
     document.querySelectorAll(".archive-stream-cell").forEach(button => button.addEventListener("click", () => openStream(button.dataset.streamKey)));
   }
@@ -353,6 +390,13 @@
     const note = $("archiveGapNote");
     const expected = archive.forms_expected || coverage.streams_total || 0;
     const archived = Number(archive.forms_archived || 0);
+    const rowsLoaded = Number(coverage.stream_rows_loaded ?? (payload.streams || []).length);
+    const syncState = String(archive.portal_sync?.state || "NEVER_RUN");
+    if (payload.reference?.benchmark_only && rowsLoaded === 0 && syncState === "NEVER_RUN") {
+      note.hidden = false;
+      note.innerHTML = `<strong>Malava setup is waiting for its first portal run.</strong> IEBC currently reports ${number(expected)} of ${number(expected)} Form 35As. The page is showing ${number(expected)} disabled placeholders so the expected coverage is visible; the scheduled sync will replace them with real polling-centre identities, archived PDFs and OCR review rows.`;
+      return;
+    }
     if (archived >= expected) { note.hidden = true; return; }
 
     const downloaded = Number(archive.portal_downloaded || 0);
@@ -427,6 +471,10 @@
     const search = $("archiveSearch").value.trim().toLowerCase();
     const filtered = streams.filter(row => (!ward || row.ward === ward) && (!state || row.state === state) && (!search || `${row.stream_key} ${row.station_name}`.toLowerCase().includes(search)));
     const drafts = payload ? loadAllDrafts(payload.election_id) : {};
+    if (!filtered.length && payload.reference?.benchmark_only && !(payload.streams || []).length) {
+      $("archiveTable").innerHTML = `<tr><td colspan="6" class="muted">Malava's ${number(payload.coverage?.streams_total || 0)} stream rows are awaiting the first IEBC portal sync. Placeholder boxes above are intentionally not clickable until a source Form 35A identity exists.</td></tr>`;
+      return;
+    }
     $("archiveTable").innerHTML = filtered.map(stream => `<tr>
       <td><button type="button" class="text-button archive-table-open" data-stream-key="${escapeHtml(stream.stream_key)}">${escapeHtml(stream.stream_key)}</button><br><span class="muted">${escapeHtml(stream.station_name)}</span></td>
       <td>${escapeHtml(stream.ward)}</td>

@@ -3,6 +3,20 @@ name: Sync IEBC forms and OCR
 on:
   schedule:
     - cron: "2/5 * * * *"
+  # Run an immediate first sync when the crawler/OCR configuration changes.
+  # Generated form/data commits do not match these paths, preventing loops.
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/sync-historical-forms.yml"
+      - "frontend/**"
+      - "data/elections/sync.json"
+      - "data/elections/*/election.json"
+      - "src/olkalou_engine/archive.py"
+      - "src/olkalou_engine/portal.py"
+      - "src/olkalou_engine/historical_ocr.py"
+      - "src/olkalou_engine/historical_sync.py"
   workflow_dispatch:
     inputs:
       election_id:
@@ -43,7 +57,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
     env:
       ENGINE_ROOT: .
       PORTAL_USER_AGENT: "KenyaElectionTallyingWall/0.4 (+https://dansamuka.github.io/2_Elections_tallying_educational/methodology.html)"
@@ -202,7 +216,7 @@ jobs:
 
 
       - name: Assemble updated Pages site
-        if: ${{ steps.commit.outputs.changed == 'true' }}
+        if: ${{ steps.commit.outputs.changed == 'true' || github.event_name == 'push' }}
         run: |
           mkdir -p _site/data/public
           cp -R frontend/. _site/
@@ -211,16 +225,16 @@ jobs:
           find _site/data/public -type f -name '*.json' -exec sed -i 's#../data/public/#./data/public/#g' {} +
 
       - uses: actions/configure-pages@v5
-        if: ${{ steps.commit.outputs.changed == 'true' }}
+        if: ${{ steps.commit.outputs.changed == 'true' || github.event_name == 'push' }}
 
       - uses: actions/upload-pages-artifact@v3
-        if: ${{ steps.commit.outputs.changed == 'true' }}
+        if: ${{ steps.commit.outputs.changed == 'true' || github.event_name == 'push' }}
         with:
           path: _site
 
       - name: Deploy updated dashboard
         id: deployment
-        if: ${{ steps.commit.outputs.changed == 'true' }}
+        if: ${{ steps.commit.outputs.changed == 'true' || github.event_name == 'push' }}
         uses: actions/deploy-pages@v4
 
       - name: Fail workflow when portal sync failed

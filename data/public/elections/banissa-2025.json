@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1784041772063,
-  "generated_at": "2026-07-14T15:09:32.063909Z",
+  "seq": 1784044112609,
+  "generated_at": "2026-07-14T15:48:32.609189Z",
   "mode": "ARCHIVE",
   "election_id": "banissa-2025",
   "election": {

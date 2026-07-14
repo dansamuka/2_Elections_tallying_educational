@@ -89,3 +89,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .check-label{margin:12px 0 6px;color:var(--ink-dim);font:600 .66rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
 .human-checks{margin-bottom:12px}.review-actions .primary:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.35)}
 .local-reviewed-badge{color:#8FE0AE;border-color:#2E5B40;background:#141C17}
+
+/* Malava benchmark bootstrap: show expected coverage before the first portal
+   crawl without pretending the placeholders are source-linked streams. */
+.pending-roster .grid-empty-note{margin:0 0 12px;color:var(--ink-dim);font-size:.78rem;line-height:1.45}
+.stream-cell.roster-placeholder{cursor:not-allowed;border-style:dashed;border-color:#44505F;opacity:.42;background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(152,162,176,.12) 6px 8px)}
+.stream-cell.roster-placeholder:hover{transform:none;border-color:#44505F}

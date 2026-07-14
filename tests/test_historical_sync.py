@@ -28,7 +28,7 @@ def test_sync_plan_targets_existing_repository() -> None:
     plan = load_sync_plan(REPO_ROOT)
     assert plan.enabled is True
     assert plan.interval_minutes == 5
-    assert plan.election_ids == ("banissa-2025", "malava-2025", "ol-kalou-2026")
+    assert plan.election_ids == ("ol-kalou-2026", "banissa-2025", "malava-2025")
     assert plan.repository == "dansamuka/2_Elections_tallying_educational"
     assert plan.workflow_url.endswith("sync-historical-forms.yml")
 
@@ -190,7 +190,7 @@ def test_historical_archive_rejects_wrong_sized_download_all_bundle_before_archi
 
 def test_sync_plan_includes_banissa_and_ol_kalou() -> None:
     plan = load_sync_plan(REPO_ROOT)
-    assert plan.election_ids == ("banissa-2025", "malava-2025", "ol-kalou-2026")
+    assert plan.election_ids == ("ol-kalou-2026", "banissa-2025", "malava-2025")
 
 
 def test_ol_kalou_live_profile_allows_unresolved_atomic_reference() -> None:
