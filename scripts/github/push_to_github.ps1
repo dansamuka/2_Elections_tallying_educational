@@ -107,6 +107,11 @@ if (-not $SkipTests) {
     Assert-LastExitCode "East Africa Time support could not be initialized. Delete .venv and run this script again."
     & $Python -m pytest
     Assert-LastExitCode "Tests failed; the repository was not pushed."
+    # CI (.github/workflows/ci.yml) also runs `ruff check src tests scripts`
+    # -- match that here so a lint-only failure is caught before pushing,
+    # not after, on GitHub, once it's too late to just fix it locally first.
+    & $Python -m ruff check src tests scripts
+    Assert-LastExitCode "Ruff lint check failed; the repository was not pushed."
     & $Python -m olkalou_engine.cli --root . publish --simulations 100
     Assert-LastExitCode "Could not generate the live site payload."
     & $Python -m olkalou_engine.cli --root . archive-build banissa-2025
@@ -163,8 +168,32 @@ if ($LASTEXITCODE -ne 0) {
 
 
 Write-Step "Pushing replacement files to main"
+# Check for divergence BEFORE attempting the push, so a rejection gets an
+# accurate explanation instead of a generic one. The old message here
+# ("Check repository permissions and branch protection") sent people down
+# the wrong troubleshooting path -- the actual, by far most likely cause of
+# a rejected push on this repo is the "Sync IEBC forms and OCR" scheduled
+# workflow having pushed in the last few minutes (it runs automatically and
+# regenerates data/elections and data/public). See
+# RACE_CONDITION_FIX_NOTES.md for the incident this came from.
+& git fetch origin main 2>$null
+$localHead = ((& git rev-parse HEAD) | Out-String).Trim()
+$remoteHead = ((& git rev-parse origin/main 2>$null) | Out-String).Trim()
+if ($remoteHead -and $remoteHead -ne $localHead) {
+    $mergeBase = ((& git merge-base HEAD origin/main 2>$null) | Out-String).Trim()
+    if ($mergeBase -ne $remoteHead) {
+        Write-Host ""
+        Write-Host "origin/main has moved since this script started (most likely: the" -ForegroundColor Yellow
+        Write-Host "automated 'Sync IEBC forms and OCR' workflow pushed in the meantime --" -ForegroundColor Yellow
+        Write-Host "it runs on a schedule and regenerates data/elections and data/public)." -ForegroundColor Yellow
+        Write-Host "Pushing now would likely be rejected. Re-run this script in a minute or" -ForegroundColor Yellow
+        Write-Host "two once that workflow has finished, or run 'git pull --rebase' first if" -ForegroundColor Yellow
+        Write-Host "you specifically want to merge with it now." -ForegroundColor Yellow
+        Write-Host ""
+    }
+}
 & git push --set-upstream origin main
-Assert-LastExitCode "Git push failed. Check repository permissions and branch protection."
+Assert-LastExitCode "Git push failed -- most likely because origin/main changed since this script started (see the note above if one was shown). This is not a permissions problem in the normal case: wait for the automated sync workflow to finish, or run 'git pull --rebase' and try again."
 
 Write-Step "Ensuring GitHub Pages workflow deployment is enabled"
 $pagesBody = '{"build_type":"workflow"}'
