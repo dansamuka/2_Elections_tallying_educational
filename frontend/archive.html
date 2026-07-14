@@ -34,6 +34,11 @@
           <button id="archiveRefresh" class="secondary-action" type="button">Refresh data</button>
           <small>Scheduled portal check every five minutes. Manual runs require repository-owner sign-in.</small>
         </div>
+        <div class="sync-actions review-toolbar">
+          <button id="draftDownload" class="secondary-action" type="button">Download review draft CSV</button>
+          <button id="draftClear" class="text-button" type="button">Clear drafts</button>
+          <small id="draftCount">0 streams drafted in this browser · nothing is published until you run archive-import</small>
+        </div>
       </div>
     </section>
 
@@ -59,6 +64,7 @@
       <div><span>REGISTERED VOTERS</span><strong id="archiveRegistered" class="numeric">0</strong></div>
       <div><span>REPLAY</span><strong id="archiveReplayState">WITHHELD</strong></div>
     </section>
+    <p id="archiveGapNote" class="status-line gap-note" hidden></p>
 
     <div class="archive-grid">
       <section class="panel archive-result-panel">

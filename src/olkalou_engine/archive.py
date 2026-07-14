@@ -226,6 +226,43 @@ def _load_sync_status(bundle: HistoricalBundle) -> dict[str, Any]:
     return _read_json(path)
 
 
+def _ocr_prefill(ocr_record: dict[str, Any] | None, candidate_ids: list[str]) -> dict[str, Any] | None:
+    """Surfaces the raw, per-candidate OCR-extracted figures for a stream
+    that hasn't been independently verified yet -- namespaced under
+    stream.ocr.prefill_* in the public payload, never under stream.votes.
+    stream.votes stays reserved for statutorily-checked, human-reviewed
+    figures (see import_verified_results / _checks_for_row above); this is
+    additive, source-linked, honestly-labelled evidence for someone
+    reviewing a specific stream against its actual scanned form, not a
+    result. Returns None if there's nothing to show (no OCR record, or the
+    parser found no numeric fields on the page).
+    """
+    if not ocr_record:
+        return None
+    fields = (ocr_record.get("parsed") or {}).get("fields", {})
+
+    votes: dict[str, int] = {}
+    for cid in candidate_ids:
+        value = fields.get(f"candidate_{cid}", {}).get("value")
+        if value is not None:
+            votes[cid] = int(value)
+
+    def _field(name: str) -> int | None:
+        value = fields.get(name, {}).get("value")
+        return int(value) if value is not None else None
+
+    prefill = {
+        "votes": votes or None,
+        "registered": _field("registered"),
+        "rejected": _field("rejected"),
+        "total_valid": _field("total_valid"),
+        "total_cast": _field("total_cast"),
+    }
+    if not any(prefill.values()):
+        return None
+    return prefill
+
+
 def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
     results = _load_results(bundle)
     manifest_by_stream = _manifest_by_stream(bundle)
@@ -306,6 +343,7 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
                     "route": (ocr_record or {}).get("route"),
                     "confidence": (ocr_record or {}).get("confidence"),
                     "checks": (ocr_record or {}).get("checks", {}),
+                    "prefill": _ocr_prefill(ocr_record, candidate_ids),
                 } if ocr_record else None,
                 "published_at": None,
             }

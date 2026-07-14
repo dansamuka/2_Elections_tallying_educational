@@ -12,6 +12,90 @@
   let replayTimer = null;
   let replayPosition = null;
 
+  // ---------------------------------------------------------------------
+  // Review workbench: pure CSV/draft logic (execution-tested end to end,
+  // including real DOM interaction and localStorage, in
+  // tests/frontend/test_review_workbench.js against this exact code).
+  // Everything here is client-side only -- typing into these fields never
+  // sends anything anywhere. It only prepares a CSV in the same shape
+  // import_verified_results() already expects, for whoever runs
+  // `archive-import` to actually verify and publish. See the OCR prefill
+  // banner text rendered in openStream() for the same point made to readers.
+  // ---------------------------------------------------------------------
+  function csvEscape(value) {
+    const str = String(value ?? "");
+    if (/[",\n\r]/.test(str)) return `"${str.replace(/"/g, '""')}"`;
+    return str;
+  }
+  function csvHeader(candidateIds) {
+    return ["stream_key","reported_at","form_url","verification","registered_form",...candidateIds,"rejected","po_total_valid","total_cast_form","reviewer_a","reviewer_b","notes"].join(",");
+  }
+  function buildCsvRow(candidateIds, draft) {
+    const cols = [
+      draft.stream_key || "", draft.reported_at || "", draft.form_url || "", draft.verification || "HUMAN",
+      draft.registered_form ?? "", ...candidateIds.map((id) => draft.votes?.[id] ?? ""),
+      draft.rejected ?? "", draft.po_total_valid ?? "", draft.total_cast_form ?? "",
+      draft.reviewer_a || "", draft.reviewer_b || "", draft.notes || "",
+    ];
+    return cols.map(csvEscape).join(",");
+  }
+  function isDraftFilled(candidateIds, draft) {
+    return candidateIds.some((id) => draft?.votes?.[id] !== undefined && draft.votes[id] !== null && draft.votes[id] !== "");
+  }
+  function buildDraftCsv(candidateIds, drafts) {
+    const rows = Object.values(drafts || {}).filter((d) => isDraftFilled(candidateIds, d));
+    return [csvHeader(candidateIds), ...rows.map((d) => buildCsvRow(candidateIds, d))].join("\r\n") + "\r\n";
+  }
+  function mergeDraft(existing, patch) {
+    return {...(existing || {}), ...patch, votes: {...(existing?.votes || {}), ...(patch.votes || {})}};
+  }
+  function draftOrPrefill(stream, ocrPrefill, savedDraft) {
+    const base = {
+      stream_key: stream.stream_key, form_url: stream.form_url || "",
+      registered_form: ocrPrefill?.registered ?? stream.registered ?? "",
+      votes: {...(ocrPrefill?.votes || {})},
+      rejected: ocrPrefill?.rejected ?? "", po_total_valid: ocrPrefill?.total_valid ?? "",
+      total_cast_form: ocrPrefill?.total_cast ?? "", verification: "HUMAN",
+      reviewer_a: "", reviewer_b: "", notes: "",
+    };
+    return savedDraft ? mergeDraft(base, savedDraft) : base;
+  }
+
+  // Drafts persist in this browser's localStorage only, namespaced per
+  // election so switching the picker never mixes data between elections.
+  // This is a real deployed site (not a Claude-artifact preview), so
+  // localStorage is the right tool here -- it survives a page reload,
+  // which matters if reviewing 81 streams takes more than one sitting.
+  function draftStorageKey(electionId) { return `olkalou-archive-drafts:${electionId}`; }
+  function loadAllDrafts(electionId) {
+    try { return JSON.parse(localStorage.getItem(draftStorageKey(electionId)) || "{}"); }
+    catch { return {}; }
+  }
+  function saveDraft(electionId, streamKey, draft) {
+    const all = loadAllDrafts(electionId);
+    all[streamKey] = draft;
+    localStorage.setItem(draftStorageKey(electionId), JSON.stringify(all));
+    return all;
+  }
+  function clearDraft(electionId, streamKey) {
+    const all = loadAllDrafts(electionId);
+    delete all[streamKey];
+    localStorage.setItem(draftStorageKey(electionId), JSON.stringify(all));
+    return all;
+  }
+  function clearAllDrafts(electionId) {
+    localStorage.removeItem(draftStorageKey(electionId));
+  }
+  function updateDraftCount() {
+    if (!payload) return;
+    const ids = (payload.candidates || []).map((c) => c.id);
+    const all = loadAllDrafts(payload.election_id);
+    const filled = Object.values(all).filter((d) => isDraftFilled(ids, d)).length;
+    $("draftCount").textContent = filled
+      ? `${filled} stream${filled === 1 ? "" : "s"} drafted in this browser · nothing is published until you run archive-import`
+      : `0 streams drafted in this browser · nothing is published until you run archive-import`;
+  }
+
   async function fetchJson(url) {
     const response = await fetch(`${url}${url.includes("?") ? "&" : "?"}t=${Date.now()}`, {cache: "no-store"});
     if (!response.ok) throw new Error(`${response.status} ${url}`);
@@ -78,18 +162,28 @@
       ? `Portal sync ${sync.state || "UNKNOWN"} · ${lastSync}`
       : `Portal sync not yet run · scheduled every ${syncMinutes} min`;
     $("archiveStreams").textContent = `${coverage.streams_total || 0}/${coverage.streams_total || 0}`;
-    const sourceForms = Math.max(Number(archive.forms_archived || 0), Number(archive.portal_downloaded || 0));
-    $("archiveForms").textContent = `${sourceForms}/${archive.forms_expected || coverage.streams_total || 0}`;
+    // Honest number, matching what every other stat on this page (and the
+    // sidebar readiness list) already shows -- this used to take
+    // Math.max(forms_archived, portal_downloaded), which is why the top of
+    // the page could say "81/81" while the readiness list further down said
+    // "72/81" for what reads as the same thing. IEBC reporting 100% only
+    // means all 81 forms were PUBLISHED on their portal; it says nothing
+    // about how many of those this pipeline has successfully downloaded,
+    // inventoried, OCR'd, and matched to a specific stream -- see the gap
+    // note below, which explains exactly where any shortfall is.
+    const formsArchived = Number(archive.forms_archived || 0);
+    $("archiveForms").textContent = `${formsArchived}/${archive.forms_expected || coverage.streams_total || 0}`;
     $("archiveTranscribed").textContent = `${archive.stream_results_transcribed || 0}/${coverage.streams_total || 0}`;
     $("archiveOcrReview").textContent = `${archive.ocr?.review_rows || 0}`;
     $("archiveRegistered").textContent = number(coverage.registered_total);
     $("archiveReplayState").textContent = archive.replay_available ? "READY" : "WITHHELD";
     $("archiveValid").textContent = `${number(payload.totals?.valid_votes)} valid`;
+    renderGapNote(archive, coverage);
     $("archiveStatus").textContent = archive.stream_results_complete
       ? "All stream results are source-linked and the count can be replayed."
       : payload.mode === "LIVE"
-        ? `${sourceForms} of ${archive.forms_expected || coverage.streams_total || 0} IEBC forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows await human review; ${archive.stream_results_transcribed || 0} stream tallies are independently verified. No OCR figure enters the live tally automatically.`
-        : `${sourceForms} of ${archive.forms_expected || coverage.streams_total || 0} forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows awaiting human review; ${archive.stream_results_transcribed || 0} stream tallies independently transcribed. Declared constituency totals remain separate from the incomplete Form 35A sum.`;
+        ? `${formsArchived} of ${archive.forms_expected || coverage.streams_total || 0} IEBC forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows await human review; ${archive.stream_results_transcribed || 0} stream tallies are independently verified. No OCR figure enters the live tally automatically.`
+        : `${formsArchived} of ${archive.forms_expected || coverage.streams_total || 0} forms archived; ${archive.ocr?.review_rows || 0} OCR-prefilled rows awaiting human review; ${archive.stream_results_transcribed || 0} stream tallies independently transcribed. Declared constituency totals remain separate from the incomplete Form 35A sum.`;
     renderCandidates(payload.candidates || []);
     renderDeclaration();
     renderReplay();
@@ -98,6 +192,7 @@
     renderSources();
     populateFilters();
     renderTable();
+    updateDraftCount();
   }
 
   function currentSnapshot() {
@@ -125,7 +220,7 @@
       $("replayPosition").textContent = `${replayPosition} / ${total}`;
       $("archiveGridCounter").textContent = `${snapshot.coverage.published}/${snapshot.coverage.streams_total}`;
     } else {
-      const archivedSourceCount = Math.max(Number(payload.archive?.forms_archived || 0), Number(payload.archive?.portal_downloaded || 0));
+      const archivedSourceCount = Number(payload.archive?.forms_archived || 0);
       $("archiveGridCounter").textContent = `${archivedSourceCount}/${payload.coverage?.streams_total || 0} forms`;
     }
   }
@@ -215,25 +310,60 @@
     return `<button type="button" class="${className}" style="${style}" data-stream-key="${escapeHtml(stream.stream_key)}" title="${escapeHtml(stream.station_name)} · ${escapeHtml(stream.state)}" aria-label="${escapeHtml(stream.station_name)} stream ${stream.stream_no}: ${escapeHtml(stream.state)}"></button>`;
   }
 
+  function renderGapNote(archive, coverage) {
+    const note = $("archiveGapNote");
+    const expected = archive.forms_expected || coverage.streams_total || 0;
+    const archived = Number(archive.forms_archived || 0);
+    if (archived >= expected) { note.hidden = true; return; }
+
+    const downloaded = Number(archive.portal_downloaded || 0);
+    const unmatchedPortal = Number(archive.portal_unmatched || 0);
+    const ocr = archive.ocr || {};
+    const documentsTotal = Number(ocr.documents_total || 0);
+    const streamsMatched = Number(ocr.streams_matched || 0);
+    const funnel = [
+      ["IEBC portal", expected],
+      ["Downloaded", downloaded],
+      ["Recognized as a document", documentsTotal],
+      ["Matched to a stream", Math.max(streamsMatched, archived)],
+    ].map(([label, value]) => `${escapeHtml(label)} ${number(value)}`).join(" → ");
+
+    note.hidden = false;
+    note.innerHTML = `<strong>Why this isn't 100% yet even though IEBC's portal is:</strong> ${funnel} (of ${number(expected)} expected).` +
+      (unmatchedPortal ? ` ${number(unmatchedPortal)} downloaded file${unmatchedPortal === 1 ? "" : "s"} could not be matched to a specific stream at the portal stage.` : "") +
+      ` Re-running the sync (Update now, above) closes part of this on its own; the rest needs a person to open the unmatched forms directly -- filter the ledger below to ARCHIVED or REFERENCE_ONLY to find them.`;
+  }
+
   function renderReadiness() {
     const archive = payload.archive || {};
     const total = payload.coverage?.streams_total || 0;
+    const expected = archive.forms_expected || total;
     const ocr = archive.ocr || {};
     const sync = archive.portal_sync || {};
+    const documentsTotal = Number(ocr.documents_total || 0);
+    const streamsMatched = Number(ocr.streams_matched || 0);
     const checks = [
       ["Scheduled portal sync", sync.state && sync.state !== "NEVER_RUN" ? 1 : 0, 1],
-      ["Portal links discovered", archive.portal_discovered || 0, archive.forms_expected || total],
-      ["Portal files downloaded", archive.portal_downloaded || 0, archive.forms_expected || total],
+      ["Portal links discovered", archive.portal_discovered || 0, expected],
+      ["Portal files downloaded", archive.portal_downloaded || 0, expected],
+      ["Portal downloads unmatched to a stream", archive.portal_unmatched || 0, 0],
       ["Certified stream register", total, total],
-      ["Source documents inventoried", ocr.documents_total || 0, ocr.documents_total || 0],
+      ["Source documents inventoried", documentsTotal, expected],
       ["OCR pages processed", ocr.pages_processed || 0, ocr.pages_total || 0],
-      ["Form 35A streams matched", ocr.streams_matched || 0, total],
+      ["Form 35A streams matched", streamsMatched, expected],
+      ["OCR-read but unmatched to a stream", Math.max(0, documentsTotal - streamsMatched), 0],
       ["OCR rows ready for review", ocr.review_rows || 0, total],
-      ["IEBC forms archived", archive.forms_archived || 0, archive.forms_expected || total],
+      ["IEBC forms archived", archive.forms_archived || 0, expected],
       ["Independent transcription", archive.stream_results_transcribed || 0, total],
       ["Replay timestamps", archive.replay_available ? total : 0, total],
     ];
-    $("archiveReadiness").innerHTML = checks.map(([label,value,max]) => `<div class="metric"><span>${escapeHtml(label)}</span><strong>${number(value)} / ${number(max)}</strong></div>`).join("");
+    // The two "unmatched" rows show a raw count, not a fraction -- max=0
+    // signals renderReadiness to print "N" instead of "N / 0", which would
+    // otherwise misleadingly look like every unmatched item is itself a
+    // shortfall against a target of zero.
+    $("archiveReadiness").innerHTML = checks.map(([label,value,max]) =>
+      `<div class="metric"><span>${escapeHtml(label)}</span><strong>${max === 0 ? number(value) : `${number(value)} / ${number(max)}`}</strong></div>`
+    ).join("");
   }
 
   function populateFilters() {
@@ -262,14 +392,114 @@
   function openStream(streamKey) {
     const stream = currentSnapshot().streams.find(row => row.stream_key === streamKey);
     if (!stream) return;
-    const candidates = new Map((payload.candidates || []).map(candidate => [candidate.id, candidate]));
-    const votes = Object.entries(stream.votes || {}).map(([id,value]) => `<tr><td>${escapeHtml(candidates.get(id)?.name || id)}</td><td class="numeric">${number(value)}</td></tr>`).join("");
+    const candidateList = payload.candidates || [];
+    const candidateIds = candidateList.map(c => c.id);
+    const candidateMap = new Map(candidateList.map(c => [c.id, c]));
+
+    if (stream.state === "PUBLISHED") {
+      // Already independently verified -- nothing to review or draft, just show it.
+      const rows = Object.entries(stream.votes || {}).map(([id, value]) =>
+        `<tr><td>${escapeHtml(candidateMap.get(id)?.name || id)}</td><td class="numeric">${number(value)}</td></tr>`).join("");
+      $("archiveDialogBody").innerHTML = `<p class="eyebrow">${escapeHtml(stream.stream_key)} · ${escapeHtml(stream.ward)}</p><h2>${escapeHtml(stream.station_name)}</h2>
+        <p><span class="state-badge state-${escapeHtml(stream.state)}">${escapeHtml(stream.state)}</span></p>
+        <table class="detail-table"><tbody><tr><td>Registered</td><td class="numeric">${number(stream.registered)}</td></tr>${rows}</tbody></table>
+        ${stream.form_url ? `<p><a href="${escapeHtml(stream.form_url)}" target="_blank" rel="noopener">Open archived Form 35A ↗</a></p>` : ""}`;
+      $("archiveStreamDialog").showModal();
+      return;
+    }
+
+    const ocr = stream.ocr || null;
+    const prefill = ocr?.prefill || null;
+    const savedDraft = loadAllDrafts(payload.election_id)[streamKey] || null;
+    const draft = draftOrPrefill(stream, prefill, savedDraft);
+
+    const checkBadges = ocr?.checks && Object.keys(ocr.checks).length
+      ? `<div class="ocr-checks">${Object.entries(ocr.checks).map(([code, status]) =>
+          `<span class="${status === "PASS" ? "pass" : status === "FAIL" ? "fail" : "unknown"}">${escapeHtml(code)} ${escapeHtml(status)}</span>`).join("")}</div>`
+      : "";
+
+    const candidateRows = candidateList.map(c => `
+      <div class="review-field-row">
+        <label for="rf-vote-${escapeHtml(c.id)}">${escapeHtml(c.name)}<span class="party-chip">${escapeHtml(c.abbr)}</span></label>
+        <input id="rf-vote-${escapeHtml(c.id)}" data-candidate="${escapeHtml(c.id)}" type="number" min="0" inputmode="numeric" value="${draft.votes?.[c.id] ?? ""}">
+      </div>`).join("");
+
     $("archiveDialogBody").innerHTML = `<p class="eyebrow">${escapeHtml(stream.stream_key)} · ${escapeHtml(stream.ward)}</p><h2>${escapeHtml(stream.station_name)}</h2>
       <p><span class="state-badge state-${escapeHtml(stream.state)}">${escapeHtml(stream.state)}</span></p>
-      <table class="detail-table"><tbody><tr><td>Registered</td><td class="numeric">${number(stream.registered)}</td></tr>${votes || `<tr><td colspan="2" class="muted">No independently verified stream tally has been imported.</td></tr>`}</tbody></table>
-      ${stream.ocr ? `<p class="microcopy">OCR prefill: <strong>${escapeHtml(stream.ocr.route || "REVIEW")}</strong> · confidence ${stream.ocr.confidence == null ? "—" : percent(stream.ocr.confidence)}</p>` : ""}
-      ${stream.form_url ? `<p><a href="${escapeHtml(stream.form_url)}" target="_blank" rel="noopener">Open archived Form 35A ↗</a></p>` : `<p class="muted">The form has not yet been archived by this repository.</p>`}`;
+      <div class="dialog-grid">
+        <div>
+          ${stream.form_url
+            ? `<iframe class="form-frame" src="${escapeHtml(stream.form_url)}" title="Scanned Form 35A for ${escapeHtml(stream.station_name)}"></iframe><p><a href="${escapeHtml(stream.form_url)}" target="_blank" rel="noopener">Open in a new tab ↗</a></p>`
+            : `<p class="muted">The form has not yet been archived by this repository.</p>`}
+        </div>
+        <div>
+          ${ocr ? `<div class="ocr-prefill-banner"><span>OCR prefill: <strong>${escapeHtml(ocr.route || "REVIEW")}</strong> · confidence ${ocr.confidence == null ? "—" : percent(ocr.confidence)}. ${prefill ? "Figures below are the raw OCR reading -- check them against the form on the left before saving." : "No numeric fields were read from this page -- fill in from the form yourself."}</span></div>${checkBadges}`
+            : `<p class="muted">No OCR reading exists for this stream yet.</p>`}
+          <div class="review-field-row control"><label for="rf-registered">Registered (on form)</label><input id="rf-registered" type="number" min="0" value="${draft.registered_form ?? ""}"></div>
+          ${candidateRows}
+          <div class="review-field-row control"><label for="rf-rejected">Rejected ballots</label><input id="rf-rejected" type="number" min="0" value="${draft.rejected ?? ""}"></div>
+          <div class="review-field-row control"><label for="rf-valid">PO stated total valid</label><input id="rf-valid" type="number" min="0" value="${draft.po_total_valid ?? ""}"></div>
+          <div class="review-field-row control"><label for="rf-cast">PO stated total cast</label><input id="rf-cast" type="number" min="0" value="${draft.total_cast_form ?? ""}"></div>
+          <div class="review-field-row"><label for="rf-reviewer">Your name (reviewer_a)</label><input id="rf-reviewer" type="text" value="${escapeHtml(draft.reviewer_a || "")}"></div>
+          <div class="review-actions">
+            <button id="rfCopyRow" type="button">Copy this row as CSV</button>
+            <button id="rfClear" type="button">Clear this draft</button>
+          </div>
+          <p class="review-saved-note" id="rfSavedNote">This never publishes anything by itself -- it only saves in your browser. Use "Download review draft CSV" above, then <code>archive-import</code>, to actually verify and publish a stream.</p>
+        </div>
+      </div>`;
     $("archiveStreamDialog").showModal();
+    wireReviewInputs(stream, candidateIds);
+  }
+
+  function readReviewInputs(stream, candidateIds) {
+    const votes = {};
+    candidateIds.forEach((id) => {
+      const el = $(`rf-vote-${id}`);
+      if (el && el.value !== "") votes[id] = Number(el.value);
+    });
+    return {
+      stream_key: stream.stream_key,
+      form_url: stream.form_url || "",
+      registered_form: $("rf-registered")?.value ?? "",
+      votes,
+      rejected: $("rf-rejected")?.value ?? "",
+      po_total_valid: $("rf-valid")?.value ?? "",
+      total_cast_form: $("rf-cast")?.value ?? "",
+      verification: "HUMAN",
+      reviewer_a: $("rf-reviewer")?.value ?? "",
+      reviewer_b: "",
+      notes: "",
+    };
+  }
+
+  function wireReviewInputs(stream, candidateIds) {
+    const persist = () => {
+      const current = readReviewInputs(stream, candidateIds);
+      saveDraft(payload.election_id, stream.stream_key, current);
+      updateDraftCount();
+      const note = $("rfSavedNote");
+      if (note) note.textContent = `Saved to this browser at ${new Date().toLocaleTimeString("en-KE")} · nothing is published until you run archive-import.`;
+    };
+    document.querySelectorAll("#archiveDialogBody input").forEach((el) => {
+      el.addEventListener("input", persist);
+      el.addEventListener("change", persist);
+    });
+    $("rfCopyRow")?.addEventListener("click", async () => {
+      const row = buildCsvRow(candidateIds, readReviewInputs(stream, candidateIds));
+      try {
+        await navigator.clipboard.writeText(row);
+        $("rfCopyRow").textContent = "Copied ✓";
+        setTimeout(() => { if ($("rfCopyRow")) $("rfCopyRow").textContent = "Copy this row as CSV"; }, 1800);
+      } catch {
+        window.prompt("Copy this CSV row:", row);
+      }
+    });
+    $("rfClear")?.addEventListener("click", () => {
+      clearDraft(payload.election_id, stream.stream_key);
+      updateDraftCount();
+      openStream(stream.stream_key); // re-render from OCR prefill, draft gone
+    });
   }
 
   function renderSources() {
@@ -285,6 +515,26 @@
 
   [$("archiveWard"), $("archiveState"), $("archiveSearch")].forEach(control => control.addEventListener("input", () => payload && renderTable()));
   $("archiveDialogClose").addEventListener("click", () => $("archiveStreamDialog").close());
+  $("draftDownload").addEventListener("click", () => {
+    if (!payload) return;
+    const ids = (payload.candidates || []).map((c) => c.id);
+    const csv = buildDraftCsv(ids, loadAllDrafts(payload.election_id));
+    const blob = new Blob(["\ufeff" + csv], {type: "text/csv;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${payload.election_id || "election"}-review-draft.csv`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+  $("draftClear").addEventListener("click", () => {
+    if (!payload) return;
+    if (!confirm("Clear every drafted stream for this election in this browser? This cannot be undone.")) return;
+    clearAllDrafts(payload.election_id);
+    updateDraftCount();
+  });
   setInterval(() => {
     if (catalog && payload && !replayTimer && !document.hidden) {
       loadElection($("electionSelect").value, false).catch(error => console.warn("Archive refresh failed", error));

@@ -39,3 +39,8 @@ jobs:
       - run: node --check frontend/app.js
       - run: node --check frontend/archive.js
       - run: node --check frontend/config.js
+      # Execution tests for the archive.html review workbench (OCR prefill
+      # display, editable draft inputs, CSV export) -- loads the real
+      # frontend files into jsdom and drives them through actual DOM
+      # interaction, not a syntax check. See tests/frontend/README.md.
+      - run: cd tests/frontend && npm install && npm test

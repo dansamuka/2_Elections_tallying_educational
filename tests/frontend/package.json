@@ -1,0 +1,11 @@
+{
+  "name": "olkalou-frontend-tests",
+  "private": true,
+  "description": "Execution tests for frontend/archive.js (review workbench). Not part of the deployed site -- the site itself is plain script tags, no build step, no runtime dependency on anything here.",
+  "scripts": {
+    "test": "node test_review_workbench.js"
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0"
+  }
+}
