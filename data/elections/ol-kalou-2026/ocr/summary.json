@@ -1,0 +1,24 @@
+{
+  "schema": "kenya.election.ocr-summary.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "ol-kalou-2026",
+  "generated_at": "2026-07-14T17:15:21.601219Z",
+  "engine_mode": "auto",
+  "engines_available": [
+    "tesseract"
+  ],
+  "documents_total": 0,
+  "pages_total": 0,
+  "pages_processed": 0,
+  "layout_assisted_pages": 0,
+  "form35a_detected": 0,
+  "form35b_detected": 0,
+  "streams_matched": 0,
+  "review_rows": 0,
+  "routes": {},
+  "errors": [],
+  "review_queue": "data/elections/ol-kalou-2026/ocr/review_queue.csv",
+  "inventory": "data/elections/ol-kalou-2026/ocr/document_inventory.json",
+  "auto_publication": false,
+  "note": "OCR output is a pre-fill only. Handwritten cells are read with layout anchors and arithmetic reconciliation, but no historical stream is added to the public tally until human review and statutory validation are complete."
+}
