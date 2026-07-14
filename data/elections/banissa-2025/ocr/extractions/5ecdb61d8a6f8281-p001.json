@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "5ecdb61d8a6f8281-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040020005401/v1_5ecdb61d8a6f.pdf",
+  "source_sha256": "5ecdb61d8a6f82817f3ac64e58d0502b003e089cf9c191eb7795725de62c6c3c",
+  "source_filename": "v1_5ecdb61d8a6f.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/5ecdb61d8a6f8281.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-054-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.44152224824355973,
+  "text_length": 2337,
+  "text_preview": "ee a a _— _—_ = ' ee ee\nPw\nPOLE : Vveec JURSO) 60)\n= : : ais == & ————\n= we ‘ [=] LE\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION .\nName of Polling Station KHORGOWLA PRIMARY SCHOOL POLLING STATION 1 of 1 Code __009040020005401\nWard KILIWEHIRI Code __0200__ SIONINDE\nanshiiuarrey SS ows < BANS. COMMISSION, EN TEL ECTOPL AC pO a0Ul wT ELECTORas S/ONINDEPEND 2COn@ pdt MHBORAL AN? VINDEPENE\nCauityonpeP EL ecOn Pp MANBERN cL ECTORa) PY ENDENTELEC VOW age GRRL, ECTORALAU AOE PENDENT ES seh WO Sade @ OBLANDBD SPENDENTE\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1, HASSAN AHMED MAALIM\n2. MOHAMED NURDIN MAALIM __ 900\nTotal number of valid votes cast OT\nPolling Station Counts Decision{s} on disputed votes if any\n1 | Tata NumbertReitered Votes nthe Poling Salon, -——] 5\nTotal Number of Gece Bale Popes; a CCS\nTotal Number of Rejection Objected to Ballot Papers; t———000) ERO CONN AND BOL ge MDE NT ELEC TPE NOG CaSO INDARIESC LE\nTt Number f sped les 109 [sO\nS| Tata Naber aloes Cast Senet 5,0 TEs aR, SRR et\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby de cla re fit: reg#its staan ape are true\nand accurate count of the ballots in }Hok(GowLla FRimAky SC Hoo L Polling Station __2 BN 2° ans ituency.\n)) . » ‘\nPresiding Officer: AL] AVADULCA Tuse Signatures AC) me ade’ Beli 2025\n, s 4-—— CONS\nDeputy Presiding Officer: EDNOO! RAHI IN Signature: | Noy Driet 2 T-1l-2025\nAgents or Candidates {if present}\n_ Name of Candidate or Agent Party Name/Independent Candidate\n-ALio MAaLim Hasan (2427634 (/)\\A 75a but et ey\n| 2. uso AB uke Bhat 2670724 UPA p7a3heaeel Mee eae\nPun SS ONDE Aen UNDARIESC One aka NOE PEMDEETE Lg £C OMMISSICN INO CS SOU Teh EC ORAL AND NINDEPENDECONU SONG\nBCSENTELECTOR4/ SS/ONINDEP ENE SCugeg ase nal ANDEQUy, “NOENTELEC NON WOU CoO pRBARIESC Ons CLORALANOR GCN UNS\nBoP} 7 ORALANOB OE PENDE NAMI OSC OUNDARIESC LECTORALING. WOON Nye COMMISSION ADBOUNDARE cr ONOOER EC ONING\noe ee eee\nee AORN NC OUN gin SCOMN PSO Cop NOP UDEN TE, eSCOM nae cIONINOS ELC ONGHON EcTORAL SS NWOT PENDEN aNSSEE: OM ag\nIER rnm en Sc eu CONN GONE CON INOATE cron m SOMA OENDEN the OFM OR LOE PENDENT COR NOR CORR\nReasons for Refusal to Sign [if any)\nPresiding Officer's Comments:\nTHERE JAS No 4 LS abe",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 900,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1, HASSAN AHMED MAALIM",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM __ 900",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T05:22:17.519462Z"
+}

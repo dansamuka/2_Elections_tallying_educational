@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "8a8909bc3f9fa67a-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/unmatched/v1_8a8909bc3f9f.pdf",
+  "source_sha256": "8a8909bc3f9fa67afdfc8ad8d627b3704f7eaf4532294ad492808f119b21476a",
+  "source_filename": "v1_8a8909bc3f9f.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/8a8909bc3f9fa67a.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-033-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.44117808219178084,
+  "text_length": 2030,
+  "text_preview": "a ae ese {OF AO)\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS AN,\nAT THE POLLING STATION\nName of Polling Station KILIWEHIRI PRIMARY SCHOOL POLLING STATION 1 of 2 Code __009040020003301\nWard KILIWEHIRI Code __0200\nEss Gtnerray S$! wt 2 O-CBANISG cOMMISS/ On DENTELECTOR CAG pha oO eu TELECTOR¢s SIONINDEPEND a CORE tht ci O4GORAL an nV/NOEPENL\nCounty MANDERA Code __ 009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n[74. HASSAN AHMED MAALIN Eston rrnL ecole nerets ont oneal\n2. MOHAMED NURDIN MAALIM\nTotal number of valid votes cast\nPolling Station Counts Decision{s} on disputed votes if any\n[1 | Tota Number fRegiteredVoiersintePingStaton | 50\n2 |e Number Rejected Balt Papers, FE Gon ec TonaL ANNO LAOREET NCCU OR\nTotal Number of Rejection Objected to Ballot Papers; PiiNoerenoe COO Le CON NOB OLS ENDENTELEC TOS NOS PS Som INDARIESCRLEG\nota Narr of sped es Sens ett taste Coe Oa RT\n[Total Naber a oles at [ele eB PEO cee ans Ota nen font Tc OC nna\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do beéPéby de¥kgre that the results shown above are true\nand accurate count of the ballots in RK) Li w EHI RI PRLIMARCt Sek “Polling St PE-p EX A Constituency.\nRALARGS ee D\nPresiding Officer: __>{USSUE GOEN ABNUdatt) Signatuger = SONG: Date D9—-l/ 209.5\nDeputy Presiding Officer: 1 SS4en AN Ar FAKS) — signaQFd GEREN Date 27—4/-2025\nAgents or Candidates (if present)\nAbbi MoHAmen 66a [DIYII5T UPA lepaceqeét ype |z7-120\nSRE eet Scio t AN DEO UE NTO POSN IMSS rr LEP E Ny NBME at CaCO NOE Nor ELEC TOM SSI UNO CROCE. Sond\noA gums SIONNOE RE RUNDARIEST OUT CS each SDEPENDEL Bek e COMMISSION Wee OO ure £< OnALANGAMDEPENDE CONUS pun ANOO GH\nee ee\nBe CSRS COUN Asie SCOMY PN NOCON NOE NDEN TE] SoC On a clONNOG NEL C SONNION ECTORALS HDNIVDEPENDEN gt OFM ag\nReasons for Refusal to Sign {if any)\nPresiding Officer's Comments:\n‘these be fe NO bucpeTeb Ani) BLE CT lor Fant) crv Crete}\nNI EEPENST Tec ac Ua OGL EN De NeE ECT ONS CC ot",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 74,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "[74. HASSAN AHMED MAALIN Eston rrnL ecole nerets ont oneal",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T05:24:43.948798Z"
+}

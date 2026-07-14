@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "d3006b2a77157b3c-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019902601/v1_d3006b2a7715.pdf",
+  "source_sha256": "d3006b2a77157b3c24ba0f79a9c8b135430b19a33fdf3bbe705b57119963b601",
+  "source_filename": "v1_d3006b2a7715.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/d3006b2a77157b3c.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0199-026-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.40004819277108433,
+  "text_length": 2324,
+  "text_preview": "— 9 Mas\n| se | CIFAC|\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station RAJAU MOBILE POLLING STATION 1 of 1 Code __009040019902601\nWag APENDENTE _.o 6! <C ceMAEAMARINDEN TE g-SCOMMISSION wOPo& pS uNEc pENOENTELE Cp NINDEPENDEL oN © eo gd enDEO199-£CTO2'SSIONINDE\n(arf Gtoasray SS ww Oc BANISSA.c OMMISS/On WOENTELECTORS CAC pO cOU EN TELECTORas S!ONINDEPEND TS COnR IS pil cL WBORAL AN? YINDEPENL\nCounty MANDERA Code __.009\nNumber of votes cast in favour of each candidate:\n|_Name of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM\n2. MOHAMED NURDIN MAALIM\nTotal number of valid votes cast\nPolling Station Counts Decision{s} on disputed votes if any\n[1 [Tota Number of Registered Vtersnthe Paling Siafons | _———BES|\nTotal Number of Rete Bole Papers ate oni: ONE AS oh ora oN cpenBE MESS OOO NSE OUN Or\nTotal Number of Rejection Obected toBalotPaperss | OOO] |2..\n[oa Number ose Votes SRE eve SRR etesictetaa it CREME\n[otal Nurber aloes Cast PE Seer cao oun OA anoN OATES Ce ONSET\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in Pe TAU MOBILE Polling Station __<25 \"Fahy ; Constituency.\nSE. 1 rir spree Y 2\nPresiding Officer: /\\/OOZ viumes hE! Signature: PRES = Date QTHttH- RRS\n‘ 4 NUOBREG YT i\nDeputy Presiding Officer: SSAAB/A AZEb' DAKanG- Signature: Date Q7~ lr - 2025\nAgents or Candidates {if present} _ : ,\nALi Gapolw Robolv |6yjosés UPA 7G S024 Pee fart\nL21Yussur Asp, Abi |zous(7a¢|VSA ozizassizq| Seg 12\nFI ee SON ODE NE SABO NSS Or ERE NOARIES mR pC ORE Fae LECT Cpe a DUNO! < SOQUEL on\nSS OBORCNTELEC TOR SS/ONINDEPSLE SARA Saieo Coma ANDBOUa ENOENTELEC SON WOE UERION INOARIESC Onad Cf ORAL NDE OE WN pO OMG\nRoa ORALANOB DEPENDENTE ccs O69 ROUNDARIESCOELECTORALANS NOE ONG Degg COMMLES| Ov uA OBOUNDAR COGN eC LONING\n—— ————\nBREN CS cONIND Ree OUND ARIE SCOMN ENCN CONDE NDEN TE] S°C Onis cionINORA REE ON RON EC TORAL SS Muar PENOEN RAGE OS OFM a\nRee rumen e EScrumicslONN Go Ne CaN froma’ SSon tn PENDENCE OM NOB O URE EDP Ne ecto NORE Ce ORE\nReasons for Refusal to Sign {if any)\nPresiding Officer's as\napie Lelie we bb : Be TE\n; S sh\nPO: Namé: atooe mavivmes eS\nSia Gh he Bate\nDATE? Q7-N-2025 PRESHIWE\nOFFICES",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.82
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM",
+      "registered": "[1 [Tota Number of Registered Vtersnthe Paling Siafons | _———BES|",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "FAIL"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T05:20:40.332533Z"
+}

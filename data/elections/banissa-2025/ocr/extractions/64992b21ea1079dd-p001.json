@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "64992b21ea1079dd-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/unmatched/v1_64992b21ea10.pdf",
+  "source_sha256": "64992b21ea1079dd11d57f2f0750114ecf792fdc181d012b98844ce5270fd32a",
+  "source_filename": "v1_64992b21ea10.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/64992b21ea1079dd.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-032-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.43686363636363634,
+  "text_length": 2350,
+  "text_preview": "ig ee es\nanes : Ww\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION |\nName of Polling Station EYMOLE PRIMARY SCHOOL POLLING STATION 1 of 3 Code __ 009040020003201\nWard KILIWEHIRI Code __ 0200\nConstituency BANISSA sdb cr MOOR AL ay -VINOEPENC\nEGU ONINDEPET 2c\" PS MARDER re LECTORA UP ENDENTELEC OM neigh Rly ECTORALAMA NOE PENDENTE Yaa? WoC Rd a BOPLANDB SPENDENTE\nNumber of votes cast in favour of each candidate: .\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM fiers ere ok Ola ncee eg CRON eae\n2. MOHAMED NURDIN MAALIM OF]\nTotal number of valid votes cast Sot Ciera Lsslieeal find aL RTENGURONGSoT AneeMCET SLE\nPolling Station Counts Nl : Decision{s} on disputed votes if any\n1. | Toa Number of Registered Veen the Paling Staten; -——— ga]\nTl Number feted Blot Papers Fest LH ScoiS econ an Neen TRS ON NOBOUNOT ON\nTotal Number of Rejection Objected to Ballot Papers; |_______ 0] PAOe CONN ANDBOUREERDENTELEC WR NOR ESN DARIESC ELE\nTea Nur fisted Vols RR, 9 SRN ge TERRI (RSNA ee rT\n5. [Tot Naber at Votes as ab pee pe\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in MOLE SCHOOL Polling Station _BANISSA Constituency.\nPresiding Officer: 1S Rpt I i 1K CSOT <1 ET Date _27-- 2025\nDeputy Presiding Officer: _- Hassan Al MM _ Signature: _ Ge Date _27-l- 205\nAgents or Candidates {if present)\nio| _ nici rio [ei | Ry rwhp Cne Talcott Se | Oe\nvilow ALLD g7aqqpo2| UA Noo boot) Ieee, l27-11-2bas\nNe aoe ENTE eae ON PE NNDB S OC cope ENON TELEC OMNIS OHO cco SME ECO\na Cee LNDARTE SS GaN ae ODED ENDEA Ec OMMIS SION SW OTCURREON ne CORAL Ay gMIMDEPENDE COM pSSCNO CDN NDE\noe a ee\nioe: ORALANDBOLOEPENDENTE EestORRNN co UNOAE SC JELECTORALANG NOC OSI GeN TC OMMISSIONAIR ADE OUNOAT TC TOaOu Lec Onin\nEe ScONIND RS OUN a SOOM PSSEHECO pL OPEN TE <SCOna GiONNDE RE STON Ec Tomar SeDUIGAN SENDEN GINS oMlad\na an sence scritncsiON oe OSNON Tron SOOM EE NDE a RSL OM MDD On DEANNA cLORNGE gh CC SMOG\nReasons for Refusal to Sign {if any)\nPresiding Officer's Comments: 5 BC -,\nTHE PoLUNnG STajiON Claséh AT NTs And ELECTION Wins\nRISO VEE PUMA MSS a RG OCSENT EL EG OCALA ONNDEPEN SC unc Peo gah ANUROUNG A ADENTELEC SON TNONAE GO\nBann RAs 6 HFK\nXS\n2 & :\nAT-U- ROUGH 20 2\nSs aS 3",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.82
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM fiers ere ok Ola ncee eg CRON eae",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM OF]",
+      "registered": "1. | Toa Number of Registered Veen the Paling Staten; -——— ga]",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "FAIL"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T05:24:06.404345Z"
+}

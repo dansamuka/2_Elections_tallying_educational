@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "79da4187ef993e1f-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040020003601/v1_79da4187ef99.pdf",
+  "source_sha256": "79da4187ef993e1f39d003d291e32bb2e905dd9f3a8bd4e707e4c96e91ccbfbd",
+  "source_filename": "v1_79da4187ef99.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/79da4187ef993e1f.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-036-01",
+  "match_method": "STATION_NAME",
+  "engine": "tesseract",
+  "confidence": 0.38873180873180874,
+  "text_length": 2576,
+  "text_preview": "wie a = i ee —\nrat | a7 tela\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station UMUR PRIMARY SCHOOL POLLING STATION 1 of 1 Code __009040020003604\nWard KILIWEHIRI Code __0200\nass ftv ortet SS nC. <BANISSA COMMISSIOw//ENTEL ECT OR CAO pNaO OU NTELECTOR, SIONINDEPEND 6 COMM t HRT LOBBORAL A OVINDEPENE\nCounty MANDERA Code: G08 ANDao PENDENT\nNumber of votes cast in favour of each candidate: 4\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM eT\n2 MOHAMED NURDIN MAALIM\nTotal number of valid votes cast fel Ges CrORALAND EP ENDENTELE GES ORIG OHM pHDBOUNDAROENTE\nPolling Station Counts Decision{s} on disputed votes if any\nTol Number of RegsteredVtersin the Pling Slaton, |_————. Jf D¢]\nTotal Number oF Rete Balt Papers gs Saon ec ionnc ang Mi etrnoPebg as coco oMN snoBOUNE Cl\n3. | TottNumberof Recon jet to alt Panes Os on arogeeme Neen C ECD ROP Sao TOAmESe |\nTolar fp ed aes, SRS PRS RE SORES ea ATEN\nTa Nur fat Vols Cos Seer RE DALES oO cine Oke eNO ECC OR\nDeclaration :\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that thefes hy above are true\nand accurate count of the ballots in UMUR i Scrodh Potling Station be ANI SIA. aa Opnstituency.\n‘ Pad bit BES i, ate\nPresiding Officer: pircrmfed MoHAMEb Bi Signature: Ge | Pa a2 =2025°\n: XSI ri\nDeputy Presiding Officer: ABDULMA\\ID ApAW HiltowW Signature: ——{U73 = “Sate\nAgents or Candidates {if present} :\nte] Riresttnaaeriger [iiss | Princo a\n1. SULEIMAN (BREN Babes UNITED DEMCPATIC ACL WE )071 20925035 Gfawii> [27h ew\n| 2./PeReN Tera ASP) | 24153405 WNijep PRceRESive Himleo 245k tee lay 24\nSoS eat SON NOON Ee pOe' tho ON EE Ne NOABEE RPRRGC Er ENDE NTELE CH OMPISSION WON eco NeLEC TON,\nGo MOE Peg UNDARIES SRP ee OR NDE ENDER TEL eC ONMIS SION NOR CEE OU re EG ORAL An oMMDEPENDET OWN AC NECN NDEI\nBSBed sO PENDENT ESCOMMISSIG ON eho c0 eT LEST NAL a t/ONINDEPE NE COW SUeK eo Id ANDBOUNG ag DENTELECTOMNGG eC BN DARI\nEo OR ALANOB OL CE PENDENTELE OPS Gace) UNDARIESC GELECTORALANT NOY ONG PCN OMISSION MAUD ROUNDARSCCOSOOI ECT ONIN\na a ee ee\nee eRe Una aie sCOM POLO NCE NDENTE/eSCoM ng ONO NEES ON HON TORY SSINAP DE NOEN GORE OuN SY\nMN\nRee or NDENTA eScruna salon oh CeO NONTE Cron SSlouiGAt CENDEN Se NOg OMG Oe one AANA fc ORS OP CCNY\nReasons for Refusal to Sign {if any) :\nPresiding Officer's Comments:\nTHE pROCESS WAS successeuL.\nRESO BSE INOS ace DBL Ere ES OW BOO ENTE oc AN nn NOE ee SO na PY CRE ORAL cine VO AB RENTELE Zes0N WOE\nher sae MotAMen Jes |\nga (lero US LER]\nPRESIDING\nOFFICER,",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM eT",
+      "candidate_UPA": "2 MOHAMED NURDIN MAALIM",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T05:21:32.490480Z"
+}
