@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "78ec219f1c8a889a-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/unmatched/v1_78ec219f1c8a.pdf",
+  "source_sha256": "78ec219f1c8a889a584b19b4bcd5c45a5ed30d7419c1fde6044b0d5667a98a4c",
+  "source_filename": "v1_78ec219f1c8a.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/78ec219f1c8a889a.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-007-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.47644230769230766,
+  "text_length": 2167,
+  "text_preview": "| = L = _ gy [=] [zl Se\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\n; AT THE POLLING STATION\nName of Polling Station HAJI MOHAMED GIRA PRIMARY SCHOOL POLLING STATION 4 of 3 Code __ 009040019600701\nERT SCHOOL POLLING STATION 1078 90 O45 YOR De oEN TE So __009040019600701\nWard BANISSA Go gene018s ECron SSIONINDE\nASSTONTNIDE AS, ORALANU SS aT a ROT ory RESO nS\nConstituency BANISSA Code __ 040\nST ee TS STO ERE Ol oN AC OT en TELECTOR 4» SIONINDEPENDES CONAN ELEEUORAL Ann /NOEPENL\nCounty MANDERA Code __009\nFOUND BITES SS pe gE eT ea OENTELEC COW pinta hR ECTORALA Un NOEPENDENTE le = OWS_ANDB G7. ENDENTE\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN ARIED MAALIM Sere aR FS\n2. MOHAMED NURDIN MALIN _ O50\nTotal number of valid votes cast Tb\nPolling Station Counts Decision{s} on disputed votes if any\n7. [ oa Number of Reiter ters nthe Pling Stony | 76\nToll Number Rect Balt Papers Zia]: Cane an ORE\nTotal Number of Rejection Objected to Ballot Papers; peo! BESO CONN ANDBOUBEENOEN TELEC TP SNeN RON IOARIES LEG\nTl Number of ip tes Ss RI cee SSS\nTaal Numer fal aes ast TE 5 CEC ae a SNE et\nDeclaration J >\nWe, the undersigned, being present when the results of the iad Suse announced, do hereby declare that the results show alfoveretrud,\nand accurate count of the ballots in Hedi Moltemeo Gia Polling Station [5 A-vS1 SOA e onstituency, i\n3\n~ Presiding Officer: _ \\Kerstan Metta Bowen Signature: R= Date HYOFFH RRS\nDeputy Presiding Officer: B &. ] I AN Ri Signature: _ Bredola Date rw eal O25\nAgents or Candidates (if present)\nio] rarest [i | Pr oa oi\nL1.[ Poasun 64a ego 3e6eg0 OPA 1 22990, fee te 2 7-3ak\n[2] tie Golls Avec |Oo 2 fqa, LUDA etietaiya| R= oh\nSS eevee ela tates GENTS Gel et oR ISn eaten Getca\noe i naa AaOARIES oR GC Le ORor?ENO_RTs SoM SON NONE Oar cc Ona armpereNee AMOR\na ee\nRE ee SEI Hee AIRC IR SREY SEAL Sone\nease ea seat Gor GeO Ne gua ae LANDE UREN GEO ou COUN POUR ANTES Cen g Cat\nReasons for Refusal to Sign (if any)\nPresiding Officer's Comments:\nWWE fel NG pis CES WHE LOST\nbECT me NOENTEN\nHessen) Hate Bonen, jes QTAN- BOS\ntN\nven l.EyBoc,\nPAcs dry WE Cat BS\nOFFICER aA",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 3,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN ARIED MAALIM Sere aR FS",
+      "candidate_UPA": "Name of Polling Station HAJI MOHAMED GIRA PRIMARY SCHOOL POLLING STATION 4 of 3 Code __ 009040019600701",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T06:46:40.684678Z"
+}

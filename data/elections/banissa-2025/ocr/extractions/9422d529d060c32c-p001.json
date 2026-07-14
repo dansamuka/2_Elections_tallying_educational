@@ -1,0 +1,22 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "9422d529d060c32c-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/unmatched/v1_9422d529d060.pdf",
+  "source_sha256": "9422d529d060c32c1f1ab7f68c9268091213b19f7a71eab31ddd94ce3f7675c6",
+  "source_filename": "v1_9422d529d060.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/9422d529d060c32c.pdf#page=1",
+  "page_no": 1,
+  "form_type": "OTHER",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract",
+  "confidence": 0.34588477366255144,
+  "text_length": 1563,
+  "text_preview": "He ul} | en sus\n: ] g ©): 3 E 2. a8 Ste\nMme 2: : ceNR] [esl |\n: esti} |8\nler epee 4 i ses\n| D fo) prey\nlo (5 5| 3] 8 A Beni 1\nwi 3 = se) ND\nWwW oo ey s ry | 4 A\nwe iS, So Bow ~ < 2\n6866 = a 5\n2 5 s tuk 8 )\n9 FS = 2 B28 & | Ht\na > ge) ait\n= ‘ | - = on He\n© =|8 ae 4\n= ica P\nwo\n| 4 a Alolfl |a/Ss |\niz : a : i 7\n> 2 3 zis el \\e g\nOo - s a) 5 BS ale 3d] Six\na pa a] & Ba E- S\n~ g es 2 ae\nab s g/g Z§ aa\nas] 2/8 ae ay te 2 y\n\\ 50 S ci 338 g g 8\nme Ar are) =z 2 Bs]\n4 5 g\\s 92 § & 8\nn= = ule CS ary ae\no = a| Ss §2 9 6 s\ny qn ¥ als nS 3\n<0 = & A\neB. Zz WSSTsS v o\nfue BOOS 2 EIA\nZr Ee Bal SO ay re} > <\nOf 3 3 S| [2\nra g 8 33 =z )\nene 23/ G ei\na go aw] a 3\noe ee 95) fe :\nz : g slash\nr 5 = Bi ay oO 2|a5\\|\n= > S | |@ 2 Y =P\nLe < gs 5 g Pe 2 e\nShe 8 Z| |é a2] & |%\nOo &#Z<la 3 & 2| |g co} NZ LS\n4 => 0)\n4 =| 2| 8 5} 213 2] #/e £4) 3 wh \\\nWw | 2] 2 3 S =| a\\z= eo one\nwe 8a) S| & < rapa ee Ut ol 19\nc 2 3/Z| 8 8) 2/8 => Be 2\\ 2/2\nSs =. 2 ed 2\\3/ 3/8/38 vo Oo a = joey ©\nFr Be £| [alle S/2\\8/ 8/8 az §| 3 |\n9 S| |ZIS\\s alzlaisislé oe fy |<\nBee | Blois] Saige ee ehs a ee\nee 2} || sisal’ ages] 228 2 3 r\n= s\\siSia|s glee e sebhle 8 y\n5 | oc 8/s/Z|=\\5 SIS|S(S|S ges ar oe,\n} a e FlalG i) Elslsisisis aka a XY\n3s | 38 = |8|9/F] 3S £)3/2/3/3/3 Be § 2 a\n=) S\\LQO/Sle | 5/5 2/2 oS g§ £ 3\n‘ o.e2 35|\\¢|O| § EV ErSlevs = £/°\ne? G1 o@ &\\2|2|2/2|2 BO sa sos 7\neeat élgi*/=ls n=l S Slelz see oe Se\nR : raf i= os a) a n\nz=88 Blei-is}e 22/2 \\2\\2\\2 Eee = % 5) = hbk\n: L Gad e\\-lalals ges 3 8 4 d\nSit gee 2 & Bfs|or\nO=& DO Ee ie epee ae\nFe a a B| s [-|si 51.\nPisisiais/3)s/5)5\n7 aleseid",
+  "parsed": {},
+  "checks": {},
+  "route": "UNCLASSIFIED",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T06:47:18.051521Z"
+}

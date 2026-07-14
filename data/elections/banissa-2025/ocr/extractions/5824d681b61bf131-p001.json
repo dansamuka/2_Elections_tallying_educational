@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "5824d681b61bf131-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/unmatched/v1_5824d681b61b.pdf",
+  "source_sha256": "5824d681b61bf1313eb094ffcad8bc2195813b1471f307e7a5c9cac404f86914",
+  "source_filename": "v1_5824d681b61b.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/5824d681b61bf131.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-003-04",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.4542596810933941,
+  "text_length": 2346,
+  "text_preview": "a - 8 a _— —$ i\nWe : woe FAH ges\nz es F 1 2 =\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BANISA PRIMARY SCHOOL POLLING STATION 4 of 5 Code __009040019600304\nWard BANISSA Cadenol 01% §C ron SS/ONINDE\nConstituency BANISSA Code, cL cORAL ay AVNDEPENL\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1, HASSAN AHMED MAALIM SSO RuDER ELEC ee oe Og\n2. MOHAMED NURDIN MAALIM Ermpermansakasiersul caauecrnceracomnamesataeed Sect At\nTotal number of valid votes cast Se cserrateanaaraillclnanariccesn essere ees ote\nPolling Station Counts Decision{s) on disputed votes if any\n1] Tot Number of Registered Voters nthe Poling Satin\nTall Number a Rejected Blot Papers oe 215 2 Ce ets ka NT\nTotal Number of Rejection Objected to Ballot Papers; | —___—- O&O Pee CONN ANDEOUNSEMDENTELEC De WON CoRR MDARIESC LEG\nTtl Number of sped Votes FS 5 SA DORR REY\nTt Nubia Cas See S18 SS a SRA ORIN\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in \\ Lat Polling Station Constituency.\nPresiding Officer: _ Hassan Atto IBRating — Signature: — els — Date 2]—(|-2026\nDeputy Presiding Officer: SHAAB er NRW ABD | Signature: iS Date 2QT]-U-2o2k\nAgents or Candidates (if present) we j\nPete tr, coco on uDe CeO ARES EO DEOL re SESE EaeS NE ENO ARIESC Onn, NNO CU pe RENDEN\nar erat STON NOES SrN Tee’ pee ON EDEN NORMS EC TRG aoe NOL NIELEC OMISSION RON eeQOnuNP rec TON\nOe PNDARIE SC aN Ect Cane ENDEM TEL g SCOUNISS!ON NOW LE SOON EC ORAL aN NINDEPENOEE ON SCD Cp>™ ANDES\nSS. Seas eae ee ee\nPO SENTELEC Ona, SS/ONNDER DE SCRE UK aie 9cgnaLANEDOUN A ENDENTELEC SON RO ON NDARIES Cons CT ORALANDESC OS RROE GUM\naa Se ESRONWOnCeOUNnAaIe SOM WSOC NCEN Ben TET eSCOM aE CIONNOFELC OHON EC Tone SSI A UNO ENDEN Gua Se oui od\nBe eee ea ON NGI ON UNOAR Tan So cL ANOS EN GEO ROP OMS TURINE AUCUNDART.S ORGS GEC SRN\nReasons for Refusal to Sign (if any}\nNO ONE QE FUSED aes) Sita\nPresiding Officer's Comments: er TEL Sade\nTk ete ON WAS FREE Ard FAIZ\nBeOS A WINS nce BL Ree so en OU IOP EN TE cei MA NOE Sa Pee RA NO ap DENTELE EZ ON WOE AU\ntl\n| Pos Name > Assan AKO [BRevetrig Ryh-— 97-11-2025\nLE.B.c.\nPRESIDING )\nOFFICER J",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.82
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1, HASSAN AHMED MAALIM SSO RuDER ELEC ee oe Og",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM Ermpermansakasiersul caauecrnceracomnamesataeed Sect At",
+      "registered": "1] Tot Number of Registered Voters nthe Poling Satin",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "FAIL"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T06:46:30.274714Z"
+}

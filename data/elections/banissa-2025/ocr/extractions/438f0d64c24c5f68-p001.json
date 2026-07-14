@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "438f0d64c24c5f68-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019600801/v1_438f0d64c24c.pdf",
+  "source_sha256": "438f0d64c24c5f681468064045beb118633bf14934329238bf9cd9286428fa05",
+  "source_filename": "v1_438f0d64c24c.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/438f0d64c24c5f68.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-008-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.45629955947136563,
+  "text_length": 2424,
+  "text_preview": "ae ee gas EE\n: é 5 : z i=\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\n| AT THE POLLING STATION\nName of Polling Station MERILLE PRIMARY SCHOOL POLLING STATION 1 of 4 Code __ 009040019600801\nAAR Bis CAR OG HUGU BOLING STATION LA AO\" wOARIESC Omg, SOEPENDENTE RENT CACO __009040019600801\nWard BANISSA Code __0196\nEEN CEES PEN DENTEL 2 SCOMMISSION smOE Oe PhO oENDENTELE-ONINDEPENDEN oS Cres OE 9796. ECTOd/SSIONINDE\nConstituency BANISSA : Goode cL MOOR AL gy WINOEPENI\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM ———— 8 |\n2. MOHAMED NURDIN MAALIN iatanht ore aera ree oem\nTotal number of valid votes cast\nPolling Station Counts Decision{s} on disputed votes if any\n1 | Total Number of Registered atesin he Pallng Staton; F—] 2 (|\n2 |e Number oF Rte Blot Papers A; oT 8 CR eas [RIOTS\nTotal Number of Rejection Objected to Ballot Papers; |-—---f) (7 0) BPS OWN ANOS OUMPNDE NT ELEC TP ENDS PayONMIOARIESCrELEG\n6: [Taal Number f Oped es Stel 474101 Ge CRON cathe aNR CS E\n[5 | Tat Number a esas Sn TTS CF Se aA NSA NCEE\nDeclaration -\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots inMERiule PRimney Scbeyi Polling Station —__ BAMISSA Constituency.\ni <\nPresiding Officer: ) IN N (4) OR € DA Signature: A= : Date we of j 2045\nanor sya rae )\nDeputy Presiding Officer: LORS HASSAa ABDi0OW _ Signature: ENC Date Q7-//2a25\nAgents or Candidates {if present)\nNo. Name of Candidate or Agent Party Name/Independent Candidate\n5 —J \\A\nLAL ABDI Mokaualdahoapss| UPA «BE AKA SS mae Ee\n2 rar\n2AUHMED Motnmed lloowéie UDA _____-(be233u0)| AY ‘(Dalia\nara ae Nn Oe OSNTE Cfo GMS a MT Pm ADARIES ans ee oL une ENENTELE ST OMpISSION GO chOnOrrECTOM\nBPN ELECT Ona § SIONINDEY Sse Secon. AMP SCE NDENTEAEC TON WOU PBR ERD ARIES COMLEC Tons ANON GIDE aad\nEIR ora ANOS ane getTELE OWN Ca co SUNDANESE LLL ECTORALAN Or oC NueNd Colima Cr LAM cou RDART SONOS TC Ota\n17 > Ae eS es ae\na e Seeioulioe s2oUvn gar scOMN HSS Rn NO brn Te <SCOnmu ec MNO REL LON Ee Tam Sy LANCER SY\nBen Sennen ise ace cal TSI NOAS fs Tu aaa ANDE NON NRO OMIM Soe NDEI OUNDARTES oa Rue\nReasons for Refusal to Sign (if any)\nSa :\nPresiding Officer's Comments: -\n: PRESIDING OFFICER * ADBPEANRAR ADAN\n~ : z\n= | “i PRESIDING |\nDATE (2 1-N-20Z 3D \\ wees",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 8,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM ———— 8 |",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIN iatanht ore aera ree oem",
+      "registered": "1 | Total Number of Registered atesin he Pallng Staton; F—] 2 (|",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "FAIL"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T06:42:21.392792Z"
+}

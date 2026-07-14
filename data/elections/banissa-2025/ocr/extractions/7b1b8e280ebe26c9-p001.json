@@ -1,0 +1,62 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "election_id": "banissa-2025",
+  "page_id": "7b1b8e280ebe26c9-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019701201/v1_7b1b8e280ebe.pdf",
+  "source_sha256": "7b1b8e280ebe26c9349f64ae1cb225de51315bcdf9817c645bfe11e4193e2fa7",
+  "source_filename": "v1_7b1b8e280ebe.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/7b1b8e280ebe26c9.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0197-012-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.4372300469483568,
+  "text_length": 2286,
+  "text_preview": "ae Ss == : = -—- gen 71o) oy ae\n: = === j ES ise a a .. = i = ——\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station KUKUB PRIMARY SCHOOL POLLING STATION 4 of 4 Code __ 009040019701201\nWard DERKHALE Code __0197 2 SIONINDE\nSNS tereriay SS wW2 Cy BANISSA cOMMISSIOW DENTEL ECTORE CAD SNE AOU WTELECTOR a) SIONINDEPENDE. COL@h eo HAMOORAL ANS YINOEPENC\nCounty MANDERA Code __ 009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM _————— TT\n2. MOHAMED NURDIN MAALIM _— LO\nTotal number of valid votes cast 8321)\nPolling Station Counts Decision{s} on disputed votes if any\n| Yott Number of Registered Vales inthe Paling Slaton, |__|\nTil Number of Red Bale Papers irate\". CRS eG LISI\nTotal Number of Rejection Objected to Ballot Papers; |_____ 600) Oe COM NOBOUMEEROENTELEC TO ROR SamON GNDARIESCRLEG\nTotal Nobe fied oes poor ORK oo aeckmrar ss Ton ote Nye ease cd\nTal Number ofa Wiest ESSA SAR eee et\nDeclaration i\nWe, the undersigned, being present when the results of the count were announce dg Ereby aelare that the results shown above are true\nand accurate count of the ballots in AVA. Zim Pollin stig - CB AW SSA Constituency.\nPresiding Officer: LBbhitier Bb Dita fadtidde Signé dies Gig Date Z7-N-Z2O25\n- ‘3 Av\nDeputy Presiding Officer: AGOiucatywan Acts Ar! motte Sin Weo Arf Date DI—~li- 2028\nAgents or Candidates {if present) eo\nPe ee\nSPH is on\nLAL UssAce AgS) [Zogssosz) UDA 7 o72323910 t (Pi |21- -902S”\nHUSSGn! ISSAC egcétez| (JPA ezaiaszcas PP Ja y\nRE a SONNE OSE NTE Soe AW SSION CEE NGAOARES RADE ROae Ser NOENTCLECHOMMISSTONUNON LON ELEC On\nJoe i cae eAANOARE ce PSGs BE COEF eNO Sumer mm SS nD COC ea gc ALANA DEPENDS ON SSO CEp ALIEN\noe\n=\na eee een en\naE NACL orth nee OUND ARIE SONY HNO. URL NDENBENTEY <SC Omnis IONNOGRELC SON GRON Ec TORAy SS DNWAACENDEN GRR CORSE ot\naA rnp Sc uc ONN GOH co OINON fern M SSIOMG AT DENDEN NRCS NOP OMNIS DE SCEHE UNO A TORRE ACCORD\nReasons for Refusal to Sign {if any) ,\nPresiding Officer's Comments:\nTHE (LESUVLTS Were Ni AET\nOLMiWG : :\nPEESIMAG OFF Cen: (BRAIN ABLULLA\nSiaw : Ai} DEpvTy jPREibing ¢ AGS ZAMAN\nDATE . 3 =U HAssA\nae Llans- Cleat\nSTempe {(-E.B.c\\ tele iia\nae | PReeiniss IN cardiphoece Coy RS Ed CUD PRD aie",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 8321,
+        "confidence": 0.82
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM _————— TT",
+      "candidate_UPA": "2. MOHAMED NURDIN MAALIM _— LO",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "Total number of valid votes cast 8321)",
+      "total_cast": null
+    }
+  },
+  "checks": {
+    "V01": "FAIL",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T06:42:41.456068Z"
+}
