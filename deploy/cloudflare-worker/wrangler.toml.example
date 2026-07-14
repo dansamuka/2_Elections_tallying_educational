@@ -1,0 +1,16 @@
+name = "olkalou-realtime-gateway"
+main = "src/index.js"
+compatibility_date = "2026-07-14"
+
+[vars]
+DATA_PREFIX = "ol-kalou"
+CORS_ORIGINS = "https://dansamuka.github.io,http://localhost:8000"
+ORIGIN_API = "https://sync-origin.example.org"
+
+[[r2_buckets]]
+binding = "ELECTION_DATA"
+bucket_name = "olkalou-election-data"
+
+# Set secrets with:
+#   npx wrangler secret put OWNER_TOKEN
+#   npx wrangler secret put ORIGIN_TOKEN

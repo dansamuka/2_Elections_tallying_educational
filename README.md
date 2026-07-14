@@ -276,3 +276,13 @@ The parser supports the current IEBC JavaScript constituency rows and verified c
 ## Hierarchical IEBC form discovery
 
 For historical elections such as Banissa, the engine follows the portal route from county to constituency, ward, polling centre and polling stream. It downloads the individual cloud-link file shown on each leaf row and deliberately ignores higher-level `Download All` controls, which can return broader HTML selector pages instead of constituency form files. See `IEBC_HIERARCHY_FIX_NOTES.md`.
+
+## Always-on realtime sync
+
+For data updates without waiting for a GitHub Pages deployment, run:
+
+```bash
+python -m olkalou_engine.cli --root . realtime-api --host 0.0.0.0 --port 8090
+```
+
+The service checks Ol Kalou every 30 seconds by default, provides an authenticated **Check IEBC now** endpoint and can mirror current JSON directly to Cloudflare R2. See `docs/REALTIME_SYNC.md`.

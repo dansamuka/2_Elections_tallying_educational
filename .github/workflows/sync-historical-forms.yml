@@ -17,6 +17,8 @@ on:
       - "src/olkalou_engine/portal.py"
       - "src/olkalou_engine/historical_ocr.py"
       - "src/olkalou_engine/historical_sync.py"
+      - "src/olkalou_engine/realtime.py"
+      - "src/olkalou_engine/public_mirror.py"
   workflow_dispatch:
     inputs:
       election_id:
@@ -104,7 +106,10 @@ jobs:
             echo "engine=${{ inputs.engine }}" >> "$GITHUB_OUTPUT"
             echo "rebuild=${{ inputs.rebuild }}" >> "$GITHUB_OUTPUT"
           else
-            echo "election=all" >> "$GITHUB_OUTPUT"
+            # Backup/reconciliation path only. The always-on realtime service
+            # handles the 15-30 second critical path; GitHub Actions checks only
+            # Ol Kalou on its schedule so Banissa/Malava cannot delay live data.
+            echo "election=ol-kalou-2026" >> "$GITHUB_OUTPUT"
             echo "engine=auto" >> "$GITHUB_OUTPUT"
             echo "rebuild=false" >> "$GITHUB_OUTPUT"
           fi

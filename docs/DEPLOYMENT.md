@@ -41,3 +41,16 @@ Use a second machine for `worker-b`; two services on one machine are not meaning
 - Keep bucket listing disabled even when individual public objects are readable.
 - Rotate leaked credentials; do not commit `.env`.
 - Preserve raw source bytes and metadata; never edit an archived object in place.
+
+## Realtime service
+
+Install `deploy/systemd/olkalou-realtime.service`, put the environment at `/etc/olkalou/engine.env`, then:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable --now olkalou-realtime.service
+sudo systemctl status olkalou-realtime.service
+curl http://127.0.0.1:8090/api/health
+```
+
+Terminate TLS at Caddy, Nginx, Cloudflare Tunnel or the optional Worker gateway. Do not expose port 8090 over plain HTTP on the public internet. See `REALTIME_SYNC.md`.

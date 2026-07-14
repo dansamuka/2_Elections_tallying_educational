@@ -12,6 +12,15 @@ services:
     ports: ["8080:8080"]
     volumes: ["./data:/app/data"]
 
+
+  realtime:
+    build: .
+    command: ["python", "-m", "olkalou_engine.cli", "--root", ".", "realtime-api", "--host", "0.0.0.0", "--port", "8090"]
+    env_file: [.env]
+    ports: ["8090:8090"]
+    restart: unless-stopped
+    volumes: ["./data:/app/data"]
+
   worker-a:
     build: .
     command: ["python", "-m", "olkalou_engine.cli", "--root", ".", "worker"]

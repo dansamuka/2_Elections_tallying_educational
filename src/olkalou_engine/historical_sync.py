@@ -7,7 +7,7 @@ from contextlib import AbstractContextManager
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Callable, Iterable
 
 from .archive import (
     build_archive_payload,
@@ -132,18 +132,59 @@ def sync_election(
     engine_mode: str = "auto",
     rebuild: bool = False,
     links_only: bool = False,
+    progress: Callable[[str, str, dict[str, Any] | None], None] | None = None,
+) -> dict[str, Any]:
+    # Election-specific cross-process locking keeps a Malava/ Banissa job from
+    # blocking Ol Kalou while still preventing two writers from touching the
+    # same election directory at once.
+    lock_path = settings.root / "data" / "state" / f"historical-sync-{election_id}.lock"
+    with SyncLock(lock_path, stale_after_seconds=3 * 60 * 60):
+        return _sync_election_unlocked(
+            settings,
+            election_id,
+            engine_mode=engine_mode,
+            rebuild=rebuild,
+            links_only=links_only,
+            progress=progress,
+        )
+
+
+def _sync_election_unlocked(
+    settings: Settings,
+    election_id: str,
+    *,
+    engine_mode: str = "auto",
+    rebuild: bool = False,
+    links_only: bool = False,
+    progress: Callable[[str, str, dict[str, Any] | None], None] | None = None,
 ) -> dict[str, Any]:
     root = settings.root
     bundle = load_historical_bundle(root, election_id)
     started_at = utc_now_iso()
     previous = load_sync_status(root, election_id)
+    def emit(stage: str, message: str, details: dict[str, Any] | None = None) -> None:
+        if progress:
+            progress(stage, message, details)
+
     try:
+        emit("DISCOVERING", "Checking the IEBC portal and downloading only new or changed forms.")
         archive_result = run_historical_archive(
             bundle,
             user_agent=settings.portal_user_agent,
             download=not links_only,
         )
         archive_changed = bool(archive_result.get("changed"))
+        emit(
+            "ARCHIVED",
+            "Portal check completed; source-form inventory is current.",
+            {
+                "discovered": archive_result.get("discovered"),
+                "downloaded": archive_result.get("downloaded"),
+                "new_downloads": archive_result.get("new_downloads"),
+                "changed_downloads": archive_result.get("changed_downloads"),
+                "unmatched": archive_result.get("unmatched"),
+            },
+        )
         ocr_summary_path = bundle.election_dir / "ocr" / "summary.json"
         existing_ocr_version = None
         if ocr_summary_path.exists():
@@ -159,6 +200,7 @@ def sync_election(
         )
         ocr_result: dict[str, Any] | None = None
         if should_run_ocr and not links_only:
+            emit("OCR", "Running cached, field-isolated OCR only where extraction is new or stale.")
             ocr_result = run_historical_ocr(
                 bundle,
                 settings,
@@ -166,6 +208,7 @@ def sync_election(
                 rebuild=rebuild,
             )
         payload_changed = archive_changed or should_run_ocr or not _public_payload_exists(root, election_id)
+        emit("BUILDING", "Building the current election JSON with an atomic file replacement.")
         if payload_changed:
             payload = build_archive_payload(bundle)
             build_catalog(root)
@@ -173,6 +216,7 @@ def sync_election(
             payload = json.loads(bundle.public_path.read_text(encoding="utf-8"))
 
         completed_at = utc_now_iso()
+        emit("PUBLISHING", "Publishing the updated election payload and sync status.")
         status = {
             "schema": "kenya.election.portal-sync.v1",
             "election_id": election_id,
@@ -236,21 +280,19 @@ def sync_elections(
         raise ValueError("no historical elections are configured for portal sync")
     results: list[dict[str, Any]] = []
     failures: list[dict[str, str]] = []
-    lock_path = settings.root / "data" / "state" / "historical-sync.lock"
-    with SyncLock(lock_path):
-        for election_id in ids:
-            try:
-                results.append(
-                    sync_election(
-                        settings,
-                        election_id,
-                        engine_mode=engine_mode,
-                        rebuild=rebuild,
-                        links_only=links_only,
-                    )
+    for election_id in ids:
+        try:
+            results.append(
+                sync_election(
+                    settings,
+                    election_id,
+                    engine_mode=engine_mode,
+                    rebuild=rebuild,
+                    links_only=links_only,
                 )
-            except Exception as exc:
-                failures.append({"election_id": election_id, "message": str(exc)})
+            )
+        except Exception as exc:
+            failures.append({"election_id": election_id, "message": str(exc)})
     return {
         "schema": "kenya.election.portal-sync-run.v1",
         "started_at": results[0]["last_started_at"] if results else utc_now_iso(),

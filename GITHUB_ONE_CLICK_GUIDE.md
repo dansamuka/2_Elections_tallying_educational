@@ -45,3 +45,15 @@ Place historical PDFs/images under `data/elections/<election-id>/documents/` and
 After this update is pushed, GitHub Actions runs `Sync IEBC forms and OCR` every five minutes. The website's **Update now** button opens that workflow for a secure owner-initiated run. You can also double-click `UPDATE_IEBC_FORMS_NOW.cmd`, which dispatches the workflow using the already authenticated GitHub CLI.
 
 The scheduled job only commits when it discovers new links, downloads a new/amended file, produces a new OCR extraction, or changes a pipeline error state. A no-change check is recorded in the workflow summary without creating an empty Git commit.
+
+## Realtime deployment (separate from GitHub Pages)
+
+GitHub Pages cannot run the Python watcher. Deploy the repository's `realtime` Docker service to an always-on container/VPS, set `REALTIME_API_TOKEN`, and optionally configure the existing `S3_*` variables for Cloudflare R2.
+
+After the service has an HTTPS URL, run:
+
+```bash
+python scripts/configure_realtime_frontend.py --api-base https://YOUR-SYNC-URL
+```
+
+For the edge/R2 arrangement, deploy `deploy/cloudflare-worker/` and use its URL as `--api-base`. Full instructions are in `docs/REALTIME_SYNC.md`.

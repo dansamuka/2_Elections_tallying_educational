@@ -1,0 +1,21 @@
+[Unit]
+Description=Ol Kalou realtime IEBC sync API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=olkalou
+Group=olkalou
+WorkingDirectory=/opt/olkalou-live-engine
+EnvironmentFile=/etc/olkalou/engine.env
+ExecStart=/opt/olkalou-live-engine/.venv/bin/python -m olkalou_engine.cli --root /opt/olkalou-live-engine realtime-api --host 127.0.0.1 --port 8090
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/opt/olkalou-live-engine/data
+
+[Install]
+WantedBy=multi-user.target

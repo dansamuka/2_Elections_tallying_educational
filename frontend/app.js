@@ -1,5 +1,5 @@
 (() => {
-  const config = window.OLKALOU_CONFIG || { liveUrls: ["../data/public/live.json"], refreshMs: 30000 };
+  const config = window.OLKALOU_CONFIG || { liveUrls: ["../data/public/live.json"], refreshMs: 5000 };
   const cacheKey = "olkalou.live.v2.lastKnownGood";
   let current = null;
   let previousStates = new Map();
@@ -16,9 +16,21 @@
     return `${Math.round(minutes / 60)}h ago`;
   };
   const escapeHtml = (value) => String(value ?? "").replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
+  const trimSlash = (value) => String(value || "").replace(/\/+$/, "");
+  const realtimeBase = trimSlash(config.realtimeApiBase);
+  const ownerTokenKey = config.ownerTokenSessionKey || "olkalou.realtime.ownerToken";
+  let watchTimer = null;
+
+  function candidateLiveUrls() {
+    const urls = [];
+    (config.liveDataBaseUrls || []).forEach(base => urls.push(`${trimSlash(base)}/live.json`));
+    if (realtimeBase) urls.push(`${realtimeBase}/api/live`);
+    (config.liveUrls || ["../data/public/live.json"]).forEach(url => urls.push(url));
+    return [...new Set(urls.filter(Boolean))];
+  }
 
   async function fetchBestPayload() {
-    const attempts = await Promise.allSettled(config.liveUrls.map(async url => {
+    const attempts = await Promise.allSettled(candidateLiveUrls().map(async url => {
       const response = await fetch(`${url}${url.includes("?") ? "&" : "?"}t=${Date.now()}`, { cache: "no-store" });
       if (!response.ok) throw new Error(`${response.status} ${url}`);
       const payload = await response.json();
@@ -53,6 +65,88 @@
       }
       if (current) updateStaleness(current, true);
     }
+  }
+
+  function setSyncStatus(message, state = "") {
+    const el = $("liveSyncStatus");
+    if (!el) return;
+    el.textContent = message;
+    el.dataset.state = state;
+  }
+
+  function statusMessage(status) {
+    const stage = String(status?.stage || status?.state || "IDLE").replaceAll("_", " ");
+    if (status?.state === "COMPLETE") return `${status.message || "IEBC check complete"} Latest data is now being loaded.`;
+    if (status?.state === "ERROR") return `IEBC check failed: ${status.message || "unknown error"}`;
+    if (["QUEUED", "RUNNING"].includes(status?.state)) return `${stage}: ${status.message || "checking for new forms"}`;
+    return status?.message || "Realtime gateway ready.";
+  }
+
+  async function fetchSyncStatus() {
+    if (!realtimeBase) return null;
+    const electionId = config.liveElectionId || "ol-kalou-2026";
+    const response = await fetch(`${realtimeBase}/api/elections/${encodeURIComponent(electionId)}/status?t=${Date.now()}`, {cache:"no-store"});
+    if (!response.ok) throw new Error(`${response.status} realtime status`);
+    return response.json();
+  }
+
+  async function watchRealtimeStatus(initialStatus = null) {
+    if (!realtimeBase) return;
+    if (watchTimer) clearTimeout(watchTimer);
+    const started = Date.now();
+    let status = initialStatus;
+    const tick = async () => {
+      try {
+        status = await fetchSyncStatus();
+        setSyncStatus(statusMessage(status), String(status?.state || "").toLowerCase());
+        await refresh();
+        if (["QUEUED", "RUNNING"].includes(status?.state) && Date.now() - started < (config.refreshWatchTimeoutMs || 90000)) {
+          watchTimer = setTimeout(tick, config.refreshWatchMs || 2000);
+        }
+      } catch (error) {
+        console.error(error);
+        setSyncStatus("Realtime status is temporarily unavailable; the published-data fallback is still active.", "error");
+      }
+    };
+    if (status) setSyncStatus(statusMessage(status), String(status?.state || "").toLowerCase());
+    await tick();
+  }
+
+  function storedOwnerToken() {
+    try { return sessionStorage.getItem(ownerTokenKey) || ""; } catch { return ""; }
+  }
+
+  function requestOwnerToken() {
+    const existing = storedOwnerToken();
+    if (existing) return existing;
+    const token = window.prompt("Enter the realtime owner token. It is kept only in this browser tab and is not embedded in the public site.") || "";
+    if (token) { try { sessionStorage.setItem(ownerTokenKey, token); } catch {} }
+    return token;
+  }
+
+  async function triggerRealtimeSync({promptForToken = true} = {}) {
+    if (!realtimeBase) {
+      window.open(config.archiveUpdateWorkflowUrl || "https://github.com/dansamuka/2_Elections_tallying_educational/actions/workflows/sync-historical-forms.yml", "_blank", "noopener");
+      setSyncStatus("Realtime gateway is not configured; opened the GitHub Actions fallback.");
+      return null;
+    }
+    const token = promptForToken ? requestOwnerToken() : storedOwnerToken();
+    if (!token) return null;
+    const electionId = config.liveElectionId || "ol-kalou-2026";
+    const response = await fetch(`${realtimeBase}/api/elections/${encodeURIComponent(electionId)}/sync`, {
+      method: "POST",
+      headers: {"Authorization": `Bearer ${token}`, "Content-Type": "application/json"},
+      body: JSON.stringify({engine:"auto", rebuild:false}),
+      cache: "no-store"
+    });
+    if (response.status === 401) {
+      try { sessionStorage.removeItem(ownerTokenKey); } catch {}
+      throw new Error("Owner token rejected. Re-enter it on the next attempt.");
+    }
+    if (!response.ok) throw new Error(`${response.status} realtime trigger`);
+    const status = await response.json();
+    await watchRealtimeStatus(status);
+    return status;
   }
 
   function render(data) {
@@ -212,13 +306,36 @@
   }
 
   if ($("liveUpdateNow")) {
-    $("liveUpdateNow").href = config.archiveUpdateWorkflowUrl || "https://github.com/dansamuka/2_Elections_tallying_educational/actions/workflows/sync-historical-forms.yml";
+    $("liveUpdateNow").addEventListener("click", async () => {
+      $("liveUpdateNow").disabled = true;
+      $("liveUpdateNow").textContent = "Starting…";
+      try {
+        await triggerRealtimeSync({promptForToken:true});
+      } catch (error) {
+        console.error(error);
+        setSyncStatus(error.message || "Could not start the realtime check.", "error");
+      } finally {
+        $("liveUpdateNow").disabled = false;
+        $("liveUpdateNow").textContent = "Check IEBC now";
+      }
+    });
   }
   if ($("liveRefresh")) {
     $("liveRefresh").addEventListener("click", async () => {
       $("liveRefresh").disabled = true;
       $("liveRefresh").textContent = "Refreshing…";
-      try { await refresh(); } finally {
+      try {
+        await refresh();
+        if (realtimeBase) {
+          const status = await fetchSyncStatus();
+          setSyncStatus(statusMessage(status), String(status?.state || "").toLowerCase());
+          if (["QUEUED", "RUNNING"].includes(status?.state)) await watchRealtimeStatus(status);
+          else if (config.refreshTriggersSyncWhenAuthorized && storedOwnerToken()) await triggerRealtimeSync({promptForToken:false});
+        }
+      } catch (error) {
+        console.error(error);
+        setSyncStatus(error.message || "Refresh failed.", "error");
+      } finally {
         $("liveRefresh").disabled = false;
         $("liveRefresh").textContent = "Refresh data";
       }
@@ -229,6 +346,9 @@
   $("gridHelp").addEventListener("click", () => $("legendDialog").showModal());
   document.querySelectorAll("[data-close-dialog]").forEach(button => button.addEventListener("click", () => button.closest("dialog").close()));
   setInterval(() => current && updateStaleness(current, false), 15000);
-  setInterval(refresh, config.refreshMs || 30000);
+  setInterval(refresh, config.refreshMs || 5000);
+  if (realtimeBase) {
+    fetchSyncStatus().then(status => setSyncStatus(statusMessage(status), String(status?.state || "").toLowerCase())).catch(() => setSyncStatus("Realtime gateway is unavailable; using published JSON fallback.", "error"));
+  }
   refresh();
 })();

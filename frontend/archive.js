@@ -7,6 +7,10 @@
   const number = (value) => value == null ? "—" : new Intl.NumberFormat("en-KE").format(Number(value));
   const percent = (value, digits = 1) => value == null ? "—" : `${(Number(value) * 100).toFixed(digits)}%`;
   const escapeHtml = (value) => String(value ?? "").replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
+  const trimSlash = (value) => String(value || "").replace(/\/+$/, "");
+  const realtimeBase = trimSlash(config.realtimeApiBase);
+  const ownerTokenKey = config.ownerTokenSessionKey || "olkalou.realtime.ownerToken";
+  let syncWatchTimer = null;
   let catalog = null;
   let payload = null;
   let replayTimer = null;
@@ -133,35 +137,170 @@
     return response.json();
   }
 
-  function resolveDataUrl(entry) {
-    return entry.data_url || `../data/public/elections/${entry.id}.json`;
+  async function fetchBestJson(urls, schema) {
+    const attempts = await Promise.allSettled([...new Set(urls.filter(Boolean))].map(fetchJson));
+    const valid = attempts
+      .filter(item => item.status === "fulfilled" && (!schema || item.value?.schema === schema))
+      .map(item => item.value);
+    if (!valid.length) throw new Error(`No endpoint returned ${schema || "valid JSON"}`);
+    return valid.sort((a, b) => {
+      const seqDelta = Number(b.seq || 0) - Number(a.seq || 0);
+      if (seqDelta) return seqDelta;
+      return Date.parse(b.generated_at || 0) - Date.parse(a.generated_at || 0);
+    })[0];
+  }
+
+  function catalogUrls() {
+    const urls = [];
+    (config.archiveDataBaseUrls || []).forEach(base => urls.push(`${trimSlash(base)}/elections/catalog.json`));
+    if (realtimeBase) urls.push(`${realtimeBase}/api/catalog`);
+    urls.push(catalogUrl);
+    return urls;
+  }
+
+  function resolveDataUrls(entry) {
+    const urls = [];
+    (config.archiveDataBaseUrls || []).forEach(base => urls.push(`${trimSlash(base)}/elections/${encodeURIComponent(entry.id)}.json`));
+    if (realtimeBase) urls.push(`${realtimeBase}/api/elections/${encodeURIComponent(entry.id)}/data`);
+    urls.push(entry.data_url || `../data/public/elections/${entry.id}.json`);
+    return urls;
+  }
+
+  function setRealtimeStatus(message, state = "") {
+    const el = $("archiveLiveSyncStatus");
+    if (!el) return;
+    el.textContent = message;
+    el.dataset.state = state;
+  }
+
+  function syncStatusMessage(status) {
+    const stage = String(status?.stage || status?.state || "IDLE").replaceAll("_", " ");
+    if (status?.state === "COMPLETE") return `${status.message || "IEBC check complete"} Latest election JSON is being loaded.`;
+    if (status?.state === "ERROR") return `IEBC check failed: ${status.message || "unknown error"}`;
+    if (["QUEUED", "RUNNING"].includes(status?.state)) return `${stage}: ${status.message || "checking for new forms"}`;
+    return status?.message || "Realtime gateway ready.";
+  }
+
+  async function fetchRealtimeStatus(electionId) {
+    if (!realtimeBase) return null;
+    return fetchJson(`${realtimeBase}/api/elections/${encodeURIComponent(electionId)}/status`);
+  }
+
+  function storedOwnerToken() {
+    try { return sessionStorage.getItem(ownerTokenKey) || ""; } catch { return ""; }
+  }
+
+  function requestOwnerToken() {
+    const existing = storedOwnerToken();
+    if (existing) return existing;
+    const token = window.prompt("Enter the realtime owner token. It is kept only in this browser tab and is not embedded in the public site.") || "";
+    if (token) { try { sessionStorage.setItem(ownerTokenKey, token); } catch {} }
+    return token;
+  }
+
+  async function watchRealtimeStatus(electionId, initialStatus = null) {
+    if (!realtimeBase) return;
+    if (syncWatchTimer) clearTimeout(syncWatchTimer);
+    const started = Date.now();
+    let status = initialStatus;
+    const tick = async () => {
+      try {
+        status = await fetchRealtimeStatus(electionId);
+        setRealtimeStatus(syncStatusMessage(status), String(status?.state || "").toLowerCase());
+        await loadElection(electionId, false);
+        if (["QUEUED", "RUNNING"].includes(status?.state) && Date.now() - started < (config.refreshWatchTimeoutMs || 90000)) {
+          syncWatchTimer = setTimeout(tick, config.refreshWatchMs || 2000);
+        }
+      } catch (error) {
+        console.error(error);
+        setRealtimeStatus("Realtime status is temporarily unavailable; published JSON fallback remains active.", "error");
+      }
+    };
+    if (status) setRealtimeStatus(syncStatusMessage(status), String(status?.state || "").toLowerCase());
+    await tick();
+  }
+
+  async function triggerRealtimeSync(electionId, {promptForToken = true} = {}) {
+    if (!realtimeBase) {
+      window.open(updateWorkflowUrl, "_blank", "noopener");
+      setRealtimeStatus("Realtime gateway is not configured; opened the GitHub Actions fallback.");
+      return null;
+    }
+    const token = promptForToken ? requestOwnerToken() : storedOwnerToken();
+    if (!token) return null;
+    const response = await fetch(`${realtimeBase}/api/elections/${encodeURIComponent(electionId)}/sync`, {
+      method: "POST",
+      headers: {"Authorization": `Bearer ${token}`, "Content-Type": "application/json"},
+      body: JSON.stringify({engine:"auto", rebuild:false}),
+      cache: "no-store"
+    });
+    if (response.status === 401) {
+      try { sessionStorage.removeItem(ownerTokenKey); } catch {}
+      throw new Error("Owner token rejected. Re-enter it on the next attempt.");
+    }
+    if (!response.ok) throw new Error(`${response.status} realtime trigger`);
+    const status = await response.json();
+    await watchRealtimeStatus(electionId, status);
+    return status;
+  }
+
+  async function refreshCurrent({allowTrigger = true} = {}) {
+    if (!catalog) return;
+    const electionId = $("electionSelect").value;
+    await loadElection(electionId, false);
+    if (!realtimeBase) return;
+    const status = await fetchRealtimeStatus(electionId);
+    setRealtimeStatus(syncStatusMessage(status), String(status?.state || "").toLowerCase());
+    if (["QUEUED", "RUNNING"].includes(status?.state)) await watchRealtimeStatus(electionId, status);
+    else if (allowTrigger && config.refreshTriggersSyncWhenAuthorized && storedOwnerToken()) await triggerRealtimeSync(electionId, {promptForToken:false});
   }
 
   async function init() {
-    $("archiveUpdateNow").href = updateWorkflowUrl;
-    $("archiveUpdateNow").addEventListener("click", () => {
-      $("archiveUpdateNow").textContent = "Open GitHub Actions ↗";
+    $("archiveUpdateNow").addEventListener("click", async () => {
+      if (!catalog) return;
+      $("archiveUpdateNow").disabled = true;
+      $("archiveUpdateNow").textContent = "Starting…";
+      try {
+        await triggerRealtimeSync($("electionSelect").value, {promptForToken:true});
+      } catch (error) {
+        console.error(error);
+        setRealtimeStatus(error.message || "Could not start the realtime check.", "error");
+      } finally {
+        $("archiveUpdateNow").disabled = false;
+        $("archiveUpdateNow").textContent = "Check IEBC now";
+      }
     });
     $("archiveRefresh").addEventListener("click", async () => {
       if (!catalog) return;
       $("archiveRefresh").disabled = true;
       $("archiveRefresh").textContent = "Refreshing…";
       try {
-        await loadElection($("electionSelect").value, false);
+        await refreshCurrent({allowTrigger:true});
+      } catch (error) {
+        console.error(error);
+        setRealtimeStatus(error.message || "Refresh failed.", "error");
       } finally {
         $("archiveRefresh").disabled = false;
         $("archiveRefresh").textContent = "Refresh data";
       }
     });
     try {
-      catalog = await fetchJson(catalogUrl);
+      catalog = await fetchBestJson(catalogUrls(), "kenya.election.catalog.v1");
       if (catalog.schema !== "kenya.election.catalog.v1") throw new Error("Unexpected archive catalog schema");
       const select = $("electionSelect");
       select.innerHTML = catalog.elections.map(row => `<option value="${escapeHtml(row.id)}">${escapeHtml(row.label)}</option>`).join("");
       const requested = new URLSearchParams(location.search).get("election");
       select.value = catalog.elections.some(row => row.id === requested) ? requested : catalog.default;
-      select.addEventListener("change", () => loadElection(select.value, true));
+      select.addEventListener("change", async () => {
+        await loadElection(select.value, true);
+        if (realtimeBase) {
+          fetchRealtimeStatus(select.value).then(status => setRealtimeStatus(syncStatusMessage(status), String(status?.state || "").toLowerCase())).catch(() => setRealtimeStatus("Realtime gateway is unavailable; using published JSON fallback.", "error"));
+        }
+      });
       await loadElection(select.value, false);
+      if (realtimeBase) {
+        fetchRealtimeStatus(select.value).then(status => setRealtimeStatus(syncStatusMessage(status), String(status?.state || "").toLowerCase())).catch(() => setRealtimeStatus("Realtime gateway is unavailable; using published JSON fallback.", "error"));
+      }
     } catch (error) {
       console.error(error);
       $("archiveStatus").textContent = "The historical-election catalog could not be loaded.";
@@ -172,7 +311,7 @@
     stopReplay();
     const entry = catalog.elections.find(row => row.id === electionId);
     if (!entry) return;
-    payload = await fetchJson(resolveDataUrl(entry));
+    payload = await fetchBestJson(resolveDataUrls(entry), "kenya.election.archive.v1");
     if (payload.schema !== "kenya.election.archive.v1") throw new Error("Unexpected historical payload schema");
     replayPosition = payload.archive?.replay_available ? payload.archive.replay_events.length : null;
     if (updateUrl) history.replaceState({}, "", `${location.pathname}?election=${encodeURIComponent(electionId)}`);
@@ -746,8 +885,8 @@
   });
   setInterval(() => {
     if (catalog && payload && !replayTimer && !document.hidden) {
-      loadElection($("electionSelect").value, false).catch(error => console.warn("Archive refresh failed", error));
+      refreshCurrent({allowTrigger:false}).catch(error => console.warn("Archive refresh failed", error));
     }
-  }, 60000);
+  }, config.refreshMs || 5000);
   init();
 })();

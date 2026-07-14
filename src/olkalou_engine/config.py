@@ -43,6 +43,24 @@ class Settings(BaseSettings):
     review_port: int = Field(default=8080, ge=1, le=65535, alias="REVIEW_PORT")
     review_api_token: str = Field(default="change-me", alias="REVIEW_API_TOKEN")
 
+    # Realtime election-specific sync gateway. The static site never embeds this
+    # token; an authorised operator enters it into the browser session when
+    # explicitly requesting a portal check.
+    realtime_host: str = Field(default="0.0.0.0", alias="REALTIME_HOST")
+    realtime_port: int = Field(default=8090, ge=1, le=65535, alias="REALTIME_PORT")
+    realtime_api_token: str = Field(default="change-me", alias="REALTIME_API_TOKEN")
+    realtime_scheduler_enabled: bool = Field(default=True, alias="REALTIME_SCHEDULER_ENABLED")
+    realtime_poll_seconds: int = Field(default=30, ge=10, alias="REALTIME_POLL_SECONDS")
+    realtime_archive_poll_seconds: int = Field(default=300, ge=60, alias="REALTIME_ARCHIVE_POLL_SECONDS")
+    realtime_trigger_cooldown_seconds: int = Field(default=20, ge=0, alias="REALTIME_TRIGGER_COOLDOWN_SECONDS")
+    realtime_live_election_id: str = Field(default="ol-kalou-2026", alias="REALTIME_LIVE_ELECTION_ID")
+    realtime_elections: str = Field(default="ol-kalou-2026", alias="REALTIME_ELECTIONS")
+    realtime_engine: str = Field(default="auto", alias="REALTIME_ENGINE")
+    realtime_cors_origins: str = Field(
+        default="http://localhost:8000,http://127.0.0.1:8000,https://dansamuka.github.io",
+        alias="REALTIME_CORS_ORIGINS",
+    )
+
     public_base_url: str = Field(default="http://localhost:8000/data/public", alias="PUBLIC_BASE_URL")
     public_output: Path = Field(default=Path("data/public/live.json"), alias="PUBLIC_OUTPUT")
 
@@ -60,6 +78,15 @@ class Settings(BaseSettings):
     gcv_credentials_json: Path | None = Field(default=None, alias="GCV_CREDENTIALS_JSON")
     aws_region: str = Field(default="af-south-1", alias="AWS_REGION")
     form_roi_map: Path = Field(default=Path("data/reference/form35a_roi.json"), alias="FORM_ROI_MAP")
+
+    @property
+    def realtime_election_list(self) -> tuple[str, ...]:
+        return tuple(dict.fromkeys(value.strip() for value in self.realtime_elections.split(",") if value.strip()))
+
+    @property
+    def realtime_cors_origin_list(self) -> list[str]:
+        values = [value.strip() for value in self.realtime_cors_origins.split(",") if value.strip()]
+        return values or ["http://localhost:8000"]
 
     @property
     def root(self) -> Path:

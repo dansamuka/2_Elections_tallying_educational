@@ -3,7 +3,7 @@
   "private": true,
   "description": "Execution tests for frontend/archive.js (review workbench). Not part of the deployed site -- the site itself is plain script tags, no build step, no runtime dependency on anything here.",
   "scripts": {
-    "test": "node test_review_workbench.js && node test_malava_benchmark_workbench.js && node test_malava_pending_roster.js"
+    "test": "node test_review_workbench.js && node test_malava_benchmark_workbench.js && node test_malava_pending_roster.js && node test_realtime_refresh.js"
   },
   "devDependencies": {
     "jsdom": "26.1.0"

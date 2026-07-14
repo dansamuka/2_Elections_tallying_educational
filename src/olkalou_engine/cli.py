@@ -23,6 +23,7 @@ from .publisher import Publisher
 from .reconciliation import reconcile, render_markdown
 from .reference import load_reference
 from .review_api import create_app
+from .realtime import RealtimeSyncManager, create_realtime_app
 from .storage import build_store
 from .worker import Worker
 
@@ -47,6 +48,25 @@ def build_parser() -> argparse.ArgumentParser:
     review = sub.add_parser("review", help="Run the human review console")
     review.add_argument("--host", default=None)
     review.add_argument("--port", type=int, default=None)
+
+    realtime = sub.add_parser(
+        "realtime-api",
+        help="Run the always-on election-specific sync API and 15-30 second scheduler",
+    )
+    realtime.add_argument("--host", default=None)
+    realtime.add_argument("--port", type=int, default=None)
+
+    realtime_once = sub.add_parser(
+        "realtime-once",
+        help="Start one deduplicated realtime sync and wait for it to complete",
+    )
+    realtime_once.add_argument("election_id")
+    realtime_once.add_argument(
+        "--engine",
+        default=None,
+        choices=["auto", "embedded", "tesseract", "gcv", "textract", "dual-cloud"],
+    )
+    realtime_once.add_argument("--rebuild", action="store_true")
 
     serve = sub.add_parser("serve-static", help="Serve frontend and local public files")
     serve.add_argument("--host", default="0.0.0.0")
@@ -267,6 +287,31 @@ def main() -> None:
         app = create_app(settings)
         uvicorn.run(app, host=args.host or settings.review_host, port=args.port or settings.review_port)
         return
+
+    if args.command == "realtime-api":
+        app = create_realtime_app(settings)
+        uvicorn.run(
+            app,
+            host=args.host or settings.realtime_host,
+            port=args.port or settings.realtime_port,
+        )
+        return
+
+    if args.command == "realtime-once":
+        import time
+
+        manager = RealtimeSyncManager(settings)
+        status = manager.trigger(
+            args.election_id,
+            engine=args.engine,
+            rebuild=args.rebuild,
+            reason="manual",
+        )
+        while status.get("state") in {"QUEUED", "RUNNING"}:
+            time.sleep(0.5)
+            status = manager.status(args.election_id)
+        print(json.dumps(status, indent=2))
+        raise SystemExit(0 if status.get("state") == "COMPLETE" else 2)
 
     if args.command == "serve-static":
         from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler

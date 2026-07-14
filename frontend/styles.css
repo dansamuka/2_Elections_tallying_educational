@@ -95,3 +95,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .pending-roster .grid-empty-note{margin:0 0 12px;color:var(--ink-dim);font-size:.78rem;line-height:1.45}
 .stream-cell.roster-placeholder{cursor:not-allowed;border-style:dashed;border-color:#44505F;opacity:.42;background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(152,162,176,.12) 6px 8px)}
 .stream-cell.roster-placeholder:hover{transform:none;border-color:#44505F}
+
+/* Realtime sync status */
+.sync-status{color:var(--ink-dim);font-size:.72rem;line-height:1.35}
+.sync-status[data-state="running"],.sync-status[data-state="queued"]{color:#F2B779}
+.sync-status[data-state="complete"]{color:#80D6A3}
+.sync-status[data-state="error"]{color:#FF9895}
+.live-sync-actions{flex-wrap:wrap}
+.live-sync-actions .sync-status{flex-basis:100%;text-align:right}
+.primary-action:disabled,.secondary-action:disabled{opacity:.55;cursor:wait}
+@media(max-width:720px){.live-sync-actions .sync-status{flex-basis:100%;text-align:left}}

@@ -97,8 +97,14 @@ class S3ObjectStore:
     def get_json(self, key: str) -> dict[str, Any] | None:
         try:
             response = self.client.get_object(Bucket=self.bucket, Key=self._key(key))
-        except self.client.exceptions.NoSuchKey:
-            return None
+        except Exception as exc:  # boto/R2 may expose NoSuchKey as ClientError
+            response_meta = getattr(exc, "response", {}) or {}
+            error = response_meta.get("Error", {}) if isinstance(response_meta, dict) else {}
+            code = str(error.get("Code", ""))
+            status = (response_meta.get("ResponseMetadata", {}) or {}).get("HTTPStatusCode")
+            if code in {"NoSuchKey", "404", "NotFound"} or status == 404:
+                return None
+            raise
         return json.loads(response["Body"].read())
 
 

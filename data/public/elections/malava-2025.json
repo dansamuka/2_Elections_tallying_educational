@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1784044075010,
-  "generated_at": "2026-07-14T15:47:55.010183Z",
+  "seq": 1784049060926,
+  "generated_at": "2026-07-14T17:11:00.926929Z",
   "mode": "ARCHIVE",
   "election_id": "malava-2025",
   "election": {

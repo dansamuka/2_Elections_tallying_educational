@@ -30,9 +30,9 @@
           <select id="electionSelect" aria-label="Choose a historical election"></select>
         </label>
         <div class="sync-actions">
-          <a id="archiveUpdateNow" class="primary-action" href="#" target="_blank" rel="noopener">Update now</a>
+          <button id="archiveUpdateNow" class="primary-action" type="button">Check IEBC now</button>
           <button id="archiveRefresh" class="secondary-action" type="button">Refresh data</button>
-          <small>Scheduled portal check every five minutes. Manual runs require repository-owner sign-in.</small>
+          <small id="archiveLiveSyncStatus" class="sync-status" aria-live="polite">Realtime gateway not configured; using published JSON fallback.</small>
         </div>
         <div class="sync-actions review-toolbar">
           <button id="draftDownload" class="secondary-action" type="button">Download review draft CSV</button>
