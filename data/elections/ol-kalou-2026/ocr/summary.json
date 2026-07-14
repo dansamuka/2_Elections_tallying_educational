@@ -2,7 +2,7 @@
   "schema": "kenya.election.ocr-summary.v1",
   "pipeline_version": "2026.07.14-layout-v2",
   "election_id": "ol-kalou-2026",
-  "generated_at": "2026-07-14T17:16:46.297665Z",
+  "generated_at": "2026-07-14T17:15:21.601219Z",
   "engine_mode": "auto",
   "engines_available": [
     "tesseract"
