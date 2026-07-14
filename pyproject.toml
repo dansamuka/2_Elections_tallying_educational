@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "olkalou-live-engine"
-version = "0.4.2"
+version = "0.4.3"
 description = "Provenance-first live tracking engine for the 2026 Ol Kalou parliamentary by-election"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -31,6 +31,7 @@ historical-ocr = [
   "Pillow>=10,<13",
   "pypdfium2>=4.30,<6",
   "pytesseract>=0.3.13,<1",
+  "opencv-python-headless>=4.10,<5",
   # Needed for "auto" mode to actually use GCV/Textract when configured --
   # previously only in the `ocr` extra below, which sync-historical-forms.yml
   # never installs, so cloud OCR could never import even with valid

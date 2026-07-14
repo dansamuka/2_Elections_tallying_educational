@@ -16,7 +16,7 @@ from .archive import (
     run_historical_archive,
 )
 from .config import Settings
-from .historical_ocr import run_historical_ocr
+from .historical_ocr import OCR_PIPELINE_VERSION, run_historical_ocr
 
 
 def utc_now_iso() -> str:
@@ -144,7 +144,19 @@ def sync_election(
             download=not links_only,
         )
         archive_changed = bool(archive_result.get("changed"))
-        should_run_ocr = rebuild or archive_changed or not (bundle.election_dir / "ocr" / "summary.json").exists()
+        ocr_summary_path = bundle.election_dir / "ocr" / "summary.json"
+        existing_ocr_version = None
+        if ocr_summary_path.exists():
+            try:
+                existing_ocr_version = _read_json(ocr_summary_path).get("pipeline_version")
+            except (OSError, ValueError, TypeError):
+                existing_ocr_version = None
+        should_run_ocr = (
+            rebuild
+            or archive_changed
+            or not ocr_summary_path.exists()
+            or existing_ocr_version != OCR_PIPELINE_VERSION
+        )
         ocr_result: dict[str, Any] | None = None
         if should_run_ocr and not links_only:
             ocr_result = run_historical_ocr(

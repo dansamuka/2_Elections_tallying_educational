@@ -18,6 +18,7 @@ jobs:
       - run: python -m olkalou_engine.cli --root . archive-documents banissa-2025
       - run: python -m olkalou_engine.cli --root . archive-ocr banissa-2025 --engine embedded
       - run: python -m olkalou_engine.cli --root . archive-build banissa-2025
+      - run: python -m olkalou_engine.cli --root . archive-build malava-2025
       - run: python -m olkalou_engine.cli --root . archive-provisional banissa-2025
       # Regression coverage for the 13 Jul 2026 sync-error fix: `publish` is
       # the ONLY thing that regenerates data/public/live.json (the file

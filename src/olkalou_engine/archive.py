@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Any
 
 from .historical_ocr import load_ocr_stream_extractions, load_ocr_summary
+from .models import PortalForm
 from .portal import PortalClient, extension_from_response
 
 
@@ -92,7 +93,16 @@ def validate_historical_bundle(bundle: HistoricalBundle) -> None:
     register_total = int(profile["register"]["total"])
     reference_verified = bool(profile.get("register", {}).get("verified", True))
     live_mode = str(profile.get("mode", "ARCHIVE")).upper() == "LIVE"
-    if len(streams) != expected:
+    bootstrap_from_portal = bool(
+        profile.get("portal", {}).get("bootstrap_streams_from_portal")
+        or bundle.streams_doc.get("bootstrap_from_portal")
+    )
+    # A newly-added historical validation contest may begin with no local
+    # stream register at all. In that narrowly-scoped mode the first portal
+    # discovery builds a deterministic, review-only stream skeleton from the
+    # 198 individual IEBC Form 35A assignments. Partial skeletons are never
+    # accepted: after bootstrapping the ordinary exact-count validation applies.
+    if len(streams) != expected and not (bootstrap_from_portal and not streams):
         raise ValueError(f"expected {expected} streams, found {len(streams)}")
     keys = [str(row["stream_key"]) for row in streams]
     codes = [str(row["polling_station_code"]) for row in streams]
@@ -105,7 +115,7 @@ def validate_historical_bundle(bundle: HistoricalBundle) -> None:
         actual_total = sum(int(value) for value in known_registered)
         if actual_total != register_total:
             raise ValueError(f"register total mismatch: {actual_total} != {register_total}")
-    elif reference_verified or not live_mode:
+    elif reference_verified or (not live_mode and not bootstrap_from_portal):
         raise ValueError("verified historical profiles require registered voters for every stream")
     candidate_ids = [str(c["id"]) for c in bundle.candidates]
     if not candidate_ids or len(candidate_ids) != len(set(candidate_ids)):
@@ -349,7 +359,10 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
             }
         stream_payloads.append(payload)
 
-    stream_results_complete = len(results) == len(bundle.streams)
+    # An empty portal-bootstrap profile is not a completed zero-stream
+    # election. It is a waiting state until the first IEBC discovery hydrates
+    # the expected stream skeleton.
+    stream_results_complete = bool(bundle.streams) and len(results) == len(bundle.streams)
     official_totals = official.get("candidate_totals", {})
     if stream_results_complete:
         tally_source = "FORM_35A_SUM"
@@ -378,6 +391,7 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
     candidates_payload.sort(key=lambda row: (-(row["votes"] or -1), row.get("ballot_no") or 999))
 
     replay_events.sort(key=lambda row: row["at"])
+    manifest_counts = _archive_manifest_counts(bundle, manifest)
     archive_info = {
         "forms_expected": int(bundle.profile["portal"]["expected_forms"]),
         "forms_archived": len(archived_stream_keys),
@@ -391,14 +405,21 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
         "portal_sync": sync_status,
         "portal_discovered": int(manifest.get("discovered_count", 0)),
         "portal_downloaded": int(manifest.get("downloaded_count", 0)),
+        "portal_unique_files": manifest_counts["unique_downloads"],
+        "portal_duplicate_assignments": manifest_counts["duplicate_assignments"],
+        "portal_failed_downloads": manifest_counts["failed_downloads"],
         "portal_unmatched": len(manifest.get("unmatched", [])),
     }
+    configured_stream_total = int(bundle.profile.get("register", {}).get("streams_total", len(bundle.streams)))
+    bootstrap_pending = _portal_bootstrap_enabled(bundle) and not bundle.streams
+    effective_stream_total = configured_stream_total if bootstrap_pending else len(bundle.streams)
     coverage = {
-        "streams_total": len(bundle.streams),
+        "streams_total": effective_stream_total,
+        "stream_rows_loaded": len(bundle.streams),
         "published": len(results),
         "in_review": max(0, len(archived_stream_keys) - len(results)),
         "conflicted": 0,
-        "awaiting": max(0, len(bundle.streams) - len(archived_stream_keys)),
+        "awaiting": max(0, effective_stream_total - len(archived_stream_keys)),
         "reference_only": sum(1 for row in stream_payloads if row["state"] == "REFERENCE_ONLY"),
         "archived_untranscribed": sum(1 for row in stream_payloads if row["state"] == "ARCHIVED"),
         "ocr_review": sum(1 for row in stream_payloads if row["state"] == "OCR_REVIEW"),
@@ -434,13 +455,22 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
         })
 
     reference_verified = bool(bundle.profile.get("register", {}).get("verified", True))
+    expected_reference_rows = int(bundle.profile.get("register", {}).get("streams_total", len(bundle.streams)))
+    candidate_list_complete = bool(
+        bundle.profile.get("ocr", {}).get("candidate_list_complete", True)
+    )
+    benchmark_only = bool(bundle.profile.get("ocr", {}).get("benchmark_only", False))
     reference_errors = [] if reference_verified else [
-        "The certified 144-row atomic register is not yet loaded; downloaded forms and OCR remain review-only.",
-        "Candidate legal names and Form 35A row order remain subject to final source verification.",
+        f"The certified {expected_reference_rows}-row atomic register is not yet loaded; downloaded forms and OCR remain review-only.",
+        "Candidate legal names and Form 35A row order remain subject to final source verification."
+        if not candidate_list_complete
+        else "Registered-voter reference rows remain subject to final source verification.",
     ]
     profile_mode = str(bundle.profile.get("mode", "ARCHIVE")).upper()
-    payload_status = "FINAL" if profile_mode == "ARCHIVE" else (
-        "COUNTING" if int(manifest.get("discovered_count", 0)) > 0 else "PRE_POLL"
+    payload_status = "OCR_BENCHMARK" if benchmark_only else (
+        "FINAL" if profile_mode == "ARCHIVE" else (
+            "COUNTING" if int(manifest.get("discovered_count", 0)) > 0 else "PRE_POLL"
+        )
     )
 
     payload = {
@@ -463,6 +493,9 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
             "ballot_order_verified": bundle.profile.get("candidate_reference", {}).get(
                 "ballot_order_verified", reference_verified
             ),
+            "candidate_list_complete": candidate_list_complete,
+            "benchmark_only": benchmark_only,
+            "stream_roster_bootstrapped": bool(bundle.streams_doc.get("bootstrapped_at")),
         },
         "pipeline_health": {
             "watcher": sync_status.get("state", "NEVER_RUN"),
@@ -651,6 +684,190 @@ def _zip_supported_member_count(data: bytes) -> int:
         return 0
 
 
+
+def _manifest_archive_exists(bundle: HistoricalBundle, entry: dict[str, Any]) -> bool:
+    archive_path = entry.get("archive_path")
+    return bool(entry.get("sha256") and archive_path and (bundle.root / str(archive_path)).exists())
+
+
+def _archive_manifest_counts(bundle: HistoricalBundle, manifest: dict[str, Any]) -> dict[str, int]:
+    entries = [
+        item for item in manifest.get("forms", {}).values()
+        if item.get("form_type", "35A") == "35A"
+    ]
+    downloaded_entries = [item for item in entries if _manifest_archive_exists(bundle, item)]
+    downloaded = sum(max(1, _bundle_member_count(item)) for item in downloaded_entries)
+    ordinary = [item for item in downloaded_entries if not _bundle_member_count(item)]
+    unique = len({str(item.get("sha256")) for item in ordinary if item.get("sha256")}) + sum(
+        _bundle_member_count(item) for item in downloaded_entries
+    )
+    return {
+        "downloaded": downloaded,
+        "unique_downloads": unique,
+        "duplicate_assignments": max(0, downloaded - unique),
+        "failed_downloads": sum(1 for item in entries if not _manifest_archive_exists(bundle, item)),
+    }
+
+
+def _retry_incomplete_manifest_downloads(
+    bundle: HistoricalBundle, client: PortalClient, manifest: dict[str, Any]
+) -> tuple[int, int]:
+    """Retry portal rows whose binary is missing even when the index is 304.
+
+    The old fast path returned immediately on an unchanged IEBC index. A form
+    that failed once therefore remained absent forever unless the portal index
+    itself changed. This bounded retry only touches incomplete manifest rows.
+    """
+
+    recovered = 0
+    failed = 0
+    references = {str(row["stream_key"]): row for row in bundle.streams}
+    for source_url, existing in list(manifest.get("forms", {}).items()):
+        if existing.get("form_type", "35A") != "35A" or _manifest_archive_exists(bundle, existing):
+            continue
+        form = PortalForm(
+            source_url=str(source_url),
+            source_label=str(existing.get("source_label") or source_url),
+            stream_key=existing.get("stream_key"),
+            station_name=None,
+            stream_no=None,
+            form_type=str(existing.get("form_type") or "35A"),
+        )
+        reference = references.get(str(existing.get("stream_key")))
+        if reference is None:
+            reference = _match_form(bundle, form.source_label, form.source_url)
+        response = client.conditional_get(
+            form.source_url,
+            etag=existing.get("etag"),
+            last_modified=existing.get("last_modified"),
+        )
+        # A conditional 304 is not useful when the local archive file is gone.
+        if response.status_code == 304:
+            response = client.conditional_get(form.source_url)
+        if response.status_code != 200 or response.body is None:
+            failed += 1
+            continue
+        entry, _ = _archive_download(bundle, form, response, reference, existing)
+        entry.pop("download_error", None)
+        manifest.setdefault("forms", {})[source_url] = entry
+        recovered += 1
+    return recovered, failed
+
+
+def _portal_bootstrap_enabled(bundle: HistoricalBundle) -> bool:
+    return bool(
+        bundle.profile.get("portal", {}).get("bootstrap_streams_from_portal")
+        or bundle.streams_doc.get("bootstrap_from_portal")
+    )
+
+
+def _synthetic_station_code(bundle: HistoricalBundle, form: PortalForm, ordinal: int) -> str:
+    """Return a deterministic digits-only identity when the portal row has no code.
+
+    The code is explicitly a bootstrap identity, not a certified IEBC polling-
+    station code. It is stable across runs because it is derived from the source
+    URL/label rather than list position alone.
+    """
+
+    seed = f"{form.source_url}|{form.source_label}|{ordinal}".encode("utf-8")
+    digest = hashlib.sha256(seed).hexdigest()
+    numeric = str(int(digest[:12], 16)).zfill(15)[-12:]
+    county = str(bundle.profile.get("election", {}).get("county_code", "000")).zfill(3)
+    constituency = str(bundle.profile.get("election", {}).get("code", "000")).zfill(3)
+    return f"{county}{constituency}{numeric}"
+
+
+def _bootstrap_streams_from_portal(
+    bundle: HistoricalBundle,
+    forms: list[PortalForm],
+    portal_reported: int | None,
+) -> bool:
+    """Hydrate an empty validation roster from individual portal Form 35As.
+
+    This is intentionally limited to a profile that opts in and has *zero*
+    stream rows. It never overwrites a certified or manually curated register.
+    Registered-voter values and wards remain unresolved, so the resulting rows
+    can drive form matching and OCR benchmarking but cannot pass V07 or be
+    imported as verified results.
+    """
+
+    if not _portal_bootstrap_enabled(bundle) or bundle.streams:
+        return False
+    expected = int(bundle.profile.get("register", {}).get("streams_total") or portal_reported or 0)
+    individual = [
+        form for form in forms
+        if form.form_type == "35A" and not _is_constituency_bundle(form)
+    ]
+    # Deduplicate by immutable source URL while preserving portal order.
+    unique: list[PortalForm] = []
+    seen_urls: set[str] = set()
+    for form in individual:
+        if form.source_url in seen_urls:
+            continue
+        seen_urls.add(form.source_url)
+        unique.append(form)
+    if expected <= 0:
+        raise RuntimeError("portal bootstrap requires a positive expected Form 35A count")
+    if len(unique) != expected:
+        raise RuntimeError(
+            "portal bootstrap withheld: "
+            f"expected exactly {expected} individual Form 35A rows, found {len(unique)}. "
+            "No partial stream roster was written."
+        )
+
+    rows: list[dict[str, Any]] = []
+    used_keys: set[str] = set()
+    used_codes: set[str] = set()
+    constituency = str(bundle.profile.get("election", {}).get("code", "000")).zfill(3)
+    for ordinal, form in enumerate(unique, start=1):
+        stream_no = int(form.stream_no or 1)
+        station_name = (form.station_name or form.source_label or f"Portal Form {ordinal}").strip()
+        polling_code = _synthetic_station_code(bundle, form, ordinal)
+        stream_key = str(form.stream_key or f"{constituency}-P{polling_code[-8:]}-{stream_no:02d}")
+        # A malformed/duplicated portal identity must not collapse two forms.
+        if stream_key in used_keys:
+            stream_key = f"{constituency}-P{polling_code[-8:]}-{stream_no:02d}"
+        while stream_key in used_keys:
+            stream_no += 1
+            stream_key = f"{constituency}-P{polling_code[-8:]}-{stream_no:02d}"
+        while polling_code in used_codes:
+            polling_code = str(int(polling_code) + 1)
+        used_keys.add(stream_key)
+        used_codes.add(polling_code)
+        rows.append({
+            "stream_key": stream_key,
+            "polling_station_code": polling_code,
+            "station_name": station_name,
+            "stream_no": stream_no,
+            "ward_code": "UNRESOLVED",
+            "ward_name": "WARD TO VERIFY",
+            "registered": None,
+            "portal_source_url": form.source_url,
+            "portal_source_label": form.source_label,
+            "reference_state": "PORTAL_BOOTSTRAP",
+        })
+
+    rows.sort(key=lambda row: (_norm(row["station_name"]), int(row["stream_no"]), row["stream_key"]))
+    bundle.streams_doc.clear()
+    bundle.streams_doc.update({
+        "schema": "kenya.election.stream-register.v1",
+        "election_id": bundle.election_id,
+        "bootstrap_from_portal": True,
+        "bootstrapped_at": utc_now_iso(),
+        "reference_verified": False,
+        "notes": [
+            "Generated from the IEBC portal's individual Form 35A assignments for OCR validation.",
+            "Polling-station codes, ward allocation and registered-voter values are not certified and cannot drive publication.",
+        ],
+        "streams": rows,
+        "ward_summary": [],
+    })
+    _write_json(bundle.election_dir / "streams.json", bundle.streams_doc)
+    # Re-run the ordinary validator now that a complete exact-count skeleton exists.
+    validate_historical_bundle(bundle)
+    return True
+
+
 def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, download: bool = True) -> dict[str, Any]:
     portal = bundle.profile["portal"]
     client = PortalClient(
@@ -670,16 +887,45 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
             last_modified=index_meta.get("last_modified"),
         )
         if index.status_code == 304:
+            recovered, retry_failed = (
+                _retry_incomplete_manifest_downloads(bundle, client, manifest)
+                if download
+                else (0, 0)
+            )
+            counts = _archive_manifest_counts(bundle, manifest)
+            matched_count = len(
+                {
+                    item.get("stream_key")
+                    for item in manifest.get("forms", {}).values()
+                    if item.get("stream_key") and item.get("form_type", "35A") == "35A"
+                }
+            )
+            unmatched = [
+                {"source_url": str(url), "source_label": str(item.get("source_label") or "")}
+                for url, item in manifest.get("forms", {}).items()
+                if item.get("form_type", "35A") == "35A" and not item.get("stream_key")
+            ]
+            changed = recovered > 0
+            if changed:
+                manifest["downloaded_count"] = counts["downloaded"]
+                manifest["matched_count"] = matched_count
+                manifest["unmatched"] = unmatched
+                manifest["last_portal_ok"] = utc_now_iso()
+                _write_json(bundle.manifest_path, manifest)
             return {
                 "election_id": bundle.election_id,
-                "status": "NOT_MODIFIED",
-                "changed": False,
+                "status": "UPDATED" if changed else "NOT_MODIFIED",
+                "changed": changed,
                 "discovered": int(manifest.get("discovered_count", 0)),
-                "matched": int(manifest.get("matched_count", 0)),
-                "downloaded": int(manifest.get("downloaded_count", 0)),
-                "new_downloads": 0,
+                "matched": matched_count,
+                "downloaded": counts["downloaded"],
+                "unique_downloads": counts["unique_downloads"],
+                "duplicate_assignments": counts["duplicate_assignments"],
+                "failed_downloads": counts["failed_downloads"],
+                "retry_failures": retry_failed,
+                "new_downloads": recovered,
                 "changed_downloads": 0,
-                "unmatched": len(manifest.get("unmatched", [])),
+                "unmatched": len(unmatched),
             }
         if index.status_code != 200 or not index.body:
             raise RuntimeError(f"portal returned HTTP {index.status_code}")
@@ -690,6 +936,7 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
         }
         portal_reported, portal_expected = client.reported_counts(index.body)
         discovered = client.discover(index.body, index.url)
+        roster_bootstrapped = _bootstrap_streams_from_portal(bundle, discovered, portal_reported)
         discovered_35a = [form for form in discovered if form.form_type == "35A"]
         bundle_links = [form for form in discovered_35a if _is_constituency_bundle(form)]
         # The IEBC constituency view may expose either one link per form or a
@@ -738,6 +985,8 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
                 etag=(existing or {}).get("etag"),
                 last_modified=(existing or {}).get("last_modified"),
             )
+            if response.status_code == 304 and not archive_exists:
+                response = client.conditional_get(form.source_url)
             if response.status_code == 304:
                 continue
             if response.status_code != 200 or response.body is None:
@@ -793,11 +1042,8 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
                 if item.get("stream_key") and item.get("form_type", "35A") == "35A"
             }
         )
-        downloaded_count = sum(
-            max(1, _bundle_member_count(item))
-            for item in manifest.get("forms", {}).values()
-            if item.get("sha256")
-        )
+        manifest_counts = _archive_manifest_counts(bundle, manifest)
+        downloaded_count = manifest_counts["downloaded"]
         bundle_member_total = sum(
             _bundle_member_count(manifest.get("forms", {}).get(form.source_url, {}))
             for form in bundle_links
@@ -805,7 +1051,8 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
         effective_discovered_count = max(len(discovered), bundle_member_total)
         discovered_urls = {form.source_url for form in discovered}
         metadata_changed = (
-            previous_index != next_index
+            roster_bootstrapped
+            or previous_index != next_index
             or discovered_urls - previous_urls
             or int(manifest.get("discovered_count", -1)) != effective_discovered_count
             or int(manifest.get("matched_count", -1)) != matched_count
@@ -836,11 +1083,15 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
             "discovered": effective_discovered_count,
             "matched": matched_count,
             "downloaded": downloaded_count,
+            "unique_downloads": manifest_counts["unique_downloads"],
+            "duplicate_assignments": manifest_counts["duplicate_assignments"],
+            "failed_downloads": manifest_counts["failed_downloads"],
             "new_downloads": new_downloads,
             "changed_downloads": changed_downloads,
             "unmatched": len(unmatched),
             "portal_reported": portal_reported,
             "portal_expected": portal_expected,
+            "stream_roster_bootstrapped": roster_bootstrapped,
         }
     finally:
         client.close()
@@ -854,7 +1105,7 @@ def build_catalog(root: Path) -> dict[str, Any]:
         election = profile["election"]
         entries.append({
             "id": profile["id"],
-            "label": f"{election['constituency'].title()} · {datetime.fromisoformat(election['date']).strftime('%d %b %Y')}",
+            "label": profile.get("catalog_label") or f"{election['constituency'].title()} · {datetime.fromisoformat(election['date']).strftime('%d %b %Y')}",
             "mode": profile.get("mode", "ARCHIVE"),
             "constituency": election["constituency"],
             "date": election["date"],

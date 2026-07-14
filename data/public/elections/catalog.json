@@ -17,6 +17,14 @@
       "constituency": "BANISSA",
       "date": "2025-11-27",
       "data_url": "../data/public/elections/banissa-2025.json"
+    },
+    {
+      "id": "malava-2025",
+      "label": "Malava OCR benchmark · 27 Nov 2025",
+      "mode": "ARCHIVE",
+      "constituency": "MALAVA",
+      "date": "2025-11-27",
+      "data_url": "../data/public/elections/malava-2025.json"
     }
   ]
 }

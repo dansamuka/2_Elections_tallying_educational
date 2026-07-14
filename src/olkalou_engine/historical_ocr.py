@@ -17,11 +17,13 @@ from statistics import mean
 from typing import Any, Iterable, Protocol
 
 from .config import Settings
+from .ocr.handwriting import extract_form35a_numeric_cells, reconcile_form35a_fields
 
 SUPPORTED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".tif", ".tiff", ".webp"}
 FORM_35A = "35A"
 FORM_35B = "35B"
 OTHER = "OTHER"
+OCR_PIPELINE_VERSION = "2026.07.14-layout-v2"
 
 
 def utc_now_iso() -> str:
@@ -251,7 +253,7 @@ def _render_page(path: Path, page_no: int, output_dir: Path) -> Path:
     pdf = pdfium.PdfDocument(str(path))
     if page_no < 1 or page_no > len(pdf):
         raise ValueError(f"page {page_no} does not exist in {path}")
-    bitmap = pdf[page_no - 1].render(scale=3.0)
+    bitmap = pdf[page_no - 1].render(scale=4.0)
     target = output_dir / f"page-{page_no}.png"
     bitmap.to_pil().save(target)
     return target
@@ -527,7 +529,11 @@ def parse_form35b(text: str, candidates: list[dict[str, Any]]) -> dict[str, Any]
 
 
 def _checks_for_extraction(
-    parsed: dict[str, Any], reference: dict[str, Any] | None, candidate_ids: list[str]
+    parsed: dict[str, Any],
+    reference: dict[str, Any] | None,
+    candidate_ids: list[str],
+    *,
+    candidate_list_complete: bool = True,
 ) -> dict[str, str]:
     fields = parsed.get("fields", {})
     votes = [fields.get(f"candidate_{candidate_id}", {}).get("value") for candidate_id in candidate_ids]
@@ -536,17 +542,18 @@ def _checks_for_extraction(
     total_cast = fields.get("total_cast", {}).get("value")
     registered_form = fields.get("registered", {}).get("value")
     checks = {"V01": "NOT_RUN", "V02": "NOT_RUN", "V03": "NOT_RUN", "V07": "NOT_RUN"}
-    if all(value is not None for value in votes) and total_valid is not None:
+    if candidate_list_complete and all(value is not None for value in votes) and total_valid is not None:
         checks["V01"] = "PASS" if sum(int(value) for value in votes) == int(total_valid) else "FAIL"
     if total_valid is not None and rejected is not None and total_cast is not None:
         checks["V02"] = "PASS" if int(total_valid) + int(rejected) == int(total_cast) else "FAIL"
-    if reference is not None and total_cast is not None:
+    reference_registered = reference.get("registered") if reference is not None else None
+    if reference_registered is not None and total_cast is not None:
         checks["V03"] = (
-            "PASS" if int(total_cast) <= int(reference.get("registered", 0)) else "FAIL"
+            "PASS" if int(total_cast) <= int(reference_registered) else "FAIL"
         )
-    if reference is not None and registered_form is not None:
+    if reference_registered is not None and registered_form is not None:
         checks["V07"] = (
-            "PASS" if int(registered_form) == int(reference.get("registered", 0)) else "FAIL"
+            "PASS" if int(registered_form) == int(reference_registered) else "FAIL"
         )
     return checks
 
@@ -669,6 +676,28 @@ def _write_review_csv(path: Path, rows: list[dict[str, Any]], candidate_ids: lis
         writer.writerows(rows)
 
 
+def _numeric_extraction_confidence(
+    parsed: dict[str, Any], candidate_ids: list[str], fallback: float
+) -> float:
+    fields = parsed.get("fields", {})
+    required = [
+        *(f"candidate_{candidate_id}" for candidate_id in candidate_ids),
+        "registered",
+        "rejected",
+        "total_valid",
+        "total_cast",
+    ]
+    present = [
+        float(fields.get(field, {}).get("confidence", 0.0) or 0.0)
+        for field in required
+        if fields.get(field, {}).get("value") is not None
+    ]
+    if not present:
+        return max(0.0, min(1.0, fallback * 0.35))
+    completeness = len(present) / len(required)
+    return max(0.0, min(0.99, mean(present) * completeness))
+
+
 def run_historical_ocr(
     bundle: Any,
     settings: Settings,
@@ -683,8 +712,11 @@ def run_historical_ocr(
     extraction_dir.mkdir(parents=True, exist_ok=True)
     engines = _engine_set(engine_mode, settings)
     candidate_ids = [str(candidate["id"]) for candidate in bundle.candidates]
+    candidate_list_complete = bool(bundle.profile.get("ocr", {}).get("candidate_list_complete", True))
+    benchmark_only = bool(bundle.profile.get("ocr", {}).get("benchmark_only", False))
     extractions: list[dict[str, Any]] = []
     errors: list[dict[str, Any]] = []
+    layout_assisted_pages = 0
 
     for document in inventory["documents"]:
         source = bundle.root / document["path"] if not Path(document["path"]).is_absolute() else Path(document["path"])
@@ -692,17 +724,23 @@ def run_historical_ocr(
             page_id = f"{document['sha256'][:16]}-p{page_no:03d}"
             output_path = extraction_dir / f"{page_id}.json"
             if output_path.exists() and not rebuild:
-                extractions.append(_read_json(output_path))
-                continue
+                existing = _read_json(output_path)
+                if existing.get("pipeline_version") == OCR_PIPELINE_VERSION:
+                    extractions.append(existing)
+                    if existing.get("parsed", {}).get("handwriting"):
+                        layout_assisted_pages += 1
+                    continue
             try:
-                embedded = _embedded_text(source, page_no)
-                texts: list[OCRText] = []
-                if embedded:
-                    texts.append(OCRText(text=embedded, confidence=0.99, engine="embedded-pdf"))
-                needs_ocr = len(re.sub(r"\s+", "", embedded)) < 80
-                if needs_ocr and engines:
-                    with tempfile.TemporaryDirectory(prefix=f"historical-ocr-{page_id}-") as temp:
-                        page_image = _render_page(source, page_no, Path(temp))
+                with tempfile.TemporaryDirectory(prefix=f"historical-ocr-{page_id}-") as temp:
+                    temp_dir = Path(temp)
+                    page_image: Path | None = None
+                    embedded = _embedded_text(source, page_no)
+                    texts: list[OCRText] = []
+                    if embedded:
+                        texts.append(OCRText(text=embedded, confidence=0.99, engine="embedded-pdf"))
+                    needs_ocr = len(re.sub(r"\s+", "", embedded)) < 80
+                    if needs_ocr and engines:
+                        page_image = _render_page(source, page_no, temp_dir)
                         for engine in engines:
                             try:
                                 texts.append(engine.read(page_image))
@@ -714,63 +752,110 @@ def run_historical_ocr(
                                         "message": str(exc),
                                     }
                                 )
-                combined = _combine_texts(texts)
-                form_type = classify_form(combined.text, document["filename"])
-                reference, match_method = match_stream(bundle, combined.text, document["filename"])
-                parsed: dict[str, Any]
-                checks: dict[str, str] = {}
-                if form_type == FORM_35A:
-                    parsed = parse_form35a(combined.text, bundle.candidates)
-                    checks = _checks_for_extraction(parsed, reference, candidate_ids)
-                    critical = [checks[code] for code in ("V01", "V02", "V03", "V07")]
-                    complete = all(
-                        parsed["fields"].get(f"candidate_{candidate_id}", {}).get("value") is not None
-                        for candidate_id in candidate_ids
-                    ) and all(
-                        parsed["fields"].get(field, {}).get("value") is not None
-                        for field in ("registered", "rejected", "total_valid", "total_cast")
-                    )
-                    route = (
-                        "READY_FOR_DOUBLE_REVIEW"
-                        if reference is not None
-                        and complete
-                        and all(status == "PASS" for status in critical)
-                        else "QUARANTINE"
-                    )
-                elif form_type == FORM_35B:
-                    parsed = parse_form35b(combined.text, bundle.candidates)
-                    route = "FORM_35B_REVIEW"
-                else:
-                    parsed = {}
-                    route = "UNCLASSIFIED"
-                extraction = {
-                    "schema": "kenya.election.ocr-extraction.v1",
-                    "election_id": bundle.election_id,
-                    "page_id": page_id,
-                    "source_path": document["path"],
-                    "source_sha256": document["sha256"],
-                    "source_filename": document["filename"],
-                    "public_url": (
-                        f"{document.get('public_url')}#page={page_no}"
-                        if document.get("public_url") and document.get("extension") == ".pdf"
-                        else document.get("public_url")
-                    ),
-                    "page_no": page_no,
-                    "form_type": form_type,
-                    "stream_key": str(reference["stream_key"]) if reference else None,
-                    "match_method": match_method,
-                    "engine": combined.engine,
-                    "confidence": combined.confidence,
-                    "text_length": len(combined.text),
-                    "text_preview": combined.text[:3000],
-                    "parsed": parsed,
-                    "checks": checks,
-                    "route": route,
-                    "auto_published": False,
-                    "extracted_at": utc_now_iso(),
-                }
-                _write_json(output_path, extraction)
-                extractions.append(extraction)
+                    combined = _combine_texts(texts)
+                    form_type = classify_form(combined.text, document["filename"])
+                    reference, match_method = match_stream(bundle, combined.text, document["filename"])
+                    parsed: dict[str, Any]
+                    checks: dict[str, str] = {}
+                    confidence = combined.confidence
+                    if form_type == FORM_35A:
+                        parsed = parse_form35a(combined.text, bundle.candidates)
+                        try:
+                            # Handwritten values are isolated from their numeric
+                            # cells after printed labels have anchored the row.
+                            # This prevents row numbers and ballot numbers from
+                            # being mistaken for candidate votes.
+                            if page_image is None:
+                                page_image = _render_page(source, page_no, temp_dir)
+                            cell_result = extract_form35a_numeric_cells(
+                                page_image, bundle.candidates, reference
+                            )
+                            parsed = reconcile_form35a_fields(
+                                parsed,
+                                cell_result,
+                                reference,
+                                candidate_ids,
+                                candidate_list_complete=candidate_list_complete,
+                            )
+                            layout_assisted_pages += 1
+                        except Exception as exc:
+                            # The old full-page extraction remains available as a
+                            # fallback. A single difficult scan must not abort the
+                            # entire constituency batch.
+                            errors.append(
+                                {
+                                    "page_id": page_id,
+                                    "engine": "layout-handwriting",
+                                    "message": str(exc),
+                                }
+                            )
+                        checks = _checks_for_extraction(
+                            parsed,
+                            reference,
+                            candidate_ids,
+                            candidate_list_complete=candidate_list_complete,
+                        )
+                        critical = [checks[code] for code in ("V01", "V02", "V03", "V07")]
+                        complete = all(
+                            parsed["fields"].get(f"candidate_{candidate_id}", {}).get("value") is not None
+                            for candidate_id in candidate_ids
+                        ) and all(
+                            parsed["fields"].get(field, {}).get("value") is not None
+                            for field in ("registered", "rejected", "total_valid", "total_cast")
+                        )
+                        if (
+                            benchmark_only
+                            and complete
+                            and checks["V02"] == "PASS"
+                            and checks["V03"] in {"PASS", "NOT_RUN"}
+                        ):
+                            route = "OCR_BENCHMARK_REVIEW"
+                        else:
+                            route = (
+                                "READY_FOR_DOUBLE_REVIEW"
+                                if reference is not None
+                                and complete
+                                and all(status == "PASS" for status in critical)
+                                else "QUARANTINE"
+                            )
+                        confidence = _numeric_extraction_confidence(
+                            parsed, candidate_ids, combined.confidence
+                        )
+                    elif form_type == FORM_35B:
+                        parsed = parse_form35b(combined.text, bundle.candidates)
+                        route = "FORM_35B_REVIEW"
+                    else:
+                        parsed = {}
+                        route = "UNCLASSIFIED"
+                    extraction = {
+                        "schema": "kenya.election.ocr-extraction.v1",
+                        "pipeline_version": OCR_PIPELINE_VERSION,
+                        "election_id": bundle.election_id,
+                        "page_id": page_id,
+                        "source_path": document["path"],
+                        "source_sha256": document["sha256"],
+                        "source_filename": document["filename"],
+                        "public_url": (
+                            f"{document.get('public_url')}#page={page_no}"
+                            if document.get("public_url") and document.get("extension") == ".pdf"
+                            else document.get("public_url")
+                        ),
+                        "page_no": page_no,
+                        "form_type": form_type,
+                        "stream_key": str(reference["stream_key"]) if reference else None,
+                        "match_method": match_method,
+                        "engine": combined.engine + ("+layout-handwriting" if parsed.get("handwriting") else ""),
+                        "confidence": confidence,
+                        "text_length": len(combined.text),
+                        "text_preview": combined.text[:3000],
+                        "parsed": parsed,
+                        "checks": checks,
+                        "route": route,
+                        "auto_published": False,
+                        "extracted_at": utc_now_iso(),
+                    }
+                    _write_json(output_path, extraction)
+                    extractions.append(extraction)
             except Exception as exc:
                 error = {
                     "page_id": page_id,
@@ -781,6 +866,7 @@ def run_historical_ocr(
                 errors.append(error)
                 extraction = {
                     "schema": "kenya.election.ocr-extraction.v1",
+                    "pipeline_version": OCR_PIPELINE_VERSION,
                     "election_id": bundle.election_id,
                     "page_id": page_id,
                     "source_path": document["path"],
@@ -822,6 +908,7 @@ def run_historical_ocr(
         routes[route] = routes.get(route, 0) + 1
     summary = {
         "schema": "kenya.election.ocr-summary.v1",
+        "pipeline_version": OCR_PIPELINE_VERSION,
         "election_id": bundle.election_id,
         "generated_at": utc_now_iso(),
         "engine_mode": engine_mode,
@@ -829,6 +916,7 @@ def run_historical_ocr(
         "documents_total": inventory["documents_total"],
         "pages_total": inventory["pages_total"],
         "pages_processed": len(extractions),
+        "layout_assisted_pages": layout_assisted_pages,
         "form35a_detected": sum(1 for row in extractions if row.get("form_type") == FORM_35A),
         "form35b_detected": len(form35b_rows),
         "streams_matched": len(
@@ -841,8 +929,9 @@ def run_historical_ocr(
         "inventory": _relative(ocr_dir / "document_inventory.json", bundle.root),
         "auto_publication": False,
         "note": (
-            "OCR output is a pre-fill only. No historical stream is added to the public tally until "
-            "two-person review and statutory validation are complete."
+            "OCR output is a pre-fill only. Handwritten cells are read with layout anchors and "
+            "arithmetic reconciliation, but no historical stream is added to the public tally until "
+            "human review and statutory validation are complete."
         ),
     }
     _write_json(ocr_dir / "summary.json", summary)
@@ -854,6 +943,7 @@ def load_ocr_summary(bundle: Any) -> dict[str, Any]:
     if not path.exists():
         return {
             "schema": "kenya.election.ocr-summary.v1",
+            "pipeline_version": OCR_PIPELINE_VERSION,
             "election_id": bundle.election_id,
             "generated_at": None,
             "engine_mode": None,

@@ -1,0 +1,112 @@
+{
+  "schema": "kenya.election.profile.v1",
+  "id": "malava-2025",
+  "mode": "ARCHIVE",
+  "election": {
+    "title": "Malava By-Election 2025 · OCR Validation",
+    "constituency": "MALAVA",
+    "code": "201",
+    "county": "KAKAMEGA",
+    "county_code": "037",
+    "date": "2025-11-27",
+    "position": "Member of the National Assembly"
+  },
+  "portal": {
+    "index_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
+    "constituency": "MALAVA",
+    "expected_forms": 198,
+    "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Findex&p=2&l=2",
+    "sync_enabled": true,
+    "sync_interval_minutes": 5,
+    "recheck_existing": false,
+    "download_policy": "CONSTITUENCY_DETAIL_OR_VERIFIED_DOWNLOAD_ALL_BUNDLE",
+    "bootstrap_streams_from_portal": true
+  },
+  "register": {
+    "total": 0,
+    "streams_total": 198,
+    "source": "Certified 2025 Malava polling-stream register pending; portal Form 35A assignments are used only to bootstrap OCR validation.",
+    "source_url": null,
+    "verified": false
+  },
+  "candidate_reference": {
+    "source": "Publicly reported leading Malava candidates; the complete legal candidate list and ballot order remain pending source verification.",
+    "source_url": "https://www.citizen.digital/article/udas-david-ndakwa-edges-out-seth-panyako-of-dap-k-to-win-malava-mp-seat-n373708",
+    "ballot_order_verified": false
+  },
+  "candidates": [
+    {
+      "id": "UDA",
+      "ballot_no": null,
+      "name": "David Athman Ndakwa",
+      "party": "United Democratic Alliance",
+      "abbr": "UDA",
+      "colour": "#F4C542",
+      "bloc": "GOVERNMENT"
+    },
+    {
+      "id": "DAPK",
+      "ballot_no": null,
+      "name": "Seth Panyako",
+      "party": "Democratic Action Party–Kenya",
+      "abbr": "DAP-K",
+      "colour": "#E85C41",
+      "bloc": "OPPOSITION"
+    },
+    {
+      "id": "WT",
+      "ballot_no": null,
+      "name": "Wilberforce Tuwei",
+      "party": "Affiliation pending source verification",
+      "abbr": "WT",
+      "colour": "#5C8FC7",
+      "bloc": "OTHER"
+    }
+  ],
+  "official_declaration": {
+    "candidate_totals": {},
+    "valid_votes": null,
+    "winner_id": "UDA",
+    "winner_votes": null,
+    "winner_source": "Public reports identify David Athman Ndakwa as the Malava by-election winner; official Form 35B candidate totals are not loaded in this benchmark profile.",
+    "winner_source_url": "https://www.citizen.digital/article/udas-david-ndakwa-edges-out-seth-panyako-of-dap-k-to-win-malava-mp-seat-n373708",
+    "runner_up_source": "Public reports identify Seth Panyako as the principal challenger.",
+    "runner_up_source_url": "https://www.citizen.digital/article/udas-david-ndakwa-edges-out-seth-panyako-of-dap-k-to-win-malava-mp-seat-n373708",
+    "rejected_votes": null,
+    "total_cast": null,
+    "notes": [
+      "This profile is an OCR validation benchmark, not a publishable constituency tally.",
+      "Only three publicly reported candidate names are configured initially. Candidate totals and V01 remain non-authoritative until the complete legal candidate list and ballot order are source-verified."
+    ]
+  },
+  "blocs": {
+    "GOVERNMENT": [
+      "UDA"
+    ],
+    "OPPOSITION": [
+      "DAPK"
+    ],
+    "OTHER": [
+      "WT"
+    ]
+  },
+  "methodology": {
+    "stream_results_complete": false,
+    "replay_available": false,
+    "note": "Malava's 198 published Form 35A assignments are used as a large handwritten-digit OCR benchmark. Portal-bootstrap rows remain review-only until the certified register and complete candidate roster are loaded."
+  },
+  "ocr": {
+    "default_engine": "auto",
+    "documents_dir": "documents",
+    "auto_publication": false,
+    "review_policy": "HUMAN_BENCHMARK",
+    "candidate_list_complete": false,
+    "benchmark_only": true,
+    "notes": [
+      "OCR is a pre-fill only. Human-confirmed benchmark rows are used solely to measure field accuracy.",
+      "V01 is not run while the configured candidate roster is incomplete; V02 and control-field checks remain active.",
+      "No Malava benchmark row may enter a public election tally through archive-import until the atomic register and complete candidate list are certified."
+    ]
+  },
+  "catalog_label": "Malava OCR benchmark · 27 Nov 2025"
+}

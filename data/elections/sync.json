@@ -4,13 +4,15 @@
   "interval_minutes": 5,
   "elections": [
     "banissa-2025",
+    "malava-2025",
     "ol-kalou-2026"
   ],
   "engine": "auto",
   "repository": "dansamuka/2_Elections_tallying_educational",
   "workflow_file": "sync-historical-forms.yml",
   "notes": [
-    "The scheduled workflow checks both Banissa and Ol Kalou through the IEBC county-to-stream hierarchy every five minutes; GitHub may delay scheduled jobs under load.",
+    "The scheduled workflow checks Banissa, Malava and Ol Kalou through the IEBC county-to-stream hierarchy every five minutes; GitHub may delay scheduled jobs under load.",
+    "Malava is an OCR-validation benchmark. Its 198 portal assignments remain review-only until a certified atomic register and complete candidate roster are loaded.",
     "Ol Kalou is a live/pre-poll target. OCR output is review-only and cannot enter the tally while atomic reference rows or ballot order remain unverified.",
     "Individual cloud-download links are used. Download All and eye/preview controls are ignored."
   ]

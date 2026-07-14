@@ -43,7 +43,7 @@ See `GITHUB_ONE_CLICK_GUIDE.md` for the exact flow.
 
 ## Ol Kalou five-minute hierarchy sync
 
-The same scheduled and manual portal engine now covers the live Ol Kalou 2026 profile as well as Banissa. Ol Kalou follows `KENYA → NYANDARUA → OL KALOU → ward → polling centre → polling stream`, accepts only the individual cloud-download action, and expects 144 Form 35As across Rurii (33), Kanjuiri Range (32), Karau (27), Kaimbaga (27), and Mirangine (25).
+The same scheduled and manual portal engine now covers the live Ol Kalou 2026 profile, Banissa and the Malava OCR-validation benchmark. Ol Kalou follows `KENYA → NYANDARUA → OL KALOU → ward → polling centre → polling stream`, accepts only the individual cloud-download action, and expects 144 Form 35As across Rurii (33), Kanjuiri Range (32), Karau (27), Kaimbaga (27), and Mirangine (25).
 
 ```bat
 UPDATE_OL_KALOU_NOW.cmd
@@ -61,6 +61,8 @@ Historical contests use the same provenance model without contaminating the live
 - optional immutable archived forms and `verified_results.json`.
 
 Banissa 2025 is included as the first profile. Its 81-stream, 32,703-voter register and declared constituency totals are visible immediately. Stream-by-stream replay remains withheld until all 81 Form 35As and genuine reporting timestamps have been archived and independently entered.
+
+Malava 2025 is included as a deliberately non-publishable handwriting benchmark. The IEBC portal reports 198 Form 35A assignments. The first sync bootstraps a complete review-only matching roster only if all 198 assignments are present; partial discovery is rejected. Human-confirmed rows turn green, feed the benchmark panel and can be exported to `scripts/measure_historical_ocr_accuracy.py`. See `docs/MALAVA_OCR_VALIDATION.md`.
 
 Place every available Banissa PDF/image under `data/elections/banissa-2025/documents/`, then double-click `RUN_HISTORICAL_OCR.cmd`. The OCR pass scans every page, collapses exact duplicates, creates immutable public source mirrors, and writes `data/elections/banissa-2025/ocr/review_queue.csv`. No OCR value enters the tally until two-person review and `archive-import` validation.
 
@@ -103,6 +105,9 @@ The public archive's **Update now** button opens the repository-owner GitHub Act
 ```bash
 # Full portal download → OCR → dashboard refresh for Banissa
 python -m olkalou_engine.cli --root . archive-sync banissa-2025 --engine auto
+
+# Malava 198-form OCR benchmark
+python -m olkalou_engine.cli --root . archive-sync malava-2025 --engine auto
 
 # Process every election enabled in data/elections/sync.json
 python -m olkalou_engine.cli --root . archive-sync --all --engine auto

@@ -93,3 +93,15 @@ Replay is enabled only when:
 2. every result has a genuine reporting timestamp.
 
 Missing data keeps the replay visibly **WITHHELD**. The module never fabricates station sequence or timing.
+
+## Optional portal-bootstrap benchmark mode
+
+For a past contest whose source forms are available but whose certified atomic register is not yet loaded, use the narrowly-scoped benchmark pattern demonstrated by `malava-2025`:
+
+- set `portal.bootstrap_streams_from_portal: true`;
+- set `register.verified: false`;
+- set `ocr.benchmark_only: true`;
+- set `ocr.candidate_list_complete: false` where the legal roster is incomplete; and
+- start `streams.json` with an empty `streams` array and `bootstrap_from_portal: true`.
+
+The first sync writes a review-only stream skeleton only when the portal returns exactly the configured expected number of individual Form 35As. Registered values and wards remain unresolved. Benchmark rows may be human-confirmed for OCR accuracy, but they cannot pass verified import or publish a tally.

@@ -79,7 +79,6 @@ async function main() {
   const dom = new JSDOM(html, {
     url: "https://example.org/2_Elections_tallying_educational/archive.html?election=banissa-2025",
     runScripts: "dangerously",
-    resources: "usable",
     pretendToBeVisual: true,
   });
   const { window } = dom;
@@ -164,11 +163,26 @@ async function main() {
     "a PUBLISHED (already-verified) stream shows read-only figures, no editable inputs");
 
   // --- Save & mark reviewed: green cell, tally, auto-advance ------------
-  assert.equal(doc.getElementById("reviewProgress").hidden, true, "tally banner starts hidden (nothing confirmed yet)");
+  assert.equal(doc.getElementById("reviewProgress").hidden, false, "tally banner is visible even before the first confirmation");
+  assert.match(doc.getElementById("reviewProgress").textContent, /0 \/ 4/, "top tally starts at 0 of 4");
 
   openStreamViaClick("TEST-001"); // already has a saved draft (UDA corrected to 245) from earlier in this run
   assert.equal(doc.querySelector('[data-stream-key="TEST-001"]').className.includes("locally-confirmed"), false,
     "a stream with only an unconfirmed draft is not yet green");
+  assert.equal(doc.getElementById("rfConfirm").disabled, true,
+    "confirmation is blocked while the corrected candidate sum conflicts with the stated totals");
+  const setInput = (id, value) => {
+    const input = doc.getElementById(id);
+    input.value = value;
+    input.dispatchEvent(new window.Event("input", { bubbles: true }));
+  };
+  setInput("rf-valid", "265");
+  setInput("rf-cast", "266");
+  setInput("rf-reviewer", "Test Reviewer");
+  assert.match(doc.getElementById("rfHumanChecks").textContent, /V01 PASS/,
+    "human-entry checks update from the edited values rather than showing only raw OCR checks");
+  assert.equal(doc.getElementById("rfConfirm").disabled, false,
+    "a complete row with passing arithmetic and a reviewer can be saved");
   doc.getElementById("rfConfirm").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
   await new Promise((r) => setTimeout(r, 10));
 
@@ -179,7 +193,8 @@ async function main() {
   assert.equal(doc.getElementById("reviewProgress").hidden, false, "tally banner appears once at least one stream is confirmed");
   assert.match(doc.getElementById("reviewProgress").textContent, /1 \/ 4/, "tally shows 1 of 4 streams confirmed");
   assert.match(doc.getElementById("reviewProgress").textContent, /UDA 245/, "tally reflects the corrected value (245), not the raw OCR reading (30)");
-  assert.match(doc.getElementById("reviewProgress").textContent, /Not an official result/, "tally carries the same disclaimer discipline as the rest of the review workbench");
+  assert.match(doc.getElementById("reviewProgress").textContent, /Provisional browser tally/, "tally carries the same disclaimer discipline as the rest of the review workbench");
+  assert.match(doc.getElementById("reviewProgress").textContent, /265 valid/, "top tally includes total valid votes from confirmed rows");
 
   await new Promise((r) => setTimeout(r, 500)); // let the 450ms auto-advance timer fire
   const cellTest001 = doc.querySelector('[data-stream-key="TEST-001"]');
@@ -189,15 +204,17 @@ async function main() {
   assert.match(doc.getElementById("archiveDialogBody").innerHTML, /Test School B/,
     "confirming auto-advances to the next unconfirmed stream instead of leaving the reviewer to hunt for it");
 
-  // Editing an already-confirmed stream must not silently un-confirm it.
+  // Editing an already-confirmed stream invalidates that confirmation until re-saved.
   openStreamViaClick("TEST-001");
   const voteAAgain = doc.getElementById("rf-vote-UDA");
   voteAAgain.value = "246";
   voteAAgain.dispatchEvent(new window.Event("input", { bubbles: true }));
   await new Promise((r) => setTimeout(r, 10));
   const afterEdit = JSON.parse(window.localStorage.getItem("olkalou-archive-drafts:banissa-2025") || "{}");
-  assert.ok(afterEdit["TEST-001"].confirmed_at, "editing a field on an already-confirmed stream does not clear confirmed_at");
-  assert.equal(Number(afterEdit["TEST-001"].votes.UDA), 246, "the edit itself still applies");
+  assert.equal(afterEdit["TEST-001"].confirmed_at, undefined, "editing a confirmed row clears its reviewed stamp until it is re-confirmed");
+  assert.equal(Number(afterEdit["TEST-001"].votes.UDA), 246, "the edit itself still applies as a draft");
+  assert.equal(doc.querySelector('[data-stream-key="TEST-001"]').className.includes("locally-confirmed"), false,
+    "the polling-centre cell leaves green state immediately after an unconfirmed edit");
 
   let capturedCsv = null;
   window.URL.createObjectURL = (blob) => { capturedCsv = blob; return "blob:test"; };

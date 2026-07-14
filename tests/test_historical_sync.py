@@ -28,7 +28,7 @@ def test_sync_plan_targets_existing_repository() -> None:
     plan = load_sync_plan(REPO_ROOT)
     assert plan.enabled is True
     assert plan.interval_minutes == 5
-    assert plan.election_ids == ("banissa-2025", "ol-kalou-2026")
+    assert plan.election_ids == ("banissa-2025", "malava-2025", "ol-kalou-2026")
     assert plan.repository == "dansamuka/2_Elections_tallying_educational"
     assert plan.workflow_url.endswith("sync-historical-forms.yml")
 
@@ -190,7 +190,7 @@ def test_historical_archive_rejects_wrong_sized_download_all_bundle_before_archi
 
 def test_sync_plan_includes_banissa_and_ol_kalou() -> None:
     plan = load_sync_plan(REPO_ROOT)
-    assert plan.election_ids == ("banissa-2025", "ol-kalou-2026")
+    assert plan.election_ids == ("banissa-2025", "malava-2025", "ol-kalou-2026")
 
 
 def test_ol_kalou_live_profile_allows_unresolved_atomic_reference() -> None:
@@ -247,3 +247,54 @@ def test_ol_kalou_pre_poll_zero_forms_is_a_valid_sync_state(tmp_path: Path, monk
     manifest = json.loads(bundle.manifest_path.read_text(encoding="utf-8"))
     assert manifest["portal_reported"] == 0
     assert manifest["portal_expected"] == 144
+
+
+def test_unchanged_index_retries_incomplete_manifest_download(tmp_path: Path, monkeypatch) -> None:
+    root = copy_banissa(tmp_path)
+    bundle = load_historical_bundle(root, "banissa-2025")
+    stream = bundle.streams[0]
+    source_url = "https://forms.example/banissa/retry-me.pdf"
+    manifest = {
+        "schema": "kenya.election.forms-manifest.v1",
+        "election_id": "banissa-2025",
+        "index": {"etag": "same-index"},
+        "discovered_count": 1,
+        "matched_count": 1,
+        "downloaded_count": 0,
+        "unmatched": [],
+        "forms": {
+            source_url: {
+                "stream_key": stream["stream_key"],
+                "polling_station_code": stream["polling_station_code"],
+                "source_url": source_url,
+                "source_label": f"BANISSA Form 35A {stream['polling_station_code']}",
+                "form_type": "35A",
+                "download_error": "HTTP 503",
+            }
+        },
+    }
+    bundle.manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    class FakeClient:
+        def __init__(self, *args, **kwargs):
+            self.calls = 0
+
+        def conditional_get(self, url, etag=None, last_modified=None):
+            self.calls += 1
+            if self.calls == 1:
+                return FetchResult(304, None, {}, url)
+            return FetchResult(200, b"%PDF-1.4 recovered", {"content-type": "application/pdf"}, url)
+
+        def close(self):
+            return None
+
+    monkeypatch.setattr("olkalou_engine.archive.PortalClient", FakeClient)
+    result = run_historical_archive(bundle, user_agent="test", download=True)
+    assert result["status"] == "UPDATED"
+    assert result["downloaded"] == 1
+    assert result["failed_downloads"] == 0
+    assert result["new_downloads"] == 1
+    updated = json.loads(bundle.manifest_path.read_text(encoding="utf-8"))
+    entry = updated["forms"][source_url]
+    assert entry["sha256"]
+    assert (root / entry["archive_path"]).exists()

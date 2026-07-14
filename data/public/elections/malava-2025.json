@@ -1,0 +1,181 @@
+{
+  "schema": "kenya.election.archive.v1",
+  "seq": 1784041701124,
+  "generated_at": "2026-07-14T15:08:21.124677Z",
+  "mode": "ARCHIVE",
+  "election_id": "malava-2025",
+  "election": {
+    "title": "Malava By-Election 2025 · OCR Validation",
+    "constituency": "MALAVA",
+    "code": "201",
+    "county": "KAKAMEGA",
+    "county_code": "037",
+    "date": "2025-11-27",
+    "position": "Member of the National Assembly"
+  },
+  "status": "OCR_BENCHMARK",
+  "reference": {
+    "complete": false,
+    "errors": [
+      "The certified 198-row atomic register is not yet loaded; downloaded forms and OCR remain review-only.",
+      "Candidate legal names and Form 35A row order remain subject to final source verification."
+    ],
+    "register_source": "Certified 2025 Malava polling-stream register pending; portal Form 35A assignments are used only to bootstrap OCR validation.",
+    "register_source_url": null,
+    "candidate_source": "Publicly reported leading Malava candidates; the complete legal candidate list and ballot order remain pending source verification.",
+    "candidate_source_url": "https://www.citizen.digital/article/udas-david-ndakwa-edges-out-seth-panyako-of-dap-k-to-win-malava-mp-seat-n373708",
+    "ballot_order_verified": false,
+    "candidate_list_complete": false,
+    "benchmark_only": true,
+    "stream_roster_bootstrapped": false
+  },
+  "pipeline_health": {
+    "watcher": "NEVER_RUN",
+    "extractor": "MANUAL_REVIEW",
+    "last_portal_ok": null,
+    "last_sync_completed": null,
+    "last_sync_changed": null,
+    "worker_id": "github-actions-or-manual"
+  },
+  "coverage": {
+    "streams_total": 198,
+    "stream_rows_loaded": 0,
+    "published": 0,
+    "in_review": 0,
+    "conflicted": 0,
+    "awaiting": 198,
+    "reference_only": 0,
+    "archived_untranscribed": 0,
+    "ocr_review": 0,
+    "registered_total": 0,
+    "registered_reported": 0,
+    "registered_pct": 0.0,
+    "excluded": {
+      "count": 0,
+      "reason": null
+    }
+  },
+  "totals": {
+    "valid_votes": null,
+    "rejected_votes": null,
+    "total_cast": null,
+    "turnout_of_reported": null
+  },
+  "candidates": [
+    {
+      "id": "UDA",
+      "ballot_no": null,
+      "name": "David Athman Ndakwa",
+      "party": "United Democratic Alliance",
+      "abbr": "UDA",
+      "colour": "#F4C542",
+      "bloc": "GOVERNMENT",
+      "votes": null,
+      "share": null,
+      "swing_2022": null
+    },
+    {
+      "id": "DAPK",
+      "ballot_no": null,
+      "name": "Seth Panyako",
+      "party": "Democratic Action Party–Kenya",
+      "abbr": "DAP-K",
+      "colour": "#E85C41",
+      "bloc": "OPPOSITION",
+      "votes": null,
+      "share": null,
+      "swing_2022": null
+    },
+    {
+      "id": "WT",
+      "ballot_no": null,
+      "name": "Wilberforce Tuwei",
+      "party": "Affiliation pending source verification",
+      "abbr": "WT",
+      "colour": "#5C8FC7",
+      "bloc": "OTHER",
+      "votes": null,
+      "share": null,
+      "swing_2022": null
+    }
+  ],
+  "blocs": {
+    "GOVERNMENT": {
+      "votes": null,
+      "share": null
+    },
+    "OPPOSITION": {
+      "votes": null,
+      "share": null
+    },
+    "OTHER": {
+      "votes": null,
+      "share": null
+    },
+    "note": "Historical arithmetic aggregation only. It does not imply transferability between parties."
+  },
+  "projection": null,
+  "official_declaration": {
+    "candidate_totals": {},
+    "valid_votes": null,
+    "winner_id": "UDA",
+    "winner_votes": null,
+    "winner_source": "Public reports identify David Athman Ndakwa as the Malava by-election winner; official Form 35B candidate totals are not loaded in this benchmark profile.",
+    "winner_source_url": "https://www.citizen.digital/article/udas-david-ndakwa-edges-out-seth-panyako-of-dap-k-to-win-malava-mp-seat-n373708",
+    "runner_up_source": "Public reports identify Seth Panyako as the principal challenger.",
+    "runner_up_source_url": "https://www.citizen.digital/article/udas-david-ndakwa-edges-out-seth-panyako-of-dap-k-to-win-malava-mp-seat-n373708",
+    "rejected_votes": null,
+    "total_cast": null,
+    "notes": [
+      "This profile is an OCR validation benchmark, not a publishable constituency tally.",
+      "Only three publicly reported candidate names are configured initially. Candidate totals and V01 remain non-authoritative until the complete legal candidate list and ballot order are source-verified."
+    ]
+  },
+  "archive": {
+    "forms_expected": 198,
+    "forms_archived": 0,
+    "stream_results_transcribed": 0,
+    "stream_results_complete": false,
+    "tally_source": "NO_VERIFIED_TALLY",
+    "replay_available": false,
+    "replay_events": [],
+    "methodology_note": "Malava's 198 published Form 35A assignments are used as a large handwritten-digit OCR benchmark. Portal-bootstrap rows remain review-only until the certified register and complete candidate roster are loaded.",
+    "ocr": {
+      "schema": "kenya.election.ocr-summary.v1",
+      "pipeline_version": "2026.07.14-layout-v2",
+      "election_id": "malava-2025",
+      "generated_at": null,
+      "engine_mode": null,
+      "engines_available": [],
+      "documents_total": 0,
+      "pages_total": 0,
+      "pages_processed": 0,
+      "form35a_detected": 0,
+      "form35b_detected": 0,
+      "streams_matched": 0,
+      "review_rows": 0,
+      "routes": {},
+      "errors": [],
+      "auto_publication": false,
+      "note": "Historical OCR has not been run for this election."
+    },
+    "portal_sync": {
+      "schema": "kenya.election.portal-sync.v1",
+      "election_id": "malava-2025",
+      "state": "NEVER_RUN",
+      "last_completed_at": null,
+      "last_changed_at": null,
+      "message": "The IEBC portal sync has not run for this election."
+    },
+    "portal_discovered": 0,
+    "portal_downloaded": 0,
+    "portal_unique_files": 0,
+    "portal_duplicate_assignments": 0,
+    "portal_failed_downloads": 0,
+    "portal_unmatched": 0
+  },
+  "wards": [],
+  "streams": [],
+  "anomaly_feed": [],
+  "corrections": []
+}

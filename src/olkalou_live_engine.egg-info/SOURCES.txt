@@ -25,6 +25,7 @@ src/olkalou_engine/validation.py
 src/olkalou_engine/worker.py
 src/olkalou_engine/ocr/base.py
 src/olkalou_engine/ocr/cloud.py
+src/olkalou_engine/ocr/handwriting.py
 src/olkalou_engine/ocr/preprocess.py
 src/olkalou_engine/ocr/roi.py
 src/olkalou_engine/ocr/words.py
@@ -37,9 +38,12 @@ src/olkalou_live_engine.egg-info/top_level.txt
 tests/test_archive.py
 tests/test_colours.py
 tests/test_extraction.py
+tests/test_handwriting_ocr.py
+tests/test_historical_accuracy.py
 tests/test_historical_ocr.py
 tests/test_historical_provisional.py
 tests/test_historical_sync.py
+tests/test_malava_bootstrap.py
 tests/test_ocr_merge.py
 tests/test_portal.py
 tests/test_projection.py

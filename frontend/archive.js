@@ -91,9 +91,11 @@
     const ids = (payload.candidates || []).map((c) => c.id);
     const all = loadAllDrafts(payload.election_id);
     const filled = Object.values(all).filter((d) => isDraftFilled(ids, d)).length;
-    $("draftCount").textContent = filled
-      ? `${filled} stream${filled === 1 ? "" : "s"} drafted in this browser · nothing is published until you run archive-import`
-      : `0 streams drafted in this browser · nothing is published until you run archive-import`;
+    const benchmark = Boolean(payload.reference?.benchmark_only);
+    const suffix = benchmark
+      ? "saved locally for OCR accuracy validation · benchmark rows never publish a result"
+      : "drafted in this browser · nothing is published until you run archive-import";
+    $("draftCount").textContent = `${filled} stream${filled === 1 ? "" : "s"} ${suffix}`;
     renderReviewProgress();
   }
 
@@ -109,13 +111,20 @@
     const all = loadAllDrafts(payload.election_id);
     const confirmed = Object.values(all).filter(isConfirmed);
     const total = payload.coverage?.streams_total || 0;
-    if (!confirmed.length) { el.hidden = true; return; }
+    const benchmark = Boolean(payload.reference?.benchmark_only);
     el.hidden = false;
     const totals = {};
     ids.forEach((id) => { totals[id] = 0; });
     confirmed.forEach((d) => ids.forEach((id) => { totals[id] += Number(d.votes?.[id] || 0); }));
+    const configuredSubtotal = ids.reduce((sum, id) => sum + Number(totals[id] || 0), 0);
+    const statedValid = confirmed.reduce((sum, d) => sum + Number(d.po_total_valid || 0), 0);
+    const totalValid = benchmark ? statedValid : configuredSubtotal;
     const breakdown = candidateList.map((c) => `${escapeHtml(c.abbr)} ${number(totals[c.id])}`).join(" · ");
-    el.innerHTML = `<span><strong>${confirmed.length} / ${number(total)}</strong> streams you've confirmed in this browser — ${breakdown}</span><span class="rp-note">Not an official result. Only reflects what you've reviewed and saved here; run archive-import to actually verify and publish.</span>`;
+    if (benchmark) {
+      el.innerHTML = `<span><strong>${confirmed.length} / ${number(total)}</strong> OCR benchmark streams reviewed · <strong>${number(totalValid)} PO-stated valid</strong>${breakdown ? ` — configured-field subtotal: ${breakdown}` : ""}</span><span class="rp-note">Accuracy-validation truth set only. The candidate roster and stream register are not yet certified, so these figures are not a constituency tally and cannot be published.</span>`;
+    } else {
+      el.innerHTML = `<span><strong>${confirmed.length} / ${number(total)}</strong> human-reviewed streams · <strong>${number(totalValid)} valid</strong>${breakdown ? ` — ${breakdown}` : ""}</span><span class="rp-note">Provisional browser tally only. It reflects rows you checked and explicitly saved here; archive-import and independent verification are still required for publication.</span>`;
+    }
   }
 
   async function fetchJson(url) {
@@ -183,7 +192,7 @@
     $("archiveSyncState").textContent = lastSync
       ? `Portal sync ${sync.state || "UNKNOWN"} · ${lastSync}`
       : `Portal sync not yet run · scheduled every ${syncMinutes} min`;
-    $("archiveStreams").textContent = `${coverage.streams_total || 0}/${coverage.streams_total || 0}`;
+    $("archiveStreams").textContent = `${coverage.stream_rows_loaded ?? coverage.streams_total ?? 0}/${coverage.streams_total || 0}`;
     // Honest number, matching what every other stat on this page (and the
     // sidebar readiness list) already shows -- this used to take
     // Math.max(forms_archived, portal_downloaded), which is why the top of
@@ -350,18 +359,23 @@
     const unmatchedPortal = Number(archive.portal_unmatched || 0);
     const ocr = archive.ocr || {};
     const documentsTotal = Number(ocr.documents_total || 0);
+    const uniqueFiles = Number(archive.portal_unique_files ?? documentsTotal);
+    const duplicateAssignments = Number(archive.portal_duplicate_assignments ?? Math.max(0, downloaded - uniqueFiles));
+    const failedDownloads = Number(archive.portal_failed_downloads || 0);
     const streamsMatched = Number(ocr.streams_matched || 0);
     const funnel = [
       ["IEBC portal", expected],
       ["Downloaded", downloaded],
-      ["Recognized as a document", documentsTotal],
+      ["Unique source PDFs", uniqueFiles],
       ["Matched to a stream", Math.max(streamsMatched, archived)],
     ].map(([label, value]) => `${escapeHtml(label)} ${number(value)}`).join(" → ");
 
     note.hidden = false;
     note.innerHTML = `<strong>Why this isn't 100% yet even though IEBC's portal is:</strong> ${funnel} (of ${number(expected)} expected).` +
+      (duplicateAssignments ? ` ${number(duplicateAssignments)} portal assignment${duplicateAssignments === 1 ? "" : "s"} ${duplicateAssignments === 1 ? "points" : "point"} to duplicate PDF content, so assignment count and unique-document count differ.` : "") +
+      (failedDownloads ? ` ${number(failedDownloads)} form download${failedDownloads === 1 ? " is" : "s are"} still missing and will be retried even when the portal index is unchanged.` : "") +
       (unmatchedPortal ? ` ${number(unmatchedPortal)} downloaded file${unmatchedPortal === 1 ? "" : "s"} could not be matched to a specific stream at the portal stage.` : "") +
-      ` Re-running the sync (Update now, above) closes part of this on its own; the rest needs a person to open the unmatched forms directly -- filter the ledger below to ARCHIVED or REFERENCE_ONLY to find them.`;
+      ` Re-running the sync (Update now, above) retries missing files automatically; unmatched or duplicate forms still need human inspection.`;
   }
 
   function renderReadiness() {
@@ -375,9 +389,12 @@
     const checks = [
       ["Scheduled portal sync", sync.state && sync.state !== "NEVER_RUN" ? 1 : 0, 1],
       ["Portal links discovered", archive.portal_discovered || 0, expected],
-      ["Portal files downloaded", archive.portal_downloaded || 0, expected],
+      ["Portal form assignments downloaded", archive.portal_downloaded || 0, expected],
+      ["Unique source PDFs", archive.portal_unique_files ?? documentsTotal, expected],
+      ["Duplicate portal assignments", archive.portal_duplicate_assignments ?? Math.max(0, Number(archive.portal_downloaded || 0) - documentsTotal), 0],
+      ["Failed or missing downloads", archive.portal_failed_downloads || 0, 0],
       ["Portal downloads unmatched to a stream", archive.portal_unmatched || 0, 0],
-      ["Certified stream register", total, total],
+      ["Certified stream register", payload.reference?.complete ? total : 0, total],
       ["Source documents inventoried", documentsTotal, expected],
       ["OCR pages processed", ocr.pages_processed || 0, ocr.pages_total || 0],
       ["Form 35A streams matched", streamsMatched, expected],
@@ -409,10 +426,11 @@
     const state = $("archiveState").value;
     const search = $("archiveSearch").value.trim().toLowerCase();
     const filtered = streams.filter(row => (!ward || row.ward === ward) && (!state || row.state === state) && (!search || `${row.stream_key} ${row.station_name}`.toLowerCase().includes(search)));
+    const drafts = payload ? loadAllDrafts(payload.election_id) : {};
     $("archiveTable").innerHTML = filtered.map(stream => `<tr>
       <td><button type="button" class="text-button archive-table-open" data-stream-key="${escapeHtml(stream.stream_key)}">${escapeHtml(stream.stream_key)}</button><br><span class="muted">${escapeHtml(stream.station_name)}</span></td>
       <td>${escapeHtml(stream.ward)}</td>
-      <td><span class="state-badge state-${escapeHtml(stream.state)}">${escapeHtml(stream.state)}</span>${stream.ocr?.route ? `<br><span class="muted">${escapeHtml(stream.ocr.route)}</span>` : ""}</td>
+      <td><span class="state-badge state-${escapeHtml(stream.state)}">${escapeHtml(stream.state)}</span>${isConfirmed(drafts[stream.stream_key]) && stream.state !== "PUBLISHED" ? `<br><span class="state-badge local-reviewed-badge">HUMAN REVIEWED ✓</span>` : ""}${stream.ocr?.route ? `<br><span class="muted">${escapeHtml(stream.ocr.route)}</span>` : ""}</td>
       <td>${number(stream.registered)}</td><td>${number(stream.valid)}</td>
       <td>${stream.form_url ? `<a href="${escapeHtml(stream.form_url)}" target="_blank" rel="noopener">Form 35A ↗</a>` : "—"}</td>
     </tr>`).join("");
@@ -442,9 +460,10 @@
     const prefill = ocr?.prefill || null;
     const savedDraft = loadAllDrafts(payload.election_id)[streamKey] || null;
     const draft = draftOrPrefill(stream, prefill, savedDraft);
+    const benchmark = Boolean(payload.reference?.benchmark_only);
 
     const checkBadges = ocr?.checks && Object.keys(ocr.checks).length
-      ? `<div class="ocr-checks">${Object.entries(ocr.checks).map(([code, status]) =>
+      ? `<p class="check-label">Raw OCR checks</p><div class="ocr-checks">${Object.entries(ocr.checks).map(([code, status]) =>
           `<span class="${status === "PASS" ? "pass" : status === "FAIL" ? "fail" : "unknown"}">${escapeHtml(code)} ${escapeHtml(status)}</span>`).join("")}</div>`
       : "";
 
@@ -463,6 +482,7 @@
             : `<p class="muted">The form has not yet been archived by this repository.</p>`}
         </div>
         <div>
+          ${benchmark ? `<div class="ocr-prefill-banner"><span><strong>OCR VALIDATION BENCHMARK.</strong> The configured candidate list is provisional. Review the named fields and the PO control totals against the scan; V01 is intentionally not run and nothing here can publish a constituency result.</span></div>` : ""}
           ${ocr ? `<div class="ocr-prefill-banner"><span>OCR prefill: <strong>${escapeHtml(ocr.route || "REVIEW")}</strong> · confidence ${ocr.confidence == null ? "—" : percent(ocr.confidence)}. ${prefill ? "Figures below are the raw OCR reading -- check them against the form on the left before saving." : "No numeric fields were read from this page -- fill in from the form yourself."}</span></div>${checkBadges}`
             : `<p class="muted">No OCR reading exists for this stream yet.</p>`}
           <div class="review-field-row control"><label for="rf-registered">Registered (on form)</label><input id="rf-registered" type="number" min="0" value="${draft.registered_form ?? ""}"></div>
@@ -470,14 +490,18 @@
           <div class="review-field-row control"><label for="rf-rejected">Rejected ballots</label><input id="rf-rejected" type="number" min="0" value="${draft.rejected ?? ""}"></div>
           <div class="review-field-row control"><label for="rf-valid">PO stated total valid</label><input id="rf-valid" type="number" min="0" value="${draft.po_total_valid ?? ""}"></div>
           <div class="review-field-row control"><label for="rf-cast">PO stated total cast</label><input id="rf-cast" type="number" min="0" value="${draft.total_cast_form ?? ""}"></div>
+          <div class="review-arithmetic" id="rfArithmetic"></div>
+          <p class="check-label">Human entry checks</p><div class="ocr-checks human-checks" id="rfHumanChecks"></div>
           <div class="review-field-row"><label for="rf-reviewer">Your name (reviewer_a)</label><input id="rf-reviewer" type="text" value="${escapeHtml(draft.reviewer_a || "")}"></div>
           <div class="review-actions">
-            <button id="rfConfirm" class="primary" type="button">Save &amp; mark reviewed</button>
+            <button id="rfConfirm" class="primary" type="button">${benchmark ? "Save OCR benchmark review" : "Save &amp; mark reviewed"}</button>
             <button id="rfCopyRow" type="button">Copy this row as CSV</button>
             <button id="rfClear" type="button">Clear this draft</button>
           </div>
-          <p class="confirm-status" id="rfConfirmStatus">${draft.confirmed_at ? `Confirmed ✓ at ${escapeHtml(new Date(draft.confirmed_at).toLocaleString("en-KE"))} — editing keeps it confirmed.` : ""}</p>
-          <p class="review-saved-note" id="rfSavedNote">Typing auto-saves a draft as you go. "Save &amp; mark reviewed" additionally marks this stream's grid cell green and adds it to the tally above -- neither ever publishes anything by itself. Use "Download review draft CSV" above, then <code>archive-import</code>, to actually verify and publish.</p>
+          <p class="confirm-status" id="rfConfirmStatus">${draft.confirmed_at ? `Confirmed ✓ at ${escapeHtml(new Date(draft.confirmed_at).toLocaleString("en-KE"))}. Any edit requires confirmation again.` : ""}</p>
+          <p class="review-saved-note" id="rfSavedNote">${benchmark
+            ? `Typing auto-saves a local draft. "Save OCR benchmark review" marks the grid cell green and adds this checked row to the benchmark tally. Download the confirmed truth CSV and run <code>measure_historical_ocr_accuracy.py</code>; this benchmark never publishes an election result.`
+            : `Typing auto-saves a draft as you go. "Save &amp; mark reviewed" additionally marks this stream's grid cell green and adds it to the tally above -- neither ever publishes anything by itself. Use "Download review draft CSV" above, then <code>archive-import</code>, to actually verify and publish.`}</p>
         </div>
       </div>`;
     $("archiveStreamDialog").showModal();
@@ -514,28 +538,101 @@
     };
   }
 
+  function nonNegativeInteger(value) {
+    if (value === "" || value === null || value === undefined) return null;
+    const numeric = Number(value);
+    return Number.isInteger(numeric) && numeric >= 0 ? numeric : null;
+  }
+
+  function humanReviewState(stream, candidateIds, draft) {
+    const candidateListComplete = payload?.reference?.candidate_list_complete !== false;
+    const voteValues = candidateIds.map((id) => nonNegativeInteger(draft.votes?.[id]));
+    const registeredForm = nonNegativeInteger(draft.registered_form);
+    const rejected = nonNegativeInteger(draft.rejected);
+    const statedValid = nonNegativeInteger(draft.po_total_valid);
+    const statedCast = nonNegativeInteger(draft.total_cast_form);
+    const candidateComplete = voteValues.every((value) => value !== null);
+    const candidateSum = candidateComplete ? voteValues.reduce((sum, value) => sum + value, 0) : null;
+    const computedCastBase = candidateListComplete ? candidateSum : statedValid;
+    const computedCast = computedCastBase !== null && rejected !== null ? computedCastBase + rejected : null;
+    const checks = {
+      V01: candidateListComplete && candidateSum !== null && statedValid !== null ? (candidateSum === statedValid ? "PASS" : "FAIL") : "NOT_RUN",
+      V02: statedValid !== null && rejected !== null && statedCast !== null ? (statedValid + rejected === statedCast ? "PASS" : "FAIL") : "NOT_RUN",
+      V03: statedCast !== null && registeredForm !== null ? (statedCast <= registeredForm ? "PASS" : "FAIL") : "NOT_RUN",
+      V07: stream.registered == null || registeredForm === null ? "NOT_RUN" : (registeredForm === Number(stream.registered) ? "PASS" : "FAIL"),
+    };
+    const complete = candidateComplete
+      && [registeredForm, rejected, statedValid, statedCast].every((value) => value !== null)
+      && Boolean(String(draft.reviewer_a || "").trim());
+    const valid = complete
+      && (!candidateListComplete || checks.V01 === "PASS")
+      && checks.V02 === "PASS"
+      && checks.V03 === "PASS"
+      && ["PASS", "NOT_RUN"].includes(checks.V07);
+    return { checks, complete, valid, candidateSum, computedCast };
+  }
+
+  function renderHumanReviewState(stream, candidateIds) {
+    const current = readReviewInputs(stream, candidateIds);
+    const state = humanReviewState(stream, candidateIds, current);
+    const checkBox = $("rfHumanChecks");
+    if (checkBox) {
+      checkBox.innerHTML = Object.entries(state.checks).map(([code, status]) =>
+        `<span class="${status === "PASS" ? "pass" : status === "FAIL" ? "fail" : "unknown"}">${escapeHtml(code)} ${escapeHtml(status)}</span>`
+      ).join("");
+    }
+    const arithmetic = $("rfArithmetic");
+    if (arithmetic) {
+      const subtotalLabel = payload?.reference?.candidate_list_complete === false ? "Configured candidate subtotal" : "Candidate sum";
+      arithmetic.innerHTML = `<span>${subtotalLabel} <strong>${state.candidateSum == null ? "—" : number(state.candidateSum)}</strong></span><span>Computed cast <strong>${state.computedCast == null ? "—" : number(state.computedCast)}</strong></span>`;
+    }
+    const button = $("rfConfirm");
+    if (button) {
+      button.disabled = !state.valid;
+      button.title = state.valid ? "Save this checked row" : "Complete all fields, reviewer name and passing checks before saving";
+    }
+    return state;
+  }
+
   function wireReviewInputs(stream, candidateIds) {
     const persist = () => {
       const current = readReviewInputs(stream, candidateIds);
-      const existing = loadAllDrafts(payload.election_id)[stream.stream_key];
-      if (existing?.confirmed_at) current.confirmed_at = existing.confirmed_at; // editing after confirming doesn't silently un-confirm
+      // Any edit changes the reviewed evidence. Keep the draft, but require an
+      // explicit re-confirmation before the cell is green or enters the tally.
       saveDraft(payload.election_id, stream.stream_key, current);
       updateDraftCount();
+      renderSnapshot();
+      renderHumanReviewState(stream, candidateIds);
+      const status = $("rfConfirmStatus");
+      if (status) status.textContent = payload?.reference?.benchmark_only
+        ? "Changes saved locally — review the scan and click Save OCR benchmark review."
+        : "Changes saved as a draft — review checks and click Save & mark reviewed.";
       const note = $("rfSavedNote");
-      if (note) note.textContent = `Draft saved at ${new Date().toLocaleTimeString("en-KE")}. "Save & mark reviewed" also greens the grid cell and adds this to the tally above.`;
+      if (note) note.textContent = `Draft saved at ${new Date().toLocaleTimeString("en-KE")}. It is not included in the green reviewed tally until you explicitly confirm it.`;
     };
     document.querySelectorAll("#archiveDialogBody input").forEach((el) => {
       el.addEventListener("input", persist);
       el.addEventListener("change", persist);
     });
+    renderHumanReviewState(stream, candidateIds);
     $("rfConfirm")?.addEventListener("click", () => {
       const current = readReviewInputs(stream, candidateIds);
+      const review = humanReviewState(stream, candidateIds, current);
+      if (!review.valid) {
+        const status = $("rfConfirmStatus");
+        if (status) status.textContent = "Cannot mark reviewed: complete every field and resolve all failed arithmetic checks.";
+        renderHumanReviewState(stream, candidateIds);
+        return;
+      }
       current.confirmed_at = new Date().toISOString();
+      current.human_checks = review.checks;
       saveDraft(payload.election_id, stream.stream_key, current);
       updateDraftCount();
-      renderSnapshot(); // refresh grid colouring behind the dialog immediately
+      renderSnapshot();
       const status = $("rfConfirmStatus");
-      if (status) status.textContent = "Confirmed ✓ — cell marked green, added to your tally.";
+      if (status) status.textContent = payload?.reference?.benchmark_only
+        ? "Benchmark confirmed ✓ — cell marked green and checked figures added to the validation tally above."
+        : "Confirmed ✓ — cell marked green and figures added to the provisional tally above.";
       const next = nextUnconfirmedStreamKey(stream.stream_key);
       setTimeout(() => {
         if (next) openStream(next); else $("archiveStreamDialog").close();
@@ -555,7 +652,7 @@
       clearDraft(payload.election_id, stream.stream_key);
       updateDraftCount();
       renderSnapshot();
-      openStream(stream.stream_key); // re-render from OCR prefill, draft gone
+      openStream(stream.stream_key);
     });
   }
 
@@ -575,12 +672,19 @@
   $("draftDownload").addEventListener("click", () => {
     if (!payload) return;
     const ids = (payload.candidates || []).map((c) => c.id);
-    const csv = buildDraftCsv(ids, loadAllDrafts(payload.election_id));
+    const all = loadAllDrafts(payload.election_id);
+    const benchmark = Boolean(payload.reference?.benchmark_only);
+    const exportRows = benchmark
+      ? Object.fromEntries(Object.entries(all).filter(([, draft]) => isConfirmed(draft)))
+      : all;
+    const csv = buildDraftCsv(ids, exportRows);
     const blob = new Blob(["\ufeff" + csv], {type: "text/csv;charset=utf-8"});
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${payload.election_id || "election"}-review-draft.csv`;
+    a.download = benchmark
+      ? `${payload.election_id || "election"}-ocr-benchmark-truth.csv`
+      : `${payload.election_id || "election"}-review-draft.csv`;
     document.body.appendChild(a);
     a.click();
     a.remove();

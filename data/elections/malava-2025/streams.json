@@ -1,0 +1,12 @@
+{
+  "schema": "kenya.election.stream-register.v1",
+  "election_id": "malava-2025",
+  "bootstrap_from_portal": true,
+  "reference_verified": false,
+  "notes": [
+    "The first successful IEBC portal discovery must return all 198 individual Form 35A assignments before this empty roster is hydrated.",
+    "The generated rows are matching identities for OCR validation, not certified polling-station register rows."
+  ],
+  "streams": [],
+  "ward_summary": []
+}

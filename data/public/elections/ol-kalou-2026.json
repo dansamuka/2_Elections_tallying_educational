@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1784018245728,
-  "generated_at": "2026-07-14T08:37:25.728264Z",
+  "seq": 1784041775394,
+  "generated_at": "2026-07-14T15:09:35.394290Z",
   "mode": "LIVE",
   "election_id": "ol-kalou-2026",
   "election": {
@@ -18,24 +18,28 @@
     "complete": false,
     "errors": [
       "The certified 144-row atomic register is not yet loaded; downloaded forms and OCR remain review-only.",
-      "Candidate legal names and Form 35A row order remain subject to final source verification."
+      "Registered-voter reference rows remain subject to final source verification."
     ],
     "register_source": "IEBC certified by-election register / polling-stations Gazette, 5 June 2026",
     "register_source_url": "https://www.iebc.or.ke/uploads/resources/OsfnFvMWui.pdf",
     "candidate_source": "IEBC Gazette Notice, 5 June 2026 — candidate list requires final operator verification of legal names and Form 35A row order",
     "candidate_source_url": "https://www.iebc.or.ke/uploads/resources/OsfnFvMWui.pdf",
-    "ballot_order_verified": false
+    "ballot_order_verified": false,
+    "candidate_list_complete": true,
+    "benchmark_only": false,
+    "stream_roster_bootstrapped": false
   },
   "pipeline_health": {
-    "watcher": "UPDATED",
+    "watcher": "NEVER_RUN",
     "extractor": "MANUAL_REVIEW",
-    "last_portal_ok": "2026-07-14T08:37:25.653873Z",
-    "last_sync_completed": "2026-07-14T08:37:25.727352Z",
-    "last_sync_changed": "2026-07-14T08:37:25.727352Z",
+    "last_portal_ok": null,
+    "last_sync_completed": null,
+    "last_sync_changed": null,
     "worker_id": "github-actions-or-manual"
   },
   "coverage": {
     "streams_total": 144,
+    "stream_rows_loaded": 144,
     "published": 0,
     "in_review": 0,
     "conflicted": 0,
@@ -201,12 +205,11 @@
     "methodology_note": "Live Ol Kalou forms are downloaded and OCR-prefilled through the same county-to-stream hierarchy used for Banissa. OCR remains review-only; unresolved reference rows prevent automatic publication.",
     "ocr": {
       "schema": "kenya.election.ocr-summary.v1",
+      "pipeline_version": "2026.07.14-layout-v2",
       "election_id": "ol-kalou-2026",
-      "generated_at": "2026-07-14T08:37:25.722593Z",
-      "engine_mode": "auto",
-      "engines_available": [
-        "tesseract"
-      ],
+      "generated_at": null,
+      "engine_mode": null,
+      "engines_available": [],
       "documents_total": 0,
       "pages_total": 0,
       "pages_processed": 0,
@@ -216,60 +219,22 @@
       "review_rows": 0,
       "routes": {},
       "errors": [],
-      "review_queue": "data/elections/ol-kalou-2026/ocr/review_queue.csv",
-      "inventory": "data/elections/ol-kalou-2026/ocr/document_inventory.json",
       "auto_publication": false,
-      "note": "OCR output is a pre-fill only. No historical stream is added to the public tally until two-person review and statutory validation are complete."
+      "note": "Historical OCR has not been run for this election."
     },
     "portal_sync": {
       "schema": "kenya.election.portal-sync.v1",
       "election_id": "ol-kalou-2026",
-      "state": "UPDATED",
-      "last_started_at": "2026-07-14T08:36:31.030355Z",
-      "last_completed_at": "2026-07-14T08:37:25.727352Z",
-      "last_changed_at": "2026-07-14T08:37:25.727352Z",
-      "portal_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
-      "engine_mode": "auto",
-      "archive": {
-        "election_id": "ol-kalou-2026",
-        "status": "UPDATED",
-        "changed": true,
-        "discovered": 0,
-        "matched": 0,
-        "downloaded": 0,
-        "new_downloads": 0,
-        "changed_downloads": 0,
-        "unmatched": 0,
-        "portal_reported": 0,
-        "portal_expected": 144
-      },
-      "ocr": {
-        "ran": true,
-        "pages_processed": 0,
-        "review_rows": 0,
-        "errors": 0
-      },
-      "coverage": {
-        "streams_total": 144,
-        "published": 0,
-        "in_review": 0,
-        "conflicted": 0,
-        "awaiting": 144,
-        "reference_only": 144,
-        "archived_untranscribed": 0,
-        "ocr_review": 0,
-        "registered_total": 73480,
-        "registered_reported": 0,
-        "registered_pct": 0.0,
-        "excluded": {
-          "count": 0,
-          "reason": null
-        }
-      },
-      "message": "New or changed IEBC forms were downloaded and the dashboard was rebuilt."
+      "state": "NEVER_RUN",
+      "last_completed_at": null,
+      "last_changed_at": null,
+      "message": "The IEBC portal sync has not run for this election."
     },
     "portal_discovered": 0,
     "portal_downloaded": 0,
+    "portal_unique_files": 0,
+    "portal_duplicate_assignments": 0,
+    "portal_failed_downloads": 0,
     "portal_unmatched": 0
   },
   "wards": [
