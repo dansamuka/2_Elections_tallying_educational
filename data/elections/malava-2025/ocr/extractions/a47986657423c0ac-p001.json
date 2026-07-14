@@ -1,0 +1,127 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "a47986657423c0ac-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201768059746821/v1_a47986657423.pdf",
+  "source_sha256": "a47986657423c0aca346449f5d343a46fb3a61b76a132ef9d3baa85ae10bd822",
+  "source_filename": "v1_a47986657423.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/a47986657423c0ac.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P59746821-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3250285714285714,
+  "text_length": 2850,
+  "text_preview": "OF Be LZ\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station NAMAGARA PRIMARY SCHOOL POLLING STATION1of20 Rode __037201100605801\nWard PENDENT E (06. oC OMANDAGSHIVANGATE) je COMMISSIO™® 0% Ph cpENDENTEL oy MINDEPENDET 9 IL © 6 ate yDEWOUS\nCansttucney SS ui! MALAVAK COMMISSION) DENTE ECTON CAC eR QO OU wT ELECTOR.) SIONINDEPENO AcOKe’, Code, 2010\nCounty KAKAMEGA ; ; , Code __037\nNumber of votes cast in favour of each candidate: Noa\n| Name of Candidate TN. of Valid Votes Obtained\n[1 ANGATIA JAMES SHINACHI 00\n[2 JASON SHIVAKALE BRUCE Sa OOD\n3. MANYASI JOAB BURUDI VNDEPE!\n“UR AWANGREDGARBUSIEGA OS OO\n[3 NALWABENJAMIN\n[6 NDAKWA DAVID ATHMAN SEB\n7 OYUGIGEORGENGAIRA ,\n[8 PANYAKO SETH AMBUSINI FT\ni RUE YOUBERORCE INBAE coer 801 esc ouatse Os Wc peta nner ep ea SRS\n- [Total number of vaidvotescast Dt GaN SRE ECT ORALANDEG| DEPENDEN ttc CON NOD ODNIA IR\n“PollingStationCounts Decisionts) on disputed votesifany\n| 1. [Total Number of Registered Voters in the Polling Station; | Cp [ Seria Number of Baliot Paper 1s) with disputed vote| Name of Candidate assigned the vote\nToalNonberdiRgerediale Pes | ONL\n(8. oe nunbarfReecionOpecedtofaleiPaprs [DO i2z.\n[a [ToolNunberdftepacdiaes; OMI.\n[s[tosthanberweidiorass Ode\n+) $ pra ded) © Ef aN T wee ise nt aN . ; - paar: : : a rae on i\n$e ara than a7 SSioninDEPEN SS CONN. xe 2 a nL ANDOU “ENDENTELEC oO SCION) TAECTORALANOSQOR ON PoCNOE’ oniMfiSSi\n_ We, the undersigned, being present when the results of the count were announced, dorhe reby declare that the results shown above are true\n~ andaccurate count of the ballots in NAMAOADA Ol po ling Seatign AN ACE PV Ay constituency.\nPresiding Officer: < \\ D FLN iyV\\ ee Signatures DERTALAE Date 2.) ~) 1-202,\n~ Deputy Presiding Officer: BREWDAH KiTUf Saws Date 27 = |) “R024\n3 Aone arch gy idee Us preseeytl 2600962 oRALANDBOUng ENDENTELEC ION Oo cl NDARIESCOmal CTORAL ANDE GEN SW NDED ons\n[No] Name ot canddte Agent | 10/Pssport .| PartyNamefndependet Candidate | Tal contact |. Sgnaure | Oate_ |\nLilSorA 6, MSLIY |pe20 21 DARK eiszted Pane prs\n|S CABREL B sitito )220287)) og XA le rotessde pe [27 {n/a\n3 pep ee\n(OE Pe OR WOE p IE SC OMMISS Gy Al att OUNTEs ELLOS Cui SION DEP EA DDARIESCONN Puc cgs dah be ENDER Tad: COMMISSION ONC OSU\nINF REE OLE al S)ONBER CUNDARIESC NLT oe ON GEPENDEN TE: SCOMMISSION NOD, CONDON ELECTORAL 4 ORTNBEPENDT OMT ROD SECOM\nRican S85 Relea 00 ida ba one\" 0% eG 8OR De nTeL Ecos cioNNOETeaee eNO LAE nn AND DMM DEMENpENTE LE ONIN\nRicailing Oincaew Coiiieniee oR SRO BORN TELE oMMssION NON FELECTORA/ 49 ONINDEPENDE CONN Hach\n| eesiat icer’s uineertine OM GPRS ron HOMNDEPENDE CONICS on ANDBOU js ENDENTELECL OO\n34 Al = \\ chk One 7E RY f athe $) iy 83) ip : Oe Ms Heat ps gem | LAND, . % a\nENDEMIC DISA cP RMR SE ASA oo ERG Tac OME NA! sao b BNC A Pods ass ON ND CUNDARIeSeO ?",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 2010,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2010,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERF ORCE INDAL'",
+      "registered": "full-page-text anchored by 'Total Number of Registered Voters in the Paling Stan'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:37:50.595632Z"
+}

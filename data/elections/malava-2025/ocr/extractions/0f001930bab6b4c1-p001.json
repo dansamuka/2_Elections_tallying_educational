@@ -1,0 +1,137 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "0f001930bab6b4c1-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201598306780001/v1_0f001930bab6.pdf",
+  "source_sha256": "0f001930bab6b4c1b14aeb44c9b80b56127b696030031dbea7e9e833fd630f6e",
+  "source_filename": "v1_0f001930bab6.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/0f001930bab6b4c1.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24068571428571428,
+  "text_length": 2281,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station SE EE CRE SOOO ROLE I TATION LOB nud ARIESCOMMMOEPENDENTEL EN CO Code __037201100209801\nWard WEST KABRAS Code __1002\nIMMISSION OWES CU ON Ne SIUNIND RD Se ORAL ANDES toe RE SCs NM DEPENDE OMe os Vee ts ST eee\nConstituency MALAVA Code __ 201\nTT een SG Dea Se WTELECTOR *SIONINDEPENDEL COND ELODIORAL AON INDE PEI\nCounty KAKAMEGA Code __037\nNumber of votes cast in favour of each candidate: ‘ ;\nNo1.of Valid Votes Obtained 8\n1, ANGATIA JAMES SHINACHI 50\n_[_2. JASON SHIVAKALE BRUCE 3 I oR sate Treas ee oe eet\n_3. MANYASI JOAB BURUDI SGM Caitertarcier nace te rE :\n_4. MWANGA EDGAR BUSIEGA OAc\ni ; y ‘ ILOOOD\n5. NALWA BENJAMIN\n6. NDAKWA DAVID ATHMAN RALANDSS LAR NASerrreRNsi.linraarmerrsta es TT wae\n| 7. OYUGI GEORGE NGAIRA — NE POMONA RNN RAT temretme or eT ae\n[8 PANYAKO SETH ANGUS ee Te\n9. TUVEI WILBERFORCE INDAI __ EPENDEN bl\nTod nber of ved wis cat It corcwnacrsoet ee ean Sareea 7\n\\ NTE Sp f ie t / DEprE: } i} ae TEL y oe it\nPolling Station Counts. NS DBOLRS Decision{s} on disputed votes iFanysnoo cee: EC TORS\n[tea Numer of Registered Vers te Paling Satin, [STZ\nSS US i. Renin Sains + | erate | erence\n- |3.| Total Number of Rejection Objected to Ballot Papers; L900 Hectic oi OE Ue Tete Grom ner eNettne Mesconmne\nIE creer SES Sok one CUM Ieee toe cateommnone ee o\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the resy sho mab One ANO\n_ and accurate count of the ballots in N\\VAV KK WO 7OA TIARA Polling Station LAVA. mc £ set ba\nPresiding Officer: Ath IN KK TAT a sea ona me Nia tye BSiNa 20 L\nOke a a ee Ot Yin noe aD ee ew\n_ Deputy Presiding Officer: R Spe EBCOipes ry =e t_ Signature: J Date REP A 262\n~ Agents or Candidates (if present) 2ALANDEOU ENDENTE ¢ é ae\nx Hy ReuFn MAeure | escksmal DA PE loliusetegl Gata\nof, Sore tunenn occa anemone ee\nReasons for Refusal to Sign (if any) ’ TEL La DAE : wok.\nrt : : ad - ° vA eae raomnceie nants arte Se aerate cooa L . ¥ a\nPresiding Officer’sComments:; SDAIES COMI. \"ORAL ANDBOUS EXEL OMMISSION N/a CE OUNDARIES GaPWet aes OF\nCOUNTING ROCESS Pe Son VIO OTH: 9. NOARee ey ae\nBa bee eC — pact MON REO ESE Wi eo We Nee se Dam PENTEL\nOO BATER 2 wal s ON articen Fo i",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 8,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVEI! WILBERFORCE INDAI'",
+      "registered": "anchored-cell-ocr anchored by '[4. | Total Number of Registered Voters in ‘the Palling Sian'",
+      "rejected": "anchored-cell-ocr anchored by 'of Rejected E Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "- |3.| Total Number of Rejection Objected to Ballot Papers; L900 Hectic oi OE Ue Tete Grom ner eNettne Mesconmne",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:25:53.303302Z"
+}

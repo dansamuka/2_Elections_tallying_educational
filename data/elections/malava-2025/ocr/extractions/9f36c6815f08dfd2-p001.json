@@ -1,0 +1,23 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "9f36c6815f08dfd2-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201271903007760/v1_9f36c6815f08.pdf",
+  "source_sha256": "9f36c6815f08dfd234058d74fe04ead7940894c3fbae54ea3326882d014bdb29",
+  "source_filename": "v1_9f36c6815f08.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/9f36c6815f08dfd2.pdf#page=1",
+  "page_no": 1,
+  "form_type": "OTHER",
+  "stream_key": "201-P03007760-01",
+  "match_method": "STATION_NAME",
+  "engine": "tesseract",
+  "confidence": 0.4130281690140845,
+  "text_length": 2107,
+  "text_preview": "oe ee a eg an\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MAKHWABUYE PRIMARY SCHOOL POLLING STATION 1 of Code __037201100711701\n~ fvAtoe\nWard 3 SHIRUGU-MUGAI BOC eS POP ONDE NBL ECTOASSion\nConstituency Sa ua STOR OAELEL orc NRG ar eLEC TOR SSRN ANSE — Code 2\nCounty JOUNDARS Og pO Si sorsae DENTE E Cs NGC ag CrORAL AON ND SONU st vg Sete Meg\nNumber of votes cast in favour of each candidate: ‘missy\nName of Candidate No. of Valid Votes Obtained\n1. ANGATIA JAMES SHINACHI te - SL Sy\n| 2. JASON SHIVAKALE BRUCE Missa oe ANDEOU 7 Oi\n| [a MANVASIJOaB BURUDI Ses eee ree\n| 4. MWANGA EDGAR BUSIEGA | Soe poe ati earl occas ae ONSEN anh\n~— [°6. NALWA BENJAMIN KE : aN ese : Ke\n| 6, NDAKWA DAVID ATHMAN RIESCOWECTO oe) eee TAN ATT SATS EESONINGS ES\n_ [7 OYUGI GEORGE NGAIRA | ON = — wee = 60\nWOT cg PANYAKO SETH AMBUSINI EP CUNDA Ze varias 08 Font\nFt number ohaiavoescast Saar aera aT\npolling Station Counts gi ANDBOUNE ENOL EeTOR Decision{s) on disputed votes if any SOENTELECTORg\n[2 [toate erties Paling ein, F160] | Sethi wanes ‘Hane sisting\nNe creas a eet i Ce earring ee NOR\nBd Kleen so ORR ee yt cts oo ns ionaurubnesco race eae\nWe; the undersigned, | eing present hen the re ithe 4 ie nnounced, do hereby declare th tthe res ults shown above are tru:\nx and accurate count of the ballots in PARA te FERHREEE Polling Station | SAP CAN m + ae Delsanawy’\npresiding Officer: LOREN OF, ATVLEND OGONS — Signature: __ einap ie tale AV lI 202\nDeputy Presiding Officer: VEN (NA K» Musg NGO — Signature: PY OF RAG | Daten of — | 2 pp\n. Agents or Candidates {if present) sary cORALAND BOUND ENDENTELEC GAN Ol § OUNDARIESCOm,ECTORmmasaae RoENTE!\n© CHR ICTINE NOUS WGA RA, BuagOIe | UDA iene ae Se |27-\\1-2h\ntN He MURKEO LD ore | RAE = raped) ag eee\nFa FROOINe We neRKe VL PCTS | DADS KT pieniiegs eli\n| ee ee ele |\nUn eee om oe es ee\n. Se ee ee ences oe ened -\nfe ee\n| a a\n‘Reasons for Refusal to Sign if any) i 2 tat iiss Ri ot | « a : Nip pari Steak\nLe Gana pebeinescowmete POE soarecces ANDBOUN ONS <A BARS ns’ Mocenpe Ne eo\nSoBe RAD a en a og aN MAES cA ORR see",
+  "parsed": {},
+  "checks": {},
+  "route": "UNCLASSIFIED",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:05:33.926842Z"
+}

@@ -1,0 +1,134 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "b819904a70a38e07-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201747344786224/v1_b819904a70a3.pdf",
+  "source_sha256": "b819904a70a38e07e9eecfdadee42bfd88b9b33017e1c610ffa32512d860e3fe",
+  "source_filename": "v1_b819904a70a3.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/b819904a70a38e07.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P44786224-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3250285714285714,
+  "text_length": 2819,
+  "text_preview": "ee Op\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MALICHI PRIMARY SCHOOL POLLING STATION 2 of 2 Code __937201100301902\nDAWIARAPENDENTE. (06° Coc NEREIRURMENDENTE 2 COMMISSICL, O10\" JS ut cpENOENTELE CT INDEPEN. iO Tae eB @NDE ae 10g, S'ONINDE\nConstinmanay’sS? S.C CPR ANR COMMISS On, PENTELEC TONE CAG pC oO Cen TELECTORa VONINDEPET CoC ot Nie cl MORAL Aye ONDEPENI\nCodhitpianmne Pe. COWS KARAMEGA ECTORA)(ENDENTELECT COW Vig ohT 7 E CTORAL AWD NOEPENDEN TE gill Onde -< OLAND By | ENDENT!\nNumber of votes cast in favour of each candidate: ;\nName of Candidate No. of Valid Votes Obtained\n4. ANGATIA JAMES SHINACHI_ Roe O PA DENTECEC SPPOSTONINUET Ger CaO O SNC RTECEC TON ON AN\n| 2. JASON SHIVAKALE BRUCE | Pea ELECT OTA ap NDEPERO™S COSC crTOMASTO EA\n3. MANYASI JOAB BURUDI : Rercares orcaron gineenmen ete cet nen meee SUNO MEAD\n4. MWANGA EDGAR BUSIEGA peacoat TET EC TOMASI ETS DUNO MSU ACY ep\n[5 NALWA BENJAMIN, NDA ATES arceonerramaeeenrsnni Mapenaanermotorramocracsereryen [oD\n~ [6 NDAKWA DAVID ATHMAN eeepc ramen nvameerorserrumeerrnn / te\n_T. OYUG! GEORGE NGAIRA , Sosexe ans LuaeteeenraaTTineremere tana ariecuaeerer ©, A\n8. PANYAKO SETH AMBUSINI BS Sssesoauemecr rouse samerrmrurms arsnwors anaes Ya\n_ | 9. TUVEI WILBERFORCE INDAI Ra Saceariaus seer reese ievmevermmaetarcasaccucorenn 904° 48\nTotal number of valid votes cast a feccre pee ree ORAL Mer pI ERENBED OTE SSO RRC a aa\nPolling Station Counts —__ es — se Decision{s} on disputed votes if any Be OnA\n[i [Tt Number of egjsteredVresin the Paling Stary T-—————\"391Q] | Senter tat Pager wih dep te] Rated ie]\n2. | Totat Number of Rejected Ballot Papers; 8 OO) |e\n“Fc a aba olen Od Ea Papise Ieee OT fan noe fos ee eo msc\n5 [Teel amieroehdVastass\n‘We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shoyerabove-age true\n- and accurate count of the ballots inWVALIG ZAM SOE Le Polling Station Ae PX\\- {VN A j ea icy.\n‘Presiding Officer, PAD Ae MEYD ODNYD Signature: BAQYAID Date (Rk d 626\nDeputy Presiding Officer: AERYBA BELA. KIG Ett Signature: _ pay : ! - Date heen dg25\nAgents or Candidates {if present) 3OUNy; NTELE OF UNDARIESCOm EC) o\n1 PRORERE ACT WTA ETOH | OOA eau Se3| MC oe Ra\n- [2)ACOR ULUNGO wisetye7 | DCP ereigese | eee tine\n[Saban Muasoe |a9zzeeu7] we — kK lepasezsa| dob r-teaas\nso Seer es Manet ete in oon Me Me Pe ears a\n_ Reasons for RefusaltoSign{ifany) = : Der SRE aie RA AND MOP PENDENTEL %\nPresiding Officer's Comments: NTELES toni? . ! - é DE PENDEL Ase co TT OE EN y\nCOUNTING AND NOTIN & PROCESS WAKE SM OUT lige ene 3\nHEPES re TET \"= l<y ELA ¢ ‘ Nhe lid r i E a ae ae oe A 7 i i .\namet ete WO * A aa v ODDKGO PRES I Eee SIONIND SOUND ARIESCOM aD\nrecioumnarey Mac AN RR atte omer hoe SR Me Canter cece Coun ea",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 5,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 48,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 48,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 8,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by '9. TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": "full-page-text anchored by 'Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:37:06.822532Z"
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "07e8daab7d9d4889-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201284836638854/v1_07e8daab7d9d.pdf",
+  "source_sha256": "07e8daab7d9d4889f560adc95a25f03136a3a3d799677721fea0653e97adfde6",
+  "source_filename": "v1_07e8daab7d9d.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/07e8daab7d9d4889.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2189,
+  "text_preview": "ge es Oe\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station KAKOY! PRIMARY SCHOOL POLLING STATION 1 of 1 Code __ 037201100403301\nESCO TN ee FADE WDARIESC Onn WOEPENDENTED emer Tc __-037201100403301\nWard EAST KABRAS Code 1004\n- A NERC OMMS Ss, Sao\nConstituency MALAVA Code __ 201\nFS OR EERE ELEC TE oct CoO en TELECTORg S S/OnINDEPENDSSCONar ELEMMORALADOVINDE PED\nCounty KAKAMEGA Code _ 037\nOUND AR BIO Bk On OMISSION ROBO iwi BEE Oe eM 2 DEPENDENT ght DENT\nNumber of votes cast in favour of each candidate:\nNo. of Valid Votes Obtained\n|. 1. ANGATIA JAMES SHINACHI — OoOn\n| 2. JASON SHIVAKALE BRUCE r 003\n3. MANYASI JOAB BURUDI SRS a Maye\n| 4 MWANGA EDGAR BUSIEGA BC ab nD En Relea CNN Orel AC URC MEST EPS)\n[5 NALWA BENUAMIN | a\n[6 NDAKWA DAVID ATHMAN : eerie\nRec teas ert ne\nSPURS Sr AM TD anon eee a ere\n8. TUVEI WILBERFORCE INDAL ———————— eS\nTell uber of vad wes cat : |\nPolling Station Counts Seo OMMSSIO Von Decision(s} on disputed votes if any ON eRe ROMADENTEL\n[1 [Toatnine Rested Png Sain, | — oy]\nSR se Ree Sy ERR, eee aaa\nTotal Number of Rejection Objected to Ballot Papers; +9977, Heater NOUN VIEL EGrORA here NeRRROE ye SCONDICG\nOa ROA GRP ba ae meg memento\nDeclaration eS BLANDEOUN PEND ES ELEC TON eras ne IESCaLEC ORAL ANOS Soaierice\nWe, the undersigned, being present when the results of the count were announced fdo hereby délare that the results shown above are true\nand accurate count of the ballots inkskey) PRIMARY Stuer. Polling Stafion B .. MALAYA eo Constituency.\nPresiding Officer: Dug Bepem7a Ongwo Sig FESO NPE? Date TY ( Doe\n__ Deputy Presiding Office: DANCON M4 Akuto Signage: _, tee _. Date WI-( | ~2ea¢\nAgents or Candidates (if present) Pea ALANDBOUEF i El SOP ee ont : Se UA BOO nt\n[ne] _ inert [ne | Ryn [Ta GSB\nHELP MO TS Mulch kal SSO DAK pasa) tea bt\nBe a esa WRT Sines eee RMT eatery ee\nea aa ASSES We eo aS a UN EN oeteet\ni ee a er an\ncee ES G2 eae Res ec eeetTT ine Sears\nReasons for Refusal to Sign (if any) o . z ; MIS SIONIRDE? EU IK ag hae\nESAS Tengen SAMUI uss Se dh SIDING x eee : Recor\nWie Yorke AND ON TiNG Peace Ny Gd pea cera\nFO TWLY REET! OT EMe —— PeeiSon Mauro,\n| et DI zesty Bars ly Ah NN",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 9977,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "Total Number of Rejection Objected to Ballot Papers; +9977, Heater NOUN VIEL EGrORA here NeRRROE ye SCONDICG",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:06:04.472442Z"
+}

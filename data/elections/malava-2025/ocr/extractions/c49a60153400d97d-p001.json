@@ -1,0 +1,127 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "c49a60153400d97d-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201477227536371/v1_c49a60153400.pdf",
+  "source_sha256": "c49a60153400d97d9b0de46293095c404fd74bb859d5cb0f1c48099fdae69a68",
+  "source_filename": "v1_c49a60153400.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/c49a60153400d97d.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P27536371-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3156857142857143,
+  "text_length": 2817,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS ~\nAT THE POLLING STATION\nName of Polling Station BISUNU PRIMARY SCHOOL POLLING STATION 2 of 2 Code __ 037201100606102\nWard MANDA-SHIVANGA Code 1006\nConssnsenays? S.C MALANR. cOMMISSIon NDENTEL EC TON. CIO BE BO COU CNTELECTOR 4) SIONINDEPEN. fe CO ne NE cL EANORAL 447 INDEPEN!\nOoitiepronwoeP es. COWS KARAMEGA: ECTORA) 7 ENDENTELECT OM pV oe gE ECTORALANn /DEPENDENT Eye SY Come (1 O8SR_ ANDRAS) ENDENTE\nNumber of votes cast in favour of each candidate:\n|_ 1. ANGATIA JAMES SHINACHI\n|_2. JASON SHIVAKALE BRUCE REA TET EC TOR SOMME PERU OCR NT CLOT Mp LOY Cai\n| 3. MANYASI JOAB BURUDI |\n4. MWANGA EDGAR BUSIEGA Stains SPOR Tia\n|_5. NALWA BENJAMIN , pt) 2)\n6. NDAKWA DAVID ATHMAN : au aeerrea memento SH et\n|_7. OYUG! GEORGE NGAIRA __ KANDE [OOO]\n8. PANYAKO SETH AMBUSINI OUNDARIES\n~ [9 TUVE! WILBERFORCE INDAI .\n- | Total number of valid votes cast. Fo aOR EC TORAL AND NDE PENDENT Salt. ONS BNO BDU NAAR A\n- Polling Station Counts _ Oe UNDE py AND! : Decision{s) on disputed votes if any\n~ [i [Total Number of RegsteredorecintiePotngSuiow [TS\nTTS oo SERIES GMAT oT yo 5 KOU Arc an SRT\n[i [Tot nonteraftjcion Obaced Eales | OO [2\nfi oat Nonieiftoptabaegs oe OOO eee con poe on\n[S[aathinberdfvddiasta yl eee\nDeclaration NDE S Ces ON ANDBOUK , OR ic DARIES: ye AOE OMMIS\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown abs e,true\n_ and accurate count of the ballots in Bi SUN VA = O07 Polling Station AL A (A gos opstinene :\nPresiding Officer: LLY KURANYA SSMS Loan Date 2. j=A 3.€\n| : Rostyile AKYONYR — Sonture , 27 isd\n~ Deputy Presiding Officer: OSES =a La __ Signature: _. Date _2eter bE AS\nAgents or Candidates {if present) * pl Bi ; Mig CT ORA ' SS\nfe] inetemarrwrioe [Rama Ayame | cman | Some [oo]\n~ [AIEIZGNGo JAMES (263eh0Ki| PCP tossyeis| fg b-1-204.5\n\" 7 p \\ Gi 5 5 a\n3. SILAS Wl WAN YA | a 20/GYDD | DAT IO TGS Mpagpesten, PE\n| EERENTE CUSABE BozeteH St Pt ___P72ou 2a up Pes do! 2 7- e\nSoe Ea air ARIES at pc ON penne OAM PEN ns CONAN] DOO UN TEL ECT ECM Sr MNIDEPENECOMNGE. ES\nSoe ee ee eee\nFede oye Gan SONNE CUND ARIESSA URI ONC KOR gE PENDEN Ter « SCOMMISSIO SRO Sah OU WTELECT ORAL ay neMAMDEPEN DC ONG SUC SCO\nPURE GS OS oePENDEN TS ESCOMMISSIG NOUNS OnereON IT ELECTORA/ a SIONINDEPENDS CON py Ege cs Onnl ANDSO NG 4 NDENTEL ESSA BOR Sas\nSSS e Orel Ec Ton SSIONINDEPE SCOR ee ANE SP AL ANDEO LW EPENDENTELEC ONO COO UNDARIESC ML ECTORALANQ OE IN Spec\nReasons for Refusal to Sign {if any) | e ! NOE PEN DE Gin\nPresiding Officer'sComments:; =, Niss RALANOE SOW TTip eS OUND:\nIfe ISPUTE LB WOO EK ESS we Yaa,\noo fR ROME. WYE ey FA RAS AOE BSED TTY oe\nENDENTEL ECON pepe Tn Eo rORAL A cera hnere Wiig ORAL ANDIRC SOP PRESIBRVG gh icscl!\nBes to) sect CAC D1 Wee BSwS Noreen J",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 3,
+        "confidence": 0.525,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.525,
+            "score": 0.525,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'Te,'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'nie number, of valid Res cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:17:27.998686Z"
+}

@@ -1,0 +1,114 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "0bff81fca4549201-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201130804015401/v1_0bff81fca454.pdf",
+  "source_sha256": "0bff81fca45492010f4ed7a2f0c9c435d7b07a7b669e6accd56b67b2c141c124",
+  "source_filename": "v1_0bff81fca454.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/0bff81fca4549201.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2679,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MUKAVAKAVA PRIMARY SCHOOL POLLING STATIONTof200 Code __087201100504201\nWard PENDENTES of € ct SRUTADICHEGUEOTE: «-SCOMMISSIO™ 00% Mal cpENDENTEL En NINDEPENDE oh So 7 Bad ennet008-6C Tan © SIONINDE\nConstituency'>> suo: cMALAVAL COMMISSION: APENTELECTON CONS pa OU CN TELECTOR a; S/ONINDEPEN! <a COnt poe ¢ | E2OIORAL ay VINOEPENT\nCouhty oumper eh. cO nS RARAMEGA: ECTOR A) 7 ENDENTELECT OW into h, ECTORALA In NOEPENDENTES i WC pgs oc OWL ANDRE HPENDENTE\nNumber of votes cast in favour of each candidate:\n1. ANGATIA JAMES SHINACHI 3 [$$$ 0\n_ [2 JASON SHIVAKALE BRUCE\n3. MANYASI JOAB BURUDI RALANIN 00\n| 4. MWANGA EDGAR BUSIEGA\n5. NALWA BENJAMIN ORFS, CoO UND UESC Dyno OR RENE S SEC enero se OMe g AM\n[6 NDAKWADAVIDATHWAN _ 069\n_T. OYUGI GEORGE NGAIRA _ 003]\na PANYAKO SETH AMBUSIN| 07\n- [' TUVEIWILBERFORCEINDA,\nTotal number of valid votes cast LLNS\nPolling Station Counts SEDER __. Decisionts} on disputed votes if any eon N\ntl Number fegitered Valente Ping Satan. | 9G)\nToalNimbertRejeaedBalat Pes | OY\n- [a [Tet mberof Recon Oecedtobelomes; | OOO 2.\nS [Toalhanberatvidvaestest YB I\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results showmabove are true\n» and accurate count of the ballots inKAUKAVA KAVA PRIMARY ScHooL-Polling Station —_/¥\\, LAVAS £. Constituency.\n‘Presiding Officer: ALIA KAGAL GETRUME signature: Gia Le ate DIL 1-202!\nNOE NDARDAGS ‘ eo MTA eS mcluhen : : atk Oe RB SOFO ma\nDeputy Presiding Officer: 1 H\\ L iS) KUSREN) _ Signature: BE ate J=\\\\-292\n‘Agents or Candidates {if present) ELECT ONION HEC TORN. AND?\nia] _tnntCwaanrom [BP] Povioneinaseicine | WGmne [some | Ow\nTAA Men KeyA [1123404] pce jollequszs aKRYa |27/n]2¢\n-2/ZIPORAH KB OMGuT DINIIUS bf KP VY lepemees acu pylbord\n(SIBEMEDICT AWS 1973/24) SONA log guess) fee? bas) ox\nLS ISATAW SAMBULA | 24877330 UDA — lomis\\44q7p “es— [27 Jni)as\na ee ee eee eee 3\nOU ee ex lS SHONIAE pe OUND ARIES pee OF ge PENDENTE SC OMMISSION NOT Scop BO A TELECT OID ONINDEPEND COMINGS\nJE SCRIBE 8 GSS OSeABEPENDEN re) SCOMMISSIGNQUNAOROD GON BTELEC ORAL aS ONINDEPENCS COND V4 Ges san ANDBOUN 4 NDENTET ECL OI SON\nPSY ete o8 0 NTELEC Tonal SSIONINDEY EN SCOT eh eS mal ANDSO UWE PENDENTELEG ON Of ESO NDARIESCOmt <CTORALANOM OP aa aE\nReasons for Refusal to Sign {if any) NDBG NOE:\n\"> Presiding Officer's Comments: $COMiig ORALANDE Np EOU!\nPOLLING WENT ON SMOOTHLY Arena |\n. PS GA LR wORGrk ts GE Tia Maes a tncnisc conan sues\nNDE SA Rien ty as Ee ea | iN preg\nSIGMATURE * Gk =. OTE ee AND NDEPEN CEA ALANDECL\nBSR om Phi TIS NE AOBH un Reb E IDARIESCAnG",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 27,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 27,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 7,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 85,
+            "confidence": 0.355,
+            "score": 0.355,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:54:06.119667Z"
+}

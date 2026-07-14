@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.ocr-inventory.v1",
   "election_id": "ol-kalou-2026",
-  "generated_at": "2026-07-14T17:15:21.424127Z",
+  "generated_at": "2026-07-14T17:16:46.170096Z",
   "roots": [
     "data/elections/ol-kalou-2026/documents",
     "data/elections/ol-kalou-2026/forms",

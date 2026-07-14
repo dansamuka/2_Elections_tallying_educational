@@ -1,0 +1,97 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "930ca40f9a448440-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201571332770218/v1_930ca40f9a44.pdf",
+  "source_sha256": "930ca40f9a448440aaf77784484c417868448f1501de61d245357db4aaeeada8",
+  "source_filename": "v1_930ca40f9a44.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/930ca40f9a448440.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2881,
+  "text_preview": "rc Oe ee\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station SHIRUGU PRIMARY SCHOOL POLLING STATION 4 of 2 Code __ 037201100707201\nes Ce. BND MLigg. “OND ARIE So aS ae re CO GY ee AS eA te halle\nWard SHIRUGU-MUGAI Code __1007\nMISSI nee Cu aN SSIONINDER ORAL ANDO ToS Oe TES COMET ORE eae pot ee CECE NT ea ONINDE\nConstituency MALAVA Code 201\nSee Seer tee NTELEC TON AC EEC OOU NTELECTORA» SIONINDEPENDEACONeh =LSMNORAL A OVINDE PEN\nCounty KAKAMEGA Soa. ear\nDLR ESC Seem erp C1 ORAL 4 ENDENTELECT 7 WoC GPRI ECTORAL AWN NOE DE NDENTE Sno TORR ANDB OEP ENN EAT\nNumber of votes cast in favour of each candidate: —\n‘Name of Candidate No. of Valid Votes Obtained\n_ 1. ANGATIA JAMES SHINACHI 3\n\"2. JASON SHIVAKALE BRUCE | 7,7\ngC MANYASTIOAB BURUD 000\nARIS RED SSP BU RIES ocr 8 iy eset ca neanen aera\n“5 NALWA BENJAMIN SSS 0\nOp) NIEEORDANTECA AMMAN SS RDARIESCOnAcT On FO}\n| 7 OYUGIGEORGENGAIRA\nRec d 1 ee NUE soxcroaseecirsciageeee ea,\n_- [8 TUVEL WILBERFORCE INDAI Dee eee ell\n‘Toate hawt 0 ee\n‘ STi Ssic y ae x : F , . 2 a a Bt ‘ ; ‘ rae ee ‘DAF daa\nPolling Station Counts ROR ne _Decision{s) on disputed votes if any RA slosh\nTt Number of Registered otesin he PlingSalon, | B BR]\n[2:LToaneniectnapeet tale Poee OO | ee\nTotal Number of Rejection Objected to Ballot Papers; | \"9 OO | RSet nD OUND ies M7 EL Cf ORNL Cr ep Cot yesCOMMRg\nal AL RON See LB Wee ccna ee epee er\nWe, the undersigned, being present whe the results of t e count Mors ‘announced, do hereby declare hat the results shown above are true\nand accurate count of the ballots in &t PT. u Aah RIMA “Z_ Polling Station Vv LALA V A 2 Cohistituency,\neae Ef} Ming sD} « > ff. fy Dep a: < * Dea el ne - ‘ Or! ,- “\n- Presiding Officer: £DGAR Kes LINDA NC \"Signature: te Couns ONE BEN l gO\nDeputy Presiding Officer: LSITAWA MIRIAM signature: ad Se ES re A\nAgents or Candidates (ifpresenth = Soleo antes aL ecSCOMM Sia — \\ ore\n[ne] nivel rs] time [Toca | aguas” le}\n{1| ALEX MuUCHUMA [27262410 OA deez iy Se Pe\n[2] PHILLIP. CHIKGKG a je4ossT| BAP totigz ecg) foo se teas\nGORGE “BARASA |as37sesy BCP ojasrsteq quis area\n: pocae nis toa anante faethe cabaret areata ON Se sONDE TE SCOf ge ORAL ATOENOE SR eed\nEa Set a SA Seog TTR :\n10 Slog ANDBOUL GEA Ce SaOUN Cif SONNDE De LN aRiesCOMN moe at NU SecNDRATY\nA cea Se ASRS Sse tre es oeentann Mastet aaa eat eae\nBOTs Senne Lear ouat oviounoe eee one ef nA ANaBOL LE eNBENTEA ECON SOR SGOM nae {eral ee ete EY :\nReasons for Refusal to Sign {if any) enn SS ROBO ENTEL CICCUMISSrONINDE’ oes Oe ie ALAND MOREE TELECON SIO\naf\nPresiding Officer's Comments: on \\ ae SSionne ee * OUMUANDB ON CEPERS ' :\nae PO AT pep E.- ae, Wy ! Dae aN OR) EDN :\nJUTE BEER VIOUY BRIERE SIMooth ANE PEACE FU\nNI : ae ese c 2 a pe ser ox = re a 5 Si eA ; aa. = — — S ‘i 0% sR MMIS ON ~A BC 7 e\nacae a Gates ck oalt Saran ots ean ss cee hee reat a eee gine Rr one",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 9,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "Total Number of Rejection Objected to Ballot Papers; | \"9 OO | RSet nD OUND ies M7 EL Cf ORNL Cr ep Cot yesCOMMRg",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:24:08.210545Z"
+}

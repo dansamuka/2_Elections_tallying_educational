@@ -1,0 +1,117 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "20457ab3944acb8a-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201201593715232/v1_20457ab3944a.pdf",
+  "source_sha256": "20457ab3944acb8ae1dc5017b0e174afa9eb5575bff87bfb995a0c26dddb3e5e",
+  "source_filename": "v1_20457ab3944a.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/20457ab3944acb8a.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P93715232-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.17902857142857143,
+  "text_length": 2422,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BUKHAKUNGA PRIMARY SCHOOL POLLING STATION 2 of 3 Code __037201100200202\nWard WEST KABRAS Code 1002\nCakebstowey Ss? opt MAL AR c OMMISS On VOENTELECTONC CAC pe ACO ei TELECTORG/ ONINDEPEN ECU 1a ch IOP ALAN OEPENC\nCalifia nine? eS CON ARAM Re, ECTORA, 1 ENDENTELECT COW WC oR Ee CTORAL ANS VOEPENDENTS saul SCE -<ORBEL ANDRO, ENDENTE\nNumber of votes cast in favour of each candidate:\nName of Candidate _- No. of Valid Votes Obtained\n1 ANGATIA JAMES SHINAGH Serer sarees oNoeNSET 15)\n_2. JASON SHIVAKALE BRUCE PSS uO FGI nas OhinngoeDE cw, ES eee. oRal ang Oh EEN\n_3. MANYASI JOAB BURUDI! hye ne onal Anna SPeunenr ELEC pole One cat uOROUN CERI\n{CMWWANGA EDGAR BUSIEGA See tine niin CR\n6. NALWA BENJAMIN fe ON RIDARIES Cage CTO RAL ANDERE Ma Cac COMMS ENED\n6. NDAKWA DAVID ATHMAN pas Oye COMMIS LAND RQUNDEE, $C OL CENT ssl ONNDE BgEUN\n7 OYUG! GEORGE NGAIRA Sees Gul sSIONINDE OUND ARIESCOR BGC cu NDE? EOS ES\na PANYAKO SETH AMBUSIN ?\n| 9. TUVE! WILBERFORCE INDAI ASPs Gah OC NDENTELEC TRAM SSIONINDET jase OU ON ECTON EARS\n~ [Total number of valid votes cast . g\nPolling Station Counts ) Decision{s) on disputed votes if any\n[Tol Narr of Reged Ven ie Pliny Son [6 Gb] [Soutien iil wh dae] Tore de ete |\n(Nun of eet Blt Paes GRRL a7) Nee aeRO\n(eihabea econ iomiaaas [pg g| le a\n[ifort ne arn eee 44 1 a Bae\nFB [Tt fai et EE ESSE Onan Meee\nDeclaration — re OuN ; i crc J. i\nWe, the undersigned, being present when the results of the count were announced, do herebyleclarésthai.thé results shown above are true\n~ and accurate count of the ballots in BukHAKUNGA PRImMsn+ _. Polling Station’ SEH MALAYA _ Constituency.\nPresiding Officer: SHEILA PAMAR NAHELO atatunel cubase ScoMinss Date ZI7--2OLS\nDeputy Presiding Officer: - THOMAS MuULUND SO airs coin Date _2 =—|\\7 2025\nAgents or Candidates (if present) i ‘ F .\n[ep netemreine [nisin [rece [ae [|\nCE\nBe ere SCOMMSST on ALANDBOUNEer en CQOuN if SONMDERE ADARIESC Om Pee delsget ENDL 6 rage MlseIOs NOt ce aod\nNF eb oOLeN eniSSIONINOEaBOUNTTATIE SCP RN ne Ge OCA gerENDEN TR] g SCOMMISSIONNINOD SAE GON NrELEGT ORAL Ayo Pane CON Nang\nele\nReasons for Refusal to Sign (if any) ; Onin ‘DEPENDE\nPresiding Officer's Comments: wine Ae fie gOS PEN\nnet OM, i “wd Say Pp aatog. this\nares HBE WAS ND -KiISPOTEK NOTES EF bprorien )\nMAME: SHEILA MAHELO ; Piet one 1\n\\ae ‘LIAN -2O2US ! Ske :",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 25,
+        "confidence": 0.13,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 25,
+            "confidence": 0.13,
+            "score": 0.13,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid votes cast.'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:01:48.635931Z"
+}

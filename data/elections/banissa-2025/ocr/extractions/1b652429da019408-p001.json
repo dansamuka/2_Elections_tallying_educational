@@ -1,0 +1,126 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "1b652429da019408-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019600401/v1_1b652429da01.pdf",
+  "source_sha256": "1b652429da0194084ad1f5e0f2a4eed88cf1f3525a0fa66dc37d94f1cdd2c40b",
+  "source_filename": "v1_1b652429da01.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/1b652429da019408.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-004-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.23386666666666667,
+  "text_length": 2536,
+  "text_preview": "5.485 ft a ———\nSS = == - == 5 = = = : = = ai — =z =i 3 === = === i iS i ? = = AS J — a SS SS\n= ~NAQ71125- = 100 é | = 0 Fie Ze = - Papal Se Z\n_ MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station CHIRACHA PRIMARY SCHOOL POLLING STATION 1 of 2 Code __009040019600404\nWAAPRPENDENTEL. oe? °C NEAINESA PENDEN TE) ¢ SCOMMISSION \\nOlO% Boule PENDENTELEC > TINDEPENT noh 8.2 Sape E8195 ECTon SSIONINDE\nConstituency BANISSA Ce cL ERBORA Ly UNOEPENT\nCounty MANDERA Code << 08 ANDAG,.. ENDENTE\nNumber of votes cast in favour of each candidate: yoni\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM Seer Oy cam aes eaprreceeren Sata\n2. MOHAMED NURDIN MAALIM ONG\nTotal number of valid votes cast ee IE\nPolling Station Counts Decision{s} on disputed votes if any\nTotal Number of Registered Voters inthe Paling Staion; | E79\n2 | TlaNumbe feted Balak Papers Mescocremoey NHL HS con eon Aner toe wears Om MNDECUNG OE\nToslNunberofRejecion Obed tobalotPpers, | ———Qgg lz I NO\nToa Number of ip Vole Pea Ryest da oso no rniat ecronn peso oescomsso\nToa Number fa oes ast Fe OE EAP EES pete Rang ata enna gONT EC ONTO FeNONNOE EM\nDeclaration rR\nWe, the undersigned, being present when the results of the count were announced, do hereb dec! Ra oe shown above are true\nand accurate count of the ballots in LNNEALNO VP Ese rpotting Station = av SOE Constituency.\nPresiding Officer: BAYRWARA \\GO'B-AC WASCAA Signature: _ QEM vou Se ORE SOS\nDeputy Presiding Officer: Vio & (IB2avun SHEMKY — signature: ere 2 J date _ RE-\\\\ ~ROZ*S™\nAgents or Candidates (if present)\n[Tivstamen SWE [asstitss| ORK [orelobb2e3 7gec)o |a4-traws\nZT ARS AKSANOK, |20SbicS UDA (opayigstiel —RUOEY 7-7) /4Zoy\nEGE nie SCOMMISs RAL ANDEOUNG cer COE ONL gis SONNE NDANESC ant uel aOR OEP MNO ELEC Sal SenauNor Se ae EEL\nBigs gis IONNDEPEOUNDARIESC RNAS CRI oe PENDEY Te PAC ONMISSMRS NOLC CoD Te, Gna Anu MDEP ENP gCON Mesa ni oad\ngues rntANOoeAOE PEN DENTEL= GON SN eM ONDMRIESC GELECTORALANS NOT NN bac OMMISSIONWANOBOUNDAS CKRSGOE SS ONY\npi fssacunoane elec tonn. hc ge ret consti ANDRGUNOAS Cana ee ef EEC OME SRC aoe\na, ee ee Se See\nBES crs ANSON ARI CEN TELE Nn RON EMSS opt AN ONDE WON LOW SDB CUMRE Nop uteL EC ONRORN OG\nReasons for Refusal to Sign [if any)\nPresiding Officer's Comments:\nW020 Ont TR OUINnS ENDew ees ECTOR OC PCT MINOT, ie SC rinse £ CTO pas aNNBOW AC OOT DEN i SSIONINN RB OU wn § BET\n: Wie 2 Yor Ne DAL PUINeEB Noes:\nBoewAR \\ssace \\prs AN\n(ay a\n\\ PAVE? © a -\nPre’. \\\n‘Hee. END ‘W a oe ay\nNC Fir ep",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 29,
+            "confidence": 0.37,
+            "score": 0.37,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 16,
+            "confidence": 0.07,
+            "score": 0.07,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 578,
+        "confidence": 0.28,
+        "source": "certified-register-hint",
+        "alternatives": [
+          {
+            "value": 578,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "certified-register-hint",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by '2. MOHAMED NURDIN MAALIM'",
+      "registered": "certified-register-hint anchored by '1. | Total Number of Registered Voters in the Polling Station;'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2448,
+        3168
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "PASS"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:21:35.788637Z"
+}

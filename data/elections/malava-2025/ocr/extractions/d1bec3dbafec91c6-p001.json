@@ -1,0 +1,107 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "d1bec3dbafec91c6-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201142273549665/v1_d1bec3dbafec.pdf",
+  "source_sha256": "d1bec3dbafec91c62e53c4a5e273cfeae68c2dfadef5f7c1f49232324019f568",
+  "source_filename": "v1_d1bec3dbafec.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/d1bec3dbafec91c6.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P73549665-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16457142857142856,
+  "text_length": 3052,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station FUVUYE PRIMARY SCHOOL POLLING STATION 1 of 2 Code __037201100605901\nWard MANDA-SHIVANGA Code _ 1006\nCanstituancy!S> uw <c<MALAVA.COMMISSIOn PENTEL ECTON cx RAO Oe TELECTOR 4) SIONINDEPENS Te CU Rpg et ci 20t\nDaiity oun DEP ET CO —ARAME GA ECTORA/ENDENTELECT ON phe ope CTORALAWn NOEPENDENTE. pa) SC ade WOR ANDRO PENDENTE\nNumber of votes cast in favour of each candidate: : END.\nNo. of Valid Votes Obtained wa\n1. ANGATIA JAMES SHINACHI\n_ |°2. JASON SHIVAKALE BRUCE : SHS NO NTELEGTORA/YONINDEPENDENS OWS JOC nc TORALANC AYES\nEET ee ear yee ere NERS arp es\nic MWANGA EDGAR BUSIEGA os sensu etoegrtrectomncoetees Comers\nPS NALWABENJAMIN\n5. NDAKWA DAVID ATHMAN saute\nfig AIH REDE MEATS Somes Scena cf oS Semcon tee oN ORO eS\nREE SIMBAD ARG SETH AMIS SIN nis ONNOE POUNDARIESCO ARE Ce ac OnNDEPENDEN ey « SCOMMISS SD OUUR Gat poe ENTELE DAS\n[a TUVEIWILBERFORCE INDAT Re oe RI eR NET\nTRF Hakibek A CRO VOIR eR 8p WOENTELECTORY SSIONINDE ik cx ney ECT OM AND cn DEPENDEN DOC ANDERS AMG\n- PollingStationCounts Decision{s} on disputed votes if any wea EMT ELECTORAL 4\n[fot Number of RestretVoersin th Paling Sen, | _@3,g)] [Sami olGt Pie wh netoe| ancl ie awe]\nAb aataiiara tenet tale Peis gag fe]\n[3 [Toot nanir Rosson Opeced weatetPaers | Pop} iz\n~ [5.| Total Number of Valid Votes Cast; NAD ARIS C Odi «| ORADANOP PB WeRaeO eS AMI SSIONINDEne UN ARIE SS SR NEC es XO NDEPENDEN\nWe, the undersigned, being present when the results of the count were announced, do hereby declare tf egesults shown above are true\nand accurate count of the ballots in PUVu ee Pinned Sohpnl Polling Station __ ot Constituency.\n- Presiding Officer: MAIANA LALA WA MAUEARANE Signature: Keke” 5 ia ite QDI) R DoW\nDeputy Presiding Officer: {4 OLS ; WEELE S HEM Signature: OFFICER Pate ANA2025\n\"Agents or Candidates {if present) LANDBOUNSPENDENTELEC con OWRD ARIESCOmmm DOS ETN OK\n» PRTISSAGCSHRTOM Re (deg a DGD eran | <a\nRAE GND Rte CON ee 7Otat ANDB OAR ORS OEN at 59 Qae OB Out Cae NN Op DE PENDEN AI Scouse ONC uenCe Ord\nSAE Ce oe isso MeN Dn ai ARIES TANCE Rc ORB aE PENTA OA RIES ais RIN ONO FOE OO TEL EC cof Misc caoEPEN RCO NES IES\netn beens A Uae scam eee OPN tel FeO cc ouune Nc ae EAN cn AL Ang MOnae rte cso Cao\nDef Beh nO IESCOMMISS on 5 LANCE OU SC 3CCOIN aids ONDER Ey NDARIESC OR ps Rect cages oc PENDE NTeMec OMISSION WOR ISaOn Ned\nOWN Be 09 egg SSIONM Dee UNDARIESC YR BL OAC Nua eP ENDENTE/ SCOMMISSIONS WOT. CoP eOUNTELECT ORAL Ay ONTMREPEND COMI GOO\nSIDE oS OCDE ENDEN Te eSCOMMISSIGR ANAC GON ETELEC TONAL A SONINDEPENDS CON Aco cpa ANOBOU Na 4 NDENTELEC EMO! 2,0}\nSPINY aero Ce NTELECTORg/SSIONINDET Se sCan TF eS RAL ANDBOUYSPENDENTELES ON WOE. SO UNDARIEFCOMLECTORALANO NOE aN PREY\nReasons for Refusal to Sign (if any) WEE NORMAN DN NDE E OlMissic XR HE RALANDEGMOEPENDE? a\n. \"Presiding Officer's Cornments: LECTS a Say 30 Sosewg com None INO RS\nNNO PARC TATA EAU IAI ae ON OB ers 1 Otins cc omnden wae Og O",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 5,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": "full-page-text anchored by 'Total Number of Valid Votes Cast;'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:55:33.722045Z"
+}

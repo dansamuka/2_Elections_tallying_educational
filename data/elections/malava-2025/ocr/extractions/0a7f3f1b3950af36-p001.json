@@ -1,0 +1,117 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "0a7f3f1b3950af36-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201556391215708/v1_0a7f3f1b3950.pdf",
+  "source_sha256": "0a7f3f1b3950af364900cd6a9cfdc30ad88a349293874d6bdfd836429c1dca37",
+  "source_filename": "v1_0a7f3f1b3950.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/0a7f3f1b3950af36.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24479999999999996,
+  "text_length": 2615,
+  "text_preview": "51.97%\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station ST-JOSEPHLUNYUKPRIMARY SCHOOL POLLING STATION4of2 de 087201100606401.\nWard ENDEN TE 106 0 CORMAN Er SC OnmMISSION. OR O® ph NO pENDENTEL cr OVINDEPENDEN Re Cs Code 1006\nSons titisentiy SK auc. PUAN. COMMISSIOw YOENTEL ECTON CAO SE 20 OUT TELECTORg *SIONINDEPEND TA CON an ang SLEMMORALAONINDE PENT\nCouiiep qwin DEPT oC PAY ECTORa) END EN TELECT HOW poe ool ECTORAL AWN NDEPENDENTE CSN WO giamaCO gan\nNumber of votes cast in favour of each candidate:\nNo. of Valid Votes Obtained\n{ ANGATIA JAMES SHINACH eee er erneTSY\n{2 JASON SINARALE BRIE gnrn, fee OE\nETc AANA Gee MOAR BRUINS | 0 50\n4 MWANGAEDGARBUSIEGA ———— 807\n“6. NALWA BENJAMIN eee TOD\n[6 NDAKWADAWIO ATHIAN ——\n7. OYUG! GEORGE NGAIRA ) OF\n_8_ PANYAKO SETH AMBUSINI NESS vexraaccarnsuneecesrsosaemsssepeurtsecacareseramenend 0 A.)\n|| 9 TUVE] WILBERFORCE INDAI 0 000\n| Fea number fv viescast Ie Sear eeeaaeee\nPolit g Station Counts Roe a UND NDE TEL EGTO® Decision{s} on disputed votes if any WD Se eNTELE Ona\n__[1, | Total Number of Registered Voters in the Polling Station; Serial Number of Ballot Paper [s) with disputed vote [ Name of Candidate assigned hevote |\nHee Neale Rete Faia ene ee ec Cae OED CBR RP oh pc ORALANDE OL Par Ta eSl ON GAN DROUNDARIEGL\n~. [3.| Total Number of Rejection Objected to Ballot Papers; = -——-——-O OQ) NBC eo eS w NDBOUNDAR IES NTELEC} Bee oe uescOMMISg\n5: Tot Namber fiasco\n~ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown abo FBC.\n- and accurate count of the ballots in pay aa&t i Bit LIAS us Polling Station __ IMMA LAVA condiiessiBINC\n- Presiding Officer: Sohn Lum ws Signature: pile 7+. (QERIGER\nDeputy Presiding Officer:. EY RDAIHB HH NACA SHWOAM nature: Fre E PEPE LHe 2\nAgents or Candidates (ifpresent) = LANDBOIREPENDE| ECT ONNON. B at ELE\nel sinerenaaseson | map| Rohe ae | Tan apg |\n(AT ZEREDE Muligs] (Beate OCP Oar FRU eS\n[2INGGDEN Tomy | 28@u2) Opn lepenceay Boe hyena\nB75 Sse Cea eG Nee Et epee ce en, deuce rest\n: in Emenee ne ee eee\nRUE SCO QEEOMDEN Te /ESCOMMMISSIILO SS Re BONE ELECTONALGSIONINDEPENDE CONN ge eacOnnr ANDBOM nc ENDeNT ELEC TOMBE ST Cont\n_ Reasons for Refusal to Sign {if any) ; Ong eTORA RCO : ALAN of Soe\n_ Presiding Officer’sComments; es A oe MIMISSION IN LOBOUNDARIES CANE\nGC Bae Tp Bes Soak horas INDCOU A Sag eer eating S10 ata) ent as EMP or koa OEN TELE ox\nSie ouM ese ae pene ce aerate ob OREN G Offs oa angoun Stance Son Census Ota arersc oN Ns\nELEC NN Ley VR wikia \\ OFFICER SEP EOUNTARIESCOS RIES S",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by '“9. JUVE! WILBERFORCE INDAI'",
+      "registered": "full-page-text anchored by 'otal Number fewertien Voters in the Polling Station;'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "~. [3.| Total Number of Rejection Objected to Ballot Papers; = -——-——-O OQ) NBC eo eS w NDBOUNDAR IES NTELEC} Bee oe uescOMMISg",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:23:01.547827Z"
+}

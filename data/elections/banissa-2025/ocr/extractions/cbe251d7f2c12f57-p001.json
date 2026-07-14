@@ -1,0 +1,136 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "cbe251d7f2c12f57-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019802101/v1_cbe251d7f2c1.pdf",
+  "source_sha256": "cbe251d7f2c12f572f702f8401d490ad5d718386419d5536d96da8db0b6d6003",
+  "source_filename": "v1_cbe251d7f2c1.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/cbe251d7f2c12f57.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0198-021-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.38399999999999995,
+  "text_length": 2697,
+  "text_preview": "5. WF > mca. ke oe owen tx\nBe ee Bee = EBC. io oO ee\nZ 9714198 ” 12405 : = Zs - Z Gig S : ae” [a] J = S\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station JIBAL PRIMARY SCHOOL POLLING STATION 4 of 4 Code __ 009040019802101\nHERE ASIMART SGHORE POLUNG STAHON Tad’ ON inDARIESCOMs, LOEPENDENTE SEW? NO __009040019802101\nWard GUBA Code __0198\nOO RE PEN EL ERC OMMISSIO ™ WOO% Past oENDENTEL ES NINDEPENDEN. yh Coes DEG I3e-ECT On » SIONINDE\nConstituency BANISSA Code __ 040\nCounty MANDERA Code __ 009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM SOE DEM ELEC ASS oMNDETS EPO SOTTO ep\n2. MOHAMED NURDIN MAALIM Eo bi\nTotal number of valid votes cast eee we—139)\nPolling Station Counts ~ Decision{s} on disputed votes if any\nTtal Number of Registered Voters inthe Paling Slaton; |———. 2\nTt Number f Rejected Balt Papers SOON ec Tonanar st sonteN taeae SOM TNOBOUTS Noe\nTotal Number of Rejection Objected to Ballot Papers; momar? IOs CONN ANDEOLMTSENOENTELEC PS ANOS PON HOARIES ELE\nTotal Nur of spied oes asaaaraes 6S Ce BROS yet RRR SETS\n5 | Teta Nuner oad Ves Cast Se ane OS 1p ee a eH SRS CRN oh\nYINDET c PRRAR\nDeclaration aa > AARP ee OR pu. B.C.\nWe, the undersigned, being present when the | ALS ofthe count were announced, do hereby declare that the results shown ab cE RESIRING\nand accurate count of the ballots in Polling Station wBANISSA Con iQEFACER\nPresiding Officer: (RRA Hyp] fi. WN DeAdvi JD 2S signature: i Cig Seopa QD Za ad. Tee\nDeputy Presiding Officer: HASAN: PARA Signature: Kee Date RT ~((- 2025\nAgents or Candidates (if present)\n: .Name of Candidate or Agent | 1D/Passport No. | Party Name/Independent Candidate\nf.%\n; ; V RS\nIAB BIRAHIMAN © 2uI2207 “ODA Aion Nis late\nEd sare £2 Oma uae? ee. CORRES Cee gs NOBOON recs oA Cues NDE PENG COARIESCOMN pNUCN Op IE PENDENT\nHE eS On AN Oe OUNCES pee ONINGE PE UNDRNIES Cr RU pC ee cee SON TELE CC OMPISSIONT ONGC ON OE ECTORA\na aS UNDE ae UNDARIESC Gan Be OnE PENDERTEL «COMMISSION NOI ZO NU el ECTORAL ay ONNDEPENOET GWT SS SDEpN WOE\nJQENTELECTORtay $SIONINDCEr CORP ec gh ANDBOUne ENDENTELEC NON Worse OTR AIESCOnAEC ORAL ANOS SNS\nESE LORALANOBOL EP ENTE SGC CoC OUNDARIESC ELECT ORALANG WOTON) pe fe ona Sora 4 ASBOUNOARITS OCGA Cc onig\nFe ee ee\n10. [7 On IN DENDENTE/ £SC Ou scIONNOR ELC CN UHOAT Ec TORT SSI NINN ENDEN aaNReSbce oud\na ORC ONUNOAT E Crone SSIOMISaN SE NOES Ga eNO OM MS OB ON OEPE UNDARTE LOR NGC ESC RDG\nReasons for Refusal to Sign [if any) : =\nPresiding Officer’s Comments: .\nRE et RES tes ON OIE AGT A aN OV eine VARipn 2 ene SlO Sev OS ah\n(BAAtioM ~ Mold S. 27-20%\nI.E. B.C.\nPRESIDING\nOFFICER",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 62,
+            "confidence": 0.15,
+            "score": 0.15,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 221,
+            "confidence": 0.58,
+            "score": 0.58,
+            "source": "certified-register-hint",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 139,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 139,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by '2. MOHAMED NURDIN MAALIM'",
+      "registered": "full-page-text anchored by '1. | Total Number of Registered Voters in the Polling Station'",
+      "rejected": null,
+      "total_valid": "full-page-text anchored by 'Total number of valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2458,
+        3364
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "FAIL",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "FAIL"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:30:44.496167Z"
+}

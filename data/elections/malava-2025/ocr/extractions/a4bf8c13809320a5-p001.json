@@ -1,0 +1,127 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "a4bf8c13809320a5-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201559090256912/v1_a4bf8c138093.pdf",
+  "source_sha256": "a4bf8c13809320a54f6bae69695fca951b7299fc43126adb38d9e99fa6e76d2d",
+  "source_filename": "v1_a4bf8c138093.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/a4bf8c13809320a5.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P90256912-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3291428571428571,
+  "text_length": 2711,
+  "text_preview": "See eS ee ae\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION |\nName of Polling Station TANDE PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100504002\nWard BUTALICHEGULO Code __ 1005\nConstituency MECANE. Code __ 201\nPou ipionmdEPET 60 Pp RARAMEGAL ECTORA) 7 ENDENTELEST CON sot nhT ECTORAL Ain VUEPENDENT Sai” SS QS <1 ORLANOBG, PENDENT!\nNumber of votes cast in favour of each candidate:\nF Name of Candidate 8S Oo ns 1s DN of Valid Votes Obtained, <5) 2 en caf\n1. ANGATIA JAMES SHINACHI\n[2 JASON SHIVAKALE BRUCE NINDEPEND CSCO at ND TELE TORa, fOMNDEPERDES CONSE net TORADORA\n3. MANYAS! JOAB BURUD! ? Boats cron nAtong) ERDEN Ten roe ota a BES UNE\n|4. MWANGA EDGAR BUSIEGA _ ENE Poe Of ANDBOUNT ENT ELECTUN ANU cata SURO ATES GT Oh\n5. NALWA BENJAMIN weNIEL Foca ONG URORIES ony URATANES IE oer too M MGT GYAN\n| 6 NDAKWA DAVID ATHMAN ORAL ANE Oe princi prec Msis Sy ANDDOUNORT cee Caet nS nmestounae CEIMINE\n_|_7. OYUGI GEORGE NGAIRA _ | SENS Seon mineecemrant meee etna ee mies\nHE yp ANY ARD Slr BABIN ssc oases on ree aereccneunere coca oan no Oy\n- | 9. TUVEI WILBERFORCE INDAL SS Se Sonate rea eerste camencaern tne\nTotal number of valid votes cast Eee EO Moan cPENDET Quit NOON IDET a\nPolling Station Counts _ SoS BOUNCENDE, Decision{s} ondisputed votesifany =\n[1] Tota Numbeot Registered Voters inte Pling Staion, Jr el]\nSRE Io ee Semen) | ee a RC\n[| Number Rejection Od tobe Popers QI Py) [2\nfe [Toatnunbsrstepaeies, B.C 00d [a\n~ °[B, | Total Number of Valid Votes Cast; 2 siping ee eS\nWe, the undersigned, being present wi pene T esults of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in Polling Station ONAL AVA Constituency.\nPresiding Officer: Signature: Subl gene v Date Qt =20 kq\nDeputy Presiding Officer: ElLiyD Os Hie ANGA | Signature: ME AN pate 27 = 1) ~ 2025\nAgents or Candidates {if present} ANDBOU, Ee\" SNOARE BEB.C a0E CoM\nIGOR uma Tae] DAC Keto ies feat]\n2 PAUL NT ROU OTS 2951389 | DCR ze rtol) ee tg\npupMioNn, Nenu |; 296 Glol| “pA 112923907] ee ed -ii-2¢)\n[a lotee Reet laueSBeol| NOPey otigittygal Ase btcn-2)\nBOLI ooo ni ss ion Won nARlE Sse haepPEC On DEPENDALCARIES aati SONG Can $Oe CNT ELECT oat Sgic DEP ee COPNSC GIES\nHe SAS ears Et CRY hae aston” EAS UR SS\nBee OR WS ee aT eS ee Sean ;\nRIS ese 9 eC EN TELEC Oma SSIONINDERE AE SCON ZS ase RAL ANDBOL 76 PENDENTELEO Op G3 UNDARIEGCOMLECTORAL AND NOE NY Nae\nstdacnd fol Relisal te Sige fitanwh: ovi\"'Ss0% ew\" pwOSOcwretecy-OMiMiseioninOer ne GeO pale gRALAND BU OF Pen DENTELES QOS\nEF ‘Presiding Officer's Comments: ri INOS RCC CON SCON OR wen ~E.B.C. Ou D. FORO\nSUN PEO ARG RENT RAPTORS ss ocnoeNTELay scour asco A Ona oc DENS” al",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by '9. TUVEI WILBERF ORCE INDAI .'",
+      "registered": "full-page-text anchored by 'Total Number.of Registered Voters in the Polling Son'",
+      "rejected": null,
+      "total_valid": "full-page-text anchored by 'Total number of valid votes cast —'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:23:24.105617Z"
+}

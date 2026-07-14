@@ -1,0 +1,78 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "a8ce38373fb6c3e7-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201130640867089/v1_a8ce38373fb6.pdf",
+  "source_sha256": "a8ce38373fb6c3e79e980b54d77e1c13af83c93049e744c26dca7bb4943546b6",
+  "source_filename": "v1_a8ce38373fb6.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/a8ce38373fb6c3e7.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P40867089-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.3342857142857143,
+  "text_length": 2480,
+  "text_preview": "32.006 _\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MUSUNGU PRIMARY SCHOOL POLLING STATION 1 of 4 Code __037201100711301\nWard SHIRUGU-MUGAI : Bedence (ORF CTo2 2SIONINDE\nConstituency MALAVA Code __ 201\nCounty KAKAMEGA Code __037\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1, ANGATIA JAMES SHINACHI ; ee merce itrerenenemen erases trememnond) 1 Oh\n2. JASON SHIVAKALE BRUCE\n3, MANYASI JOAB BURUDI DEPEND Sate aserinna tinauaaaerr emotes OF OF os.\n4. MWANGA EDGAR BUSIEGA\n[5 NALWA BENJAMIN BS eS UND RSet ORAL ANSE NOEL OE aT CRESCOM MS LOD\n6. NDAKWA DAVID ATHMAN\n7. OYUGI GEORGE NGAIRA vie\n8. PANYAKO SETH AMBUSINI Ee\n9. TUVE] WILBERFORCE INDAI SARUM Taz Peet arRceKareom © oS I\nTotal number of valid votes cast Sopnensonviameesta ae osmereaae a saeTERe AP NN NS\nPolling Station Counts ; \\ ; ; Decision{s} on disputed votes if any Oana:\n[| Total Number a egistered Voters the Poing Staton, F-———\". VE |\nTotal Number of Rete Balt Papers, ae ech ORAL ANDROL pene TUN Gh GOUNOANE\n| 3. | Total Number of Rejection Objected to Ballot Papers; | mom} (2. ee\nToll Nome of ispued Votes poate PN eae eer scOtma ota aoe ALS PCN\n{5 [ota Number aid Votes Cast cay Mp SE eee is ONIN POU famiescoeN Se ON ner\nDeclaration SPENDS COM Ta: ;\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in MOSUNEY PRA mpoiting Station VV Lev i Constituency.\nPresiding Office MMWWHD-OSS Mom) ASUZA- signature: =H Rea l— -202S\nDeputy Presiding Offices J OSEPION GE As Nr WAMALWA Signature: 7yBor ys sate I—)\\~202$\nAgents or Candidates {if present) LOFFICER\nie] renttnaai rium [Poser | Piet Cie | Tecan | Bae [oe |\n‘[RISAMWE RaPmREC — |saByesee| DOP oreteisea| Re [ary aks\nZiEVERGIN MURWA 7S 9eK UR AR laqeebide Aes fannie!\n—[SISARAH MWANGALE [Ssex@276 bAP-K O73 byw\nIENMANS FUmMA ICT7UIBEKNIM UCL BAL ipa lon R\nSe eee oe ee ee eee eae em eee ee\nBOI aoe ERIE SC ORL ECT ORBIT gE Coe ato RIED Cora aS/On pa DDBOUN TEU E GaN ek AULA ARIES Cea Oe cto ert\nSTIS re PC ENTELEC TOR! SSIONINDEY Ete 5Co pe CAC eb RAL ANDBOUYS PENDENTELEC ON WO. 5 1 UNDARIES Cog CTORALANONOE NRG\nReasons for Refusal to Sign (if any) ; A\n_ Presiding Officer's Comments: _ aeons ton tissin tt Oe\nMO GOD HO (2 Ans LSS) a= waatll res =the DV2.S\nPO Fewrs Rese MOL RSU7ZR bens oy\nDRT. ASL UAE VAD ea SR. \\QOPFICER J.",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.78
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.78
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "6. NDAKWA DAVID ATHMAN",
+      "candidate_DAPK": "8. PANYAKO SETH AMBUSINI Ee",
+      "candidate_WT": "9. TUVE] WILBERFORCE INDAI SARUM Taz Peet arRceKareom © oS I",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "| 3. | Total Number of Rejection Objected to Ballot Papers; | mom} (2. ee",
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:53:45.019636Z"
+}

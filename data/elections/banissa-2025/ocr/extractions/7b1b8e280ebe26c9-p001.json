@@ -1,0 +1,73 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "7b1b8e280ebe26c9-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019701201/v1_7b1b8e280ebe.pdf",
+  "source_sha256": "7b1b8e280ebe26c9349f64ae1cb225de51315bcdf9817c645bfe11e4193e2fa7",
+  "source_filename": "v1_7b1b8e280ebe.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/7b1b8e280ebe26c9.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0197-012-01",
+  "match_method": "POLLING_CODE_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.26,
+  "text_length": 2603,
+  "text_preview": "== = INDEPENDI N ELEC PARA AND BOUNDA: HES COMMISSION =. = a i ==S =\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station KUKUB PRIMARY SCHOOL POLLING STATION 1 of 1 Code __009040019701201\nWEE APENDENT™ 08 oC” Mea grAee NDENTE) 2 SCOMMISSION Ole POINT c PENDENTEL EC OMINDEPENDES oho Cc OR Aen DEO TSF ECT” SSIONINDE\nUeno atwancyS> —u< c BBNISSS cOMMISSIOw, CENTELECTOR. CxO SRO OUL WTELECTORa; SIONINDEPEND-cOneh gah EL ERMIORAL Aw, INOEPENE\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM Se Seu TL\n2. MOHAMED NUROIN MAALIM\nTotal number of valid votes cast\nPolling Station Counts Decision{s} on disputed votes if any\nTotal Nuber f Registered Vales the Peling Staton; [5S\nToll Nmbeof Rete Ballot Papers Cntnnet 7.\" RRC ae NO 3 RO TOO\nTotal Number of Rejection Objected to Ballot Papers; pu so CENT IES CONN A NOBOU Me PADENT ELEC POR ROGIS Caw ON INDARIES CELE\nlal Nn of ised Votes SALLI 7 PS EP CRN SL AMET\nTl Numero Vad Ves at ESS cc YN SRR Cea\nDeclaration :\nWe, the undersigned, being present when the results of the count were announced, dg Ereby dBdlare that the results shown above are true\nand accurate count of the ballots in KUAV. Zim L Pollin tian a [A AWN SSA Constituency.\nPresiding Officer: BZA¢inz LL HAbe Sign’ Aen au (e Date Z2-N-2O2S\n: | @ Pe Ere At 0 f\nDeputy Presiding Officer: DikAtAN HASSAN MAb ita igngiikeok © * ger Date 272 ~li-202S\n. Ee ae\nAgents or Candidates [if present) Se.\nSs: row\nALI UssAce ABH) [Zogsgosz| UDA 7 lopazaiet (iy |n1- -aoas\nHUSSGn ISSAC RoRebbo2| = (JPA orn eszcag APP [0 -dey\nRE ee Oho e CUE TE Soe MSSM EME Ng NDARIES RACER ot oePt NOE ELEC OMMISSTOI NON CoO ELEC TON\nfoe aang OAR eR RET EO ROEP Nag cece SS ONCE coral ANG AM DEPENDS CONS CEP ALNOECN\npo Same er ee ee\nLOPE ORAL ANOS, PEPENDENTELC SSOBN Ons” COUNDARIESCUELECTORALAN NOL GNS Spe Gc OMISSION EARER OUNDARC KONG COMIN\nPES Ines SGOUNDARIEG MTEL Ec LomeBCA pec ane ac OMS SIS ACANDBOUNOAS CORON Ed CONINDE PENS OR RI SBuMM SnOeae fy NOENDE\nSAE arte COUN AeIESCON HNC On AN DE NBENTEL <SCOnnu CIONNOG ROLE AOS ONE CTORAL SS DNinnE BENDES GORE\nee or DENT eS ea CSI ONN oc ON NONT Fc rat SSO AN ENON RSS ONS NCE AEN AOA ecTORROE GEC ONY\nReasons for Refusal te Sign {if any) ;\nPresiding Officer's Comments:\nWHS (LESVLTS Wate Aninouncioo AT\n[YOLli WG tT LO LA (+ALL? _ An Nei TEs\nPERESIMAG OFG Cen: |BRAtIo ABLULLA\nSiaw » AW} Deputy pRéibing + AB ZAMAN\nDATE . 4 Up SPENDER HASSAY)\nStomp, 1 (-5B.c\\ an’ ~Sbee\n- je | PRereinis:~ PN care ec ey ee Ed CD PY DiC",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM Se Seu TL",
+      "candidate_UPA": "2. MOHAMED NUROIN MAALIM",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:27:13.740081Z"
+}

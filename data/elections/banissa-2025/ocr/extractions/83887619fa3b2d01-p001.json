@@ -1,0 +1,126 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "83887619fa3b2d01-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019801701/v1_83887619fa3b.pdf",
+  "source_sha256": "83887619fa3b2d010e1aab40270ca71f96fbd2150651850d3733b0d785e36bea",
+  "source_filename": "v1_83887619fa3b.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/83887619fa3b2d01.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0198-017-01",
+  "match_method": "POLLING_CODE_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.23386666666666667,
+  "text_length": 2469,
+  "text_preview": "_ _ 4\n$ —_\nSe -s e | 8 anal | See\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station QOTQOT DAM PRIMARY SCHOOL POLLING STATION 1 of 1 Code __009040019801701\nWar PENDENT 00 0 NOUBA ne PENDENTE) & SCOMMISSION wOF 0% UNE pENDENTELE -ONINDEPENDE' oh? © 29 Rata nee ECTOd/SSioninDEPE\nCalptnanty SS culo. BANOS OMMISSIOn,, DENTELECTOR AC CO wie et TORas SONINDEPENS -cOLeh tiga c OMDORALA NO VINOEPENI\nRae OWiNDEP ET < COLDS MANBERA c\\ ECTORA, PENDENTELECT COM eth ECTORALAMA NDE DENDENTES sai SO (SRS HBBL ANOS SPENDENTS\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM\n2. MOHAMED NURDIN MALIN\nTotal number of valid votes cast\nPolling Station Counts - Decision{s} on disputed votes if any\nToa Number ofRegsteredVoarsinthe Paling Satins | «OTA\nTt Nurer Rejected Balt Panes Ec sronne RABE Ta Ocot Ec Ona Lance WoEsenBeN| oie «ON ANOBCUNE OF\nTotal Number of Rejection Objected to Ballot Papers; =| pe 2 t—“—s«~Ssi‘“S Cd\nTt Numero spied Ves; FORINT Ce SRSONSS ert CaES UR ERS ioe,\n5. [Tt Number Valdes Cast SUIS § Fe SHUR GL OPP SSRI aa\nDeclaration ve As\nWe, the undersigned, being present when the results of the count were saieehceh do hggeisymbaciare that the results shown above are true\nand accurate count of the ballots in 2 oT! Rinne Polling St ve ‘A oun SCA Constituency.\nft ¢ , =I Ss h, )\nPresiding Officer: @>\\S\\ ABpvlLLAth MUME/A Signollity <a 4 Ve—Pate 27J—li— 20206\n| ay ARIAL cor orn fue F ZD7-\\\\- 2074\nDeputy Presiding Officer: zat \\M\\ 2 5 SignafOFFid pgs Bate Se ee\nAgents or Candidates {if present) noe y\n1 JABPIRACD AGB iLLE [ROSL0O7E BALTES Pas QOEXU VE sme 72) A Ra\n| 2.| Mstianub divas Auer D264 Sy] UNITES Devncen NESS Z I A [eee\nRE GianOe PENDENT, SCOMMISSN ON pets ceo EL ECIDRAL aS /ONINDEPE SCOT a En fOSOUND a NDENTELEC OuNG tS API OARS\nSHOR ENTELECTORa SSIONINDEPES RCRA Sese5¢ RAL AND SOUnd ENOENTELEC SION RRND ARIESCOn GEC JORAL ANOS GEN WN SEROET oul\nsen oer eN Ee a seUN OA Segue TONS, ree COMMSS rey DEOUNORETC SASSO Caan\na eae ee Se\nFae eS ann oeOU nas aco POC ON MOeCb EN Ye SCOn uc cToIROE VRC ONNONTE * Tomer Seip AN OENDEN URES CO Sad\nNe een eso a aAE CaION PON Ce SONINON, E.cTOna” SSIOM AN DENDEN IO RROCNOg OMDB OL AEN T NaN p TONS CCNY\nReasons for Refusal to Sign {if any) eS ae\nPresiding Officer’s Comments:\n* “RE EXEROCE WAC CNOTH AND Ae\nes Si Bec\nBistat asrtat Wuad Zoe ope tl Ze\n9 goa\nSe ego }\nme ec\\Cahy, ;\nNe) .",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 4,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 77,
+        "confidence": 0.28,
+        "source": "certified-register-hint",
+        "alternatives": [
+          {
+            "value": 77,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "certified-register-hint",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by '2. MOHAMED NURDIN MAALIM'",
+      "registered": "certified-register-hint anchored by '1. | Total Number of Registered Voters in the Polling Station;'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "Total Number of Rejection Objected to Ballot Papers; =| pe 2 t—“—s«~Ssi‘“S Cd",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2458,
+        3364
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "PASS"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:29:40.254808Z"
+}

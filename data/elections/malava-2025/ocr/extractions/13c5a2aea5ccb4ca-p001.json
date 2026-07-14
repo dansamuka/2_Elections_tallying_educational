@@ -1,0 +1,78 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "13c5a2aea5ccb4ca-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201392989486929/v1_13c5a2aea5cc.pdf",
+  "source_sha256": "13c5a2aea5ccb4caf5c9005fd14be42b06bbd48a54015b81c0a87f22fde986b3",
+  "source_filename": "v1_13c5a2aea5cc.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/13c5a2aea5ccb4ca.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P89486929-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.22285714285714286,
+  "text_length": 2790,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MALIMALI PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100809002\nWar AP ENDENTE sot oe CONTI RNDIAS NTE 6 SCOMMISSIOT OT 0% ph NE pENDENTEL EOE MADEPENDEL oN < oo ade. EWE ECT Og SSIONINDE\nGeagfe frresercy SS ui C- cPEP ANB COMMISS Oy PENTEL EC TON, CAG Wa oO cul TELECTORa, S/ONINDEPENT COLL Wagiial o) KAMORAL 4 OVINDEPENI\nPowiite cnn DEP EY cp RAIMERE ECTORA) END ENTELEC COWS Loe ob ECTORAL AA NDEPENDENTE. iy? Wing BCS MARLAND LPEND ENTS\nNumber of votes cast in favour of each candidate:\nNo. of Valid Votes Obtained coMiss\n[1 ANGATIA JAMES SHINACH| pesos erreree aaresronDe neat CNET EC OM Gaal\n[2 JASON SHIVAKALE BRUCE See ear oree aeeten Gh\n3, MANYASI JOAB BURUDI_ wn\n“4: MWANGA EDGAR BUSIEGA (See Cena ovaigoer ESTAR NRA ref 02\n5. NALWA BENJAMIN : rea faeces Soran ae en\n[6 NDAKWA DAVID ATHMAN RocSeeaeirmeinemsmrasmer Naor\n| 7. OYUGI GEORGE NGAIRA Oe OOS\nSBA PANS Se PE ARUBNIGD asst oC oan sch eee ereceanar sce eT TE\n@. TUVEI WILBERFORCE INDAT 2 ae era eer aornaer Ta Ia\n- [Total number of valid votes cast\nPolling StationCounts : NDBOL EN ENOAR Decision{s} on disputed votes if any : EN Lap\n[Toa Numer f Registered aes inte Poling Satin, —-\n[2.[ToatNunberoteecedtte Pees OSI\n|B. | Toa nuneroftjcion Opec oBateapes | OOO) \\2\n‘Pe Tat Namba Dispated Vote =< 505 oN oe bane COC Lae os rani SoMa OAL afioB OU cerca coe SS SONINOI\n| [toatanberfaidtaesteg Fo) ee\nDaplacation es! Ssionnoereneco pe aescONt ANDBOUEAENDENTELEC Sy DARIESCELECTO RAL ANDER GN pe. B.C.\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shot uy |\nand accurate count of the ballots in MIALIMIAL] DRIMARY potting Station plik AYA __ NeGHstidie Ray.\n_ Presiding Officer: Pp OU LAS ‘Wl ONIN 2. A Signature: JOUls > Date es faa 4 Ol\nDeputy Presiding officer: SHANGO JUb(TH Signature: a os Date . 2/-! Ui Brey,\n‘Agents or Candidates lif present) eC ORALANDEO, PEND x a ARIESCOAECT cOMMISSIC\n| _ Nanette stone [when Pontus | Tact [sme [ow |\n[Lt SocHuA NINBIMUL] (22527249 ~ SAP-K p7260s8726 uy. (27TH RC\n(2IGZOFFRET MASINSE22264¢40 0 J bA pygieza22 Cy 127-120\nSS SRT Ara SOR a ans Eee ate S Saet 4\nSE psa poe OUT IE Bag et TOR OO eset OS ple ONMISS oy AND BOUNDTE LEON OINR CafpalON DEP EA gyMDARIESCOM, pA SC ap ROE\nPee\nSORES ASAE AOEPENDEN Tey /_SCOMMISSIGNOUNG Caen BON IireL ECTORA/ gSJONINDEPENDA COM fret on nL ANDBOU Ne “NDE TELEC TOME CO Goat\n- Reasons for Refusal to Sign {if any) SS oe ear SENTEDeC ellis icnnOeP Sirs Gene AleS RALANDI ADR SO\nPresiding Officer's Comments: as ia Mis sip ENP Moe OTe (OR\nA TONS ogee aneeerias AE Dat Sy Sa PY ase sara ance nea ae Pon NOU a NDE RSG ONO\nL ak pty 2 }{— a asked prey oR PRESIONG F NDEPENOE",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.78
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "[6 NDAKWA DAVID ATHMAN RocSeeaeirmeinemsmrasmer Naor",
+      "candidate_DAPK": null,
+      "candidate_WT": "@. TUVEI WILBERFORCE INDAT 2 ae era eer aornaer Ta Ia",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:13:17.807167Z"
+}

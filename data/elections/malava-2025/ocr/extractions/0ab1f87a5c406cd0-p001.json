@@ -1,0 +1,104 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "0ab1f87a5c406cd0-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201630977077443/v1_0ab1f87a5c40.pdf",
+  "source_sha256": "0ab1f87a5c406cd0a7564e45f65f3a03e7bc68cfe1ba31cb593c656067b2bfba",
+  "source_filename": "v1_0ab1f87a5c40.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/0ab1f87a5c406cd0.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P77077443-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2288,
+  "text_preview": "ST\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nUND Name of Polling Station SHIPALA PRIMARY SCHOOL POLLING STATION 1 of 1 Code __037201100504901\nSE EDO CR ee EARIO Te INDARIESCOfgi (OEPENDENTE EW eK GK __037201100504901\nWard BUTALVCHEGULO Code __ 1005\n5 J , RERUNS tarot\nConstituency MALAVA Code __ 201\nSe TOR NO NEEL EC Ol PACA O EN TELECTORG S/ONiNnEPENDESCONGM ELBOOR ALA OMINDEDEN\nCounty KAKAMEGA Code 037\nNumber of votes cast in favour of each candidate: ;\nNo. of Valid Votes Obtained |\n| 1. ANGATIA JAMES SHINACHI } SSO DENTE e troops ecto Ga eM pea\n2. JASON SHIVAKALE BRUCE Srsuaemiasaamauterrmsmeranete eee ae EEL\n[3 MANYAS! JoaB BURUDI | Se en\n_ | ACMWANGAEDGAR BUSIEGA” a tei eee\n[5 NALWA BENJAMIN : ee avon ee eae eee ee\n6 NDAKWA DAVID ATHIMAN Ris Rabe att renin ersten oo\n7. OYUGI GEORGE NGAIRA ge Semen Secee emery\nROS REUUAMDIRNS cts nie eee ee ee\n-{.9. TUVELWILBERFORCEINDAL ss” Be or Sa ORAL OOS\nor eens oe Soe Te\nPolling Station Counts . SON DEP Ey UNDA - Decision{s} on disputed votes if any ROROO GEN\n_ [lune Reysterefatesn te Pang Sato, [aa\n22 aad | een. eos\n|B. Tle tein Octo daloPapes | eel | Deis Ea ceeraaT\nBt ae RG ON reo 712 ac ge eC\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown gpetSare Ways\n_ and accurate count of the ballots in SUIBACA FRINIARY ScHtpoiting Station —_NORLAV A fre's'e \\\nPresiding Officer: MASA ENMAsveL ‘Signature: COAG Date 4] iiss\nDeputy Presiding Officer: CALESTO WAFULA Signature: SN 0 a Date 27Noreses /\n_ Agents or Candidates {if present) __ ALANDBOY,,! ; OWN WOLF e)08 aS d-\nfa] wimstoaan ro [oni | emacs | acne | Sema | a\nS Hn pener coucneles 27 Dap. piy, _lemsemoul wea tas, BA\n, [2 euwice NYNGE se layoous |) KL pee 652 | OS ior\nSi eveRonig Cd RSRa pCR ertw ogres) tartan bali\nPEewcur Bess [eatees | UG A letoneaa) eA aud\nBS eee SESS NE oh TEN Me pT ea\nee Nercen Setnorcual a es SS atu nauee Our esmeea cy corhu ng ocaese nag\nReasons for Refusal to Sign (if any) go N LE Lior pa reek )\n_ Presiding Officer’sComments; = NOBONE INDERBOUNDARIESSS .\nLER E KIER NO | yet mas Ch BEING THE: RATE >\nLW PpohtiS®G BRsceSc Jo \\ AR ¥ NTEL ECG OM Ron\n(DENTS OAD a Re eR gC OMS si AL ANDBOUN OBO PENNE aera\nDEAS oe MOS a AOFFICER # nnwOe",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 7,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:28:14.469432Z"
+}

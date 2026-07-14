@@ -1,0 +1,114 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "21e988ea6747aa49-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201948216051672/v1_21e988ea6747.pdf",
+  "source_sha256": "21e988ea6747aa491f6524329665049933987a1ee74c4ef00dccedbdfd2e12fa",
+  "source_filename": "v1_21e988ea6747.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/21e988ea6747aa49.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08142857142857142,
+  "text_length": 2492,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station LUKUME PRIMARY SCHOOL POLLING STATION 20f2 Code __ 037201100200402\nWard PenDeNT ot\" ce WEST MABRASENTE: «SC OMMISSIO™® ya 40\", PUM ceENPENTEL ESS WINDEPENDE oh, <e? Ge enpe tee EC Ton SSIONINDE\nCor Stituenty!s> acy MAL AVA. COMMISSI On SOENTELEC TON eNO EAC OU EN TELECTOR 4; SMONINDEPENT <COn@ one, c. 5208\nCauity oninDEP eT 600 or ARAREORE ECTORA/ 2 ENDENTELECT CON pho GATT EC TORAL AS DEPENDENT gill aoa aMe 1 OOO ANDRO MENDENTE\nNumber of votes cast in favour of each candidate:\nNo. of Valid Votes Obtained\n“1 ANGATIA JAMES SHINACH\n2. JASON SHIVAKALE BRUCE eS ec eee a\n-_ |. MANYASI JOAB BURUDI me\n[4 MWANGA EDGAR BUSIEGA ceo ual crags aan eae\n5. NALWA BENJAMIN.\n| 6. NDAKWA DAVID ATHMAN\n7 OYUGI GEORGE NGARA\n@ PANYAKO SETH AMBUSINT\n[9 TUVEIWILBERFORCEINDAL [Pe |\n- [Total number of valid votes cast DENTELECTOR Bepaps ONCLSRRAT OTT TSSLLeIT NaPeneUTLRowtene eames Ao\n~ Polling Station Counts _ pena DAR - Decision{s} on disputed votes if any __ EC TORAL A\n[| TotaNumbeofReystered Votes te Paling Satin; [2 $ g |\n(a fraatninbertReseet tt Pes J pOKi {Le\n[3] Tos NunberoF ejeionOctedtotaletPapes_|———-w OO| [2\n‘[c[oatoniersteueivos, tp Gol [a\n|S Taal arias og] fe]\nWe, the undersigned, being present when the results of the count were announced, do hereby declare tai rasta nabove are true\n~ and accurate count of the ballots in © U KUme PZimARN GOT Polling Station _ VIAL ASA be >) Constituency,\n: pROE int “ , Ole RA thy N : i DE ie Tt: co) SSR) : 0]\nPresiding Officer: RICHARD CHISewGo Signature: CRASS | acbaie’ == 2ozs\nDeputy Presiding Officer: HANVIOUS MMASI Signature: - es nAl 10) of; 8 ’ f2% a o2,.\nx \"Agents or Candidates {if present). Sai U PENDENTELEC ORLECTORAL ANDES IS\nfs AceH sian NAYUGGIERY Ol DA IO LTT ee AD Lops\nL2qjoHN CO ANGULU BeeeK+ | BAP 7036s MS bg -teas\n“ 7 en eee ee ee\n{ee CON NOE Ne st ONS GOON Ore ECO One PONUEC ROE BREST AL AS NEN Seo o MTEL COPS CussM\nCE — —_—§——— :\nee ates Pent ne ry en erase eeeee eee\nDB gener wre LEC Tom SSIONWOETE acon eS Crest RAL ANDBO DEE PENDENTELEG ON WO pSGION WOARIESCORLECTORAL ANDES one\ni Reasons for Refusal to Sign {if any) Oe ect rE MME SiC « NINA POBOUNTS }\n; frosting Offichr’s Carniniente: Te ; Os rret oh Sen OEM aS . Bi DAO.\nSO POLUING — Went ON SMmooTHLy | CNet SRies cats AoE\nPO Rett, Cihseveag RZ Nee ae MME, LSM |\nEN Tame eee HN nD OU NAMED OSES RAL SONNE DENDENT GR Sole te Ce\nA ok 2-F Aj—-ZOrs LEA k OD Gasca Oy",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 3,
+        "confidence": 0.57,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.57,
+            "score": 0.57,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 22,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 22,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "anchored-cell-ocr anchored by '6. NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'Total seaioee of valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:53:36.966293Z"
+}

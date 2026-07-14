@@ -1,0 +1,97 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "a4ade7747be950e3-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201453655281084/v1_a4ade7747be9.pdf",
+  "source_sha256": "a4ade7747be950e3a767ad5ffdf04265ca24242c11890f91e1365d0ca6862bfd",
+  "source_filename": "v1_a4ade7747be9.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/a4ade7747be950e3.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2169,
+  "text_preview": "32.083\neS es a ee\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS |\nAT THE POLLING STATION\nName of Polling Station LUKALA KABRAS PRIMARY SCHOOL POLLING STATION of2- 0 Rode __037201100707901\nWard SHIRUGU-MUGAI Code __1007 29\nCons fituency Sa 0% CLAN COMMISS/On OENTELECTONC CA aC o0\\\" cuTELECTORg ) SONINDEPENT COAG) ND ae cea\nColityowinpePe” 00 —P RARAMEGAG ECTORA) END ENTELECT OW sy Oe ONL eCTORALA Nn DEPENDENTS ai SC Code car\nNumber of votes cast in favour of each candidate: ;\n[i ANGATIA JAMES SHINAGHT\nIASON SHIVAKALE BRUCE a ee ee NEL\n3 MANYASI JOAB BURUD ne\niC MWANGA EDGAR BUSIEGA : IO\nPS NALWABENIAMIN Seca orca na\n-[e. NDAKWA DAVID ATHMAN SSeSairenae weer eter sh\n| 7. OYUGI GEORGE NGAIRA via Seo renee alabama Wenner nee ong CDE\n| a PANVAKO SETH AMBUSINI eto\nSeat epee oo een mere\nSorrrur rte ease ae am\nPolling Station Counts __ Decisionts} on disputed votesifany\n[tf tl Numb of Rept Varsn te Polig Soy [SOA] [Stara Pi inane] nncl Coe sspern\nleat number fees digeed Wistar E—— OQOl [2\n- We, the undersigned, being present when the results of the count were announced, do hereby declare that fhe results s above are true\n- and-accurate count of the ballots in. UJ) ALA ries sw OWOBs Bing tation MALAVA A Cirgtituency:*\npredingomer < S'MEON INGU Tih cynnne EE fs eBLON =22\nDéputy Presiding Officers AMC ILEA ADIGA MISS OU ead geenTEL EE tarda g IDEP! sae SIDING a QGR\nAgents or Candidates (if present) are IDBOUSPENDENT L ntee fag STO! 8 ee OE, omits\nfe] tm semaniom [Shawarma | ass [ene on |\n[2ICaRotyie Lusmsm ZbSeivig) UDA ppoagyeqiz CARS [27a\nON eee ee\n8. 8 te Ceol aif OM NDE Ph yh DARIES CORN Meets de egeReue Nati jo MMISSION WOR yon Nort\neee ee\nPear 08 Cen TELEC Toma” SSIONINDEGE NC SCO ICS CICS RAL ANDBOUV SPENDENTELES ON WSO 25) SUNOARIEGC OL ECTORAL ANOS OE SIRE Ap\"\ni Reasons for Refusal to Sign (if any) : att L xT ON er\" COAL AND NORD : Sens:\nPresiding Officer’sComments; ARIESCOMy |g ORAL ANDBOOEN AN, HAMISSION NA YORK BIR\nELEC UES ERS ON nab gS AOR a, ABU oP nee in VO Lp WiC OR OST DEPEND ED g\nA acaees SE po unapeRNra St onru oes eh er ENC COM Sheeler ee ;\np70\" BUCILCAS ADS SSSR TOR AD RON chore RIOLY BOO OOM DRONE ENON agen OCA C/",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 27,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 27,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:16:22.927977Z"
+}

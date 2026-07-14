@@ -1,0 +1,114 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "baa267fc94022daf-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201739511012733/v1_baa267fc9402.pdf",
+  "source_sha256": "baa267fc94022daf0ecdd968b2ada547760c14529e3ae0381db2d96413765de6",
+  "source_filename": "v1_baa267fc9402.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/baa267fc94022daf.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P11012733-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2629,
+  "text_preview": "204\nee ee\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station CHEVOSO PRIMARY SCHOOL POLLING STATION 1 of 2 Code _037201100808301\nWard SOUTH KABRAS Code _ 1008\nConstituency MALAVA xe Code __ 201\nCounty KAKAMEGA A Code __037\n_ Number of votes cast in favour of each candidate: i ; ;\n4. ANGATIA JAMES SHINACHI. Fr $$ ——_———————-0)0 |\n2 JASON SHIVAKALE BRUCE a Scart ae iar eprint 7p)\n5 MANVASI JOAB BURUDI Siig: Ocarina Tone 707\nt SMIANSREDGaecEURIER ice Teen ose cavern eo\n“NALWA BENJAMIN Essemnaser ee Saceert eS wee 7751\nPe NDAKWA DAVIDATHMAN\nSle RBEDRCIE MEAN Ps oun Soa oe non gees ectale araaae eee\nSSE gs PANY ARD DEH AMBUAD proc ne eo ee a\n_|-9. TUVE] WILBERFORCE INDAI ~ RESCOMMISS SPSS alg NO ODEN TEL ECT MIS ui DEP ELC CLSOr RICE Oe A Ra gee\nfren a eat veep <p or oes. sr cooanor ep a geacae eran ae ce\nPolling StationCounts — Decision{s} on disputed votesifany 8 == La)\n[tf Toa Nuber fReisteredVaersn ie Poling Satin, [-—— = | | ester Pagel wn dud te] ancl]\n2 | alNinier dRepcettalet Pese —— OORT\n[8 You Nanbeat jcion Oped wbalorwes OOO} [2 :\n|e foatnanbsrsOapaeiaes, SOO) [ae :\n|S TostionseranaWaesteg,\nao ‘Declaration iy NOE ‘ nee : : aN one peo TOONS enn / Epr a Se ete\nWe, the undersigned, being present when the results of the count were announced, do herg (LF. ScTdr'é that the results shown above are true _\n~ and accurate count of the ballots in CHEVDSO PRift AR — Polling Station” 4P RIMAL AVA Constituency. —\n\"Presiding Officer: RODGERS ALEXANDER NOALD signature: AOS, Date 27-1 ROL\n\"Deputy Presiding Officer: Yow __ BARA SA ~ “Signature: __ Geo | Date 27- (/-20zs\nye Agents or Candidates {if present) _ ae aes ANDI TPENDE | EC ON SECON ARIESCORLEC Ke oF at nonoeh es\nFoR Oe OUN a EN a isd OSes BOUIN SCaMhn tc On aeae NTS eNOE gles Ona. an Mano ore ECs Cnaeolt\naS aE att BOUNDARIES CoA ECTORN gee cece) OG pales SSO ANODE OUNE TE CCS Gee ene PARIESC OR Nacht ga crEN\nFT ee eM SSO AL ANDBO TE et on saul ION DEP pNDARIESCOR mL eee dehapePupeL SIC MISSION WRC NC!\nUe ose yg SSONINDE De UN MRTE SC a UES ARO NEP ENDENTE] SCOMMISSION NOt, SAL GON SF ELECTORAL ARIRNINDEPE ND COM Una\nPOETS GC OFF NOLES MOEN Thy SOC OMMISSIGN GSN Ceo 00 rELECTORA/ 4 SIONINDE PENDS CON So4/50 on Al ANDEOUN Dg NDENTELERI RANT COn Sc ONh\nN Reasons for Refusal toSign fifany) é HINDES Ee _ ANDRE TEU Ge\ni Presiding Officer's Comments: ps ESCOMM/g ORALANDEOO LG ONIN UNE IES TORN\nP-© RODGERS ALEX ANS ARI sib, Pee el eSCOMmm Se ORMDET ECON NORRIE ras a S/ONIA A COB OUENTENNSee\nENDEN' PSS & hr.) iy =, P at is: Ai ANDBOL i ( ye\nCR NTOF rancho ERT RES Me y ea eae BNOEPENDE AE pearl EKO",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 8,
+            "confidence": 0.21,
+            "score": 0.21,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "anchored-cell-ocr anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:35:59.158488Z"
+}

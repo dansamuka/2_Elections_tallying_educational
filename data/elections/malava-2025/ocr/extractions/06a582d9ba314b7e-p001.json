@@ -1,0 +1,23 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "06a582d9ba314b7e-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201867862763685/v1_06a582d9ba31.pdf",
+  "source_sha256": "06a582d9ba314b7e4907ee69d52b5c41f1c1f1ee6b58fd23ce7e54c4311f27d7",
+  "source_filename": "v1_06a582d9ba31.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/06a582d9ba314b7e.pdf#page=1",
+  "page_no": 1,
+  "form_type": "OTHER",
+  "stream_key": "201-P62763685-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.3084983498349835,
+  "text_length": 3093,
+  "text_preview": "Ge\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MACHE PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100302002\nDAWIPENDENTES 9? 62 nGRSENI IME NOENTE) --SCOMMISSIO’ OEO% pS GUN epENDENTEL EC? SINDEPENDE oh, Cc Degenve Wee © CTOn. SIONINDE\nCalSGecenay SS Su0 CO ANB COMMISSION PENTELEC TOP CONG ph axe 0\\ Cu TELECTOR 4 SIONINDEPEN CeCY ot gilt cl AIORAL Ay UNDEPENC\nadiite canine? Ee COS RARER ECTOR A, | ENDENTELEC ON py ot Ft, ECTORALAND DEPENDENT gif Cage (HON ANDBO ENDENTE\nNumber of votes cast in favour of each candidate: f\nNo. of Valid Votes Obtained |\n_1. ANGATIA JAMES SHINACHI 3 :\n2. JASON SHIVAKALE BRUCE 3 Soe reL ECTORAL ONIN EPENUES OM pO pI TORENT AGE ODN\n3, MANYASI JOABBURUDI Mite eaneCronbeAtD a PENUERTE seep On RRUBO UREA GEN\n4. MWANGAEDGARBUSIEGA Paes RRS CONT a PENTELEC TOMA NU pS ees UNDATIE I p GfO}\n| 5. NALWA BENJAMIN 10 fee Sea race rap pe ronmn nie were eet ene sooMN( SS GILAND:\nPUGDANEISICIIA GOA VIS ACA Quno Ai Seon BOE ae Re SOMOS On NDB OUNDME Co aegt CK ISSONMD EHR OLM\n__ [7 OYUGI GEORGE NGAIRA FOE uMSSTONINDE neg oNUARIESS nent ec eo eRe ES\n| [6 PANYAKO SETH AMBUSINI ee eee aoe\nCelt S10 TRAP VILISERE RCE NSA NDE ENDEN Te ESCOMMISS DoCh en Me poe NDE Teac [Ong STURN Anite One Eo te AP wOUE\nTete Bate ol Gee VBR aE < Ge Se WOENTELECTOn a SSIONINOET ab ren ROUT ror on Won GLA ePENORE RRM ReSeTONT ROU Oy\nPolling Station Counts 9 ratiSSIONIND EDR IN _Decision{s} on disputed votes if any : ven ORAL AN\n~ Ff Tt Nbr ofeyterd Vern te Pling Salons F—— 5° GT | Seber a apr wih del te] Daw tC pd ie]\nEMT SUC eT es SRE Sera OMIT: ERRORS aaa a RE\nEs Teer an OT Tol RNR INES [EN AST\n2 fio aor oo cc oe De anssomT e Onan tae ome\nWe, the undersigned, being present when the eaults of the yricre announced, do hereby declare vp ap oe aban above are true —\nand accurate count of the ballots in Mach 3 PRIM, Ry Polling Station soled oA A — Constituency.\n- Presiding Officer: MATAOBA: SS MURANDIA oO Signature =: 7 x Date L1=N-262\n- Deputy Presiding Officer: LD ETL ee 1S! KA RAM OTA Signature: Ne tied _ Date ws eal Ab\n_ Agents or Candidates {if present} ASAE ANDBOUASPENDEN x ON NOn ee)\" \\orricen J HOBO en OREN eal\n[S FeSERE KAISi lRujegzde | Ope lezgshdy25| Gap ay\nSEE ee sco GEC Tome AND BONY Oe sone ond Ss Olen UN DARIES APNG ae gen or PENDEN AVE SCO MASSON NIN fone\nRee ee nln a EN eet GOS Sym gO RO re oS Mieco EP ENERO oR ALANP NDE Be acNTE Eco eanoeN\neee eee ee eRe Gd ee ee\nSCF TOR eG SB PN DEPENDENT ESCOMMISSIPS QUNCCOnCo BON gTELECTORAL 4 S/ONINDEPENDS CON DSCC SC cal ANOBOLIND a NENTELESL aS hO8 20h\nBe eee coe Ure LECTOm Ssionindey recone sale mALANDBOUY PENDENTELEGON OG a8 UNOARIEBC OM, ECTORALANON OE We See\n\"Reasons for Refusal to Sign {if any) Owe aoee HONDENTELE o DEP A eNOS RETO A OE DEPENDENTEL SCOTS Gane\neF Presiding Officer's Comments ; ELE wane at x Tn 80 LA 0 Nb ; 57k | 7 2 ‘ ORGS\ndraaecichinienstc tenuis Ea a nmnel sn Pesos, re poe ep ARNESON ce 9 RON En ree Og\n“POO ONAMEL MATROBA “M",
+  "parsed": {},
+  "checks": {},
+  "route": "UNCLASSIFIED",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:46:23.492254Z"
+}

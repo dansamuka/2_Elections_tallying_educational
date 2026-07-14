@@ -1,0 +1,127 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "c3dd67c612eb0f15-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201826541021337/v1_c3dd67c612eb.pdf",
+  "source_sha256": "c3dd67c612eb0f15b6cd515a063652d53bce443c75023155221687c6e3c27f2c",
+  "source_filename": "v1_c3dd67c612eb.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/c3dd67c612eb0f15.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P41021337-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3250285714285714,
+  "text_length": 2660,
+  "text_preview": "iF\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station SHEYWE PRIMARY SCHOOL POLLING STATION 1of2000 0 Code __037201400707601\nWael ENDEN TES 988 (6 OrIROGURUGAN TE: <“SCOMMISSIO® WOTOY Paull cpENDENTEL £7 AINDEPENDE oh o-Dedenoe War £C Top SSIGNINDE\nGass Geceday Ss? c-ALAV ER OMMISS/Gy i) DENTELEC TOY CoAG ph 20 eutELECTOR 4) YONINDEPEN 6S (teh ci al ORAL ay VINOE PENI\nCaiintgionnpePE™ 4c 0. WARAMEGAG ECTORA) | ENDENTELEC TOW pig. ohh, eCTORAL ANN A DEPENDENT =i SOC ade ac HORLANDBG /PENDENTE\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1” ANGATIA JAMES SHINACH Cae ne oe ae\n_ |_2. JASON SHIVAKALE BRUCE rer aaa rye aaaaerraeersecoriamea, 1 AI a” Bae\n3. MANYASI JOAB BURUDI oO Of]\n|\". MWANGA EDGAR BUSIEGA | Se ene rae\n6. NALWA BENJAMIN fete sot preomnineecige Sronm anatomy ONISY AM\n6. NDAKWA DAVID ATHMAN | ened Ma a - ae\n_ [7 OYUGI GEORGE NGAIRA G Seas one Lueeerrsisa dTaoeeomTouaeaSvaanT Lee © HS SNS\n8. PANYAKO SETH AMBUSINI Soa aA Soa Tae pas Samet NSCs © Se A LA\n9, TUVE! WILBERFORCE INDAL Sarsriee rian rae cpus: eset naarersccoas 7 SO > Sa\nTotal number of valid votes cast | . Sen Nae onmeeTTTNrScenpererTmamrcaocee” 4 ak * ee\nPolling Station Counts : Decision{s) on disputed votes if any\n| Nunbe of Registered aes ne Poling Satin, F—=p BJ]\n[a] Waltnie tReet mes OO Ley\nTotal Number of Rejection Objected to Ballot Papers; ===\" OO||2.. ee\nTo Namie of Dep Ves, Pmt 7 od Bae ei ERR a Re IST\n[Ss [ToainanberonesiosGs, Olle\nDeclaration Ko: BANDARIESCOR! ; A 8 . .\nWe, the undersigned, being present when the results of the count were.annourtced ae declare that the results shown above are true\nand accurate count of the ballots in _ SHEYWE Pp tihg St fer peed wreey ai _____ Constituency. -\nPresiding Officer: BR I N a U , het ti re Date 27-| |-2\nDeputy Presiding office: RACHEAL WameBulLwa Sijaature:. __. Date — - 2025\nAgents or Candidates {if present) _ : re sale\nin] _heedmaaicesnm | ahora] ovnctaroaeiomane | Homes [smn [ ow\n| ELPHAS CHILUY! |30225042) UD A 0724765784 ZF 27-1\nFR Suh RIE SC On ase Tomas ANDBO CaaS E uh SION MMOL up ATER Eee ON gr PENDEN ATE SC OMMISSON SRS PON\nfo er SS Pa\nREI GS OF pee NDEN TRY ESCOMMISSIPN GUN COZ BON FELECTORA/ 4 S/ONINDEPEND EC ON eed Ce ot gun ANDEOLING a NDENTELEC LONG! GON\niSO Ag08O ENTELEC TOR 4 SSIONINDED ENE SC Ope ESP RALANDEO Lye PENDENTELEG ON RO GO. UNDARIEBCOptECTORALANO OF WW eae\nReasons for Refusal to Sign {if any) . B Ne\nPresiding Officer's Comments: ; ac , GO!\nBY-ELECTION PROC g¢ f/f POLLING WENT IN \"SMO OTHE\nsn A no a\n, Po + BRIAN = UMA ONTE = 27--25 [opening y\n) SIGNS SF) | OFFIC :",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 7,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 4,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 4,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "full-page-text anchored by 'Total number of valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": "Total Number of Rejection Objected to Ballot Papers; ===\" OO||2.. ee",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:41:31.214324Z"
+}

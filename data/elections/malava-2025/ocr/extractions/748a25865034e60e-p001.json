@@ -1,0 +1,124 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "748a25865034e60e-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201161940654007/v1_748a25865034.pdf",
+  "source_sha256": "748a25865034e60e3ef3a94e38ccf5e524a9825c519bdb99758afdb0919dec06",
+  "source_filename": "v1_748a25865034.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/748a25865034e60e.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P40654007-01",
+  "match_method": "STATION_NAME",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.17474285714285714,
+  "text_length": 2623,
+  "text_preview": "ee OO.\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station CHEPTULI PRIMARY SCHOOL POLLING STATIONfoff_ Code __097201100606501\nWerEPENDENT ED Ck 5 COMA HIIIRION E) 5 -COMMISSIE Twa 0\" Pe GUN cPENDEN TELE CS YINDEPENDE Oh Ce padenne tls\nCegeatiGeuennay S.Sui Co MAL AVEL ¢ OMMISSiOn PENTEL ECTON. (0 DNC O eNTELECTOR, S/ONINDEPENT <cOce? Wegalal ci ot\nCounty AINDEPES 6.0 7 PRR AMM feECTORA/ 1 ENDENTELEC | ON ph OC OP eR TORAL Ayn WOE PENDENTE pat Code 037\nNumber of votes cast in favour of each candidate: —\nName of Candidate No. of Valid Votes Obtained Wiaisend\nTANGA TSAMES SONBOS : |\n2. JASON SHIVAKALE BRUCE | Pe\ngah Ironia Oe aS ea ! ORC TaLe rou IMG nrrtaaaaoceorvante WL oa\npid YARED E DEAT BA BIESA | Bt coesvane eanreeserannl easaaneerianenen cereals OL SOA\nfoo NAR Nila eB SMMIR Ree letuaaneeel pemuaaermpenerNeorTiass 07 Sd\n~ [6 NOAKWA DAVID ATHMAN ——— se\n| 7. OYUGI GEORGE NGAIRA | IND AR eC pct ras SION Hania lO Pees Ok aay ENON aE\nwes OS PABA SET AMS EEIN ai ocaaune euaen ESCADA LNT dE PIRI PUS te Gp\n| 9. TUVE! WILBERFORCE INDAI | mans OO\nCpe Nate OF Ved YB Sa OSD CNDENT ELECTOR SSIONNOG jab ee Nene oa NOb or era OMRON pi EO Ae\nPolling Station Counts IN fe _ Decision{s} on disputed votesifany\n[i [Toa Wer afteystered oer nib Poling Sains [— GOS |\n~ Pp, | Total Number ofRejected Balot Papers |-—-——- OOF] ft. ee\n- fh TostnunberefReecion ete toastatPes 1 QO] |2.\ni tontanbetiitenitees <5 Qala eee\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the regults shown above are true\nand accurate count of the ates geet i meal ______. Polling Station M A ee A halseaeyn\npresiding orpcer: T1TUS § EKIRAPA — signotire Ges \\ nae 27—! 1-2\n~ Deputy Presiding Officer: _S RA : SHIBKIECHE ____ Signature: _ ame 4 Date. ad “U1 - By\n“ Agents or Candidates {if present) DBOU WEE ENDENTELES ONO! ‘on bo Rasa On pLAND of . :\ncee\n[AT ZEDEOAND AN1S14| DIpVoe BOA Ppssebr -G bo |alibs\nOE PAGO susslonN OB aunn ane tare On foe OTe ECT aPlMis ampere aco NER Riese\nronnie Aen ean cae oe ee\n204\nOS SSN aT anata SOTA Tn aE RECRUIT AGT EEN SRS\nee ares eae ey ee ee\nTe SC WIRES e<ORNDEP ENDEN TE gSCOMMISSIES UNS RS oC FELEC TONAL AS ONINDEPEN COR WW Acs real ANDSOL ND gHDENTELESS ah Oh LON\nPO errs o0 ie nreLEC Tons SSIONINDEY eRe SCOT CT le wAL ANDBOUyS PENDENTELEC ONO SSCS ON NDARIESCOuLECTORAL AND OE Wt Son\nReasons for Refusal to Sign (if any) pete 8 NTELES: sees DEP e S RAL ‘ PE re AS ee\nSPE aug iny star CRUMBS so NTELECT OOK 1A CONN ARIES COM ORAL ANDBOT EWTN CAO AOET OMMISS SOUND SSS\nSEG OeRCER MET TTUS IRA Sica Gs",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 7,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.09999999999999999,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.09999999999999999,
+            "score": 0.09999999999999999,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:58:07.749345Z"
+}

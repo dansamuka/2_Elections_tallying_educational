@@ -1,0 +1,134 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "5b02cde2bcdd30fd-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201287478485054/v1_5b02cde2bcdd.pdf",
+  "source_sha256": "5b02cde2bcdd30fdc284b62b40728025c85fd0dccadc7171540f05d3decaaaaa",
+  "source_filename": "v1_5b02cde2bcdd.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/5b02cde2bcdd30fd.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3291428571428571,
+  "text_length": 2449,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station IKOLI PRIMARY SCHOOL POLLING STATION 4 of 2 Code __037201100402701\nWard EAST KABRAS Code __ 1004\narp pereng SS A.C IRR AVAK COMMISSION, PENTEL ECON ECAC pO AON TELECTOR a) S/ONINDEPEND £.cO.0) Sigil 2) EOTORAL 4 OVINE DENT\nCounty KAKAMEGA, Code __087\nNumber of votes cast in favour of each candidate: |\nName of Candidate No. of Valid Votes Obtained\n1. ANGATIA JAMES SHINACHI | 00\n| 2. JASON SHIVAKALE BRUCE , 041\n3. MANYASI JOAB BURUDI ADE PEND 0 |\n| 4. MWANGA EDGAR BUSIEGA |\n5. NALWA BENJAMIN, f ORAL NDS.\n6. NDAKWA DAVID ATHMAN ; Pips ces nies COMMISS ior ANDEOUNUNE Cesena reson ERA\n__ [7 OYUGI GEORGE NGAIRA. i eye\n[Qed AGREE ro AMBUEIN cco uous cnn fee oceeaae es eee eT\n| 9. TUVEI WILBERFORCE INDAI ————————— 000)\n[Total number ofvaidvotescast 852}\nPolling Station Counts : 1S DBOUM END Ron cc _ Decisionts) on disputed votes if any ene oN al RAL ay\nTotal Number of Registered Voters in the PollingStation; | Guay | 0\n~{2.| Total Number of Rejected Ballot Papers; TT OO6) a eR\n[Talon jection ede oats Pacer we ono ene fount eae ese am\n[Latter Waestage ga] fe\nWe, the undersigned, being present when the yan of the count were announced, do hereby declare that the results shown above are true\n- and accurate count of the ballots in {6 Lf en RMARY SerooL Polling Station ___NIALAVA Constituency.\nPresiding Officer: | NOEL 4 IMeOG eC ONINDER Ni a si anes Date 27— ib 2025.\nDeputy Presiding Officer: CENTRIC ByNusy ~ Senate coe eodalivsts Date eT —il-Zogs\n‘ \"Agents or Candidates {if present) et NOBOUAPEN UFR ORs EON NOARIESCOm RAL: EN NCNOEN Gt\nfal _rinetnain stom [whoo] Rivet Sare [ cms [sme |\n{lomo “CHAPIAL 2 GSE6602 | DAP logaawesiael pp le tsi-ae\neat TORS eS Se NEURO GC\n\" SR 7 4 - — : TTT r DP - ees 77 : -\nSs cae cr ono ene en es ey\nIa OR poe NDEN Te <ScomnsSIp GON OREP CONE ELECTORAL { SONINDEPENDEE OM Naf econ ANDEOL ng CNDENTELECT ORM OSI GeAGRD\nBO Sect cnTELEC Toray SSiouINOEY EN sano esa Sf AL ANDBOULPENDENTELEG ONDE CaO ROAM RCOMLECTORAL ANSE SSPE\nReasons for Refusal to Sign (if any) 0% x Sees SIONIN oe SX . OL GEPENDENTE er\nEssie orn oars ae RR EET Soe Ten, Vann aS\nTHE No-qinG wenT ON smo THA : Dope Miescowi )\nRINDEPE aC ae alee roRALAND BOUT PENDENTELE CaO NN NOS SR OUNDARIC \"TEL ECTORALN SENSO CRPORR SREY Op ANDBOUNT COON\nDENT saOLON wi ereoUNO AEN Lec oMMOMPORES Noes esc outs aha anoaun ON co MN EIRENE Rn nmescoM ee",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 0,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 5,
+            "confidence": 0.16999999999999998,
+            "score": 0.16999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": "full-page-text anchored by '| 1. | Total Number of Registered Voters in the Paling Stations |'",
+      "rejected": "full-page-text anchored by '2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:06:26.157973Z"
+}

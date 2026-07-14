@@ -1,20 +1,68 @@
 {
   "schema": "kenya.election.ocr-summary.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
   "election_id": "banissa-2025",
-  "generated_at": "2026-07-13T15:28:47.097282Z",
-  "engine_mode": "embedded",
-  "engines_available": [],
-  "documents_total": 0,
-  "pages_total": 0,
-  "pages_processed": 0,
-  "form35a_detected": 0,
+  "generated_at": "2026-07-14T17:43:22.597749Z",
+  "engine_mode": "auto",
+  "engines_available": [
+    "tesseract"
+  ],
+  "documents_total": 72,
+  "pages_total": 72,
+  "pages_processed": 72,
+  "layout_assisted_pages": 63,
+  "form35a_detected": 71,
   "form35b_detected": 0,
-  "streams_matched": 0,
-  "review_rows": 0,
-  "routes": {},
-  "errors": [],
+  "streams_matched": 70,
+  "review_rows": 71,
+  "routes": {
+    "QUARANTINE": 71,
+    "UNCLASSIFIED": 1
+  },
+  "errors": [
+    {
+      "page_id": "e49a988ee1a22e33-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+    },
+    {
+      "page_id": "8e3af80565e0afcd-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, '')"
+    },
+    {
+      "page_id": "a063ac09b29f0598-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+    },
+    {
+      "page_id": "7b1b8e280ebe26c9-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, '')"
+    },
+    {
+      "page_id": "eb943122ac9d440f-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, '')"
+    },
+    {
+      "page_id": "80b39a53d120757f-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+    },
+    {
+      "page_id": "4c1c826af75e8058-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+    },
+    {
+      "page_id": "e1a72f2774c3b8a9-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, '')"
+    }
+  ],
   "review_queue": "data/elections/banissa-2025/ocr/review_queue.csv",
   "inventory": "data/elections/banissa-2025/ocr/document_inventory.json",
   "auto_publication": false,
-  "note": "OCR output is a pre-fill only. No historical stream is added to the public tally until two-person review and statutory validation are complete."
+  "note": "OCR output is a pre-fill only. Handwritten cells are read with layout anchors and arithmetic reconciliation, but no historical stream is added to the public tally until human review and statutory validation are complete."
 }

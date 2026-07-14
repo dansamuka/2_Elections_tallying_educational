@@ -1,0 +1,117 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "7895e2a418c00ab2-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201068433301940/v1_7895e2a418c0.pdf",
+  "source_sha256": "7895e2a418c00ab26e1eb1bc71a3b48bede30540ca2ed3298509fa29f576822e",
+  "source_filename": "v1_7895e2a418c0.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/7895e2a418c00ab2.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.14308571428571426,
+  "text_length": 2750,
+  "text_preview": "21.908\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station SHIANDA PRIMARY SCHOOL POLLING STATION20f3 Rode __037201100402502\nWard EAST KABRAS Code __ 1004\nConstituency ARRAN Bc OMMISSIOny, PENTEL ECTO Cc pt a oO eu ELECTORa/ HONINDEPENT COC gic) AIORAL Ay INDE\nCounty KAKAMEGA Code __ 037\nNumber of votes cast in favour of each candidate:\nName of Candidate NOEW No. of Valid Votes Obtained\n1\" ANGATIA JAMES SHINAGH Bl\nASO WIN RR ACRES er Picea en oa ata a go\njc MANYASIJOAB BURUDI See oerereiierncre sone\ni. MWANGA EDGAR BUSIEGA Sebetinee reat green aA sae rg\n“5. NALWA BENJAMIN of Cane Reno Orme Try\nae a Sap Seca treumertarase er\nhig sng BEDIRGIE MERA ouneaes senor foes eae eg!\nqr OAM gn Seen BMMDUIAI caso ones. eh eee eae a emia\n8. TUVEI WILBERFORCE NDA et occ eae enn TT\noe a ee erm ene ry\nPolling StationCounts ABOU Decision{s} on disputed votesifany ORa|\n[Tot nunbe tented asin Png Staion, [5p] | enn ata Pager init] Yantai |\n‘laftoannieratteecnitainrees ni\n_ [Tat nunira cion hid obese | 00] arsine ante OCT\n|i finatiuniretoieiioes 00] fs.\nfslfactiennernantosest Da bee\nDeclaration — NEPEN £95 OnL ANDBOUNSPENDENTELEC (Gaol ci00 INDARIE SC LECT opal ANDBGAE NN POROEN Missi\nWe, the undersigned, being present when the results oftthe count were announced, do hereby declare thatthe results shown above are true\nand accurate count bby ballots in SHIAHOA PRIMARY [a2 Polling Station _ \"WY “ste > Constituency.\nBaten ninDe® aie <OOaRR or ORAL Ay FEI DENTO nS goes anloo nN pL Reece penne\n~ Presiding Officer: JAUGUA TEASE IRAVONGAR Signature: “4 ihe * Mate 2ZIH-U=- Le.\n= : t r hae . ; ny ; : “ . ‘ f BPRESIDI nit re oF T\nDeputy Presiding Officer: SAT ABU Signature: coer eeah ate, 7 —Ul —S7\n_ Agents or Candidates {if present) DBOUSPENDENTE! ee Mots Me A oe Soe\ni=] ness eam] enone [ Wome [soma [ ow]\n» 2 BAN AP DINGS [C44 FON OB Be OTANI IO7ES Beez | 277, [as\n\" PeTHAN SALAMBA [0932633 | Nap jezeiggesjlo. FS lay [e.\nSO AE oni SIE SCONES 7Ontay ANDBOM Cag COe' puts sion Aor oun MES aN ea De PENDEG ARIC aC am mtssION NOCH BOON\nOE SOLOS Oe SSS ORAM DIM ur ARIES Se NOC pc Ore aN OA Ree ans STO CNN Cane gDOOU NEL EC COM Migros MMERENECONE rae SC}\nSF pe COND AOE aai8 SxOTs GSRBOO rel Eos May ay OK nee’ Cac eR ERI Conn ne puNDs en reece Oo\nPee UES og EC TOR OAS ee nr oral eh ga OBOUN re. CeO ONE cise boutOG De ARTESCON INO cOnNep|\ni) eect Gms or ears Guy Sees Chee Ree\n_ Reasons for Refusal to Sign (if any) Seay pO DENTELECT oer NOE PENDENTEL SCO SC\nPresiding Officer’sComments: = COMiiig ORAL ANDBONE NS MISSION LOB OUNDARIES QaNoeaCen\nCOCdATHG: Aid TA Lae, EF THE VOTES WERT Ort Sar Hhed AIS\nP20 BU pe f_AN a ae FF © “\\ a “ aN ¢ i AM TA| NI ‘\nNe TERS. (RAE ge IECTORAL AN uIBUENDEN San SCORG",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 2,
+        "confidence": 0.15999999999999998,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.15999999999999998,
+            "score": 0.15999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 3,
+        "confidence": 0.28,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "anchored-cell-ocr anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "anchored-cell-ocr anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:50:29.767989Z"
+}

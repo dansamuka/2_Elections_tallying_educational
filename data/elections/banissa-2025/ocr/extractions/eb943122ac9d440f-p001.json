@@ -1,0 +1,73 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "eb943122ac9d440f-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019902904/v1_eb943122ac9d.pdf",
+  "source_sha256": "eb943122ac9d440f7476457f5b9227ff2bbc29effed6f98f435ca45990e969c2",
+  "source_filename": "v1_eb943122ac9d.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/eb943122ac9d440f.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0199-029-04",
+  "match_method": "POLLING_CODE_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.26,
+  "text_length": 1863,
+  "text_preview": "Z NA271125-015 127 pee I QoL 7 = : wee = f 40] Z, eS = SS\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nNeve of Polling Station DOMAL PRIMARY SCHOOL POLLING STATION 4 of 5 Code __009040019902904\nWard MALKAMARI Code __ 0199\nIMMISSIO™. ait cX CO LM CSIUNINDES Oo ee SEC VEEN OPS en\nConstituency BANISSA Code ELA Ane VOEPEN(\nCounty MANDERA Code __ 009\nIN ESR SELECTOR 4s 2 ENDENTELEC © OW eMC gil, ECTORAL ANA VOEPENDENTE cago\nNumber of votes cast in favour of each candidate:\n|_ Name of Candidate : No. of Valid Votes Obtained\n1. HASSAN AHMED MAALIM _\n2. MOHAMED NURDIN MALIN CR ee gua eel\nTotal number of valid votes cast © | |\nPolling Station Counts ' Decision{s} on disputed votes if any —< WTEL!\nTotal Nur of Reistered Vales he Paling Satin, 0\nis itatarcie Picea fae cece AAO ONES Tora ano seat tNOPRE ON caoL AON\nTl Numbe of Rejection Oecd toBaletPpers —|————Dop] |.\nTal Nurber of ip oes, PLS 7 CORN ret STERN SRD as ATT\nTal Nuber flies at STEN Te SRST ACR\nDeclaration DEEN N SAO\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shoyggeaseve are true 5\nand accurate count of the ballots in A oeandags itary eee Polling Station __ 447 P 22 sanueys\nPresiding Officer: Sts (GRAM Ay a _ Signature: Datel na ras A025\nDeputy Presiding Officer: Ab) Feta AB» viorrn act Signature: yess Date WO}F= ~2015\nAgents or Candidates {if present)\n[tol mentee [ater | Ryaomrieoaensoaie | a Gant [Simmer [Oe\nsmn Kae Aad) |Syo7e) | UDA _—ijagas@loze| Ebvo farsi\n[21 Hstean Agpiketi (B20R7Rd Uppy spyware SR bt\n25 a eee ec ee ees\nEr eee LUNOARIES’ GaN eth Ohne ENDERIET SC OMtisSION OSC oo uN Te ECTORAL ay OMINoEPENDE SSW ROOT |\neee ae ee\n1 eae ee eS RS KT\nReasons for Refusal to Sign (if any) z\nPresiding Officer's Comments: x\n<(HE WUC SS CAlses UC ENCE =\nEistin2 (Rat HASSAn)\n_ 4 ) a",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1. HASSAN AHMED MAALIM _",
+      "candidate_UPA": "2. MOHAMED NURDIN MALIN CR ee gua eel",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:33:55.791968Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "9422d529d060c32c-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019902901/v1_9422d529d060.pdf",
+  "source_sha256": "9422d529d060c32c1f1ab7f68c9268091213b19f7a71eab31ddd94ce3f7675c6",
+  "source_filename": "v1_9422d529d060.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/9422d529d060c32c.pdf#page=1",
+  "page_no": 1,
+  "form_type": "OTHER",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract",
+  "confidence": 0.3480221518987342,
+  "text_length": 1975,
+  "text_preview": "~ Poo er gy 58 Sate\n4 NOS je Es =| Fs |\np Ss >\nx 5 eo a\n8 = s3~| | Q\n| 2 E 2 Faby\n~ —\nsm) 2 = . 82215 : aS\n| S| 3 ® re) ae\n= 7 Bea 8| 2/3/38 2 48 \\ am 6 i\nSee z , ee 2\n. LoS = °] N 2\nai i\nnine ” SStes 5 » | 2 2 2] g\nta 02 O08 oo £ 3 & if D> Al\ni Shans! = aoe | TP\nfe sé\n= y 4 W <\nie > 3) O! 2 rs ow ro el /|\na) Be : me 5 ! 7\n\\v—- fg | 8 & 7 3 /\n* - S18 jo 5 SSP =;\na S\\s : ga\n3 Zz f: Be go! a/Si<\nNG 1 S 35\\3 Pieje ; om S\n> oO 3B Bs B rod\nl - 1e) 2) = 2 ; |\nk \\ a :\ng Pak te Csr Ao a 2\n> < $ 3|3 oz § § 8\nob RB Axl Ys ZS 0 en 43 3\ni n = Ale we o al\nfea] Gs S . y\n» _ by — 4\n\\ S al= a at ON) c\nTT 4 S ule ae 3\nRG a = O15 et &\nh ee ain S a\n: : 3\n\\ : rs) \\ o) BIC\n. i) e Setelhs ek = | Nq\ni —_ ry : - 3\nwldla & Ral HOO ee eS = A\nee S g 6 81D\nWe 2 3 d\nme 2x ; 8 | /\n+\n[= a ‘< 2 oP 3 |\n\\ XX dq ¢ a = £ 2h\n\\ = 8 3 ar Pt Be a S 5\nWW x = 2 £ MI eR\n: \\ r 3S o 2 2 o Z a\n' ”D cs} 2) Q s + a\n= & S es] |e cO a3 =) S \\\n= _— (o)\nBB Z| 2 8 = <| \\3 £4) 3 SND OI Oe ere\n. pra ra 5\nHe] El S| <i s| 5 = 2£/8\\a Set EI\nPe Bul & =| =| 8/2 an = j|\n‘ is =) S|) 21a} 2 a | @ |e ae) ; =| ele g\n_ wW S| 2/21 2z| & t\\2\\ 5 Bele l ale B2 aA 8] si\na Ss)s1 5) @! |S|Z/8 3/58) 8) az o| =\n\\ s — O|9) a SISISi2iS @ a AX) = Sah Sg\na = g £/ |Fia| 3s 2|\\elelsiz 5 Sas Me] See Qe\n: © 7 Slo| 222 2i2\\s o£ cs Ish\n= WW a a) |si3/8| eelslsigis| ssl € 8: x\n— = YS] git 2B) Za) o\\o ee (Be < 2 tw 2 5 =e 9\nspu aD v/2/</O)s Selel=iel= Oo Oo 3 a SI\nMb OQ & 2ISiaiWle “MI SlSliSlSlsS 5 c mm c=]\npa = > e|s s|‘s| §)s| sls = So’ gs rescae4s\n< Nes ° é) Sleitie| = 6 8|38\\s8\\ sis fe G2 c Os Se OSBISY\nEN LO 4. 5 se | S| 2 3| Sl ElElElele So &£ = miss\noO u aaa a So HO|L|2 015/15 Ele ESE oe oO; a| £\n> ey 5 2 wls|c}O]& Giz\\2/2 12 |2 &e O'S BE i Se BP ee\nEagan eo ,2£2 Sleirisiz| Hsleisislz eS55 pq o|* “\nXe 7 Fe Chas Gye 3s eE\\5 E> SES he RS ek Be Boo £ A )\noN 66 66 EIS\\H|al 8 ppopepe bare o5o 2 rang < -\nZES00 ZB ©] Blelalale Fo Oe eS RIPSTOP\na Sictsistts| Bez 2 2 BPslaslslslololelelat\nmn 3 222 Seles:\n! 4 c cate ‘ , Doll iad",
+  "parsed": {},
+  "checks": {},
+  "route": "UNCLASSIFIED",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:32:56.806028Z"
+}

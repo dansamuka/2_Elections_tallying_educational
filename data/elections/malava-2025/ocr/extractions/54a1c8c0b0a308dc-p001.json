@@ -1,0 +1,78 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "54a1c8c0b0a308dc-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201866334800971/v1_54a1c8c0b0a3.pdf",
+  "source_sha256": "54a1c8c0b0a308dcd9322d1f5908c8a648405068210925b5ad93d866543f3e45",
+  "source_filename": "v1_54a1c8c0b0a3.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/54a1c8c0b0a308dc.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P34800971-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.3342857142857143,
+  "text_length": 2498,
+  "text_preview": "ES ee a ae eee ees _ . secede a ata os rae acini\nee Sis el lr SS 401 Ya ee\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MATETE PRIMARY SCHOOL POLLING STATION 2 of 3 Code __037201100605702\nWard °=NOENT = oe? cS AIANDACSHIVANGATE: <5 COmmuisS'!OT | 0 0% Ph epENDENTEL Eos MINDEPENY 0 ae Cade DEWMELECTS(/SSioniNDE\nConptinuency SS 8c ANAM COMMISSION VENTED ECTON EKO SAO 2 OU Cut ELECTORa/ SONINDEREN.<CX Cg SRagiiin ce NOR AL 1 NORE Nt\nGapiity quince PENS CON pOMAMMene ECTORA(ENDENTELEC’ COM Ve ONT ECTORALANS VOEPENDENT Tait Sm cate NDR) NOENTE\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. ANGATIA JAMES SHINACHI\n2. JASON SHIVAKALE BRUCE\n3. MANYASI JOABBURUDI\n4. MWANGA EDGAR BUSIEGA\n6. NALWA BENJAMIN pe renin aerate raneainenmliins (YC\n6. NDAKWA DAVID ATHMAN\n7, OYUGI GEORGE NGAIRA Sot caren eeierneece eee OO\n8. PANYAKO SETH AMBUSINI\n9, TUVE! WILBERFORCE INDAI aS DELETIONS TL PTR SRS\nfal number of va voles cas | ea\nPolling Station Counts Decision{s} on disputed votes if any\nTotal Number of Regstered Votes in the oling Staion\n2 | Tota Number Rejected Balt Papers SLs AN RCRA ac Da OO\n| Tot Nunber of Recon Oecd talotPaers [| [2 Pd\nToll Numer of sped Votes pomttnen expel Ia ce Coser scorn et fos St\n5: lal Nerf ales Cast pc cnanetse NOP TER aston ono ane scorn een\nDeclaration ;\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above aré true\nand accurate count of the ballots inMATETE PLIMAIY SHool Polling Station 14 ALANA Coristituency.\nLX. i\nPresiding Officer: OA LTO N BANDS Signature: DANA ofte B: BLINN Dors\nDeputy Presiding Officer: A UKULO Signature: Wat B a R 27} 2025\na OFFICER\nAgents or Candidates {if present) OX\ni] _ Nomar ren [apne | Pinca | Telco [se | Oo |\nRae pec ORAL AND BCU ENDENTEL 6 OS Gane eA oC Ot OPN eP EN ePRRRD gales or al aN bile oe uueNTEN cea Coe\nCoe ee ee ee ae aa Ce\nfee poten ener ee Sma SRE Myce rat\nNand Scan Ni Sarete vie EScomniissigooNe nor pO ELECTOR As SONINDEPENDS ON Jdeeat oral ANDSOUND AADENTELEC SAR OF SONY\nNB sceeao onic ec Tom SsioniNDE ME aco pC ESP RAL ANDBO( <PENDENTELE GON O ESCO UNDARIERCOMLECTORALAND of (eau\nReasons for Refusal to Sign {if any)\n_ Presiding Officer's Comments: “if F By Tiga\n: <3) = BO eeshos St\nEC TIsrt fc RAN SAS SR eile (iin sca a ES depos cate\nBD LSHARLEEN Moku Lo SIGN: acct DATE. 2. Hil-2d25\nPo iDATON Bano 1G: Sgeret DAT: 27-1202",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.78
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.78
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "6. NDAKWA DAVID ATHMAN",
+      "candidate_DAPK": "8. PANYAKO SETH AMBUSINI",
+      "candidate_WT": "9, TUVE! WILBERFORCE INDAI aS DELETIONS TL PTR SRS",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:46:14.208021Z"
+}

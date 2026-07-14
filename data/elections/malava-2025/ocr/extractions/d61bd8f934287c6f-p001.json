@@ -1,0 +1,117 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "d61bd8f934287c6f-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201826181304837/v1_d61bd8f93428.pdf",
+  "source_sha256": "d61bd8f934287c6f11014b4dbbfade4918b9e32ed1643677395ea7355b24c280",
+  "source_filename": "v1_d61bd8f93428.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/d61bd8f934287c6f.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P81304837-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24479999999999996,
+  "text_length": 2446,
+  "text_preview": "Pe Se Ee 8 Ne Ops: [=] 222 2\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station TOMBO PRIMARY SCHOOL POLLING STATION 2 of 2 Code ___037201100605602\nWar dP ENDENTT 08 <0 cS ANDACOHIMANGA Ey <7 COMMISSION (woo Plt pENDENTEL E> SMINDEPENDE ORE, © eo Rad ayne W0UB-EC Ton 9 SIONINDE\nCans Giveaway S® a. <BEAN. COMMISSION) PENTEL ECTON NG SN AO SOU Cu TELECTORg) SIONINDEPEND CO eh qiagaial | OTORAL ay VNDE PENI\nCountroninne Pe 270 - pS ARAMEGAT ECTORG) | ENDEN TELECOM ot GRR EC CTORAL ANN VOEPENDEN TE ait. eo dB ne AKL ANDB 5 AP ENDENTI\nNumber of votes cast in favour of each candidate: N\n| Name of Candidate _ : No. of Valid Votes Obtained if\n| 1. ANGATIA JAMES SHINACHI : 75g}\n[2 JASON SHIVAKALE BRUCE | Gt one ror Tora ay MNUEPERDEN ORS STOR PSY\n| 3. MANYASI JOAB BURUDI\n| 4. MWANGA EDGAR BUSIEGA rELEC,\n~ |. NALWA BENJAMIN ROG eeccmes mscteny ne ireomammersnicameeetee eer STO,\n_ | 6. NDAKWA DAVID ATHMAN ESC\nPFS OWE RGR OR GE BSAA rics COMMSSIOy ANOBOUND A Cf setoe emacs obitioe re utemine Ore cer anmmomnntt) Le\n[8 PANYAKO SETHAMBUSING Bete cerreesacirrre) Secomnies powers peeenpeteat | CDrat Es\nWf STE LWILBERFORGE INDAL jn.05 0S 3D 2/ COMMS uc] pee re Sey Sore eee re OAT\noN ete lated Soha WS ea 8 Se NDE TSLECT Orga! SSIONINDE cle cren tee ror en Wa parent eet eee pres Aad\nPollingStationCounts - Decision{s} on disputed votes if any _ SOO iss ONAN\n[1 Pte Numer ot egsteredVtersinthe Paling Staion; -———J. 5)\n{2 Total Number of Rejected Ballot Papers; | OB] [te\n_ [S.| Total Number of Rejection Objected toBallot Papers; |-—— 9 OO] [2 ee\n[id foaiNanbersitepicdiees: sf Op) [8\n[setName otidaestast DSB) ge\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\n_-and-accurate count of the ballots in TES 0 PA\\MARY sctovl Polling Station __~MALAVA Constituency.\nPresiding Officer: Be SAC TA NDARI ‘Signature: __ a 2) Date 21-228\nDeputy Presiding Officer: _& 2° | AME WAMALWA Signature: Gertere« Date 2 T-W— 2s\n_ AgentsorCandidateslifpresent) RE sf IDARIESC gC NENOm ON etee re\nee ee\nSd UI Goer NDE TATE SC omsell UN seoGON ITE ECTORY sSlon npc reno CoN ISE acon ANDBC) NE NSEITE ESTOS GeO\n- -ReasonsforRefusaltoSign{ifany) = f Anuoer Fe ORALANDBCHOE PEN DENTELE GOSS Gas\nt ‘Presiding Officer's Comments: N EI i Niketan ie COMA RALANO ent 5 i MN ANOB OM oePEN ELEC! ROK ADR\nPRESIDING OFFI CARI me! BEN SACHITA",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": "full-page-text anchored by '| 2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:41:10.772287Z"
+}

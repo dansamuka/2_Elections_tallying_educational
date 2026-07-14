@@ -1,0 +1,117 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "a1645c61a8b2a9a8-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201908426761787/v1_a1645c61a8b2.pdf",
+  "source_sha256": "a1645c61a8b2a9a86518d505f6203b4eb3d25be4a22b5d2034b3949e7df8f043",
+  "source_filename": "v1_a1645c61a8b2.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/a1645c61a8b2a9a8.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P26761787-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.17902857142857143,
+  "text_length": 2622,
+  "text_preview": "ee\npoe eee ee aie a\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station TIMBITO PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100503702\nOS ETO SOON OTR TES een eels eCEPENDEN TE Sen AE Ree OIOR708 's 101\nWard _ BUTALI/CHEGULO Code _ 1005\nV See a) LTT\nConstituency MALAVA Code __ 201\nFOTO e aa aye ay ae eg ABMS STII fs OPES Rp FRE UE cL TTS Te es AO TORE Senearirmnmnnenees\nCounty KAKAMEGA Code 037 :\n; y\nNumber of votes cast in favour of each candidate: END\n[ Name of Candidate ‘No of Valid Votes Obtained :\n\"4, ANGATIA JAMES SHINACHI CO CS — : “DCO\n[2 ASON SHVARALE BRUCE OO\n“3. MANYASI JOAB BURUDI WADEPENDEN TE\n[4 MWANGAEDGARBUSIEGA ja ad oc ANOS OUN aden eT ECT OR ROS AE SSR gaara\n~ [5 NALWA BENJAMIN, et beeeorateaaveatl neataeresoacasciitsenng Tt\n- [6 NDAKWADaviO ATHMAN\n7, OYUGI GEORGE NGAIRA VRS ANSS sesoxscnslureeerrsrraa Toate LT\n- [RDPAMYAKO SET AMBUSH,\n_ | 9. TUVE! WILBERFORCE INDAL 3 et conaeaericheermmmacinmemameeee eee YT\nPI AL daa ta, Sate TA Ms ANG NUMURAREMTIS eee oe TT |\n~~ Polling Station Counts eRe pMMISSIONINDERE PUNDARIESC?E Decision{s} on disputed votes if any SpeGOeHENTELECTORA,\n[| Tote Rept Yolen Pling Sato [ZO\n|B, [ Total Number of Rejected Ballot Papers; ee OB Or AHOGN SSeS Oy GOT DOUNDAMICSp\npat NREL a Recto eta Tota Paice 08 Evora mene IONE Aza wth oo oUlbames Vel ed SERCO ArIESCOMMIS\n| ite ea stn a\nSe Sbabibeateny a eich Ps oan Ge Meena OUNy ENCE LEC on EONAR ESN fey oeDRNE GIS oeSOMMISSIO\n- Wepgiaanwadersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nid accurat&yount of the ballots in SELMIBT TO PRIMARY Polling Station | OO 2 Constituency.\nof} area » AALENINY NAUMINO OTOMA ‘signature: SARs yas 2S VF 205\nS ca idjhg Officer: JER USHA AWOCR OTIENO Signature: ee Date AT i\\—aom\ney. Candidates {if present) =«« NOBOUAEPEN ENTELECLOMNEON, NOARIESCOR ALAND at DEF OMMISS!\n| ATCARCHINE NEHEA [251635 [OS NAN linerssde) ees fags\nLZ TIMARK MBALO MUNA LA j2qodes ah | BAB | Onpsty aes] ee lage\nPa ipeRMan Mutekio 1 (3675525 SETS WCE fo Ti” Sn ee COTE\na IMAKOKHA EEK AL [ses7Hi| | DER loppessys| Keaaoe of ayn aes\nBe eee ey.\nnr PE cau nae Te eat id ONZEPE A ADARIESC ON ive en cre NDE Neg Se Omire OMNES ONO\nE PS Peres race MME aC ae Beh ELECT ONAL g OnINUErEN ONE Onn aNDaOh ag NENA SEER O TEC )\nReasons for Refusal to Sign (if any) mie NOR OENTELECTCMMISsioNINDE’ 3 RALANDBUNOE PEN ELEC OR NG\nPresiding Officer's Comments: _ SIAC SOSGUNORELEc Ton Srcuan te peRDES Sah og ec OMI SSIONIDLABOUNDART ROSS:\n= AWEUCONBUCTER “BY = ELECHION.\neat Since Td ei tee",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 3,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.13,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.13,
+            "score": 0.13,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI! WILBERFORCE INDAI'",
+      "registered": "anchored-cell-ocr anchored by 'Number of Registered Voters i in the Paling Staion'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:50:02.956946Z"
+}

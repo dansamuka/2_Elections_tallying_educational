@@ -1,0 +1,107 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "ae08709138246e04-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201093151352404/v1_ae0870913824.pdf",
+  "source_sha256": "ae08709138246e04e4248709be941153435266f19566f78d6984742d77d836a5",
+  "source_filename": "v1_ae0870913824.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/ae08709138246e04.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16868571428571424,
+  "text_length": 2600,
+  "text_preview": "S207\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station CHOMBEL! PRIMARY SCHOOL POLLING STATION 1 of2 Code __037201100808401\nWard LOE CROITERNBRAG N TEL 75 OMMISS atti sO REPENDE Code __ 1008\nCalutituency $2) Suc MALAVAL « oMiISSiOy ADEN TELECT OO 2 SS Rtg ci ABIORAL ay INDEPENT\nCounty qauos NL COT KAKAMEGAS ccrOn. vee EE Code AMLANDE DF PENDENTE\nNumber of votes cast in favour of each candidate:\nNo. of Valid Votes Obtained SS\n1. ANGATIA JAMES SHINACH! | ;\n2. JASON SHIVAKALE BRUCE Eats CRIT |\n3, MANYAS! JOAB BURUD! TO IO\nOTST oo Rape Sener mune RAS 7G,\n16. NALWA BENJAMIN | : eee e002)\n&_NDAKWA DAVID ATHMAN Se eee\n_T_ OYUG! GEORGE NGAIRA eee\nbees po ape Se Sone LE OST)\n_ | 9, TUVEIWILBERFORCE INDAL 01]\n{Total number of valid votes cast Te RB\nPolling Station Counts IDE PER AND ‘Decision{s} on disputed votes if any NS Kone DENTE zy\n~ Far T Total Number of Registered Voters in the Polling Station; | 5] | | Seri Number of alot Papers] wih disputed vote [Name of Candidate assigned the vote |\n[2 | Total Number of Rejected Ballot Papers: _ aU, PLIST SISTA CORRES eae Dirk one oT TICR\nSE wag aba dt Pajero Othe Yo BAG PRRT Na ase a8 oo i Soe ME g LEG O00, RO Ne ead\nag oerect eae ce paneer Ht Atom MrT Ne\nWe, the undersigned, being present when the results of the count were announced, do hereby dectare that the results, shown above are true\nand accurate count of the ballots in ¢- NIJSEL iM AK /Polling Station MES PP, | Constituency.\nPresiding Officer: B.ONNENT ORE LUT AWA Signature: Biyofh | EBC: 2 Pmt -2D\n. - Deputy Presiding Officer: <> | SAN TETEMA _ AUKONES| —~ Signature: Oe, PRESTO Gig 27-N—262\nAgents or Candidates {if present) : : NE NOENTEL . pats a OFFICER, e ROE OM\neer ee\n(i Pawo ¢ Ss mM ASihe RST.) A SRE, SY <n (2Y CS a A BT\n- [S.osprimé AL) Alc Ib NOPE riya lt ie oe On ye\n(ilvcurre pmakle laze isl lukewie mash beseoemy ee pata:\n| Fi) Sean Lee Oe ete ae Ne ee OE ee\noN Pepe On eur conn eae camer ese NU eoe Ot gePENDENTEr SS COMMISSIONS Scho ONT EC MUIR CE ec ON Ne seascal\n: Iason ert cc ennaicaid Sone GONG eLECTONAL SSIONMDEPENSSCON IA C=C aan ANDS OUND ADENTE Lega ROS 2Oap\nPAO ioiscimaiped comet aes on ANOS CLL EPENDENTELECQOSSRON eG UNOARIER COgai TORAH aeOL Me\nReasons for Refusal to Sign (if any} misenecenyt ee eee aot ates AND BON PENDENT ¢\n‘Presiding Officer's Comments: TELES oui sun NMS ee pEN SON ON ae SUNDAY ni\nDLT NN SteCPpor eo oltss , INDEPEN DER EEO\n, ; Ai PEs yr - T . z [ i a 8\nSe N UNDA Neato RE ABEED Ec ro Miss: er ga ons oh en\nisons oN MIDENENTEL co ung A URC BALAI tar ONO SON ies ABREU Rte Cans\"",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": 5,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": "full-page-text anchored by '1 Total Number of Registered Voters in the Polling Station;'",
+      "rejected": "full-page-text anchored by '2. | Total Number of Rejected Ballot Papers; —'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:51:57.634561Z"
+}

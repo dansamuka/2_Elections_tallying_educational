@@ -1,0 +1,117 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "929cbfd57ee34afa-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201885001102485/v1_929cbfd57ee3.pdf",
+  "source_sha256": "929cbfd57ee34afa06e0a195f5735ce7920e6df1bff501c2fb7223ad28952f71",
+  "source_filename": "v1_929cbfd57ee3.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/929cbfd57ee34afa.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24479999999999996,
+  "text_length": 2734,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\n: AT THE POLLING STATION\nName of Polling Station |FWETERE PRIMARY SCHOOL POLLING STATION 1 of 2 Code __ 037201100809601\nWard PENDENTEL n¢* Cc COUTTS RABRASNTE/ 2 SC OMMISSIO™ sO 0% Pat epENDENTEL Eo NINDEPENDE Wohin Se Bg denDEN0Gs ECTon = SIONINDE\nCans fitraniy' So. << SA AVA COMMISS/ Oy, DENTELECTO® CCA” pa oO curTELECTOR a, S/ONINDEPEN CaCO ot ge cl a i\nCounty KAKAMEGA EC Code __037\nNumber of votes cast in favour of each candidate: _ SNINDEPENNCARIE\nNo. of Valid Votes Obtained\n“1 ANGATIA JAMES SHINAGHT Soe ec\n2 JASON SHIVAKALEBRUCE\n[3 MANYASIJOAB BURUDI i eect mera OE infu!\n“a. MWANGA EDGAR BUSIEGA Rotercioaearecalnaaer errant Gr\n| [PS NALWA BENJAMIN\n| [6 NDAKWADAVIDATHMAN, Screen nenareT une Gf\n_ [7 OYUGI GEORGE NGAIRA ; eae arated SUSE SURG ONTUNNA ae L A\n8. PANYAKO SETH AMBUSINI ela eS es ORES ne SC MMS OSCR et CERIN CD ded\n- [9 TUVEI WILBERFORCE INDAL- :\n- [Total number of valid votes cast !\n> Polling Station Counts _ 3 . SELON SS Dep UNDAR ~ Decisionts} on disputed votes if any oun seghentel RAL as\n[Tota Number of Reistered Valen ie Poli Stalon: [a a]\n12, | Total Number of Rejected Ballot Papers; OO UP ee\n- [8a Numb Recon Ojos tbalotPapes 1 OO|f2\n[4 [TostNanbersfOspuedes; OH OR ee\n5 [Taal aloes:\n- Declaration erent IDBOU NT 4 ENDENTE!. Wore a POR ECTORALANDE Oe NT +7\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare th Ato es above are true\n~ and accurate count of the ballots in LFwiGIeRE PRin AR CCUOOI Polling Station NOAA AVRO, Constituency.\nSa “ NBS OHNOe aOR RE ONIN een ne PET OB\nPresiding Officer: COPHia NAAGAnar — DAZON _ Signature: —SY ss, “‘Dite, T= i}= 2028\"\nDeputy Presiding Officer: | TY | DER MAGAVA ____ Signature: Te Sas Pe kal tl = RO AL\nAgents or Candidates {if present) Ot eeescON! PENDEI e! PEA ne (Es mies i “sy “ANC s\n| ic NNONENE — |2si8eo 4 | papi“ [ond eeqed SIE yy toy\n3.\\GLipe dame otal nesisi¢ | POY lores yaad Gh fata\nge ey STL iy Seo ots ee COM: SRO LT COS Dra NEM: oN Rens MeN Naeg\nESCPIDEES GS 8 DEPENDENT /CSCOMMISSIGR ONY Osea BON FT ELECTORA/ S/ONINDEPENDS CON At Sal ANDBOLW a sADENTELEC SN Ol SON\nPOY oat 08 CEN TELEC TORY /SSIONINDEENE SCO pS 2S cae AL ANDBOLy S*ENDENTELES ON WO est UNDARIERCOpLECTORALAN OE SWS pn\n“ReasonsforRefusaltoSign{ifany) = per Ce SRALAND EOE PENDENTEL cnet\nPresiding Officer’sComments; Ontijg| ORALANDBODEN C6 0D OMMISSIONINGLP BOUNDARIES ORCA\n‘ee : er CT Ot 2 (4 OE K| ESIC Co we CES AN EAD S af ‘ i\nPO's NAME CO PHI MANGAN AMaZONP LE pW EL SSIONINGLDBOUNDaleSCOM NG\nDATES AT=((— 2025\" OF PRES ee oe ee DRO rE RIESCON Le MNPENDEN RIES Ces Ores\nSS NONRMENG EEN ec crac nnSeneNorN wg ean omc sortra ec outers onoanest is fontanseeas eR",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 12,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 12,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": "full-page-text anchored by '8. PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by '9. TUVE] WILBERFORCE INDAI —'",
+      "registered": null,
+      "rejected": "full-page-text anchored by '‘Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:48:34.521919Z"
+}

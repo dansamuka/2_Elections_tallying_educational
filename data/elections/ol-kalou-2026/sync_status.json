@@ -2,9 +2,9 @@
   "schema": "kenya.election.portal-sync.v1",
   "election_id": "ol-kalou-2026",
   "state": "UPDATED",
-  "last_started_at": "2026-07-14T17:14:57.320434Z",
-  "last_completed_at": "2026-07-14T17:15:21.605890Z",
-  "last_changed_at": "2026-07-14T17:15:21.605890Z",
+  "last_started_at": "2026-07-14T17:16:19.413470Z",
+  "last_completed_at": "2026-07-14T17:16:46.302853Z",
+  "last_changed_at": "2026-07-14T17:16:46.302853Z",
   "portal_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
   "engine_mode": "auto",
   "archive": {

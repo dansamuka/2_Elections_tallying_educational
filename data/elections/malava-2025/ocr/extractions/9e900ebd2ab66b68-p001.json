@@ -1,0 +1,129 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "9e900ebd2ab66b68-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201343538289115/v1_9e900ebd2ab6.pdf",
+  "source_sha256": "9e900ebd2ab66b68e1cc9a9e79fa14afa1d148bd06be76f6fd2bd5ed9ecd01dc",
+  "source_filename": "v1_9e900ebd2ab6.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/9e900ebd2ab66b68.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P38289115-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.2533142857142857,
+  "text_length": 2931,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station TOMBO PRIMARY SCHOOL POLLING STATION1of20 Rede __037201100605601\nWaa PENOENTES Se ° SIAMEREMAMANIN EL 5o SCOmmiS SIONS 0! oe Wut OC pENDENTEL Ec ONINDEPENDE' OK Coco alan OE NIGE ECT OL SSIONINDE\nRone asency' SS uC PERNA. COMMISSION), PENTEL EC TOT ct\" NAC ZOU EH TELECTOR 4 YONINDEPENTT CC 10 Sie cL EANORAL Ay INDEPEN\nDouiitpaninne? Se oc0 oy ANANSI ECTORa) 2 ENDENTELEC. OW Noe Oh, ECTORAL AND NOEPENDEN TES il SC Same << WOR ANDRO PENDENT!\nNumber of votes cast in favour of each candidate: — i\n! No. of Valid Votes Obtained NDENTE:\n1. ANGATIA JAMES SHINACHI RSPR DENTELEC TAMUSSIONINUE See C STROM TETEC TCO BOD Nh\n| 2. JASON SHIVAKALE BRUCE |\n__ | 3. MANYASI JOAB BURUDI VNDEPEN Pe OOO]:\nhs AMNVAIIGA EDGAR BUSIEGR 2A. ANDEO, ENDENTELEC SONS oh ill pbb ine Labi een eet rere orto IN GLC) oF\n|S. NALWA BENJAMIN. BOUND AR) TELECTORALR SE FS ics pele ea opera ret ees OD LRN\n6. NDAKWA DAVID ATHMAN HESC O4jicTORALANOE OO pele pe ne OMMnaae AoROUNOAE eee re aToS GUGE ego UND\nSof OYUGI GEORGE NGAIRA® 2000000) oooh O00]\n1-0 MPARYAKGGOSETH ARIBUSINI sis: ONNDER OUND ARIESCOR pM eee cs rpebe Peter Soo eSIT ERAS TENT ELE TOR gp\n_ | 9. TUVE! WILBERFORCE INDAI_ gE COMMISS OO cae GPDERENTEL Se Tom eCrONINO ES ARTE COE CC TOLEDO RE\n[Total number of valid votes cast Seog S SION nee genre EC ORAL AND boy DEPENDEN unto oO pNOSD LED ed\nPoli j Station Counts. TEM em ae Mee OBOUM END ee cc -Decision{s} on disputed votes if any J NRPROM GENTELE ES RAL Ay\n| Tot numberof Retr Vtersin te PotingSaon | ——— 2]. ] [Sati f Paes! wh ete] Nance sped wt]\n2 ToaNinteratReecetbale Pes | OOT II,\n[Tl Nob jon One wbaetPpass | OOD] [2\n[a [Tostiunierttopicdioes, OOO] [a\n2 Declaration MINDEPEN ne S MN ANDBOU, PENDED LEC TG Oleg O8 5 Ds SCURLeC soe, se! SDM SION,\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare thayfthe fesults shown above are true _\n- andaccurate count of the ballots in [TOMBo ParmApY PoltingStation — OA CANE ~+ © 4 Constituency,\nPresiding Officer: DUN CAN LUMe ® nyo LUKE F Signature: A | OF iDate, I ie 2028\nDeputy Presiding Officer: NO SwA MYCSTo\\ Signature: WK Cat eS pat 27 ~~ 202\n“Agents or Candidates{ifpresent) LAN aH SENDER out\nfie] ramcnareen [aie viene |Win [sme [ow]\n[2 { Sel a cette | Suh Be OR A eygueyuaiad Geo en zab\noa aah Deal aDOOa sae s0e ab solDra PDOL NARS eR OCP WinEPE NOI ICSC uMSO NASP LY\nNE do Gl SSIONIBBE A OUND ARIES Jan ioe Ques ON GEPENDENTS/ @ SCOMMISSIO'N NON C-PLON ELEC ORAL AQ/ONINOE PERDE WR NECO\n\"Reasons for Refusal to Sign {if any) i NS OENTELEG TC CM mirg oNINDE® Kye srceROe CIE onal AND ANOE PENDENT I\n__ Presiding Officer'sComments; Pe bears Sas Se\n“PRESIDING BEFICERS NAME: DUNCAN LUMPS RGinE DKE & Sn\nBEAR CRN Arse cei sscat ne cso earass nucle Aon esr gee\nrn ON ARS Ne EC OTAL A Mma a RIS ANDE OUR NDE PLETE SON DANES OM ORE NOSSO",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.07,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.07,
+            "score": 0.07,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.51,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.51,
+            "score": 0.51,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 4,
+        "confidence": 0.07,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by '‘TUVE! WILBERF ORCE INDAI'",
+      "registered": null,
+      "rejected": "anchored-cell-ocr anchored by '2.1 Total Number of Rejected Ballot Papers;'",
+      "total_valid": "anchored-cell-ocr anchored by '| Total Number of Valid Voies Cast;'",
+      "total_cast": "derived: total_valid (2) + rejected (2)",
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:10:26.048854Z"
+}

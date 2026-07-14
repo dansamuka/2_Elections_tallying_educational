@@ -1,0 +1,119 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "195d18ea8371baee-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019701002/v1_195d18ea8371.pdf",
+  "source_sha256": "195d18ea8371baee948054b77835b5f34332a3ca15186bc11100d0978d6387fb",
+  "source_filename": "v1_195d18ea8371.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/195d18ea8371baee.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0197-010-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.23386666666666667,
+  "text_length": 2235,
+  "text_preview": "6 eC we —* “oO 2\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station TARAMA PRIMARY SCHOOL POLLING STATION 2 of 3 Code __909040019701002\nWard Si DERKHALE Code __0197\nConstituency BANISSA ERG cL SOR AL ay INDEPEN!\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate: ‘\n|_ Name of Candidate No. of Valid Votes Obtained\n[-1. HASSAN AHMED MAALIM << rr\n2. MOHAMED NURDIN MAALIM Sot: eT AS YALL UNS SONAL aE\nTotal number of valid votes cast se\nPolling Station Counts Decision{s} on disputed votes if any\nTt Numero Reiter ees inthe Paling Son, E30\nToll Number of Rejected Bale Papers Mfc IEE AO Cero ane AO SemBEN CECT ONT TOBOUNE HE\nTotal Number of Rejection Objected to Ballot Papers; |-—_-__-O0 0 RIE OC CONN NOBOLDENDENTELEC TPR nO pe BeaON DARIESCELEG\nTotal Nob of spied ates FREE CIORL 1s ouienr Lu cism pee ree teaccr\nTl Naber fai oes ast RS rete onan otal Nifont ec Oc RO\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in TARAMA PRIMARY SCHool Polling Station _BANISSA Constituency.\nPresiding Officer: _ABbi HASSAN Emory Signature: Aetitit— Date 21 ~Hi- 2O’AS™\nDeputy Presiding Officer: ADAWN HVSSEIN GABALE Signature: __ Gale Date ZI-ll-2o\nAgents or Candidates {if present)\nName of Candidate or Agent Party Name/independent Candidate | Tet. contact | Signature | Date |\ni AeAIM Apo Maaig 33371301| UBA przqoissis Ble S—_by- 10-201\nER do OOM CECE Sa EEE MS nde ea Sac oe NOEF ae a LECTCOMP SS ON NON ESOL ECTS\nFenn nl Senos Ee ee\nPS SORCIENTELEC TOW SSIONINDEPEN SCOR EOC RAL ANDEOL yt ENOENTELEC NON NODS g ONPMBARESCONs CLORALANDENDEN IN STROE Suid\nBOE ORAL ANOBO CEPENDEN aslo nee QOUNDARIESC GL ECTORALANGEWOY ONG PEN. COMMISETOryiA NOBOUNDAR OCD EC ONIN\nUE DS Cosa ONINDe oe OUNT aa SCOMY PEN C ORL NOP DEN TE] SSCO ms CLONING ROLE ONDE Ec TORA oSibninAr SeNDEN GRRE OSE\nOE en rupen ieee Scan cal ON GONE C ONION Ec Tom MSS LIGA MOENDEN aS Rg OME EAE UNOAR CT ORNGC ETC aADg\nReasons for Refusal to Sign {if any)\nPresiding Officer's Comments:\n[THE EXCER GE WAS FREE AND FAIR\nPo: ABDI Hassan EXmot\n27-if -2er7¢ ERe 3\ny 4 e ¢.",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 26,
+            "confidence": 0.21,
+            "score": 0.21,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 630,
+        "confidence": 0.28,
+        "source": "certified-register-hint",
+        "alternatives": [
+          {
+            "value": 630,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "certified-register-hint",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 0,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by '2. MOHAMED NURDIN MAALIM'",
+      "registered": "certified-register-hint anchored by '1. | Total Number of Registered Voters in the Polling Station;'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "Total Number of Rejection Objected to Ballot Papers; |-—_-__-O0 0 RIE OC CONN NOBOLDENDENTELEC TPR nO pe BeaON DARIESCELEG",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2448,
+        3168
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "PASS"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:26:11.509872Z"
+}

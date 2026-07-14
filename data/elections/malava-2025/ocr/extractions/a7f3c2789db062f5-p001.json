@@ -1,0 +1,124 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "a7f3c2789db062f5-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201679071489579/v1_a7f3c2789db0.pdf",
+  "source_sha256": "a7f3c2789db062f5d449e394eb71db1585a1f9d6dc998e0ef99caf1fbd2720e4",
+  "source_filename": "v1_a7f3c2789db0.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/a7f3c2789db062f5.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P71489579-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16457142857142854,
+  "text_length": 3043,
+  "text_preview": "31.2%\nae Sie! .\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS _\nAT THE POLLING STATION\nName of Polling Station KIMANG'ETI PRIMARY SCHOOL POLLING STATION 1 of 3\nAen) DEV UNU A PU NDARIEO Sal ee eo. A RIE Se Ot Sia ene cOL CY\nAE CENT ic NRE ENTE ESC OMISEION INO'SG WSO OEPENOEN ELEY OME ENOEN RECO SR DITOR TTR aN\nConstituency MALAVA Oran RES iS Aer ON\nnee MIB COMMISSION MOENTEL ECTOCEE(S NO SO NRTELEC TON, SSONPREPCHOEN GuEN\nCON, comuiaee Code OR ND SOUR\nFOUNDER Nee pl ie OMNIS STON POLO LINE APE yO a a ae DEPENDENTEN. agi\nNumber of votes cast in favour of each candidate: ORAL )\n[ Name of Candidate To. 0 Valid Votes Obtained :\n[4 ANGATIA JAMES SHINACHI erenney DAR sires it\n| 2. JASON SHIVAKALE BRUCE o : SIStANT aa On¢\n3 MANYASIJOAB BURUDI : Seana Loe ss ocee eens arena Py?\n| MWANGA EDGAR BUSIEGA 3 5) Secreta COUN TAT Oa\n5. NALWA BENJAMIN NOBOU! ; SENTEDS Dec euaverens: 2 5)\n| 6 NDAKWADAVIDATHMAN See ean erereer eeO 7\n| 7 OYUGI GEORGE NGAIRA enaet Sete eae onare C Oe\n_ | 8 PANYAKOSETHAMBUSINN t SPOKe ele von ES err 930)\n| 9. TUVEL WILBERFORCE INDAI ERAGE Ree\n[Total number of valid votescast. SSRREETR NPAT Soa eee\nPepUIS Dus BOt EPUB Na 0250 OMN pup B Ou NOnyre £c10° WSCRIGHT a Oh MABINER waka HF agle Suse. co OUND ARIE SCOng,\n[1,| Total Number of Registered Voters in the Polling Stations, [7] Wao Cate aside\n_— |2.|ToatNumber of Rejected Balok Papers; aE eaten aida\n~[3-{ Total Number of Rejection Objcted to Ballot Papers; Raaeeare eae CARRE il UN SS NR ee\n[5 [Teta umber Fad Woies Cast eee ee\nSeca lamattonp es OnINDEPENCE CONT? e3C ant ANDEOUNS PENDENTELEC RMUOR GED ONNOL NDEWTey JESCOMMIES OQUNKORS ter SJ\n_ We, the undersigned, being present when the results of the count wer WONTON, Bn HULSE yeh od ees GNINDER coho? Cres COMMISSK\n_ and accurate count of the ballots in KiMANG'E 7! DQIMAQP O ARLUFg Station “4 Se ee results shown above are true\nBOBO eee COmm ear NDEs RENE HA OS ee moe MALAY Ko Cohstituandy,\nPresiding Officer: _§ CAREN IMBOGO h ppranga Ger eNO ar Sco mmisicy HOE atone OES oe '\nONE (oe POUND AREER WARS NE RDRA TES ESCO Ma oua UN ECS OREO Oren tar aOR eee EL Da\n‘Deputy Presiding Officer: 7TW\\IW\\ NAO N OFFICER ngfure: APC 0 “BI= tl gige\nJijenti ie Canidae Uk presale cn cee ga Pet OR yc enOETENDEN ANE Sey SON NODS SOUROAN\n[na] name canter ont lasso Na | Par Nanelndependnt candi Tecan | Somes [oe]\nHANA HEINSS imBuS PealGi's | OO De bigeqerede tape\nHla mle asetite go guel NAD i, brocstcule pec foes\n; {A Tony Mach Hot bGad Be Bo bac dete, pee\nECR ERIE SCONE Ona aNDBOMd Ose co cor essing Ao UE RIESE pet Seopa fl ANBCOUM heed 2\nae ee eee\nee cea a eee mete er Caer es Se\na es a eae\nSS\nwun Reasons for Refusal to Sign (if any) Mls CORR NOLO ENTELECTCOMMgsooranDe?™ ‘ OMMISSION CANDR UNDARES OR ROU NF\nPresiding Officer's Comments: ion! AIROARIESC 4 i : nh 30 PO ROE spencers PEN : > o\nOe aa sO RAMA ND 2a an SO SIS CC Cane rena 65 GaONN GA 0a OBIE Raasa pro eee OO\nSasso COR BB le ssc BMS BORN een nse COMME AL ANDBOUNDIE, cee NOR: Roa\n} ? \\ ae peek ",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 7,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 3,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 222,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 222,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI \\\\ WILBERF URGE INDAI'",
+      "registered": "full-page-text anchored by 'al Number of Registered Voters i inthe se Paling Seti'",
+      "rejected": "anchored-cell-ocr anchored by '2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:31:35.180805Z"
+}

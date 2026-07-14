@@ -1,0 +1,23 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "970cfae4700b8e20-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201276598629852/v1_970cfae4700b.pdf",
+  "source_sha256": "970cfae4700b8e20a4cbc00ec6bb0b0032df77bbc0fb06171737bd3adc8c6be3",
+  "source_filename": "v1_970cfae4700b.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/970cfae4700b8e20.pdf#page=1",
+  "page_no": 1,
+  "form_type": "OTHER",
+  "stream_key": "201-P98629852-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.3222416812609457,
+  "text_length": 2642,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTs a\nAT THE POLLING STATION sie\nName of Polling Station LUYESHE PRIMARY SCHOOL POLLING STATION 2 of 2\nWard Seeiab aan) ES ceonre cio BORON ARIE SESH LS NON AEN CS Code __ 3720110070789;\nNOARSES orem\nbe earner = uN ALANS oniser EVE Roe RRO oD ARTESc on peto ISPENDE ORANG Code __ 1007\nVee UME\nCounty a Se Sem fo\nv 7 H ONMISStoR toast\nNumber of votes cast in favour of each candidate: rene see G EA\nName of Candidate NDEI No. oF Val — )\n|4, ANGATIA JAMES SHINACH| Sao arrose ssion EN\n| 2. JASON SHIVAKALE BRUCE | ae Sa proc omg a oNNUeeS aeSe at LTS UmgeaS\n3. MANYAS! JOAB BURUDI \\ Seat aT atnaeeeeeee ee ra\n|” 4. MWANGA EDGAR BUSIEGA. a Saree eae 0\n[6 NALWA BENJAMIN Sa cored gene eT Ye\n/6. NDAKWADAVIDATHMAN me SoroR . “OC\n| 7. OYUGI GEORGE NGAIRA - Vi DARI cfu ROT ECTORAL ay anes u CEL OF\n| 8. PANYAKO SETH AMBUSINI ROU 1S ero oune Ta eeneS oa a\n_ [| 9. TUVEI WILBERFORCE INDAI _ 7 AO poNO ARES = OTT\n{Total number of valid votes cast iT RSS IONINDE?. aR eta as Take orem oe ST ee\nPolling Station Counts OF QMS: YD AR - Decisionf. ENDER VE GN TE! INOS BIS Ce OWN OE pores\n|: ] Total Number of Registered Voters inthe Poling Station, | 2 SQ]. acim pee ated IIB SOUS 0P HENTELECTO,\n|2.[TatnuntertRepcet Balt Pans; | BS en rs\nPaced er eae Ua a OAs CRN eS NT NEE\nMf ol Numa ale eSB C'S CSN ARIS COM Jortag Ae Poe ee :\n‘ “Declaration . A yi se EPEN' \" : ‘ 3 ON) 1s , i y R 2? aa : * ; - 3 Mi a, ‘ ‘ a NDE! i\nWe, the undersigned, being present w en ther sults of the count were ann SAN OTe ec Ong ALAN Awe red EL\nod en aneceoame oF Merah TOVE SE Bese gitar” declare that the nee {ts shown above are a\nt Mrye Mi yMENT 2 - Are / AL & re = HT or ee ™ As = seat AIF ENN ie es Sakae\nah ora i ; y tse ae de ; — —_ Constitian:\ncaanceanesate EE BIWIN THONIAS © sopopdrts © AD Dre ne et eH\n- Deputy Presiding Office: FKUDENCE CV KOLIA Signature! Qtr SONNE ees - Sill Qog.\noF ESCOMLEC TOR AL ANDEO oN RAL 4 PION bial ~ | a Date RA1= Il ~20.\n- = | AL ; RY A APORTACND 4 SO UN eF | E ih\n3 IDRCUEER Klason BAD pare em [oe |\n. Skenneoy Lb MeAvcHt [3235266] UNA prea OE ary 3 :\nease VTA iowapog) Det bP Ora\nee\nBO ee: Si Bt RAOA SS Ga ore seer\nPe FOP a0 ie SCOMM'S Sion ALANDBOUNPET ESO, ONNKeLEg TOSS Siren\n: ieee cen eos erg rs psec\n: Se arn ar gre noe reer\nReasons forRefusaltoSign(ifany) DEP ECO ren oumssi Rano 5c\nPresiding Officer’sComments; cONthg/ ORAL ANDRRNAR CeO TELECTORA/ SS/ON GE —\nrot r At Sistas MA ; ———w \\ i AMES : : ORAL : ENT ROK\nNDA PO EDWIN THoMas iam Ate SACRO GARIESCOMISS/naL ANDBOMNTAS ES\nIR WOE ARESCOMIs OR) a nEE DU es PBOO ST EAE e aee AN NORE BME eh? WE oll NINDEDEOUNDARIESCOM™ pao",
+  "parsed": {},
+  "checks": {},
+  "route": "UNCLASSIFIED",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:05:43.301797Z"
+}

@@ -1,0 +1,127 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "52d95854ac9da3db-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201352840215797/v1_52d95854ac9d.pdf",
+  "source_sha256": "52d95854ac9da3db221618b001015d8d498bb1b4911eb104d4e936b585d5cda9",
+  "source_filename": "v1_52d95854ac9d.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/52d95854ac9da3db.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P40215797-01",
+  "match_method": "STATION_NAME",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.25497142857142857,
+  "text_length": 2134,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MUSIDI PRIMARY SCHOOL POLLING STATION loft Code 037201100209701\nHU ape NDEN TEL Scie oe AEST RABERGENTEL 2/50 ON MISS SA CAROLE SRIEST OMY goRALANUE CR OEM CAA Gedenoe tle ECron SIONint®\nConstituency SION NO) ANALANI COMINIS SIO A DENTELECTOT SOL, Sa 6G oll mmssign MIUGOUND RT CU Po cL ORAL Aye NOP EN\nCounty OM ENO COM ARAM 6 TOF oy SNOENTELEC SONGS les ES Tom BOUND ARIESS nee Bade BORLAND BO, PENDENT!\nNumber of votes cast in favour of each candidate:\nCF cE Ge oO DE PEN Ie coMMISS eed No. of Valid Votes Obtained ia) SSI\n{ ANGATIA JAMES SHINAGH BE Re op oa ee\nSr MANYASI JOAB BURUDI See See eran eNO TS 77,\nla. MWANGA EDGAR BUSIEGA Saat ipa nana Nees eos!\n| 5. NALWA BENJAMIN | sea a RR NSTI 775\n[6. NDAKWA DAVID ATHMAN eps as Ne TUTORS 7 Ft\nnope OYUGI GEORGE NGAIRA _ ‘ ee DOO\n| 8 PANYAKO SETH AMBUSINI__ UNDEP EN Se ea a A LZ\n9. JUVE! WILBERFORCE INDAI OMNIS Fiecertuaee ence maraLInRERe RC S|\n~ FRotal number of vaid voles cast ESS oie onA Aaa te ce\nPolling Station Counts Joe ous cron -Decision{s) on disputed votesif any Te MISSIONIEAA\nal a aang Sab [OTA [Sette neg retire\neo UCL ers ce ean Seana) eae sm\nEE ee ener To pele ee a\nee ot eee\nWe, the undersigned, being present when the results of the cont were anngun Sache re SEY) shown above are true\nand accurate count of Pemisiek eh Ds il Xj otting Sta 1004 pA AVA ___ Constituency.\nPresiding Officer: HEM DLE NM) ASIMDE MS WAM) C> NG Feaaiwes AT] COMMISSIOIIe cS LEC Sr\nDeputy Presiding IEG co SS Nace nig RAL A signe ge Gestion 8 oLpiey Denar et atgan SENDS\n, Agents or Candidates lif present) we LANDBOUMIS EN ree. SoS on ARIESCOW BAL ANOB SROEN Guts\nLe ica [ahieia[ rota [ Hone | Some [Be |\nCa ees Oe ee een ee See a EO\nSEU: eee S npuiey mc ean SH ee\nSe rh cea wee ean eae ee EEE\nReasons for Refusal to Sign {if any) ie Ns NI UE WEP oe mK me , ‘DEED el RD\nPresiding Officer's Comments: ne an eit a LAND ENT Soe EN OMMISSION IND, ENDE ) 2G\nOTe : ; ; rove woes Pa 0 < x ' ‘DAs . RES\noF rAd pie Mts hs Ae & WwW) 4 pS ON AND BG REPENE COWS poe\nTe a Sree se PEA NE ESCs MA NO",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.09999999999999999,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.09999999999999999,
+            "score": 0.09999999999999999,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBE RFORCE INDAI'",
+      "registered": "anchored-cell-ocr anchored by '4. Total Number of Registered Voters i in the Paling ersiavcth'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:11:09.964030Z"
+}

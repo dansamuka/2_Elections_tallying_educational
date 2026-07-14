@@ -1,0 +1,107 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "a2defd8002d00a65-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201516031144636/v1_a2defd8002d0.pdf",
+  "source_sha256": "a2defd8002d00a65669a96e9ba965f0e9e08ba9db83b8d4344bb46951330dc0a",
+  "source_filename": "v1_a2defd8002d0.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/a2defd8002d00a65.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P31144636-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16457142857142856,
+  "text_length": 2760,
+  "text_preview": "ie rr ae a\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station ST-JOSEPH LUNYU K PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100606402\nSST U TE MARX SCRODG ROLEING SUATIOM2 GES COM, MOEPENDENTE Den UCS CC __037201100606402,\nWard MANDA-SHIVANGA BailenoeWme<croM/Ssionno\nCalif fitorcenty SA uC PEPE NBS COMMISSIOn PENTELEG TONE CAG Xs OU ns TELEC TORa) SIONINDEPENOTACONe RSaDT ing\nBe oa Te PETE ECON OPES CTORAL AAO pe yD N TE SOO Qhga OER ANODE MENT\nNumber of votes cast in favour of each candidate: Da)\n[Name of Candidate YN. OF Vali Votes Obtained Ta\n“4, ANGATIA JAMES SHINACHI Mes $OS SORE UDENTEDEC Ta 7S ONTNDE SS reer NNO ee AY RAE\n2. JASON SHIVAKALE BRUCE. SUID Esmeralda ee OD.\n3. MANYASI JOAB BURUDI ORAL A eS OREN — 5p OD\n[do MWANGA EDGAR BUSIEGA )\nLARD SONG Merle KOSI SSSA ANOBOUND Ay 3\nFs IRR At CURIO oenerscsa goeeremeeeemeee\n_7_ OYUGI GEORGE NGAIRA MISSION :\n[8 PANYAKO SETH AMBUSIN|\ncE EY ORLSEER ORC INISAL SNE C OWNS oo pepe ro Scat Cpe ane RIS\n[Tel mineral re\nPolling StationCounts = etisionts) on disputed votesifany =i i\n_ [1 | Total Number of Registered Voters in the Polling Station; eee Pe _| Serial Number of Ballot Paper (5) with disputed vote\nCe a fC nT\ni ee a\n[etter stage 98 [ep\n“ae Declaration * ee ees ot ¢ e ’ RLANDBO f ePE DENTE V Bry Ae ‘ 2 try ~ ‘c ; LAND ~ ; x en . ; Ms\n_ We, the undersigned, being present when the results of the count were announced, de/hereby dectare that the results shown above are true\n~and-accurate count of the ballots in LUNYU K’ NARS OZ Poiting Sfat ek 3 CMALAVA bovsaaenye\nPresiding Officer: _ ANNE Mvilvywa SHitaa DA signd “one laflic, - Date __27=)-203¢\n- Deputy Presiding Officer: ANYANGAT EiTOTT Signatu gE ate 27 1 - 2025\n“Agents or Candidates {if present) Der eSC ONAL ANDI ENDEN te OR e508 (DARI Come! SND SAN ROR DENTE\n[oo] nantes [Pan | Pence cn [ Was [Soman | Ba]\n(Ro Muuasin aateaqys | BCP tp neescug Niche\n— P2IGi beet Mv Sud jeoq7éeT | AP -Mlengosme7] Avy (274) ae:\nSINEDON) Saya leseyeusl UR An byigused (OSES lesa\n| pote stl an ane Ou ig eaNE POSED Cora lon toe OU re SOLUS Gas OMNOL eV ADARIESE OMT EOS NS\nHEU eS Soe irs 8 ommca NCC Coe Cue lonal 4 OnNDErSIOL ON ESTE sel NENT TORRES\nE ps\nSEDO eT LECTOnas SSIGNINDE ENO aaa ANDO YE ENDEN TELECON QOD COON NDARIEACOGLECT ont NOC PRE\nReasons for Refusal to Sign {if any) SAOS SCN ROO ENTELEC: joere ye ESCOMMISSION AND E SAW\ncade — So = real i ER : ew oe ~ a ara ~ ppc PERDENT , re : ~- = . ~ 5 :\nPresiding Officer's Comments: FELEC TON ES COMM gp RALANDEON ENTERS COMMISSION: DROUND ARIES CAPcer nee\nta eR tne crate NOME UE eRe Ns SOD TG TO less G\nPOO RARE Sr erkeleb feu Spy ep {ore OE ON Sao:\nTORALP CENCE OR WOES RIESCOMMS BUNT sSnaiSSION De OR Ae PEND EMME Sith eAONP NOt",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": 5,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": "full-page-text anchored by '[1. | Total Number of Registered Voters inthe Poling San:'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:19:43.627521Z"
+}

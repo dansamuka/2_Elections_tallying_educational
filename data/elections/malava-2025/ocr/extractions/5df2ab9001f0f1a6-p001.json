@@ -1,0 +1,107 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "5df2ab9001f0f1a6-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201946110391960/v1_5df2ab9001f0.pdf",
+  "source_sha256": "5df2ab9001f0f1a661190954667cd57950849d4f4f319c58cbf75dc2e327d487",
+  "source_filename": "v1_5df2ab9001f0.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/5df2ab9001f0f1a6.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P10391960-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2445,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station SHIVANGA PRIMARY SCHOOL POLLING STATION 1 of 2 Code __037201100606201\nSE ee Ue Oe ROR INS POROUS” WOARIESCOMp/ NOEPENDENTESEN CAC __087201100606201\nWard MANDA-SHIVANGA Code 1006\nFATS STO ce eee TOT SP So UNO ON Bue PENDENTEL € -ONINDEDENDEN pt co DEWNB-ECTOMSSioninic\nConstituency MALAVA Code __ 201\nee TO Lute TEL EC TO cc 20 eu TELECTOR | SIONINDEPENDE. CON GE ELUMTORAL A VINO E DE\nCounty KAKAMEGA Code __037\nNe RR ECT OR A ENDEN TEL ECT COW ASCO RRE ECTORAL A MNDE DE DENTE CRONE SINR ANG OEPE ENON!\nNumber of votes cast in favour of each candidate: .\nName of Candidate ale No. of Valid Votes Obtained\n|. 1. ANGATIA JAMES SHINACHI - aol AO.\n| 2. JASON SHIVAKALE BRUCE rents SionaN — ~ ne\n| 3. MANYASI JOAB BURUDI 7 = S60\n| 4. MWANGA EDGAR BUSIEGA ————_-— OO!\n| 5. NALWA BENJAMIN: UND AR moe OO}\nDOP UG ANE AANTO RUA, NDA! SaaaaSeoeeNesaelmuENTTaNEScatencseeny 571\n7 OYUGI GEORGE NGAIRA SNES Sor ence eee rd\npot PRT RO SETH ANESTIEIN mg iS scarapestagenerseel rtaanereennre geen OF 5)\n_ ScTUWeLWLBeRFoRCE Row ee\nTol number ofa voles cost AGUNG socnmacesssmcas imsssemsesessese 5A\nPolling Station Counts eooeN miss PEA LND: ; Decision{s} on disputed votes if any Sunt cesouN ELECTOR,\n_ [flat umber Registered eesti Paling Staton, [2B set\nBe Ae el ky 4 SRN see 1S AN RAM ee eee\n[3 ot Nunbeaf econ Ore t alot Paes ean on oubeten a eqionnre eee toor scons\nol ee coe 69S Seca mG Me eronnee eee\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the reget Ss ORAL AND\nand accurate count of the ballots in SHIVANGA Dpiwane? Poiting Station ___ MALAVA ™ ,Consitgency,\nPresiding Officer. VICTOR -M- BAN EL Signature: A —--_ bi. V— j) - 202\nDeputy Presiding Officer: LUCHAITH — KWORA Sanature, arabes een] ( ~ZO2\nAgents or Candidates (if present) < ‘ Ln rel\nia] netomat Tatoo [ryote aate | once [apes [oa\n[2 DAMABASoiTA [Stzefelol UO RAIpdewtena te\ni aca boeeen nee ame SEs MOANA: SO\nSe\nPE eee eens Se each gc ote ionncerewicones ge noe oniccter Rese\neS eae ts CSR AAU HSMN nt rare atnnToe Se\nReasons for Refusal to Sign {if any) _ SS SDENTELEC IC OMiMscrornind! Ninoy ‘\nPresiding Officer's Comments: | ee COMI a DRAL ANDEOUeN ane CPOE MISSION MORON mem eES Ne *\nanton’ IHRE COunNTING Protest WAS. |\n“paesioinG OFFICER’ VICTOR DANIEL Lee\nHt decrorseaces cht geo ok ad “ee ee yy ke eae, HP SSP R oes",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": 5,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 2,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "anchored-cell-ocr anchored by 'TUVEI! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:53:15.526696Z"
+}

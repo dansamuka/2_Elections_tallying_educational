@@ -1,0 +1,127 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "8f34ee8ce9c3420d-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201318274973542/v1_8f34ee8ce9c3.pdf",
+  "source_sha256": "8f34ee8ce9c3420d3952e84bf67a7b655c6647cfec3cd298b0abf724aff7a95b",
+  "source_filename": "v1_8f34ee8ce9c3.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/8f34ee8ce9c3420d.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P74973542-01",
+  "match_method": "STATION_NAME",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3247333333333333,
+  "text_length": 2614,
+  "text_preview": "ee eee OPO\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station SAMBULI PRIMARY SCHOOL POLLING STATION Toff Code 087201100711401\nWardPENDEN TE. ot! <C -SRIROGEAMUGANTE/ 77 SCOMMISSIO®, yu0' 0% aut epENDENTEL EC? NINDEPEND™ woh © 67 CoanDe ae ECTon SIONINDE\nConshtwancyS2 auc ALANA. COMMISSION DENTELECTON eNO pM GOV cwtELECTOR gs SONINDEPEN Ce CU Ae NG Oe cL EAOIORAL 47 NOEPENI\nCounty _ KAKAMEGA Code __ 037\nNumber of votes cast in favour of each candidate: SPEW NCAR\n_ [4 ANGATIA JAMES SHINACHI] 3 p00)\n_ |.2 JASON SHIVAKALE BRUCE BES e OPS UN cu ELEC ORAL a pNINDEFERDEE COM peter erORAl tert\n“3. MANYASI.IOAB BURUDI ees Soaeeemm acumen tee ht\n“EMWANGAEDGARBUSIEGA”\n5. NALWA BENJAMIN, qc one ne ea SOSA T1\n| NDAKWA DAVID ATHMAN pi rma rear NAMTTY 7 A\n[7 OYUGIGEORGENGAIRA ! 00\n__ [8 PANYAKO SETH AMBUSINI @\n| 9. TUVEI WILBERFORCE INDAI | ESC Bal SOE ENTE! ECT OAMIS SIONINDER n> OR COME CTORAL AMA DIY\n-[itnanberofvidvoeseast\n“PollingStationCounts = “INDE ___. Decision{s) on disputed votes ifany AENTe LA)\n\"Fh fia Nur of RepiterdVersin be Paling Saton | [73]\n“ABs raat depts Popa oo pak oe\n| Toa Nunber ef Reecon iene wBaloPpas | opgl [2\n[s:[TaetNonierotvadoescess gf) Jee\n; We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true _\n_and-accurate count of the ballots in \"CANBU L) PQINIAR: { 0/ — Polling Station ___. ~ PT case Constituency.\n‘Presiding Officer: REUBEN NluToRo EN NiUTORO- Signature: A Date R7-ITAR O25\nDeputy Presiding Officer: - LEA iad MATAR c “Signature: _CRgawAD eu ware ttt Date (LEB:\noP ONDER ENQENTEL 0c OMMIST BOUL KORG OREN TELE OR ALA pO CO eee Gan ANDEOUND Ag DENTELEC OnE pirates\n_ Agents or Candidates {ifpresent) nae VOENTEL. ? Bein eR AS EOP RICER YD\n[il Medina [ohana puna | Wont [let |\nbe Ve Sc A K y ; 4 % C) ; aI a :\nSF SBATCE OPN ans s1okac VO cua Ed ee oc On a per OArrea, cutMISS GOS AN IOP SeNTEL ECT se NDE ees ogNO Seed\nEe ee UN oe aris QOw SN ABEOU re Ee OMe, ea EP One Se Oe NaleS onal ANH NDE ae ENTE. CS Se\nHR oo CN it SIONINDIIB EC UNDARIESCA pL a ae On mug EP ENDEN TE: @ COMMISSION ONOD Gath eO™ rELEC ORAL Aug NINDESENG COMP NCO\nOPO NTELEC TOR a\" SSIONINDEME NE SCORES ES RAL ANDBOUyS PENDENTELEC ON WO Gs) UNDARIEGC gut ECTORALAND OE AN papal\n\"Reasons for Refusal to Sign {if any) JOG NOM CENTELEG Ec! DEP Ee SNE RIES RAL ANDMVVORPENDENTEL OSes\nPresiding Officer's Comments; __ “: ncons “ ECT OM Ss aL AND BOSE NS ae ECT ORCI\nTHE POLLING POKES C WAS FREE AND Faia < KORO EPENDEI NG BOG\nNCO RBUBEN Mivtebo: Nelli. 371-209, Kosmeen gt",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 1,
+        "confidence": 0.5883333333333334,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5883333333333334,
+            "score": 0.5883333333333334,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by '8. PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by '| 9. TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'Total number ? valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:07:53.340038Z"
+}

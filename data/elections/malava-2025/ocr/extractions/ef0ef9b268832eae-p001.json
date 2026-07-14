@@ -1,0 +1,107 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "ef0ef9b268832eae-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201808666878759/v1_ef0ef9b26883.pdf",
+  "source_sha256": "ef0ef9b268832eae6a96ac9feaf048c4c985111c8d7e9c100de06c0f82964af1",
+  "source_filename": "v1_ef0ef9b26883.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/ef0ef9b268832eae.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P66878759-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.12308571428571427,
+  "text_length": 3036,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station KALENDA PRIMARY SCHOOL POLLING STATION 1 of 1 Code __037201100707001\nWard SHIRUGU-MUGAI Code __ 1007\nConstitwency S> Qo cMALAVA. COMMISSION, DENTELEC TOTES Ral eO. cn tELECTOR,) SVONINDEPEN 6CU ot i ote ci 208\nCounty ININDEP ET CC os AEORLECTORA/ 2 ENDENTELEC CON ph oC ob ECTORALANy SOEPENDENTE sql an Code 037\nNumber of votes cast in favour of each candidate:\nE Nae of Candidate CSS - OFS NDEPEND ER AIESCOMMISS BOD Mol Of Valid Votes Oblainad 351018 WO KO pNOSENDENTEL g-OMINISSY\n[A ANGATIA JAMES SHINACH Scooter cau teratee conn ma\n|_2. JASON SHIVAKALE BRUCE 1 Ges oN areLECTO RAL ZOVNDEPENDEN ONS OKLA Cc tORAL ANODE\n3. MANYASI JOAB BURUDI sae crores nce tats\nGe Orga eee Ga RG serge REA ARORTEY <7\n5. NALWA BENJAMIN DARE NTELECTORAL NOSE |C Ce sONYNDARIESC ON CTORALANDE GET INR e* ce SCOMMIR) SEAN\n[6 NDAKWA DAVID ATHMAN ESCOns Ps ie? ie SCOMMISS cy ANDBOUNONE £o- 0.0 Wg SSIONINEE DRUM\n[7 OYUGIGEORGENGAIRA _ a OOS Guts SIONNDE GUND ARIESCOR NEC Og NOEPENFE AY GS\n°F BANVAKO SETH AMBUSINT\n- Fe: cTUVEI WILBERFORCE INDAT SARS ESI SE AIT TE\n[Total number of vaid votes cast Toray SONNE ne cS OIC CT ORAL AND DEPENDEN uM SOS ON NOE CORR ARE\nPolling Station Counts _ | Detisionts)on disputed votesifany\nic [ Tol Monde ot Rept ast alg Sa [6G [ifn pe wh cae Yancndi ape wt]\nSo Rens I ee ae RI\nPR a Nani ace Ole Ene oe Od te Se on\nSSotPB f Total Namib Bispcten RES 5° 2257 oN p NOBOPNOAR ENTE, EMNOR Ae oS Sree pRIESC OMS g RAL AMDB OVI 3 ON ISSIONNDY\nceo Beglarationyrea)SSioninioer NSC Os es Se SCpL ANDBOUNS PENDENTE oF SaIONDUNDARIESC ORES am Deno eat ull a\n- We, the undersigned, being present when the results of the count were announced, do hereby declare that the result: shown above are tre;\n~ and accurate count of the ballots in TRICE ENA Pate? potting Station YN AL YA __ Constituency.»\nPresiding Officer: SON ROKINE AEN So Signature: GROW Date A Kad = 2B2.5.\nDé puty Presiding Officers, AO. : KH ASEM BA. Signature: BLOM Sé:. date 21-1 -2025\nAgents or Candidates (if present) ners ALANDEOU, NTELE Ne ON NDARIESCOMLECTORAL . ofr om\n[TIS mOoN lCANGA 23 eeu CY A AL loznecetedy, STII,\n12h pare Lom Bae tn6Gr726 Dep ie |O¢9S ssh TE ASX 27-1142\nBANS ew” Siieuvo 125202776 | BAP k probes by | Aethem by | -AIp\nHe Tee UND ANON aeRO gee OU re gC OM acl ane PENRO pee anal AR OMNES oON NTELeCOOE SN Cnsay\nee eee\nNSS GIIN Oe SOO NTELECTOnal SSIONINDEG EN: 6CO ICT leaf RALANDBO Uy ePENDENTELECION SOG SON INDARIESCOM LEC TORAL ANOSNOE NO PRENP\nu Reasons for Refusal to Sign (if any) Se ENTE bens SOS et ; Ee) ire. Ko Cine:\nPresiding Officer's Comments: NTELEC TOU WOE eve Onl COM AL NOB COE PRS iN SSIONN DL Bou Sette\nte ELECTION WEnl OW. SK Perey: EN rer ESCOMS S\nOME OB OL Ga tae REE Ge ua NEE CaeeC ee RUA FERN a NO aren Sp LOE RR NOONE WiarsioninOe® ;\noor! ORE Ee OU ON OE ASE eta NOOO RE SAO tagscOMMiss SA LannBOUNT Ee\neres 43 - rier : z EN i a Koy or , . * iE aie\nLECTORAL Sere CaN, dim pie",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 55,
+        "confidence": 0.3,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 55,
+            "confidence": 0.3,
+            "score": 0.3,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'ea Total Number of Valid Votes Cast;'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:39:57.235004Z"
+}

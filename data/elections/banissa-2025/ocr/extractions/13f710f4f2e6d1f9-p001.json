@@ -1,0 +1,112 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "13f710f4f2e6d1f9-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040020005101/v1_13f710f4f2e6.pdf",
+  "source_sha256": "13f710f4f2e6d1f994c6771e8dafa2695d2a02bb1925207382ca1c5157a9dc4a",
+  "source_filename": "v1_13f710f4f2e6.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/13f710f4f2e6d1f9.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-051-01",
+  "match_method": "POLLING_CODE_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.23386666666666667,
+  "text_length": 2246,
+  "text_preview": "$288 = |\nBS = LI OIE ee wa a Reg. 79(2\\(0))\nPe OC ee ee les\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station KHOTKHOT PRIMARY SCHOOL POLLING STATION 1 of 1 Code __009040020005101\nWard KILIWEHIRI Code 0200,\nKale GtnerragS> ui C_cRBNII Ac OMMISSION,, CENTELEC TORS AG pBaO OU CN TELECTOR«) SIONINDEPEND.. cOne Yigebh ¢ SMBORAL 4, OVINOEPENL\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate:\nName of Candidate : No. of Valid Votes Obtained\n1. HASSAN AHMED MALIN a\n~ [72 MOHAMED NURDIN MAALIM Aeioeartsr Usimuemia Orca\nTotal number of valid votes cast OG\nPolling Station Counts Decision{s} on disputed votes if any\nTotal Number of RegstredValesin the Paling Salon, -—— ip\nfll Numberof ected Blot Papers Lei eS TTI be TE\n{3.. Total Number of Rejection Objected to Ballot Papers; j——————— }0(} Oe CON AND EO Le ANDE NT ELECTOR NOG Amo DARIES CELE\n[Tota Number of Ospied tes OOO) [et ed\nTill Nr fa Visas ee ae FF a II SSR\nDeclaration i\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in KHOTKHOT Polling Station AA SANs Constituency.\nPresiding Officer: NOHANMEDANTIA ISSAK KUCA. signature: Wisp oe -H-202F\n: , : Sh “ \\ ad -\nDeputy Presiding Officer: Signature: 3 ow Bea W-W- 2025\n° otf\nAgents or Candidates {if present)\n[1 App) SHEIKH Adio 2427664 BA ipnesSead ASA hparane)\n| 21ABDieWNOAN Aap) Basessi2 | UPA ban aeces| eer pias Pare\neS NOE eg UNOARIEST ORM Lir ae a OR NDEPENDEAPET « SC OMMISSION NOES C OU NTE ECT ORAL Ay ONINDEPENDET oN NOCD MN ANDEON\nep} 5\nSBTC ENTELECTORg/ SSIONINDEPENT Coches ®nal ANDS OU? SNDENTELEC GON OU SON gDMRLE SON CT ORALANDE DEN WN SRE oul\n$f ORALANDB GL OE PENDENT ENABO ASN CGeS QUNDARIESC sg LECTORALANI NOC ONG PEN. COMMISSTORLS I DDOUNDART NONROGTE 5c. oNIN\nee eee\nGAG cS pORINDE POU AIE CONN BNO NOC pM OENDENTEY <SCOmGIONNOG RECO TONE cTORALS SIMIAN OE NDEN aOR WM Sg\nae Sr nDEN TA ScipuncalON ON cc ONNON | cron SSM AN CENDEN IPSN OM BON ORATOR NGS fc OMG\nReasons for Refusal to Sign [if any)\nPresiding Officer's Comments:\nPo NAME: MorAMEDAMIN: [ssaK KULA\nDATE: 27-11-2025. ac:\na To, ’ VE: IN?\né . > . eR cee\nort",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 72,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 72,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 114,
+        "confidence": 0.28,
+        "source": "certified-register-hint",
+        "alternatives": [
+          {
+            "value": 114,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "certified-register-hint",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 0,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by 'UPA'",
+      "registered": "certified-register-hint anchored by 'Total Number of Registered Voters in the Polling Station;'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "{3.. Total Number of Rejection Objected to Ballot Papers; j——————— }0(} Oe CON AND EO Le ANDE NT ELECTOR NOG Amo DARIES CELE",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2458,
+        3380
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "PASS"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:39:30.397659Z"
+}

@@ -1,0 +1,148 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "56caa9e5b7064ba4-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019604101/v1_56caa9e5b706.pdf",
+  "source_sha256": "56caa9e5b7064ba4f2e277f6a8d0c8196c784c890b59d4ebdecfc3f19b810af5",
+  "source_filename": "v1_56caa9e5b706.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/56caa9e5b7064ba4.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-041-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.472,
+  "text_length": 2670,
+  "text_preview": "i EP 2) ELE ALY BC SONNMISSION ——_ =. a i a = = se =\n= “097 7 D5- e AL G2. Z SI = jo —_ = = Ly = = = = = = —— = we a [a] : Z == = = = =\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\n| AT THE POLLING STATION\nName of Polling Station HARDAWA PRIMARY SCHOOL POLLING STATION( of? Rode __009040019604101—\nWAC APENDENTE Wnt oe cURANIS OA PENDENTE/ <SCOMMISSIO® swO0% pau cpENDENTE LE SNINDEPENDES PL, © Rea DE@ISE ECTOn SSIONINDE\nRais itera SS)... <- BNNESA cOMMISSIOW WIEN TELECTONE CAC pA GONE TELECTORg) SIONINDEPEND COCA Pah 1 AMMO RAL AP VINDE PENI\nCounty MANDERA Code __ 009\nNumber of votes cast in favour of each candidate:\n| Name of Candidate No. of Valid Votes Obtained\ni. HASSAN AHMED MAALIM\n2. MOHAMED NURDIN MAALIM\nTotal number of valid votes cast Spero aiaernesasi apaucansaarrricndnscassorWansesear 37\nPolling Station Counts Decision{s} on disputed votes if any\n[1 | Tota Number of Registered Vater nthe Paling Staion, [——— Gq]\n2 | Total Number of ejected alot Papers Ricco YOUN TT OOn eclotac anh cc eenOER EO OM OBOE oe\nTotal Number of Rejection Objected to Ballot Papers; PROS CON NBO Ler RDENTELEC TPR NOG Bao NDARIESCORLEG\nTt Nur fied Votes OOM |S. uantirese cross Oe\nTea Nur ofa Votes Cos ET 9]? Fea ECR CCNA Lt\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the re wilts showp above are true\nand accurate count of the ballots in HARDAWA PRIM ARY Polling Station BANL s AY Be Ga tituency.\nnen:\nPresiding Officer: AAC/ ASSAN DAN Signature: Aur Res 17 ZO25\n. MFIY\nDeputy Presiding Officer: [SSACK ADAN IBREIA _ signature: ft Date I-20\nAgents or Candidates {if present)\n[ABDULLA ALi Hasol2i49234a UDA 072 2esuus A 27-7125)\n2 SOs reenact SLES CD RSL ra atten eens STP SY OO LE\nRoger ON rE NTE ea MS Ere Nay MORES ene ONR ET EN ELE CMSs MONE oO eLEC TO\nNOE ER UNDAR IES CORRS fae gM DEP NDE ECE COMMISSION QUA SeSe ON TERS ORAL Aya NINDEPENDE COM SND ANDBO!\nBSB GNDEPENDEN TIE SCOMMISSI OWN Ch eae wieEt IP AAL 4! ONINDEPENE COW Neg e ust gh ANDDSUND ge NDENTELECT OMNIS BN OROARIS\nSBOP en TELECTORa, SSIONINDEP ENC GCap gree RAL APE OUyg “NDENTELEC ON ROT CaN NOARIESC OMG LORALAND OCT AN AgNO OMIM\neRe aoe eee eee ee eee ee\na eS emt ePOUN ani SCOMN BSS COR PNOE NEN TE £SC Omnis GIONINOCABELC SOS TON Ec Tonal SS/ON Non PENDS aI CORORLOMN a\nBOSE rune Nee Scr Salon PON CC SONINON FcToRAT SS OMe OE NOES WON SCENT OM MEO ROU DE MTNA ECT OSNOe REC ONO\n_ Reasons for Refusal to Sign {if any)\nPresiding Officer's Comments: :\nTHE. STATION WAS ChLossep OfFiciALL/ EB Po\nAT 1 7COHOURS DPpo- Issac ADAN (GLEIN\nPO. ALi HASSAN ADAN 7-1-2025\n7-11-2047 3. que\nry FL ppesidIN© -\n‘ Am ANES , ACTICER",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7125,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7125,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 7,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 99,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "certified-register-hint",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 0,
+        "confidence": 0.264,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.264,
+            "score": 0.304,
+            "source": "anchored-cell-ocr",
+            "observations": 2
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 37,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 37,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 37,
+        "confidence": 0.264,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by '2. MOHAMED NURDIN MAALIM'",
+      "registered": "full-page-text anchored by 'B Total Number of Registered Voters in the Polling Station;'",
+      "rejected": "anchored-cell-ocr anchored by 'Total Number of Rejected Ballot Papers'",
+      "total_valid": "full-page-text anchored by 'Total number of valid votes cast'",
+      "total_cast": "derived: total_valid (37) + rejected (0)",
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2448,
+        3168
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "FAIL",
+    "V02": "PASS",
+    "V03": "PASS",
+    "V07": "FAIL"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:24:50.182804Z"
+}

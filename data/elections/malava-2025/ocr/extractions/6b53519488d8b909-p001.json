@@ -1,0 +1,107 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "6b53519488d8b909-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201715290737553/v1_6b53519488d8.pdf",
+  "source_sha256": "6b53519488d8b909b40175595da9077256ac6397813c95b476e59a3bbb5568b5",
+  "source_filename": "v1_6b53519488d8.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/6b53519488d8b909.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P90737553-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.021428571428571425,
+  "text_length": 2254,
+  "text_preview": "oS ee ee,\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MURIOLA PRIMARY SCHOOL POLLING STATION 1 of 1 Code __037201100611001\nWard MANDA-SHIVANGA Seven Det Tons SIONIND\nCals Gtrenay SS 6.\" C MALAYER COMMISSIOn MDENTEL ECTOR AC ESE OLOUN WTELECTORA) S/ONINDEPENDLE COLO”. Goede. c PHIORAL ay VNDEPENT\nCOMP 2 Fro RARER ECT OR A MOEN TELE CT CONDO ONE -CTORAL AI ANDE PENDENT ai de MR ANDEG PENDENT\nNumber of votes cast in favour of each candidate: NINDEPEND EAR :\n-[[Wame of Candidate MINDEPEND\nSe ROME TUR GUMAESS URGE SS Sg of oe A\n]T SASON SHNAKALE BRUCE Co arr fe OO)\n3. MANYASIJOAB BURUDI\n[a MWANGA EDGAR BUSIEGA SSS OO\nec MAE BEI ac uncut Wc Onn noe\" fee cee ges oreo ODE oa\nDSP UBD ARNEIIIAI AN IO PALMAR SO si OARIESCOncTORAL ANDE AOE DS tact aE SCOMMSET Lie EOONS MELE Cen eS res OMA Dey\nnop cE SOMIAere BORG HEAR ce 3COUNSSIoy Sears oust Luneeeicarnsmuretumnaccoommurers st 005\n[a PANYAKO SETH AMBUSINT eran aera eas Seer TH Gy\nApS OUTIWE PVALBEREORGE INDAT nC TOE re) COUN SS Ooch peor eeNTEL EE sen Sei DET eS Aer aeons\nof Rete Hur of ead YORE a8 9S Sen TSO SOMES aan RRL DERE a een LONE\nPoll ied taro RUT Eh ce So> roe ISSIONNDE RE UNDA eror Decisions) on disputed votes if any _ Neg OR DENTELECTORA/ 4.\nFf Tota umber of Reiterates ne Poling Staton: Jp BS] |\n[a [tenanberReecedtala Pes fo fu\n~» [8:] Total Number of Rejection Objected to BallotPapers; 9g} {20 em ROG pes COMMIS\nA 0 Ye ef\n- We, the undersigned, being present when the results of the count were announced, do hereby deca Prsely be shown above are true _\n\"and accurate count of the ballots in NQUR)O) A PRI. SCHOOL Polling Station ft ACE Y_ Constituency.\nPresiding Officer: SIMOON LUVYALE signatures UE PRESIDING. 27-))= 25\n\"Deputy Presiding officer: MERCY NASE NYA» Signature: BPRS ; FICER, Date Ete ! I-25 iDEA\n[Agents ar Candidateerlik preseni)<O erceoN anonownsenaen teres ye oh eNOS anes COELece at ELECTO\ni ie a\nga SS rie aan sete aoe Pepe armen Re NIE CES SES\ncn ah ea ao Sg I! sn soe ange on unre araer es oom anoaUNGA eC Sal\n‘Presiding Officer's Comments: ELECTON NOR ANC NRO ARIES COM RALANDBOUP . PS ISSION epeOUND RS\nTHE COUNTING EXERCISE WAS SMOOTH. f, “Sch... RUNDE? ee CORRS\nSima Micimec Lovalg 27-\\\\erRGes? lode",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 2,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 55,
+        "confidence": 0.15,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 55,
+            "confidence": 0.15,
+            "score": 0.15,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": null,
+      "candidate_WT": "anchored-cell-ocr anchored by '9. “TUVE! ‘WILBERFORCE PO'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'NS Total Number of Valid Votes Cast;'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:34:52.982564Z"
+}

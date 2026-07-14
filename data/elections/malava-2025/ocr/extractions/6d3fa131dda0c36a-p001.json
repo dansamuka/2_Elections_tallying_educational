@@ -1,0 +1,107 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "6d3fa131dda0c36a-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201138886524451/v1_6d3fa131dda0.pdf",
+  "source_sha256": "6d3fa131dda0c36abd17a46bb780a26d99ef9fa0eeae3e59f864f70b20260d89",
+  "source_filename": "v1_6d3fa131dda0.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/6d3fa131dda0c36a.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P86524451-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.07999999999999999,
+  "text_length": 2590,
+  "text_preview": "3248\nee ree pe\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION |.\nName of Polling Station CHOMBELI PRIMARY SCHOOL POLLING STATION 2 of 2 Code __ 037201100808402\nWard PENDENT? 06 sc: SOUTH SABRAGN Tei c-SCOMMISSION iO 20% PUT cpENDENTEL E> WNDEPENDE wohl © 2° Ge dann eNgs\nCanstitency'SS a. cc MALAVAL c OMMISSIOn MUENTELECTON ENS pBaC cOW euTELECTORg; SONINDEPENU CO ne pda ci cen\nCoubtyoninper Et -cO Ph RAKAMEGAR ECTORA) | ENDENTELECS COW pint ghee CTORALA Un VOEPENDENTE. ai? Se aga 1 ear\nNumber of votes cast in favour of each candidate:\nNo. of Valid Votes Obtained\n1. ANGATIA JAMES SHINACHI Son fo De a DER Tecer HaMiesTonDe SS neae Ses peecnrerteront Ne\n~ [72 ASON SHIVAKALE BRUCE\n_3. MANYASI JOAB BURUDI ALANNINDEDES\nPoAMpgSREDeisn BOREAS. Sore sear ec on eee eet\n[S NALWA BENJAMIN Sen faces cae te ote cag Gece Sone og\n- [a NDAKWA DAVID ATHMAN set\n[7 OYUGI GEORGE NGAIRA 0 pe 90)\nqi RAR YARO' SETH MAGNE sono chomees on Ree arreruae ne reo eeen\nsf gun EY RLBEREORCE GAL csoer escheat ounces | eee earaes ane er ea\n~~ [Total number of valid votes cast eS Sea\nPolling Station Counts nisst _ Decision{s} on disputed votes ifany = Sean eA\n[1] Til Wunber ot RegsteredVatesn ie PalingSiaion F————5 $4] [Sri aed wh dee | Roe ol speak]\n(a [toavinterstgecerbaia Ps ot\n~ [| tnanbefRejcion ene oBalpns — t-——-—p0 [2\n[a [TontionieraFOmpaedioes, 900, |a\nEAS a et 0 Ye\nDeclaration Mn RA fr S ; nf r : 3c INEPEN i 7 2 | ‘ i : f . h ef M : 2 . ’ . ¢ arn A\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true _\n_ and accurate count of the ballots in CHOMIBEL) RINIARY CcHO OL. Potting, Station — MALAYA Constituency.\nPresiding Officer: JOYCHARON ACHEPET —_ ARUPUT FE Boferdy: Amo ate 27-1 /- 2025\n~ Deputy Presiding Officer: PERPETWA TER OT | presipgnturg <P oaaeen date 21-11-2025\n- Agents or Candidates lif present) IDEM Se OFFICER , SON WNOARI IRALANOE FONE NOE\n[21 SALAMBA Anton] aero T@e] DiAp =e bptgsoqent Boy tae\n) 3 CRRGIS MALE Ukk, US 28fft UD Pf Ax5ROGy GL PRulao2\nRUDE oS <08 Bec PENDENT g/ ESC OMMISSIIN OUNCE GON BrELETTORA/ 4 SIONINDEPENUECOM dee =o ral ANOBOL np CNDENTELEC Syulhoh cs\nBOSS OPENTELECTOR¢ SSIONINDE Ic COLAC GIS haAL ANDB Quy’ PENDENTELEC ON Op 2610 QUNDARIEE COLE TORALANO OP Si ONG\nReasons for Refusal to Sign lif any) BOS NBO = perce = ENUENTE ws oe\n_ Presiding Officer's Comments: SNDAR LANDES Rett cOMM SS Cae DON\ni “THERE: A NQ) SPOILT OR - BICPUTED VOTE}. Foe gies pacts\nPreset 6 ters SO ARON——ATHEPET ART. PINS\n0 Cypdlove lB Bde 27-1 2025. OFFICERS",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 12,
+        "confidence": 0.5599999999999999,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 12,
+            "confidence": 0.5599999999999999,
+            "score": 0.5599999999999999,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": "anchored-cell-ocr anchored by '1. | Total Number of Registered Voters in the Polling Staton,'",
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:55:12.209085Z"
+}

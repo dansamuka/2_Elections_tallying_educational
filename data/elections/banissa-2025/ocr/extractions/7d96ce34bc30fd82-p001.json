@@ -1,0 +1,126 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "7d96ce34bc30fd82-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019700901/v1_7d96ce34bc30.pdf",
+  "source_sha256": "7d96ce34bc30fd82f50eb0b2550ead745572d5c03c12a4ae8a1a254655a15e8d",
+  "source_filename": "v1_7d96ce34bc30.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/7d96ce34bc30fd82.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0197-009-01",
+  "match_method": "POLLING_CODE_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.23386666666666667,
+  "text_length": 1867,
+  "text_preview": "> er a a tg Fe tinct tren\nse ———. FC SS\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\n. Name of Polling Station DERKHALE PRIMARY SCHOOL POLLING STATION 1 of 2 Code __009040019700901\nWard __DERKHALE Sedenoc ORF ECT on /SSIONINDE\nConstituency BANISSA Code __040\nCounty MANDERA Code __ 009\nNumber of votes cast in favour of each candidate:\n|_ Name of Candidate No. of Valid Votes Obtained\n|. HASSAN AHMED MAALIM Se a ROTEL\n2. MOHAMED NURDIN MAALIM ee ee oe aT\nTotal number of valid votes cast Fer peraeme ree ee OR LSP\nPolling Station Counts Decision{s} on disputed votes if any\nTtl Nur of Registered Vtersin the Paling Sato”. ES]\nTotal Number of Rete Balt Papers pee | HGR io in ore ee ois\nTotal Number of Rejection Objected to Ballot Papers, |_| Sco SOs gobs NOC ELEC UNO CSR Are er\nTotal Nob of ped Votes Perry 21 KRONOR RRaR Nt Siemans\nTata Nuno a oes ast emia OOHRS oeconing tact ontee Coe oe\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in ORK Polling Station —_ BANISH Constituency,\nPresiding Officer: _ tise Deeg? Nokemey _ Sig ——— Date AJ—Nl-ag\n080 Cras ais ©\nDeputy Presiding Officer LAK A DBDIK £72 OFKE dighatacé: Cay ts< Date ATol|-AG\n: - RPREE' Sing F\nAgents or Candidates {if present} ‘ ae SANE\n, [No.| Name of Candidate or Agent 1D/Passport No. | Party Name/Independen®Ga ite | Tt contact | Signore | date\n1] ADA k= lBRethen | 29060! UDA maa EER)! SP bya act\n2 {TBaathin mow erg ea | ty pane 2c ee\nEE ee ee\nSE eo alte Mev Seo cee nuemtn Ghae\nsa ee em Re pre one erere ema e e\nee es ee ee ee a\nee oe eS oe rhe ati crons Rune eae\nReasons for Refusal to Sign (if te\nPresiding alc ay = : = |\n* :\n?. > Krssen Osos Hotmmesy\noO NOPE eae eo»\nA eAT Cac ele deka fN.2.8.63\npe PRESIQING\nOFFICER ; ;",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 29060,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 29060,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 4,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 1,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 658,
+        "confidence": 0.28,
+        "source": "certified-register-hint",
+        "alternatives": [
+          {
+            "value": 658,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "certified-register-hint",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by '2. MOHAMED NURDIN MAALIM'",
+      "registered": "certified-register-hint anchored by '4. | Total Number of Disputed Votes;'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2448,
+        3168
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "PASS"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:25:11.172631Z"
+}

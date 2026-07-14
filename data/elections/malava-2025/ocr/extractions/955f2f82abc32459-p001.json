@@ -1,0 +1,151 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "955f2f82abc32459-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201798707222640/v1_955f2f82abc3.pdf",
+  "source_sha256": "955f2f82abc324592913087d980ad920f75e095c90f71fefbefd7021299ae6fa",
+  "source_filename": "v1_955f2f82abc3.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/955f2f82abc32459.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P07222640-03",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.40937142857142855,
+  "text_length": 2453,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BUKHAKUNGA PRIMARY SCHOOL POLLING STATION 3 of 3 Code __037201100200208\nBURT ASUNGA PRIMNRE SCHOOUPG LING STATOND A Sy ARIESCOM MOE PENDENTE New AZo\nWard WEST KABRAS Codanweie2 Ecro. SSioninne\nMMISSIO™ ce Gs es ac SIMO LIBS ce POT AT I Fe AS\nConstituency MALAVA Code ELEANOR AL Ay INDEPEN\nCounty KAKAMEGA Code - 1 Wat ANDRO | PENDENTE\nIAIN DE FSCO SOME ECT ORG PSNDENTELEC TOM Te ONAN ECTORAL AUN NDE DE NDENTEM IOS\nNumber of votes cast in favour of each candidate: IE Ny\nName of Candidate __| No. of Valid Votes Obtained pre\n| 4 ANGATIA JAMES SHINACHI eal\n2. JASON SHIVAKALE BRUCE ND ee\nq 3. MANYASI JOAB BURUDI : Pe ge gg On ROBO NUR Tee ree pa ctl eclNce RR\n4. MWANGA EDGAR BUSIEGA ae IE!\n| 5. NALWA BENJAMIN Pere eT RYZE\n_6. NDAKWA DAVID ATHMAN RDS sneer usecsrrvnsicl mae a eee ae\n_ | 7. OYUGI GEORGE NGAIRA Akan SSeS\n8. PANYAKO SETH AMBUSINI Bec ree ssc\n[9 TUVE! WILBERFORCE INDAI DRIES sors cuaraaniesasntrren ree TTT AL\nTotal number of valid votes cast EROENTELEC)\nPolling Station Courts wa ‘ ~ ~ Decision{s) on disputed votesifany MMISS!\n__ [1- [Total Number of Registered Votersin the Poling Station, |____ pod\n|2.| TotatNumber of Rejected Ballot Papers; | oro ANDOU Pen SS SOUS NS QBOUNDARIEG\nTotal Number of Rejection Objected to Ballot Papers; | ma HE Gee oh NDBOUD ARIS TEL EGTORALT PERS LOE niesCONMGd\nSe [aa ne illic anarchic cere an oe poate en\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\n‘ and accurate count of the ballots in BUKHAKUNGA PAI SCH. Polling Station _____fS ALAV A Constituency, .\n- Presiding Officer: _ LEMET f 'URUNGA CHARLE Signature: SuEM SUly : Be “iW 2026\nDeputy Presiding officer: SAM WE: Ls MIWA f y { i—3 __ Signature: SAI rf tr pais, By I= + 20\nAgents orCandidatesifpresent) = PEN (OFFICER DET OMS\nia] rslaton [hn] Aoyama cman | Wows er ae]\n[i Woses o Jap laasfgas ALO ast CATON et Cr 1 ae 2 PEE Pera\nx WALICK UDFAIDE 2.57854 Di ADK p3eoad Wi haa\neee eee ae ee ee\nPOSTS oR Ec Toed SsionnDey eco Geof pa MORO LereNpeN TELECON SOS CON nsnR|ereL Eon MDOT SEO\nReasons for Refusal to Sign lifany) : a NTELEO\nPresiding Officer's Comments: YF ENDEN GN _FREIDING |\nELECTIGN WAS SON: A FREE AND FAIR MANNER. oni\nOOO URE SL EMENT UGaunGd ple re FU ogee ecronners\n; Y mA, ¢ ; f . j Fee { E ; Pe :\nACER ONES SO bauer nen OMS one STS",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.019999999999999997,
+            "score": 0.019999999999999997,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": "full-page-text anchored by '| Total Number of Registered Voters in the Polling Station;'",
+      "rejected": "full-page-text anchored by 'Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:39:17.565215Z"
+}

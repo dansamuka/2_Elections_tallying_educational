@@ -1,0 +1,134 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "1f668262200af0f0-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201833477171806/v1_1f668262200a.pdf",
+  "source_sha256": "1f668262200af0f039022590e7d1670d04abadb515a2ef960368d589840b5155",
+  "source_filename": "v1_1f668262200a.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/1f668262200af0f0.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P77171806-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.27068571428571425,
+  "text_length": 2265,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station CHEGULO PRIMARY SCHOOL POLLING STATION 1 of 2 Code _ 03720110080801\nCoB ieancg SS OSS MAAN ois oc NORE Nor ORT ORROGNS MOARESCON, reat ipso NRT as Sent Sieg\nFOTO sO eli Pee MMS STONIN DP CE REN DEN TEC ae Ne eee re INDEPEN Ac Onh ELEAMORAL Ay VINDEDE\nCounty KAKAMEGA Code 037\nY ZOUNDAS GUN GO BST ADE QMMTS STON PO BOUND BRIE OR Wn OE PENDENTES uO eli ta DEN\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1. ANGATIA JAMES SHINACHI ; RoR Ape ete certs Neo AA ce STTS\n| 2. JASON SHIVAKALE BRUCE. : FS eh rere Foren imrrepe ae econ a\n3. MANYASI JOAB BURUDI NOees : Boge SCTORALANSaL DE Semen eeS CSS gall ONCE PERCE\n_4, MWANGA EDGAR BUSIEGA - So oa Dera rant paella eR\n5. NALWA BENJAMIN nf IF ALL ee\n6. NDAKWA DAVID ATHMAN ANot Sa aT a SETAE RNSTIE an\n| 7. OYUGI GEORGE NGAIRA . a a NO PREETI 1\n| 8. PANYAKO SETH AMBUSINI ININD Ep OU ie Aa NT NTRS eS =\n_ [2 TUVEL WILBERFORCE INA\n[Tota number ofvaidvotescast\n: Polling Station Counts Sow OBO FOR Decision{s} on disputed votes if any | vent R\n_ [i piterie teeta ei Seis FE [eee nope ida ae]\nTotal Number of Rejected Ballot Papers; eo rte Oa ano IN asec Ux Gui ag OUNORTES\n_- [3.| Total Number of Rejection Objected to Ballot Papers; | Hota i ORME Velen oer Nescnoe” tesco\nBo eae oR Cece T Rea mung\na ae OM ey US 5 coe ere\n_ We, the undersigned, being present when the results 0 the count were announced, do hereby declare that the results shag a\n_ and accurate count of the ballots in C14 Eo LO Fe cba pang Station VACANT fixe! a oa\n‘Presiding Officer: DENAIS MATEO NE EAN aries COM gS oy NOC OUNCE aa vated heed EOC\nDeputy Presiding officer: “VICWOR USHINDI ONIRNGD. Signature: SZ, Date NGA 28 25\n_ Agents or Candidates lif present) ce Unis ENDEN ELECTOR CC ONT area g ELL ol ae wTEs\nin| _tinecniaerrs [eset Pees | wena [seme | oa]\nLUTARNEST — KULES Fol 194 10(0 pa ODA cota Be aes = Tat\nSTE ZEAE MALAY PSTN AD COs ASHES Cikeh tee ea Taaal\nAl Connie Manse Tavseang| a0 hace Topansient He\nst * : p< . LOFT z iC <= Alte ss\n| 2 Seema hen eee meer eee ee |\nReasons for Refusal to Sign {if any) Se eeerescOr ;OUNDAR Sos\neet ort ane UGB NAR MIA MES EMTER were Gate wot concer",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.21,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.21,
+            "score": 0.21,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": "_- [3.| Total Number of Rejection Objected to Ballot Papers; | Hota i ORME Velen oer Nescnoe” tesco",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:42:16.184961Z"
+}

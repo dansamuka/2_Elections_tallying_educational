@@ -1,0 +1,78 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "a6a732ec0116a0c7-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201799955106347/v1_a6a732ec0116.pdf",
+  "source_sha256": "a6a732ec0116a0c7861d3b0e6dee7461279ee39bfc2f16eae4e81993ce4ce9b7",
+  "source_filename": "v1_a6a732ec0116.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/a6a732ec0116a0c7.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P55106347-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract",
+  "confidence": 0.4514285714285714,
+  "text_length": 2431,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MISIMO PRIMARY SCHOOL POLLING STATION 1 of 1 Code __037201100410701\nWard PENDENTE int 6. cEASERABRASENTE: 2S C OMMISSIO® iO\" 0%, PS QUN ppENDENTELE CS VINDEPENDE oPl © co Ra ge nDENOE- ECT. SSIONINDE\nCansatuenuy Suc MALAVA. cOMMISSIOn MOENTEL ECTON CNG pa eV entELECTOR,/ SIONINDEPENL CO nM gals c e0IORAL ay VINDEPEN\nCounty KAKAMEGA Code __037\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained )\n1. ANGATIA JAMES SHINACHI |\n| 2. JASON SHIVAKALE BRUCE es\n3. MANYASI JOAB BURUDI [0\n4. MWANGA EDGAR BUSIEGA ——— 07\n6. NALWA BENJAMIN.\n[8 NDAKWA DAVID ATHMAN _ $$$\n7. OYUGI GEORGE NGAIRA ! cr\n__[_8._PANYAKO SETH AMBUSINI | ————— ee, 6.\n_ | 9. TUVEI WILBERFORCE INDAI | Cp\nTotal number of valid votes cast TOR\nPolling Station Counts eNO MMISSIO: NDE : Decision{s) on disputed votes if any XS NTELECTORAL 4\n[1 | Total Number of Registered Voters in the Polling Station; | QUO). | Serial Number of Batot Papers) with disputed vote| Name of Candidate assigned the vote |\n2.[ Taal Number atReecteBalo Popes S| [eT\n[Ai] Tot Numer oF Rejection Oecd toBslatPanes | QOD 2. ee\nTt Numbe of Oped aes, Daca ep GRA RBC esse nes ona oust foo esc a em CNN\n5 [ToalNonberfaidVoescots pg\nWe, the undersigned, being present when the results of the count were announced, do hereb’ ‘declare that the results shownfbove are trues,\n~and.accurate count of the ballots in IMIS 1M(O PRIMARY x. olling Station MIALAVA Conbkinban?\nPresiding Officer: FAITH MuCHLSA KHASIANT Signature: “SE4 Date 20 PEALE kes 5\nSoCs noun Cal cae a eR RAT ASE aE AR ULGp OO eae PGR one ee NE Ee\n_. Deputy Presiding Officer:E\" \\ ANUEL M Kis Signaturer Woe Ss aie Date a DAS\nAgents or Candidates {if present) Moe BOUIN ENDENTELEC SOND ONE DARIES | Roe\nANDAR sAmuer Parco 95593564] HAP—K — otucn7693] AAT az-11-ahe\nCE RSTO aes ROO lel NN Sed TPA aOR) nose ts Ua eee EEN BRET\nSosa: arin aeccae Sy ee es eS oe eG\neee nee ee oe eee eee pe |\nReasons for Refusal to Sign {if any) | . a Tee 0 DRALANDEG(UEPENDEN : RN\nPresiding Officer's Comments: Sas - RAL A Se co a NCEP ECUNDA ON.\nN itt DTI AG CovntiINnG\" ARR sta LING PRSLES ses. EEE CoNnDVuEF\n— PeAcEruLty “AMD in) AFvie -YOMPLiAnle With TepC procedures\nPRESIBIN'G stricta Pap CORRE TOR A ere CANDBOUNT AE\nFAITH oMutrirA RTASRSRAQINGR we eet\nRe RO RESON OFFICERS | BOUNDARIES oar es hr Ere baer",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 8,
+        "confidence": 0.78
+      },
+      "candidate_DAPK": {
+        "value": 6,
+        "confidence": 0.78
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.82
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "[8 NDAKWA DAVID ATHMAN _ $$$",
+      "candidate_DAPK": "__[_8._PANYAKO SETH AMBUSINI | ————— ee, 6.",
+      "candidate_WT": "_ | 9. TUVEI WILBERFORCE INDAI | Cp",
+      "registered": "[1 | Total Number of Registered Voters in the Polling Station; | QUO). | Serial Number of Batot Papers) with disputed vote| Name of Candidate assigned the vote |",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:39:35.243916Z"
+}

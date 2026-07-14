@@ -1,0 +1,23 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "be82d84173656149-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201609980267487/v1_be82d8417365.pdf",
+  "source_sha256": "be82d841736561495ca94a82952bc2f954c6409a6670e472fbedeec7c754fed7",
+  "source_filename": "v1_be82d8417365.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/be82d84173656149.pdf#page=1",
+  "page_no": 1,
+  "form_type": "OTHER",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract",
+  "confidence": 0.3981021897810219,
+  "text_length": 2255,
+  "text_preview": "Sl IE\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station NAMANJA PRIMARY SCHOOL POLLING STATION20f3 den __037201100504602\nWard BUTALVCHEGULO Code __ 1005\nEOE eRe CRA EME OOED TE) <-CCOMMISSION ORO BNE pENDENTEL e-ONINDEPENDEN ont ou DENMB-ECT OM SSionsmot\nCanspenenay =u << PRS ANB Kc OMMISSIOn, WDENTELEC TOR CxO NAO GOWN yTELECTOR A, SIONINDEPENO ac One inal ELMMIORAL A OVINE PENI\nayy ONINDETS cC™ oF RAREMERRELECTORA/ | ENDENTELECT OW Oe opi = CTORAL ANA NDE peNDENTE Sno OQhogs = IBRLAND BG EPEWp ENTE\nNumber of votes cast in favour of each candidate: .\n__ [1 ANGATIA JAMES SHINAGH ———— 00\n| 2. JASON SHIVAKALE BRUCE : 02 |\n3_MANYASi JOAB BURUDI\n4. MWANGA EDGAR BUSIEGA Ss 02\nSNE he NIN, \" MS exeracoerwuucesneseccl, pamalauoeernnaseiacaeruaaseer: 77.1\n[8 NDAKWA DAVID ATHMAN ee\n7_ OYUGI GEORGE NGARA | ———————————\n_ | 8. PANYAKO SETH AMBUSINI Ly =\n@_ TUVEI WILBERFORCE INDAL nn aT ee\nTl number of vas cast nae Secu eineamas Gree C\nPolling StationCounts Decision{s} on disputed votes if any A ea. f 267\n-_ [i Tolan fetes nie Pliny Safon, [- —— 9g\n[2 [ToatNunber Reece Bat Papers ERC as yn PT\n[eat nunbsat ejcin iedes oBaetPars “F—S— Goo] [2\n[4 [lott NonierfDentedes, Peg) fa\n5 [Toll Number fiditesCase oer ay) [pf\nDeclaration IDEPE! Cel Veneer» 267 . ;\nWe, the undersigned, being present when the Fesults of.tHe count were announced, do hereby decla Sas shown above are true\nand accurate count of the ballots in FAMAMIA FR A R=} SCHL Polling Station __ ihe Fi. mt Constituency.\nDeputy Presiding Officer: SHON SHOT ZAKARIA signature: _BEAOFF Fate 27-11-2025\nAgents or Candidates {if present) es e 306 - “Ape : OB nie\nfe] _navtcnaserri [abe | yarn cnaane [Ta omas [some | ow]\nfeed oN GDB OU AR ONT ECON Gea NOC bac oung Nou a DsOUNTTOSES RON Eu reionnae geo mates ON gee\nHe ee\n2 8S SS ena tee DEPENAAnrea suis CORES ssa ee:\neee eine eee Se\nee\nPOS So ene EC TOnay SsionnoeL ENeac no eal ANDBOLEPENBE TELECON GOP .e SON NOAREpCOELEC Tope OSCE NORRIE\nReasons for Refusal to Sign {ifany) . N . Ni ONS\nPresiding Officer's Comments: _ 9 Mis Arse MitISSION ING SOUNDARI\nPOLL IN CARE Con Du CED Rie s¥ors) (iste Ps 220 a THE BEGING To\nPo Chg iNdar A KELvINE Metis a S BON EPENGNDARI |\nEU Nel 5 9 De NNO RSO : : .",
+  "parsed": {},
+  "checks": {},
+  "route": "UNCLASSIFIED",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:27:08.226200Z"
+}

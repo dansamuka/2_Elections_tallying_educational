@@ -1,0 +1,59 @@
+{
+  "schema": "kenya.election.ocr-summary.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "generated_at": "2026-07-14T18:56:52.988192Z",
+  "engine_mode": "auto",
+  "engines_available": [
+    "tesseract"
+  ],
+  "documents_total": 198,
+  "pages_total": 198,
+  "pages_processed": 198,
+  "layout_assisted_pages": 185,
+  "form35a_detected": 191,
+  "form35b_detected": 0,
+  "streams_matched": 143,
+  "review_rows": 139,
+  "routes": {
+    "QUARANTINE": 189,
+    "UNCLASSIFIED": 7,
+    "OCR_BENCHMARK_REVIEW": 2
+  },
+  "errors": [
+    {
+      "page_id": "a8ce38373fb6c3e7-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, '')"
+    },
+    {
+      "page_id": "c9ae0843b456b0ca-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, '')"
+    },
+    {
+      "page_id": "13c5a2aea5ccb4ca-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+    },
+    {
+      "page_id": "9e1b5d2dd7d9801d-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!! Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+    },
+    {
+      "page_id": "a6a732ec0116a0c7-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, '')"
+    },
+    {
+      "page_id": "54a1c8c0b0a308dc-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, '')"
+    }
+  ],
+  "review_queue": "data/elections/malava-2025/ocr/review_queue.csv",
+  "inventory": "data/elections/malava-2025/ocr/document_inventory.json",
+  "auto_publication": false,
+  "note": "OCR output is a pre-fill only. Handwritten cells are read with layout anchors and arithmetic reconciliation, but no historical stream is added to the public tally until human review and statutory validation are complete."
+}

@@ -1,0 +1,121 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "f9081ffd83473c3d-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201678596901649/v1_f9081ffd8347.pdf",
+  "source_sha256": "f9081ffd83473c3d070b8e23b7a3027ac1e98cdf51bdb31e069e7a26a23370c5",
+  "source_filename": "v1_f9081ffd8347.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/f9081ffd83473c3d.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P96901649-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16457142857142856,
+  "text_length": 2536,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station VASHELE PRIMARY SCHOOL POLLING STATION 1 of 1 03\nWard SEPARYEHE CUED Tasca NINE SE QO AOE G ARE Soo Srp mee CCT Ota apse eee\nCab aetrsemogtS2 eS SALAM Saris VOR Le orca A SRR AD ARTESCOME “Oren eo ee Sok Se\nSENOS i cliag hte osAlIS SIONS SOE PEND EN TESS AP Te a RR ae ORAL 2 ONINDEPENDT COD ae, 2\nCounty RCRA SE arog a EMIEL EC oN GCN eC TORALA UNDE pou eNTEL GEN 4g NMS TORN SCONDAT\nTe D1 aiceen eee\nNumber of votes cast in favour of each candidate:\nName of Candidate | No. of Valid Votes Obtained\n1, ANGATIA JAMES SHINACHI\n2. JASON SHIVAKALE BRUCE NOES CONS Dee O0\n3. MANYASI JOAB BURUDI eee ‘\n-d, MWANGA EDGAR BUSIEGA ee,\nLSC UN A ei SUNS 3 : Neelam amr Eee Tyr\n6. NDAKWA DAVID ATHMAN : DAS ALLENNA CRS eTaRSar |\n[_OYUGI GEORGE NGAIRA ee\nCONTE DETTE AMES .\n15 2 EWE YU BERR OREE INDAT eNrers i Rea aLarrareemT ne TT\nNT AO ot RE NO sai Ray SON iceooecatasanmrscucinenmestneceassresess 725)\npig. Bae VOIR S68 ots NN Dee GUND ARIE SOO RE BA ean aS ELECT Ow WOD uc CONN OARIESCOM\ni ee wees uted votes if Orne gece\nTotal Number of Registered Voters in the Polling Station; 625) Picaleie dina uti canivel : OR A SOMMISSION\nsl Mat era Pes Sow fo Oat ce oe\n_ [3.] Total Number of Rejection Objected to Ballot Papers; t—000 CSS ogre pre\noe oe\na ONS Sen 7. bese eee ems ee\n< Declaration ON OE ee PEP ENnent el c ' SOR eT SOU\"\n\"We, the undersigned, being present when the results of the count were announc SES een tes Ws aeanperetesc® NE OMMSSIO\nand accurate count of the ballots in Vi SRELE yey Polling Sat. MW Xe results Bison true\nx die iff fishes —_ ats 7 =e -s c ‘ | ~ ry onstituency.\nPresiding Officer: dey aa AR EGECA HSIN Estey S ‘pate 2711-202\nay i Spas’ lM ; f ‘an ey’ » Ej Sia; > : yA Aree\" ap rns a tt a th,\nRe reeNDE Toes ASIA KOHE Signature: Loman. n°] “eae 27=[(- 292.6\n‘Agents or Candidates (if present) Jes NBO ORS ane <7 EScoumissiOy\nnel _teiclconnaer nt | atest | fey inata cnte | ra caues[ Spas Dat\nTHAW Lyrieer Dae PK pmpioner7 Ged pra\n[Simiyu_ Pate EDDA pr gagatere We be be\n{Eetincit7 Lote aBolnonee A= CP raseen go teas Sele\nern one ape Se 3\n| sone omnis eencen emmy eee Bt\nGee een esos ammo SS eee\nBe dS Pee ory ett es Sommer acy ager\n_ Reasons for Refusal to Sign (ifany) : ey wie E>\nPresiding Officer o ae | [SN a ie =\nesiding Officer’s Com : YOR RAL At a NX xh Ss\neae ae Ben TEU f GPE cine: 3 EGESA hEBc\\ So\nHEKE WAS “Ne Se PURFN VoTfe .-v% SONG IT THIS\nINDE Ge pale rORALANDGOUVEPENDENT SPC A eas Noe oIZT- Te 2 ba5",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": 625,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 625,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.18999999999999997,
+            "score": 0.18999999999999997,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 0,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": "full-page-text anchored by '1. | Total Number of Registered Voters in the Polling Station:'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "_ [3.] Total Number of Rejection Objected to Ballot Papers; t—000 CSS ogre pre",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:31:11.348898Z"
+}

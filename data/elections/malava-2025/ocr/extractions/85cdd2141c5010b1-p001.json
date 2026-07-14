@@ -1,0 +1,117 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "85cdd2141c5010b1-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201493241690448/v1_85cdd2141c50.pdf",
+  "source_sha256": "85cdd2141c5010b129b063ed3b7463dff4271ef8d4ef72c3e6b7631c62cfcd66",
+  "source_filename": "v1_85cdd2141c50.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/85cdd2141c5010b1.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.1976,
+  "text_length": 2344,
+  "text_preview": "ss ee\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MANGULIRO PRIMARY SCHOOL POLLING STATION 4 of 2 Code __ 037201100402601\n; PR EBON a Oy Tee At 2, ID ARIESCOftyy SOEPENDENT Een CATO __087201100402601\nWard ' EAST KABRAS Code 1004\n2 SOW Oe. Saya a MIS STON NDE RE: URAL AND BSS Pa ROR nS RIE SCOTT res Dee ORs ONIN\nConstituency MALAVA OAG cL MOIORAL a OYINOEPENI\nSS a PELE CE 60. BC oO cntTELECTORa? SIONINDEPEND TS CON ah\nCounty KAKAMEGA Code __037\nOU ND RITE ae Sra treme OENTELES CON ph ot ob ECTORAL AAD NOE PEND ENTEM NO TCRMLANDEG). ENDENT!\nNumber of votes cast in favour of each candidate: _\nNo. of Valid Votes Obtained | 1\n|_1. ANGATIA JAMES SHINACHI\n__ |_2. JASON SHIVAKALE BRUCE {008\n3. MANYASI JOAB BURUDI Seer seeeeeeseee oTGP)\n| 4. MWANGA EDGAR BUSIEGA |\n6. NALWA BENJAMIN 01\n6. NDAKWA DAVID ATHMAN re\n| 7 OYUGI GEORGE NGAIRA )\n[8 PANYAKO SETH AMBUSINI rs\n'|.9 TUVEIWILBERFORCEINDAL 000)\nTotal number of valid votes cast Eiielesi ee Geoereecemceseeeensmmmmase mereeee TE |\nPolling Station Counts _ oF om Decision{s} on disputed votes if any 08\n- [| Tota Number f Regjtered tern te Poling Staton, [57]\nI nA res etc SOON ARDMIRTO c | # CRS aR a acre\nCe doccenet ed a a MRR: 8 CAMO aint Seuae as ecg\niE Sct IESCOMIS ORAL AKOBOUN Te ce peaNeREE ON og\na ere A SAC SOc oan ae sce secu cs a\nDeclaration = DARI ANE seek MMISS:\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the re PREADING- e true\n_ and accurate count of the ballots in MAN GULI RO OOpoiting Station __[V\\ AL AVA napa ms ency.\nPresiding Officer: MILLACENT A, ANY AN GOsignature: Poe, i Date a sa ; [ eel do}\n_ Deputy Presiding Officer: KENNEDY k: cuEMoTO Signature: rebe? 2rd Date 2ZTil -3or~5\n/ Agents or Candidates (if present) nahoe RALAN Ms ~ RIESC wo\nBhan ian UDA Pyswsio? | Sa es\n2. TaHCS Mantua CHA PAE onitgswa) at farjfaa\nja. | Aecney LicHet) | Zeit 7K65 PB OB To qatoetit de aohbok\nCoo PEON Neg Orel Ee TCO miso nereNO OMe esd\n: EF Aeneas Le Basen seems ee ee ee\neo nan ee ee ee Same oe\nLe a ce FORTIS MATES amo TER Serene Guts eo\nBORE Oca curl SS MNOEA a ane a anoeo gre aenTELE OS OP oO naeh TE Era Eo OG\n- Reasons for Refusal to Sign (if any) ; | 0\" On EPENDEN )\nPresiding Officer’s Comments: EL aay ot : Mis ae OM uD 0s\nacc e CS a, ete ns ee eee ee",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.26,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.26,
+            "score": 0.26,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'UDA'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": "anchored-cell-ocr anchored by '| 1. | Total Number of Reigcterad Voters in the Polling Station;'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:18:34.577830Z"
+}

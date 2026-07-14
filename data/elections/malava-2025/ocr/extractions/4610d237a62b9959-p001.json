@@ -1,0 +1,107 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "4610d237a62b9959-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201765678300522/v1_4610d237a62b.pdf",
+  "source_sha256": "4610d237a62b9959c9c8f5f61e7f01729ae77ff1a036decbf18547f3d6c7b023",
+  "source_filename": "v1_4610d237a62b.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/4610d237a62b9959.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P78300522-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2371,
+  "text_preview": "32.004\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station LUKALA KABRAS PRIMARY SCHOOL POLLING STATION2of2 0 de 037201100707902\nWard SHIRUGU-MUGAI Code __ 1007\nConstituency MALAVA Code __ 201\nCounty KAKAMEGA Code 037\nNumber of votes cast in favour of each candidate:\n1 ANGATIA JAMES SHINAGHI RG Sere DaeaM aN np\n2. JASON SHIVAKALE BRUCE ASDC ALE LET ca TeOCALTE aeemrene O22 OS |\n3. MANYASI JOAB BURUDI yf\ni. MWANGA EDGAR BUSIEGA : Saarinen auaeertianencconnae 51,75\n5. NALWA BENJAMIN\n6. NDAKWA DAVID ATHMAN —— YT)\nSF OS EESRGE NEAT once rr\n@_ PANYAKO SETH AMBUSINI Set\n[8 TUVEI WILBERFORCE INDAT pea acer EN\nise nseeapletion< S —————— en i)\nPolling Station Counts Ne Decision{s} on disputed votes ifany CTORAL\n~[t [Tott Number of Registered tersin ie Paling Saton, -— 3B |\nSt aa Mnte arecanebs oes Here NRE Retro re ona NSE pet a SSN GT RUNDE\n3.| Yt Number Rejection Objcied to Bale Papers face ye ooomptes aie one reeaeToe ne scomncd\nS| Tatnunber da astt A pe\nvv We, the undersigned, being present when the results Nay count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in _LVKALA KABKAS PRIMA oiling Station one RES eye VIR, oe aheaetay\nvpn A RET WaANnyn RSE = aes zi esc\nPresiding Officer: NIA LG tL WAN im Signéture: _ NINA urc. Date ZIT—l-2o2s,\nDeputy Presiding Officer: SYLVIA JOY CHITIANL Signature: 2 pate 27—LI-—2025\nAgents or Candidates {if present) YOENTE WFR: go, friesco .\n[ne] ranetenaaseoton [aha Paonia Tal eouct | gue [ow\nLL UIMILDRED CHEPTANY! |26631990| KENYA NQWR )707657675 MM b7-inanb,\n[2 RACHEAL MUHONT 299765 Zu DAP brz07229) Fame i\nLA AYUMA ANTEUNE 1237515 | pcp PrSboth2n) Ayumab’be. jd:\nnada POSS op Oe EC tire One PN CEC NE gies ONS OM MOBOUND ey ECO\nNe eee Scop AECTOR A gee co ah OS petite S8/On pA NDBOUNT Tec Oa an SSIONINDEP Ea NDARIESCOMY aU\nDEORE F oe NTELECTOnsW/SSIONINDEY EN SOUPS GIES RALANDBO UW EPENDENTELEC ION OE .C CON DARIEGCO ELECTORAL ANGE TMI\nReasons for Refusal to Sign {if any) Pee ee fONINDES Be DEp; ‘\n| Presiding Officer's Comments: ENTE EC , “er | i ‘ .\n| Oe _ THE BY-ELECTIONS WAS CONDUCTED\nAS PER Te fmeBC Rives AND REGULATIONS\nZL tN) iN ; s T . = gt} ; 4 AB ie , rR Ty\nROARET WANTIEY NIUGUNA LE. NQPOUSYIA TOT CHITIAY] ~\nDATE: 27-il-2025— PRE TeV BATE 27ell-2025\n21 0N'. NAddexine Ss SESIDING ICY CN SN :",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'UDA'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:37:27.890755Z"
+}

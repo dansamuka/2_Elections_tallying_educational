@@ -1,0 +1,107 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "30fbbd5147a0e455-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201712993420218/v1_30fbbd5147a0.pdf",
+  "source_sha256": "30fbbd5147a0e455d91a722e37b112d394d5fb0b0a55165502c9694b95ac37ea",
+  "source_filename": "v1_30fbbd5147a0.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/30fbbd5147a0e455.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16457142857142856,
+  "text_length": 2852,
+  "text_preview": "31.875\nPose ee ee ee OO,\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station KIMANGETI PRIMARY SCHOOL POLLING STATION20f3.000 Rode 037201100301602\nWAG APENDENT E08 oC cee nena NOE NTEL Bc OMMISSI nO 0 Bout ac PENDENTELEC SA INDEPENDE OP © eo Baden OE MD-ECTo/SSioniNDE\nane fitsemyS* aus << BREAN COMMISS/Onys PENTELEC TO’ COAT ph a 20 Sent ELECTOR«) SONINDEPENT. CO ne) Rigel c) AOIORAL 4 OMIND EDEN\nCouiity ann OEP ET CO AINE ORE ECTORA) 2 ENDENTELECT OW py ot ORE ECTORAL AVS VOEPENDEN TE. iN Og Bo PORLANDES SPEND Err:\nNumber of votes cast in favour of each candidate: D f\nNo. of Valid Votes Obtained SS\n-_ [AVANGATIA JAMES SHINAGH sear ore\n| 2. JASON SHIVAKALE BRUCE 3 |\n‘| 3. MANYASI JOAB BURUD! : | 05 |\n[4 MWANGA EDGAR BUSIEGA__\n|°& NALWABENJAMIN, [_——— OO]\n§. NDAKWA DAVID ATHMAN\n_[-7 OYUGIGEORGENGAIRA pe os}\n~ [8 /PANYAKO.SETH AMBUSINI S|\n[9 TUVELWILBERFORCE INDAL 0 FO]\n[Total number of valid votes cast ——_—————— —?21T |\nPollingStationCounts == SCC cisions} ondisputedvotesifany =\n[| Tt Nur Registered Verne Pang Salon: [2-7\n2. | Total Number of Rejected Ballot Papers; JOS) [ee\n[Ft Number often Obed wtstetPaes | 00| [2\nRE SCS NES OM ORAL ANDOU Ee CSO SIISSIONNOY\niS [TostnanberetdVastess I ee\n< Of ay NE . ci a ~ . GUM SxS v\\ VORAr < : y oe > fi Eee Fz anit ¥ yay, ow \" i A\nScope laeation ree) SS!onnnereNOcc oer eeSCO RUAN ENDENTELES ‘oni aie e Ce BOMBL AND E NOON HoeNCc COMMISSION,\nWe, the undersigned, being present when the results of the count were announced, do neloby ab tare that the results shown above are true\nand accurate count of the ballots in KIMANG ET! PRIMARY <cHOPL Polling Station __MIALAVA Constituency,\nPresiding Officer: _ PHOEBE NATECHO MIS(KO signature: (GROPP pate A1=tl-2025\nDeputy Presiding Officer: Lilie Maicdd ITU AN ASA Signature: ET a1 TORE 2 271-\\ ~-2025\n\"Agents or Candidates (if present) S25 : EPENDEI at ON SON a Lec Q LANDBOLN SORT i\n~ Tee R ce MULUP | | A@atfe fk DS ep esate I eco\nLallazkRus iMeodes lsgiewety | Dwg Nephi iey| Se oii lax\n‘La [ NOEL IN@octHE Boqy4a7ae | Ke CP R38 S079 woe Rega\nALATA WuURALDA ldaycauesal GDA wyrs7éob ke er-/25|\nRRP 0e Ss aM AN DA Mimi alee aN Ac TOL wei OA EN aise OO ONegOROU rey ec Ob ang ORAL AT ENU COMA Pele ccd\n: 1 aoe, SON NO BOUN TELECON ag TERNS sees 2\nSUNG ed ese tS IONE OUND ARIESC EU cea OM gePENDENTEL GS COMMTISSION NOD, Coa eOON ELECTORAL AME PENDE ou OSE OM\n| BER SO ENT ELECT Oar 9SIONINDED sues RO RN ANDEOU ENDENTELE GION SOP se UNDAPTES CO, CTORALANONGE SSR |\n_ Reasons for Refusal to Sign {if any) — NTELEC TOO etireoete ND BONE RENDENTEL\n. Presiding Officer's Comments: SESSION Goh “yy oral ENDEN att OE COMMISSIO \"eee _ ont\n| DWE PAD FARE RERECTED BALLOT PAPERS\nNAMES PHOEBE Mitiko | LEB.G NTELE Cp OMMiSSIONIND™, ei RE CTORALAMONINDEPEND!\nEON re OO oe DARA PRERDING NDE UNDARIES “5¢ ED nM mee",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": "full-page-text anchored by 'Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:34:08.925498Z"
+}
