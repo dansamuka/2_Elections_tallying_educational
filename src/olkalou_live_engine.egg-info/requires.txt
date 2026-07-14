@@ -16,6 +16,8 @@ ruff<1,>=0.6
 Pillow<13,>=10
 pypdfium2<6,>=4.30
 pytesseract<1,>=0.3.13
+google-cloud-vision<4,>=3.8
+boto3<2,>=1.35
 
 [ocr]
 Pillow<13,>=10

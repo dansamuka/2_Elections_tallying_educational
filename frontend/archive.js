@@ -94,6 +94,28 @@
     $("draftCount").textContent = filled
       ? `${filled} stream${filled === 1 ? "" : "s"} drafted in this browser · nothing is published until you run archive-import`
       : `0 streams drafted in this browser · nothing is published until you run archive-import`;
+    renderReviewProgress();
+  }
+
+  function isConfirmed(draft) {
+    return Boolean(draft && draft.confirmed_at);
+  }
+
+  function renderReviewProgress() {
+    if (!payload) return;
+    const el = $("reviewProgress");
+    const candidateList = payload.candidates || [];
+    const ids = candidateList.map((c) => c.id);
+    const all = loadAllDrafts(payload.election_id);
+    const confirmed = Object.values(all).filter(isConfirmed);
+    const total = payload.coverage?.streams_total || 0;
+    if (!confirmed.length) { el.hidden = true; return; }
+    el.hidden = false;
+    const totals = {};
+    ids.forEach((id) => { totals[id] = 0; });
+    confirmed.forEach((d) => ids.forEach((id) => { totals[id] += Number(d.votes?.[id] || 0); }));
+    const breakdown = candidateList.map((c) => `${escapeHtml(c.abbr)} ${number(totals[c.id])}`).join(" · ");
+    el.innerHTML = `<span><strong>${confirmed.length} / ${number(total)}</strong> streams you've confirmed in this browser — ${breakdown}</span><span class="rp-note">Not an official result. Only reflects what you've reviewed and saved here; run archive-import to actually verify and publish.</span>`;
   }
 
   async function fetchJson(url) {
@@ -288,14 +310,15 @@
     });
     const candidateMap = new Map((snapshot.candidates || []).map(candidate => [candidate.id, candidate]));
     $("archiveGridTitle").textContent = `${snapshot.coverage?.streams_total || 0}-stream grid`;
+    const drafts = payload ? loadAllDrafts(payload.election_id) : {};
     $("archiveStreamGrid").innerHTML = [...byWard.entries()].map(([ward, streams]) => {
-      const completed = streams.filter(stream => stream.state === "PUBLISHED").length;
-      return `<section class="ward-block"><h3><span>${escapeHtml(ward)}</span><span>${completed}/${streams.length}</span></h3><div class="ward-cells">${streams.map(stream => archiveCell(stream, candidateMap)).join("")}</div></section>`;
+      const completed = streams.filter(stream => stream.state === "PUBLISHED" || isConfirmed(drafts[stream.stream_key])).length;
+      return `<section class="ward-block"><h3><span>${escapeHtml(ward)}</span><span>${completed}/${streams.length}</span></h3><div class="ward-cells">${streams.map(stream => archiveCell(stream, candidateMap, drafts[stream.stream_key])).join("")}</div></section>`;
     }).join("");
     document.querySelectorAll(".archive-stream-cell").forEach(button => button.addEventListener("click", () => openStream(button.dataset.streamKey)));
   }
 
-  function archiveCell(stream, candidateMap) {
+  function archiveCell(stream, candidateMap, draft) {
     let className = "stream-cell archive-stream-cell";
     let style = "";
     if (stream.state === "PUBLISHED") {
@@ -307,6 +330,13 @@
     } else if (stream.state === "OCR_REVIEW") className += " ocr-review";
     else if (stream.state === "ARCHIVED") className += " archived";
     else className += " reference-only";
+    // Locally-confirmed overrides the server-reported visual state (never
+    // PUBLISHED, which stays candidate-coloured) -- a distinct flat green so
+    // it's never mistaken for an actually-imported, verified result.
+    if (stream.state !== "PUBLISHED" && isConfirmed(draft)) {
+      className += " locally-confirmed";
+      style = "";
+    }
     return `<button type="button" class="${className}" style="${style}" data-stream-key="${escapeHtml(stream.stream_key)}" title="${escapeHtml(stream.station_name)} · ${escapeHtml(stream.state)}" aria-label="${escapeHtml(stream.station_name)} stream ${stream.stream_no}: ${escapeHtml(stream.state)}"></button>`;
   }
 
@@ -442,14 +472,25 @@
           <div class="review-field-row control"><label for="rf-cast">PO stated total cast</label><input id="rf-cast" type="number" min="0" value="${draft.total_cast_form ?? ""}"></div>
           <div class="review-field-row"><label for="rf-reviewer">Your name (reviewer_a)</label><input id="rf-reviewer" type="text" value="${escapeHtml(draft.reviewer_a || "")}"></div>
           <div class="review-actions">
+            <button id="rfConfirm" class="primary" type="button">Save &amp; mark reviewed</button>
             <button id="rfCopyRow" type="button">Copy this row as CSV</button>
             <button id="rfClear" type="button">Clear this draft</button>
           </div>
-          <p class="review-saved-note" id="rfSavedNote">This never publishes anything by itself -- it only saves in your browser. Use "Download review draft CSV" above, then <code>archive-import</code>, to actually verify and publish a stream.</p>
+          <p class="confirm-status" id="rfConfirmStatus">${draft.confirmed_at ? `Confirmed ✓ at ${escapeHtml(new Date(draft.confirmed_at).toLocaleString("en-KE"))} — editing keeps it confirmed.` : ""}</p>
+          <p class="review-saved-note" id="rfSavedNote">Typing auto-saves a draft as you go. "Save &amp; mark reviewed" additionally marks this stream's grid cell green and adds it to the tally above -- neither ever publishes anything by itself. Use "Download review draft CSV" above, then <code>archive-import</code>, to actually verify and publish.</p>
         </div>
       </div>`;
     $("archiveStreamDialog").showModal();
     wireReviewInputs(stream, candidateIds);
+  }
+
+  function nextUnconfirmedStreamKey(afterStreamKey) {
+    const drafts = loadAllDrafts(payload.election_id);
+    const streams = currentSnapshot().streams || [];
+    const startIndex = streams.findIndex((s) => s.stream_key === afterStreamKey);
+    const ordered = [...streams.slice(startIndex + 1), ...streams.slice(0, startIndex + 1)];
+    const next = ordered.find((s) => s.state !== "PUBLISHED" && !isConfirmed(drafts[s.stream_key]) && s.stream_key !== afterStreamKey);
+    return next ? next.stream_key : null;
   }
 
   function readReviewInputs(stream, candidateIds) {
@@ -476,14 +517,29 @@
   function wireReviewInputs(stream, candidateIds) {
     const persist = () => {
       const current = readReviewInputs(stream, candidateIds);
+      const existing = loadAllDrafts(payload.election_id)[stream.stream_key];
+      if (existing?.confirmed_at) current.confirmed_at = existing.confirmed_at; // editing after confirming doesn't silently un-confirm
       saveDraft(payload.election_id, stream.stream_key, current);
       updateDraftCount();
       const note = $("rfSavedNote");
-      if (note) note.textContent = `Saved to this browser at ${new Date().toLocaleTimeString("en-KE")} · nothing is published until you run archive-import.`;
+      if (note) note.textContent = `Draft saved at ${new Date().toLocaleTimeString("en-KE")}. "Save & mark reviewed" also greens the grid cell and adds this to the tally above.`;
     };
     document.querySelectorAll("#archiveDialogBody input").forEach((el) => {
       el.addEventListener("input", persist);
       el.addEventListener("change", persist);
+    });
+    $("rfConfirm")?.addEventListener("click", () => {
+      const current = readReviewInputs(stream, candidateIds);
+      current.confirmed_at = new Date().toISOString();
+      saveDraft(payload.election_id, stream.stream_key, current);
+      updateDraftCount();
+      renderSnapshot(); // refresh grid colouring behind the dialog immediately
+      const status = $("rfConfirmStatus");
+      if (status) status.textContent = "Confirmed ✓ — cell marked green, added to your tally.";
+      const next = nextUnconfirmedStreamKey(stream.stream_key);
+      setTimeout(() => {
+        if (next) openStream(next); else $("archiveStreamDialog").close();
+      }, 450);
     });
     $("rfCopyRow")?.addEventListener("click", async () => {
       const row = buildCsvRow(candidateIds, readReviewInputs(stream, candidateIds));
@@ -498,6 +554,7 @@
     $("rfClear")?.addEventListener("click", () => {
       clearDraft(payload.election_id, stream.stream_key);
       updateDraftCount();
+      renderSnapshot();
       openStream(stream.stream_key); // re-render from OCR prefill, draft gone
     });
   }

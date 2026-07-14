@@ -3,7 +3,9 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import logging
 import mimetypes
+import os
 import re
 import shutil
 import subprocess
@@ -390,6 +392,13 @@ def match_stream(bundle: Any, text: str, filename: str) -> tuple[dict[str, Any] 
     marker = f"{filename}\n{text[:10000]}"
     upper = marker.upper()
     stream_no_match = re.findall(r"(?:STREAM|STRM)\s*(?:NO\.?\s*)?0?([0-9]{1,2})", upper)
+    if not stream_no_match:
+        # The real printed Form 35A header reads "<STATION NAME> POLLING
+        # STATION X of Y" -- e.g. "OGONDICHO PRIMARY SCHOOL POLLING STATION
+        # 2 of 2" -- confirmed directly against a real scanned Banissa form.
+        # "Stream N" does not appear anywhere on the form itself, so treat
+        # this as the primary pattern to expect, not a rare fallback.
+        stream_no_match = re.findall(r"POLLING\s*STATION\s*([0-9]{1,2})\s*OF\s*[0-9]{1,2}", upper)
     stream_no = int(stream_no_match[-1]) if stream_no_match else None
 
     code_hits: list[dict[str, Any]] = []
@@ -450,14 +459,43 @@ def parse_form35a(text: str, candidates: list[dict[str, Any]]) -> dict[str, Any]
 
     control_labels = {
         "registered": ["REGISTERED VOTERS", "NUMBER OF REGISTERED", "REGISTERED ELECTORS"],
-        "rejected": ["REJECTED BALLOTS", "REJECTED VOTES", "TOTAL REJECTED"],
-        "total_valid": ["TOTAL VALID VOTES", "VALID VOTES CAST", "TOTAL NUMBER OF VALID"],
+        # "REJECTED BALLOTS" never matched the real form -- it prints "Total
+        # Number of Rejected Ballot Papers" (no trailing S on BALLOT, plus
+        # "PAPERS"), confirmed directly against a real scanned form. This
+        # single mismatch meant `rejected` could never be extracted from any
+        # real Banissa form regardless of OCR quality -- a pure label bug,
+        # not an accuracy problem.
+        "rejected": ["REJECTED BALLOT PAPERS", "REJECTED BALLOTS", "REJECTED VOTES", "TOTAL REJECTED"],
+        "total_valid": ["TOTAL NUMBER OF VALID VOTES", "TOTAL VALID VOTES", "VALID VOTES CAST", "TOTAL NUMBER OF VALID"],
         "total_cast": ["TOTAL VOTES CAST", "TOTAL BALLOTS CAST", "TOTAL NUMBER OF VOTES CAST"],
+        # Present on the real form's "Polling Station Counts" box but not
+        # previously extracted at all -- harmless to capture even though
+        # nothing downstream currently reads them; free evidence for a human
+        # reviewer glancing at the form.
+        "rejection_objections": ["REJECTION OBJECTED TO BALLOT PAPERS", "OBJECTED TO BALLOT PAPERS"],
+        "disputed_votes": ["NUMBER OF DISPUTED VOTES", "TOTAL NUMBER OF DISPUTED"],
     }
     for field, labels in control_labels.items():
         value, line = _extract_number_near_labels(text, labels)
         fields[field] = {"value": value, "confidence": 0.82 if value is not None else 0.0}
         evidence[field] = line
+
+    # This Form 35A layout has no explicit "total votes cast" line at all
+    # (confirmed against a real form: Registered / Rejected / Rejection-
+    # objections / Disputed / Valid are the only five counted rows) -- derive
+    # it rather than leave it permanently blank whenever both inputs are
+    # available. Lower confidence than either operand since it inherits
+    # whatever error either one carries, and openly says so in evidence.
+    if fields["total_cast"]["value"] is None:
+        valid = fields["total_valid"]["value"]
+        rejected = fields["rejected"]["value"]
+        if valid is not None and rejected is not None:
+            fields["total_cast"] = {
+                "value": valid + rejected,
+                "confidence": min(fields["total_valid"]["confidence"], fields["rejected"]["confidence"]),
+            }
+            evidence["total_cast"] = f"derived: total_valid ({valid}) + rejected ({rejected})"
+
     return {"fields": fields, "evidence": evidence}
 
 
@@ -517,7 +555,7 @@ def _engine_set(mode: str, settings: Settings) -> list[PageTextEngine]:
     normalized = mode.lower().strip()
     if normalized == "embedded":
         return []
-    if normalized in {"auto", "tesseract", "local"}:
+    if normalized in {"tesseract", "local"}:
         engine = TesseractEngine()
         return [engine] if engine.available() else []
     if normalized in {"gcv", "google"}:
@@ -529,6 +567,32 @@ def _engine_set(mode: str, settings: Settings) -> list[PageTextEngine]:
             GoogleVisionPageEngine(settings.gcv_credentials_json),
             TextractPageEngine(settings.aws_region),
         ]
+    if normalized == "auto":
+        # FIX (13/14 Jul 2026 dashboard review): "auto" used to be grouped
+        # with tesseract/local above and meant "Tesseract only," full stop --
+        # even when real GCV/AWS credentials were configured, they were
+        # never even looked at. Handwritten Form 35A digits are exactly what
+        # Tesseract (tuned for printed text) reads worst and what GCV/
+        # Textract read comparatively well; "auto" now means "use whichever
+        # real engines are actually configured, in preference order, and
+        # fail over to Tesseract rather than crash the run if a cloud
+        # engine's credentials are present but invalid or its package isn't
+        # installed."
+        engines: list[PageTextEngine] = []
+        if settings.gcv_credentials_json:
+            try:
+                engines.append(GoogleVisionPageEngine(settings.gcv_credentials_json))
+            except Exception as exc:  # missing package, bad/expired credentials file, etc.
+                logging.getLogger(__name__).warning("auto mode: GCV unavailable (%s)", exc)
+        if os.environ.get("AWS_ACCESS_KEY_ID"):
+            try:
+                engines.append(TextractPageEngine(settings.aws_region))
+            except Exception as exc:  # missing package, etc. -- bad keys surface per-page instead
+                logging.getLogger(__name__).warning("auto mode: Textract unavailable (%s)", exc)
+        if engines:
+            return engines
+        tesseract = TesseractEngine()
+        return [tesseract] if tesseract.available() else []
     raise ValueError(f"unknown historical OCR engine mode: {mode}")
 
 

@@ -163,6 +163,42 @@ async function main() {
   assert.ok(!publishedBody.includes("<input") && publishedBody.includes("40"),
     "a PUBLISHED (already-verified) stream shows read-only figures, no editable inputs");
 
+  // --- Save & mark reviewed: green cell, tally, auto-advance ------------
+  assert.equal(doc.getElementById("reviewProgress").hidden, true, "tally banner starts hidden (nothing confirmed yet)");
+
+  openStreamViaClick("TEST-001"); // already has a saved draft (UDA corrected to 245) from earlier in this run
+  assert.equal(doc.querySelector('[data-stream-key="TEST-001"]').className.includes("locally-confirmed"), false,
+    "a stream with only an unconfirmed draft is not yet green");
+  doc.getElementById("rfConfirm").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+  await new Promise((r) => setTimeout(r, 10));
+
+  const afterConfirm = JSON.parse(window.localStorage.getItem("olkalou-archive-drafts:banissa-2025") || "{}");
+  assert.ok(afterConfirm["TEST-001"].confirmed_at, "clicking Save & mark reviewed stamps confirmed_at");
+  assert.match(doc.getElementById("archiveDialogBody").innerHTML, /Confirmed/, "confirming a fresh stream shows immediate feedback text (via the auto-advanced dialog or the status line)");
+
+  assert.equal(doc.getElementById("reviewProgress").hidden, false, "tally banner appears once at least one stream is confirmed");
+  assert.match(doc.getElementById("reviewProgress").textContent, /1 \/ 4/, "tally shows 1 of 4 streams confirmed");
+  assert.match(doc.getElementById("reviewProgress").textContent, /UDA 245/, "tally reflects the corrected value (245), not the raw OCR reading (30)");
+  assert.match(doc.getElementById("reviewProgress").textContent, /Not an official result/, "tally carries the same disclaimer discipline as the rest of the review workbench");
+
+  await new Promise((r) => setTimeout(r, 500)); // let the 450ms auto-advance timer fire
+  const cellTest001 = doc.querySelector('[data-stream-key="TEST-001"]');
+  assert.ok(cellTest001.className.includes("locally-confirmed"), "the grid cell for the confirmed stream turns green");
+
+  // Auto-advance should have opened the next unconfirmed, non-PUBLISHED stream (TEST-002).
+  assert.match(doc.getElementById("archiveDialogBody").innerHTML, /Test School B/,
+    "confirming auto-advances to the next unconfirmed stream instead of leaving the reviewer to hunt for it");
+
+  // Editing an already-confirmed stream must not silently un-confirm it.
+  openStreamViaClick("TEST-001");
+  const voteAAgain = doc.getElementById("rf-vote-UDA");
+  voteAAgain.value = "246";
+  voteAAgain.dispatchEvent(new window.Event("input", { bubbles: true }));
+  await new Promise((r) => setTimeout(r, 10));
+  const afterEdit = JSON.parse(window.localStorage.getItem("olkalou-archive-drafts:banissa-2025") || "{}");
+  assert.ok(afterEdit["TEST-001"].confirmed_at, "editing a field on an already-confirmed stream does not clear confirmed_at");
+  assert.equal(Number(afterEdit["TEST-001"].votes.UDA), 246, "the edit itself still applies");
+
   let capturedCsv = null;
   window.URL.createObjectURL = (blob) => { capturedCsv = blob; return "blob:test"; };
   window.URL.revokeObjectURL = () => {};
@@ -175,8 +211,8 @@ async function main() {
     csvText.includes("stream_key,reported_at,form_url,verification,registered_form,UDA,UPA,rejected,po_total_valid,total_cast_form,reviewer_a,reviewer_b,notes"),
     "exported CSV header matches results_template.csv's real column order exactly"
   );
-  assert.ok(csvText.includes("TEST-001") && csvText.includes(",245,20,"),
-    "exported CSV contains the reviewer's correction (245), not the raw OCR value (30)");
+  assert.ok(csvText.includes("TEST-001") && csvText.includes(",246,20,"),
+    "exported CSV contains the latest correction (246, entered after confirming), not the raw OCR value (30)");
   assert.ok(!csvText.includes("TEST-002") && !csvText.includes("TEST-003"),
     "exported CSV omits streams with no draft entered at all");
 

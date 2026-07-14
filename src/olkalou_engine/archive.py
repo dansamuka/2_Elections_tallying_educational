@@ -522,6 +522,24 @@ def _match_form(bundle: HistoricalBundle, source_label: str, source_url: str) ->
         narrowed = [row for row in candidates if int(row["stream_no"]) == stream_no]
         if len(narrowed) == 1:
             return narrowed[0]
+    if candidates:
+        # IEBC's own portal labels a repeated polling centre with a bare
+        # trailing number and no "Stream"/"STRM"/"S" keyword at all -- e.g.
+        # "BANISA PRIMARY SCHOOL 01", "... 02" (confirmed against the live
+        # portal; see OCR_AND_MATCHING_ACCURACY_NOTES.md). 34 of Banissa's
+        # 81 streams sit at a station name shared with at least one other
+        # stream, and the keyword-based check above cannot disambiguate any
+        # of them -- this is very likely the dominant cause of a high
+        # portal_unmatched count. Deliberately scoped to source_label only,
+        # never source_url: a download URL routinely carries unrelated
+        # numeric IDs (page ids, timestamps) that would cause a wrong match
+        # if a number extracted from it were used to pick a stream.
+        label_digits = re.findall(r"(\d{1,2})", source_label or "")
+        if label_digits:
+            stream_no = int(label_digits[-1])
+            narrowed = [row for row in candidates if int(row["stream_no"]) == stream_no]
+            if len(narrowed) == 1:
+                return narrowed[0]
     return None
 
 

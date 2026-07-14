@@ -64,6 +64,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .ocr-checks .pass{color:#80D6A3;border-color:#326B49}
 .ocr-checks .fail{color:#FF9895;border-color:#873B3B}
 .ocr-checks .unknown{color:var(--ink-dim)}
+.stream-cell.locally-confirmed{background:var(--verified);opacity:.9;border-color:var(--verified)}
+.review-progress{background:#141C17;border:1px solid #2E5B40;border-left:3px solid var(--verified);padding:10px 16px;margin:0 0 20px;font-size:.85rem;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.review-progress strong{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.review-progress .rp-note{color:var(--ink-dim);font-size:.72rem}
+.confirm-status{font-size:.78rem;color:var(--verified);min-height:1.2em;margin-top:6px}
 
 
 .stream-cell.ocr-review{border-color:var(--review);background:repeating-linear-gradient(45deg,rgba(217,135,58,.08) 0 4px,rgba(217,135,58,.34) 4px 6px)}
