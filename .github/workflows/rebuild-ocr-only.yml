@@ -132,6 +132,14 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e '.[historical-ocr,pdf,dev]'
 
+      - name: Run credential-free preflight validation
+        shell: bash
+        run: |
+          unset GCV_CREDENTIALS_JSON GOOGLE_APPLICATION_CREDENTIALS AWS_ACCESS_KEY_ID
+          python -m pytest
+          ruff check src tests scripts
+          python -m compileall -q src scripts tests
+
       - name: Configure Google Vision credentials
         shell: bash
         env:
@@ -148,12 +156,6 @@ jobs:
           else
             echo "Google credentials are absent; the selected engine may use local OCR only."
           fi
-
-      - name: Run full preflight validation
-        run: |
-          python -m pytest
-          ruff check src tests scripts
-          python -m compileall -q src scripts tests
 
       - name: Capture immutable before-state
         shell: bash

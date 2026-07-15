@@ -30,13 +30,22 @@ def test_unknown_mode_still_raises_clearly() -> None:
         build_extractor(settings)
 
 
-def test_dual_cloud_falls_back_to_noop_when_construction_fails(caplog) -> None:
-    """Exercised for real, not mocked: google-cloud-vision is not installed
-    in this environment (matching exactly what the Dockerfile bug meant for
-    production before it was fixed), so DualCloudExtractor's own constructor
-    raises RuntimeError. build_extractor() must not propagate that -- the
-    worker has to be able to start regardless.
-    """
+def test_dual_cloud_falls_back_to_noop_when_construction_fails(caplog, monkeypatch) -> None:
+    # Simulate constructor failure explicitly so this test does not depend on
+    # whether optional cloud packages are installed on the test computer.
+    import sys
+
+    class BrokenDualCloudExtractor:
+        def __init__(self, settings):
+            raise RuntimeError("simulated cloud extractor construction failure")
+
+    broken_cloud_module = type(
+        "BrokenCloudModule",
+        (),
+        {"DualCloudExtractor": BrokenDualCloudExtractor},
+    )
+    monkeypatch.setitem(sys.modules, "olkalou_engine.ocr.cloud", broken_cloud_module)
+
     settings = Settings(ENGINE_ROOT=Path("."), OCR_MODE="dual-cloud")
     extractor = build_extractor(settings)  # must not raise
     assert isinstance(extractor, NoOpExtractor)

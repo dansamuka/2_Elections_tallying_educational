@@ -292,8 +292,10 @@ def test_match_form_still_returns_none_when_genuinely_ambiguous() -> None:
 def test_auto_mode_falls_back_to_tesseract_when_nothing_cloud_is_configured(monkeypatch) -> None:
     from olkalou_engine.historical_ocr import _engine_set
 
+    monkeypatch.delenv("GCV_CREDENTIALS_JSON", raising=False)
+    monkeypatch.delenv("GOOGLE_APPLICATION_CREDENTIALS", raising=False)
     monkeypatch.delenv("AWS_ACCESS_KEY_ID", raising=False)
-    settings = Settings(ENGINE_ROOT=REPO_ROOT)  # gcv_credentials_json defaults to None
+    settings = Settings(ENGINE_ROOT=REPO_ROOT)
     engines = _engine_set("auto", settings)
     assert all(e.name != "gcv" and e.name != "textract" for e in engines)
 
@@ -339,20 +341,24 @@ def test_auto_mode_tries_textract_when_aws_key_is_present(monkeypatch) -> None:
 
 
 def test_auto_mode_survives_a_configured_but_broken_gcv_engine(monkeypatch, tmp_path: Path) -> None:
-    """Credentials are configured but the engine can't actually construct
-    (bad key, package genuinely not installed, etc.) -- auto must fail over
-    to Tesseract rather than crash the whole sync run. This is exercised for
-    real (not mocked): google-cloud-vision is not installed in this test
-    environment, so GoogleVisionPageEngine's own constructor raises exactly
-    the RuntimeError this fix needs to survive."""
-    from olkalou_engine.historical_ocr import _engine_set
+    # Simulate the broken engine explicitly so this is independent of SDK and
+    # credential availability on the test computer.
+    import olkalou_engine.historical_ocr as hocr
 
+    class BrokenGCV:
+        name = "gcv"
+
+        def __init__(self, credentials_json=None):
+            raise RuntimeError("simulated unusable Google Vision engine")
+
+    monkeypatch.setattr(hocr, "GoogleVisionPageEngine", BrokenGCV)
+    monkeypatch.delenv("GOOGLE_APPLICATION_CREDENTIALS", raising=False)
     monkeypatch.delenv("AWS_ACCESS_KEY_ID", raising=False)
     creds_path = tmp_path / "fake-creds.json"
     creds_path.write_text("{}")
     settings = Settings(ENGINE_ROOT=REPO_ROOT, GCV_CREDENTIALS_JSON=str(creds_path))
-    engines = _engine_set("auto", settings)  # must not raise
-    assert all(e.name != "gcv" for e in engines)  # correctly excluded, not silently broken
+    engines = hocr._engine_set("auto", settings)  # must not raise
+    assert all(e.name != "gcv" for e in engines)
 
 
 def test_bounded_pilot_writes_outside_production_and_samples_across_inventory(
