@@ -130,15 +130,43 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends tesseract-ocr
           python -m pip install --upgrade pip
-          python -m pip install -e '.[historical-ocr,pdf,dev]'
+          python -m pip install '.[historical-ocr,pdf,dev]'
 
-      - name: Run credential-free preflight validation
+      - name: Run credential-free preflight in isolated worktree and virtual environment
         shell: bash
         run: |
+          set -euo pipefail
+          preflight_root="/tmp/ocr-preflight-${GITHUB_RUN_ID}"
+          preflight_venv="/tmp/ocr-preflight-venv-${GITHUB_RUN_ID}"
+          rm -rf "$preflight_root" "$preflight_venv"
+          cleanup_preflight() {
+            rc=$?
+            set +e
+            if [[ -e "$preflight_root/.git" ]]; then
+              {
+                echo "exit_code=$rc"
+                echo "status:"
+                git -C "$preflight_root" status --short --untracked-files=all
+                echo
+                echo "data_diff_stat:"
+                git -C "$preflight_root" diff --stat -- data
+              } > /tmp/ocr-preflight-evidence.txt
+            fi
+            git worktree remove --force "$preflight_root" >/dev/null 2>&1 || true
+            git worktree prune
+            rm -rf "$preflight_venv"
+            trap - EXIT
+            exit "$rc"
+          }
+          trap cleanup_preflight EXIT
+          git worktree add --detach "$preflight_root" HEAD
+          python -m venv --system-site-packages "$preflight_venv"
+          "$preflight_venv/bin/python" -m pip install --no-deps -e "$preflight_root"
+          cd "$preflight_root"
           unset GCV_CREDENTIALS_JSON GOOGLE_APPLICATION_CREDENTIALS AWS_ACCESS_KEY_ID
-          python -m pytest
-          ruff check src tests scripts
-          python -m compileall -q src scripts tests
+          "$preflight_venv/bin/python" -m pytest
+          "$preflight_venv/bin/python" -m ruff check src tests scripts
+          "$preflight_venv/bin/python" -m compileall -q src scripts tests
 
       - name: Configure Google Vision credentials
         shell: bash
@@ -156,6 +184,19 @@ jobs:
           else
             echo "Google credentials are absent; the selected engine may use local OCR only."
           fi
+
+      - name: Prove primary checkout is clean and snapshot the complete data tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          git status --porcelain --untracked-files=all > /tmp/ocr-primary-before.status
+          if [[ -s /tmp/ocr-primary-before.status ]]; then
+            echo "::error::Primary OCR checkout is dirty before the pilot. This is blocked."
+            cat /tmp/ocr-primary-before.status
+            exit 1
+          fi
+          python scripts/verify_data_tree_unchanged.py snapshot             --root data             --output /tmp/ocr-before-data-tree.json
+          git rev-parse HEAD > /tmp/ocr-primary-head.txt
 
       - name: Capture immutable before-state
         shell: bash
@@ -200,17 +241,34 @@ jobs:
             python -m olkalou_engine.cli "${args[@]}" | tee /tmp/ocr-result.json
           fi
 
-      - name: Prove pilot did not alter repository election data
+      - name: Prove pilot changed neither the primary checkout nor any data file
         if: ${{ inputs.rollout_mode == 'pilot' }}
         shell: bash
         run: |
           set -euo pipefail
-          if ! git diff --quiet -- data; then
-            echo "::error::Pilot mode changed repository data. This is blocked."
-            git diff --stat -- data
+          compare_rc=0
+          python scripts/verify_data_tree_unchanged.py compare             --root data             --before /tmp/ocr-before-data-tree.json             --report /tmp/ocr-pilot-data-diff.json || compare_rc=$?
+          git status --porcelain --untracked-files=all > /tmp/ocr-primary-after.status
+          git diff --binary -- data > /tmp/ocr-pilot-data.patch
+          if [[ "$compare_rc" -ne 0 || -s /tmp/ocr-primary-after.status ]]; then
+            echo "::error::The isolated pilot changed the primary checkout or data tree. This is blocked."
+            cat /tmp/ocr-pilot-data-diff.json 2>/dev/null || true
+            cat /tmp/ocr-primary-after.status 2>/dev/null || true
             exit 1
           fi
-          echo "Pilot output is isolated under /tmp/ocr-pilot; repository data is unchanged." >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo "Pilot ran after a clean-checkout snapshot."
+            echo "The complete data tree remained byte-for-byte unchanged."
+            echo "Pilot output remains isolated under /tmp/ocr-pilot."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Restore temporary runner checkout after pilot
+        if: ${{ always() && inputs.rollout_mode == 'pilot' }}
+        shell: bash
+        run: |
+          set +e
+          git reset --hard HEAD
+          git clean -fd
 
       - name: Validate historical-record safety
         if: ${{ inputs.rollout_mode == 'publish' }}
@@ -237,6 +295,13 @@ jobs:
         shell: bash
         run: |
           mkdir -p /tmp/ocr-artifacts
+          cp /tmp/ocr-preflight-evidence.txt /tmp/ocr-artifacts/ 2>/dev/null || true
+          cp /tmp/ocr-primary-before.status /tmp/ocr-artifacts/ 2>/dev/null || true
+          cp /tmp/ocr-primary-after.status /tmp/ocr-artifacts/ 2>/dev/null || true
+          cp /tmp/ocr-primary-head.txt /tmp/ocr-artifacts/ 2>/dev/null || true
+          cp /tmp/ocr-before-data-tree.json /tmp/ocr-artifacts/ 2>/dev/null || true
+          cp /tmp/ocr-pilot-data-diff.json /tmp/ocr-artifacts/ 2>/dev/null || true
+          cp /tmp/ocr-pilot-data.patch /tmp/ocr-artifacts/ 2>/dev/null || true
           cp /tmp/ocr-before-metadata.tgz /tmp/ocr-artifacts/ 2>/dev/null || true
           cp /tmp/ocr-result.json /tmp/ocr-artifacts/ 2>/dev/null || true
           cp /tmp/ocr-safety-report.md /tmp/ocr-artifacts/ 2>/dev/null || true
