@@ -137,6 +137,20 @@ class GoogleCropOCR:
         }
 
 
+# These three controls are the target/inputs of the exact-sum reconciler in
+# ocr/handwriting.py (`_best_exact_candidate_sum` treats `total_valid` as the
+# target every candidate value must add up to; `registered`/`rejected` feed
+# the independent V02/V03/V07 arithmetic and reference cross-checks in
+# historical_ocr.py). A misread here has outsized leverage on every candidate
+# on the form, so these three always get a bounded Google Vision call
+# regardless of local confidence -- unlike candidate cells, where a call is
+# still only made when the local read is weak or ambiguous. Three fields per
+# form is a small, predictable addition to the request budget (e.g. 3 x 144
+# streams = 432 calls for Ol Kalou, well inside even the smallest non-trivial
+# `cloud_request_limit` tier).
+ALWAYS_VERIFY_FIELDS = frozenset({"registered", "rejected", "total_valid"})
+
+
 def build_google_crop_reader(
     *,
     engine_mode: str,
@@ -204,7 +218,8 @@ def augment_cell_result_with_google(
         }
         local_disagreement = len(top_values) > 1
         should_call = (
-            local_value is None
+            field_name in ALWAYS_VERIFY_FIELDS
+            or local_value is None
             or local_conf < minimum_local_confidence
             or (disagreement_trigger and local_disagreement)
         )

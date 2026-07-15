@@ -120,6 +120,44 @@ def test_augment_uses_exact_private_crop_and_removes_it(monkeypatch):
     assert result["cloud_crop_ocr"]["usable_values"] == 1
 
 
+def test_control_fields_are_always_verified_even_at_high_local_confidence(monkeypatch):
+    # A misread `total_valid` (the exact-sum reconciler's target) or
+    # `registered`/`rejected` (the V02/V03/V07 reference cross-checks) has
+    # outsized leverage on every candidate on the form, so these three are
+    # deliberately verified regardless of how confident the local read was --
+    # unlike an ordinary candidate cell, which only gets a cloud call when
+    # the local read is weak or the top two alternatives disagree.
+    reader, calls = _reader(
+        monkeypatch,
+        [_response("184", confidence=0.9), _response("50", confidence=0.9)],
+    )
+    original = {
+        "fields": {
+            "total_valid": {
+                "value": 184,
+                "confidence": 0.97,
+                "candidates": [{"value": 184, "confidence": 0.97, "observations": 3}],
+                "_crop_png": b"deskewed-crop",
+            },
+            "candidate_A": {
+                "value": 50,
+                "confidence": 0.97,
+                "candidates": [{"value": 50, "confidence": 0.97, "observations": 3}],
+                "_crop_png": b"deskewed-crop",
+            },
+        }
+    }
+    result = cloud_crop.augment_cell_result_with_google(
+        original,
+        reader=reader,
+        registered_maximum=500,
+    )
+    assert len(calls) == 1
+    assert result["fields"]["total_valid"]["cloud_evidence"][0]["value"] == 184
+    assert "cloud_evidence" not in result["fields"]["candidate_A"]
+    assert result["cloud_crop_ocr"]["attempted_fields"] == 1
+
+
 def test_no_reader_is_noop_but_private_bytes_are_removed():
     original = {
         "fields": {
