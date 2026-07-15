@@ -122,3 +122,44 @@ def test_portal_bootstrap_writes_stable_review_only_rows(tmp_path: Path) -> None
 
     # Re-running never overwrites an existing roster.
     assert _bootstrap_streams_from_portal(bundle, _forms(2), portal_reported=2) is False
+
+
+def test_portal_bootstrap_preserves_ward_and_polling_centre_hierarchy(tmp_path: Path) -> None:
+    _write_bootstrap_profile(tmp_path, expected=2)
+    bundle = load_historical_bundle(tmp_path, "malava-test")
+    forms = [
+        PortalForm(
+            source_url=f"https://example.test/download/{index}",
+            source_label=f"27/11/2025 - MNA MUTSUMA PRIMARY SCHOOL {index:02d} Reported",
+            station_name="MUTSUMA PRIMARY SCHOOL",
+            polling_centre_name="MUTSUMA PRIMARY SCHOOL",
+            polling_centre_code="001",
+            ward_name="WEST KABRAS",
+            ward_code="1002",
+            stream_no=index,
+            form_type="35A",
+            hierarchy_path=["KAKAMEGA", "MALAVA", "WEST KABRAS", "MUTSUMA PRIMARY SCHOOL"],
+        )
+        for index in (1, 2)
+    ]
+    assert _bootstrap_streams_from_portal(bundle, forms, portal_reported=2)
+    assert {row["ward_name"] for row in bundle.streams} == {"WEST KABRAS"}
+    assert {row["polling_centre_name"] for row in bundle.streams} == {"MUTSUMA PRIMARY SCHOOL"}
+    assert bundle.streams_doc["ward_summary"][0]["streams"] == 2
+
+
+def test_form_header_identity_builds_official_hierarchy_key() -> None:
+    from olkalou_engine.historical_identity import parse_form35a_identity
+
+    identity = parse_form35a_identity(
+        "Name of Polling Station MUTSUMA PRIMARY SCHOOL POLLING STATION 1 of 2 "
+        "Code 037201100200101 Ward WEST KABRAS Code 1002 Constituency MALAVA Code 201",
+        county_code="037",
+        constituency_code="201",
+    )
+    assert identity.polling_station_code == "037201100200101"
+    assert identity.ward_code == "1002"
+    assert identity.polling_centre_code == "001"
+    assert identity.polling_centre_name == "MUTSUMA PRIMARY SCHOOL"
+    assert identity.ward_name == "WEST KABRAS"
+    assert identity.stream_key == "201-1002-001-01"

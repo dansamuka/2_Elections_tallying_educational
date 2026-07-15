@@ -28,6 +28,36 @@ class FetchResult:
     url: str
 
 
+@dataclass(frozen=True)
+class CrawlContext:
+    county_name: str | None = None
+    constituency_name: str | None = None
+    ward_name: str | None = None
+    ward_code: str | None = None
+    polling_centre_name: str | None = None
+    polling_centre_code: str | None = None
+    hierarchy_path: tuple[str, ...] = ()
+
+    def score(self) -> int:
+        return sum(
+            bool(value)
+            for value in (
+                self.county_name,
+                self.constituency_name,
+                self.ward_name,
+                self.ward_code,
+                self.polling_centre_name,
+                self.polling_centre_code,
+            )
+        )
+
+
+@dataclass(frozen=True)
+class CrawlTarget:
+    url: str
+    context: CrawlContext
+
+
 class PortalClient:
     def __init__(
         self,
@@ -97,15 +127,14 @@ class PortalClient:
         )
 
     def discover(self, html: bytes, base_url: str | None = None) -> list[PortalForm]:
-        """Discover constituency form downloads by walking IEBC's full hierarchy.
+        """Discover constituency form downloads and retain hierarchy context.
 
-        The IEBC site is stateful and exposes navigation rows rather than durable
-        hyperlinks. A constituency page can lead through county, constituency,
-        ward, polling centre and finally polling-stream pages. We therefore crawl
-        only the exact configured route until the constituency breadcrumb is
-        reached, then descend every child row inside that constituency. Bulk
-        ``Download All`` controls are deliberately ignored because an ordinary GET
-        can fall back to a broader county/national HTML page.
+        IEBC's portal uses stateful table rows rather than durable nested links.
+        The crawler therefore carries county, constituency, ward and polling-
+        centre context alongside every queued URL. This metadata is attached to
+        each discovered Form 35A and later cross-checked against the printed form
+        header. It fixes the former Malava bootstrap where all 198 rows were
+        placed under ``WARD TO VERIFY`` despite the portal exposing the hierarchy.
         """
         base_url = base_url or self.index_url
         soup = BeautifulSoup(html, "html.parser")
@@ -115,34 +144,38 @@ class PortalClient:
                 f"portal structure canary failed: constituency {self.constituency!r} not found"
             )
 
-        forms: list[PortalForm] = []
-        queue = (
+        root_context = CrawlContext(
+            county_name=self.county or None,
+            constituency_name=self.constituency,
+            hierarchy_path=tuple(value for value in (self.county, self.constituency) if value),
+        )
+        initial_urls = (
             [urljoin(base_url, self.detail_url)]
             if self.detail_url
             else list(self._constituency_detail_urls(soup, base_url))
         )
-        visit_counts: dict[str, int] = {}
+        queue: list[CrawlTarget] = [CrawlTarget(url, root_context) for url in initial_urls]
+        forms: list[PortalForm] = []
+        visit_counts: dict[tuple[str, tuple[str, ...]], int] = {}
         pages_fetched = 0
-        max_pages = 500
+        max_pages = 700
+
         while queue and pages_fetched < max_pages:
-            detail_url = queue.pop(0)
-            # IEBC reuses the same id URL at different hierarchy levels and keeps
-            # the current level in session state. Permit a small bounded revisit.
-            if visit_counts.get(detail_url, 0) >= 3:
+            target = queue.pop(0)
+            visit_key = (target.url, target.context.hierarchy_path)
+            if visit_counts.get(visit_key, 0) >= 3:
                 continue
-            visit_counts[detail_url] = visit_counts.get(detail_url, 0) + 1
+            visit_counts[visit_key] = visit_counts.get(visit_key, 0) + 1
             pages_fetched += 1
-            result = self.get_with_backoff(detail_url)
+            result = self.get_with_backoff(target.url)
             if result.status_code != 200 or not result.body:
                 continue
-            requested_ids = parse_qs(urlparse(detail_url).query).get("id", [])
+            requested_ids = parse_qs(urlparse(target.url).query).get("id", [])
             final_ids = parse_qs(urlparse(result.url).query).get("id", [])
             detail_soup = BeautifulSoup(result.body, "html.parser")
+            page_context = self._context_from_page(detail_soup, target.context)
             if requested_ids and final_ids != requested_ids:
-                # IEBC sometimes drops the id while returning a legitimate county
-                # selector. Allow that only when the page exposes a safe next hop
-                # matching the configured county/constituency route.
-                safe_children = self._hierarchy_child_urls(detail_soup, result.url)
+                safe_children = self._hierarchy_targets(detail_soup, result.url, page_context)
                 if not safe_children:
                     raise RuntimeError(
                         "IEBC hierarchy request lost its row id or changed it after redirect; "
@@ -155,15 +188,19 @@ class PortalClient:
                     result.url,
                     constituency_scoped=True,
                     include_bulk=False,
+                    context=page_context,
                 )
             )
 
-            for child_url in self._hierarchy_child_urls(detail_soup, result.url):
-                if visit_counts.get(child_url, 0) < 3 and child_url not in queue:
-                    queue.append(child_url)
+            for child in self._hierarchy_targets(detail_soup, result.url, page_context):
+                child_key = (child.url, child.context.hierarchy_path)
+                if visit_counts.get(child_key, 0) < 3 and child not in queue:
+                    queue.append(child)
             for page_url in self._pagination_urls(detail_soup, result.url):
-                if visit_counts.get(page_url, 0) < 3 and page_url not in queue:
-                    queue.append(page_url)
+                page_target = CrawlTarget(page_url, page_context)
+                page_key = (page_target.url, page_target.context.hierarchy_path)
+                if visit_counts.get(page_key, 0) < 3 and page_target not in queue:
+                    queue.append(page_target)
 
         if queue:
             raise RuntimeError(
@@ -173,13 +210,98 @@ class PortalClient:
 
         unique: dict[str, PortalForm] = {}
         for form in forms:
-            unique[form.source_url] = form
+            previous = unique.get(form.source_url)
+            richness = sum(
+                bool(value)
+                for value in (
+                    form.ward_name,
+                    form.ward_code,
+                    form.polling_centre_name,
+                    form.polling_centre_code,
+                    form.stream_key,
+                )
+            )
+            previous_richness = -1 if previous is None else sum(
+                bool(value)
+                for value in (
+                    previous.ward_name,
+                    previous.ward_code,
+                    previous.polling_centre_name,
+                    previous.polling_centre_code,
+                    previous.stream_key,
+                )
+            )
+            if previous is None or richness > previous_richness:
+                unique[form.source_url] = form
         return list(unique.values())
 
     @staticmethod
-    def _breadcrumb_text(soup: BeautifulSoup) -> str:
+    def _breadcrumb_parts(soup: BeautifulSoup) -> list[str]:
         nodes = soup.select("ul.breadcrumb li, ol.breadcrumb li, .breadcrumb li")
-        return " ".join(" ".join(node.stripped_strings) for node in nodes).upper()
+        output: list[str] = []
+        for node in nodes:
+            label = re.sub(r"\s+", " ", " ".join(node.stripped_strings)).strip(" /›>-")
+            if not label:
+                continue
+            upper = label.upper()
+            if upper in {"HOME", "RESULT FORMS", "FORMS"}:
+                continue
+            output.append(upper)
+        return output
+
+    @staticmethod
+    def _breadcrumb_text(soup: BeautifulSoup) -> str:
+        return " ".join(PortalClient._breadcrumb_parts(soup))
+
+    @staticmethod
+    def _clean_hierarchy_label(value: str | None) -> str | None:
+        text = re.sub(r"\s+", " ", value or "").strip(" -:|/")
+        text = re.sub(r"\s+[0-9,]+\s+of\s+[0-9,]+(?:\s*\([^)]*\))?\s*$", "", text, flags=re.I)
+        return text.upper()[:180] or None
+
+    @staticmethod
+    def _code_hint(value: str | None, *, digits: int | None = None) -> str | None:
+        matches = re.findall(r"\b([0-9]{3,15})\b", value or "")
+        if not matches:
+            return None
+        if digits is not None:
+            exact = [item for item in matches if len(item) == digits]
+            if exact:
+                return exact[-1]
+        return matches[-1]
+
+    def _context_from_page(self, soup: BeautifulSoup, fallback: CrawlContext) -> CrawlContext:
+        parts = self._breadcrumb_parts(soup)
+        county = fallback.county_name or (self.county or None)
+        constituency = fallback.constituency_name or self.constituency
+        ward = fallback.ward_name
+        centre = fallback.polling_centre_name
+        if self.constituency in parts:
+            index = parts.index(self.constituency)
+            descendants = [
+                part for part in parts[index + 1 :]
+                if part not in {"POLLING CENTRES", "POLLING CENTERS", "POLLING STATIONS", "STREAMS"}
+            ]
+            if descendants:
+                ward = descendants[0]
+            if len(descendants) >= 2:
+                centre = descendants[1]
+        if self.county and self.county in parts:
+            county = self.county
+        hierarchy = tuple(
+            value
+            for value in (county, constituency, ward, centre)
+            if value
+        )
+        return CrawlContext(
+            county_name=county,
+            constituency_name=constituency,
+            ward_name=ward,
+            ward_code=fallback.ward_code,
+            polling_centre_name=centre,
+            polling_centre_code=fallback.polling_centre_code,
+            hierarchy_path=hierarchy,
+        )
 
     @staticmethod
     def _row_label(row: object) -> str:
@@ -220,8 +342,17 @@ class PortalClient:
                 result.append((label, url))
         return result
 
-    def _hierarchy_child_urls(self, soup: BeautifulSoup, base_url: str) -> list[str]:
-        """Choose only safe child rows for the configured election route."""
+    def _hierarchy_targets(
+        self,
+        soup: BeautifulSoup,
+        base_url: str,
+        context: CrawlContext | None = None,
+    ) -> list[CrawlTarget]:
+        """Return safe child rows with the hierarchy metadata they introduce."""
+        context = self._context_from_page(soup, context or CrawlContext(
+            county_name=self.county or None,
+            constituency_name=self.constituency,
+        ))
         rows = self._navigation_rows(soup, base_url)
         if not rows:
             return []
@@ -230,25 +361,65 @@ class PortalClient:
             " ".join(node.stripped_strings) for node in soup.select("table thead th")
         ).upper()
 
-        # Once BANISSA is present in the breadcrumb, all navigation rows are
-        # descendants (wards, polling centres, then stations) and are safe to crawl.
+        selected: list[tuple[str, str]]
         if self.constituency in breadcrumb:
-            return [url for _, url in rows]
-
-        # Some portal responses fall back to the county selector. Follow only the
-        # configured county, never every county.
-        if self.county:
-            county_matches = [url for label, url in rows if self._label_matches(label, self.county)]
+            selected = rows
+        elif self.county:
+            county_matches = [row for row in rows if self._label_matches(row[0], self.county)]
             if county_matches and ("COUNTY" in page_headers or self.county not in breadcrumb):
-                return county_matches[:1]
+                selected = county_matches[:1]
+            else:
+                constituency_matches = [
+                    row for row in rows if self._label_matches(row[0], self.constituency)
+                ]
+                selected = constituency_matches[:1]
+        else:
+            constituency_matches = [
+                row for row in rows if self._label_matches(row[0], self.constituency)
+            ]
+            selected = constituency_matches[:1]
 
-        # At county level follow only the configured constituency row.
-        constituency_matches = [
-            url for label, url in rows if self._label_matches(label, self.constituency)
-        ]
-        if constituency_matches:
-            return constituency_matches[:1]
-        return []
+        output: list[CrawlTarget] = []
+        for raw_label, url in selected:
+            label = self._clean_hierarchy_label(raw_label)
+            child = context
+            if self.constituency in breadcrumb:
+                if "WARD" in page_headers or not context.ward_name:
+                    child = CrawlContext(
+                        county_name=context.county_name,
+                        constituency_name=context.constituency_name,
+                        ward_name=label,
+                        ward_code=self._code_hint(raw_label, digits=4),
+                        polling_centre_name=None,
+                        polling_centre_code=None,
+                        hierarchy_path=tuple(value for value in (
+                            context.county_name, context.constituency_name, label
+                        ) if value),
+                    )
+                elif (
+                    "POLLING CENTRE" in page_headers
+                    or "POLLING CENTER" in page_headers
+                    or "POLLING STATION" in page_headers
+                    or (context.ward_name and not context.polling_centre_name)
+                ):
+                    child = CrawlContext(
+                        county_name=context.county_name,
+                        constituency_name=context.constituency_name,
+                        ward_name=context.ward_name,
+                        ward_code=context.ward_code,
+                        polling_centre_name=label,
+                        polling_centre_code=self._code_hint(raw_label, digits=3),
+                        hierarchy_path=tuple(value for value in (
+                            context.county_name, context.constituency_name,
+                            context.ward_name, label
+                        ) if value),
+                    )
+            output.append(CrawlTarget(url, child))
+        return output
+
+    def _hierarchy_child_urls(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        """Compatibility wrapper retained for parser tests and diagnostics."""
+        return [target.url for target in self._hierarchy_targets(soup, base_url)]
 
     @staticmethod
     def _label_matches(label: str, target: str) -> bool:
@@ -349,6 +520,7 @@ class PortalClient:
         *,
         constituency_scoped: bool = False,
         include_bulk: bool = False,
+        context: CrawlContext | None = None,
     ) -> list[PortalForm]:
         output: list[PortalForm] = []
         candidates: list[tuple[str, str, str, str]] = []
@@ -432,14 +604,26 @@ class PortalClient:
                     stream_no = int(suffix.group(1))
                     station_name = re.sub(r"\s+0?[0-9]{1,2}\s*$", "", station_hint).strip() or station_name
             form_type = "35B" if "35b" in marker or "form b" in marker else "35A"
+            page_context = self._context_from_page(soup, context or CrawlContext(
+                county_name=self.county or None,
+                constituency_name=self.constituency,
+            ))
+            centre_name = page_context.polling_centre_name or station_name
             output.append(
                 PortalForm(
                     source_url=href,
                     source_label=surrounding[:500],
                     stream_key=stream_key,
-                    station_name=station_name,
+                    station_name=station_name or centre_name,
                     stream_no=stream_no,
                     form_type=form_type,
+                    county_name=page_context.county_name,
+                    constituency_name=page_context.constituency_name,
+                    ward_name=page_context.ward_name,
+                    ward_code=page_context.ward_code,
+                    polling_centre_name=centre_name,
+                    polling_centre_code=page_context.polling_centre_code,
+                    hierarchy_path=list(page_context.hierarchy_path),
                 )
             )
         return output

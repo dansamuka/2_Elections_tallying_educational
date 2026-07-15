@@ -18,6 +18,7 @@ from typing import Any, Iterable, Protocol
 
 from .config import Settings
 from .ocr.handwriting import extract_form35a_numeric_cells, reconcile_form35a_fields
+from .historical_identity import parse_form35a_identity, reconcile_bootstrap_hierarchy
 
 SUPPORTED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".tif", ".tiff", ".webp"}
 FORM_35A = "35A"
@@ -717,6 +718,19 @@ def run_historical_ocr(
     extractions: list[dict[str, Any]] = []
     errors: list[dict[str, Any]] = []
     layout_assisted_pages = 0
+    manifest_by_sha: dict[str, dict[str, Any]] = {}
+    if bundle.manifest_path.exists():
+        try:
+            manifest_doc = _read_json(bundle.manifest_path)
+            manifest_by_sha = {
+                str(item.get("sha256")): item
+                for item in manifest_doc.get("forms", {}).values()
+                if item.get("sha256")
+            }
+        except (OSError, ValueError, TypeError):
+            manifest_by_sha = {}
+    page_total = int(inventory.get("pages_total", 0))
+    page_counter = 0
 
     for document in inventory["documents"]:
         source = bundle.root / document["path"] if not Path(document["path"]).is_absolute() else Path(document["path"])
@@ -726,9 +740,39 @@ def run_historical_ocr(
             if output_path.exists() and not rebuild:
                 existing = _read_json(output_path)
                 if existing.get("pipeline_version") == OCR_PIPELINE_VERSION:
+                    if existing.get("text_preview") and not existing.get("form_identity"):
+                        manifest_entry = manifest_by_sha.get(str(document.get("sha256")), {})
+                        current_reference = None
+                        if existing.get("stream_key"):
+                            current_reference = next(
+                                (
+                                    row for row in bundle.streams
+                                    if str(row.get("stream_key")) == str(existing.get("stream_key"))
+                                ),
+                                None,
+                            )
+                        identity = parse_form35a_identity(
+                            str(existing.get("text_preview") or ""),
+                            county_code=str(bundle.profile.get("election", {}).get("county_code", "000")),
+                            constituency_code=str(bundle.profile.get("election", {}).get("code", "000")),
+                            portal_station_name=(current_reference or {}).get("station_name")
+                            or manifest_entry.get("polling_centre_name")
+                            or manifest_entry.get("source_label"),
+                            portal_ward_name=(current_reference or {}).get("ward_name")
+                            or manifest_entry.get("ward_name"),
+                        )
+                        existing["form_identity"] = identity.as_dict()
+                        _write_json(output_path, existing)
                     extractions.append(existing)
                     if existing.get("parsed", {}).get("handwriting"):
                         layout_assisted_pages += 1
+                    page_counter += 1
+                    if page_counter == page_total or page_counter % 10 == 0:
+                        print(
+                            f"OCR progress {bundle.election_id}: {page_counter}/{page_total} pages "
+                            f"(cached or processed)",
+                            flush=True,
+                        )
                     continue
             try:
                 with tempfile.TemporaryDirectory(prefix=f"historical-ocr-{page_id}-") as temp:
@@ -755,6 +799,26 @@ def run_historical_ocr(
                     combined = _combine_texts(texts)
                     form_type = classify_form(combined.text, document["filename"])
                     reference, match_method = match_stream(bundle, combined.text, document["filename"])
+                    manifest_entry = manifest_by_sha.get(str(document.get("sha256")), {})
+                    portal_station = (
+                        (reference or {}).get("station_name")
+                        or manifest_entry.get("polling_centre_name")
+                        or manifest_entry.get("station_name")
+                        or manifest_entry.get("source_label")
+                    )
+                    portal_ward = (
+                        (reference or {}).get("ward_name")
+                        or manifest_entry.get("ward_name")
+                    )
+                    form_identity = parse_form35a_identity(
+                        combined.text,
+                        county_code=str(bundle.profile.get("election", {}).get("county_code", "000")),
+                        constituency_code=str(bundle.profile.get("election", {}).get("code", "000")),
+                        portal_station_name=portal_station,
+                        portal_ward_name=portal_ward,
+                    )
+                    if not form_identity.polling_station_code:
+                        form_identity = None
                     parsed: dict[str, Any]
                     checks: dict[str, str] = {}
                     confidence = combined.confidence
@@ -849,6 +913,7 @@ def run_historical_ocr(
                         "text_length": len(combined.text),
                         "text_preview": combined.text[:3000],
                         "parsed": parsed,
+                        "form_identity": form_identity.as_dict() if form_identity else None,
                         "checks": checks,
                         "route": route,
                         "auto_published": False,
@@ -856,6 +921,12 @@ def run_historical_ocr(
                     }
                     _write_json(output_path, extraction)
                     extractions.append(extraction)
+                    page_counter += 1
+                    if page_counter == page_total or page_counter % 10 == 0:
+                        print(
+                            f"OCR progress {bundle.election_id}: {page_counter}/{page_total} pages",
+                            flush=True,
+                        )
             except Exception as exc:
                 error = {
                     "page_id": page_id,
@@ -881,6 +952,7 @@ def run_historical_ocr(
                     "text_length": 0,
                     "text_preview": "",
                     "parsed": {},
+                    "form_identity": None,
                     "checks": {},
                     "route": "ERROR",
                     "auto_published": False,
@@ -889,7 +961,20 @@ def run_historical_ocr(
                 }
                 _write_json(output_path, extraction)
                 extractions.append(extraction)
+                page_counter += 1
+                if page_counter == page_total or page_counter % 10 == 0:
+                    print(
+                        f"OCR progress {bundle.election_id}: {page_counter}/{page_total} pages",
+                        flush=True,
+                    )
 
+    hierarchy_result = reconcile_bootstrap_hierarchy(bundle, extractions)
+    if hierarchy_result.get("mapped"):
+        print(
+            f"Hierarchy reconciliation {bundle.election_id}: "
+            f"{hierarchy_result['mapped']} mapped, {hierarchy_result['unresolved']} unresolved",
+            flush=True,
+        )
     review_rows = _review_csv_rows(extractions, candidate_ids)
     _write_review_csv(ocr_dir / "review_queue.csv", review_rows, candidate_ids)
     form35b_rows = [row for row in extractions if row.get("form_type") == FORM_35B]
@@ -925,6 +1010,7 @@ def run_historical_ocr(
         "review_rows": len(review_rows),
         "routes": routes,
         "errors": errors,
+        "hierarchy": hierarchy_result,
         "review_queue": _relative(ocr_dir / "review_queue.csv", bundle.root),
         "inventory": _relative(ocr_dir / "document_inventory.json", bundle.root),
         "auto_publication": False,

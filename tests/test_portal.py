@@ -391,3 +391,41 @@ def test_ol_kalou_leaf_prefers_individual_cloud_download() -> None:
     assert len(forms) == 1
     assert "site%2Fdownload&id=xyz" in forms[0].source_url
     assert forms[0].stream_no == 1
+
+
+def test_leaf_form_inherits_ward_and_polling_centre_context() -> None:
+    from olkalou_engine.portal import CrawlContext
+
+    client = PortalClient(
+        "https://forms.example/index.php?r=site%2Findex&p=2&l=2",
+        "MALAVA",
+        "test",
+        constituency_code="201",
+        county="KAKAMEGA",
+    )
+    soup = BeautifulSoup(
+        '''<html><body><ul class="breadcrumb"><li>KAKAMEGA</li><li>MALAVA</li><li>WEST KABRAS</li><li>MUTSUMA PRIMARY SCHOOL</li></ul>
+        <table><tr><td>037201100200101</td><td>MUTSUMA PRIMARY SCHOOL 01</td><td><a href="/index.php?r=site%2Fdownload&id=1675">Download</a></td></tr></table>
+        </body></html>''',
+        "html.parser",
+    )
+    forms = client._extract_form_links(
+        soup,
+        "https://forms.example/index.php?r=site%2Findex&id=100&p=2",
+        constituency_scoped=True,
+        context=CrawlContext(
+            county_name="KAKAMEGA",
+            constituency_name="MALAVA",
+            ward_name="WEST KABRAS",
+            ward_code="1002",
+            polling_centre_name="MUTSUMA PRIMARY SCHOOL",
+            polling_centre_code="001",
+            hierarchy_path=("KAKAMEGA", "MALAVA", "WEST KABRAS", "MUTSUMA PRIMARY SCHOOL"),
+        ),
+    )
+    client.close()
+    assert len(forms) == 1
+    assert forms[0].ward_name == "WEST KABRAS"
+    assert forms[0].ward_code == "1002"
+    assert forms[0].polling_centre_name == "MUTSUMA PRIMARY SCHOOL"
+    assert forms[0].polling_centre_code == "001"

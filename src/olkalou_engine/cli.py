@@ -18,6 +18,7 @@ from .archive import (
 from .config import Settings
 from .db import EngineDB
 from .historical_ocr import inventory_documents, run_historical_ocr, tesseract_install_hint
+from .historical_identity import reconcile_existing_bootstrap_hierarchy
 from .historical_sync import load_sync_plan, sync_elections
 from .publisher import Publisher
 from .reconciliation import reconcile, render_markdown
@@ -82,6 +83,13 @@ def build_parser() -> argparse.ArgumentParser:
     archive_build = sub.add_parser("archive-build", help="Build a historical-election website payload")
     archive_build.add_argument("election_id")
     archive_build.set_defaults(_archive_command=True)
+
+    archive_remap = sub.add_parser(
+        "archive-remap",
+        help="Reconstruct portal-bootstrap ward/polling-centre identities from cached Form 35A OCR headers",
+    )
+    archive_remap.add_argument("election_id")
+    archive_remap.set_defaults(_archive_command=True)
 
     archive_provisional = sub.add_parser(
         "archive-provisional",
@@ -181,6 +189,7 @@ def main() -> None:
 
     if args.command in {
         "archive-build",
+        "archive-remap",
         "archive-import",
         "archive-run",
         "archive-documents",
@@ -188,6 +197,12 @@ def main() -> None:
         "archive-provisional",
     }:
         bundle = load_historical_bundle(settings.root, args.election_id)
+        if args.command == "archive-remap":
+            remap = reconcile_existing_bootstrap_hierarchy(bundle)
+            payload = build_archive_payload(bundle)
+            build_catalog(settings.root)
+            print(json.dumps({"remap": remap, "coverage": payload["coverage"]}, indent=2))
+            return
         if args.command == "archive-provisional":
             from .historical_provisional import build_historical_provisional
 

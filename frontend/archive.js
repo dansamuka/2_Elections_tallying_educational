@@ -8,6 +8,14 @@
   const percent = (value, digits = 1) => value == null ? "—" : `${(Number(value) * 100).toFixed(digits)}%`;
   const escapeHtml = (value) => String(value ?? "").replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
   const trimSlash = (value) => String(value || "").replace(/\/+$/, "");
+  function resolveFormUrl(value) {
+    const raw = String(value || "").trim();
+    if (!raw) return "";
+    if (/^https?:\/\//i.test(raw)) return raw;
+    const marker = raw.replace(/^\.\//, "").replace(/^\.\.\//, "");
+    if (marker.startsWith("data/public/")) return `./${marker}`;
+    return raw;
+  }
   const realtimeBase = trimSlash(config.realtimeApiBase);
   const ownerTokenKey = config.ownerTokenSessionKey || "olkalou.realtime.ownerToken";
   let syncWatchTimer = null;
@@ -491,14 +499,22 @@
 
     const byWard = new Map();
     streams.forEach(stream => {
-      if (!byWard.has(stream.ward)) byWard.set(stream.ward, []);
-      byWard.get(stream.ward).push(stream);
+      const ward = stream.ward || "WARD TO VERIFY";
+      const centre = stream.polling_centre || stream.station_name || "POLLING CENTRE TO VERIFY";
+      if (!byWard.has(ward)) byWard.set(ward, new Map());
+      if (!byWard.get(ward).has(centre)) byWard.get(ward).set(centre, []);
+      byWard.get(ward).get(centre).push(stream);
     });
     const candidateMap = new Map((snapshot.candidates || []).map(candidate => [candidate.id, candidate]));
     const drafts = payload ? loadAllDrafts(payload.election_id) : {};
-    $("archiveStreamGrid").innerHTML = [...byWard.entries()].map(([ward, wardStreams]) => {
+    $("archiveStreamGrid").innerHTML = [...byWard.entries()].sort(([a],[b]) => a.localeCompare(b)).map(([ward, centres]) => {
+      const wardStreams = [...centres.values()].flat();
       const completed = wardStreams.filter(stream => stream.state === "PUBLISHED" || isConfirmed(drafts[stream.stream_key])).length;
-      return `<section class="ward-block"><h3><span>${escapeHtml(ward)}</span><span>${completed}/${wardStreams.length}</span></h3><div class="ward-cells">${wardStreams.map(stream => archiveCell(stream, candidateMap, drafts[stream.stream_key])).join("")}</div></section>`;
+      const centreHtml = [...centres.entries()].sort(([a],[b]) => a.localeCompare(b)).map(([centre, centreStreams]) => {
+        const centreDone = centreStreams.filter(stream => stream.state === "PUBLISHED" || isConfirmed(drafts[stream.stream_key])).length;
+        return `<section class="centre-block"><h4><span>${escapeHtml(centre)}</span><span>${centreDone}/${centreStreams.length}</span></h4><div class="ward-cells">${centreStreams.sort((a,b) => Number(a.stream_no||0)-Number(b.stream_no||0)).map(stream => archiveCell(stream, candidateMap, drafts[stream.stream_key])).join("")}</div></section>`;
+      }).join("");
+      return `<section class="ward-block"><h3><span>${escapeHtml(ward)}</span><span>${completed}/${wardStreams.length}</span></h3><div class="centre-groups">${centreHtml}</div></section>`;
     }).join("");
     document.querySelectorAll(".archive-stream-cell").forEach(button => button.addEventListener("click", () => openStream(button.dataset.streamKey)));
   }
@@ -608,18 +624,19 @@
     const ward = $("archiveWard").value;
     const state = $("archiveState").value;
     const search = $("archiveSearch").value.trim().toLowerCase();
-    const filtered = streams.filter(row => (!ward || row.ward === ward) && (!state || row.state === state) && (!search || `${row.stream_key} ${row.station_name}`.toLowerCase().includes(search)));
+    const filtered = streams.filter(row => (!ward || row.ward === ward) && (!state || row.state === state) && (!search || `${row.stream_key} ${row.station_name} ${row.polling_centre || ""} ${row.ward || ""}`.toLowerCase().includes(search)));
     const drafts = payload ? loadAllDrafts(payload.election_id) : {};
     if (!filtered.length && payload.reference?.benchmark_only && !(payload.streams || []).length) {
-      $("archiveTable").innerHTML = `<tr><td colspan="6" class="muted">Malava's ${number(payload.coverage?.streams_total || 0)} stream rows are awaiting the first IEBC portal sync. Placeholder boxes above are intentionally not clickable until a source Form 35A identity exists.</td></tr>`;
+      $("archiveTable").innerHTML = `<tr><td colspan="7" class="muted">Malava's ${number(payload.coverage?.streams_total || 0)} stream rows are awaiting the first IEBC portal sync. Placeholder boxes above are intentionally not clickable until a source Form 35A identity exists.</td></tr>`;
       return;
     }
     $("archiveTable").innerHTML = filtered.map(stream => `<tr>
       <td><button type="button" class="text-button archive-table-open" data-stream-key="${escapeHtml(stream.stream_key)}">${escapeHtml(stream.stream_key)}</button><br><span class="muted">${escapeHtml(stream.station_name)}</span></td>
       <td>${escapeHtml(stream.ward)}</td>
+      <td>${escapeHtml(stream.polling_centre || stream.station_name)}</td>
       <td><span class="state-badge state-${escapeHtml(stream.state)}">${escapeHtml(stream.state)}</span>${isConfirmed(drafts[stream.stream_key]) && stream.state !== "PUBLISHED" ? `<br><span class="state-badge local-reviewed-badge">HUMAN REVIEWED ✓</span>` : ""}${stream.ocr?.route ? `<br><span class="muted">${escapeHtml(stream.ocr.route)}</span>` : ""}</td>
       <td>${number(stream.registered)}</td><td>${number(stream.valid)}</td>
-      <td>${stream.form_url ? `<a href="${escapeHtml(stream.form_url)}" target="_blank" rel="noopener">Form 35A ↗</a>` : "—"}</td>
+      <td>${stream.form_url ? `<a href="${escapeHtml(resolveFormUrl(stream.form_url))}" target="_blank" rel="noopener">Form 35A ↗</a>` : stream.form_source_url ? `<a href="${escapeHtml(stream.form_source_url)}" target="_blank" rel="noopener">IEBC source ↗</a>` : "—"}</td>
     </tr>`).join("");
     document.querySelectorAll(".archive-table-open").forEach(button => button.addEventListener("click", () => openStream(button.dataset.streamKey)));
   }
@@ -635,10 +652,10 @@
       // Already independently verified -- nothing to review or draft, just show it.
       const rows = Object.entries(stream.votes || {}).map(([id, value]) =>
         `<tr><td>${escapeHtml(candidateMap.get(id)?.name || id)}</td><td class="numeric">${number(value)}</td></tr>`).join("");
-      $("archiveDialogBody").innerHTML = `<p class="eyebrow">${escapeHtml(stream.stream_key)} · ${escapeHtml(stream.ward)}</p><h2>${escapeHtml(stream.station_name)}</h2>
+      $("archiveDialogBody").innerHTML = `<p class="eyebrow">${escapeHtml(stream.stream_key)} · ${escapeHtml(stream.ward)} · ${escapeHtml(stream.polling_centre || stream.station_name)}</p><h2>${escapeHtml(stream.station_name)}</h2>
         <p><span class="state-badge state-${escapeHtml(stream.state)}">${escapeHtml(stream.state)}</span></p>
         <table class="detail-table"><tbody><tr><td>Registered</td><td class="numeric">${number(stream.registered)}</td></tr>${rows}</tbody></table>
-        ${stream.form_url ? `<p><a href="${escapeHtml(stream.form_url)}" target="_blank" rel="noopener">Open archived Form 35A ↗</a></p>` : ""}`;
+        ${stream.form_url ? `<p><a href="${escapeHtml(resolveFormUrl(stream.form_url))}" target="_blank" rel="noopener">Open archived Form 35A ↗</a></p>` : ""}`;
       $("archiveStreamDialog").showModal();
       return;
     }
@@ -660,13 +677,15 @@
         <input id="rf-vote-${escapeHtml(c.id)}" data-candidate="${escapeHtml(c.id)}" type="number" min="0" inputmode="numeric" value="${draft.votes?.[c.id] ?? ""}">
       </div>`).join("");
 
-    $("archiveDialogBody").innerHTML = `<p class="eyebrow">${escapeHtml(stream.stream_key)} · ${escapeHtml(stream.ward)}</p><h2>${escapeHtml(stream.station_name)}</h2>
+    $("archiveDialogBody").innerHTML = `<p class="eyebrow">${escapeHtml(stream.stream_key)} · ${escapeHtml(stream.ward)} · ${escapeHtml(stream.polling_centre || stream.station_name)}</p><h2>${escapeHtml(stream.station_name)}</h2>
       <p><span class="state-badge state-${escapeHtml(stream.state)}">${escapeHtml(stream.state)}</span></p>
       <div class="dialog-grid">
         <div>
           ${stream.form_url
-            ? `<iframe class="form-frame" src="${escapeHtml(stream.form_url)}" title="Scanned Form 35A for ${escapeHtml(stream.station_name)}"></iframe><p><a href="${escapeHtml(stream.form_url)}" target="_blank" rel="noopener">Open in a new tab ↗</a></p>`
-            : `<p class="muted">The form has not yet been archived by this repository.</p>`}
+            ? `<iframe class="form-frame" src="${escapeHtml(resolveFormUrl(stream.form_url))}" title="Scanned Form 35A for ${escapeHtml(stream.station_name)}"></iframe><p><a href="${escapeHtml(resolveFormUrl(stream.form_url))}" target="_blank" rel="noopener">Open in a new tab ↗</a></p>`
+            : stream.form_source_url
+              ? `<p class="muted">The repository copy is unavailable. <a href="${escapeHtml(stream.form_source_url)}" target="_blank" rel="noopener">Open the IEBC source form ↗</a></p>`
+              : `<p class="muted">The form has not yet been archived by this repository.</p>`}
         </div>
         <div>
           ${benchmark ? `<div class="ocr-prefill-banner"><span><strong>OCR VALIDATION BENCHMARK.</strong> The configured candidate list is provisional. Review the named fields and the PO control totals against the scan; V01 is intentionally not run and nothing here can publish a constituency result.</span></div>` : ""}

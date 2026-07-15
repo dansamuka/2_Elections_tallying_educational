@@ -105,3 +105,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .live-sync-actions .sync-status{flex-basis:100%;text-align:right}
 .primary-action:disabled,.secondary-action:disabled{opacity:.55;cursor:wait}
 @media(max-width:720px){.live-sync-actions .sync-status{flex-basis:100%;text-align:left}}
+
+/* Ward > polling-centre > stream hierarchy */
+.centre-groups { display: grid; gap: .85rem; margin-top: .75rem; }
+.centre-block { border-top: 1px solid rgba(148,163,184,.18); padding-top: .65rem; }
+.centre-block h4 { display:flex; justify-content:space-between; gap:1rem; margin:0 0 .55rem; font:600 .78rem/1.25 var(--mono, monospace); letter-spacing:.06em; text-transform:uppercase; color:var(--muted,#a7b0c0); }
+.centre-block .ward-cells { grid-template-columns: repeat(auto-fill, minmax(34px, 1fr)); }

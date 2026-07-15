@@ -121,6 +121,13 @@ class PortalForm(BaseModel):
     station_name: str | None = None
     stream_no: int | None = None
     form_type: str = "35A"
+    county_name: str | None = None
+    constituency_name: str | None = None
+    ward_name: str | None = None
+    ward_code: str | None = None
+    polling_centre_name: str | None = None
+    polling_centre_code: str | None = None
+    hierarchy_path: list[str] = Field(default_factory=list)
     etag: str | None = None
     last_modified: str | None = None
 

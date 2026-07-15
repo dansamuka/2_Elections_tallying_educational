@@ -35,6 +35,35 @@ def _norm(value: str | None) -> str:
     return re.sub(r"[^A-Z0-9]", "", (value or "").upper())
 
 
+def _portal_hierarchy_fields(form: PortalForm) -> dict[str, Any]:
+    return {
+        "county_name": form.county_name,
+        "constituency_name": form.constituency_name,
+        "ward_name": form.ward_name,
+        "ward_code": form.ward_code,
+        "polling_centre_name": form.polling_centre_name or form.station_name,
+        "polling_centre_code": form.polling_centre_code,
+        "hierarchy_path": list(form.hierarchy_path or []),
+    }
+
+
+def _ward_summary_from_streams(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    groups: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for row in rows:
+        key = (str(row.get("ward_code") or "UNRESOLVED"), str(row.get("ward_name") or "WARD TO VERIFY"))
+        groups.setdefault(key, []).append(row)
+    return [
+        {
+            "code": code,
+            "name": name,
+            "streams": len(members),
+            "registered": None,
+            "reference_state": "PORTAL_HIERARCHY" if code != "UNRESOLVED" else "PORTAL_BOOTSTRAP",
+        }
+        for (code, name), members in sorted(groups.items(), key=lambda item: (item[0][1], item[0][0]))
+    ]
+
+
 @dataclass(frozen=True)
 class HistoricalBundle:
     root: Path
@@ -311,6 +340,9 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
                 "station_name": reference["station_name"],
                 "stream_no": reference["stream_no"],
                 "ward": reference["ward_name"],
+                "ward_code": reference.get("ward_code"),
+                "polling_centre": reference.get("polling_centre_name") or reference.get("station_name"),
+                "polling_centre_code": reference.get("polling_centre_code"),
                 "state": "PUBLISHED",
                 "verification": result["verification"],
                 "registered": registered,
@@ -321,6 +353,7 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
                 "turnout": cast / registered if registered else None,
                 "checks": result.get("checks", {}),
                 "form_url": result.get("form_url") or (archived or {}).get("public_url"),
+                "form_source_url": (archived or {}).get("source_url") or reference.get("portal_source_url"),
                 "published_at": result.get("reported_at"),
             }
             if result.get("reported_at"):
@@ -339,6 +372,9 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
                 "station_name": reference["station_name"],
                 "stream_no": reference["stream_no"],
                 "ward": reference["ward_name"],
+                "ward_code": reference.get("ward_code"),
+                "polling_centre": reference.get("polling_centre_name") or reference.get("station_name"),
+                "polling_centre_code": reference.get("polling_centre_code"),
                 "state": state,
                 "verification": "NONE",
                 "registered": reference["registered"],
@@ -348,7 +384,8 @@ def build_archive_payload(bundle: HistoricalBundle) -> dict[str, Any]:
                 "cast": None,
                 "turnout": None,
                 "checks": {},
-                "form_url": (ocr_record or {}).get("public_url") or (archived or {}).get("public_url"),
+                "form_url": (archived or {}).get("public_url") or (ocr_record or {}).get("public_url"),
+                "form_source_url": (archived or {}).get("source_url") or reference.get("portal_source_url"),
                 "ocr": {
                     "route": (ocr_record or {}).get("route"),
                     "confidence": (ocr_record or {}).get("confidence"),
@@ -641,6 +678,7 @@ def _archive_download(
         "source_url": form.source_url,
         "source_label": form.source_label,
         "form_type": form.form_type,
+        **_portal_hierarchy_fields(form),
         "discovered_at": (existing or {}).get("discovered_at") or utc_now_iso(),
         "checked_at": utc_now_iso(),
         "sha256": digest,
@@ -732,6 +770,13 @@ def _retry_incomplete_manifest_downloads(
             station_name=None,
             stream_no=None,
             form_type=str(existing.get("form_type") or "35A"),
+            county_name=existing.get("county_name"),
+            constituency_name=existing.get("constituency_name"),
+            ward_name=existing.get("ward_name"),
+            ward_code=existing.get("ward_code"),
+            polling_centre_name=existing.get("polling_centre_name"),
+            polling_centre_code=existing.get("polling_centre_code"),
+            hierarchy_path=list(existing.get("hierarchy_path") or []),
         )
         reference = references.get(str(existing.get("stream_key")))
         if reference is None:
@@ -821,7 +866,9 @@ def _bootstrap_streams_from_portal(
     constituency = str(bundle.profile.get("election", {}).get("code", "000")).zfill(3)
     for ordinal, form in enumerate(unique, start=1):
         stream_no = int(form.stream_no or 1)
-        station_name = (form.station_name or form.source_label or f"Portal Form {ordinal}").strip()
+        station_name = (form.polling_centre_name or form.station_name or form.source_label or f"Portal Form {ordinal}").strip()
+        ward_name = (form.ward_name or "WARD TO VERIFY").strip()
+        ward_code = str(form.ward_code or "UNRESOLVED")
         polling_code = _synthetic_station_code(bundle, form, ordinal)
         stream_key = str(form.stream_key or f"{constituency}-P{polling_code[-8:]}-{stream_no:02d}")
         # A malformed/duplicated portal identity must not collapse two forms.
@@ -839,8 +886,10 @@ def _bootstrap_streams_from_portal(
             "polling_station_code": polling_code,
             "station_name": station_name,
             "stream_no": stream_no,
-            "ward_code": "UNRESOLVED",
-            "ward_name": "WARD TO VERIFY",
+            "ward_code": ward_code,
+            "ward_name": ward_name,
+            "polling_centre_code": form.polling_centre_code,
+            "polling_centre_name": station_name,
             "registered": None,
             "portal_source_url": form.source_url,
             "portal_source_label": form.source_label,
@@ -860,7 +909,7 @@ def _bootstrap_streams_from_portal(
             "Polling-station codes, ward allocation and registered-voter values are not certified and cannot drive publication.",
         ],
         "streams": rows,
-        "ward_summary": [],
+        "ward_summary": _ward_summary_from_streams(rows),
     })
     _write_json(bundle.election_dir / "streams.json", bundle.streams_doc)
     # Re-run the ordinary validator now that a complete exact-count skeleton exists.
@@ -970,6 +1019,7 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
                     "source_url": form.source_url,
                     "source_label": form.source_label,
                     "form_type": form.form_type,
+                    **_portal_hierarchy_fields(form),
                     "discovered_at": (existing or {}).get("discovered_at") or utc_now_iso(),
                 }
                 continue
@@ -994,6 +1044,7 @@ def run_historical_archive(bundle: HistoricalBundle, *, user_agent: str, downloa
                     **(existing or {}),
                     "source_url": form.source_url,
                     "source_label": form.source_label,
+                    **_portal_hierarchy_fields(form),
                     "download_error": f"HTTP {response.status_code}",
                     "checked_at": utc_now_iso(),
                 }
