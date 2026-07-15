@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1784078049658,
-  "generated_at": "2026-07-15T01:14:09.658223Z",
+  "seq": 1784114814708,
+  "generated_at": "2026-07-15T11:26:54.708506Z",
   "mode": "LIVE",
   "election_id": "ol-kalou-2026",
   "election": {
@@ -33,8 +33,8 @@
     "watcher": "UPDATED",
     "extractor": "MANUAL_REVIEW",
     "last_portal_ok": "2026-07-15T01:14:09.471311Z",
-    "last_sync_completed": "2026-07-15T01:14:09.657167Z",
-    "last_sync_changed": "2026-07-15T01:14:09.657167Z",
+    "last_sync_completed": "2026-07-15T11:26:54.707290Z",
+    "last_sync_changed": "2026-07-15T11:26:54.707290Z",
     "worker_id": "github-actions-or-manual"
   },
   "coverage": {
@@ -205,15 +205,19 @@
     "methodology_note": "Live Ol Kalou forms are downloaded and OCR-prefilled through the same county-to-stream hierarchy used for Banissa. OCR remains review-only; unresolved reference rows prevent automatic publication.",
     "ocr": {
       "schema": "kenya.election.ocr-summary.v1",
-      "pipeline_version": "2026.07.14-layout-v2",
+      "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
       "election_id": "ol-kalou-2026",
-      "generated_at": "2026-07-15T01:14:09.651947Z",
+      "generated_at": "2026-07-15T11:26:54.701825Z",
       "engine_mode": "auto",
       "engines_available": [
         "tesseract"
       ],
       "documents_total": 0,
       "pages_total": 0,
+      "pages_available": 0,
+      "pages_selected": 0,
+      "page_limit": null,
+      "pilot": false,
       "pages_processed": 0,
       "layout_assisted_pages": 0,
       "form35a_detected": 0,
@@ -228,6 +232,7 @@
         "unresolved": 0,
         "errors": []
       },
+      "cloud_crop_ocr": null,
       "review_queue": "data/elections/ol-kalou-2026/ocr/review_queue.csv",
       "inventory": "data/elections/ol-kalou-2026/ocr/document_inventory.json",
       "auto_publication": false,
@@ -237,15 +242,15 @@
       "schema": "kenya.election.portal-sync.v1",
       "election_id": "ol-kalou-2026",
       "state": "UPDATED",
-      "last_started_at": "2026-07-15T01:13:42.165678Z",
-      "last_completed_at": "2026-07-15T01:14:09.657167Z",
-      "last_changed_at": "2026-07-15T01:14:09.657167Z",
+      "last_started_at": "2026-07-15T11:26:26.153059Z",
+      "last_completed_at": "2026-07-15T11:26:54.707290Z",
+      "last_changed_at": "2026-07-15T11:26:54.707290Z",
       "portal_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
       "engine_mode": "auto",
       "archive": {
         "election_id": "ol-kalou-2026",
-        "status": "UPDATED",
-        "changed": true,
+        "status": "NO_CHANGE",
+        "changed": false,
         "discovered": 0,
         "matched": 0,
         "downloaded": 0,

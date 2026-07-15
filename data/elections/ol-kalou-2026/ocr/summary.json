@@ -1,14 +1,18 @@
 {
   "schema": "kenya.election.ocr-summary.v1",
-  "pipeline_version": "2026.07.14-layout-v2",
+  "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
   "election_id": "ol-kalou-2026",
-  "generated_at": "2026-07-15T01:14:09.651947Z",
+  "generated_at": "2026-07-15T11:26:54.701825Z",
   "engine_mode": "auto",
   "engines_available": [
     "tesseract"
   ],
   "documents_total": 0,
   "pages_total": 0,
+  "pages_available": 0,
+  "pages_selected": 0,
+  "page_limit": null,
+  "pilot": false,
   "pages_processed": 0,
   "layout_assisted_pages": 0,
   "form35a_detected": 0,
@@ -23,6 +27,7 @@
     "unresolved": 0,
     "errors": []
   },
+  "cloud_crop_ocr": null,
   "review_queue": "data/elections/ol-kalou-2026/ocr/review_queue.csv",
   "inventory": "data/elections/ol-kalou-2026/ocr/document_inventory.json",
   "auto_publication": false,
