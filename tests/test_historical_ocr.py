@@ -21,12 +21,37 @@ from olkalou_engine.historical_ocr import (
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
+def _clear_generated_runtime_state(target: Path) -> None:
+    """Keep tests independent from committed portal/OCR snapshots.
+
+    The repository intentionally stores generated historical evidence. Tests that
+    create their own OCR/manifest fixtures must start from the immutable election
+    profile and stream register, not from whichever sync snapshot is on main.
+    """
+    for name in ("forms_manifest.json", "sync_status.json", "verified_results.json"):
+        (target / name).unlink(missing_ok=True)
+    for relative in (
+        "ocr/extractions",
+        "forms",
+        "portal_debug",
+    ):
+        shutil.rmtree(target / relative, ignore_errors=True)
+    for relative in (
+        "ocr/document_inventory.json",
+        "ocr/form35b_review.json",
+        "ocr/review_queue.csv",
+        "ocr/summary.json",
+    ):
+        (target / relative).unlink(missing_ok=True)
+
+
 def copy_banissa(tmp_path: Path) -> Path:
     root = tmp_path / "repo"
     source = REPO_ROOT / "data" / "elections" / "banissa-2025"
     target = root / "data" / "elections" / "banissa-2025"
     target.parent.mkdir(parents=True)
     shutil.copytree(source, target)
+    _clear_generated_runtime_state(target)
     return root
 
 
@@ -328,3 +353,52 @@ def test_auto_mode_survives_a_configured_but_broken_gcv_engine(monkeypatch, tmp_
     settings = Settings(ENGINE_ROOT=REPO_ROOT, GCV_CREDENTIALS_JSON=str(creds_path))
     engines = _engine_set("auto", settings)  # must not raise
     assert all(e.name != "gcv" for e in engines)  # correctly excluded, not silently broken
+
+
+def test_bounded_pilot_writes_outside_production_and_samples_across_inventory(
+    tmp_path: Path, monkeypatch
+) -> None:
+    root = copy_banissa(tmp_path)
+    bundle = load_historical_bundle(root, "banissa-2025")
+    documents = bundle.election_dir / "documents"
+    documents.mkdir(exist_ok=True)
+    selected_streams = [bundle.streams[0], bundle.streams[10], bundle.streams[20], bundle.streams[30]]
+    for index, stream in enumerate(selected_streams):
+        (documents / f"FORM35A_{stream['polling_station_code']}.pdf").write_bytes(
+            f"fixture-{index}".encode()
+        )
+
+    monkeypatch.setattr("olkalou_engine.historical_ocr._page_count", lambda path: 1)
+
+    def embedded(path: Path, page_no: int) -> str:
+        code = next(
+            stream["polling_station_code"]
+            for stream in selected_streams
+            if stream["polling_station_code"] in path.name
+        )
+        stream = next(item for item in selected_streams if item["polling_station_code"] == code)
+        return sample_35a_text(bundle, stream)
+
+    monkeypatch.setattr("olkalou_engine.historical_ocr._embedded_text", embedded)
+    pilot_dir = tmp_path / "pilot-output"
+    settings = Settings(ENGINE_ROOT=root)
+    summary = run_historical_ocr(
+        bundle,
+        settings,
+        engine_mode="embedded",
+        output_dir=pilot_dir,
+        max_pages=2,
+        reconcile_hierarchy=False,
+        rebuild=True,
+    )
+
+    assert summary["pilot"] is True
+    assert summary["pages_available"] == 4
+    assert summary["pages_selected"] == 2
+    assert summary["pages_processed"] == 2
+    assert (pilot_dir / "summary.json").exists()
+    assert (pilot_dir / "review_queue.csv").exists()
+    assert (pilot_dir / "document_inventory.json").exists()
+    assert not (bundle.election_dir / "ocr" / "summary.json").exists()
+    assert not (root / "data" / "public").exists()
+    assert summary["hierarchy"]["skipped"] is True

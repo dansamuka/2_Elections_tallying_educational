@@ -19,12 +19,37 @@ from olkalou_engine.archive import (
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
+def _clear_generated_runtime_state(target: Path) -> None:
+    """Keep tests independent from committed portal/OCR snapshots.
+
+    The repository intentionally stores generated historical evidence. Tests that
+    create their own OCR/manifest fixtures must start from the immutable election
+    profile and stream register, not from whichever sync snapshot is on main.
+    """
+    for name in ("forms_manifest.json", "sync_status.json", "verified_results.json"):
+        (target / name).unlink(missing_ok=True)
+    for relative in (
+        "ocr/extractions",
+        "forms",
+        "portal_debug",
+    ):
+        shutil.rmtree(target / relative, ignore_errors=True)
+    for relative in (
+        "ocr/document_inventory.json",
+        "ocr/form35b_review.json",
+        "ocr/review_queue.csv",
+        "ocr/summary.json",
+    ):
+        (target / relative).unlink(missing_ok=True)
+
+
 def copy_banissa(tmp_path: Path) -> Path:
     root = tmp_path / "repo"
     source = REPO_ROOT / "data" / "elections" / "banissa-2025"
     target = root / "data" / "elections" / "banissa-2025"
     target.parent.mkdir(parents=True)
     shutil.copytree(source, target)
+    _clear_generated_runtime_state(target)
     return root
 
 

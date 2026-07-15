@@ -24,7 +24,7 @@ from .reference import load_reference
 from .storage import build_store
 
 LOGGER = logging.getLogger(__name__)
-ALLOWED_ENGINES = {"auto", "embedded", "tesseract", "gcv", "textract", "dual-cloud"}
+ALLOWED_ENGINES = {"auto", "embedded", "tesseract", "tesseract-gcv-crop", "gcv", "textract", "dual-cloud"}
 RUNNING_STATES = {"QUEUED", "RUNNING"}
 
 

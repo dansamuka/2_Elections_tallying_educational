@@ -1,0 +1,334 @@
+name: Safe OCR Crop Pilot and Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      election:
+        description: One election only
+        required: true
+        default: banissa-2025
+        type: choice
+        options:
+          - banissa-2025
+          - malava-2025
+          - ol-kalou-2026
+      rollout_mode:
+        description: Pilot uploads artifacts only; publish commits the selected election after safety checks
+        required: true
+        default: pilot
+        type: choice
+        options:
+          - pilot
+          - publish
+      engine:
+        description: Use local page OCR plus selective Google crop OCR for the controlled rollout
+        required: true
+        default: tesseract-gcv-crop
+        type: choice
+        options:
+          - tesseract-gcv-crop
+          - tesseract
+          - auto
+          - gcv
+      pilot_pages:
+        description: Pilot sample size; pages are spread deterministically across the election inventory
+        required: true
+        default: "20"
+        type: choice
+        options:
+          - "10"
+          - "20"
+          - "40"
+          - "72"
+      cloud_request_limit:
+        description: Maximum Google Vision crop requests in this run
+        required: true
+        default: "100"
+        type: choice
+        options:
+          - "25"
+          - "50"
+          - "100"
+          - "250"
+          - "500"
+          - "1500"
+      rebuild:
+        description: Reprocess existing OCR extraction records
+        required: true
+        default: true
+        type: boolean
+      allow_hierarchy_remap:
+        description: Permit printed Form 35A headers to update review-only stream keys/ward mapping
+        required: true
+        default: false
+        type: boolean
+      publish_confirmation:
+        description: Publish confirmation; hierarchy remap requires PUBLISH_SELECTED_ELECTION_WITH_HIERARCHY_REMAP
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: safe-ocr-crop-${{ inputs.election }}
+  cancel-in-progress: false
+
+jobs:
+  ocr:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    env:
+      ENGINE_ROOT: .
+      ELECTION_ID: ${{ inputs.election }}
+      GCV_CROP_MAX_REQUESTS: ${{ inputs.cloud_request_limit }}
+      GCV_CROP_MAX_ATTEMPTS: "3"
+      GCV_CROP_TIMEOUT_SECONDS: "20"
+      GCV_CROP_MIN_LOCAL_CONFIDENCE: "0.86"
+      GCV_CROP_MIN_PREFILL_CONFIDENCE: "0.65"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reset queued run to latest main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+
+      - name: Validate publish confirmation
+        if: ${{ inputs.rollout_mode == 'publish' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected="PUBLISH_SELECTED_ELECTION"
+          if [[ "${{ inputs.allow_hierarchy_remap }}" == "true" ]]; then
+            expected="PUBLISH_SELECTED_ELECTION_WITH_HIERARCHY_REMAP"
+          fi
+          if [[ "${{ inputs.publish_confirmation }}" != "$expected" ]]; then
+            echo "::error::Publish mode requires the exact confirmation $expected"
+            exit 1
+          fi
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install OCR and test dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends tesseract-ocr
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[historical-ocr,pdf,dev]'
+
+      - name: Configure Google Vision credentials
+        shell: bash
+        env:
+          GCV_SERVICE_ACCOUNT_JSON: ${{ secrets.GCV_SERVICE_ACCOUNT_JSON }}
+        run: |
+          set -euo pipefail
+          if [[ -n "$GCV_SERVICE_ACCOUNT_JSON" ]]; then
+            printf '%s' "$GCV_SERVICE_ACCOUNT_JSON" > /tmp/gcv-service-account.json
+            chmod 600 /tmp/gcv-service-account.json
+            echo "GCV_CREDENTIALS_JSON=/tmp/gcv-service-account.json" >> "$GITHUB_ENV"
+          elif [[ "${{ inputs.engine }}" == "tesseract-gcv-crop" || "${{ inputs.engine }}" == "gcv" ]]; then
+            echo "::error::${{ inputs.engine }} requires the GCV_CREDENTIALS_JSON repository secret"
+            exit 1
+          else
+            echo "Google credentials are absent; the selected engine may use local OCR only."
+          fi
+
+      - name: Run full preflight validation
+        run: |
+          python -m pytest
+          ruff check src tests scripts
+          python -m compileall -q src scripts tests
+
+      - name: Capture immutable before-state
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/ocr-before
+          payload="data/public/elections/${ELECTION_ID}.json"
+          streams="data/elections/${ELECTION_ID}/streams.json"
+          manifest="data/elections/${ELECTION_ID}/forms_manifest.json"
+          [[ -f "$payload" ]] && cp "$payload" /tmp/ocr-before/payload.json || printf '{}\n' > /tmp/ocr-before/payload.json
+          [[ -f "$streams" ]] && cp "$streams" /tmp/ocr-before/streams.json || printf '{"streams":[]}\n' > /tmp/ocr-before/streams.json
+          [[ -f "$manifest" ]] && cp "$manifest" /tmp/ocr-before/manifest.json || printf '{"forms":{}}\n' > /tmp/ocr-before/manifest.json
+          tar -czf /tmp/ocr-before-metadata.tgz \
+            "data/elections/${ELECTION_ID}/ocr" \
+            "$streams" "$manifest" "$payload" 2>/dev/null || true
+
+      - name: Create rollback tag
+        if: ${{ inputs.rollout_mode == 'publish' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="ocr-backup-${ELECTION_ID}-${GITHUB_RUN_ID}"
+          git tag -a "$tag" -m "Before selective GCV crop OCR publish for ${ELECTION_ID}" HEAD
+          git push origin "$tag"
+          echo "ROLLBACK_TAG=$tag" >> "$GITHUB_ENV"
+
+      - name: Run bounded pilot or full selected-election OCR
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${{ inputs.rollout_mode }}" == "pilot" ]]; then
+            rm -rf /tmp/ocr-pilot
+            python -m olkalou_engine.cli --root . archive-ocr-pilot "$ELECTION_ID" \
+              --engine "${{ inputs.engine }}" \
+              --max-pages "${{ inputs.pilot_pages }}" \
+              --output-dir /tmp/ocr-pilot | tee /tmp/ocr-result.json
+          else
+            args=(--root . archive-ocr "$ELECTION_ID" --engine "${{ inputs.engine }}")
+            if [[ "${{ inputs.rebuild }}" == "true" ]]; then
+              args+=(--rebuild)
+            fi
+            python -m olkalou_engine.cli "${args[@]}" | tee /tmp/ocr-result.json
+          fi
+
+      - name: Prove pilot did not alter repository election data
+        if: ${{ inputs.rollout_mode == 'pilot' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! git diff --quiet -- data; then
+            echo "::error::Pilot mode changed repository data. This is blocked."
+            git diff --stat -- data
+            exit 1
+          fi
+          echo "Pilot output is isolated under /tmp/ocr-pilot; repository data is unchanged." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Validate historical-record safety
+        if: ${{ inputs.rollout_mode == 'publish' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(
+            --before-payload /tmp/ocr-before/payload.json
+            --after-payload "data/public/elections/${ELECTION_ID}.json"
+            --before-streams /tmp/ocr-before/streams.json
+            --after-streams "data/elections/${ELECTION_ID}/streams.json"
+            --before-manifest /tmp/ocr-before/manifest.json
+            --after-manifest "data/elections/${ELECTION_ID}/forms_manifest.json"
+            --report /tmp/ocr-safety-report.md
+          )
+          if [[ "${{ inputs.allow_hierarchy_remap }}" == "true" ]]; then
+            args+=(--allow-hierarchy-remap)
+          fi
+          python scripts/validate_ocr_rebuild_safety.py "${args[@]}"
+          cat /tmp/ocr-safety-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Package before and after evidence
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p /tmp/ocr-artifacts
+          cp /tmp/ocr-before-metadata.tgz /tmp/ocr-artifacts/ 2>/dev/null || true
+          cp /tmp/ocr-result.json /tmp/ocr-artifacts/ 2>/dev/null || true
+          cp /tmp/ocr-safety-report.md /tmp/ocr-artifacts/ 2>/dev/null || true
+          if [[ "${{ inputs.rollout_mode }}" == "pilot" ]]; then
+            cp /tmp/ocr-pilot/summary.json /tmp/ocr-artifacts/pilot-summary.json 2>/dev/null || true
+            cp /tmp/ocr-pilot/review_queue.csv /tmp/ocr-artifacts/pilot-review-queue.csv 2>/dev/null || true
+            tar -czf /tmp/ocr-artifacts/pilot-output.tgz -C /tmp ocr-pilot 2>/dev/null || true
+          else
+            cp "data/elections/${ELECTION_ID}/ocr/summary.json" /tmp/ocr-artifacts/after-summary.json 2>/dev/null || true
+            cp "data/elections/${ELECTION_ID}/ocr/review_queue.csv" /tmp/ocr-artifacts/after-review-queue.csv 2>/dev/null || true
+            cp "data/public/elections/${ELECTION_ID}.json" /tmp/ocr-artifacts/after-payload.json 2>/dev/null || true
+            tar -czf /tmp/ocr-artifacts/after-ocr-metadata.tgz \
+              "data/elections/${ELECTION_ID}/ocr" \
+              "data/elections/${ELECTION_ID}/streams.json" \
+              "data/elections/${ELECTION_ID}/forms_manifest.json" \
+              "data/public/elections/${ELECTION_ID}.json" 2>/dev/null || true
+          fi
+
+      - name: Upload OCR comparison artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ocr-${{ inputs.rollout_mode }}-${{ inputs.election }}-${{ github.run_id }}
+          path: /tmp/ocr-artifacts
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Publish selected election only
+        id: commit
+        if: ${{ inputs.rollout_mode == 'publish' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          paths=(
+            "data/elections/${ELECTION_ID}/ocr"
+            "data/elections/${ELECTION_ID}/streams.json"
+            "data/elections/${ELECTION_ID}/forms_manifest.json"
+            "data/public/elections/${ELECTION_ID}.json"
+            data/public/elections/catalog.json
+          )
+          bash scripts/publish_regenerated_outputs.sh "${paths[@]}"
+
+      - name: Publish rollback instructions
+        if: ${{ inputs.rollout_mode == 'publish' }}
+        shell: bash
+        run: |
+          {
+            echo
+            echo "## Rollback point"
+            echo
+            echo "Pre-publish tag: \`${ROLLBACK_TAG}\`"
+            echo "To restore, create a branch from that tag and use the repository's normal reviewed merge process."
+          } >> "$GITHUB_STEP_SUMMARY"
+  deploy:
+    needs: ocr
+    if: ${{ inputs.rollout_mode == 'publish' && needs.ocr.outputs.changed == 'true' }}
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the committed final main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Assemble updated Pages site
+        run: |
+          mkdir -p _site/data/public
+          cp -R frontend/. _site/
+          cp -R data/public/. _site/data/public/
+          sed -i 's#../data/public/#./data/public/#g' _site/config.js
+          find _site/data/public -type f -name '*.json' -exec sed -i 's#../data/public/#./data/public/#g' {} +
+
+      - name: Validate archived Form 35A links
+        run: python scripts/validate_archive_form_links.py --site-root _site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy updated dashboard
+        id: deployment
+        uses: actions/deploy-pages@v4
+

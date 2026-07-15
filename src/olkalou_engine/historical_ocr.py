@@ -18,13 +18,17 @@ from typing import Any, Iterable, Protocol
 
 from .config import Settings
 from .ocr.handwriting import extract_form35a_numeric_cells, reconcile_form35a_fields
+from .ocr.cloud_crop import (
+    augment_cell_result_with_google,
+    build_google_crop_reader,
+)
 from .historical_identity import parse_form35a_identity, reconcile_bootstrap_hierarchy
 
 SUPPORTED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".tif", ".tiff", ".webp"}
 FORM_35A = "35A"
 FORM_35B = "35B"
 OTHER = "OTHER"
-OCR_PIPELINE_VERSION = "2026.07.14-layout-v2"
+OCR_PIPELINE_VERSION = "2026.07.15-layout-v3-gcv-crop"
 
 
 def utc_now_iso() -> str:
@@ -279,7 +283,13 @@ def _document_roots(bundle: Any, extra_paths: Iterable[Path] | None = None) -> l
     return unique
 
 
-def inventory_documents(bundle: Any, extra_paths: Iterable[Path] | None = None) -> dict[str, Any]:
+def inventory_documents(
+    bundle: Any,
+    extra_paths: Iterable[Path] | None = None,
+    *,
+    output_path: Path | None = None,
+    mirror_public: bool = True,
+) -> dict[str, Any]:
     by_sha: dict[str, dict[str, Any]] = {}
     scanned_roots: list[str] = []
     for root in _document_roots(bundle, extra_paths):
@@ -313,17 +323,35 @@ def inventory_documents(bundle: Any, extra_paths: Iterable[Path] | None = None) 
                 if alias not in record["aliases"]:
                     record["aliases"].append(alias)
                 continue
-            public_relative = (
-                Path("elections")
-                / bundle.election_id
-                / "forms"
-                / "uploaded"
-                / f"{digest[:16]}{path.suffix.lower()}"
-            )
-            public_path = bundle.root / "data" / "public" / public_relative
-            public_path.parent.mkdir(parents=True, exist_ok=True)
-            if not public_path.exists():
-                shutil.copy2(path, public_path)
+            public_relative: Path | None = None
+            public_path: Path | None = None
+            public_url: str | None = None
+            if mirror_public:
+                public_relative = (
+                    Path("elections")
+                    / bundle.election_id
+                    / "forms"
+                    / "uploaded"
+                    / f"{digest[:16]}{path.suffix.lower()}"
+                )
+                public_path = bundle.root / "data" / "public" / public_relative
+                public_path.parent.mkdir(parents=True, exist_ok=True)
+                if not public_path.exists():
+                    shutil.copy2(path, public_path)
+                public_url = f"../data/public/{public_relative.as_posix()}"
+            else:
+                # A pilot must be read-only. Reuse an existing public source URL
+                # where the source already lives under data/public, but never
+                # create the uploaded mirror.
+                try:
+                    existing_public = path.resolve().relative_to(
+                        (bundle.root / "data" / "public").resolve()
+                    )
+                    public_path = path
+                    public_url = f"../data/public/{existing_public.as_posix()}"
+                except ValueError:
+                    public_path = None
+                    public_url = None
             by_sha[digest] = {
                 "sha256": digest,
                 "path": alias,
@@ -336,8 +364,8 @@ def inventory_documents(bundle: Any, extra_paths: Iterable[Path] | None = None) 
                 "modified_at": datetime.fromtimestamp(
                     path.stat().st_mtime, tz=timezone.utc
                 ).isoformat().replace("+00:00", "Z"),
-                "public_path": _relative(public_path, bundle.root),
-                "public_url": f"../data/public/{public_relative.as_posix()}",
+                "public_path": _relative(public_path, bundle.root) if public_path else None,
+                "public_url": public_url,
             }
     documents = sorted(by_sha.values(), key=lambda item: item["path"])
     inventory = {
@@ -350,7 +378,7 @@ def inventory_documents(bundle: Any, extra_paths: Iterable[Path] | None = None) 
         "duplicates_collapsed": sum(max(0, len(item["aliases"]) - 1) for item in documents),
         "documents": documents,
     }
-    output = bundle.election_dir / "ocr" / "document_inventory.json"
+    output = output_path or (bundle.election_dir / "ocr" / "document_inventory.json")
     _write_json(output, inventory)
     return inventory
 
@@ -563,7 +591,7 @@ def _engine_set(mode: str, settings: Settings) -> list[PageTextEngine]:
     normalized = mode.lower().strip()
     if normalized == "embedded":
         return []
-    if normalized in {"tesseract", "local"}:
+    if normalized in {"tesseract", "local", "tesseract-gcv-crop"}:
         engine = TesseractEngine()
         return [engine] if engine.available() else []
     if normalized in {"gcv", "google"}:
@@ -706,15 +734,32 @@ def run_historical_ocr(
     engine_mode: str = "auto",
     extra_paths: Iterable[Path] | None = None,
     rebuild: bool = False,
+    output_dir: Path | None = None,
+    max_pages: int | None = None,
+    reconcile_hierarchy: bool = True,
 ) -> dict[str, Any]:
-    inventory = inventory_documents(bundle, extra_paths)
-    ocr_dir = bundle.election_dir / "ocr"
+    if max_pages is not None and max_pages < 1:
+        raise ValueError("max_pages must be at least one when provided")
+    ocr_dir = output_dir or (bundle.election_dir / "ocr")
+    inventory = inventory_documents(
+        bundle,
+        extra_paths,
+        output_path=ocr_dir / "document_inventory.json",
+        mirror_public=output_dir is None,
+    )
     extraction_dir = ocr_dir / "extractions"
     extraction_dir.mkdir(parents=True, exist_ok=True)
     engines = _engine_set(engine_mode, settings)
     candidate_ids = [str(candidate["id"]) for candidate in bundle.candidates]
     candidate_list_complete = bool(bundle.profile.get("ocr", {}).get("candidate_list_complete", True))
     benchmark_only = bool(bundle.profile.get("ocr", {}).get("benchmark_only", False))
+    crop_reader = build_google_crop_reader(
+        engine_mode=engine_mode,
+        credentials_json=settings.gcv_credentials_json,
+        max_requests=settings.gcv_crop_max_requests,
+        max_attempts=settings.gcv_crop_max_attempts,
+        timeout_seconds=settings.gcv_crop_timeout_seconds,
+    )
     extractions: list[dict[str, Any]] = []
     errors: list[dict[str, Any]] = []
     layout_assisted_pages = 0
@@ -729,12 +774,32 @@ def run_historical_ocr(
             }
         except (OSError, ValueError, TypeError):
             manifest_by_sha = {}
-    page_total = int(inventory.get("pages_total", 0))
+    page_tasks: list[tuple[dict[str, Any], int]] = [
+        (document, page_no)
+        for document in inventory["documents"]
+        for page_no in range(1, int(document["pages"]) + 1)
+    ]
+    pages_available = len(page_tasks)
+    if max_pages is not None and pages_available > max_pages:
+        if max_pages == 1:
+            page_tasks = [page_tasks[0]]
+        else:
+            # Deterministically spread a pilot across the full inventory rather
+            # than processing only the first ward or polling centre.
+            indices = [
+                round(index * (pages_available - 1) / (max_pages - 1))
+                for index in range(max_pages)
+            ]
+            page_tasks = [page_tasks[index] for index in dict.fromkeys(indices)]
+    page_total = len(page_tasks)
     page_counter = 0
 
-    for document in inventory["documents"]:
-        source = bundle.root / document["path"] if not Path(document["path"]).is_absolute() else Path(document["path"])
-        for page_no in range(1, int(document["pages"]) + 1):
+    for document, page_no in page_tasks:
+            source = (
+                bundle.root / document["path"]
+                if not Path(document["path"]).is_absolute()
+                else Path(document["path"])
+            )
             page_id = f"{document['sha256'][:16]}-p{page_no:03d}"
             output_path = extraction_dir / f"{page_id}.json"
             if output_path.exists() and not rebuild:
@@ -832,7 +897,24 @@ def run_historical_ocr(
                             if page_image is None:
                                 page_image = _render_page(source, page_no, temp_dir)
                             cell_result = extract_form35a_numeric_cells(
-                                page_image, bundle.candidates, reference
+                                page_image,
+                                bundle.candidates,
+                                reference,
+                                include_crop_bytes=crop_reader is not None,
+                            )
+                            registered_maximum = (
+                                int(reference["registered"])
+                                if reference and reference.get("registered") is not None
+                                else 5000
+                            )
+                            cell_result = augment_cell_result_with_google(
+                                cell_result,
+                                reader=crop_reader,
+                                registered_maximum=registered_maximum,
+                                minimum_local_confidence=settings.gcv_crop_min_local_confidence,
+                                minimum_cloud_prefill_confidence=(
+                                    settings.gcv_crop_min_prefill_confidence
+                                ),
                             )
                             parsed = reconcile_form35a_fields(
                                 parsed,
@@ -908,7 +990,17 @@ def run_historical_ocr(
                         "form_type": form_type,
                         "stream_key": str(reference["stream_key"]) if reference else None,
                         "match_method": match_method,
-                        "engine": combined.engine + ("+layout-handwriting" if parsed.get("handwriting") else ""),
+                        "engine": (
+                            combined.engine
+                            + ("+layout-handwriting" if parsed.get("handwriting") else "")
+                            + (
+                                "+gcv-crop"
+                                if parsed.get("handwriting", {})
+                                .get("cloud_crop_ocr", {})
+                                .get("attempted_fields", 0)
+                                else ""
+                            )
+                        ),
                         "confidence": confidence,
                         "text_length": len(combined.text),
                         "text_preview": combined.text[:3000],
@@ -968,7 +1060,18 @@ def run_historical_ocr(
                         flush=True,
                     )
 
-    hierarchy_result = reconcile_bootstrap_hierarchy(bundle, extractions)
+    hierarchy_result = (
+        reconcile_bootstrap_hierarchy(bundle, extractions)
+        if reconcile_hierarchy and output_dir is None
+        else {
+            "changed": False,
+            "mapped": 0,
+            "unresolved": 0,
+            "errors": [],
+            "skipped": True,
+            "reason": "pilot output is isolated from the historical stream register",
+        }
+    )
     if hierarchy_result.get("mapped"):
         print(
             f"Hierarchy reconciliation {bundle.election_id}: "
@@ -1000,6 +1103,10 @@ def run_historical_ocr(
         "engines_available": [engine.name for engine in engines],
         "documents_total": inventory["documents_total"],
         "pages_total": inventory["pages_total"],
+        "pages_available": pages_available,
+        "pages_selected": page_total,
+        "page_limit": max_pages,
+        "pilot": output_dir is not None,
         "pages_processed": len(extractions),
         "layout_assisted_pages": layout_assisted_pages,
         "form35a_detected": sum(1 for row in extractions if row.get("form_type") == FORM_35A),
@@ -1011,6 +1118,7 @@ def run_historical_ocr(
         "routes": routes,
         "errors": errors,
         "hierarchy": hierarchy_result,
+        "cloud_crop_ocr": crop_reader.stats if crop_reader is not None else None,
         "review_queue": _relative(ocr_dir / "review_queue.csv", bundle.root),
         "inventory": _relative(ocr_dir / "document_inventory.json", bundle.root),
         "auto_publication": False,

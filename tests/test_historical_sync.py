@@ -14,12 +14,37 @@ from olkalou_engine.portal import FetchResult
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
+def _clear_generated_runtime_state(target: Path) -> None:
+    """Keep tests independent from committed portal/OCR snapshots.
+
+    The repository intentionally stores generated historical evidence. Tests that
+    create their own OCR/manifest fixtures must start from the immutable election
+    profile and stream register, not from whichever sync snapshot is on main.
+    """
+    for name in ("forms_manifest.json", "sync_status.json", "verified_results.json"):
+        (target / name).unlink(missing_ok=True)
+    for relative in (
+        "ocr/extractions",
+        "forms",
+        "portal_debug",
+    ):
+        shutil.rmtree(target / relative, ignore_errors=True)
+    for relative in (
+        "ocr/document_inventory.json",
+        "ocr/form35b_review.json",
+        "ocr/review_queue.csv",
+        "ocr/summary.json",
+    ):
+        (target / relative).unlink(missing_ok=True)
+
+
 def copy_banissa(tmp_path: Path) -> Path:
     root = tmp_path / "repo"
     source = REPO_ROOT / "data" / "elections" / "banissa-2025"
     target = root / "data" / "elections" / "banissa-2025"
     target.parent.mkdir(parents=True)
     shutil.copytree(source, target)
+    _clear_generated_runtime_state(target)
     shutil.copy2(REPO_ROOT / "data" / "elections" / "sync.json", target.parent / "sync.json")
     return root
 
@@ -220,7 +245,9 @@ def test_ol_kalou_pre_poll_zero_forms_is_a_valid_sync_state(tmp_path: Path, monk
     root = tmp_path / "repo"
     target_parent = root / "data" / "elections"
     target_parent.mkdir(parents=True)
-    shutil.copytree(REPO_ROOT / "data" / "elections" / "ol-kalou-2026", target_parent / "ol-kalou-2026")
+    target = target_parent / "ol-kalou-2026"
+    shutil.copytree(REPO_ROOT / "data" / "elections" / "ol-kalou-2026", target)
+    _clear_generated_runtime_state(target)
     bundle = load_historical_bundle(root, "ol-kalou-2026")
 
     class FakeClient:
