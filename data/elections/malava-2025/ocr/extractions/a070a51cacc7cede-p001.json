@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "a070a51cacc7cede-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201369174674087/v1_a070a51cacc7.pdf",
+  "source_sha256": "a070a51cacc7ceded25c453238cbfa1564b9c033566dc421610a092696b022ce",
+  "source_filename": "v1_a070a51cacc7.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/a070a51cacc7cede.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1008-086-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16457142857142856,
+  "text_length": 2326,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station LUNYINYA PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100808602\nj : <\nWard SOUTH KABRAS Code __ 1008\nConstituency MALAVA Code __ 201\n- 27 h ‘\nCounty KAKAMEGA ) Code __037\nNumber of votes cast in favour of each candidate:\nNo. of Valid Votes Obtained\n|_1_ANGATIA JAMES SHINACHI i SSR: Ciena naa oy ONE ES\n_ |. 2 JASON SHIVAKALEBRUCE SS fe Siepareer coral de vor rewoet a Coats ore pypacaet\n_ [3 MANYASIJOAB BURUDI .\n[4 MWANGAEDGARBUSIEGA ace a USO AT Se rerrc rem ae eee ae och\n5. NALWABENJAMIN, |\n| 6 NDAKWA DAVID ATHMAN ses oid OPA AN pe NOP Uae alec OTN os NEBOUNDS tee eee roe onal Po\n_1. OYUGI GEORGE NGAIRA iMISSiogANDBOU\n|_8 PANYAKOSETHAMBUSINI i Soke oem amerrrrsusraceaape eee TE FTE\n_ LS TUVEI WILBERFORCE INDAL pene ae Te atocroneak ewes Sonate aaa aya\n(eienaited SS\n— PollingStationCounts Decision{s} on disputed votesifany\n_ [fe fteatunaettegneet en iain Seiec | ——E ZS] (ear dare hae] sonar]\n|.2-{ Total Number of Rejected Ballot Papers; | Gy yy] kot Son cc ONDE Gg CEMTRTEL OTS ON NGS SOUNDARIES\n_|8:| Total Number of Rejection Objected to Ballot Papers; | O 2 | Soh oN NDE UNRATE S TELE GORA per eaESCR LOE nIESCOMMSG :\n(2h NC aS mY Gre} sim ecememmen am ema ae st\nse Sfldcaion un nureses A sesame SRC oor See aegeetir oon geaceonta \\\nWe, the undersigned, being present when the results of the count were announced, do hereby ded re that the resyehown Bye are true\nand accurate count of the ballots in LUNYINIA PRIMARY Polling Station ___{\\AgA LAVA 2 ey Comatituency.\nMOEN Being - : i 40\" Pe ATORAL As Win malin = A Saaeaete! Pam e °E t “ eh < i\nPresiding Officer: MAAN OAINTHE NACICH E © sianature: kA Eom (Wagga had ORS\nDeputy Presiding Officer; AY QING PYUMA KS P) Signature: Frist Re’ ef 2t dome\n\"Agents or Candidates {if present) IALANDBOUNEFENDENTELES Orato oo guIND! ARIES Ong CTORAL ANOD GEN SOLE’ omnis\n. Pocanao. mi NArHAN eae laedul > DA Rmanermael Wisege BS ja\nReasons for Refusal to Sign (if any) See e Sp MSSIONINDER eae CRNOE RIE RAL AN VON OUN eves oe\nPresiding Officer's Comments NTELECTONNOE Al a oR ; orn . anissic oRPSOUNDARIES CAR a cAOR\ni ne AD. COUNTING IAA DONE PEACE EYL io\" a Fe\nUSHA NUE ARE Pegeeciig) oo ee ce\nRONAAET Ee ORT ce EC RRR NINDEPENDEN AN SOLON A attOUR SPEND MOA oF -",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": "full-page-text anchored by '| 2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "_|8:| Total Number of Rejection Objected to Ballot Papers; | O 2 | Soh oN NDE UNRATE S TELE GORA per eaESCR LOE nIESCOMMSG :",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:11:31.384792Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100808602",
+    "constituency_code": "201",
+    "ward_code": "1008",
+    "polling_centre_code": "086",
+    "stream_no": 2,
+    "stream_key": "201-1008-086-02",
+    "ward_name": "SOUTH KABRAS",
+    "polling_centre_name": "LUNYINYA PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100808602",
+      "printed/portal ward SOUTH KABRAS",
+      "printed/portal centre LUNYINYA PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

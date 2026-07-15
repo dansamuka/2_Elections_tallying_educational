@@ -1,0 +1,115 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "06126a658b967d0a-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201523627335610/v1_06126a658b96.pdf",
+  "source_sha256": "06126a658b967d0a8862be81e61826819a793a976f011a5b3e7ed8a0c0cb35cb",
+  "source_filename": "v1_06126a658b96.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/06126a658b967d0a.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1007-076-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2523,
+  "text_preview": "515M\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station SHEYWE PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100707602\nWard SHIRUGU-MUGAI Code __ 1007\nCarisfitwerty' SS aC MALAYER COMMISSIOW PENTEL ECTON ECAC COON NTELECTOR4/ S/ONINDEPEND <COne? Sats: AMORAL ay VINDEPEN\n‘County KAKAMEGA \" Code __037\nNumber of votes cast in favour of each candidate: . ;\nName of Candidate ‘ No. of Valid Votes Obtained ; :\n_ [_4. ANGATIA JAMES SHINACHI. epee lipenrecer serene eat eu rere= ron aaah\nSFE AON SO Ri Beige eras or tsar\n3. MANYASI JOAB BURUDI WinoE Bee LORREAROE Ge PRUETT ECS Ue DM RUNNION O\n'[_4. MWANGA EDGAR BUSIEGA 3 E073)\n6. NALWA BENJAMIN, DARE NTELECTOR!\n“6 NDAKWADAVIDATHMAN pi pete ene ouahioeriwemouNeh ec ZOhe wane oMnoep oem\n|_7. OYUGI GEORGE NGAIRA DHiaNDBO Scan Luineae ya TT ENSeeMIDPST AON LnNeeeIea 12,5 |\n|_&_PANYAKO SETH AMBUSINI EP Se ce staere goes gare CORRS NO SER SAAT LPT\n_9. TUVEI WILBERFORCE INDAI [yee te soyseuaericuee sear aal mvereuremmniamseinsasr tearm 6.9.18\nBe ee ae eg ea el gee corer ern aT 7\n~ Polling Station Counts _ et uiniSSIONINDE Dg UNDARIESS: ~ Decision{s} on disputed votes if any COxRenoe pen TEL! Alay,\n[1 Toa Aunbeot Reger Verse Paling Seton: F———2.3 7] | Sed Pew wn pete] Ten a ae]\n[a fraatNinierigedetbad Pes ———Oog| |,\n[fs Tatnunbsratteecion Oya oBaltPs: 90g) [2\n«oie Totat Number of Disputed Votes, oOo RE OO] BT ON ee ng\not Stat Nabe i void ates 065A Con AR alec NRE HER Base 96 ail SSIONIND eae OUNGARIE SRN Cea OuMDE PARENT:\nDedlaration =! 5))5-P ALANDEOUA PENDENTELEC oN ORNS AON NDARIESCCGLECTORALANDE OE GN SOMMISSION,\n\"We, the undersigned, being present when the results of the count were announced, do hereby declare that the res OW RRabove pe\n_ and accurate count of the ballots in SHEAWE PRIMARY scr Polling Station ___ PMIALA fie a ey ituency.\nPresiding Officer: SHEL SON Ob JP \\ L ‘Signature: _ 4 FER ti Pres a ay De R :\n- Deputy Presiding officer; LILIAM — PyuSHURD signature: het, arricany fl - 2.02\n, _ Agents or Candidates {if present) al sour ENDI Sols NDA KECTORALAN we 3 wR\n[2 |GopenEy SactiTa lo gsssq99 | DAP I< _ forpsrosa| Oe paar\nSee eee eee On NOH oe OS sae ocagt a S/OM A NOBOUN Te EES IN apis SIONNDE PNA OARIESCOtn, Neng Depp\nee ee ee eR es\n_ Reasons for Refusal to Sign {if any) MIS OSE CERN IMIS SIONINOE ee ARNO NSN SRALANDINIYE FELECSON IN\nPoti > ATAK AT ENB BD Swot =: fouls OU cath pe\nEN Tals ete NN pHDBOUNDARIES A TELECTOR I Det Sex OK NOG pRIESCOMMISS oyALANDBOUN NGHFICERS. ease tne",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 18,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 18,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by '9. TUVE] WILBERFORCE. INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:20:27.733001Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100707602",
+    "constituency_code": "201",
+    "ward_code": "1007",
+    "polling_centre_code": "076",
+    "stream_no": 2,
+    "stream_key": "201-1007-076-02",
+    "ward_name": "SHIRUGU-MUGAI",
+    "polling_centre_name": "SHEYWE PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100707602",
+      "printed/portal ward SHIRUGU-MUGAI",
+      "printed/portal centre SHEYWE PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

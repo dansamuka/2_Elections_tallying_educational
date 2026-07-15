@@ -1,0 +1,162 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "d158b1d51db3356c-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201873265730301/v1_d158b1d51db3.pdf",
+  "source_sha256": "d158b1d51db3356cf132554ac6d82f4ca0e0b9aeb9ad3bd3f378f7e735ecebc5",
+  "source_filename": "v1_d158b1d51db3.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/d158b1d51db3356c.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3250285714285714,
+  "text_length": 2359,
+  "text_preview": "See SS Se ee” se ee\nSS FS eS rt—‘ité—S CS=-=\" ee\nFE ee AS, i Se oe\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nWard CHEMUCHE Code __ 1003\nCanshitency!S2 utc MALAYA. COMMISSION OENTELEC TON CNS pO OO EN TELECTOR a, SHONINDEPENY < COR i pda. ci an\nCounty “ KAKAMEGA Code __037\nNumber of votes cast in favour of each candidate: wis\" ES: ;\n| Name ofCandidate TN. of Valid Votes Obtained\n_1, ANGATIA JAMES SHINACHI Minis SION Pr er OOO!\n- [2 JASON SHIVAKALE BRUCE Seer ee baer a IO\n“3. MANYASIJOAB BURUDI Seer ecient era TN\n|_4. MWANGA EDGAR BUSIEGA SU eNOEN\nSo NALWA BENJAMIN, |\n/ [6 NDAKWA DAVID ATHMAN 2 SRA ORD\n__|_7. OYUGI GEORGE NGAIRA KANDBOUND!\n- [8 PANYAKO SETH AMBUSINI a\ni SON TUIVST WILBER PIOIREE TNBAT nO ENDEN¢/<SCOMMISSO SILAS Gat NO NnIENTEL ECL a ISSLONINDET 5 ne raN Gabe cLORALAMeN\nTeagan ener mT YE\nS - Polling Station Counts _ Sot uMISSIONINDE a 1 - Decision{s) on disputed votesifany = i tstst—~S\n[Aft ambeot egrets te Pling Staion, | 3] Swinton Pye wh dete] needa aside we |\n| 2:] Totat Number of Rejected Ballot Papers: oT OO ON fo ee ey\n|i at Nbr ojo Ossi toetPaprs ag] fa Pd\n[a Prtnenber a Oepielines, 0) Be\n|S [Toatnonir aad Gast Bee ooe ansninee ronment ooerea|\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true _\n- and-accurate count of the ballots in MALICH PRIMARY SCHOOL Polling Station 2 UIMIALAVAy Constituency.\nS o pre ee re Wr a) Te me ” vs 1 R Ana IN pi ; v “ “< a ~~ ¥ if in iis - ¢ TH i\nPresiding Officer: REG EAH INYANT Wiech signature: Ue plate =I boos\nDeputy Presiding Officer: P Heeee COTA AATUMA ® Signature: Wa “he DIY = (= 3.098\nAgents or Candidates {ifpresent) = et NDBOY DENTELEC 40) MSUNDARIESC LE rOR Wt Jah,\nLethe Me Mivte, yolazday| bapa 6 lonenien! Gos bya\nwee Beira Content ago 32D Se Ree fall)\nBo Ee ee ee\nae Bf eee} fe |\nEe CS eecee mand res GE me ee eS\n-- Reasons for Refusal toSign(ifany) SDENTELECT OMS SIONINDE® ae ORIOT IE ORAL ANON MOE PENNENTELE Ga OC\nE PEN aralthny Cesena MAIER oN ELECT NwOS eC oath co ARIESCOntigs ORAL ANDBOOENT AN ASE OE TOM MISSIONINDg pSOUND Af\n“THE GoanTING SWENRT Cr DEL THERE WAS ONLY ONE RETEcTED VOTE ) fee SL)\nNDEPET cat DE PEy rf ‘ a QUNDAR) ALRY eee OMMISg) RALA a”\ncole REBERAT. IAYARAY Let Bro ees oie ona anneows ore ceeeh en gunsncnnee on Nec j",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 0,
+            "confidence": 0.03,
+            "score": 0.03,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 40,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 40,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 4,
+        "confidence": 0.0,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": "full-page-text anchored by 'Total Number of Rejected Ballot Papers;'",
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid votes cast'",
+      "total_cast": "derived: total_valid (2) + rejected (2)",
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:47:07.755837Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "CHEMUCHE",
+    "polling_centre_name": "MNA MALICHI PRIMARY SCHOOL REPORTED",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward CHEMUCHE",
+      "printed/portal centre MNA MALICHI PRIMARY SCHOOL REPORTED"
+    ]
+  }
+}

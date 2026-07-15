@@ -1,0 +1,41 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "4f72b24cd915989a-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201818400574979/v1_4f72b24cd915.pdf",
+  "source_sha256": "4f72b24cd915989ad12597e51d4bc29185f64fd41abd75fac197bf9cfcce8439",
+  "source_filename": "v1_4f72b24cd915.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/4f72b24cd915989a.pdf#page=1",
+  "page_no": 1,
+  "form_type": "OTHER",
+  "stream_key": "201-1003-016-03",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract",
+  "confidence": 0.40008676789587855,
+  "text_length": 2512,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station KIMANG'ETI PRIMARY SCHOOL POLLING STATION 3 of 3 Code __037201100301603\nWardPinDeNnt lo! oc .GHEMUGHE NDENTE) -SCOmMiSSIOT 0 Tom Saw pe NDENTEL Eo SNINDEPENDEL oP CES Gg dapEnWs- §Crog SSIONINDE\nCare Geaceny SS) i CMR ANE cOMMISSIOn JOENTEL ECTON CAO SAO COU Ly TELECTORA, SIONINDEPEND CO net gaia c) DIORA ag ?MINOEPENT\nCountyawnnePr ee 00 — RARAMEGAS ECTOR A) |. ENDENTELEC’ OW Mot oPEl eCTORALAN NOEPENDENTEN all SO pda.1c8Ot\nNumber of votes cast in favour of each candidate:\n_1. ANGATIA JAMES SHINACHI\n- [2 JASON SHIVAKALE BRUCE | Beer ocoe geen oa coe ee\n3, MANYASI JOAB BURUDI SS NN\ni. MWANGA EDGAR BUSIEGA So ast oeconrnioe cercran nesta Soa pte Tt\n\"5. NALWABENJAMIN, 2 NET YTS\n|_8. NDAKWA DAVID ATHMAN 8] |\n7, OYUGI GEORGE NGAIRA 1 a]\n@ PANYAKO SETH AMBUSINI Ee]\n9 TUVE! WILBERFORCE INDAI . Se Sak NS DeiaaenrrreA Lo nneemnmTTnpraNcoNerinoarer #04\"\nTotal number of valid votes cast _ ; G aka Ima omapereeruuovsoreonreaers od\n_» Polling Station Counts _ SCOR Decision{s} on disputed votes if any ) oe tt\n[1.[ Tota Number ofRegisteredVoesinthe Pong Staten, | 7\n[2.|ToalNunbertReecedtalet Paes: | pa\n- |. ToatnumberofReecion OjecedtRalatPopes; | pool |2.\nDeclaration SEPENDS: WSPENDENTE! Soke NOARIE SLi cont AND ECGS NS SO NOE aMiSSIONs\nWe, the undersigned, being present when the r sults of the count were announced, do hereby dec AL shown above are true’\nand accurate count of the ballots in MAN rT, PR yf 63 Polling Station AB us 4‘ V/A _______ Constituency.\nPresiding Officer: FAUSTING WAMALIKA Signature: (blondes 27-\\I- 2628\nDeputy Presiding Officer: BALD A MO CIHIT Pa4BAgC L Signature: WF ? Date 27 = ll=Jers\n\"Agents or Candidates {if present) Reso OR ALANDEOU A PENDENTELES ac oe cToRad “s NOM\nie] hinestnaarson [hasta] Prainatamamicnaaoe | Taeoee | Spm | a |\nIGEN eH C. LONAMI Zaza DED Fone MT Porm 20-2\nLSIMIELAB TawWay| 2707182) BAp lone zsm Np [a --as\nSS a aes eee ee ee\nioe oe ea ee ee ee ner ee\n: Hh\nBO 6 oP ENTELEC TOR SSIONINDEY ENS SC pe Ga AL ANDOU SPENDENTELET ION WO cI UNDARIECOLECTOR ALAND SOE SRA\nReasons for Refusal to Sign {if any) yoeer On, NT RO\n\" a ero = 7 x nar i ; ; i ; oo\nef ro | on : ments a | ese cron i Spo picDAd Pemcksaliee MbAe cH\nresiding Officer's Comments: = See CTOR A aime NEI Nee Peng\nTHERE WERE No BISPUTEKR VOTES am, aA A See hy te Sea es\nPD = FAUSINE WAMALIEA ATF RGN cians ee\nam gh ciate te Seeereger a -/ ae RMeeed og le Oe er\n: SIGN> WN are One A Er ea OTS",
+  "parsed": {},
+  "checks": {},
+  "route": "UNCLASSIFIED",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:40:49.575928Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100301603",
+    "constituency_code": "201",
+    "ward_code": "1003",
+    "polling_centre_code": "016",
+    "stream_no": 3,
+    "stream_key": "201-1003-016-03",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "KIMANG'ETI PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100301603",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre KIMANG'ETI PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

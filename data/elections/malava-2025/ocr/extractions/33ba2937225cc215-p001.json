@@ -1,0 +1,141 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "33ba2937225cc215-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201831086476186/v1_33ba2937225c.pdf",
+  "source_sha256": "33ba2937225cc215a61e1e375948ab625b6856055b41e397832a4da206207e71",
+  "source_filename": "v1_33ba2937225c.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/33ba2937225cc215.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1002-006-03",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.286,
+  "text_length": 2878,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BULUP! PRIMARY SCHOOL POLLING STATION 3 of 3 Code __ 037201100200603\nWard? ENDENTE. eho BST KABRABEN TE: SCOMMISSIO® uO\" 0%, Pat cpENDENTEL EC UNDEPENDE 0h 2 o> Bogen WEE EC Top BSIONINDE\nConterancy => oc PPR ONRcOMMISSIOn, PENTEL EC TONE AG are OU euTELECTORs) DONINDEPEN. GC ok Sie cL EAMORAL Ay INDEPEN\nCounty KAKAMEGA Code 037\nNumber of votes cast in favour of each candidate: ' :\n[Name of Candidate TN. of Valid Votes Obtained\n[7 ANGATIA JAMES SHNAGHT =\n| 2. JASON SHIVAKALE BRUCE : PSNR TEL EC TOR AEMNDEPENUE LC Os Lote ORME Fe Wy\n|_3. MANYASI JOAB BURUDI ; Sere Sorrearcnt eR DER TERE Oe ECON NY 1\n[4 MWANGA EDGAR BUSIEGA Soares aoeeRteah aRaamanNRT aneaNeaeToIeeteS a) 0 i\n/ | 5. NALWA BENJAMIN : ho Se ee a OH\n~ [6 NDAKWA DAVID ATHMAN COncTORAL ANDO OC Os rte a ne oMMORTC nto R Eee Aspnes Cry ON\n_ |. OYUGI GEORGE NGAIRA MISSIOW ANOE |}\n[8 PANYAKO SETHAMBUSINN ae aaaacrnniaauasaanertnnincaressacesracensny ©\nMISO TRAVEL VVILBISRE ORCA JAIL OEP SNDEN ra SCOMMISS Sa CRN PAGERS arog aN Ree eee roe ON\n[Total number of valid votes cast. a O\nPolling StationCounts = ecisionish on disputed votesifany\n\"| Tata Numer of Regtered Vern the Paling Siatoey P55 :\n>] 2: Total Number of Rejected Ballot Papers; 900 ND} [Ny\n| [of Taal nmberat Recon Oecd twbaloPapers: QO) {2\nAR Tt nn ena WNGS Soe ae opeh Ye oo Cae ree sconarona cfoaoUN eo Nea SON\n[sf toainonieroneidWoestet eg [ee\nBaglaration na) SsioninnereNOscON ier eeSeOnt ANDBOU WS PENDENTELES Ont Oi Sas ON INDARIESCGLECTORALANDE OE ONC PEND OMMISSIO,\nWe, the undersigned, being present when the results of the count were announced, do hereby declare tha the results shown above are true\nand accurate count of the ballotsin BU) UP P< SCHrp Polling Station — IV JACLAVAE Constituency.\n“Presiding Officer: J-DWIN oP NDE TE Signature: Fonzie # } >, pate 22-1 OX:\n- Deputy Presiding Officer: EVGWE BiSKAYA = signature: - Pas | nel RE ate i hon? OR\nAgents or Candidates(ifpresent) EC ON NEO UN C' CER wMilSS!\nL2S CS ppaT TOLOY S B22 me DAP oe Dan eed Sth Rese 74 zabe\n[3 MiCiARL MALUMBA BOOTHS DCP O79 ROE RAPD P72\nBOE Boe oe SSO ANN min ARIES AO Ac ORME PEND OARIPcn UMTS ASUS Cano pOSOUNTELECT CMM Sey nMINDEPE NaCOBNCE RIES Ce\nMRIS concert aie Saul a SO goPO wre Eco MM cium nel ae Sc sae WASPS aaa SCs Oy\nTE ae ES ote CTO ee OG ARIE arnt aa OW OO Ure CSCO GSE ing SLOEN A eran Moepat oe hoerE”\nBOS ato eure ECTORa SSIONINDEM NC aCONZ eS te aA ANDOU PENDENTELE SONU aes JNDARIEGCOECTORALAND NOP MRC\nReasons for Refusal to Sign {if any) mee SpE Mi vet Oak 1A DES Re\nicc aa hoa ! ret iOS ps ‘ RIESC Mi i Ni ; KS mace DERBOUNDAR eee Se\nDO EDWIN (NDEI eertae LE p ra ea SO eee ONInEoBOUNT A MESCOMN NCS\npensar KA se CS Opa oe rm aNEe oe OPA ee ONIN RBOU rE ARIESCON, SO PENDEN A NIESCOMME\nUD Po pAte £ 27-2025) V BFstbing Jo: Sear",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 2,
+        "confidence": 0.85,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.85,
+            "score": 0.85,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 900,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 900,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "anchored-cell-ocr anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": "full-page-text anchored by '2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:41:53.619547Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100200603",
+    "constituency_code": "201",
+    "ward_code": "1002",
+    "polling_centre_code": "006",
+    "stream_no": 3,
+    "stream_key": "201-1002-006-03",
+    "ward_name": null,
+    "polling_centre_name": "BULUP! PRIMARY SCHOOL",
+    "confidence": 0.93,
+    "evidence": [
+      "printed station code 037201100200603",
+      "printed/portal centre BULUP! PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

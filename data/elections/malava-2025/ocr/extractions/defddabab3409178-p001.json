@@ -1,0 +1,134 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "defddabab3409178-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201604254727162/v1_defddabab340.pdf",
+  "source_sha256": "defddabab3409178a6d2130b02d23f020f89d08cd4a62c248475584381a44e40",
+  "source_filename": "v1_defddabab340.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/defddabab3409178.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1003-012-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16617142857142855,
+  "text_length": 2528,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MUTINGIONG'O PRIMARY SCHOOL POLLING STATION 1 of 2 Code __ 037201100301201\nWierd” ENDENTE Sot) 0 CCABEISENE NDEN TE) c/-COMMISSIO® tO 30%, BUN ec pENDENTEL cy YINDEPENDE oP Ge Coen Oe WS ECTOn SSIONINDE\nConshtwanay S208 <-c MALAVA. COMMISSION JOENTEL ECTONE AG pe ROG OY eu TELEC TOR a; SIONINDEPENT 2 COnt EC Oe cL EAOIORAL ay VINDEPEN\nCouity ouinpeP ET 60 RARAMEGA: ECTOR 4) ENDeNTELES OM ot gh eCTORAL Ay, NOEPENDENTE. aN Wade <o8an\nNumber of votes cast in favour of each candidate:\nNo. of Valid Votes Obtained\n1\" ANGATIA JAMES SHINAGHI Sree oh stsag eo ost Crae ao aaeoes o aT\n2. JASON SHIVAKALE BRUCE cath arts enacts eee\n_3. MANYASI JOAB BURUDI ag 000\n4. MWANGA EDGAR BUSIEGA S052 | 007\n5. NALWA BENJAMIN ef counts ae ore ica ecto a\n6. NDAKWA DAVID ATHMAN pasieiaet esc oMMisarcy ANomouNe AT ee Oae re MN OaRE RA\n|_ 7, OYUGI GEORGE NGAIRA |\n6. PANYAKO SETH AMBUSINI 900000 088\nwip SO TRAVEL VILE ORR de INIAT wi O5? DENG) SCOMNISS Soh eae Ro eA LEL EE Foret SOMME REE ROT enna h MRR\n| [Total number ofvaid votes cast Ce rere aL) AERENOE pater eee NUN\nPolling Station Counts . sen eaeeeethts = rede . Decision{s) on disputed votes if any. Nor too “AL a)\naed reeerspemern er ee aaa\n2, TealNinbsr Reece Pee ee\n| 3-| Total Number of Rejection Objected to Ballot Papers; fog. {2\nBe) cs A st\n5: Toa Nubiles Reese ioe unrsomntecun fnescen ee ornereet\nWe, the undersigned, being present when the Seay aay unt were announced, do hereby declare that the results shown above are true\n_and-accurate count of the ballots in - NGONGO PRIMARY Polling Station __, ATA — Constituency.\nPresiding Officer: _ LINDA NATACHA NDALULA © signature: . [RESES \\ Date _ 2Q7-lt/ 2025\nDeputy Presiding Officer: Me UC N/ SHAM LA Signature: \\ ta? J Date _= Toll=2025\n~ Agents or Candidates (if present) OBO PENDENTELEC ON a COM ree\ninl host [arent vee Gmane | Wome | Sma |\nAT Festue uGembo | ag0seed pe eb rargaggn | ee ane\nPa susy opuctivey ae | pa seege| po foto geongl SOSY bi-iteagq\nTAI MASA S- Ado dr [1ss)9as ODA lotasagisad sf oat\nis eee tg emmen oreeceen: RECN mE: Cormeen Steere ore a\nUN Reasons for Refusal to Sign (if any) So Deo Te MISSION Sater BeNDE; NTEL\n: Presidin Oiichr’'s Cainiiante: N mm NESC Mh RAL OK scom S810) NORpEOUNDA\n| SPOLGING PROGEGe piAS YMOOTONAND SUCKER SCFUL Toe eco! =\nFe eye En TMLALT TANTRA 1 MeO = 9, Winilust aia aE ese arnuerin auneanaes ra eet uO\nSLECTORI SN Gers ehh, G2 synths RO JOBOU SPEND EAN: Pain EC TOM TAN",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 88,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 88,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 55,
+        "confidence": 0.039999999999999994,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 55,
+            "confidence": 0.039999999999999994,
+            "score": 0.039999999999999994,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "anchored-cell-ocr anchored by 'TUVE! WILBERF ORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "| 3-| Total Number of Rejection Objected to Ballot Papers; fog. {2",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:26:15.962965Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100301201",
+    "constituency_code": "201",
+    "ward_code": "1003",
+    "polling_centre_code": "012",
+    "stream_no": 1,
+    "stream_key": "201-1003-012-01",
+    "ward_name": null,
+    "polling_centre_name": "MUTINGIONG'O PRIMARY SCHOOL",
+    "confidence": 0.93,
+    "evidence": [
+      "printed station code 037201100301201",
+      "printed/portal centre MUTINGIONG'O PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

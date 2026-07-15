@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "4eedd198b52bc4e2-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201234362842663/v1_4eedd198b52b.pdf",
+  "source_sha256": "4eedd198b52bc4e24dc2970c505d7c2466c3c520eb6b947afb1b64cd59d4c619",
+  "source_filename": "v1_4eedd198b52b.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/4eedd198b52bc4e2.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1005-052-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16457142857142856,
+  "text_length": 2501,
+  "text_preview": "34.948\neee a On\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station NAMUSHIYA PRIMARY SCHOOL POLLING STATION 14 of 2 Code __ 037201100505201\nWard BUTALIICHEGULO Code __ 1005\nCogafinwancy'S >) uC AME ANE COMMISSI On; PENTELECTO\" CAN PREC 20 EN TELECTORg/ SONINDEPEN CCOne SMe cL EAMORALs\nCounty i KAKAMEGA Code __037\nNumber of votes cast in favour of each candidate: .\nNo. of Valid Votes Obtained |\n[1 ANGATIA JAMES SHINAGH see au erence TSS\n[2 ASN shivaxaLe BRUCE Sere epee |\n3. MANVASI JOAB BURUDI\n{ MWANGA EDGAR BUSIEGA\n5 NALWA BENJAMIN, 008\n6. NDAKWA DAVID ATHMAN Dios DASGoRULaEeeNeTUE Mauna\nBye fe acer (rer eee tr ras Soe tamer eeesueee ere se mer OT\n| 8 PANYAKOSETHAMBUSINI :\nsf Sao EE WUE BREE INGAT erent ounce ere cence ae aaa\n[Total number of valid votescast. pe\nPolling Station Counts Se ' NDEP, ESO, Decisions} on disputed votes if any a Ne Marrstey\n- [|e Nunbe of Repstere Valen Paling Sato, [-—————ASR] ister dete nel oe see]\n- {2.| Total Number of Rejected Ballot Papers; Pa ore NOB Oper EMOEN ns DOLN Wit BOUNDARIES\n| tat nabs econ Oecd totetPapers fon fa\n| toatonierarvidtestaa, dl\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown abo Pare tn a\n~~ and acciirate count of the ballots in NAMUSWIY A PRINIAC1 SeAO? Polling Station — INVALAVA Cons PRBID\nvi pid ma Hay ae é F ye NE heer ‘ on BEANS oud RES ot ae : al\nPresiding Officer; ORCAS ADATAS) NIATOLO signature: Petes Miss Bate ORE:\n~ Deputy Presiding Officer: . Ly MoRwA SWARON Signatures. tall SRA eters Zara BOL\nAgents or Candidates {if present) Oe LAN SOL EPENDE! at mito! SDARIESCOS RAL NDE OETA NNEC OMI\nLRT PAKE Kipastyetu | eye2rqeg) USO A lo ysexessgh piler~> [a z-u-Be\nf2{ LBV SOSt(A [eé4i722a7) Dic Po ons 7626) AS\n[3 selomMon «qanyawyy, 12298Fatt Db: a, 0 - k legegsusgig Reet RFHN-Re\nRIOR See ON Oe PENDEN 7/6 SCOMMISSIGNQUNG CNC BOD Br ELECTORA/ 4 SIONINDEPENDE CON Sade Sal ANDBOUN 2 £ NDENTELEC WeWMOls CON\nTF eee ag MIN? ee cee tS Hi STON SCN BUTE BOO\nReasons for Refusal to Sign {if any) PAS rs per 2 oe A NDE QHOEP EY ENT ECON ae\nPresiding Officer’sComments:s ESCOMy/<! ORAL AND EGE NONE! OMISSION DL OBOUNDA Ese Ks\nSTWR wees “Two RETECTED CALLOME PAP ORS\nPRESIDING OFFicee NAME - DboacAS MATASI » PRESIDING, | See CTORALAN CVINDEPENDEN eanooe\nNDENT EASE BOUNDARIES Get! eI hie LORS \\ ofc Or ous VE gENOENTHLECTOS :\nLet ial aR SORALANDBOUS 9 Pepe AMniSSIONINDE, see 4 NDENTE; ge SC OMMISS .",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": "full-page-text anchored by '| 2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:03:36.077430Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100505201",
+    "constituency_code": "201",
+    "ward_code": "1005",
+    "polling_centre_code": "052",
+    "stream_no": 1,
+    "stream_key": "201-1005-052-01",
+    "ward_name": "BUTALIICHEGULO",
+    "polling_centre_name": "NAMUSHIYA PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100505201",
+      "printed/portal ward BUTALIICHEGULO",
+      "printed/portal centre NAMUSHIYA PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

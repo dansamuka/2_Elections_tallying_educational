@@ -1,0 +1,126 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "830fa897b4ca72b1-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040020003401/v1_830fa897b4ca.pdf",
+  "source_sha256": "830fa897b4ca72b1618d3693e86424912f00bbd9a81cf8596b315f71a2f90580",
+  "source_filename": "v1_830fa897b4ca.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/830fa897b4ca72b1.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-034-01",
+  "match_method": "POLLING_CODE_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.28559999999999997,
+  "text_length": 2340,
+  "text_preview": "~~ be\nZe = = FI pe a = 42 —- fc [z] [a] Reg =\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station AMEYI PRIMARY SCHOOL POLLING STATION 1 of 4 Code __009040020003401\nWard KILIWEHIRI Code _ 02000\nCARS tunerseayiS > Ay < CRON BL COMMISS/Ony OCT ELECTOR ECAC p00\" ST ELECTOR 4) SIONINDEPEND 2 COLO) Sta c\\ AMODRAL aA VINDE PENT\nCounty MANDERA Code __ 009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n[-4. HASSAN AHMED MALIN ae eA THN\n2. MOHAMED NUROIN MAALIM\nTt number fad vols cast\nPolling Station Counts Decision{s} on disputed votes if any\nToll Number of Registered atari the Paling Staton, -————9. 4\n[2 Tall Nomorof Rejected alo Popes Metco Rea IES KON cron ARN oeRBen ORO. ONT TORONTO\nTotal Number of Rejection Objected to Ballot Papers; PESOS CONN ND BOA ENDENTELEC TP Gna SeMON GNDARIESC LEG\nTt Nor of isp Vtes SORE mea ateaa CONS SRT\n[5] Tot Number oats ens WF) [Scat POSES ERE\nDeclaration\nWe, the undersigned, being present when the results of the count were announ do hereby declare that the results shown above'are true\nand accurate count of the ballots in \"Za EN | DE m Abt eRe Ketion —& e S fe Constituency.\nF are }\nPresiding officer: T>b/ Wi Add U Signature: rascal pate A] -tl-20257\nDeputy Presiding officer: JAZAtH a? Aedvl La Kehow signaturehy ECP date AT —Wl—do2s\n‘ g\\0IN* |\nAgents or Candidates (if present) + eRe cER\nShed J\nfs| neti [rains yrancmmaconin ear | Some | oa]\nPE ere ESCO orNDe™ Cea RO Eee SON OBO UN TEC GON GIES NN TUT ND EW AE Soon nL NCSC PEN Ong\nNE SO MOBO ENT eta sss ON EME NELIOA RIES orn ACRE ENO ELECT OMISSION NON eCoOnuM ELEC on\nSee eee\nPPP ENTELEC TOR] SS/ON SHAE PENCE CORO’ x62 RALANDE OU“ NOENTELEC GON WOU CeO ARIESC Onc ORAL ANDE DENN SSENOET OUIIG\nEp 1ORAL NOB SiRPENDENTE Sa Cosco UNDARESC ELECTORAL ANSE NOLO Jee OMMORLGN 4 NOBOUNDANY ORSON\n3}\nGB GAC cioninin eo OUN an SCOMY BGO NNO NDENTEY eSCOmm INNO REE ONGHON EcTORALSS Nir DE NDEN RIESE ON ST\nBE SeNDEN TUES cE CaION GON CC SO NUNOAT EC Tone! SSION GAL DENDEN AN Se NO OM OBOE AEN Nap cTOR OE CC ORR\nReasons for Refusal to Sign {if any) as\nPresiding Officer's Comments: Dig\n2x Btéclwr Was NOdv ted WELL:\nAthy AeloLenty AL} CSleS a7—1\\—a0as\n<0 Abdi sad Ade | Set 2.0\nedu Lie (tron aus ged Mate os\nDiath u4 .\nSy an (2 eB’\n! WoRE” CER\nRe OFF",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 4,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 4,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 4,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 4,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 299,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "certified-register-hint",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.16999999999999998,
+            "score": 0.16999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by '2. MOHAMED NURDIN MAALIM'",
+      "registered": "full-page-text anchored by '4.1 Total Number of Registered Voters in the Polling Station'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2458,
+        3380
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "FAIL"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:37:21.709227Z"
+}

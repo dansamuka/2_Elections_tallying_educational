@@ -1,0 +1,145 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "2a0dc0b3002c5fcf-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201713860124020/v1_2a0dc0b3002c.pdf",
+  "source_sha256": "2a0dc0b3002c5fcfdb664be5738a0020f69f7722597d939894c9e6a8d5612a57",
+  "source_filename": "v1_2a0dc0b3002c.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/2a0dc0b3002c5fcf.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1004-029-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3250285714285714,
+  "text_length": 2838,
+  "text_preview": "Sere sa\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BUNUKU PRIMARY SCHOOL POLLING STATION 1 of 2 Code __037201100402901\nWard PENGeNnte ot! NEAT RABRADENTE/ 6 -COMMIS SIOZ id 0% Put Ac pENDENTEL Ep S INDEPENDE | oP, er Ga denDe at ECTron SSIONINDE\nCarSituenays> wt Cc MALAVEK cOMMISSion), PENTELECTON ENG pO OU eu T ELECTOR VONINDEPENT CO nt Rede ci a0!\nCounty KAKAMEGA Code __037\nNumber of votes cast in favour of each candidate:\n|_ 1. ANGATIA JAMES SHINACHI | fete errr cet etree ounDe ear ae eoORTETECTOP SEO\n_ [2 JASON SHIVAKALE BRUCE INDE pa 003\n3, MANYASI JOAB BURUDI 990)\ni. MWANGA EDGAR BUSIEGA Bose in eo Drug nok ea\n5. NALWA BENJAMIN me SRST DE aE OTT\n| 6. NDAKWA DAVID ATHMAN yy\n7. OYUG! GEORGE NGAIRA rn\n8 PANYAKO SETH AMBUSINI ee\n“4 Spe) WALBERPORCE INGE oo 000 Coma SOU teeter cia ceveitemeemne es oaccoreona aaah\nTotal number of valid votes cast : AAG, asrarsumcistanetTinIaesacilTneeraretslanaeoseeTeeecrine 8\nPolling Station Counts _ me ENDER. Decision{s} on disputed votes if any - ot\n{a [Toalnunterciteeredtale Pes Fol.\n-[8.Pot Nunberofeection Ore oBaletPapes fy} fn\n[a [Tot NanberstOspaedioes, ey\n|e [Toeltanber atest, a eS\nDeclaration Ont 4 Pgh SCOT ANDBOULSPENDENTELEC Sue au! C TORAL oo PLE Be«\n_ We, the undersigned, being present when the results of the count were announced, do hereby decl re that the results shown ab pyeape:tr ue,\nand accurate count of the ballots in “BUND KO ica MALY. Polling Station ___ A LAN/ Co stituendy.,\n. \"Presiding Officer: J Vf UI (22S LOPON| DARI : Signature: Ns0>- Date rl su 2 Z\nDeputy residing Omicare EPR CIAL S00 PEARY A og taras RRS oe OE pO ee th ROS\nAgents or Candidates [if present) fe eS LANDB: DENTELECT GMOS rr SEARS\nLTAMUS “S MALOVA [R6a7654[ CP lowse4s2 0] ee ari-aeps\n~ L2IKEVIN LANDO atanys BAP K jotiai76296) EA [2712\n— LSHACCATHA MASITSA RIO6COHI| US DA eiss OH 8] i by p-aabe\nATENEO MUTALP R23 39525 EK ENGI 0793655 AE Wp bya\n\\ SIREVREN — KULECHO j2e38474)[\" NOBEU jera tard: xe lz rio\nRET ON ist QOS Ghar ESC Oar nme PeN SS ANNE cme OA, AL OM OOO UN TEL ECaE Ose\nMie oP ap at NOB DAVES gu ECTORA Ege eS oe oes alee sS/On pANDBOUNT TEL CC END anrsSIONIIUET ENG DARIESC On ecco rt\nRARE ROR SOK ple SCOMMISS OL ANDE OUTS Cea SO ulpSIONINDEP ED MDARIE SCOR pUPY oto dan Oe PENDEN Elec, OMMISSIONN Oh ec On NOrg\nWf Reto et pant SSIONINDE peo URnerTE SC Bran l eae ORG EPENDEN TE A SCOMMISSION NID, Sf SOUT ELEC ORAL ARUQNINDEPENSIC OMY pNuCSGCOM\nHIE EGON NOEPSMIEN Te) ESCOMMISSIEN OUNCE BON I TELECTORA/ 4 SIONINDEPENUE CON Sigh 2 on aL ANDBOU ND. NOENTELEGLUMT Soh Sco\nReasons for Refusal to Sign {if any) : Sen EDEN eee tA frescy\nPresiding Officer's Comments: NTEL i. < eee DARIE MMigg RALANDES SS Gansey,\nTHe NOTING STARTED PEACEFULLY AND ENDED AT. TTOOHRS.\nmeer Co psec g eT BR SO n | : NISSIM gUNDARIESO RR",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 8,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "full-page-text anchored by 'Total number of valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:34:30.417395Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100402901",
+    "constituency_code": "201",
+    "ward_code": "1004",
+    "polling_centre_code": "029",
+    "stream_no": 1,
+    "stream_key": "201-1004-029-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "BUNUKU PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100402901",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre BUNUKU PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

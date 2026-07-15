@@ -1,0 +1,162 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "d47547657ae4fe25-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201795700810391/v1_d47547657ae4.pdf",
+  "source_sha256": "d47547657ae4fe25fe0401408b5b2e57a385939ee71a7d07e875c7658a1a1580",
+  "source_filename": "v1_d47547657ae4.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/d47547657ae4fe25.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1002-006-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.40937142857142855,
+  "text_length": 2906,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BULUPI PRIMARY SCHOOL POLLING STATION 2 of 3 Code __037201100200602\nWard WEST KABRAS Code __ 1002\nConstitearcay'S>.0\"<- MAVE. COMMISSIOn MOENTELECTONE CAC pao en TELECTOR a) SONINDEPEND <cO neh gi ci EAMORAL ay VNDEPENT\nCounty KAKAMEGA LECTO : <A Code __037\nNumber of votes cast in favour of each candidate: aNDEPE\n_ [Name of Candidate we RIBS ___ [No.of Valid Votes Obtained '\n1. ANGATIA JAMES SHINACHI\n- |. 2. JASON SHIVAKALE BRUCE r SSN T a cLECTORA La MDE PERUON OSES R ce TORAEA NERD\n| 3. MANYASI JOAB BURUDI Noes :\n“4 MWANGAEDGAR BUSIEGA oes eee ee Ian\n| 5. NALWA BENJAMIN | | te euler oun tet seeerta OM\n~ [6 NDAKWA DAVID ATHMAN Bao e re to oan RTE CUN ee clegtT aTSTON RON\n_ | 7 OYUGI GEORGE NGAIRA _ A ANDBOUND AE, <Cpeae De Mase MNDENE NERRTESe RONG coe eN OMNES\n| 8. PANYAKO SETH AMBUSINI DEP OS aa sre near ied Sect AL Ib\n| [9 TUVEI WILBERFORCE INDAL RS Fearne Aer TL” TRE SENTTTANSROOIRGONN RSL\n- [Total number of vad votes cast |\nPolling Station Counts Oe aMtsS SRO PEN DOM Decision{s) ondisputedvotesifany =\n[1] Total Number of Registered Voters nthe Poliog Satin, [65] | Seibert Pps wh dee | Noncladaeaedeiae ]\n2. | Tota Number of Rejected Ballot Papers) yt pe\n| [B[ToatNuntert Recon Oecd toBalotPaprs —[ pHO}|2.\n«0 fe Tala Number of Disputed Wate, \"0250 oy PNR OB Cer scour aT fion OU eS NR SINNED\n[Ss [TeetNamieroneoesteas OI [ae\nSercpeplaeation na’ SsioninoereNOSco Nr ae3C onl ANDBOUNENDENTELEC on WON EaON SONDARIESC CAL CT Ona ANOS eNO CoMMISSION,\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\n_ -and-accurate count of the ballots in Bria Pc PawAey LC evel Polling Station ONO ALAY eo ____ Cohstituency.\nPresiding Officer: STAMKLEY CAvAI(A Signature: SOMBS (Date Rt p2ezs\n“Deputy Presiding Officer: ote iA AnAo Sg Signature: GsgEszA_. ‘Date: ‘3 ‘a ey Azar\n~<<cAgenits or Candidates {it present) <°2 002 OS asec Pevoenre EO Oa Oh oR G anise gL cron AN MOO\n[il Aomtenaaie snot [Rewer] Psmieonane | Wea [som [aoe]\nLET pew OGnT ADO eeeeggol NOP SRRSSEN PRS Ra\n© [SL RAG pag gi. 8a FAIZIRAYTT | bey A sega bed) a ay\nRTC ot Nis sions Non mr ARES seep ec OSE PE MOA oe aMTEO CAE DEON Tel Ec Oblaigce ap EP ENaC OPN IESG\nBAER cnr MOA sted nos eee a OO wre 2c Ol a On Ne PENC ce RtaGE gre Scent ar NY DeOUN rea Sc Oh Scenaealg\nOST ROPE NTELEC Tonal SSIONINDEY ESC Ona aie nal ANDEOU -PERDENTELEG ION WO calONHDARIEGCOgLECTORALANO Of SARS\nuN ‘Reasons for Refusal to Sign {if any) Ase eee Pcs oear eo “Oi ae Rs TELECON IN Onn\n_ Presiding Officer’sComments; | ef yuo Mig cQRALANDEO EN REN SONNE OUNDARIEC TOR\nNee E OOM Leo DM wy COREE NA Do Capers Cy AIS CP CAL AS\nOUNOARE AD GNF DE\" Er PSNR OIE ON BNO EN SIONINO ES we CGI NE ABW OM NDE PENDENT NOC SRONc\naA ba LN ARC t . ‘ ha Atrwin Pr at vi lint. =\" ;",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 232,
+            "confidence": 0.175,
+            "score": 0.175,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 65,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 65,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVEI! WILBERFORCE INDAI'",
+      "registered": "full-page-text anchored by '1. | Total Number of Registered Voters in ‘the Polling So'",
+      "rejected": "full-page-text anchored by '‘Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:38:55.872972Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100200602",
+    "constituency_code": "201",
+    "ward_code": "1002",
+    "polling_centre_code": "006",
+    "stream_no": 2,
+    "stream_key": "201-1002-006-02",
+    "ward_name": "WEST KABRAS",
+    "polling_centre_name": "BULUPI PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100200602",
+      "printed/portal ward WEST KABRAS",
+      "printed/portal centre BULUPI PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1784077915584,
-  "generated_at": "2026-07-15T01:11:55.584494Z",
+  "seq": 1784078291045,
+  "generated_at": "2026-07-15T01:18:11.045156Z",
   "mode": "ARCHIVE",
   "election_id": "banissa-2025",
   "election": {
@@ -27,23 +27,23 @@
     "stream_roster_bootstrapped": false
   },
   "pipeline_health": {
-    "watcher": "NEVER_RUN",
-    "extractor": "MANUAL_REVIEW",
-    "last_portal_ok": null,
-    "last_sync_completed": null,
-    "last_sync_changed": null,
+    "watcher": "UPDATED",
+    "extractor": "OCR_REVIEW_READY",
+    "last_portal_ok": "2026-07-14T17:18:29.421944Z",
+    "last_sync_completed": "2026-07-14T17:43:22.611957Z",
+    "last_sync_changed": "2026-07-14T17:43:22.611957Z",
     "worker_id": "github-actions-or-manual"
   },
   "coverage": {
     "streams_total": 81,
     "stream_rows_loaded": 81,
     "published": 0,
-    "in_review": 0,
+    "in_review": 80,
     "conflicted": 0,
-    "awaiting": 81,
-    "reference_only": 81,
-    "archived_untranscribed": 0,
-    "ocr_review": 0,
+    "awaiting": 1,
+    "reference_only": 1,
+    "archived_untranscribed": 10,
+    "ocr_review": 70,
     "registered_total": 32703,
     "registered_reported": 0,
     "registered_pct": 0.0,
@@ -116,7 +116,7 @@
   },
   "archive": {
     "forms_expected": 81,
-    "forms_archived": 0,
+    "forms_archived": 80,
     "stream_results_transcribed": 0,
     "stream_results_complete": false,
     "tally_source": "OFFICIAL_DECLARATION",
@@ -125,38 +125,130 @@
     "methodology_note": "The official register and constituency totals are loaded. Stream-level Form 35A figures remain untranscribed until the historical pipeline is run and independently reviewed.",
     "ocr": {
       "schema": "kenya.election.ocr-summary.v1",
+      "pipeline_version": "2026.07.14-layout-v2",
       "election_id": "banissa-2025",
-      "generated_at": "2026-07-13T15:28:47.097282Z",
-      "engine_mode": "embedded",
-      "engines_available": [],
-      "documents_total": 0,
-      "pages_total": 0,
-      "pages_processed": 0,
-      "form35a_detected": 0,
+      "generated_at": "2026-07-14T17:43:22.597749Z",
+      "engine_mode": "auto",
+      "engines_available": [
+        "tesseract"
+      ],
+      "documents_total": 72,
+      "pages_total": 72,
+      "pages_processed": 72,
+      "layout_assisted_pages": 63,
+      "form35a_detected": 71,
       "form35b_detected": 0,
-      "streams_matched": 0,
-      "review_rows": 0,
-      "routes": {},
-      "errors": [],
+      "streams_matched": 70,
+      "review_rows": 71,
+      "routes": {
+        "QUARANTINE": 71,
+        "UNCLASSIFIED": 1
+      },
+      "errors": [
+        {
+          "page_id": "e49a988ee1a22e33-p001",
+          "engine": "layout-handwriting",
+          "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+        },
+        {
+          "page_id": "8e3af80565e0afcd-p001",
+          "engine": "layout-handwriting",
+          "message": "(-8, '')"
+        },
+        {
+          "page_id": "a063ac09b29f0598-p001",
+          "engine": "layout-handwriting",
+          "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+        },
+        {
+          "page_id": "7b1b8e280ebe26c9-p001",
+          "engine": "layout-handwriting",
+          "message": "(-8, '')"
+        },
+        {
+          "page_id": "eb943122ac9d440f-p001",
+          "engine": "layout-handwriting",
+          "message": "(-8, '')"
+        },
+        {
+          "page_id": "80b39a53d120757f-p001",
+          "engine": "layout-handwriting",
+          "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+        },
+        {
+          "page_id": "4c1c826af75e8058-p001",
+          "engine": "layout-handwriting",
+          "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+        },
+        {
+          "page_id": "e1a72f2774c3b8a9-p001",
+          "engine": "layout-handwriting",
+          "message": "(-8, '')"
+        }
+      ],
       "review_queue": "data/elections/banissa-2025/ocr/review_queue.csv",
       "inventory": "data/elections/banissa-2025/ocr/document_inventory.json",
       "auto_publication": false,
-      "note": "OCR output is a pre-fill only. No historical stream is added to the public tally until two-person review and statutory validation are complete."
+      "note": "OCR output is a pre-fill only. Handwritten cells are read with layout anchors and arithmetic reconciliation, but no historical stream is added to the public tally until human review and statutory validation are complete."
     },
     "portal_sync": {
       "schema": "kenya.election.portal-sync.v1",
       "election_id": "banissa-2025",
-      "state": "NEVER_RUN",
-      "last_completed_at": null,
-      "last_changed_at": null,
-      "message": "The IEBC portal sync has not run for this election."
+      "state": "UPDATED",
+      "last_started_at": "2026-07-14T17:16:46.307217Z",
+      "last_completed_at": "2026-07-14T17:43:22.611957Z",
+      "last_changed_at": "2026-07-14T17:43:22.611957Z",
+      "portal_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
+      "engine_mode": "auto",
+      "archive": {
+        "election_id": "banissa-2025",
+        "status": "UPDATED",
+        "changed": true,
+        "discovered": 81,
+        "matched": 78,
+        "downloaded": 81,
+        "unique_downloads": 72,
+        "duplicate_assignments": 9,
+        "failed_downloads": 0,
+        "new_downloads": 81,
+        "changed_downloads": 0,
+        "unmatched": 3,
+        "portal_reported": 81,
+        "portal_expected": 81,
+        "stream_roster_bootstrapped": false
+      },
+      "ocr": {
+        "ran": true,
+        "pages_processed": 72,
+        "review_rows": 71,
+        "errors": 8
+      },
+      "coverage": {
+        "streams_total": 81,
+        "stream_rows_loaded": 81,
+        "published": 0,
+        "in_review": 80,
+        "conflicted": 0,
+        "awaiting": 1,
+        "reference_only": 1,
+        "archived_untranscribed": 10,
+        "ocr_review": 70,
+        "registered_total": 32703,
+        "registered_reported": 0,
+        "registered_pct": 0.0,
+        "excluded": {
+          "count": 0,
+          "reason": null
+        }
+      },
+      "message": "New or changed IEBC forms were downloaded and the dashboard was rebuilt."
     },
-    "portal_discovered": 0,
-    "portal_downloaded": 0,
-    "portal_unique_files": 0,
-    "portal_duplicate_assignments": 0,
+    "portal_discovered": 81,
+    "portal_downloaded": 81,
+    "portal_unique_files": 72,
+    "portal_duplicate_assignments": 9,
     "portal_failed_downloads": 0,
-    "portal_unmatched": 0
+    "portal_unmatched": 3
   },
   "wards": [
     {
@@ -235,7 +327,7 @@
       "ward_code": "0196",
       "polling_centre": "Lulis Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 484,
       "votes": {},
@@ -244,9 +336,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600101/v1_8ba7438afeaa.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=248",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23553333333333332,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 484,
+          "rejected": 0,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -258,7 +369,7 @@
       "ward_code": "0196",
       "polling_centre": "Lulis Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 483,
       "votes": {},
@@ -267,9 +378,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600102/v1_e49a988ee1a2.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=249",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.26,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "NOT_RUN"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 2,
+            "UPA": 2
+          },
+          "registered": null,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -281,7 +411,7 @@
       "ward_code": "0196",
       "polling_centre": "Ogondicho Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 673,
       "votes": {},
@@ -290,9 +420,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600201/v1_896e98d644fc.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=250",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.31366666666666665,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 6,
+            "UPA": 2
+          },
+          "registered": 74,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -304,7 +453,7 @@
       "ward_code": "0196",
       "polling_centre": "Ogondicho Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 672,
       "votes": {},
@@ -313,9 +462,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600202/v1_23fad44f980b.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=251",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.24386666666666668,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 672,
+          "rejected": 0,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -327,7 +495,7 @@
       "ward_code": "0196",
       "polling_centre": "Banisa Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "ARCHIVED",
       "verification": "NONE",
       "registered": 643,
       "votes": {},
@@ -336,8 +504,8 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600301/v1_ecf71c5bbaac.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=252",
       "ocr": null,
       "published_at": null
     },
@@ -350,7 +518,7 @@
       "ward_code": "0196",
       "polling_centre": "Banisa Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 643,
       "votes": {},
@@ -359,9 +527,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600302/v1_ecf71c5bbaac.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=253",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 643,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -373,7 +560,7 @@
       "ward_code": "0196",
       "polling_centre": "Banisa Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 642,
       "votes": {},
@@ -382,9 +569,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600303/v1_d07b9f35c47b.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=254",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28559999999999997,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 7800,
+            "UPA": 2
+          },
+          "registered": 6,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -396,7 +602,7 @@
       "ward_code": "0196",
       "polling_centre": "Banisa Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 642,
       "votes": {},
@@ -405,9 +611,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600304/v1_5824d681b61b.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=255",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.41053333333333325,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 2,
+          "rejected": null,
+          "total_valid": 2,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -419,7 +644,7 @@
       "ward_code": "0196",
       "polling_centre": "Banisa Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 642,
       "votes": {},
@@ -428,9 +653,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600305/v1_8e3af80565e0.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=256",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.26,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "NOT_RUN"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": null,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -442,7 +686,7 @@
       "ward_code": "0196",
       "polling_centre": "Chiracha Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 578,
       "votes": {},
@@ -451,9 +695,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600401/v1_1b652429da01.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=257",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 578,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -465,7 +728,7 @@
       "ward_code": "0196",
       "polling_centre": "Chiracha Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 578,
       "votes": {},
@@ -474,9 +737,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600402/v1_02fbde308844.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=258",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 578,
+          "rejected": 2,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -488,7 +770,7 @@
       "ward_code": "0196",
       "polling_centre": "Awal Yatane Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 216,
       "votes": {},
@@ -497,9 +779,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600501/v1_3bc92f931330.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=259",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.3322666666666666,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 82,
+            "UPA": 2
+          },
+          "registered": 216,
+          "rejected": null,
+          "total_valid": 5,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -511,7 +812,7 @@
       "ward_code": "0196",
       "polling_centre": "Antrak Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "ARCHIVED",
       "verification": "NONE",
       "registered": 75,
       "votes": {},
@@ -520,8 +821,8 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600601/v1_df652db915c1.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=260",
       "ocr": null,
       "published_at": null
     },
@@ -534,7 +835,7 @@
       "ward_code": "0196",
       "polling_centre": "Haji Mohamed Gira Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 516,
       "votes": {},
@@ -543,9 +844,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600701/v1_78ec219f1c8a.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=261",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.5290666666666666,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "PASS",
+          "V03": "PASS",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 3
+          },
+          "registered": 516,
+          "rejected": 0,
+          "total_valid": 62,
+          "total_cast": 62
+        }
+      },
       "published_at": null
     },
     {
@@ -557,7 +877,7 @@
       "ward_code": "0196",
       "polling_centre": "Haji Mohamed Gira Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 515,
       "votes": {},
@@ -566,9 +886,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600702/v1_1662eab46629.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=262",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.3005333333333333,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 390
+          },
+          "registered": 515,
+          "rejected": null,
+          "total_valid": 77,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -580,7 +919,7 @@
       "ward_code": "0196",
       "polling_centre": "Haji Mohamed Gira Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 515,
       "votes": {},
@@ -589,9 +928,25 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600703/v1_0a4001b5ba17.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=263",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.09839999999999999,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": null,
+          "registered": 1,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -603,7 +958,7 @@
       "ward_code": "0196",
       "polling_centre": "Merille Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 120,
       "votes": {},
@@ -612,9 +967,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019600801/v1_438f0d64c24c.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=264",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 120,
+          "rejected": 0,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -626,7 +1000,7 @@
       "ward_code": "0196",
       "polling_centre": "Banisa Vocational Technical Center",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 558,
       "votes": {},
@@ -635,9 +1009,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/uploaded/e1a72f2774c3b8a9.pdf#page=1",
       "form_source_url": null,
-      "ocr": null,
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.39666666666666667,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "NOT_RUN"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": null,
+          "rejected": null,
+          "total_valid": 7,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -672,7 +1065,7 @@
       "ward_code": "0196",
       "polling_centre": "Mataarba Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 46,
       "votes": {},
@@ -681,9 +1074,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019604001/v1_6812d0f345db.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=267",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 46,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -695,7 +1107,7 @@
       "ward_code": "0196",
       "polling_centre": "Hardawa Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 99,
       "votes": {},
@@ -704,9 +1116,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019604101/v1_56caa9e5b706.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=268",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.472,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "PASS",
+          "V03": "PASS",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 7125,
+            "UPA": 2
+          },
+          "registered": 1,
+          "rejected": 0,
+          "total_valid": 37,
+          "total_cast": 37
+        }
+      },
       "published_at": null
     },
     {
@@ -718,7 +1149,7 @@
       "ward_code": "0197",
       "polling_centre": "Derkhale Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 658,
       "votes": {},
@@ -727,9 +1158,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019700901/v1_7d96ce34bc30.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=269",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 29060,
+            "UPA": 2
+          },
+          "registered": 658,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -741,7 +1191,7 @@
       "ward_code": "0197",
       "polling_centre": "Derkhale Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 658,
       "votes": {},
@@ -750,9 +1200,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019700902/v1_525e7de0fc98.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=270",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 658,
+          "rejected": 4,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -764,7 +1233,7 @@
       "ward_code": "0197",
       "polling_centre": "Tarama Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 630,
       "votes": {},
@@ -773,9 +1242,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019701001/v1_4722cd4c02dd.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=271",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 630,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -787,7 +1275,7 @@
       "ward_code": "0197",
       "polling_centre": "Tarama Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 630,
       "votes": {},
@@ -796,9 +1284,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019701002/v1_195d18ea8371.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=272",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 630,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -810,7 +1317,7 @@
       "ward_code": "0197",
       "polling_centre": "Tarama Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 629,
       "votes": {},
@@ -819,9 +1326,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019701003/v1_a569e1303455.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=273",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 26
+          },
+          "registered": 629,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -833,7 +1359,7 @@
       "ward_code": "0197",
       "polling_centre": "Goljo Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 400,
       "votes": {},
@@ -842,9 +1368,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019701101/v1_a063ac09b29f.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=274",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.39666666666666667,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "NOT_RUN"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 9
+          },
+          "registered": null,
+          "rejected": null,
+          "total_valid": 928,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -856,7 +1401,7 @@
       "ward_code": "0197",
       "polling_centre": "Kukub Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 559,
       "votes": {},
@@ -865,9 +1410,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019701201/v1_7b1b8e280ebe.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=275",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.26,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "NOT_RUN"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": null,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -879,7 +1443,7 @@
       "ward_code": "0197",
       "polling_centre": "Burashum Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 530,
       "votes": {},
@@ -888,9 +1452,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019701301/v1_adcdbf8a54c0.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=276",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.3806,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "PASS",
+          "V03": "PASS",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 53,
+          "rejected": 8,
+          "total_valid": 4,
+          "total_cast": 12
+        }
+      },
       "published_at": null
     },
     {
@@ -902,7 +1485,7 @@
       "ward_code": "0197",
       "polling_centre": "Diribor Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 559,
       "votes": {},
@@ -911,9 +1494,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019701401/v1_28a619834406.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=277",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.30248888888888886,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 221,
+            "UPA": 2
+          },
+          "registered": 559,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -925,7 +1527,7 @@
       "ward_code": "0197",
       "polling_centre": "Diribor Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 559,
       "votes": {},
@@ -934,9 +1536,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019701402/v1_b0c2f18689d7.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=278",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.38399999999999995,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 1,
+          "rejected": null,
+          "total_valid": 2,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -948,7 +1569,7 @@
       "ward_code": "0197",
       "polling_centre": "Diribor Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 559,
       "votes": {},
@@ -957,9 +1578,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019701403/v1_e1cf1b1a7560.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=279",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.3822666666666666,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 559,
+          "rejected": null,
+          "total_valid": 7,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -971,7 +1611,7 @@
       "ward_code": "0197",
       "polling_centre": "Qorobo Abero Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "ARCHIVED",
       "verification": "NONE",
       "registered": 72,
       "votes": {},
@@ -980,8 +1620,8 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019704201/v1_28a619834406.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=280",
       "ocr": null,
       "published_at": null
     },
@@ -994,7 +1634,7 @@
       "ward_code": "0197",
       "polling_centre": "Qoroboshaba Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 472,
       "votes": {},
@@ -1003,9 +1643,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019704301/v1_e1cf1b1a7560.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=281",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.2672,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 472,
+          "rejected": 60,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1017,7 +1676,7 @@
       "ward_code": "0197",
       "polling_centre": "Dakar Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 153,
       "votes": {},
@@ -1026,9 +1685,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019704401/v1_435e0992fe1c.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=282",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28559999999999997,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 53,
+          "rejected": 0,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1040,7 +1718,7 @@
       "ward_code": "0198",
       "polling_centre": "Guba Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "ARCHIVED",
       "verification": "NONE",
       "registered": 211,
       "votes": {},
@@ -1049,8 +1727,8 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019801501/v1_3bc92f931330.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=283",
       "ocr": null,
       "published_at": null
     },
@@ -1063,7 +1741,7 @@
       "ward_code": "0198",
       "polling_centre": "Chiriqo Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 506,
       "votes": {},
@@ -1072,9 +1750,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019801601/v1_a82784016b41.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=284",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 7
+          },
+          "registered": 506,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1086,7 +1783,7 @@
       "ward_code": "0198",
       "polling_centre": "Qotqot Dam Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 77,
       "votes": {},
@@ -1095,9 +1792,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019801701/v1_83887619fa3b.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=285",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 77,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1109,7 +1825,7 @@
       "ward_code": "0198",
       "polling_centre": "Murat Elow Centre",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 240,
       "votes": {},
@@ -1118,9 +1834,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019801801/v1_1662eab46629.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=286",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.3322666666666666,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 240,
+          "rejected": null,
+          "total_valid": 5,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1132,7 +1867,7 @@
       "ward_code": "0198",
       "polling_centre": "Tarbey Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "ARCHIVED",
       "verification": "NONE",
       "registered": 48,
       "votes": {},
@@ -1141,8 +1876,8 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019801901/v1_36a2edab636c.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=287",
       "ocr": null,
       "published_at": null
     },
@@ -1155,7 +1890,7 @@
       "ward_code": "0198",
       "polling_centre": "Murithow Centre",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 236,
       "votes": {},
@@ -1164,9 +1899,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019802001/v1_af206977220e.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=288",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28559999999999997,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 2,
+            "UPA": 2
+          },
+          "registered": 26,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1178,7 +1932,7 @@
       "ward_code": "0198",
       "polling_centre": "Jibal Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 221,
       "votes": {},
@@ -1187,9 +1941,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019802101/v1_cbe251d7f2c1.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=289",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.38399999999999995,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 2,
+          "rejected": null,
+          "total_valid": 139,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1201,7 +1974,7 @@
       "ward_code": "0199",
       "polling_centre": "Hullow Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 609,
       "votes": {},
@@ -1210,9 +1983,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902201/v1_7479c9b565c4.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=290",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28559999999999997,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 60,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1224,7 +2016,7 @@
       "ward_code": "0199",
       "polling_centre": "Malkamari Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 290,
       "votes": {},
@@ -1233,9 +2025,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902301/v1_0c9fbfb1ed6e.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=291",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 290,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1247,7 +2058,7 @@
       "ward_code": "0199",
       "polling_centre": "Bisiq Mobile",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 500,
       "votes": {},
@@ -1256,9 +2067,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902401/v1_d9fdfd38e136.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=292",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.3822666666666666,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 500,
+          "rejected": null,
+          "total_valid": 5,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1270,7 +2100,7 @@
       "ward_code": "0199",
       "polling_centre": "Malka Ruqa Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 323,
       "votes": {},
@@ -1279,9 +2109,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902501/v1_41f30f22efd0.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=293",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28559999999999997,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 2,
+          "rejected": null,
+          "total_valid": 25,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1293,7 +2142,7 @@
       "ward_code": "0199",
       "polling_centre": "Rajau Mobile",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 545,
       "votes": {},
@@ -1302,9 +2151,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902601/v1_d3006b2a7715.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=294",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 1
+          },
+          "registered": 545,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1316,7 +2184,7 @@
       "ward_code": "0199",
       "polling_centre": "Boqon Saar Centre",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "ARCHIVED",
       "verification": "NONE",
       "registered": 58,
       "votes": {},
@@ -1325,8 +2193,8 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902701/v1_d3006b2a7715.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=295",
       "ocr": null,
       "published_at": null
     },
@@ -1339,7 +2207,7 @@
       "ward_code": "0199",
       "polling_centre": "Garab Jiqle Centre",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 117,
       "votes": {},
@@ -1348,9 +2216,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902801/v1_b5975139c57a.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=296",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.2838666666666666,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 117,
+          "rejected": null,
+          "total_valid": 7,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1362,7 +2249,7 @@
       "ward_code": "0199",
       "polling_centre": "Domal Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "ARCHIVED",
       "verification": "NONE",
       "registered": 646,
       "votes": {},
@@ -1371,8 +2258,8 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902901/v1_9422d529d060.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=297",
       "ocr": null,
       "published_at": null
     },
@@ -1385,7 +2272,7 @@
       "ward_code": "0199",
       "polling_centre": "Domal Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 646,
       "votes": {},
@@ -1394,9 +2281,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902902/v1_fa2d5d135e7a.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=298",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.3322666666666666,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 73251
+          },
+          "registered": 646,
+          "rejected": null,
+          "total_valid": 2,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1408,7 +2314,7 @@
       "ward_code": "0199",
       "polling_centre": "Domal Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 645,
       "votes": {},
@@ -1417,9 +2323,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902903/v1_7a59c99e5fc0.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=299",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28559999999999997,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 4,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1431,7 +2356,7 @@
       "ward_code": "0199",
       "polling_centre": "Domal Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 645,
       "votes": {},
@@ -1440,9 +2365,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902904/v1_eb943122ac9d.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=300",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.26,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "NOT_RUN"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": null,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1454,7 +2398,7 @@
       "ward_code": "0199",
       "polling_centre": "Domal Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 645,
       "votes": {},
@@ -1463,9 +2407,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019902905/v1_879bca08a792.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=301",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28386666666666666,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 7,
+            "UPA": 2
+          },
+          "registered": 645,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1477,7 +2440,7 @@
       "ward_code": "0199",
       "polling_centre": "Gor Athi Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 91,
       "votes": {},
@@ -1486,9 +2449,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019903001/v1_2eb2ebc1e67f.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=302",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28559999999999997,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 1,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1500,7 +2482,7 @@
       "ward_code": "0199",
       "polling_centre": "Ata-Garbija Centre",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 34,
       "votes": {},
@@ -1509,9 +2491,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019903101/v1_8d92e3731bd0.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=303",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.3322666666666666,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 34,
+          "rejected": null,
+          "total_valid": 15,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1523,7 +2524,7 @@
       "ward_code": "0199",
       "polling_centre": "Shobtoy Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "ARCHIVED",
       "verification": "NONE",
       "registered": 346,
       "votes": {},
@@ -1532,8 +2533,8 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019904801/v1_b368e9236968.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=304",
       "ocr": null,
       "published_at": null
     },
@@ -1546,7 +2547,7 @@
       "ward_code": "0199",
       "polling_centre": "Farjan Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 300,
       "votes": {},
@@ -1555,9 +2556,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040019904901/v1_24b6c986e248.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=305",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 300,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1569,7 +2589,7 @@
       "ward_code": "0200",
       "polling_centre": "Eymole Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 592,
       "votes": {},
@@ -1578,9 +2598,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020003201/v1_64992b21ea10.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=306",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28886666666666666,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 592,
+          "rejected": 2,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1592,7 +2631,7 @@
       "ward_code": "0200",
       "polling_centre": "Eymole Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "ARCHIVED",
       "verification": "NONE",
       "registered": 591,
       "votes": {},
@@ -1601,8 +2640,8 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020003202/v1_23fad44f980b.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=307",
       "ocr": null,
       "published_at": null
     },
@@ -1615,7 +2654,7 @@
       "ward_code": "0200",
       "polling_centre": "Eymole Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 591,
       "votes": {},
@@ -1624,9 +2663,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020003203/v1_4a6a516eefdf.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=308",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.14026666666666668,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 89,
+            "UPA": 8
+          },
+          "registered": 591,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1638,7 +2696,7 @@
       "ward_code": "0200",
       "polling_centre": "Kiliwehiri Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 590,
       "votes": {},
@@ -1647,9 +2705,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020003301/v1_8a8909bc3f9f.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=309",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.2755333333333333,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 1205
+          },
+          "registered": 590,
+          "rejected": null,
+          "total_valid": 7,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1661,7 +2738,7 @@
       "ward_code": "0200",
       "polling_centre": "Kiliwehiri Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 590,
       "votes": {},
@@ -1670,9 +2747,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020003302/v1_17ee251caf38.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=310",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.27886666666666665,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 590,
+          "rejected": null,
+          "total_valid": 2,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1684,7 +2780,7 @@
       "ward_code": "0200",
       "polling_centre": "Ameyi Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 299,
       "votes": {},
@@ -1693,9 +2789,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020003401/v1_830fa897b4ca.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=311",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28559999999999997,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 4,
+            "UPA": 2
+          },
+          "registered": 4,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1707,7 +2822,7 @@
       "ward_code": "0200",
       "polling_centre": "Birkan Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 497,
       "votes": {},
@@ -1716,9 +2831,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020003501/v1_11512295d7dd.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=312",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 497,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1730,7 +2864,7 @@
       "ward_code": "0200",
       "polling_centre": "Umur Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 426,
       "votes": {},
@@ -1739,9 +2873,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020003601/v1_79da4187ef99.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=313",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 426,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1753,7 +2906,7 @@
       "ward_code": "0200",
       "polling_centre": "Daka Bor Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 173,
       "votes": {},
@@ -1762,9 +2915,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020003701/v1_751b7d06f5cb.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=314",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28559999999999997,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 1,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1776,7 +2948,7 @@
       "ward_code": "0200",
       "polling_centre": "Funan Teso Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "ARCHIVED",
       "verification": "NONE",
       "registered": 493,
       "votes": {},
@@ -1785,8 +2957,8 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020003801/v1_438f0d64c24c.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=315",
       "ocr": null,
       "published_at": null
     },
@@ -1799,7 +2971,7 @@
       "ward_code": "0200",
       "polling_centre": "Chabi Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 62,
       "votes": {},
@@ -1808,9 +2980,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020004501/v1_53fdd63c764f.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=316",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.25693333333333335,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 0
+          },
+          "registered": 62,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1822,7 +3013,7 @@
       "ward_code": "0200",
       "polling_centre": "Ardagarse Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 633,
       "votes": {},
@@ -1831,9 +3022,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020005001/v1_80b39a53d120.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=317",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.26,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "NOT_RUN"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": null,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1845,7 +3055,7 @@
       "ward_code": "0200",
       "polling_centre": "Khotkhot Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 114,
       "votes": {},
@@ -1854,9 +3064,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020005101/v1_13f710f4f2e6.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=318",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 72
+          },
+          "registered": 114,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1868,7 +3097,7 @@
       "ward_code": "0200",
       "polling_centre": "Dambalagale Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 98,
       "votes": {},
@@ -1877,9 +3106,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020005201/v1_5f18f74883ca.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=319",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.2860888888888889,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "PASS",
+          "V03": "PASS",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 0
+          },
+          "registered": 98,
+          "rejected": 2,
+          "total_valid": 7,
+          "total_cast": 9
+        }
+      },
       "published_at": null
     },
     {
@@ -1891,7 +3139,7 @@
       "ward_code": "0200",
       "polling_centre": "Achini Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 280,
       "votes": {},
@@ -1900,9 +3148,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020005301/v1_8ddd0aa9b312.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=320",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 280,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1914,7 +3181,7 @@
       "ward_code": "0200",
       "polling_centre": "Khorgowla Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 155,
       "votes": {},
@@ -1923,9 +3190,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020005401/v1_5ecdb61d8a6f.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=321",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.28559999999999997,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 5,
+          "rejected": null,
+          "total_valid": 2,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1937,7 +3223,7 @@
       "ward_code": "0200",
       "polling_centre": "Bulafulay Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 355,
       "votes": {},
@@ -1946,9 +3232,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020005501/v1_707524c3d49e.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=322",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 90,
+            "UPA": 7
+          },
+          "registered": 355,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1960,7 +3265,7 @@
       "ward_code": "0200",
       "polling_centre": "Qararidertu Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 147,
       "votes": {},
@@ -1969,9 +3274,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020005601/v1_715b25c1d732.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=323",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 755
+          },
+          "registered": 147,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -1983,7 +3307,7 @@
       "ward_code": "0200",
       "polling_centre": "Darken Gaba Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 82,
       "votes": {},
@@ -1992,9 +3316,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020005701/v1_85e8f9fafa84.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=324",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.35559999999999997,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "FAIL"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 927,
+            "UPA": 3
+          },
+          "registered": 8,
+          "rejected": null,
+          "total_valid": 7,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -2006,7 +3349,7 @@
       "ward_code": "0200",
       "polling_centre": "Gesrebki Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 34,
       "votes": {},
@@ -2015,9 +3358,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020005801/v1_a77fad9423c0.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=325",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.3322666666666666,
+        "checks": {
+          "V01": "FAIL",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 12978262
+          },
+          "registered": 34,
+          "rejected": null,
+          "total_valid": 20,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -2029,7 +3391,7 @@
       "ward_code": "0200",
       "polling_centre": "Senior Abdullah Girls Secondary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 222,
       "votes": {},
@@ -2038,9 +3400,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/uploaded/ebb3826e26cc4674.pdf#page=1",
       "form_source_url": null,
-      "ocr": null,
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 6
+          },
+          "registered": 222,
+          "rejected": 1,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -2052,7 +3433,7 @@
       "ward_code": "0200",
       "polling_centre": "Urile Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 104,
       "votes": {},
@@ -2061,9 +3442,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020006001/v1_4c1c826af75e.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=327",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.26,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "NOT_RUN"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 8
+          },
+          "registered": null,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     },
     {
@@ -2075,7 +3475,7 @@
       "ward_code": "0200",
       "polling_centre": "Khaba Guto Primary School",
       "polling_centre_code": null,
-      "state": "REFERENCE_ONLY",
+      "state": "OCR_REVIEW",
       "verification": "NONE",
       "registered": 630,
       "votes": {},
@@ -2084,9 +3484,28 @@
       "cast": null,
       "turnout": null,
       "checks": {},
-      "form_url": null,
-      "form_source_url": null,
-      "ocr": null,
+      "form_url": "../data/public/elections/banissa-2025/forms/009040020006101/v1_75a22cd42b94.pdf",
+      "form_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=328",
+      "ocr": {
+        "route": "QUARANTINE",
+        "confidence": 0.23386666666666667,
+        "checks": {
+          "V01": "NOT_RUN",
+          "V02": "NOT_RUN",
+          "V03": "NOT_RUN",
+          "V07": "PASS"
+        },
+        "prefill": {
+          "votes": {
+            "UDA": 1,
+            "UPA": 2
+          },
+          "registered": 630,
+          "rejected": null,
+          "total_valid": null,
+          "total_cast": null
+        }
+      },
       "published_at": null
     }
   ],

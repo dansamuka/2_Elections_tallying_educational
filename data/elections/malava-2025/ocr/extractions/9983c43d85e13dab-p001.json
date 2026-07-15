@@ -1,0 +1,149 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "9983c43d85e13dab-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201604282037188/v1_9983c43d85e1.pdf",
+  "source_sha256": "9983c43d85e13dab7f4f2491567f917ab0f5679e06ca18cbd86fd5cd80cd7dac",
+  "source_filename": "v1_9983c43d85e1.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/9983c43d85e13dab.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1005-042-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24068571428571428,
+  "text_length": 2492,
+  "text_preview": "ets 2 ee eee OO\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MUKAVAKAVA PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100504202\nWard BUTALICHEGULO Code __ 1005\nConehemenays> cu cMRLANA. COMMMISSIOn A OENTELECTOS CIC NSO oO cu TELECTORa) SONINDEPEN 56K oe gti, cL BaNORAL ayo ONOEPEN'\nCounty KAKAMEGA Code __ 037\nNumber of votes cast in favour of each candidate: DEN\nNo. of Valid Votes Obtained |\n_ [4 ANGATIA JAMES SHINACHI ; ee\n_ |_2. JASON SHIVAKALE BRUCE NDEPE 003,\n3. MANYASI JOAB BURUDI ! [______ O08\n4. MWANGAEDGARBUSIEGA pn 0 |\n6. NALWA BENJAMIN\n[6 NDAKWA DAVID ATHMAN Cong .\n[7 OYUGIGEORGENGAIRA 0H\n| 8 PANYAKO SETH AMBUSINI Pescara NOG Aea SG OMMISST cia Gates TEL rdf\n9. TUVE! WILBERFORCE INDAL fi See Se ESI rTP tS EOR SMA Ga! 2)\nTotal number of valid votes cast es TOR AN NDE NON ea aD Set\n- Polling Station Counts : Decision{s} on disputed votes if any 2 DENT q\nAE raat nba ett lek Pope OOM Pt OO ee |\nia urbe of Rjecion Dae wEalePaers E00 [2\n|e [ieatoonconatiosts TG pe\nDeclaration Ste een WSCENDES ES ON Wess SNDARI ! ALA ON NOE na\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that i results shown above are true\n. and accurate count of the ballots in WAUKANA KAVA PRIMARY Polling Station NV Aca iA Constituency.\nPresiding officer: PERLINE MITTO. B01NO Signature: rrr “Bate ZAUTN=2025-\n‘Deputy Presiding Officer: K CELNIN K. SUMA LNIN K: a UMA ; Signature;, ; ae f 1. E.B. Cpa 2 21 aE: 2025\n. oe a PG a M6 PRESIDING for oh oC jon\n_ AgentsorCandidateslifpresent) = = = N S ELIT ER wok Anats\nial tomtcmasectnen [aa | Nn [Tolan Somme [oe |\n- LESAMUEL MAGONI pit 2i@zi2a7) eB PEUMMotian) Corks banka\n2 ABRAHAM Ww. MoToCH, 4028618 | DAP lotceaus| Bolin\n[SJEVANS MM. MATimed 32702001 DOP ota 45 201d br-i-\ne bereits eats\nFBC clot AN ON ar amie SM ah Ac ON oe prea en als ON ONDE CNTELEC ot MSc nuINDEPE So\nCet OBO A NDEN TE isd OOS <Q BOM ret gC Olga un peP Nea ceNOd eM n AL aut Noonan TEL ELSES\nBas apoB OUND MES gL ECTORA Dap Osteen S/n ne OBOUN rel SEO Glo On TON cane eae\nIT eroe wre LEC TOMA SSIONINDEYEN aOR ale AL ANDBO UE EPENDENTELE ON WO eIO| UNDARIEACOmLECTORAL ANOS OP Ss es\n\"Reasons for Refusal to Sign{ifany) ELE . 7 OE:\n- Presiding areas Comments: _ LAN ‘ Lx\nPOALLIN LOCESS W fMooTt AND ENDED AT NWTOOWRS.\nUND. BRON ES RIOT SBOONG 0 RATERS BC M7 ang eS\nUSO Riese TeLe ie arses Rechamuhe Umea Perko\né LBC TOM “NW PRESIDING # Sean\n: t d ) “ : ’ A eee wey ‘",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 8,
+            "confidence": 0.32999999999999996,
+            "score": 0.32999999999999996,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 200,
+            "confidence": 0.26,
+            "score": 0.26,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:26:36.960414Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100504202",
+    "constituency_code": "201",
+    "ward_code": "1005",
+    "polling_centre_code": "042",
+    "stream_no": 2,
+    "stream_key": "201-1005-042-02",
+    "ward_name": "BUTALICHEGULO",
+    "polling_centre_name": "MUKAVAKAVA PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100504202",
+      "printed/portal ward BUTALICHEGULO",
+      "printed/portal centre MUKAVAKAVA PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

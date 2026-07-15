@@ -1,0 +1,112 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "c0c17f0c21da55e6-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201984701941119/v1_c0c17f0c21da.pdf",
+  "source_sha256": "c0c17f0c21da55e655c128a1151a9ddb24956343b158416ea4113baf89197911",
+  "source_filename": "v1_c0c17f0c21da.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/c0c17f0c21da55e6.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2355,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station KAKUNGA PRIMARY SCHOOL POLLING STATION20f2 dee __087201100808102\nWard SOUTH KABRAS Cagenc’ WB Cro, SSionmne\nCarpe itennay SO otc PER ONRG COMMISSION, PENTEL ECTOR. AON AO OU ENTELECTOR 4 SIONINDEPEND SS: COne wnt ELBBIORAL a ONINDEDENT\nCounty KAKAMEGA print SECTORAL ANA NOEP Cade <. AO ANAS PENDENT\nNumber of votes cast in favour of each candidate: :\nNo. of Valid Votes Obtained |\n[1 ANGATIA JAMES SHINAGH Sg Sorat reereat tem Tt\nSek ABN STAD ge cc Heo rear ecm aoe eee ep\nBANS MOOD GLAS csr Se une eC ure ce Oe ne oar\n[a MWANGA EDGAR BUSIEGA ee\n5. NALWA BENJAMIN Se saree ro anieerew onal TIRAALERENTR EASA esen 613)\n_8_ NDAKWA DAVID ATHMAN ———————— ej\ncfs VOSS BER Maar con ea eee ee\na. PANYAKO SETH AMBUSINT |\n2 TUEIWIGERFORCEINDAL\nTe Ror ote eta or oon Revs oeh ae fares\nPolling Station Counts an hoe oan ; Decision{s} on disputed votes ifany @ aL\n[tt urbe ot Rept Vrs; -——-ET | vations Teo Sco\n[a [toate Ree Blt Popes eae, em\n[3] Total Number of Rejection Objected to Ballot Papers; |} —______ (“yy RRS eCe th NOBOUNDATE SATELE ORAL Terabe ROE” niESCOMMIng”\n[ol Nanbe tps OO) gp\n[Tetons esta gS fe\n~ Declaration SN i . ee | = : ‘ ~ v f 4s N : ; : x , J | : Ni oF *) te , sis\nee eee aren are en the results of the count were announced, do hereby declare that tha Baghicke aK” are true\n~ and accurate count of the ballots in At AG, eS Polling Station IN ALP “anh SEN samOreesiey\nPresiding Officer: = VAY NS OK UMU JELA ‘Signature: Qe ye ATT 202\nCSOs NINE CBOUNS A BEACON DS AN CENDEN TA eSenne on OAR TSSi54 ESE ee om SSO NINE\nDeputy Presiding Officer -NIERCYLINe WABAYE Signature: Udele> Date V7 -f7-2O2A\nS \"Agents or Candidates (if present) Ss iD ENDENT ECT GUO ONIN TEL NOB Kase ELECTC\nIIe eo Boerne re Gscoumisslpn NOC ee eoN re Ec Toun, SONNGEENOC ONC PSC snocch it net ETO RO COM\nReasons for Refusal to Sign (if any) Se NOS DENTELEC COMMS SIONT P ALAND NOR RN ELEC NON OG\n_ Presiding Off era Cormier: NTELE t ZEON ADARIESCOMag/ ORAL ARDEO) ECT ne nen piissioniy\nThee PollLiNG - Pp OCESS WAS SMO OTe\" WITHOUT ANY\nes LANDE ig: J ; P 5 2 < ORG E @ te eed ?-) ny] ‘ at see 6 3 -\nBeyghs Okun SELA PO Form) PPO BRC\ns. “J - . CAs Wh bh ka no Ne e P is N c 7. : : oN Poh of 25 ee } : Rie j “ a ,\nRRS BIS HEROD S DANE SEEPBISER Soon oe? ENON TESS eae DEON",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "[3] Total Number of Rejection Objected to Ballot Papers; |} —______ (“yy RRS eCe th NOBOUNDATE SATELE ORAL Terabe ROE” niESCOMMIng”",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:55:47.060152Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": null,
+    "polling_centre_name": "KAKUNGA PRIMARY SCHOOL POLLING STATION20F2 DEE __087201100808102",
+    "confidence": 0.0,
+    "evidence": [
+      "printed/portal centre KAKUNGA PRIMARY SCHOOL POLLING STATION20F2 DEE __087201100808102"
+    ]
+  }
+}

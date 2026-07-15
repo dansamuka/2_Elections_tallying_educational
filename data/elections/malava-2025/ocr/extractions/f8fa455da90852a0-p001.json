@@ -1,0 +1,154 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "f8fa455da90852a0-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201180980626453/v1_f8fa455da908.pdf",
+  "source_sha256": "f8fa455da90852a013e1cbf1048b5f392843d2712e5b8a2d24cd80c1c4c15bd3",
+  "source_filename": "v1_f8fa455da908.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/f8fa455da90852a0.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1006-067-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3048,
+  "text_length": 2734,
+  "text_preview": "ee er Os\nBe ae\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION.\nName of Polling Station SHIANDICHE PRIMARY SCHOOL POLLING STATION 1 of 1 Code __037201100606701\nWard MANDA-SHIVANGA Code _ 1006\nKaijs fenewcyS> 6.1 CMAN. OMMISSiQw PENTEL EC TON ECAG sN at 20 Cu TELECTOR 4) SONINDEPENT CCC ot git 1 W001 ORAL ay VINOEPENI\nCounty KAKAMEGA Code __037\nNumber of votes cast in favour of each candidate:\n| Wame of Candidate No oF Valid Votes Obtained\n[| 1. ANGATIA JAMES SHINACH| 008)\n2. JASON SHIVAKALE BRUCE : pao eroreea grea a ere aee ear\n|_3. MANYASI JOAB BURUDI SE ets x orcnesa tuaatenastcTrmantuaaurrt tons mmereameerl 7 E40:\n| 4. MWANGA EDGAR BUSIEGA [re EDO Z\n| (5. NALWA BENJAMIN oT\n|_ 8. NDAKWA DAVID ATHMAN , p ASROR CLR NREL MMMaMaDNTTNE DONT aRTLgeeSTy No\n|_7 OYUGIGEORGENGAIRA Spore cnr uunaeeetennra sr opovenmnretmecrararoomenumeere at 4\n8. PANYAKOSETHAMBUSINN NY Season aden TaSLs URINATE DESMO BETS\n| 9. TUVEI WILBERFORCE INDAL =\n[Total number of vaid votes cast CTORay 2SIONNDE neice yee OAL N oa DEPENDES eat Orne COL RDESUND AR\nPoliing Station Counts. ; S DEP SR Decision{s) on disputed votes if any NO ; R\n~_ [A] nur ot Reiterates inte Poting Satin, [-———— ©} | ert nt oat Pe win dtd] Nee a oped a le\n-]2: [Total Number of Rejected Ballot Papers: 20 OOF) ft\n| 3.| Total Number of Rejection Objected to Ballot Papers; --— QoQ} {2.0 ee\n«09 Ae Total Namba GF Disputed Moles S028 SN fire HY DORE oO ERE COMI TOFALAfIDBOUN TOCA ee iss ONINDS\nDeclaration SRLANDBOUNSPENDENTELEC Gut UNDARIESCPSLECTORAL AN Sc\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in (AND ctHte iM Ae SCOP oiling Station LAVA _ Constituency.\nPresiding Officer: KENNED{ NIWANGO AMWOKA signature: FO ate ZT (1- 4026\nDeputy Presiding Officer: BET HA NA UMW VOAHIALA — Signature: 5. (BS Date 2TH 2694\n\"Agents or Candidates [if present). : NALAND! UN EN TELE OS Ss yun SS comi i A x “OM\nfe tomtCnaai im [hoi | evens | Tt | Some [oo]\n[alot Tato Te2064a(l DEP lorpesccol “<P aieuced\n[2 NIUKALO REUBEN | 2737/6200 DAP lor neqneds | A Tar iinaea\nLS FRORENCE ZAKAIA 12055064 pA for ateasi| ee aya)\nTe esc e E CT Og Pe or ate amie Cota SS/On pA NDBOUN Tre Ses. gags SION NE PE DARIESCO™ DNVEO Conner\n‘Reasons for Refusal to Sign (if any) Se . ; ‘ec vee ee SC SRALAND EMDR rELECAON\nea SO ce cr Uae DEUCES Tea cIONINOE Peg UATE STON pcan PT TNDENTE] ECO Mi SIONN IDRC\nPresiding Officer's Comments: co! OAS ECTORG SSION en uN Noes EDEN N ROTEL oe ¢\nMNO RS NER ED NOs ISAO PO LG’ NOPE Kot nor rege Mamie mms pObs GRE NOE Te] Se COMmace aNDEP CORR\nKg ilo ANINOKA A= 21-11-2025. OPEL OPN Gass OND EPECUNDARIES ON NEC",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 3,
+            "confidence": 0.18,
+            "score": 0.18,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 20,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 20,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 1,
+        "confidence": 0.21,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.21,
+            "score": 0.21,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 21,
+        "confidence": 0.21,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": 0,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": "full-page-text anchored by '| 2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": "anchored-cell-ocr anchored by '5 Total Number of Valid Votes Cast;'",
+      "total_cast": "derived: total_valid (1) + rejected (20)",
+      "rejection_objections": "| 3.| Total Number of Rejection Objected to Ballot Papers; --— QoQ} {2.0 ee",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:00:01.461434Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100606701",
+    "constituency_code": "201",
+    "ward_code": "1006",
+    "polling_centre_code": "067",
+    "stream_no": 1,
+    "stream_key": "201-1006-067-01",
+    "ward_name": "MANDA-SHIVANGA",
+    "polling_centre_name": "SHIANDICHE PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100606701",
+      "printed/portal ward MANDA-SHIVANGA",
+      "printed/portal centre SHIANDICHE PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

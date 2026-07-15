@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "0ecf589fa7775c51-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201913127172154/v1_0ecf589fa777.pdf",
+  "source_sha256": "0ecf589fa7775c516fa96c2d782841df546d5075ae09c2789703d2d6621e961e",
+  "source_filename": "v1_0ecf589fa777.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/0ecf589fa7775c51.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1002-010-04",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2934,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station KAMUCHISU PRIMARY SCHOOL POLLING STATION 4 of 1 Code __037201100201004\nWard WEST KABRAS Code 1002\nRat Srnremcy SSC. MAL EN A. COMMISSIOn, DENTELECTONECN NaC COU CN TELECTOR4/ SONINDEPENT ocO eh Neil 1 AOTORAL ao MNDEPENT\nPaui ty Quin DE re CCP\" Raine ote ECTORA) 2 ENDENTELEC COM pt oe Oh ECTORAL AW) NOE PENDENTES pul Sind «HURL ANDBG CPEN DENTE\nNumber of votes cast in favour of each candidate:\n|_Name of Candidate SE. No. of Valid Votes Obtained\n[1 ANGATIA JAMES SHINACHI | Seoenueliaaiarrouulntuaarmaaamsecmetoee OF tO\n2. JASON SHIVAKALE BRUCE iSSionino | Eoesaasasauleresumauametincerseacamsremeee DP oY\neA ANC Toa AURA occa oeee ne meee OE rR ae\n4, MWANGAEDGARBUSIEGA OF\n_5. NALWA BENJAMIN eyelid\n6. NDAKWA DAVID ATHMAN eeereeerernneten nnn Car a\n_ |. 7 OYUGI GEORGE NGAIRA uSSig | OG\n[a PANAKO SETH aMBUSNE Al ale\n_ 9. TUVEI WILBERFORCE INDAL aes ND ENOEN CTO Ra SSIONINDES alee ONS ONG cl A Magi\nTotal number of valid votes cast Ay a SONI atc e EST ORL ANDRD DEPENDEN Wl SOncGC ONY ANOS EEE\n\\ N EL ? T Ni i > i | : ot ’ Sy “ ¥ oF ® x Rit as\n_ PollingStationCounts _— Decision{s) on disputed votes if any <e @ gente ALAN\n|. [Tota Number of RegiseredVoters ne Pling Satin, | 6 gl\n~ {2.| Total Number ofRejected Ballot Papers; He a eee Ola NOE etineS oO NN, WDB ONDA TES\n-_[8:] Total Number of Rejection jected toBallotPapers; pa) |2 ee\n[a fToalvonberditepicdiees, OQ [a\n[Si [ToaiNonberoa esta ey pe\nsc OBeiblaeationn ne! Ssioninnere SON es es° On ANDBOUNSPENDENTELES Gul ON NDARIESC GLE pea RS SNOT ish\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare oy wn above are true\nand accurate count of the ballots in LASIK ot PTO Crop sMissiontnoe Polling Station __ ADAG a= .._ Constituency.\n- Presiding Officer: Ba 9 a NRO so NS, Settee (ONE Pc Bg FL 1-\\]- 202\nDeputy Presiding officer: OBERT MAKDLO signature: _Pebrere. Wun pg” 2 4-1 1-202:\n- Agents or Candidates (if present) oor NDE CPENDEN ECC . MRESCORLECTORALANO ;\nLUTERANCO MucHind 28325234 “UDA o7¢z¢q2s|\\ a by pect\nSACOM NDBOUND AaMDENTE ECTORM GC! ex ONO ARIES DME ORA| ANOBOUN ON ORO OG uals SIONNOMECOUNDARIES CO NUNE COR ae\nSE RSE CNN RIES COME” Tom ay ANDPOMI Crs aePOE™ a SsiON IANO Duna ARIES” cae a eabeN Lr oENDe AE ac mMiSsON NINE Ee GONE\nOTR BS SOON nS SIOM WOR DAE Rec 1 DEE NTU MOAR DEN MSA UN Oe eO NT el ECC OMIM gra Sanne PENA CON. ese\n\" Reasons for Refusal to Sign (if any) M So NTEI Tool 0 Eee : DBO LDEPI ELEC OU eae\nPresiding Officer’s Comment: EMERLECT WOE es OR NDARIESCON eae SSE. QWMISSIONIND BOUND ENON\nCANO es So OPE sl IRE Re Rete ICS es OO OPER Nake ROOFED DS COROT Nees gs COigra Game one OO\nHINDER O »* = it 7 BS SO RG phy k esi OBO NTEL: és. a : SOR ( NEP Mare ‘\nHE Pomme. \\LeRy kavietin ; OCR COM ND BOUND A NDENTEL EC TOR IO%,\n2 1 Lia FEY how Kave fect askas al w rhs fity : cs NOEr? . ue ‘",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'UDA'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:50:46.064236Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100201004",
+    "constituency_code": "201",
+    "ward_code": "1002",
+    "polling_centre_code": "010",
+    "stream_no": 4,
+    "stream_key": "201-1002-010-04",
+    "ward_name": "WEST KABRAS",
+    "polling_centre_name": "KAMUCHISU PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100201004",
+      "printed/portal ward WEST KABRAS",
+      "printed/portal centre KAMUCHISU PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "623a8f9c5281ef1d-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201094199233004/v1_623a8f9c5281.pdf",
+  "source_sha256": "623a8f9c5281ef1d016bb888c829142053d909a6afe59634bb27c0e3a3aece07",
+  "source_filename": "v1_623a8f9c5281.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/623a8f9c5281ef1d.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P99233004-01",
+  "match_method": "STATION_NAME",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24068571428571428,
+  "text_length": 2834,
+  "text_preview": "2 ct ns sO ee ae\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION |\nName of Polling Station SHIKOKHWE PRIMARY SCHOOL POLLING STATION4off1 0 Rode __937201100711501\nWardPENDENTE (206 oC cSSHBRUGUAMIGAN TE? «-SCOMMISSIO® uO 0 PSU c PENDENTELE n> WINDEPENDE wohl. © oR denDEwUp-EC Ton SSIONINDE\nConstituanays>|s.u\\<C MAA COMMISSION, WOENTEL EC TON KCN AC COU en TELECTOR¢/ SIONINDEPENT 260 9@) Sigil c\\ pUIORALA ye VNDEPENT\nCouty quinn? Ee .cC Ps ARAMEGALL ECTOR¢/ 7 ENDENTELECT CON pViS@ ghTT eCTORALANn DEPENDENTS. ai, SCR d 8 MBRLANDB OG PENDENTE\nNumber of votes cast in favour of each candidate: .\n|_ Name of Candidate No. of Valid Votes Obtained\n1, ANGATIA JAMES SHINACHI [00]\n|_2. JASON SHIVAKALE BRUCE\n3. MANYAS! JOAB BURUDI :\n4. MWANGA EDGAR BUSIEGA\n6. NALWA BENJAMIN RA Se acoerunssenyenata enauanenrnmemeraeoicsererree ST\n6. NDAKWA DAVID ATHMAN 3\n7. OYUGI GEORGE NGAIRA HMSO ANE\n8. PANYAKO SETH AMBUSINI | 009]\n_ |_9. TUVE! WILBERFORCE INDAI\nTotal number of valid votes cast : : EaRoy SNC CDOAT STILT RETAIL SASAOTEMRENTTTTS A\nPolling Station Counts 2 - Decisionts) on disputed votes if any x“\n[i] Teta Number of Registered Voters inthe Ping Station,\nTotal Number of Rejected Ballot Papers; afore ee ONT Fu Soe Soot cc (ORAL ANDBO, ABEND GREE COON AW BOUNDARIES\n[3. | Total Number of Rejection Objected to Ballot Papers; | OOP] [2\n[4.|ToatNnbersfDispuedvoes; Hie oe Seetrorrescotunad chat ono EAA SSONNO\n5 | Tot Number fallesCast Epeeccives ins une oeounfanesc ene OUND\nDeclaration Ray EN TEI RIESCOMECTOR, ae 3s\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\n~ and accurate count of the ballots in SH Veco Vy E PRIMA Polling Statigg#®™ ALANA Constituency,\n‘ vif : ek \\ “ WE VDE t Wi /Pa Qo 4, .\nPresiding Officer: ___ BoAZ_ MUNANGA Signatfrese BAMA pate _2I-1)+ 2025\nNy} py : 4 f ‘ ; hs = a¥ 4G “ < Fs -\n_ Deputy Presiding Officer: FAITH OBON DO Signatlrewes' mee 3 Date 2271 = = '2025\n: APOC OF GEFEN RiEScont\n~ Agents or Candidates {if present) LANDE , a A o AMIS\nEIMWAUAA DaviD[22ezuaae] UDA Tz Timea maneuin Br tctabs\nAgel C. Sammy (2171744 | DARK fotnaisdigh Pum 27=- ab2\nPa PeREMIAW Eikv yt daquegea tl DCP. oS Tonaguanegd eee Tones ade\nSYS sep aP AS Ce GTI rer NO CRE ST TOMS ULAR SoS\nSS RES SRI ASRS UES CUMIN en aeeRSS Nee\nEe eee UNO a EN SaaS a ODN OOM ar eC OMt ee OCA IE PEN UC AIOE SSCA al HN oe TELECON\nESR MEE SOR BPENDEN TE) -SCOMMISSIGN OUT Cae oOo TELE ORAL 4 SIONINDEPENDL CON dO CORE SNDDUIN A BY OENTELEC KU MMCONR ON\nReasons for Refusal to Sign (if any) 3 ALAND OE PEND ,\nPresidin Officer's Comments; NTELECTOWN if Site Sie OL Sm :\nDT “IB AERCISE MAS \\WoccassFeL hy} CosDicTED —\nDAZ fd OT\" ed, ESIDING f° ; :\n: SOAZ. wine A NGA AEE a ELEC Oly < JNINDEPENT\n+ Ou ee 4 OFFICER Foo ‘ NINDED ey",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 22,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 22,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "[3. | Total Number of Rejection Objected to Ballot Papers; | OOP] [2",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:52:40.995898Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "SHIKOKHWE PRIMARY SCHOOL",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre SHIKOKHWE PRIMARY SCHOOL"
+    ]
+  }
+}

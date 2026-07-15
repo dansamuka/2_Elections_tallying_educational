@@ -1,0 +1,129 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "5824d681b61bf131-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019600304/v1_5824d681b61b.pdf",
+  "source_sha256": "5824d681b61bf1313eb094ffcad8bc2195813b1471f307e7a5c9cac404f86914",
+  "source_filename": "v1_5824d681b61b.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/5824d681b61bf131.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-003-04",
+  "match_method": "POLLING_CODE_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.41053333333333325,
+  "text_length": 2650,
+  "text_preview": "-. ... te —= ae ea — ne ~~ ae,\nPO Z Jr a Zag Se “1EBC 5 10 fm] a 2 Za\nA Z AQF i= = : DI KV ; ‘S[m] Za I =\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BANISA PRIMARY SCHOOL POLLING STATION 4 of 5 Code __009040019600304\nWard BANISSA Code __0196 SIONINDE\nGases taneaciy' Saul CBN c OMMISS Oe SENTELEC TORE C10 pO 0UL TELECTOR A: SIONINDEPEN OL COne ti geh | SMDORAL 4, ONINDE PEN\nCounty MANDERA Cade 0009 ANDa6 HPENDENTE\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n|_1. HASSAN AHMED MAALIM SUPPER ELEC ere oe nT TEC OG\n2. MOHAMED NURDIN MAALIM EaMieNiasaanaa lor aaumececoseeusaarseicaed oe At\nTotal number of valid votes cast gcc TOR anor ENDERTECE Gon NUBOLE BER\nPolling Station Counts Decision{s} on disputed votes if any\nTotal Number of Registered Vater nthe Poling Staion\nTotal Number of Rejected Balt Papers circ OUT TPO Toma an Ne seu TREO NN TCE SUN OE\nTotal Number of Rejection Objected to Ballot Papers; | ——_-_-. O00) BOOT CONN NDBOUNSPABENTELEC Pe Noo So DARIES CELE\nTotal Naber of isp oes RARE 5.5 ORNS STR N CORSO Ces ETS\nTat Rube of ald oles Cast ——22g| [6 OS\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in vA . Polling Station Constituency.\nPresiding Officer: _ Hassan Atto IGRatiing Signature: — PAN Date eee [—t|-2025\nDeputy Presiding Officer: SHAW Signature: hh See Date QT7-U-2e2s\nPhe Aaeera\nAgents or Candidates {if present} \\ 7\nName of Candidate or Agent 1D/Passport No. | Party Name/Independent Candidate [Stat cootaét | signature | Date |\nStee ete c> OMe lox De? Cech OGRE SAT Oe OBC Tel SEO GSS ger EMDR ARES Onn MNCS eca Ic pENOEN\nNE eS SSO NOE NTE COO ESO NCE EENEL NO RNESC RR pec ot ger| NOC ELE COMMISSION NON ce ONDE EC TON\neee LMOARIE SC ORC Rae 0 ENDEM TEL < CON MISS NRW So OTe EC ORAL anc NNDEPENDE TOWN NO CDI ANDES\neS\npene NTELEC TORS SIONINDER reac: naLAMPEOU ye ENDENTELEC HON AO. e GONDARIESC Ona CJORAL ANDES NSO Qui\n[ace Eee\nEa SCL ONINO NOC OUN Aa SCO BOC RUN OP NBENTEL <SCOME GIONINOE SALE ON GOAN Ec Tonal SSN AM oeNDEN GuNaOIE Out od\nepee or NDEN TE Scann SRI ON NOH co ON SNONN cron SOD ALA DENDEN uN NO. OMS Ty DEAE GUNDART CT ORAGC gIEC IN\nReasons for Refusal to Sign [if any)\nNO ONE UE CUSED TH Sian\nPresiding Officer's Comments: eee NTEL aarti\nThi (LECTION WAS FREE AWD FAIL\nROSCA ONIN Sec Kh Rees 2 in RON wh OO ENT Scene MAN OE SC PCE nee RA NO AD CN TELE eM WO EO AY\npl\nPos Name > Hassan AKO [BPeveteog ery — 97-11-2026\n>.\nLE.B.c)\nPRESIDING }\nOFFICER J",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.6699999999999999,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.6699999999999999,
+            "score": 0.6699999999999999,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 642,
+            "confidence": 0.58,
+            "score": 0.58,
+            "source": "certified-register-hint",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.6699999999999999,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.6699999999999999,
+            "score": 0.6699999999999999,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by '2. MOHAMED NURDIN MAALIM'",
+      "registered": "anchored-cell-ocr anchored by 'Total number of valid votes cast'",
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2448,
+        3168
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "FAIL",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "FAIL"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:20:56.565885Z"
+}

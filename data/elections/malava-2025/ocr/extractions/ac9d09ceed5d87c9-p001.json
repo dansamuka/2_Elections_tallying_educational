@@ -1,0 +1,152 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "ac9d09ceed5d87c9-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201149088388860/v1_ac9d09ceed5d.pdf",
+  "source_sha256": "ac9d09ceed5d87c970aaf689434487f41cce7471cedef2bab6de22d0f1c39d12",
+  "source_filename": "v1_ac9d09ceed5d.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/ac9d09ceed5d87c9.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P80566276-04",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3088571428571429,
+  "text_length": 2645,
+  "text_preview": "re |\ni = Lo\nPee Pe ee ee eC ee ee ee —— 4 Ae ieee . Se\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MALAVA PRIMARY SCHOOL POLLING STATION 4of4 0 Rode 087201100707401\nWard? ENDENT 00 06\" GHIRU aE MGRN TE: 5 -COMMISSIO™, p00 Sate pENDENTEL EDS VINDEPENDEL 0S © Co Ga EMEECTOnS SONINDE\nConstitwenayS= Q.u8<C. BRRAVA COMMISSION PENTEL ECTON CAG SSO 200 WTELECTOR A; SIONINDEPEND Le COT eh oii 1 Eat N\nCounty oumner € 2 ec0 i RARAMEGA: ECTORA) 3 ENDENTELECT COW eC oP. ECTORAL AND NOEDENDENTE. AN Soigg acs oBar\nNumber of votes cast in favour of each candidate:\n[1 ANGATIA JAMES SHINACHT see ceptor\n2 aE AC SIR ARAESBALIQE CTO Tce eae am oa eee eee\nBe aad MOA RLS Coane a ee NT cE\n[a MWANGA EDGAR BUSIEGA pata Seer a ncnniner a arm\n~ |. NALWA BENJAMIN Das pa EE 60)\n5. NDAKWA DAVIO ATHMAN Score arr ecinnammmanorere mses Ar\n_ Fr OYUGI GEORGE NGAIRA meen\nrgpaliyaiel Seve iaieleimcnisso nee nn tess hy enero ne agree CGI eT\nOn Qu N NE WWRERRURGE RDA scrote Conse ocr ener ine gor ee\nFTasinunberdvsdvomset\nPolling Station Counts _ Le eo pernetttey tte _Decisionts} on disputed votes if any NC PROP NENTELECTOR A) SS\n[i [Total umber f Regier Verse Paling Satin, |-———6 .]]\n--{2.|Total Number of Rejected Ballot Papers; Pw a) eR\n[| Tas NunierafRecion Oopces Bales | pga] [2\n[a fraalvenieraopiedioes, gd [a\n|S [TostnanberhaidVeestet 5g\n- We, the undersigned, being present when the results of the count were announced, do hereby declare that Gees aoe are true\n\". and.accurate count of the ballots in MALAVA Pei NRY SCHOD| Polling Station MALAY * Constituency.\nPresiding Officer: EDWiM OLUNGA ~ SAWOA Signature: Get Fae suet i ~i\\ ~20\n_ Deputy Presiding Officer: C R STINE (TIEN O -ORELLO Signature: THEA OF RE KI=\\)— 2024\n_ Agents or Candidates {ifpresent) == SOP EPENDENTELEC ont OARIESCO ANOBO Oe EN TE\nHINANCT KHARASAS7@2s1 Dp eve yamat BRP Teac.\n2 REE W. sy Tanke CBI7G 2 NADP eX bas roi rok frit 7-1-8\nLS Moses WL Mastao | arsacuia | upa epg? Mas daasi ide\n: Rote Ss SION AND ne Amie SRO pO ORM ey UD oe tates IO Neg DBOUN en ric Olt grORALAE PEN OC ORES Esch\nAVDA oer oueeRoen iE scommssig yO Neo GONE LEC ont Sslonmner Enos ONG po conn anDBoh Ran DE TA ESN SC\n_ Reasons for Refusal to Sign {if any) Soe STEW ANDEP ESRC ies ANDE, ee rte! Oey\n\"Presiding Officer’sComments:; FOMMISSIONINy BOUNDARIES ga RNee ate\nTE CounTinG PRocece WwaPcoccPQseul ANB ALCS\n“ PRESIDING GFRCER: rece ete SAO pREStOrte gy: ona. Ounaeeeanente ee\nNOE NT ies lt ANDBOUNOARIES ELECTOR cBSgemgsee pr OM nA ECO OR RIGES MY oso ene IESE RA Le\nLecron hee DENTE Chobe rer expo ea TONA ANNO ETE NON ORUSE Sn nono genre EcTORNCS",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 5,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.505,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.505,
+            "score": 0.505,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 4,
+            "confidence": 0.009999999999999998,
+            "score": 0.009999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 4,
+        "confidence": 0.505,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": "anchored-cell-ocr anchored by '1.) Total Number of Registered Voters in the Flin aon |'",
+      "rejected": "full-page-text anchored by '|2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": "anchored-cell-ocr anchored by 'S| Total Numba fai Votes Cast'",
+      "total_cast": "derived: total_valid (2) + rejected (2)",
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:57:01.403027Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "MALAVA PRIMARY SCHOOL RODE 087201100707401",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre MALAVA PRIMARY SCHOOL RODE 087201100707401"
+    ]
+  }
+}

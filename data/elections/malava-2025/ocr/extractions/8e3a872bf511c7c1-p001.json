@@ -1,0 +1,132 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "8e3a872bf511c7c1-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201072099558880/v1_8e3a872bf511.pdf",
+  "source_sha256": "8e3a872bf511c7c19dbc05247de7528bb72c09e6a3251523ea8bf197959d9b1e",
+  "source_filename": "v1_8e3a872bf511.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/8e3a872bf511c7c1.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1007-116-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2346,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MALAVA TOWN MARKET POLLING STATION 4 of 4 Code __037201100711601\nWard SHIRUGU-MUGAI adenoe t0G7 EC Tons SIONINE\nConstituency SNOT NOS MAL AVES COMMISSION NOENTELECT ORE C(G aC oO eNO A eG HORM ECTS Code cL MOIORAL Ay UNOEPENT\nGoditity: quince CO pRARAMEGAS, C105 a) We TUE SS TN ARIE So gee Cadé +cat ANDBo:, ENDENTE\n_ Number of votes cast in favour of each candidate: . ae\nNo. of Valid Votes Obtained : |\n174. ANGATIA JAMES SHINACHI. Sr OO:\n_ | 2. JASON SHIVAKALE BRUCE aoe oan accome Sumner OY\n“3. MANYASI JOAB BURUDI __ OE: 7\n| 4. MWANGA EDGAR BUSIEGA 2 e009\nPE NALWABENJAMIN Sanna\n| 6. NDAKWA DAVID ATHMAN scons TORE ae; suerte SA ertaeen ORAS a\n_[-7. OYUGI GEORGE NGAIRA MMISSIO OO |\nST SiN Oe,\n— | 9. TUVEL WILBERFORCE INDAL Ope on er OO Oud\n~~ FRotal number of vaid votes cast OS\nPolling Station Counts Miercrosoreue INDEPEN ONOAR mtn Decision(s) on disputed votesifany sotAn\nore Nant RgnedTansh Pogo -———COE | [setter ncn] nent ssnet at |\nRe cena eer emer A Ce amen ad We oe OE\nSSP tec gtecinetipier wena to OL Fee aan acd noe raat\nBee a ae UN ee ES See ES a EM\n> We, the undersigned, being present when the results of the count were announced, do hereby declare that t Le sults. S00) yn-abo dakettue.\nand accurate count of the ballots in NZ Ab AVA 40INN NIARIET. Polling Station MIA LAVA. Tore sbtee eiGonsteWuney.\n- “presiding Officer: VAVIZ Mu TANDA WANTALA signature: Wut Pret] — 1] “2025\n~ Deputy Presiding Officer: _[V loko. EFEY. OYvKo Sicaatate: eee aoc na Dame ~1)-2625\nAgents or Candidates {if present) NOBOURPENDENTELES cat out Conn! WO SS Anti\nlpm SAW Bie | Dep eres Bee ee\nSt AMOS WANEAMILiazsem DAP. lomaqsaaied Berke eratsais\n, LF scat nn GRR Scie Sena ee tee\n: anit Se SOS ESL TI ONS RA, Phe\nES He eae PRR Sa NS SS\nReasons for Refusal to Sign (if any) an | a NON DENTEL ON OF NOET OE SA DBO, PENDENTELE CeO\n: Presiding Officer's Comments; ENTELEC On ay Cea DARIESC MMs ORALANDEC SARA GMMISSION WDE CUNDA ox\nN CTATION CLeseh aq. I1osHouts AND POLi(nG Isso —— (om) Clesen Aq |TesHouks AND OLLING ENMSEb\nNI ROAR PERO te MUTAN DA WANT. Tee Reon Ao pe nn = ae ae) Oe ISU ER PP DEPENDEN ats\nRi NN Set pnoes Meas ee > ; “OR Det 9 ae ‘ : i c IN Ene ng “ft\nMeCN IES eg Oem’ UISSIONIND cea aga ARIES cpp AG Sk ey MTEL yesen, aNOe Sue",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:50:51.881662Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100711601",
+    "constituency_code": "201",
+    "ward_code": "1007",
+    "polling_centre_code": "116",
+    "stream_no": 1,
+    "stream_key": "201-1007-116-01",
+    "ward_name": "SHIRUGU-MUGAI ADENOE T0G7 EC TONS SIONINE",
+    "polling_centre_name": "MALAVA TOWN MARKET",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100711601",
+      "printed/portal ward SHIRUGU-MUGAI ADENOE T0G7 EC TONS SIONINE",
+      "printed/portal centre MALAVA TOWN MARKET"
+    ],
+    "applied_to_register": true
+  }
+}

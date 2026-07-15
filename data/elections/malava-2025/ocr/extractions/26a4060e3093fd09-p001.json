@@ -1,0 +1,122 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "26a4060e3093fd09-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201170906158049/v1_26a4060e3093.pdf",
+  "source_sha256": "26a4060e3093fd09df97e3d72e97cf168548ddb15b31a64cdb07983601cdf037",
+  "source_filename": "v1_26a4060e3093.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/26a4060e3093fd09.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1003-022-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2620,
+  "text_preview": "31.0G3\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station ISANJIRO PRIMARY SCHOOL POLLING STATION 2 of 4 Code __037201100302202\nNMEA) ENDEN TE 108 0 RSME NDENTE: &-SCOMMISSION wOlLO® BUN cpENDENTELE ONINDEPENDEN opt, CSR Oe NES\nAang Genny! Se IAA COMMISSIOnyyy PENTEL ECT OPECAC ACO og TELECTORa SIONINDEPENDE: COR eRhT | a08\nCounty KAKAMEGA _ Code 037 ;\nNumber of votes cast in favour of each candidate:\n‘1. ANGATIA JAMES SHINACHI er a en SP\n2. JASON SHIVAKALE BRUCE Fe Rb tae OMe noel gl ee ale oan eMC DY\nOs meat CAA et SY oi ren pe\nic MANYASTJOAB EURUGT” SE eatin Tea eo To\nof AAOIMARSR COGN BOREGNS roe Prec roo nt ame ane\n[5 NALWA BENJAMIN\n| 6 NDAKWADAVIDATHMAN |\n\"7. OYUGI GEORGE NGAIRA ES eae reaper ween\nZo SBOE SISTHT MBOBDS icc ounce no an sc Receterece es age Ce\n“A sgunile| prs RGA oe Fae et ert aae co ereranoR TT gh\n[Total number ofvaid votescast. Aa usec eDaeeTNMe acl apoE URES eee aS\nPollingStationCounts nay Decisionts) on disputed votesifany eNTELEG?\n[1 [tot abe these Ves PingSton, {5 2] [Sat atGan gw wn pte] seo aie\n[a ftaalNmieratRaecedtalo Pes | olf\n94 Se eat Nabe Rejection Djered to Balt Paces % PAGE Pca Oey fae oe yi nonce. Ver drona ne eo en scou\n| [Totter tides tes eee ors eh uassiouner eounfanesctn ree oreeaeY\nke Declaration S/ONINDEPENOSCON ree Ge 3° ORL ANDBOUNS PENT NTELECT NS NIINDA ECT ORAL ANDER ON, SNCNOE ou |\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\n~ and accurate count of the ballots in LSANTIRO PRinaKhy Scifoo -Polling Stations. MVALAVKA. Constituency.\n- Presiding Omieer: Simon SS4S.NZI PAgacn — signfpue gE pate 21-1 -2625\nDeputy Presiding Officer: VA THAN OGADA Signatures: TRAE Date ZTA~UI~ 2025\n\"DAL : ¥ } r ‘ d NINE) 5-5. f SR 0) ARCA eee } ( A A .\n_ Agents or Candidates {if present) ee IBOUN . . . SNe TORALAY Er ON\n[=]. sistent [hari] Ammen [Taam [sme [be\n{i} Anne Want | araeeel CUBA. [btagodna eS Naa Jacl\n(2) ISmMAR ALUBE aaa SAP loBrong Bea by/, [30\ns [SICH Cie TOdmwcatl Beesrd DCP lewareatek QNA ay,'Gd\n3 es RNS a ee Wt aes ETE\nReasons for Refusal to Sign (if any) Lec} OMns Oe RALANDB OH OEPENDENTEL ECs ane5\nPresiding Officer's Comments: SOAR OM SRD ON cnt par OMISSION Nye BOUNDARIES GRACE\nELEcTion PROCESS West ON 2APELEN CORINDEPENDEN ARIESCOMMISS COSA Ga\nLNAME 2 USuvion Sititgi2, RARAAL 6 BCL fC eNOS ADENTEL ECs MMS SiON INDEP AE™ ORS\n;OUNE DATE S ORB En ENS ae ARLES GLI SENDENT {PRESIDING RRECTORAL QINDEPENDEN\nECTORAU ASRS LECIN Gor Clete bats Toma soon nUNOR ERS REPEMA. com sen POUND A PENTELECT ON",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 3,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 502,
+            "confidence": 0.19999999999999998,
+            "score": 0.19999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:59:16.170792Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100302202",
+    "constituency_code": "201",
+    "ward_code": "1003",
+    "polling_centre_code": "022",
+    "stream_no": 2,
+    "stream_key": "201-1003-022-02",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "ISANJIRO PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100302202",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre ISANJIRO PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

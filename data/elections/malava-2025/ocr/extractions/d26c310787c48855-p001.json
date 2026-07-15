@@ -1,0 +1,132 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "d26c310787c48855-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201450799442696/v1_d26c310787c4.pdf",
+  "source_sha256": "d26c310787c488554182ab77f0b3bf69b30dc838c9e8e3684a292151a19d6ebe",
+  "source_filename": "v1_d26c310787c4.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/d26c310787c48855.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1004-032-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2719,
+  "text_preview": "GE = eee r= = sr eS Oe) ae\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station FUVALE PRIMARY SCHOOL POLLING STATION 1 of 1 Code __037201100403201\nWar dP ENDENTE) (00 oe CREASY RABRABIENTE) --SCOmMISSIO™, wk Wt cpENDENTEL EDS MINDEPEND™ noha o Se gene Wt ECTop SSIONIND'\ncau feeineney SS Ao MLANA. COMMISSIOn . DENTELECTON ECAC ph oC 0 GewiELECTOR a) MONINDEPEN CoCU ct ou cant\ntagitityr Onin DEPEN. Cn eC RANAMEDRE ECTORA CP ENDeNTELEC OW ok OPE SC TORAL Ain NOEPENDENTS yah? Senge <cc MARLAND SO PENDENT\nNumber of votes cast in favour of each candidate:\n_1. ANGATIA JAMES SHINACHI Sn feRODADENTECEC AMOS OMNOET aire Cee Deut ECT OL COM\n_ [2 JASON SHiVAKALE BRUCE _ SSS OGD\n3 MANYASI JOAB BURUDI ee a erste emery Or\ni. MWANGA EDGAR BUSIEGA Seer enna uae eenar cae aera\n[5 NALWA BENJAMIN e\n“6. NDAKWA DAVID ATHMAN aA\n7, OYUGIGEORGENGAIRA See eae aman aren PST\n| Fe PANYAKO SETH AMBUSIN i Sage ieee gerne}\na. TUVEI WILBERFORCE INDAT foe ee ee oe i\n- [Total number of valid votes cast | . G\nPollingStationCounts = sarin YOARIE -Decision{s} on disputed votes if any wwe ate\n[i [Tot Nabe a Ressterl ents PalogSaio, [——— 3, BG]\nFit anni repealed eepor T Sy Seen ovo eee eS eNO\n[a fraatnunbeftoecionObaced wbaliPaers Lye] [2\n| iaeininisraidtonstess 39] [\nDeclaration ae NDBOUNS PENDENTE! wos UN ; ALAN Soy Er :\nWe, the undersigned, being present when the results of the cough were announced, do hereby declare that the results shown above are true\n~and-accurate count of the ballots in unt Le Fi ‘Polling Station __! Cue AM z= — Constituency.\nPresiding Officer: LX S/At rw A SV IV ESTER Signature =e gn OO 27H WA 2096\n4 ADE NDA o* , ‘ VE Y a ya iy LN ee = = oe > ot fi\n__ Deputy Presiding Officer: IOS 7 OeT. MuntifwA Signature: icp ii SIDING. Y soe 2025\nSS ‘Agents or Candidates lif present) S68 2 ASPENDENTELES RDARIESCY OFF; R BQ nS\nName of Candidate or Agent 1D/Passport No. | Party Name/Independent Candidate Tal. Contact “ 9\n[AI SAvko in bos) Stamey Wuedis | Dap. fomazewd l2I hg\nFR Reo isin AN one nen ARIES RRO ec ORME pe NOAR Pen auMMTOMO DS Ned eu NTE! EC Iced Msc umnpEPeNacodNCe cieed\nNS eg att NOBUS ag ECT OE gre eNOS RIE Cora aaslOn ya NOBOUN TEL OOM NORIO I a OEY ES RNR Scere’\nSo eee ANE oC Cee GRIT MC EER toa oe\nReasons for Refusal to Sign {if any) Set NORD ISSIONE ent ONDEPENDEN\nRO as itn emmy oC STE ION PENoaiesc OMT eNom peepee aia SD LAO)\nPresiding Officer's Comments: SE CNN tig ORAL ANDBOUE NS GAARO NOE oMMISSIONINDEDEOUN |\nMSUNG ENDED SUM « Fully AT 1 708HRS “a\nOR ce SIL MTR 2 Ya, ON aR et Seats\nPra Asti Gwa StLE ER fe PO° TOSfHAT OFOT Mun tiFWwA\nN + . hep ELS Som, ; 1 G V YONI ; DF Orne : ry é 4\nOR eNO 0 NOR Sad ONNCLEE AES Sr ARC OEY 2 eae SAR",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 1,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:16:01.728509Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100403201",
+    "constituency_code": "201",
+    "ward_code": "1004",
+    "polling_centre_code": "032",
+    "stream_no": 1,
+    "stream_key": "201-1004-032-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "FUVALE PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100403201",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre FUVALE PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

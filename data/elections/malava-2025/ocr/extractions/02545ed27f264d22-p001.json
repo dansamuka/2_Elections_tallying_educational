@@ -1,0 +1,123 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "02545ed27f264d22-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201165156045984/v1_02545ed27f26.pdf",
+  "source_sha256": "02545ed27f264d226d5ff84a02c8f1dd62390e18404f0a20444911f79c8a0bf5",
+  "source_filename": "v1_02545ed27f26.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/02545ed27f264d22.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2462,
+  "text_preview": "31.225\nee A ee oe\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\n“Name of Polling Station MAKUCHE PRIMARY SCHOOL POLLING STATION20f2_ Cd _087201100503902\nWard BUTALICHEGULO Code __1005\nCate Gruawney Sau C-MALANB.cOMMISSIO, PENTEL ECTO\" CA\" pa a0 eu TeLEC TOR) | ONINDER ET 650 ch OUe 201\nCounty ___KAKAMEGA ENTE Code __ 037 __\nNumber of votes cast in favour of each candidate: . ' Rig,\n1 No. of Valid Votes Obtained ! Missi\nSANGATIA JAMES SANAGH 770\nEON IMAM RGEC 2 acre eceapee eee nen oe eee emg\njc MANYASIJOAB BURUDI Seen ee 9 ut\ndi NoR EDGE BUSES 3\n\"5 NALWA BENJAMIN, }\n(6. NOAKWA DAVID ATHMAN SSS = OT\nEFS ONDGIGEORGE BAIA ie sCone Sous en OL 010)\nPe PANVAKO SETH AMBUSINT 8\n| [OCTUVEI WILBERFORCE INDAL Be Sasa be eaters ZY\ntere trie as eT ake Bec eration NER ORE 11k\nopting Staton Couintts) co en Su epee ‘Decision(s} on disputed votesifany\n[i Totter f Registered Vtersin te Poling Sitio, [Seite sa Pari ieee] Teal Cnet ae]\neS ere ome oa 8 Coane\nFe etna d eo el wna ON |e oe do |\neo Enna ne een men Nee b UOTE RRR ea\niliac cll aco ree oahacaef hh om ans noe ronan ene Cone EY\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above.are true.\nand accurate count of the ballots in NAA CAE PRIMINAY ScHODA Polling Station NVA Naat de Gonstituency.\n. Or pe T Bi 3 5 sai) * \" P fh ’ NDepr ny 7 elk NEA : ¢ ‘ ; oes 2 a REA\nPresiding officer: ESTHER Mawownn Stieviey Signature: GAN page RBs L202.\n€ a - Fi \" we B< ca ry, Preah S| = hares By pes 2 j 6 re) a Sie= x |\n~~ Deputy Presiding Officer: N\\AUR\\CE MUSUNGU Signatares Baca 'oa 2\" Date OPER ID de\nAgents or Candidates [if present) | ORALANDBOU A ENDENTELE” ac La \\LANDB Ce Gaui ‘\n- IFRER Hs IM@QUSI [91805742 UBA prassezisy hd [atm\n[2 hemp Ne en laraty96 | BAR = WK piasisso) AWB br-n-znes,\nBef on noe UN MOEN Te cot ORG SAU ESC ORAL RRBEON aT te NNO OUNDARE Sate gE ONO\nBe see aH TRE cee Me eT OTERO TENN UMNO See\nBe ee nl\nIAIN G5 ee ePENDEN TC /ESCOMMISSI OS OCORor GON ELECTORAL | SIONINDEPENDECON puede 2 aanl ANDBOLN g POENTELEC TOWROL Cap\nReasons for Refusal to Sign {if any) eS NOS ENTE TSeeonIND LAND EN NDR ee\nEP Setting Oivicber RIB eI TELECT aC NSC OST NDARIE SC OMG EAL ANDES Oe Sat geecnu COMM sa SOS\nTAG ERECTION WAS PLACEUL, FAIR AND WRAC SPARE -_ hp nee ae Sa\nMO MIAKDRYUAGHKUKU FADENTELEC COMMigsIONINDE, ETON WORN ECT reas ae\nSes 4 V aro . 4 s chine UND pricy P\n~~ Scere a On ‘ f NYE Soe QO",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:58:30.335621Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "BUTALICHEGULO",
+    "polling_centre_name": "MAKUCHE PRIMARY SCHOOL POLLING STATION20F2_ CD _087201100503902",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward BUTALICHEGULO",
+      "printed/portal centre MAKUCHE PRIMARY SCHOOL POLLING STATION20F2_ CD _087201100503902"
+    ]
+  }
+}

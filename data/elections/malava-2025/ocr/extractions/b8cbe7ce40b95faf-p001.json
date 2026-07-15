@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "b8cbe7ce40b95faf-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201305072857484/v1_b8cbe7ce40b9.pdf",
+  "source_sha256": "b8cbe7ce40b95faf7c6f0bdc5e3e83352eee3456f894d1816d716f1926510d00",
+  "source_filename": "v1_b8cbe7ce40b9.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/b8cbe7ce40b95faf.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1004-025-03",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2539,
+  "text_preview": "Veu2z ' —\nSC ec fm] [=] |\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station SHIANDA PRIMARY SCHOOL POLLING STATION 3 of 3 Code __037201100402503\neT OREIRG SATION SEED NE, WARES COM WOEPENDENTEC ER Oc _087201100402503.\nWard STAB RAS Cadenok04 Echos SSionino\nConstituency sat ee apes ONS S/O DENTELECT OE CAC SSA EN ELECTOR GS SIONINDEPENDE CONG Codie c 20008 AL ay Vor PEN\nCounty ARAM Cade <M ANDRO CP ENO ENT\n_. Number of votes cast in favour of each candidate:\nNo. of Valid Votes Obtained\n1, ANGATIA JAMES SHINACHI ac aa\n2. JASON SHIVAKALE BRUCE Miniseiat 55 Ee ee aerate cy\n3. MANYASI JOAB BURUDI | | Gani\ni, MWANGA EDGAR BUSIEGA\n|5. NALWA BENJAMIN BS Scene enmeeeerenens meets oe TIRE Ty\n6. NDAKWA DAVID ATHMAN 7 ES ee ARNE TTEN\n| 7 OYUGI GEORGE NGAIRA - ee GSU OA esc NCO Pen\nSPAR ARG SETH AMBSUSINI Baa 22S near ye\nef tute BERGE Nc ce seen en eee\nTotal number of valid votes cast fob oe ee\nPolling StationCounts NOSPE GNDARIESS _ Decision{s} on disputed votes if any ec NTE! AL g\n__ [thet eg it ang Seton 524] [Sel wn cn Srl clo)\nTala oReeced Bale Papers; Ener 5, Soca\n2 13. Total Number of Rejection Objected to Ballot Papers; JANE OPEB SUDENTE ASeLee Gh nDBOURRAR ES NTELEG Rn miescoMMS\nOMS, pneot Number pati HetesOagh o's 265] pea 0 a SSIONIND ep POUT ARIESC ENE ON Pepe\n. Declaration JONINDEPENDE CON Peg : DBOU $y ELECTIONS (ORINDEPENDEN Fs fa KGueone\n_ We, the undersigned, being present when the results of the count were announced, do hereby getter tne ‘the results shown above are true\nand accurate count of the ballots in SHIA \\_PRINARY Sch olling Station MB ies A Gansaaianig’”\nPresiding Officer: NIARIAN ALIVIDZA — TUMBA signature: Rn ~ Date 27-}l—aore\n‘Deputy Presiding Officer: 50. Ur CE Vly mid be WA. — Signature: _ Ee wt Date “A7~ 1] 202s\nAgents or Candidates {if present) UN ENDENTELECLON NON. EC0\\ No AMR NOB ENR\nanne afcntte organ’ | einer n| Poihondtoet Cosas | Taconic: | Smure | bet)\nPIWHITE Muavv@al 272250 DAp Kl eFaiaagd tee a\n[21S7erien MByipce eezquny [lot A Ipoyernee | Sam Br-i/-2s5\na [Bevees ieee [IaaRese| “oer Toners)” Rep aes\naX Aa aaa se SP ce a onnge NZS cen OE SnESC One Of NOE OUNOA co PROS EE\nea aa cs OR ere I NRNCORDS Se Uy STEN reo\n(a ee es ae ee\nReasons for Refusal to Sign {ifany) she NOe eo eOgtnANO MiSSIoNANGBOUN CRnceneects\n3 - Presiding Officer's Comments: at Mi AL Bou ¥ ier ght ee ; SOM See\n' HE PORLING | EXceERCiCE - WAS SOLS A SO) Se AL OD. Palas, eee\na : : RALANDBO . U Sa QBOUNDARIES TEL RAL : aga in oN >.\nSe re ee ce ere Gs ae",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 202,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 202,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 213,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "2 13. Total Number of Rejection Objected to Ballot Papers; JANE OPEB SUDENTE ASeLee Gh nDBOURRAR ES NTELEG Rn miescoMMS",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:07:31.060216Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100402503",
+    "constituency_code": "201",
+    "ward_code": "1004",
+    "polling_centre_code": "025",
+    "stream_no": 3,
+    "stream_key": "201-1004-025-03",
+    "ward_name": "STAB RAS CADENOK04 ECHOS SSIONINO",
+    "polling_centre_name": "SHIANDA PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100402503",
+      "printed/portal ward STAB RAS CADENOK04 ECHOS SSIONINO",
+      "printed/portal centre SHIANDA PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

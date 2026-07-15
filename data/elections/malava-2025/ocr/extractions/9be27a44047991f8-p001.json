@@ -1,0 +1,142 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "9be27a44047991f8-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201210363847143/v1_9be27a440479.pdf",
+  "source_sha256": "9be27a44047991f8ab47e318a37a552cd6675737c0f75baebfe20266017e4e38",
+  "source_filename": "v1_9be27a440479.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/9be27a44047991f8.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1002-099-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.17617142857142856,
+  "text_length": 2495,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MUKOKO PRIMARY SCHOOL POLLING STATION 1 of 1 Code __ 037201100209901\nWard WEST KABRAS Code 1002\nConstituency MALAVA. Code __ 201\nCauatyionwoeP eh. cO ph RARAMEGAC ECTORA—ENDENTELECT OW ne oS ECTORAL ANA NOEPENDENTE: ni WO Oba 7 MBRLANDBO A ENDENTE\nNumber of votes cast in favour of each candidate: ' ARIE\nMaine af Candidate’ SES 2 OF IDEPEND ERIE SC OMS GO DS Wet Bk Walid Votes Olitainedl< 5\\O8 NS WOES SND SENDENTEL pr OM Miseid\n|_ 1. ANGATIA JAMES SHINACHI _ kp 00\n_ [2 JASON SHIVAKALE BRUCE INDE 1 oo]\n3. MANYASI JOAS BURUDI Teg een STS\n“Wr MWANGA EDGAR BUSIEGA |\nE NALWA BENJAMIN | one aeaee aoaaaeer re CE FG\n| 6: NOAKWA DAVID ATHMAN eas aoe sua noma ONCE Ua\n|r OvUGI GEORGE NGAIRA : eee ann carer rc\n__ [8 PANYAKO SETH AMBUSINI eu Y SAS seats ute and Seemann ce Saar ee LF\n=f guile LASSE RCE IHGAL cr enoen Cocco ee ace accra ra\n- [Total number of valid votes cast Tess Ryo SIONINE CRS gh Cate NOB per EROS ONT OR CT RONG A\nPolling StationCounts ' ________ Decision{s} on disputed votesifany S eaicn\n[tT Nunberfepsteed Yates Paling Satins F—— Gg\n2 [ToaNonietdngecettaia Pes onl,\n5: | To Noni of Roece Oped WotalePrs og] [2\n“ Declaration YSSion nen a a n a UNG ENDENTELE WOO ESOS ‘ ES TELE cy ALAN SNS yer\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shoymeleye are true\nand accurate count of the ballots in MAU LO\\VKO LLM PO Polling Station —_ A LBS Re _£ Constitiency.\nPresiding Officer: ALVCE WAEUL AR Signature: VARESAX Date at -Ry Chea,\nFg ALT: WN fee ! i h OY ae AR Al a> : : past 8 ‘SS Seana DE! Rad DAN : iting\n' Deputy Presiding Officer: LESION «Ms NGAZAR ‘Signature: _ Sh + Date Aderd oko 28\nAgents or Candidates lif present) ALANDBOUEPENDENTELES SoM ROL GON NDARIESC OMLEC ORAL ANDES ee i\nfol temstnatewioes han | pve | Wim | moe [om\nnN RS c ON A NOBOUND AMOENTEL ECTON NG ae Run arf SCOtly SLA Ra, ARROW SEO ul SSIONINDE ROOUNDARIESC ane COMED\nOE HESE nNOS Ere SCOMeCTORAy ANDBO NE OR sOecOE’ eM SHON ANDB OUND ARIE SSGRR Cl ae abe ML OE PENDEN AMES COMMISSION NNER BONY\nEe ee ee eee ae\nUI Pi est no nee See on\nUN Reasons for Refusal to Sign {if any) Cop NTELEG TC Is ‘ - ne RALAND CAO Eh re x nse\net Presiding Officer's Comments: ) ged wNiDAREE Om a NDE OEM Lae ganis NINERS NDAR ORO NC!\nOST teen Nesey nd Pd SS\\ON \\SENTYOON. SUccESssFULN\na0 SS RRS RN ey ee RR et E IS BIR aye CNB Oa CTORAL ANG NDEPENDEN A",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 7,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.11,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.11,
+            "score": 0.11,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid AOS cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:02:52.865521Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100209901",
+    "constituency_code": "201",
+    "ward_code": "1002",
+    "polling_centre_code": "099",
+    "stream_no": 1,
+    "stream_key": "201-1002-099-01",
+    "ward_name": "WEST KABRAS",
+    "polling_centre_name": "MUKOKO PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100209901",
+      "printed/portal ward WEST KABRAS",
+      "printed/portal centre MUKOKO PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

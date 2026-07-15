@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "d7d4567444c73c9a-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201065659081097/v1_d7d4567444c7.pdf",
+  "source_sha256": "d7d4567444c73c9ad29225e144eea18f9b8592ce54d61959ab483f4e320dbc43",
+  "source_filename": "v1_d7d4567444c7.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/d7d4567444c73c9a.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1002-008-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2672,
+  "text_preview": "re 2 ee\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MUKONGOLO PRIMARY SCHOOL POLLING STATION 2 of 2 _ Code __037201100200802\nWaeAPENDENTES o¢8 eo WEST KABRASEN Te) 2 SCOmMISSION WORo® PS ONO DENDENTEL EO OMINDEPENDEN ont SO Gaia OE MBBEEC TO n'SSIONINDE\nCans itvendyS? wit. C-MALAVAS COMMIS Oni. CENTELEC TOV ECAC pV 9 OV ent ELECTOR, /ONINDEPENT ACO nth pda ci 6208\nGauityioumne? EN. cO cp RARAMEGAE ECTORA/— SNDENTELES Up OM ie oP ECTORAL AN, NOEPENDENTE ait. WC ome <1 0aT\nNumber of votes cast in favour of each candidate: EPEN,\n| Name of Candidate : No. of Valid Votes Obtained ;\n{ ANGATIA JAMES SHINACHT Serena Ces «Tue\n[2 JASON SHIVAKALE BRUCE oot aoa rRCN Sere er HG,\n3. MANYAS! JOAB BURUDI i\n“MWANGA EDGAR BUSIEGA Sse vent annieaa MRE a\n| [SNALWABENJAMIN, 0D]\n-_ [6 NDAKWA DAVID ATHMAN 2 auoecaioeerrnmacinmenmmerione mt\n_7_ OYUGI GEORGE NGAIRA | OT\nPe PANYAKO SETH AMBUSINI :\n[ 8 TUVEI WILBERFORCE INDAL SS 07]\nfeel aries et Rirscioanor af Sona esata gage once ao Opn\nPolling StationCounts DBOUNPEND RSE - Decision{s} on disputed votesifany =\nTotal Number of Reiter Voters he PoligSatons [SE]\n[a ftaatNanieraReecettalo Pes | OS IIL\n- |B ot Number oRejecien edad otalePaprs | OD | 2\n[S[TosinonbsroNiaveestes; YB ee\nDeclaration Hy NO N S ; ALAN i IOEPEN ENTELEC TSS 0. S30) oh AR Shs , Se eT +\na We, the undersigned, being Brest a et results of the count were announced, do hereby declare that the resultgsoie bove are true -\n_and-accurate count of the ballots in MIveetQobe pRimAD4. Poiting Station _PORLMA fF E CoNgtituency,\n€ Presiding Officer: Bon 138 SLUR DA 4 Signature: @y i Baie et “ALS ARAL\n‘Deputy Presiding officer: SAM wel. VW MA ReHLHA snature: Se, arr i 202\nAgents or Candidates {if present) LANDBOU/EPENDENTELES OM SONA ARIES CORLECTORAL ANDERE SOO aso\n{uP Psiicw Mutton [SAS Rofl ODA ot Th te 9) pO edad\npure Q ; A aoe ase ry Ae Saree, 8\n» | 2. | PaSscat— her Birs +2828 2844 -——— pf = aaa COS enter AWRY 209 2, Were\n13. [Paccat humbma, sarees! Dep fot bo TT mda (ABke Lota.\nRSE Sous SRIESCOMEC TOmay ANDEO expe 0 Mis OP MOR CL Rnag RIES ae NC ep OE PENDEN AN esc ORMDBP) Sg pO\nOK ot coe Sisson Won ARieSd UAOEPENDNOA Rec nea SNORE ONT ECT cob Ml SomnuNOEREN ACO. aie Se\nat OE Rear RU aS Ts Sees NTE aaa ase ACSIA MITRE ae BOND\nSERA tne ear ce Ounnccosete ae Renn hous an OMe ne pen eae OLE a ARAN AP Ehren veh Seer\nReasons for Refusal to Sign (if any) Se aN NOM ENTELEC TOM inet, eee ALAND DEP ELE ON CSS\nt “Presiding Officer's Comments: LECTO x9 Seas ESC uh [0 a Ai = ‘ ‘ ails: ‘ uN ‘\nSS tWE ONO AG PRo CEsé TARAS Soo ttt f Wea e\n. AWD. . IDE Ni ; SANS OC PE ROIS. 4h EA CON ; ONINe ‘ ae Oy €",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 7,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:50:08.466281Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100200802",
+    "constituency_code": "201",
+    "ward_code": "1002",
+    "polling_centre_code": "008",
+    "stream_no": 2,
+    "stream_key": "201-1002-008-02",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "MUKONGOLO PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100200802",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre MUKONGOLO PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "60bb6986835845e7-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201434683835521/v1_60bb69868358.pdf",
+  "source_sha256": "60bb6986835845e728d1e49100d5d1bcca1236f8cd7647feb24dbaf2d6f068b6",
+  "source_filename": "v1_60bb69868358.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/60bb6986835845e7.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P83835521-01",
+  "match_method": "STATION_NAME",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.13737142857142856,
+  "text_length": 2520,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station KUVASALI PRIMARY SCHOOL POLLING STATIONfoff Code __087201100402601\nWard EAST KABRAS Code. __ 1004 ONIN\nComsrsanay SS Suck ALANA c OMISSION) /OENTELEC TORS AO Ceol eWiELECTORa) SONINDEPET CCl ot GOH cL Bie\nCounty _KAKAMEGA Code __037\nNumber of votes cast in favour of each candidate: .\n| Name of Candidate missy\nTL ANGATIA JAMES SHINACH Serna eer RST |\n| 2. JASON SHIVAKALE BRUGE aie Soret roe en\n3. MANYASI JOAB BURUDI Caesar seeianrtanrenctesieTememeed fT\ni, MWANGA EDGAR BUSIEGA }\n5 NALWA BENJAMIN So rue eccnnn cape ae eo aa\n6 NDAKWA DAVID ATHMAN Scarier NSO FS\n[7 OYUGI GEORGE NGAIRA Tease SF ee orenerto ae TR 75\nSOE ery Re Tae Sie tecerecn elaine acorn 73\ng: TUVELWHLBERFORGE INDAL Go ior one fe eee TL\nTeal nunberftsvts ast Seen ater Soe\nPolling Station Counts | RO EEN - Decision{s) on disputed votes if any x NTELE Por f\n[i [ta Nurer of ReyteredVeters nike Paling Slatin; [SE Dall\nYa.| Total Number Rejected Ballot Papers; | OOS Ie Fre\n[a fTaatNonbetafteecion tiated wBatotPaes | OOO [2 NY\n[5 [tstNunbeiaillastek ORS BRM [EN\nDeclaration — $si0} ENDEC ON bi RIN-ANDBOU EA beck ee ee .DA Ge woedoe Noe rr 510}\nWe, the undersigned, being present when the results of the count weréa Roureg , do hereby declare that the results shown above are true.\nand accurate count of the ballots inKUNASACA PRIMARY AQUSP Rois) Station \\ MALANA Constituency.\n_. Presiding Officer: FLORENCE ACHUEN NDARIES: Signature: = RIMS 4 =, Dateg atl 202.\n“Deputy Presiding Officer: DENUS f USAVALL MAINE. Signature: Lf, op Bed D Wi - 2628\n__ Agents or Candidates (if present) (OBOUN, ENDEN Py UNDA’ NF ICEe,.\n[i] Ritmo [hin | PrNontas cise | cant See [oa\nTa eeistew WAITY- [zecgzze2| DCR ouretge| EE) piii-20u\nPalpemeccA MIRANDA egzicool Una pte tetoma(| Bay br-tetads\nPa VICTOR MULONGD _ Hoee9Se6] KEniA MOSA ——— prenpaazts|o 222\nSS eee IRS eet a tanec RUE\nNF ea G En isl ONBOE pe CUNDARIESS en. neon ufePENDENTE] a SCOMMMSSION We SEDO Our ELEC ORAL ABGMINDEPEN CONG oO\nMary «ac oebegse PENDENT ESCOMMISSIG GUNN ED pO fr ELECTORA] s STONINDEPENDE OM Src Gunl ANDBOL Na ADENTELPSLANRON <.0%4\nssi Pare o8 Oy wre EC Tom SSioniNDEg ecco Gok SE RAL ANDOU Cg” ENDENTELEGON OP CSO UNDARIESC ou ECTORALANL OE ae RSENS\nReasons for Refusal to Sign (if any) } eg ENTE i WNDEP Ses x .\nPresiding Officer's Comments: sR ; “ NIA ‘\nHE Netin® peetod was soot NOBOUN Ni = ‘\n“Pip NAME, ERORENCE ACRTENG Ry ZIRE 8 Nien A\nOpo NAME: DENIS NIASINDE ADO AM 20as NN",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.39999999999999997,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.39999999999999997,
+            "score": 0.39999999999999997,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": "anchored-cell-ocr anchored by '2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:15:07.649283Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "EAST KABRAS",
+    "polling_centre_name": "KUVASALI PRIMARY SCHOOL POLLING STATIONFOFF",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward EAST KABRAS",
+      "printed/portal centre KUVASALI PRIMARY SCHOOL POLLING STATIONFOFF"
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "be0653c983436a29-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201503609233353/v1_be0653c98343.pdf",
+  "source_sha256": "be0653c983436a2900ee88bcb128d044b361d9937d4e61f4d47d66a2bf7cfb23",
+  "source_filename": "v1_be0653c98343.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/be0653c983436a29.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1003-018-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.17617142857142856,
+  "text_length": 2614,
+  "text_preview": "D1 ae\nEh\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station SHIVIKHWA PRIMARY SCHOOL POLLING STATION Tof2 Re _037201100301801\nWard? CNDENTE 08 3¢ cweRii ete NDENTE/ ¢ -SCOMMISSION WOEO™ PON cDENDENTEL Ee > MINDEPENDES oh, CORB ne WN-ECT on SSIONINDE\nCans ataency SA oc PERO COMMISSIO) DENTELECTON. AC pS ACO eu TELECTOR4/ SIONINDEPENCE.COW@) igi cy ETORAL a OVINDEPENI\nBalibpg onnsDEPENS COPD IURAMEER, ECTOR A/G ENDENTELECI NR ITC AR CTORALALN NOL pp NTENTEL SiS OIG RON MRRL ANDR CE PEN Non\n__ Number of votes cast in favour of each candidate: '\n| Name of Candidate TN. of Valid Votes Obtained\n| 4. ANGATIA JAMES SHINACHI aeRO NMS\n2. JASON SHIVAKALE BRUCE DEPEND 3 ORS el ce tren asap euDeN ole etal aaa nee\n3. MANYASIJOAS BURUDL\ni. MWANGA EDGAR BUSIEGA Seer guano caer\n/ | 5. NALWA BENJAMIN, [|\n[6 NDAKWA DAVID ATHMAN pi etic a eoe omrasro nro N ene ere SONATE AHN\n[7 OYUGI GEORGE NGAIRA _ ni pre\n_ [8 PANYAKOSETHAMBUSING a\n| 9. TUVEI WILBERFORCE INDAI 0 e|\niced inertness Goes as\nPolling Station Counts Me NDBOUM, ENON Mes Ect : Decision{s} on disputed votes if any UNE Rea geOLENTELECTOR,\nSie ee ren ee eee ae\n‘|aftoatnunbsraReecetnaie Paes: gif,\n_ [S| Toatnunbesftosin doped ttstatPpes | 000] [2\ncr Se\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\n‘and accurate count of the ballots in GUANIKN NR Polling Station __\\V\\ ALLAN RO @omstituency.\n; Presiding Officer: CARLES S\\SEUNA aiesco™ soleeeg meer a sh = We 202!\nNee CAND 2 ANI re ee t Rize N TELE ane ar piece fe. ~ rt\n- Deputy Presiding Officer: CACO S$: ZAKAYD Signature: “path 22 Yih Beak\n: \" a , , IONINDEP' : } IE} C PRS aR\nx0 a sO NDARIES ae f - { ot , i y eeey {DEPER COMM OF ar Sa alee J\n_ Agents or Candidates (ifpresent) = CORALANDBOU yD! LEC ON WS: ECTORALBNDE ES MISSI\nLET Kew awry | Sivegend TO ep. fognesaal AM bene\nLST EN alae Anya loa rl] UB A bepaemaur epee) ola lad\nLA TEINN MuUnaridi 1239 gauge OAM) Ingeg@maed Murata sy 2\n< ANDBOLUE '\nnieSet a a ee\nSS £5 iat tuo Ot RM Ne? ceneOE See e CaE ee\nBOS oe ENTELECTOR A SSIONINDEG GOON gS aie RAL ANDEOL DE PENDENTELE SION NOP. ZCION NDARIEGC CSL ECTORAL NCO E SCO\n” ‘Reasons for Refusal to Sign {if any) PAINS aigeOeN. yokes EL i 30 NO é J NDB Nic ; 1 SSO en\n_ Presiding Officer’sComments: ON MISSIONINNEP' EWDeNrELt Sor\nBARRE, ho SIE SIN rm Aen Aaa es Ae SER, SA SECON PST a aE a\nH Woe See toy ear Uae ex 3 Ng aay ee naan, Ws ae OND EpENDEN ene eoe oe\nPERC DREWEG OF LEER TOG Z AKA 8 i Se\nf Gr Ke ER ‘ CYS tors Ya (Re NOS Se) ae ; &F cae ot ; ste oe.",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.15,
+            "score": 0.15,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 8,
+        "confidence": 0.11,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.11,
+            "score": 0.11,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN’'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEL WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'Total ileal c valid NOTES cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:18:58.000772Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100301801",
+    "constituency_code": "201",
+    "ward_code": "1003",
+    "polling_centre_code": "018",
+    "stream_no": 1,
+    "stream_key": "201-1003-018-01",
+    "ward_name": null,
+    "polling_centre_name": "SHIVIKHWA PRIMARY SCHOOL TOF2 RE _037201100301801",
+    "confidence": 0.93,
+    "evidence": [
+      "printed station code 037201100301801",
+      "printed/portal centre SHIVIKHWA PRIMARY SCHOOL TOF2 RE _037201100301801"
+    ],
+    "applied_to_register": true
+  }
+}

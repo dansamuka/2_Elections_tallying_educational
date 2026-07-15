@@ -1,0 +1,142 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "2fa30c4343041362-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201635926319314/v1_2fa30c434304.pdf",
+  "source_sha256": "2fa30c4343041362062a242897d818c3857feba2b2ec19a65d71be1d907bb69a",
+  "source_filename": "v1_2fa30c434304.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/2fa30c4343041362.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1008-083-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24479999999999996,
+  "text_length": 2816,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station CHEVOSO PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100808302\nWat APENDEN TE 0€° C2 ROUT RABRAS NTE: 5 -SCOmmMISSIO® iO 08 Put cpENDENTELE CT NINDEPENDE oh oo Bedgno WB Cron SSIONINDE\nGaarSGtuencyS =o C PRRAVR COMMIS SIOy), PENTELECTON ECAC AC GON cNTELECTOR 4) TONINDEPEN 2600 ot gil e | CANIORAL Ay, INDEPEN\nCounty KAKAMEGA _ Code 1 WORLANDEG 7 ENDENT!\nNumber of votes cast in favour of each candidate: ' TEAR\n| ‘Namne of Candidate 00S noe ene cous DS No) OF Valid Votes Obtained <5) 08 OOO issih\n“1. ANGATIA JAMES SHINACHI £60/-———$ 900 |\n2. JASON SHIVAKALE BRUCE S/OnINDEPEN RELL teamed recee ror Lammenmrenees pet teeeron ae OP GSE)\n3. MANYASI JOAB BURUDI 900, ——— 00 7 |\n4. MWANGAEDGARBUSIEGA ON] = oc ft |\nnL AROGOUNA AAU EEE BRIAR Cx 0 pniDSOUND AR TEL EC TORS & tes potas bent ormcm ne Sip beter oe SMM OYE\n_ [6 NDAKWA DAVID ATHMAN 063) —— ———______________9¢3|\n| 7. OYUGIGEORGENGAIRA 0. 2f_ 0 2\n| 8 PANYAKO SETH AMBUSINI 20) 0)\n[9 TUVEIWILBERFORCEINDAL OF\nTotal number of valid votes cast £02\n- PollingStationCounts = Sss~S™S™™SCCS Ce cisionts} on disputed votes if any ELECTORAL\n[| Tol umber Registered Vtersn te Paling ton; [5 2] [Sotnmbw bata Pei wn apache] Nanette side oe]\n| 2:| Total Number of Rejected Ballot Papersy Je OOO} te\n{3 TaalNunberofRoecin iced obalotPnas | 0G0} 2\n‘[5.| Total Number of Valid VotesCast, Pel BS. pais BONN Dene OUNGARIES aCe eae ONDER EMAL\nWe, the undersigned, being present when the results of the count were anMgunce dO@exe by declare that the results shown above are true —\nand accurate count of the ballots in C:HEVOSQO PRimACyY Poltiag Station NV ALAVA _ _ Constituency. -\nshoe. “OMI re ceryan » Ow ae ; een NTE = f BOL Oe lac apa Age ¢\n\"Presiding Officer: ESSE hycHery SHIVACH/ signorure: Me Date 2720-205\n‘Deputy Presiding Officer: JOANNE _ SBAKAKHA Signature: _Ghetkdte> bate _21-1i-2D95\nAgents or Candidates (if present) co CON ALANDEOU, EN vEC TAN part ARI LEC TO; ty aw .\nShit ee sae tee BAO ico eloomealal Heke ayy ta\n-2jStika LuMonte [o1ss7#2 | VDA ois 32270) > — [pahilanos\n- [alSimon — Monsmulaween Gl KasA MOTA OF 7m] Soeulon |eHunee\nCECE on IESCOMeCTOnat ANDO Nas) aah SS/ON Tes OB OL unARIES APSE SAPS AO EPENDEN ESC OUMISS NN Pea DRONE HT\nee ee Se eee\neg ee eee eee\nSSI Gees Oe NTELEC Ont SSIONINDEY eMac gen FORA ANOBOL A EPENDENTELE CON OPES NUNDARIES CO ECTORAL ANE Tt poe\ni 2p OED iF % ’ a iDé 4 : * roel ; tpn } t Ari x\na Reasons for Refusal to Sign {if any) [\\ER 1 2M 1OET ait 5 DBO UY, EPENDENTEX gO\n-Hioaling SIEM CHIR corte ors co arcnsb eras ee aah un Ee\n; So pice EEA 8 BON “PelLun ENR ON 7M Wa SOENTEL eS OMMisear MIND? eo ORN\nspeneuesaot ex Gunes p unoanpenretE Srona Secon settce csc omg ORAt agBouNotS ce sapL Pe Mae On oantese oe Ne",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 3,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 22,
+            "confidence": 0.21,
+            "score": 0.21,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": "full-page-text anchored by 'Total number of valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:28:59.224587Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100808302",
+    "constituency_code": "201",
+    "ward_code": "1008",
+    "polling_centre_code": "083",
+    "stream_no": 2,
+    "stream_key": "201-1008-083-02",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "CHEVOSO PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100808302",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre CHEVOSO PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

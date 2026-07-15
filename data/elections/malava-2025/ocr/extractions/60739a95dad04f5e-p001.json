@@ -1,0 +1,172 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "60739a95dad04f5e-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201153761891114/v1_60739a95dad0.pdf",
+  "source_sha256": "60739a95dad04f5e0a306553f5f49b7dec6cb0d44e5c4a3edfad3816de524d5f",
+  "source_filename": "v1_60739a95dad0.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/60739a95dad04f5e.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P61891114-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.5780571428571428,
+  "text_length": 2246,
+  "text_preview": "31929 a\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTIO rite La] a\nAT THE POLLING STATION N RESULTS\nName of Polling Station MATIOLI PRIMARY SCHOOL POLLING STATION 2 of 2\nSTAR CNESUED To ESC a siONN PEO AOR > ARTE Se Ores PENDEN TES EN\nNO Sar COS pata eee oe DS SE NEN La OMe pe eS RO\nConstituency : Bags ocioms\nNumber of votes cast in favour of each candidate: Code __ 037\nN i |\n14. ANGATIA JAMES SHINACHI 0. Of Valid Votes Obtained\n_2. JASON SHIVAKALE BRUCE Saeco reer CL ;\n3. MANYAS! JOAB BURUDI . er reca a roereneel nl sheet set Ono p)\n4. MWANGA EDGAR BUSIEGA . ‘O\n5. NALWA BENJAMIN. —=6\n~ 16. NDAKWA DAVID ATHMAN Sra ate ieee agree\n“7. OYUGI GEORGE NGAIRA | OD)\n[8 PANYAKO SETH AMBUSINI 7 7\n19. TUVEI WILBERFORCE INDAI SOO\n[Total number of valid votes cast. VE 7 — —$——\nPolling Station Counts ASSN CONANDEO 3 DL,\n[i [Tot umber t epee te Pang Sti, Eg] [ators ees Hany ;\n{1.] Total Number of Registered Voters in the Polling Station, ae Te Seiat Murber oo puted votes if any x A\n[2] Total Number of Rejected Ballot Papers; b-—~— 602) Peper i) with cispited vote] Name of Candiaate x\n[3. | Total Number of Rejection Objected to Ballot Papers; |} ary] SESS aaa Le “Signed the vote\nTotal Number of Disputed Votes; nN 0] Lo ee Gee A\n|B: [eit of al es as ee\nDeclaration pen x INSPEN tf Hee 10! NOL DARE\n_ We, the undersigned, being present when the results of the count were a IS MISS SEE SOU\nand accurate count of the ballots in ATID Pp iPARS e Tim. do hereby declare that the results Shows ei\norsep \" ELECTS A MEBS{OWND eeonre ut e. fon AL A An Shove are tr\nPressing orien: SARAH IMIS Ae BON Pemtengy\n: Deputy Presiding Officer: DI LE INSANE ISA4A pcs $$ Date 2T~1)~24\n_ Agents or Candidates [if present) oF\" ORAL YARVDEN net 27-11-20;\nLALAFULA Chess aT ED ie Wee soe 200} as\n| 5 ae gt a Oni leone ee ee Seon f\noe ee ee ee eee\n£5 eee a sempre Ne Mees ce\n: CS\nRBs ee cere scioe socunoe = See eee See me 7\nReasons for Refusal to Sign (if any) mo — ENS Be coe\nPresiding Officer's Comments: Rete PI SEPENDENTEL ec ips oSRNS Sore\nOG MOO ARIESCOmE SC AAG Td : ARTA AG eT Wy ECON <i\nWELL AT 06 nag PRE Nc} OS OOHRS AND ENDen\niOUN NAME A) canines D= SARAK cSiMigy POR FICES a i ORI oF\nUSS . MISSION IN PSIEE RO NG TELEC TOR AR OM Soe DENTE SABES ON cams ! itt",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 16,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 16,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 77,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 77,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 19,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 19,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 602,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 602,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 7,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 4,
+            "confidence": 0.009999999999999998,
+            "score": 0.009999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 609,
+        "confidence": 0.5903999999999999,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": 0,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN -'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": "full-page-text anchored by 'Total Number of Registered Voters in the'",
+      "rejected": "full-page-text anchored by 'Total Number of Rejected Ballot Papers;'",
+      "total_valid": "full-page-text anchored by 'Total number of valid votes cast'",
+      "total_cast": "derived: total_valid (7) + rejected (602)",
+      "rejection_objections": "[3. | Total Number of Rejection Objected to Ballot Papers; |} ary] SESS aaa Le “Signed the vote",
+      "disputed_votes": "Total Number of Disputed Votes; nN 0] Lo ee Gee A"
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "OCR_BENCHMARK_REVIEW",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:57:45.461644Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "MATIOLI PRIMARY SCHOOL STAR CNESUED TO ESC A SIONN PEO AOR > ARTE SE ORES PENDEN TES EN NO SAR COS PATA EEE OE DS SE NEN LA OME PE ES RO",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre MATIOLI PRIMARY SCHOOL STAR CNESUED TO ESC A SIONN PEO AOR > ARTE SE ORES PENDEN TES EN NO SAR COS PATA EEE OE DS SE NEN LA OME PE ES RO"
+    ]
+  }
+}

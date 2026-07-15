@@ -1,0 +1,115 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "0f722792c54599e1-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201547782866075/v1_0f722792c545.pdf",
+  "source_sha256": "0f722792c54599e188810879980d816f8e4cd1452360cb9cd8330c26740292f0",
+  "source_filename": "v1_0f722792c545.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/0f722792c54599e1.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1006-057-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2694,
+  "text_preview": "34.S67\neee ee\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION |\nName of Polling Station MATETE PRIMARY SCHOOL POLLING STATION 1 of 3 Code __037201100605701\nWardPENbint®. int cM ANDASHIIANGAT Ee: SO COMMISSION yo\" Dea cpENDENTEL EOS MINDEPENDE Soh, Cem Bgdaypet0e-EC Ton SSIONINDE\nCais Gruceay SS iC MALAVAL COMMISSION ACENTELLEC TON ccN@ p00 Cn TELECTOR 4) SIONINDEPENY ACO Ke gd ci t20t\nCounty IBN DEP EE gC PARAM ORCL ECTORA/ 2 ENDENTELEC CON ph oe oP ECTORAL ANN SOEPENDENT Santas Code __037\nNumber of votes cast in favour of each candidate:\n| Name of Candidate | No. of Valid Votes Obtained fmaissi\n_1. ANGATIA JAMES SHINACH! eee errecec pitiscrommuetateeese sore orored SOM\n| 2. JASON SHIVAKALE BRUCE OEE COPS uO ECT ORS ON aemen DEN au, BCS Slee ARN Oh ea\n3. MANYASI JOAB BURUDI pete eT 9\n[A MWANGAEDGARBUSIEGA SESS cea ocean 7,7\n\"5. NALWA BENJAMIN | [a ema,\n6 NDAKWA DAVID ATHMAN (Sea cara atone oe en\n[-7 OYUGIGEORGENGAIRA\ngs PA ARD Ser AMBUISINT sss S00 Urn nese ye eeeepeenense es ee\n{gel WRLDEREDRCE INGAL coer crokc Sonncsoe pee erotic\nTotal number of vaid votes cast .\nPolling Station Counts _ Cetoe SMMISSIONINDEDe “Decision{s) on disputed votesifany =\n[i ol Nunberfepistered Vater Pang Staton; 1] Gf] }\nToa\\NunberatReecettale Pes OD [te\n|| Tost nunber a econ Od tobaltPapwrs QOD | [2\n‘|e [TootnanbsraOepaeies: DDI [8\nBm Sr a i See He\nDeclaration PEN ioe x3 DBC NE PENDE} FELECTOUNTON cs0NN of HES L ; oat\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown a Do Je are true _\nand accurate count of the ballots in T7ATECK PRIMARY Sctinol. Polling Station Ol NOADANA. Cénstituency.\nSE NTEL ELS OMagtea rai OME OE DENTE Ase Coes ailleS agua “ PRL -co:\nPresiding Officer: EDI KAVA WANT AAA Signature: we Date {> Ske 02 ‘ae\nDeputy Presiding Officer: LUSTING KHAKAL) SOTA Santa Ne A ANOMMOET ENE DANS AOASy\n_ Agents or Candidates {if present) ‘ COM NL ANDBOU DEEN vel SONS ONNDARIESCOMLECTO peti\nia] nani [tein | Reva caiae | Wee | same [oo]\n(Grace ws Werte bani | Ile Boggle 5 [a ylos\nP2HDEL hi Pitomip (e22sakée! UDA lerse qe) Ss le ihe\n~ [a Race Ar Miter ReCcege | DA bbe |G Ba pod\na es ne\n| Sa SS ee eee ee\nrr ee ae\nESC ADEA. oS <O8 ue ENDEN 727 <SCOUNISSI PS OUI C G90 fire ECTORA |g SIONINDEPENDE CON ogee oanl ANDBOLNg A NDENTELEC SORRNON 6 cso)\nNS AEUL eo ENTELECTORgY/SSiONINDEY ENESCO WIS AES RAL ANDBOU WS PENDENTELEG ON OPES UND ARIE RCO LECTORALANO NOE SO RR\nReasons for Refusal to Sign (if any) : SS HANDE SE See he aieSS ENDENTE mS\nPresiding Officer's Comments: _ f Cron yuh = . Dect\nEN SN ast TN: si obs iat AS sete NOB NERC UP scone eo EST oRN.\na yA Soa NDARIESCOM : ' at",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 22,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 22,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:21:34.737269Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100605701",
+    "constituency_code": "201",
+    "ward_code": "1006",
+    "polling_centre_code": "057",
+    "stream_no": 1,
+    "stream_key": "201-1006-057-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "MATETE PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100605701",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre MATETE PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

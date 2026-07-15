@@ -1,0 +1,115 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "bde0251e541bd8c5-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201860338211669/v1_bde0251e541b.pdf",
+  "source_sha256": "bde0251e541bd8c55f9bb23a40a45b624220cff77713f33cb534715a36b11bb5",
+  "source_filename": "v1_bde0251e541b.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/bde0251e541bd8c5.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1004-034-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2833,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station CHESERO PRIMARY SCHOOL POLLING STATION 1 of 1 Code __037201100403401\nWiaeaPENDENTES oe ct EAST RABRABDEN TE --SCOmMISSION uO\" 0% paul cpENDENTEL ECS AINDEPEND™ woh Co Began fies STO. SONINDE\nGesupennanscig'S uC MAL ANB. COMMISSION PENTEL ECTON EKO WeaC AOU cut ELECTORa, | /ONINDEPEN e007 ce Ni ci AMOR ALAN. NOE PENS\nCounty KAKAMEGA Code __037\nNumber of votes cast in favour of each candidate:\n[Name ofCandidate | No f Vall Votes Obtained NTE\n_[4. ANGATIA JAMES SHINACHI , {O00 Sncaeraacaan srvscunasers emma ecurraaeeee ne\n2. JASON SHIVAKALE BRUCE\n3. MANYAS! JOAB BURUD! my Sareea Lanenersase Paucaaaaamrriceetacmenesereasnereerea! oie\n4. MWANGA EDGAR BUSIEGA UASNDEN SAI AS eeINRALAT SSMSRSAR NTRS RCRA 8\n[76 NALWA BENJAMIN. Af setgronticcecp ronment enue mae rie memes\n| 8. NDAKWA DAVID ATHMAN 3\n| 7 OYUGI GEORGE NGAIRA AMISSION SoS oO aint ys va aT ONEARET na GRANTS UNREST CLO\n[a PANYAKO SETH AMBUSINI SS eso\n@. TUVEI WILBERFORCE INDAL\nTotal number of valid votes cast CT OR ZORRO SANT RESET SESSA oe\nPolli gStation Counts SS OEP Ey DNOARIESS : Decision{s} on disputed votesifany = eNTeL! :\n[Pol Naber fReisterdVatesin he Paling Stary [————G@ [Ep] Sembee apr win ati | None ied ee\nSpal Rast BAN pe Soe ape NU oe ee ee ALAND ge ld etna Oooo UNNST\nSES ra anc Wc ht TORT emp fe ooo mocewe tC Pome SY\nDeclaration = DEPENDS Bete ALAN DUN GPENDENTELEC OK oni ESeCae LANDB COE SMU NN WOE ON\nWe, the undersigned, being present when the results of the count were at OUNCSd, do hereby declare that the results shown above are true\nand accurate count of the ballots in CHESERO PRIMARY ScHop Poli g station MALAYA Constituency.\npresiding otfcer: TOHN WACHIVA fcc RE oe ate ATEI-ROLS\nDeputy Presiding Officer; KE JIM TOL) gpercsem SS SSeS Hm arnt eae ary ae en ae\nAgents or Candidates {if present) UANDBOUEPENDENTELE ER OnKECTORALANO® OES A NURDED OM\n{a Bieiga NS bombil Zeca Bmw Ore senh eee Paria\n2 AerTony Mmucwien (atgeqay! Dh Ao loa gctiuge <tr lala\nOTSA Cares Wace lou resi6g | DAP Ko Spr Saat lesa Bl fasy:\nlh era aqeneu Gaseesl pep. Yearaew) Qe Ra Jaa\nSS eee ee ee a eee |\nRo AON aN DENT E89 GON BONE Sed cle Caan MND pe er nTes Scoop Seo\nsob oPY ir noSOUNDA IES CEL ECTORA gre Sea neh Ca at Ot ea TEL CLO ER SS Naa REN er gen Ure eNO\nSS ee EE Gaal ee\nteSOTIDP GCA OR perERDEN TE ESCOMMIESY QUST Co GONETELECTORAL CTONINDEPENDS COM pL Aue 9° nyaAL ANOS OLN 4 ADENTELEUSEMMRO! Se OOBN\nSof eee re LEC TOR M/SSionINDEYN cCOR IS AEP mal ANDBOL/VEPENDEN TELECON WO. G80 A UNDARIESCOgLECTORALANGAOP NS Past,\nReasons for Refusal to Sign (if any) KS 3 EScoRh : Ane et i\nPresiding Officer's Comments: Soetsy = . ; AnDES E> i DEReOUNt ees se\nltt ‘saerts RING AND COUNTING PROCEDURES cox PhLAa@rs~\n7 BO LTOATN ae WACMITA 27-|[- 2025 | Pmesiona]",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 3,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:45:35.534523Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100403401",
+    "constituency_code": "201",
+    "ward_code": "1004",
+    "polling_centre_code": "034",
+    "stream_no": 1,
+    "stream_key": "201-1004-034-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "CHESERO PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100403401",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre CHESERO PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

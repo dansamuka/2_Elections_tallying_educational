@@ -1,0 +1,147 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "1e3d116eaaf2d22b-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201564345520783/v1_1e3d116eaaf2.pdf",
+  "source_sha256": "1e3d116eaaf2d22b278718e5c32e4eb054b23cdee137b3369785750c9072f2be",
+  "source_filename": "v1_1e3d116eaaf2.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/1e3d116eaaf2d22b.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1006-055-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.29028571428571426,
+  "text_length": 2393,
+  "text_preview": "So = moe\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station LURALE PRIMARY SCHOOL POLLING STATION1of2-0 Cade 037201100605501\nWard MANDA-SHIVANGA Code 1006\nMagis ftueney S.C UE ANEc OMMISSIOn DENTEL ECTON NON a0 OU Cu TELECTOR A) SIONINDEPEND COCO) igi) QDIORAL 4 ONIN EDEN\nCounty KAKAMEGA Cade (Hah NDB PENDENT\nNumber of votes cast in favour of each candidate: , :\n[Name of Candidate ' No. of Valid Votes Obtained\n1. ANGATIA JAMES SHINACHI\n_2. JASON SHIVAKALE BRUCE. |\n3, MANYASI JOAB BURUD! RAL An {—— 000\n[4 MWANGAEDGAR BUSIEGA O00\n8. NALWA BENJAMIN. B0U 7 en |\n6. NDAKWA DAVID ATHMAN ts ee eeeeereeeeee ee OF\n|_7 OYUGIGEORGENGAIRA O02 |\n- [8 PANYAKOSETHAMBUSINI $$$ 1 20 |\n_ [9 TUVEIWILBERFORCEINDAL ——— 07 |\n[Total number of valid votes cast i FA Soreasueccanmerer ssc repeeertaLamrccsoeraarsen othe ag\nPolling Station Counts WENDBOUNS SND Eur EC TO Decisions) on disputed votes if any OU o eco panel .\n[1 [oat unr tRegtred Verne Paling Seton, [SS] | Sete aa ewes] Nantes os]\n[2 | Total Number of Rejected Ballot Papers; OM fi\n[Toa unisatRoscion ied toietPapes | [2\n~[4.| Total Number of Disputed Votes; ie YR he eS ARIESCOMIMIE ORAL ANDBOUN ELGG Ne SSIONINDE\noi a ies\nDeclaration DEPE eco reraese BOUN SPEND! NNROR ES OM INDARIES Cat E vA BROS ON Poe N EC OMISSION\n_ We, the undersigned, being ERS SRS eee of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballotsin KURALE PRINIART PolamerStasion NV AAAS Constituency.\n- Presiding Officer: EDITH RATCLEAE — NIGAOANGARY googie, ‘Bo ae Date RP —I]!-2 O26\n‘Deputy Presiding Officer: G{_OR LE KULIMU MUBALUA @ teieniy oes Rectaktre date 27 — 11-202\nOP ESO TORALAN Seen’ ANISSIONIA, : OFFiceRJ a Oe |\n_ Agents or Candidates (if present) Oe eke ORALANDB OL) EN eS ents OUND tic ORALA NE ALAN!\n[Sierkee kK Clesont lastsegz4l BAP KK lasrsqaal i bite\nSen Re Soh i sONNOEDeCUNDARIESS Ban) x xe Oud cP NDENTE/ ge SCOMMISSION NON SAPO EC ONAL a ONINDEPSAOL OMY ees\nSBOP OENTELEC Ona SSIONINDEP Sr CO nda? Ge Sf unl ANDBOLEPENDENTELECION OP. CONUNDARIEECCLECTORAL ANOS OE SRO\niN Reasons for Refusal to Sign {if any) oe ; \\TEL MISSiONIN RA NOBONOEPE 1 RN\n\"Presiding Officer’s Comments: | TELECTONWOS VAC uN th ‘ ets, : oN Woe OUN xo\nELECT PEE OW in ART, LANDES ROCESS. LIAS SO CCEIF Fuk +» rN\nI Sa ei Oe ain re aur eoapan > eeonceeeceney oN he",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.18,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.18,
+            "score": 0.18,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 7,
+        "confidence": 0.35,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.35,
+            "score": 0.35,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 9,
+        "confidence": 0.35,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": 4,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": "anchored-cell-ocr anchored by '1. | Total Number of Registered Voters in the Paling Station;'",
+      "rejected": "full-page-text anchored by '2. | Total | Number of Rejected Ballot Papers;'",
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid votes cast'",
+      "total_cast": "derived: total_valid (7) + rejected (2)",
+      "rejection_objections": null,
+      "disputed_votes": "~[4.| Total Number of Disputed Votes; ie YR he eS ARIESCOMIMIE ORAL ANDBOUN ELGG Ne SSIONINDE"
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:23:45.417017Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100605501",
+    "constituency_code": "201",
+    "ward_code": "1006",
+    "polling_centre_code": "055",
+    "stream_no": 1,
+    "stream_key": "201-1006-055-01",
+    "ward_name": "MANDA-SHIVANGA",
+    "polling_centre_name": "LURALE PRIMARY SCHOOL POLLING STATION1OF2-CADE 037201100605501",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100605501",
+      "printed/portal ward MANDA-SHIVANGA",
+      "printed/portal centre LURALE PRIMARY SCHOOL POLLING STATION1OF2-CADE 037201100605501"
+    ],
+    "applied_to_register": true
+  }
+}

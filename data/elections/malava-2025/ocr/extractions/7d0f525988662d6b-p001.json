@@ -1,0 +1,135 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "7d0f525988662d6b-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201615707038855/v1_7d0f52598866.pdf",
+  "source_sha256": "7d0f525988662d6b651ad31eec874b63b74e9a489772e2703930e5f90ff11822",
+  "source_filename": "v1_7d0f52598866.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/7d0f525988662d6b.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1003-020-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2871,
+  "text_preview": "ee ae ee cee ean\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MACHE PRIMARY SCHOOL POLLING STATION1of200 Rode __037201100302001\nWard? ENDENT ES 9}. eC HEMUCHENDENTE) ¢-SCOMMISSIO®, 00\", Bat cP ENDENTELE Rn MINDEPENDE | OPS Se? Gade nD ENOaS.\ncee Gen ervays Sw CCAM, COMMISSION .PENTELECTO' oc\" eae OU eNTELECTORA/ S/ONINDEPENT <cO ne) igi ci eat\nGa diitgioninoEP ET .cOl yt RARAMEGAL ECTORA) 4 ENDENTELEC COW pot oh 2s ECTORAL Ain SOEPENDENTE st SOO hGe <7 hee\nNumber of votes cast in favour of each candidate: ; pis\n[Name of Candidate _ | No. of Valid Votes Obtained “yy\n\"1. ANGATIA JAMES SHINACHI tes oe a ono eT oe\n2. JASON SHIVAKALE BRUCE RSS SEgTELECTUTOAr a PUDEPERO CON ont cron (Rat\n[3 MANVASIJOAB BURUDI OOF\ni MWANGAEDGAR BUSIEGA —— ad\naL AOSD AEA EEA SSNA =\n6_ NDAKWA DAVID ATHMAN ae as eactrenmerreeeee H!\n/_ OYUG! GEORGENGAIRA _\n“Te PANYAKO SETH AMBUSIN 00 ea\nSqn WRBERESECE NDA eon oss Ge cee nae ccleaner ace\nee en eR pO eerie 9\nPolling Station Counts Soe Decision{s) on disputed votes if any Rats ENTELECT Rat\n~ [x [Tota Number tested Vaersin the Pong Satin; | __F}Q]) | Saline wiht e | Nanak sid ook]\nToa\\NonberotReecetBale Paes | OOM A\n[3 Tos Nunbeo Rein tes aston | OOK) perme eg Onn sao ess\n[f [Tosttonierotvaidtoescas Ae\nDeclaration — ONINDEPE Ne ae LAN BOURSPENDE r ne ae NU NDARIESC ELECTORAL ANDES Sn NOE ant\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\n~ and accurate count of the ballots in ACHE PRIMARY SCHOOL. Polling Station MALAVA Constituency. -\npresiding Officer: DIANA NEKESA MUKITE signature: Po Djte 24- +2025\n‘Deputy Presiding Officer: MELVIN SACAKAH _ 1 Signatures. fee 9 oie, U+~2025\nCET» = git i Sie aida AN : ve Se SAMISS WiReAN SOLINDAR! oe ‘ PENDEW tF Se ay sept Cs SUN\nAgents or Candidates (ifpresent) = NE ENDENT WNOE Ne FIC Ee es Oe\ni] te tense [Rai | Pacha cae | oat | Se [ |\nHUIDAVID. TeimwonTeLA [2 9e6es2al wien peuoceane AMIARBoTeGsTG | we brazen\n[2 TOSEPH WELABUNUKA [26248433 DeMoceRTic ACIOP PARTY |OTI28023]6| EEO 7. 41-2025)\nPS MESHACK TSIMWO NTELAIG876 90 | DewOcRATIC FoR THE CITIZ® Aely 0126805816, Mv (27-11-2024\nRae GUN ON ais COUN SSROPOM re EG Min cl onmuneP Ne ae OF RNES Onl an NgeoecUNN TELE OO Css\nee oe\nSCNT «GSO ane rENDEN TE ESCOMMTISSIGN GUNG ou aesoO™ frELECTORAC 3 SONINDEPENDEC ON deo ant ANOBOPNRENDENTELECT SRN AONE\nPO Sa Caoe PENTEL ECT nay SsioninDeencst geo nkt ANDBOUyS SENDENTEL ESOT SOP. G6) Qo INOARIES Cog CTORAL ANAC RSD\nReasons for Refusal to Sign (if any) aS ORC EEN sTELEC TOM ONINDERS eS e CE. at 2A NDE BEND OKs\n: - presiding Officer's Comments: of , i RALANE ae ¥ SMMISSION 8a .\nTHEee Were No RETECTED VOTES IN Y Anan\nININ sf e ¥ - “ “ f OUN - c ie se zal :s RA we ¥ 3 oe LG RO GEDING 4 2 .\nP20 BIANA NEKESA, MOM TE BRR Oo TAS LOUS tice",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 2,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "anchored-cell-ocr anchored by '‘TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:27:30.282578Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100302001",
+    "constituency_code": "201",
+    "ward_code": "1003",
+    "polling_centre_code": "020",
+    "stream_no": 1,
+    "stream_key": "201-1003-020-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "MACHE PRIMARY SCHOOL POLLING STATION1OF200 RODE __037201100302001",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100302001",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre MACHE PRIMARY SCHOOL POLLING STATION1OF200 RODE __037201100302001"
+    ],
+    "applied_to_register": true
+  }
+}

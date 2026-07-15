@@ -1,0 +1,122 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "da73e7e3f79e93e0-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201677549349855/v1_da73e7e3f79e.pdf",
+  "source_sha256": "da73e7e3f79e93e00fbdf0967a08f906f926f6f534a7c147421c12a3af6cfdbf",
+  "source_filename": "v1_da73e7e3f79e.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/da73e7e3f79e93e0.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1005-045-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2742,
+  "text_preview": "34.963\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MANYONJE PRIMARY SCHOOL POLLING STATION 2 of 2 Code __ 037201100504502\nWard BUTALI/CHEGULO Code _ 1005\nGorge ritanenty' Sos < CEE AV Re COMMISSION), DENTELEC TON CNG NAO COU eu TELECTORa/ SIONINDEPEND COL e) Sig aR GAMORAL 4 ONINDEPENI\nSORRY QnINDEP TCO A BNEMREORELECTOR A) | -ENDENTELECT (OW ice oh ECTORALA Vn NOE PENDENTEY SN SO GRACO MGM. ANDBS SENDENTE\nNumber of votes cast in favour of each candidate: N\n|_ 4. ANGATIA JAMES SHINACHI\n2. JASON SHIVAKALE BRUCE 9 YT\n3. MANYASI JOAB BURUDI NE Speroesamanereniaa inesuzamaericntnnonaermuseral get D!\nTk MWANGAEDGAR BUSIEGA\n~&. NALIWA BENJAMIN : Se eee a scooter A\nes MEIER HA YS AC aD noe On ae eae ea oe eee\n[7 OYUSI GEORGE NGAIRA ee 0001\n“a PANYAKO SETH AMBUSIN. ar\n[9 \"TUVEI WILBERFORCE INDAT iy ecee enenremsareemenrs OSG iy ath\n| Total number of valid votes cast. eee\nPolling Station Counts ees “on 10 _........ Decision{s) on disputed votesifany “it 25 4\n[i]t Number Registered aes nhe PallogSiaion | __S5°3]] | Sati nt age win pase] Rane fname ie]\n2.[ToaiNunbercteecedtala Pes | OHI IL\n‘(3 [inal Nunter aeons oBaloPopess | 00} [2\n{ft Nabe Vesta enn con gall Ree ose onsen Neon efnrst nee any\nGe Beeeestionst” RALA eae . : : UNO ee On : ° | ‘ a Se CENTELECTE\nWe, the undersigned, being present when the results of the count were anno! ced,'do ‘hereby declare that the results shown above are true.\nand accurate count of the ballots in PACTS = & Ses ite OR ANE DEPENDENT 15°00 Daal ennai!\nPresiding Officer: Sty Qed 4 > ( ! MOS - Sappture: ) Lestamotares, Date A 1p = 2B]\nCx. puty Late oy jomsa aise S) y ; e\\5) é { + s Sg seabar ‘o N =N ; ats ' De\n__ Agents or Candidates [if present) \\NDBOUV, ENDENTELEC 3 oat A Was ALA AN, ECO\nfie] sane [rane | eviomaraaaie lca [Se [oo]\n(ALI LIAN Kk: MomDkKAS4 ca i394) KR A OF 9Beh yp lead\nHe ee ehetin ERA| bbe. ee \\Oresratte It Ear} ¢\nSMB eULEIL Teme T1134 692,74 2.0 fOstesa i hh bg pre\nNS EE nNOS ARIESCOM gC Omar aNDBONT Re aCOSOEN ios ON MDa ARBRE GRRE a DR PEND EEA RIESE auasiONN NO CoN ROUNP\nFe ee eee sce EC TORN De etal co pele COMMIS k ANDBOUNDTe ECONO Cg SIOMMDE Pe ADARIESCOMT pogo cOe ua\n. UR acon oer oer eccommeedg ante GouoUIE Tec onl Sonne oe oN or ON arson TORTS\nfs a ny\nPIB see PO EN TELEC Toma SSIONINDEW EN COND GueSP aL ANDOU EPENDENTELEC ION WO .GHON DARIEdC aL ECTOR AT ANOS OE aE’\nReasons for Refusal to Sign {if any) on ears ~ C Pes ee OTANI one NTEL :\n“Presiding Officer’sComments: = Ona ORE GNI Aye owMISSIONIN SOBOUNDE NG\nTELE POLLING WENT oO, SMOOTHATS NO “GN 28 OCtURE e€& (Alley\noO STHE -PoeRrlLING “CT ATIC NO” DEP E DU NOaR NORE ee RSS OOK Gas MENTEL Rec OMia ee ait eS\nRO Mestqen Nan, NWP | (NY aes ee Se",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 0,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:30:48.735888Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100504502",
+    "constituency_code": "201",
+    "ward_code": "1005",
+    "polling_centre_code": "045",
+    "stream_no": 2,
+    "stream_key": "201-1005-045-02",
+    "ward_name": "BUTALI/CHEGULO",
+    "polling_centre_name": "MANYONJE PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100504502",
+      "printed/portal ward BUTALI/CHEGULO",
+      "printed/portal centre MANYONJE PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

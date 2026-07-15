@@ -1,0 +1,129 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "ebb3826e26cc4674-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/unmatched/v1_ebb3826e26cc.pdf",
+  "source_sha256": "ebb3826e26cc467455b733953b512b4429473cfaaa5c2cc6b291b156431a5e50",
+  "source_filename": "v1_ebb3826e26cc.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/ebb3826e26cc4674.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-059-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.23386666666666667,
+  "text_length": 2456,
+  "text_preview": "a nee eee en SOS\nEE 5,928 “\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station SENIOR ABDULLAH GIRL SECONDARY SCHOOL POLLING STATION 4 of 4 Code __009040020005901\nSTEN, SELURDARTE SUTIQOL POLLING STATION 4 Of fy, SO5P en OES oN NS PEUUSUAUUZ QUO IIB ISS\nWard ~__KILIWEHIRI Code __0200\nTRS ST Bh eC OMMISSIO[ wi Oe PANE: PENDENTELE-OMINDEPENDEN op €hc) ECL ECT On PSIONINDE\nConstituency BANISSA Code (<i Oa8OR AL ay AVNOEPENT\nCounty MANDERA Code —< WS ANDBG CPENDENTE\n2 OE SELECTOR 4s 2 SNDENTELEG |p OW Sint PRT ECTORALAN RA NDEDENDENTEL how\nNumber of votes cast in favour of each candidate:\nName of Candidate ____|_No. of Valid Votes Obtained\n[\"1. HASSAN AHMED MAALIM SS\n2. MOHAMED NURDIN MAALIM _——_——_ 0 6\nTotal number of valid votes cast [0B [S|\nPolling Station Counts Decision{s} on disputed votes if any\n1. [Total Number of Renter Voters inthe Paling Sion, = DLL —\nToll Numba Rejected Balt Papes mero OND fi oS EcronALans Oe pA NS oR OMT CSCS\n~ {3.| Total Number of Rejection Objected to Ballot Papers; |- 600 | LECT COM NTANDBOUN Ds NOE EL ECPENNRG RS CogON DARIES CELE\n[Total Nur of ptt CSRS HERR ti cles ue\nTal mer foes at RON Serotec a anon ONE OMeRE CC) ma eon\nDeclaration a\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that tife hodeartetioni above are true\nand accurate count of the ballots in SiN (O DULLATHH QiRL Spa feepeinnes BATES S\\DIN Sob nstituency.\nEFICeEyS\nPresiding Officer: SS ATKER Signature: AG J Ofte 2 \\|- 20RS\nDeputy Presiding Officer: MAB TAMA ABDI RASHID A> Signature: KALA) Date QY-i-2oasSs\nAgents or Candidates {if present)\n| senescent [pa | Phoneme | Tema [Swe [oe]\nJ 1|B\\LLOW {BRAtHM “BosceiGol UpA ss aggeasty BOS bo ai-ke\n2MARROW MDAMED Rsagaacd UDA sO AIRSOFBY -go bp a-il-pows\n[Ano MorameD A benqssic Una pd0QsuySe Ge bat 025\nee ee\na enn Be A ee can Us RE aS ET\nPBELOES SSC OMMNS LOTAL anDBRUNOR ONIX COS ON BOEDCU MD aR ScOMMR SESE IN OE UDC NTE] eeehun UNOE VRE NONE\nSC ScLONNDEAE Oona aaip SCONE SO Once ubcNT = Comniac ou NOE PRE OS MO\" Corte SMA CE oe GRRCPCE CST\nBOS ECen eenven tee scrmus iON GONPES ON NOT Fon Sarg ALAMOS Coe he NO ert osTa NDE OUNDARIES ac COND\nReasons for Refusal te Sign [if any)\nPresiding Officer's Comments: y 7\nTHERE WERE No ReEteEcTep SALLOT PAPeERs ,-LPCILT\nCc\nAepiratan (SSA. MAT REE\n‘ -—-\\j-RORG ee ;\nDate Ras eee\nSign: Aamk ficsc\n) N | pREsiDING\nNDEPENGMOARIES SS NONDEN OFFICER",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 8,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 222,
+        "confidence": 0.28,
+        "source": "certified-register-hint",
+        "alternatives": [
+          {
+            "value": 222,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "certified-register-hint",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 1,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 600,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by '2. MOHAMED NURDIN MAALIM'",
+      "registered": "certified-register-hint anchored by '1.1 Total Number of Registered Voters in the Polling Station;'",
+      "rejected": "anchored-cell-ocr anchored by '2.| Total Number of Rejected Ballot Papers:'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "~ {3.| Total Number of Rejection Objected to Ballot Papers; |- 600 | LECT COM NTANDBOUN Ds NOE EL ECPENNRG RS CogON DARIES CELE",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2473,
+        3395
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "PASS"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:43:22.594457Z"
+}

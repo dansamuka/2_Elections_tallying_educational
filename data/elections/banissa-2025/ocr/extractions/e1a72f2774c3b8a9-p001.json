@@ -1,0 +1,73 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "e1a72f2774c3b8a9-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/unmatched/v1_e1a72f2774c3.pdf",
+  "source_sha256": "e1a72f2774c3b8a986f71cbf9c6c6c5929b8c8a044e964d319e53a91187dd854",
+  "source_filename": "v1_e1a72f2774c3.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/e1a72f2774c3b8a9.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-039-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract",
+  "confidence": 0.39666666666666667,
+  "text_length": 2532,
+  "text_preview": "i ai inane\n. eas | BS Ff\n= > Ge = 2 = = == | - 1EBC La Ele! eS\nSS NDEN ESL ECT ORALAND BOUNDARIES GUMMESs 2 A) De Aree = a\n| MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BANISA VOCATIONAL TECHNIC CENTER POLLING STATION 4 of 2 Code __009040019603901\nWard BANISSA Code __0196\nConstituency BANISSA Gabe, cl MAGORAL ann /NDEPENT\nCounty MANDERA Code __ 009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n1, HASSAN AHMED MAALIM OD\n2. MOHAMED NUROIN MAALIM ——— ORS\nTotal number of valid votes cast —— 07 |\nPolling Station Counts Decision{s} on disputed votes if any\nTota Number ofRegiseredVotersinthePalingStaion, | SS”\nTl Number feed Blot Papers bins eaipperet deg Oco Tecoma NGM ogo oMPPR SCO RNDEOUND AOE\nTotal Number of Rejection Objected to Ballot Papers; PNiNo eens hot Bec ol snc gene TEL ECT ROIs Som NOARIESC OSE\nTl Nuber of iputed Vts, FRO LOLA CSRS reece ER toa al\nTl Nur Vai Votes Cast NETS RS ooh |x peers omnn ORa RN UPON cco Oe one\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in b AINA OG NE Polling Station Constituency.\n| Doe, WEERNG CENT PE 3 ae\nPresiding Officer: JERAAII IM Co) & emi Lt es Signatur ate aU 267 =\nDeputy Presiding Officer: AR M1 SHE ho opr K Signature:<—Y¥< Date A{—U- 2045\nAgents or Candidates {if present) PRESIDING &\nfa] rine nsw [Pose NEEIRRG Ae tn | Toc | Sas |e\n| cS pa\nJAOAN Bose Zins OSA sows PO — ruled\nRey ie scommiscrFALannsoUN Uren Lon Gus MMP UND ARIES pce GR NGE TOE a LCT cuMp SeaaUNO CoCo Re Seal\n| Pipcfera sclonnce BOUNpARIesCOn me cee PENDEHTE LE Sc OMe GON NOLO SoG ret LCRA ANSaMDEPENCRCON Nes fanned\nPE ference nae SC ommsslO SN ete CEC TP RAr a SOMNDEPE Nat Deven cnah ANOLON gIDENTELECSONN OWS PaNON ad\nOSE ON ec on Mc sionninereN ONC Uet est AL ANPEOU/ PRDEN TELECON WOO MED I NOATIESCOngic ]ORALANDENOE IS pep OE LOM\npF eset EE NC SelOONDARIECCTELEC TORUS NOT SNG Nye COMES ON ANDBOUNDESY CANOE CaON\nee cae antcsae oes oe as oeUR NTRS ea HY ee OR RE GE\nEpa canon MMC PENDES NS SOC ONT ANODCE yes COT ouTOE OL ON ONE cTORA/ Se PMINDEPENDEN OSLO\" af\nSpa goer nOBOUND AR PEN TELEC Onan SOC oN ON CMM S eat NDE NOES GRP SSSENO LON np uES ENaeurE. §o' OOS cS\nReasons for Refusal to Sign [if any)\nPresiding Officer's Comments:\n[Hepe WAS No DicpvtTe sp \\foTes\nP-ONAMES (Bam Omulo KLIO\nSUGN: 1.E.B.C!\nS PRESIDING\nDAT SNe Se yo eae ens A OFFICER",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 7,
+        "confidence": 0.82
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "1, HASSAN AHMED MAALIM OD",
+      "candidate_UPA": "2. MOHAMED NUROIN MAALIM ——— ORS",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "Total number of valid votes cast —— 07 |",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "FAIL",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:43:00.796490Z"
+}

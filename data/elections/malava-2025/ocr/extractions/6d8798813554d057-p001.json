@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "6d8798813554d057-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201235929756478/v1_6d8798813554.pdf",
+  "source_sha256": "6d8798813554d0578c16a41749ce5c75b7eb2eedbe34e764d2e554a38794459d",
+  "source_filename": "v1_6d8798813554.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/6d8798813554d057.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1005-051-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 3201,
+  "text_preview": "Sivas\npoe BS eee OO\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MAHUSI PRIMARY SCHOOL POLLING STATION 1 of 2 Code __037201100505101\nWard BUTALICHEGULO Code __ 1005\nCar eerarays> uN CC MRLANA. COMMISSION, OENTEL EC ION CoN NC oO SW TELECTORg/ S/ONINDEPENT SCO ce glial ce. AOTORAL ay VINDEPENC\naiiitroninpe PES. CO WANA GRe EC TORY ENDENTELECT TOW JOC GRE ECTORAL ANA NOE PENDENT S yl SOME CHBRL AND BO PENDENTE\nNumber of votes cast in favour of each candidate: _ ota NDE!\nName of Candidate oF f No. of Valid Votes Obtained |\n1. ANGATIA JAMES SHINACHI 7]\n2. JASON SHIVAKALE BRUCE ) fees recesrorarcemraerenoet oN epee ronment UT\n£4 tha ABN ORE BU RIIIN Se CTORALA WY MDEPENDENT Syil ofc cORALANDAG , FNDENTECE Meee prmseane MN\n[4 MWANGAEDGARBUSIEGA poeta rosette bree rottnes ee ne nonessteec BMP\n5. NALWABENJAMIN. ORAL NOR Seno niin Gon nonmnee noet re pea rnee OMS SE A\n6. NDAKWA DAVID ATHMAN 5 Sa\n[7 OVUGI GEORGE NGAIRA ee OI\n[8 PANYAKOSETHAMBUSINN p80\n9. TUVEI WILBERFORCE INDAL [0 0\n\"Total number of valid votes cast Eepteysene cae aiiresieaeeeectmnaeaocsoccrsearer et ae a ok\n- PollingStationCounts == SSCS ecisionits on disputed votesifany =\nFf Nurer ot Reiter Vrs oling Stony F————- 1, 7). [Semi oat ape wih duet] nse aa sped ae]\n[2 TolNinbscotepcetiale Pes\n[8.] Total Number of Rejection Objected to Ballot Papers; FOO) {20\nHotoh Newbee Dtsrahen Gls ee ONY AND SHNA FO)EF TOE Be SAC SSO ARIESCOMMSG RAL ANDOU NCE EE OCC alls SIONINDE\nACE so Re] ee |\ncee laration es! Ssionininer Nc Best VA ANDEOUNE PEN NTELE Ag pokes ONGUNDARIESC OLE Aiea OS Moca COMMISSION\nWe, the undersigned, being present when the results of the count were announced, do hereby declare tha here sults shown above are true —\n_ and accurate count of the ballots in MIAH US) PRIMARY SC tho Polling Station MALPAVPs eS 5 Constituency.\nPresiding Officer: PETER MuAWey! WAFULR Signature: 4 V¥A—) RESIN Q1~|\\- 202s\n<k Ne PEPE CONN pick A eerie Vein ‘ eS ONO! ag) # I CBLIC SO e es SS pants at\nDeputy Presiding Officer: LAQL En. ) ADEMD — Signature: = ER Dat py endl yr Zo2s\n_ AgentsorCandidates{ifpresent) ee SDARIESCOngpt CTORALANDD OES A NT NOET ont\nfie] MamatCnatesien [aeoaerie| Ayanami | Weer | speas | om\nLU IRosPaee My Simmer] 23a cle) Of A A lopaymoioe | Rinne» B7= i/=de\nEASE OnNO) pre ScomeEC Topas anDOON ape ose aS SION NAM OBarT ARIE PRA Se ape OE PENDEN AES COMMISSION INSET\nFBR e Oe! tssiongNOarh mnaRle eho 9 FC Onan epeNbS ARIr a nuMis® CoN eRe t0e ODN TELEC Cob caimmuupE? NacouNae, esc\nEe One UNO Age SN aillog GuODS ese TE yr E55 OM acyonucIEPEN Se RNS nS CAL AN ADE peaueNTEL cago CeSaIg™\nQe ee eee ae ee\nHOE E08 oePENDE Te ESCOMMISSIBN GUN RET GON LiTELECT ORAL g ONINDEPEND: COND. 2° ANDEOUN 2 ANDENTELEC ORONO\nREAR ONE SAF Reafidsad to Sige LRN: 01S oh SoS pO DEN TELEC /COMnasioNINDE. ae AGRO AMEN ORALANDE ROP ENTELE SAG CaS\n_. Presiding Officer's Comments: PE LECTORA SSIONINDEPENDE GO EP Ocoee BLANDBO LS EPEND Ru TELEC TO\na 5M ODOT ey = LE ‘ f",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 5,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 20,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by \"FUVE! WILBERF ' ORCE INDAI\"",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "[8.] Total Number of Rejection Objected to Ballot Papers; FOO) {20",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:03:58.695414Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100505101",
+    "constituency_code": "201",
+    "ward_code": "1005",
+    "polling_centre_code": "051",
+    "stream_no": 1,
+    "stream_key": "201-1005-051-01",
+    "ward_name": "BUTALICHEGULO",
+    "polling_centre_name": "MAHUSI PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100505101",
+      "printed/portal ward BUTALICHEGULO",
+      "printed/portal centre MAHUSI PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

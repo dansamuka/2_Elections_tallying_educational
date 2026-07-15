@@ -1,0 +1,152 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "853bb3667e7fcf44-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201555391820433/v1_853bb3667e7f.pdf",
+  "source_sha256": "853bb3667e7fcf44c25d225498e35419cc32c129f909a1dd7993234652d156fe",
+  "source_filename": "v1_853bb3667e7f.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/853bb3667e7fcf44.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1004-106-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3250285714285714,
+  "text_length": 2973,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MUKANGU PRIMARY SCHOOL POLLING STATION 1 of 1 Code __037201100410601\nWag HP ENDENTES (6° (6 NERD TABRABEN TE) 7 SCOMMISSION wOULO% pute pENDENTEL EC OMINDEPENDE oh © Raden ERM EC Toe/SSIONINDE\nCarfGtuenay S20 C RAVE. COMMISSION, PENTEL ECTON CcAU pS COV cuit ELECTORg/ CIONINDEPENL [oO (ek Geta cL SAI ORAL 4j/,/NDEPENI\nCounty KAKAMEGA RAL Ain OEPENDENTE gh SoC ade 1 HERLANDBO PENDENT!\nNumber of votes cast in favour of each candidate: | : Scor\n| Name ofCandidate | No of Valid Votes Obtained\n|_1. ANGATIA JAMES SHINACHI ) RS AOPDADENTELE CT AAUSSIONINDET fine >t Sar nO nTeTeS TORE On\n2. JASON SHIVAKALE BRUCE zs — OO\n3. MANYASI JOAB BURUDI fe\n| 4. MWANGA EDGAR BUSIEGA\n1080 NALWA BENJAMIN 0 505° ORAL NORE seen ieesen roma neero eS ie bee tnresomMlc hy Np:\n_6. NDAKWA DAVID ATHMAN .\n7. OYUGI GEORGE NGAIRA _ |\n8. PANYAKO SETH AMBUSINI :\n_ | 9. TUVEI WILBERFORCE INDAL MISO ese pe RUE rac POeg Soon Ree oO OOOO\nTotal number of valid votes cast Te ECTOR i\nPolling Station Counts Decisionls}ondisputedvotesifany = i (<a(iti(itié‘;‘;CS;*;:”\n| Tt uber ot ReiterdVtersin he Paling Stain, [-——— CO] HF er ir a Ped wiht te] told ane ee]\n12. | Total Number of Rejected Ballot Papers; FOOD) te\n[Taal nunberof Rejection Oris totaltPapes |-——- QQ OO} 2\n°{4. [Total Number of Disputed Votes; OOO) 8 ee\n[S [loelnnieroNeidteestes: OST bef pe\nSeaebe pleat ea! SS on oP ENS CON Ieee cS Rn ANDEOU NS PENDENTELEC oui ON Zc NDARIESC CGLECTORALANDS PRESIDING: ANOS\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results \\heyg abo e argtrue\n‘and accurate count of the ballots in MUKANGU PRIMARY _ potting Station MI ALAV A NU constiéncy.\nOP pe NDE EEC Ton MSSOUL Ripe Sts SABEMN OE pENDENT oP GSS gt dy 2 =2025\nPresiding Officer: OLAV I/) ASCH ANDO NY ‘Signature: __ Sites: y pate LEN LOLS\nDeputy Presiding Officer: SIMON JAKAWU BO ‘Signature: pate LI-UI-2O2V5\n~ Agents or Candidates {if present) eo RALANDE dU ; NOENTELECS FON = Onis PORALAN x sP noe commls\nie] _tomtcnase som [tei | Perham oaaie | Homme | spmew [ o|\n— LRIAGGREY LUS/MBA 1193554/| DCP piasstamy AR ke t=i- Qo:\nRR tne NO ee iS Soe we eC re Fes Oli <a On mpeP EN ene sRIESC Cn AL an NDE oe cn TEL ECS CeuSsIpS\nFINS pe re Sage ORO RY cuca Ong car ay an On NOEL rel ESCO Genser tee OEE Can Noefocc a hnere\nBROT SC OER EPENDEN Ta SSCOMMISSIGNONNEC Co 9OU [TELECTORA/ 4 SONINDEPENDS CONS ah cs on ANOBOb a NDENTELEC LS RANON Se\nReasons for Refusal to Sign {if any) ROMS PEON ‘ LEGTCOM DET EES eee RA NOE BIS\nPresiding Officer's Comments: ELECTION WOR NC . Mini gcORAL ANDES Sao NOLL OMMISSIONIW ENDENTELS <ORte.\n“THE POLLING ACTIVITEL WERE PEACEFULLY CONDUCTED F *E AG\nNINO DRIES OOO eC on DERE GUNDAM eS CoMMISSGO ONIN pNOe EN TEL ES CONS MINDEN NON ONE A 69 Ol e602 ON eter\nONIN AECTORACSS/ONINDEPENDEN tt SSS S CONN ANDBOUM SENDA ELEC TON NC Seed Onl AMER pean nO Maa",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 12,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 12,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": 8,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text",
+      "registered": null,
+      "rejected": "full-page-text anchored by '| 2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": "°{4. [Total Number of Disputed Votes; OOO) 8 ee"
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:22:18.439507Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100410601",
+    "constituency_code": "201",
+    "ward_code": "1004",
+    "polling_centre_code": "106",
+    "stream_no": 1,
+    "stream_key": "201-1004-106-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "MUKANGU PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100410601",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre MUKANGU PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

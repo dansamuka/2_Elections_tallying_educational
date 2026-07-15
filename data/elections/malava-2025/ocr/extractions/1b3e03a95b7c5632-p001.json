@@ -1,0 +1,137 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "1b3e03a95b7c5632-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201170738293982/v1_1b3e03a95b7c.pdf",
+  "source_sha256": "1b3e03a95b7c563276473b0f55e982a26a6ace675200ea0ff6ea88325cffa4ec",
+  "source_filename": "v1_1b3e03a95b7c.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/1b3e03a95b7c5632.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1002-005-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.21005714285714283,
+  "text_length": 2712,
+  "text_preview": "pegse ee\n| MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MAYUGE PRIMARY SCHOOL POLLING STATION 1 of 2 : Code __037201100200501\nFe SOIC Ee OTC TTS Ee eee MIS CEPENDENTE Cente SO __037201100200501\nWard WEST KABRAS Code __ 1002\n7 SMMIS SOR eee CO Me GUNN Ep. ORAL ARDS Pe Pr SC ee PEP ENE ORS —\nConstituency MALAVA Code 201\nCounty Sa Tree ELECTORAL 2 ENDENTELECT CONS LGC ONS Ee CTORAL QAM NDE DE ADEN TELCOS CGS CRON AND BO PENDENT\nNumber of votes cast in favour of each candidate: ‘ ~\nName of Candidate | No. of Valid Votes Obtained\n“1 ANGATIA JAMES SHINAGHT\n2 MSONSHVAALE BRUCE OS ee\n[73 MANVASIOAB BURUDI ot crarmuninummeue ee AR\n|.4, MWANGAEDGARBUSIEGA SS” SECO ANE ETA eNTELEC TORRNOS re ON romans Oe\nSEMA RERLRSIN ania re oan fee\n- FS ORK ATHMAR, OT ed\nff GUIS SEONG NGAI cs sity suse Pa apne eee ee\n© [a PANVARG Sent abuso OO\nPR TWelwiserroRce NON\ner YO Ca a no ee\nPolling StationCounts ________ Detisionis} on disputed votesifany =\n[A [al untest eysteredowsn toting Salon [Se]\n-|2.| Total Number of Rejected Ballot Papers; | ail nen MOE CU gerE MENT ashes COON UN BOUNDARIES\nOY 9 Ae ies eee\noe hectare See WRI DORIS A oe ENN Reng eae\nBa RAM CF Pee ce eee eee aes oe\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the refults Bovoat We are true\nand accurate count of the ballots in IMBYUGE pajmany _<¢rbsd. Polling Station a MALA AE ae Contituency.\no OMT nee } Tos BNE -% : yA Wing NDEPE Je ae . f —y f Pa “A a katy ‘ m4\n_. Presiding Officer: SAL ANDO ODE cae MD A ARUN Danie ScO™N Signature: _-§ ~<S>—~ gas SERB //—- 2025\n‘ 1: : Th, i wr 9 Se aps @ DEN Poaanh c ants pe te mt of Asal, sha 2 er a 7 i . \"\n_ Deputy Presiding Officer: _C//+RiS 7 MUYLEATK A- Siginatore: = smog? 82.\" Na i) 1 (= 2516\n: ai etl meet os 3 AN P ai OS NTFS ‘ 4 Air eg cet : re ¢ Ni Pe. [ 4 << DAR\nAgents or Candidates {if present). oes . 30Uqp, ENDENTELES Agtcor = ald AND® N\nfoal teeta [mei | heptane [Tce Some [oa]\n: SSS eee hon aan RC ORE OO Pads Sensi\nEo Scape cl ORM Tape eR NOE ECOMMIOS oy, ADRUNOD Seni OG morte\n| Bs Reet OENS CSE Se nis ent ST Seng aa |\n1s Se gS SROs SN co igage ora te\nReasons for Refusal to Sign {if any) uM OBOE NNN NORD ENTELEC] HiMssioNINOE’ Ree RIOE TREO ANDRO DEPENDENTEL ECONO NG:\nPresiding Officer's Comments: TE CIOTNOR LAE aN, SC OM BoBonen Tse Mi iONINog! ! nies an\npre CONE SOs Nes IMG on PRC Se< OE“ oN Mie. See INOEP TPES RIES ELORRAT ed eT ct\nhe SO a Aint ON Oyun ARIES CPG COO Gu ERAN re aR SS CONN Ge BBUNUNTTESC tEC TORALAN ES ,\nNDE’ cots xy Qe OF - JB0u, NDENTE : OS ss 8 i a A\\t oe RF st YS r AS COMA . IDE ar “ ’\nPRESABING CRE: CreP ia Simpraa | eee ce EROS ON a trey etn TSS",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7,
+        "confidence": 0.37999999999999995,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.37999999999999995,
+            "score": 0.37999999999999995,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.25,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.25,
+            "score": 0.25,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 4,
+        "confidence": 0.25,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "anchored-cell-ocr anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": "full-page-text anchored by 'Total Number of Rejected Ballot Papers;'",
+      "total_valid": "anchored-cell-ocr anchored by 'Total umber: of valid votes cast'",
+      "total_cast": "derived: total_valid (2) + rejected (2)",
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:58:53.367010Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100200501",
+    "constituency_code": "201",
+    "ward_code": "1002",
+    "polling_centre_code": "005",
+    "stream_no": 1,
+    "stream_key": "201-1002-005-01",
+    "ward_name": "WEST KABRAS",
+    "polling_centre_name": "MAYUGE PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100200501",
+      "printed/portal ward WEST KABRAS",
+      "printed/portal centre MAYUGE PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

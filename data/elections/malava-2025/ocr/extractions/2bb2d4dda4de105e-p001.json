@@ -1,0 +1,132 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "2bb2d4dda4de105e-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201700320441366/v1_2bb2d4dda4de.pdf",
+  "source_sha256": "2bb2d4dda4de105e949e0eadb4bdef004abfcbd857eae1465170ecf033e3c21a",
+  "source_filename": "v1_2bb2d4dda4de.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/2bb2d4dda4de105e.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1006-053-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2731,
+  "text_preview": "Pe ee ee UO\n= INDE ERDENT ELECTORAL AND BOUNDARIES COMMISSION. < i= - {=\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MANDA KABRAS PRIMARY SCHOOL POLLING STATION 1 of 2 Code __037201100605301\nWard MANDA-SHIVANGA Code __ 1006\nConshtwency!>> uc: AL AVA. COMMISSION DEN TELEC TON CAS OG OU cu TELECTORa) S/ONINDEPEN. 2eCO ART pile c\\ EAOIORAL an VNDEPEN\nCounty KAKAMEGA | Code __037\nNumber of votes cast in favour of each candidate: . if\n[71 ANGATIA JAMES SHINAGHI\n|. JASON SHIVAKALE BRUCE | $$ |\n_ | 3. MANYASI JOAB BURUDI\n| 4. MWANGA EDGAR BUSIEGA | 0]\n‘6. NALWA BENJAMIN ?\n| 6 NDAKWADAVIDATHMAN meee: oe)\n| OYUGI GEORGE NGAIRA , Mca aa cue eacreenasr eee tinea carseomnaameeyteres 7\n8. PANYAKO SETH AMBUSINI_ NDE\n_ |. 9. TUVE! WILBERFORCE INDAI De BS ae cet eT TENGE TS NERET TT SPONSES\nPEE toed ak Gay ttl SSeNOENT ELECTOR! SSIONND alfa eel ees A ert SRENOES Tenia ot HO ES\nPolling Station Counts Cele uMISSIONIND Ee TUNE - Decisionts} ondisputedvotesifany s—_ SEE AL\n[Total unberotepisteredVtersintbePolingSaton, | GOS)\n(af raatnimerattgecedtatt Pes OOS IL\n[at nabs jection Ouse oaatetPapes, |= ©00] [2\nfac Proat ner ofOepaediones, Hae Soar nescon foun socal aces SNcaomad\nDeclaration INDEPENDS CON eee SOO nt AND se NTELECTOUNCO son NDA CELECTORAL NOB OR eNO COMA s Ni\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\n~and-accurate count of the ballots in. MACs D A RABR: NS AERIS Polling Station OR RAD GAEDE ie oS Constituency.\nPresiding Officer: DENN s AntonyA I.E. B.C. ‘ginatire Spey Date _ 2I-V1= 2025.\nDeputy Presiding Officer: SENT@ix MWA Shisid nts J Signature: AN Date ATHM-2OR.S\n\"Agents or Candidates {if present). ete na Si ON IOR Ec ON DARIES COLE CTORAL ANOD YEN ESOM\nLAT QCD We TPO: [9 23R35S\\8) DAV OBR [SETA al a7fild\nLt Ace pom | eae Pp aOR ona eat] a ashitibe\nNIC ON NDBOUND A MOEN TEL EC TOCA GES Seq OnRNOO aRiESCOM EPR AL ANDRO ORE COE eet SSION NOP AE OUND ARIES SO Nea ONNDEPE!\nBBE aS OSs EPENDEN TE) SCOMNISSR ON Oxe POP TELEC ORAL a JONINDEPENDS CON PU GcS gan ANOHOUND 4 MDENTELEC LOW CaN\nPOE AEN TELEC TOY SSIOWINDET ENE sa pg aXe of RAL ANDBOUW PENDENTELEG ON OPAC SO UNDARIESCOMLECTORALANONOE aS peng\nReasonsforRefusaltoSignlifany) = Bee AALAND NDE PEN DEN TELECON\n- Presiding Officer's Comments: ELEC TONING eC ain MOBO EN COMM SS NNR ppOUNDARIE: eos\nPOLLING aActwities hap NO FivnipenGes ALL AGests s\nSUDO AMMBULIA AGpeen, Withee )ReSscTS Fem GXcu CAMDcgate.\nNOE ES oN NO geSl ONIN END RIESCONNT ANCES CEDAN Ofhicen 7 Gee DENN AkMowyA\nECTORAL DER OSAN UG ARIESCOMMISg ORAL ANDEO UTTER LGC RMN Oe CUND ARIE P oQ CDE SIE CS NDEPENDENTE/ ESCOMMISS AON SCT",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI.'",
+      "candidate_WT": "full-page-text anchored by '-TUVE! WILBERF: ORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:33:01.938782Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100605301",
+    "constituency_code": "201",
+    "ward_code": "1006",
+    "polling_centre_code": "053",
+    "stream_no": 1,
+    "stream_key": "201-1006-053-01",
+    "ward_name": "MANDA-SHIVANGA",
+    "polling_centre_name": "MANDA KABRAS PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100605301",
+      "printed/portal ward MANDA-SHIVANGA",
+      "printed/portal centre MANDA KABRAS PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

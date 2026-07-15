@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "0f33b4edb6a648d5-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201058992738446/v1_0f33b4edb6a6.pdf",
+  "source_sha256": "0f33b4edb6a648d5bb34589bc4e12644aafdddc6e17c9e361d633ef26cbfd771",
+  "source_filename": "v1_0f33b4edb6a6.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/0f33b4edb6a648d5.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1002-011-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.08022857142857143,
+  "text_length": 2447,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS !\nAT THE POLLING STATION\nName of Polling Station IMBIAKALO PRIMARY SCHOOL POLLING STATION 1 of 2 Code __037201100201101\nWard? ENE Ne 08 cc WEST KABRAS ENTE ¢-SCOMMISSIO™® wi0' 30% Pate PENDENTELE-SNINDEPENDES io RU. © 9h we tOee\nCareGenenayS> yo AM ANA- COMMISSIOn/ DEN TELECTOY CONC ph aCe OW CMT ELECTOR 4 SIONINDEPENOLaC One) Gare. abt\nRauite onder t 2cO .P RARAMEGRS | ECTORA) | ENDENTELECT (ON ph opt ECTORAL Ai) NOR PENDENTE. NW aha BR\nNumber of votes cast in favour of each candidate: '\n1 ANGATIA JAMES SAINAGH . ea Oe NG CCT\nBZ ASAN SERIE BRDIOE nce a r eg age eee Tn eet\n3 MANYASI JOAB BURUD Ser a\n[4 MWANGA EDGAR BUSIEGA eee eT\nPE NALWABENAMIN Sse a cee SUSE Fy\n6 NDAIGWA DAVID ATHMAN SS\nfe ORY SERS GAAS oc SCO arc meen oun reer RS\na PANVAKO SETH AMBUSINN\n|e TUVEI WLBERFORCEINDAL _ ed\nes rs |\nPolling Station Counts —. Decisionts) on disputed votes if any cent | Ra\nFe fTttunbert gitar Paling Sin Smid Pe pte | tn aioe]\n[2 toa NunberatReecestaia toes; | pga ff\n[i [Tal unir afRoecion Od toletPames | po | [2 SR\nSeesbablaatinnpa uncer ees: aes asc ence eo Ge Seng rs ae int ob aE\nres We, the undersigned, being present when the results of the count were ani cured, Uo Hereby declare that the results shown above elem\n- and accurate count of the ballots in IMB/IAKALO PRI f iting Statioh J IAA LAVA. Constituency.\n<2 _ Presiding Officer: _ NANCY LUVEMBE NANCE LUVEM, C Pa A | Signature: END A Leet itis PWN ed OF li= Z0Ze\nDeputy Presiding Officer; Lwiht= Ce KATY SORE CT Seat HOU Signature: __ Cs De _ Date WF \\\\- 205\nAgents or Candidates {if present). ee gRALANDBOUN;PENOEN Soh. INDARIESCOMLECTOR AL ANDEX Seen Swials\nLT EDWaRD fncakieial 6% 3) Rew, flog z7 2a ZO— Payoh\n> . Fo At A> § ie Bo LS Wi-Qe\n2 ae eee oy ammo e e e\nOMe eo cists ON NBER UNDARIESCD ARLE eae ORnger ENDENTE, SCOMMISSION WOR, C-RPSOUNTELEC TOR AL aa YONINTTRRENDT OM SOc OM\nPAIR a OS ae FENDENTE/eSCOMMISSIpE UNSC ezeO\\frreLECTORA/ 4 /ONINDEPENDE CONS.) ous Onnt ANDOU ENDENTELECT UNMERIGC AMR\nREam aE f0h ReKinal ta Sigh tame o10ins oe cw WOR DENTELEC CoMinssionInDE Re SGU LAIES GR ALAND VOR po NTELEC GON INN\n3 Presiding Officer's Co ments: EOL BNP conON it - % NDE S gh eNO . a\nET ECTION. ptm SMOOTHLY DONE <<\nENDENTEL SOE SR at bro udlcahees RFE SLED Yo oMMscrsal ANOBOUNE Te SCSI EAT nis SIONINIDE COUN aniescOMN MCLE\nECTOR AOE eae ORANUG ARIESCOMIIS SORALA OFFICER J DEE UUN APSA ON DEPENDENT MISSION LNeN",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'ia ‘number cs valid votes cast.'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:49:46.999187Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100201101",
+    "constituency_code": "201",
+    "ward_code": "1002",
+    "polling_centre_code": "011",
+    "stream_no": 1,
+    "stream_key": "201-1002-011-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "IMBIAKALO PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100201101",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre IMBIAKALO PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

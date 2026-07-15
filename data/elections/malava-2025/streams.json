@@ -2,11 +2,3801 @@
   "schema": "kenya.election.stream-register.v1",
   "election_id": "malava-2025",
   "bootstrap_from_portal": true,
+  "bootstrapped_at": "2026-07-14T17:44:05.407961Z",
   "reference_verified": false,
   "notes": [
-    "The first successful IEBC portal discovery must return all 198 individual Form 35A assignments before this empty roster is hydrated.",
-    "The generated rows are matching identities for OCR validation, not certified polling-station register rows."
+    "Generated from the IEBC portal's individual Form 35A assignments for OCR validation.",
+    "Polling-station codes, ward allocation and registered-voter values are not certified and cannot drive publication.",
+    "Polling-centre and ward hierarchy was reconstructed from the printed Form 35A header. This improves navigation but remains uncertified and cannot drive publication."
   ],
-  "streams": [],
-  "ward_summary": []
+  "streams": [
+    {
+      "stream_key": "201-1005-045-01",
+      "polling_station_code": "037201100504501",
+      "station_name": "MANYONJE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALI/CHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1767",
+      "portal_source_label": "27/11/2025 - MNA MANYONJE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "045",
+      "polling_centre_name": "MANYONJE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100504501",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MANYONJE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-045-02",
+      "polling_station_code": "037201100504502",
+      "station_name": "MANYONJE PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1005",
+      "ward_name": "BUTALI/CHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1768",
+      "portal_source_label": "27/11/2025 - MNA MANYONJE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "045",
+      "polling_centre_name": "MANYONJE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100504502",
+        "printed/portal ward BUTALI/CHEGULO",
+        "printed/portal centre MANYONJE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-036-01",
+      "polling_station_code": "037201100503601",
+      "station_name": "MATSAKHA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALI/CHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1751",
+      "portal_source_label": "27/11/2025 - MNA MATSAKHA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "036",
+      "polling_centre_name": "MATSAKHA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100503601",
+        "printed/portal ward BUTALI/CHEGULO",
+        "printed/portal centre MATSAKHA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-036-02",
+      "polling_station_code": "037201100503602",
+      "station_name": "MATSAKHA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1005",
+      "ward_name": "BUTALI/CHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1752",
+      "portal_source_label": "27/11/2025 - MNA MATSAKHA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "036",
+      "polling_centre_name": "MATSAKHA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100503602",
+        "printed/portal ward BUTALI/CHEGULO",
+        "printed/portal centre MATSAKHA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-046-01",
+      "polling_station_code": "037201100504601",
+      "station_name": "NAMANJA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALI/CHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1769",
+      "portal_source_label": "27/11/2025 - MNA NAMANJA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "046",
+      "polling_centre_name": "NAMANJA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100504601",
+        "printed/portal ward BUTALI/CHEGULO",
+        "printed/portal centre NAMANJA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-046-03",
+      "polling_station_code": "037201100504603",
+      "station_name": "NAMANJA PRIMARY SCHOOL",
+      "stream_no": 3,
+      "ward_code": "1005",
+      "ward_name": "BUTALI/CHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1771",
+      "portal_source_label": "27/11/2025 - MNA NAMANJA PRIMARY SCHOOL 03 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "046",
+      "polling_centre_name": "NAMANJA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100504603",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre NAMANJA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-047-01",
+      "polling_station_code": "037201100504701",
+      "station_name": "SHARAMBATSA PRIMARY SCHOOL I ;",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALI/CHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1772",
+      "portal_source_label": "27/11/2025 - MNA SHARAMBATSA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "047",
+      "polling_centre_name": "SHARAMBATSA PRIMARY SCHOOL I ;",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100504701",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre SHARAMBATSA PRIMARY SCHOOL I ;"
+      ]
+    },
+    {
+      "stream_key": "201-1005-109-01",
+      "polling_station_code": "037201100510901",
+      "station_name": "ST-MARTIN PRIMARY SCHOOL TOFF",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALI/CHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1782",
+      "portal_source_label": "27/11/2025 - MNA ST. MARTIN PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "109",
+      "polling_centre_name": "ST-MARTIN PRIMARY SCHOOL TOFF",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100510901",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre ST-MARTIN PRIMARY SCHOOL TOFF"
+      ]
+    },
+    {
+      "stream_key": "201-1005-037-02",
+      "polling_station_code": "037201100503702",
+      "station_name": "TIMBITO PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1005",
+      "ward_name": "BUTALI/CHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1754",
+      "portal_source_label": "27/11/2025 - MNA TIMBITO PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "037",
+      "polling_centre_name": "TIMBITO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100503702",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre TIMBITO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-040-01",
+      "polling_station_code": "037201100504001",
+      "station_name": "TANDE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALI/CHEGULO ’",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1759",
+      "portal_source_label": "27/11/2025 - MNA TANDE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "040",
+      "polling_centre_name": "TANDE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100504001",
+        "printed/portal ward BUTALI/CHEGULO ’",
+        "printed/portal centre TANDE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-051-01",
+      "polling_station_code": "037201100505101",
+      "station_name": "MAHUSI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1777",
+      "portal_source_label": "27/11/2025 - MNA MAHUSI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "051",
+      "polling_centre_name": "MAHUSI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100505101",
+        "printed/portal ward BUTALICHEGULO",
+        "printed/portal centre MAHUSI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-042-02",
+      "polling_station_code": "037201100504202",
+      "station_name": "MUKAVAKAVA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1005",
+      "ward_name": "BUTALICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1764",
+      "portal_source_label": "27/11/2025 - MNA MUKAVAKAVA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "042",
+      "polling_centre_name": "MUKAVAKAVA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100504202",
+        "printed/portal ward BUTALICHEGULO",
+        "printed/portal centre MUKAVAKAVA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-040-02",
+      "polling_station_code": "037201100504002",
+      "station_name": "TANDE PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1005",
+      "ward_name": "BUTALICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1760",
+      "portal_source_label": "27/11/2025 - MNA TANDE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "040",
+      "polling_centre_name": "TANDE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100504002",
+        "printed/portal ward BUTALICHEGULO",
+        "printed/portal centre TANDE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-038-02",
+      "polling_station_code": "037201100503802",
+      "station_name": "CHEGULO PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1005",
+      "ward_name": "BUTALIICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1756",
+      "portal_source_label": "27/11/2025 - MNA CHEGULO PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "038",
+      "polling_centre_name": "CHEGULO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100503802",
+        "printed/portal ward BUTALIICHEGULO",
+        "printed/portal centre CHEGULO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-041-01",
+      "polling_station_code": "037201100504101",
+      "station_name": "EE AN MENT ARON NDARIESC OM NDE RENDENTELE ME OR",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALIICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1761",
+      "portal_source_label": "27/11/2025 - MNA MATIOLI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "041",
+      "polling_centre_name": "EE AN MENT ARON NDARIESC OM NDE RENDENTELE ME OR",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100504101",
+        "printed/portal centre EE AN MENT ARON NDARIESC OM NDE RENDENTELE ME OR"
+      ]
+    },
+    {
+      "stream_key": "201-1005-108-01",
+      "polling_station_code": "037201100510801",
+      "station_name": "MAKALE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALIICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1781",
+      "portal_source_label": "27/11/2025 - MNA MAKALE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "108",
+      "polling_centre_name": "MAKALE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100510801",
+        "printed/portal ward BUTALIICHEGULO",
+        "printed/portal centre MAKALE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-039-01",
+      "polling_station_code": "037201100503901",
+      "station_name": "MAKUCHE PRIMARY SCHOOL POLLING STATIONS OF2",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALIICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1757",
+      "portal_source_label": "27/11/2025 - MNA MAKUCHE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "039",
+      "polling_centre_name": "MAKUCHE PRIMARY SCHOOL POLLING STATIONS OF2",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100503901",
+        "printed/portal centre MAKUCHE PRIMARY SCHOOL POLLING STATIONS OF2"
+      ]
+    },
+    {
+      "stream_key": "201-1005-043-01",
+      "polling_station_code": "037201100504301",
+      "station_name": "MAVUS! PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALIICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1765",
+      "portal_source_label": "27/11/2025 - MNA MAVUSI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "043",
+      "polling_centre_name": "MAVUS! PRIMARY SCHOOL",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100504301",
+        "printed/portal centre MAVUS! PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-051-02",
+      "polling_station_code": "037201100505102",
+      "station_name": "MNA MAHUSI PRIMARY SCHOOL REPORTED",
+      "stream_no": 2,
+      "ward_code": "1005",
+      "ward_name": "BUTALIICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1778",
+      "portal_source_label": "27/11/2025 - MNA MAHUSI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "051",
+      "polling_centre_name": "MNA MAHUSI PRIMARY SCHOOL REPORTED",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100505102",
+        "printed/portal centre MNA MAHUSI PRIMARY SCHOOL REPORTED"
+      ]
+    },
+    {
+      "stream_key": "201-1005-037-01",
+      "polling_station_code": "037201100503701",
+      "station_name": "MNA TIMBITO PRIMARY SCHOOL REPORTED",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALIICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1753",
+      "portal_source_label": "27/11/2025 - MNA TIMBITO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "037",
+      "polling_centre_name": "MNA TIMBITO PRIMARY SCHOOL REPORTED",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100503701",
+        "printed/portal centre MNA TIMBITO PRIMARY SCHOOL REPORTED"
+      ]
+    },
+    {
+      "stream_key": "201-1005-052-01",
+      "polling_station_code": "037201100505201",
+      "station_name": "NAMUSHIYA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALIICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1779",
+      "portal_source_label": "27/11/2025 - MNA NAMUSHIYA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "052",
+      "polling_centre_name": "NAMUSHIYA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100505201",
+        "printed/portal ward BUTALIICHEGULO",
+        "printed/portal centre NAMUSHIYA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-052-02",
+      "polling_station_code": "037201100505202",
+      "station_name": "NAMUSHIYA PRIMARY SCHOOL POLLING STATION20F2 RODE 037201100505202",
+      "stream_no": 2,
+      "ward_code": "1005",
+      "ward_name": "BUTALIICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1780",
+      "portal_source_label": "27/11/2025 - MNA NAMUSHIYA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "052",
+      "polling_centre_name": "NAMUSHIYA PRIMARY SCHOOL POLLING STATION20F2 RODE 037201100505202",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100505202",
+        "printed/portal centre NAMUSHIYA PRIMARY SCHOOL POLLING STATION20F2 RODE 037201100505202"
+      ]
+    },
+    {
+      "stream_key": "201-1005-050-01",
+      "polling_station_code": "037201100505001",
+      "station_name": "SHILONGO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALIICHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1775",
+      "portal_source_label": "27/11/2025 - MNA SHILONGO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "050",
+      "polling_centre_name": "SHILONGO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100505001",
+        "printed/portal ward BUTALIICHEGULO",
+        "printed/portal centre SHILONGO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-046-02",
+      "polling_station_code": "037201100504602",
+      "station_name": "NAMANJA PRIMARY SCHOOL POLLING STATION20F3 DEN __037201100504602",
+      "stream_no": 2,
+      "ward_code": "1005",
+      "ward_name": "BUTALVCHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1770",
+      "portal_source_label": "27/11/2025 - MNA NAMANJA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "046",
+      "polling_centre_name": "NAMANJA PRIMARY SCHOOL POLLING STATION20F3 DEN __037201100504602",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100504602",
+        "printed/portal ward BUTALVCHEGULO",
+        "printed/portal centre NAMANJA PRIMARY SCHOOL POLLING STATION20F3 DEN __037201100504602"
+      ]
+    },
+    {
+      "stream_key": "201-1005-050-02",
+      "polling_station_code": "037201100505002",
+      "station_name": "SHILONGO PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1005",
+      "ward_name": "BUTALVCHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1776",
+      "portal_source_label": "27/11/2025 - MNA SHILONGO PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "050",
+      "polling_centre_name": "SHILONGO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100505002",
+        "printed/portal ward BUTALVCHEGULO",
+        "printed/portal centre SHILONGO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1005-049-01",
+      "polling_station_code": "037201100504901",
+      "station_name": "SHIPALA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1005",
+      "ward_name": "BUTALVCHEGULO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1774",
+      "portal_source_label": "27/11/2025 - MNA SHIPALA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "049",
+      "polling_centre_name": "SHIPALA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100504901",
+        "printed/portal ward BUTALVCHEGULO",
+        "printed/portal centre SHIPALA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-022-03",
+      "polling_station_code": "037201100302203",
+      "station_name": "!SANJIRO PRIMARY SCHOOL",
+      "stream_no": 3,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1723",
+      "portal_source_label": "27/11/2025 - MNA ISANJIRO PRIMARY SCHOOL 03 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "022",
+      "polling_centre_name": "!SANJIRO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100302203",
+        "printed/portal ward CHEMUCHE",
+        "printed/portal centre !SANJIRO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-022-04",
+      "polling_station_code": "037201100302204",
+      "station_name": "!SANJIRO PRIMARY SCHOOL",
+      "stream_no": 4,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1724",
+      "portal_source_label": "27/11/2025 - MNA ISANJIRO PRIMARY SCHOOL 04 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "022",
+      "polling_centre_name": "!SANJIRO PRIMARY SCHOOL",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100302204",
+        "printed/portal centre !SANJIRO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-017-02",
+      "polling_station_code": "037201100301702",
+      "station_name": "CHIMORON! PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1712",
+      "portal_source_label": "27/11/2025 - MNA CHIMORONI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "017",
+      "polling_centre_name": "CHIMORON! PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100301702",
+        "printed/portal ward CHEMUCHE",
+        "printed/portal centre CHIMORON! PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-017-01",
+      "polling_station_code": "037201100301701",
+      "station_name": "CHIMORONI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1711",
+      "portal_source_label": "27/11/2025 - MNA CHIMORONI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "017",
+      "polling_centre_name": "CHIMORONI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100301701",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre CHIMORONI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-022-02",
+      "polling_station_code": "037201100302202",
+      "station_name": "ISANJIRO PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1722",
+      "portal_source_label": "27/11/2025 - MNA ISANJIRO PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "022",
+      "polling_centre_name": "ISANJIRO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100302202",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre ISANJIRO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-016-03",
+      "polling_station_code": "037201100301603",
+      "station_name": "KIMANG'ETI PRIMARY SCHOOL",
+      "stream_no": 3,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1710",
+      "portal_source_label": "27/11/2025 - MNA KIMANG'ETI PRIMARY SCHOOL 03 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "016",
+      "polling_centre_name": "KIMANG'ETI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100301603",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre KIMANG'ETI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-021-01",
+      "polling_station_code": "037201100302101",
+      "station_name": "LUGUSI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1719",
+      "portal_source_label": "27/11/2025 - MNA LUGUSI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "021",
+      "polling_centre_name": "LUGUSI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100302101",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre LUGUSI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-021-02",
+      "polling_station_code": "037201100302102",
+      "station_name": "LUGUSI PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1720",
+      "portal_source_label": "27/11/2025 - MNA LUGUSI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "021",
+      "polling_centre_name": "LUGUSI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100302102",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre LUGUSI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-104-01",
+      "polling_station_code": "037201100310401",
+      "station_name": "LUKHOKHO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1729",
+      "portal_source_label": "27/11/2025 - MNA LUKHOKHO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "104",
+      "polling_centre_name": "LUKHOKHO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100310401",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre LUKHOKHO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-020-02",
+      "polling_station_code": "037201100302002",
+      "station_name": "MACHE PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1718",
+      "portal_source_label": "27/11/2025 - MNA MACHE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "020",
+      "polling_centre_name": "MACHE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100302002",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MACHE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-020-01",
+      "polling_station_code": "037201100302001",
+      "station_name": "MACHE PRIMARY SCHOOL POLLING STATION1OF200 RODE __037201100302001",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1717",
+      "portal_source_label": "27/11/2025 - MNA MACHE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "020",
+      "polling_centre_name": "MACHE PRIMARY SCHOOL POLLING STATION1OF200 RODE __037201100302001",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100302001",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MACHE PRIMARY SCHOOL POLLING STATION1OF200 RODE __037201100302001"
+      ]
+    },
+    {
+      "stream_key": "201-1003-023-01",
+      "polling_station_code": "037201100302301",
+      "station_name": "MACHEMO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1725",
+      "portal_source_label": "27/11/2025 - MNA MACHEMO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "023",
+      "polling_centre_name": "MACHEMO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100302301",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MACHEMO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-101-01",
+      "polling_station_code": "037201100310101",
+      "station_name": "MALAVA BUS/MATATU PARK/TERMINUS POLLING STATION1OF1",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1726",
+      "portal_source_label": "27/11/2025 - MNA MALAVA BUS/MATATU PARK/TERMINUS 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "101",
+      "polling_centre_name": "MALAVA BUS/MATATU PARK/TERMINUS POLLING STATION1OF1",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100310101",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MALAVA BUS/MATATU PARK/TERMINUS POLLING STATION1OF1"
+      ]
+    },
+    {
+      "stream_key": "201-1003-105-01",
+      "polling_station_code": "037201100310501",
+      "station_name": "MAZUNGUTSA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1730",
+      "portal_source_label": "27/11/2025 - MNA MAZUNGUTSA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "105",
+      "polling_centre_name": "MAZUNGUTSA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100310501",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MAZUNGUTSA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-016-02",
+      "polling_station_code": "037201100301602",
+      "station_name": "MNA KIMANG'ETI PRIMARY SCHOOL REPORTED",
+      "stream_no": 2,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1709",
+      "portal_source_label": "27/11/2025 - MNA KIMANG'ETI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "016",
+      "polling_centre_name": "MNA KIMANG'ETI PRIMARY SCHOOL REPORTED",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100301602",
+        "printed/portal centre MNA KIMANG'ETI PRIMARY SCHOOL REPORTED"
+      ]
+    },
+    {
+      "stream_key": "201-1003-013-01",
+      "polling_station_code": "037201100301301",
+      "station_name": "MUKHONJE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1702",
+      "portal_source_label": "27/11/2025 - MNA MUKHONJE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "013",
+      "polling_centre_name": "MUKHONJE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100301301",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MUKHONJE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-013-02",
+      "polling_station_code": "037201100301302",
+      "station_name": "MUKHONJE PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1703",
+      "portal_source_label": "27/11/2025 - MNA MUKHONJE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "013",
+      "polling_centre_name": "MUKHONJE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100301302",
+        "printed/portal ward CHEMUCHE",
+        "printed/portal centre MUKHONJE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-012-01",
+      "polling_station_code": "037201100301201",
+      "station_name": "MUTINGIONG'O PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1700",
+      "portal_source_label": "27/11/2025 - MNA MUTING'ONG'O PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "012",
+      "polling_centre_name": "MUTINGIONG'O PRIMARY SCHOOL",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100301201",
+        "printed/portal centre MUTINGIONG'O PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-012-02",
+      "polling_station_code": "037201100301202",
+      "station_name": "MUTINGONG'O PRIMARY SCHOOL POLLING STATION2OF200",
+      "stream_no": 2,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1701",
+      "portal_source_label": "27/11/2025 - MNA MUTING'ONG'O PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "012",
+      "polling_centre_name": "MUTINGONG'O PRIMARY SCHOOL POLLING STATION2OF200",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100301202",
+        "printed/portal ward CHEMUCHE",
+        "printed/portal centre MUTINGONG'O PRIMARY SCHOOL POLLING STATION2OF200"
+      ]
+    },
+    {
+      "stream_key": "201-1003-102-01",
+      "polling_station_code": "037201100310201",
+      "station_name": "SHIRULO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1727",
+      "portal_source_label": "27/11/2025 - MNA SHIRULO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "102",
+      "polling_centre_name": "SHIRULO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100310201",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre SHIRULO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-018-02",
+      "polling_station_code": "037201100301802",
+      "station_name": "SHIVIKHWA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1714",
+      "portal_source_label": "27/11/2025 - MNA SHIVIKHWA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "018",
+      "polling_centre_name": "SHIVIKHWA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100301802",
+        "printed/portal ward CHEMUCHE",
+        "printed/portal centre SHIVIKHWA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1003-018-01",
+      "polling_station_code": "037201100301801",
+      "station_name": "SHIVIKHWA PRIMARY SCHOOL TOF2 RE _037201100301801",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1713",
+      "portal_source_label": "27/11/2025 - MNA SHIVIKHWA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "018",
+      "polling_centre_name": "SHIVIKHWA PRIMARY SCHOOL TOF2 RE _037201100301801",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100301801",
+        "printed/portal centre SHIVIKHWA PRIMARY SCHOOL TOF2 RE _037201100301801"
+      ]
+    },
+    {
+      "stream_key": "201-1003-014-01",
+      "polling_station_code": "037201100301401",
+      "station_name": "SUTIRIRA PRIMARY. SCHOOL ROLLING STATION--GF ° WO ARIESCOMMP NOZPENDENTE SENO OES __ 037201100301401",
+      "stream_no": 1,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1704",
+      "portal_source_label": "27/11/2025 - MNA SHITIRIRA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "014",
+      "polling_centre_name": "SUTIRIRA PRIMARY. SCHOOL ROLLING STATION--GF ° WO ARIESCOMMP NOZPENDENTE SENO OES __ 037201100301401",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100301401",
+        "printed/portal centre SUTIRIRA PRIMARY. SCHOOL ROLLING STATION--GF ° WO ARIESCOMMP NOZPENDENTE SENO OES __ 037201100301401"
+      ]
+    },
+    {
+      "stream_key": "201-1003-015-02",
+      "polling_station_code": "037201100301502",
+      "station_name": "TUMBENI PRIMARY SCHOOL POLLING STATION20F200 DE 037201100301502",
+      "stream_no": 2,
+      "ward_code": "1003",
+      "ward_name": "CHEMUCHE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1707",
+      "portal_source_label": "27/11/2025 - MNA TUMBENI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "015",
+      "polling_centre_name": "TUMBENI PRIMARY SCHOOL POLLING STATION20F200 DE 037201100301502",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100301502",
+        "printed/portal centre TUMBENI PRIMARY SCHOOL POLLING STATION20F200 DE 037201100301502"
+      ]
+    },
+    {
+      "stream_key": "201-1004-029-01",
+      "polling_station_code": "037201100402901",
+      "station_name": "BUNUKU PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1741",
+      "portal_source_label": "27/11/2025 - MNA BUNUKU PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "029",
+      "polling_centre_name": "BUNUKU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100402901",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre BUNUKU PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-029-02",
+      "polling_station_code": "037201100402902",
+      "station_name": "BUNUKU PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1742",
+      "portal_source_label": "27/11/2025 - MNA BUNUKU PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "029",
+      "polling_centre_name": "BUNUKU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100402902",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre BUNUKU PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-034-01",
+      "polling_station_code": "037201100403401",
+      "station_name": "CHESERO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1747",
+      "portal_source_label": "27/11/2025 - MNA CHESERO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "034",
+      "polling_centre_name": "CHESERO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100403401",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre CHESERO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-032-01",
+      "polling_station_code": "037201100403201",
+      "station_name": "FUVALE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1745",
+      "portal_source_label": "27/11/2025 - MNA FUVALE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "032",
+      "polling_centre_name": "FUVALE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100403201",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre FUVALE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-027-01",
+      "polling_station_code": "037201100402701",
+      "station_name": "IKOLI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1738",
+      "portal_source_label": "27/11/2025 - MNA IKOLI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "027",
+      "polling_centre_name": "IKOLI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100402701",
+        "printed/portal ward EAST KABRAS",
+        "printed/portal centre IKOLI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-033-01",
+      "polling_station_code": "037201100403301",
+      "station_name": "KAKOY! PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1746",
+      "portal_source_label": "27/11/2025 - MNA KAKOYI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "033",
+      "polling_centre_name": "KAKOY! PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100403301",
+        "printed/portal ward EAST KABRAS",
+        "printed/portal centre KAKOY! PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-024-02",
+      "polling_station_code": "037201100402402",
+      "station_name": "LWANDA KABRAS PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1732",
+      "portal_source_label": "27/11/2025 - MNA LWANDA KABRAS  PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "024",
+      "polling_centre_name": "LWANDA KABRAS PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100402402",
+        "printed/portal ward EAST KABRAS",
+        "printed/portal centre LWANDA KABRAS PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-024-01",
+      "polling_station_code": "037201100402401",
+      "station_name": "LWANDA KABRAS PRIMARY SCHOOL J",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1731",
+      "portal_source_label": "27/11/2025 - MNA LWANDA KABRAS  PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "024",
+      "polling_centre_name": "LWANDA KABRAS PRIMARY SCHOOL J",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100402401",
+        "printed/portal ward EAST KABRAS",
+        "printed/portal centre LWANDA KABRAS PRIMARY SCHOOL J"
+      ]
+    },
+    {
+      "stream_key": "201-1004-026-01",
+      "polling_station_code": "037201100402601",
+      "station_name": "MANGULIRO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1736",
+      "portal_source_label": "27/11/2025 - MNA MANGULIRO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "026",
+      "polling_centre_name": "MANGULIRO PRIMARY SCHOOL",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100402601",
+        "printed/portal centre MANGULIRO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-026-02",
+      "polling_station_code": "037201100402602",
+      "station_name": "MANGULIRO PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1737",
+      "portal_source_label": "27/11/2025 - MNA MANGULIRO PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "026",
+      "polling_centre_name": "MANGULIRO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100402602",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MANGULIRO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-107-01",
+      "polling_station_code": "037201100410701",
+      "station_name": "MISIMO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1750",
+      "portal_source_label": "27/11/2025 - MNA MISIMO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "107",
+      "polling_centre_name": "MISIMO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100410701",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MISIMO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-106-01",
+      "polling_station_code": "037201100410601",
+      "station_name": "MUKANGU PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1749",
+      "portal_source_label": "27/11/2025 - MNA MUKANGU PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "106",
+      "polling_centre_name": "MUKANGU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100410601",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MUKANGU PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-035-01",
+      "polling_station_code": "037201100403501",
+      "station_name": "MUKHUYU PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1748",
+      "portal_source_label": "27/11/2025 - MNA MUKHUYU PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "035",
+      "polling_centre_name": "MUKHUYU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100403501",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MUKHUYU PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-030-01",
+      "polling_station_code": "037201100403001",
+      "station_name": "NGUVULI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1743",
+      "portal_source_label": "27/11/2025 - MNA NGUVULI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "030",
+      "polling_centre_name": "NGUVULI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100403001",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre NGUVULI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-025-01",
+      "polling_station_code": "037201100402501",
+      "station_name": "SHIANDA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1733",
+      "portal_source_label": "27/11/2025 - MNA SHIANDA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "025",
+      "polling_centre_name": "SHIANDA PRIMARY SCHOOL",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100402501",
+        "printed/portal centre SHIANDA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-025-02",
+      "polling_station_code": "037201100402502",
+      "station_name": "SHIANDA PRIMARY SCHOOL POLLING STATION20F3 RODE __037201100402502",
+      "stream_no": 2,
+      "ward_code": "1004",
+      "ward_name": "EAST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1734",
+      "portal_source_label": "27/11/2025 - MNA SHIANDA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "025",
+      "polling_centre_name": "SHIANDA PRIMARY SCHOOL POLLING STATION20F3 RODE __037201100402502",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100402502",
+        "printed/portal ward EAST KABRAS",
+        "printed/portal centre SHIANDA PRIMARY SCHOOL POLLING STATION20F3 RODE __037201100402502"
+      ]
+    },
+    {
+      "stream_key": "201-1008-083-02",
+      "polling_station_code": "037201100808302",
+      "station_name": "CHEVOSO PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1849",
+      "portal_source_label": "27/11/2025 - MNA CHEVOSO PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "083",
+      "polling_centre_name": "CHEVOSO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100808302",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre CHEVOSO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-095-01",
+      "polling_station_code": "037201100809501",
+      "station_name": "CHILIVA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1870",
+      "portal_source_label": "27/11/2025 - MNA CHILIVA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "095",
+      "polling_centre_name": "CHILIVA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100809501",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre CHILIVA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-084-01",
+      "polling_station_code": "037201100808401",
+      "station_name": "CHOMBEL! PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1850",
+      "portal_source_label": "27/11/2025 - MNA CHOMBELI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "084",
+      "polling_centre_name": "CHOMBEL! PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100808401",
+        "printed/portal ward LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+        "printed/portal centre CHOMBEL! PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-084-02",
+      "polling_station_code": "037201100808402",
+      "station_name": "CHOMBELI PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1851",
+      "portal_source_label": "27/11/2025 - MNA CHOMBELI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "084",
+      "polling_centre_name": "CHOMBELI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100808402",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre CHOMBELI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-086-01",
+      "polling_station_code": "037201100808601",
+      "station_name": "LUNYINYA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1854",
+      "portal_source_label": "27/11/2025 - MNA LUNYINYA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "086",
+      "polling_centre_name": "LUNYINYA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100808601",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre LUNYINYA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-088-01",
+      "polling_station_code": "037201100808801",
+      "station_name": "LUSUMU PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1858",
+      "portal_source_label": "27/11/2025 - MNA LUSUMU PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "088",
+      "polling_centre_name": "LUSUMU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100808801",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre LUSUMU PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-087-01",
+      "polling_station_code": "037201100808701",
+      "station_name": "MAHIRA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1856",
+      "portal_source_label": "27/11/2025 - MNA MAHIRA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "087",
+      "polling_centre_name": "MAHIRA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100808701",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MAHIRA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-087-02",
+      "polling_station_code": "037201100808702",
+      "station_name": "MAHIRA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1857",
+      "portal_source_label": "27/11/2025 - MNA MAHIRA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "087",
+      "polling_centre_name": "MAHIRA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100808702",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MAHIRA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-090-02",
+      "polling_station_code": "037201100809002",
+      "station_name": "MALIMALI PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1861",
+      "portal_source_label": "27/11/2025 - MNA MALIMALI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "090",
+      "polling_centre_name": "MALIMALI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100809002",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MALIMALI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-085-01",
+      "polling_station_code": "037201100808501",
+      "station_name": "SHAMONI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1852",
+      "portal_source_label": "27/11/2025 - MNA SHAMONI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "085",
+      "polling_centre_name": "SHAMONI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100808501",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre SHAMONI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-085-02",
+      "polling_station_code": "037201100808502",
+      "station_name": "SHAMONI PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1853",
+      "portal_source_label": "27/11/2025 - MNA SHAMONI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "085",
+      "polling_centre_name": "SHAMONI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100808502",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre SHAMONI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-092-03",
+      "polling_station_code": "037201100809203",
+      "station_name": "ST. GERALD SASALA SCHOOL",
+      "stream_no": 3,
+      "ward_code": "1008",
+      "ward_name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1866",
+      "portal_source_label": "27/11/2025 - MNA ST. GERALD SASALA SCHOOL 03 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "092",
+      "polling_centre_name": "ST. GERALD SASALA SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100809203",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre ST. GERALD SASALA SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-061-01",
+      "polling_station_code": "037201100606101",
+      "station_name": "BISUNU PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1799",
+      "portal_source_label": "27/11/2025 - MNA BISUNU PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "061",
+      "polling_centre_name": "BISUNU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100606101",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre BISUNU PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-061-02",
+      "polling_station_code": "037201100606102",
+      "station_name": "BISUNU PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1800",
+      "portal_source_label": "27/11/2025 - MNA BISUNU PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "061",
+      "polling_centre_name": "BISUNU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100606102",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre BISUNU PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-069-01",
+      "polling_station_code": "037201100606901",
+      "station_name": "BWANGA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1812",
+      "portal_source_label": "27/11/2025 - MNA BWANGA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "069",
+      "polling_centre_name": "BWANGA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100606901",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre BWANGA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-059-01",
+      "polling_station_code": "037201100605901",
+      "station_name": "FUVUYE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1795",
+      "portal_source_label": "27/11/2025 - MNA FUVUYE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "059",
+      "polling_centre_name": "FUVUYE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605901",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre FUVUYE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-059-02",
+      "polling_station_code": "037201100605902",
+      "station_name": "FUVUYE PRIMARY SCHOOL —___—~",
+      "stream_no": 2,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1796",
+      "portal_source_label": "27/11/2025 - MNA FUVUYE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "059",
+      "polling_centre_name": "FUVUYE PRIMARY SCHOOL —___—~",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605902",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre FUVUYE PRIMARY SCHOOL —___—~"
+      ]
+    },
+    {
+      "stream_key": "201-1006-066-01",
+      "polling_station_code": "037201100606601",
+      "station_name": "HAMUTUA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1807",
+      "portal_source_label": "27/11/2025 - MNA HAMUTUA PRIMARY  SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "066",
+      "polling_centre_name": "HAMUTUA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100606601",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre HAMUTUA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-055-02",
+      "polling_station_code": "037201100605502",
+      "station_name": "LURALE PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1787",
+      "portal_source_label": "27/11/2025 - MNA LURALE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "055",
+      "polling_centre_name": "LURALE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605502",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre LURALE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-055-01",
+      "polling_station_code": "037201100605501",
+      "station_name": "LURALE PRIMARY SCHOOL POLLING STATION1OF2-CADE 037201100605501",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1786",
+      "portal_source_label": "27/11/2025 - MNA LURALE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "055",
+      "polling_centre_name": "LURALE PRIMARY SCHOOL POLLING STATION1OF2-CADE 037201100605501",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605501",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre LURALE PRIMARY SCHOOL POLLING STATION1OF2-CADE 037201100605501"
+      ]
+    },
+    {
+      "stream_key": "201-1006-053-01",
+      "polling_station_code": "037201100605301",
+      "station_name": "MANDA KABRAS PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1783",
+      "portal_source_label": "27/11/2025 - MNA MANDA KABRAS PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "053",
+      "polling_centre_name": "MANDA KABRAS PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605301",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre MANDA KABRAS PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-053-02",
+      "polling_station_code": "037201100605302",
+      "station_name": "MANDA KABRAS PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1784",
+      "portal_source_label": "27/11/2025 - MNA MANDA KABRAS PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "053",
+      "polling_centre_name": "MANDA KABRAS PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605302",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre MANDA KABRAS PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-057-01",
+      "polling_station_code": "037201100605701",
+      "station_name": "MATETE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1790",
+      "portal_source_label": "27/11/2025 - MNA MATETE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "057",
+      "polling_centre_name": "MATETE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605701",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MATETE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-057-02",
+      "polling_station_code": "037201100605702",
+      "station_name": "MATETE PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1791",
+      "portal_source_label": "27/11/2025 - MNA MATETE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "057",
+      "polling_centre_name": "MATETE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605702",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MATETE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-057-03",
+      "polling_station_code": "037201100605703",
+      "station_name": "MATETE PRIMARY SCHOOL",
+      "stream_no": 3,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1792",
+      "portal_source_label": "27/11/2025 - MNA MATETE PRIMARY SCHOOL 03 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "057",
+      "polling_centre_name": "MATETE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605703",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre MATETE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-063-01",
+      "polling_station_code": "037201100606301",
+      "station_name": "MUKHUNGULA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1803",
+      "portal_source_label": "27/11/2025 - MNA MUKHUNGULA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "063",
+      "polling_centre_name": "MUKHUNGULA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100606301",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MUKHUNGULA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-111-03",
+      "polling_station_code": "037201100611103",
+      "station_name": "MUNANGA PRIMARY SCHOOL",
+      "stream_no": 3,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1814",
+      "portal_source_label": "27/11/2025 - MNA MUNANGA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "111",
+      "polling_centre_name": "MUNANGA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100611103",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre MUNANGA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-110-01",
+      "polling_station_code": "037201100611001",
+      "station_name": "MURIOLA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1813",
+      "portal_source_label": "27/11/2025 - MNA MURIOLA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "110",
+      "polling_centre_name": "MURIOLA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100611001",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MURIOLA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-112-01",
+      "polling_station_code": "037201100611201",
+      "station_name": "MUTOTO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1815",
+      "portal_source_label": "27/11/2025 - MNA MUTOTO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "112",
+      "polling_centre_name": "MUTOTO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100611201",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre MUTOTO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-058-01",
+      "polling_station_code": "037201100605801",
+      "station_name": "NAMAGARA PRIMARY SCHOOL POLLING STATION1OF20 RODE __037201100605801",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1793",
+      "portal_source_label": "27/11/2025 - MNA NAMAGARA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "058",
+      "polling_centre_name": "NAMAGARA PRIMARY SCHOOL POLLING STATION1OF20 RODE __037201100605801",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605801",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre NAMAGARA PRIMARY SCHOOL POLLING STATION1OF20 RODE __037201100605801"
+      ]
+    },
+    {
+      "stream_key": "201-1006-068-01",
+      "polling_station_code": "037201100606801",
+      "station_name": "NAMATALA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1810",
+      "portal_source_label": "27/11/2025 - MNA NAMATALA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "068",
+      "polling_centre_name": "NAMATALA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100606801",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre NAMATALA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-068-02",
+      "polling_station_code": "037201100606802",
+      "station_name": "NAMATALA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1811",
+      "portal_source_label": "27/11/2025 - MNA NAMATALA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "068",
+      "polling_centre_name": "NAMATALA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100606802",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre NAMATALA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-067-01",
+      "polling_station_code": "037201100606701",
+      "station_name": "SHIANDICHE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1809",
+      "portal_source_label": "27/11/2025 - MNA SHIANDICHE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "067",
+      "polling_centre_name": "SHIANDICHE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100606701",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre SHIANDICHE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-062-01",
+      "polling_station_code": "037201100606201",
+      "station_name": "SHIVANGA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1801",
+      "portal_source_label": "27/11/2025 - MNA SHIVANGA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "062",
+      "polling_centre_name": "SHIVANGA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100606201",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre SHIVANGA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-062-02",
+      "polling_station_code": "037201100606202",
+      "station_name": "SHIVANGA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1802",
+      "portal_source_label": "27/11/2025 - MNA SHIVANGA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "062",
+      "polling_centre_name": "SHIVANGA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100606202",
+        "printed/portal ward MANDA-SHIVANGA",
+        "printed/portal centre SHIVANGA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-054-01",
+      "polling_station_code": "037201100605401",
+      "station_name": "SILUNGAI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1785",
+      "portal_source_label": "27/11/2025 - MNA SILUNGAI PRIMARY  SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "054",
+      "polling_centre_name": "SILUNGAI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605401",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre SILUNGAI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-064-02",
+      "polling_station_code": "037201100606402",
+      "station_name": "ST-JOSEPH LUNYU K PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1805",
+      "portal_source_label": "27/11/2025 - MNA ST. JOSEPH LUNYU K PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "064",
+      "polling_centre_name": "ST-JOSEPH LUNYU K PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100606402",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre ST-JOSEPH LUNYU K PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-056-01",
+      "polling_station_code": "037201100605601",
+      "station_name": "TOMBO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1788",
+      "portal_source_label": "27/11/2025 - MNA TOMBO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "056",
+      "polling_centre_name": "TOMBO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605601",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre TOMBO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1006-056-02",
+      "polling_station_code": "037201100605602",
+      "station_name": "TOMBO PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1006",
+      "ward_name": "MANDA-SHIVANGA",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1789",
+      "portal_source_label": "27/11/2025 - MNA TOMBO PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "056",
+      "polling_centre_name": "TOMBO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100605602",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre TOMBO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-078-01",
+      "polling_station_code": "037201100707801",
+      "station_name": "LUYESHE PRIMARY SCHOOL POLLING STATION1OF2 DE __037201100707801",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHI SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1834",
+      "portal_source_label": "27/11/2025 - MNA LUYESHE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "078",
+      "polling_centre_name": "LUYESHE PRIMARY SCHOOL POLLING STATION1OF2 DE __037201100707801",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707801",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre LUYESHE PRIMARY SCHOOL POLLING STATION1OF2 DE __037201100707801"
+      ]
+    },
+    {
+      "stream_key": "201-1007-117-01",
+      "polling_station_code": "037201100711701",
+      "station_name": "MAKHWABUYE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHI SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1843",
+      "portal_source_label": "27/11/2025 - MNA MAKHWABUYE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "117",
+      "polling_centre_name": "MAKHWABUYE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100711701",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MAKHWABUYE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-074-02",
+      "polling_station_code": "037201100707402",
+      "station_name": "MALAVA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1007",
+      "ward_name": "SHI SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1825",
+      "portal_source_label": "27/11/2025 - MNA MALAVA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "074",
+      "polling_centre_name": "MALAVA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707402",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MALAVA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-074-03",
+      "polling_station_code": "037201100707403",
+      "station_name": "MALAVA PRIMARY SCHOOL",
+      "stream_no": 3,
+      "ward_code": "1007",
+      "ward_name": "SHI SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1826",
+      "portal_source_label": "27/11/2025 - MNA MALAVA PRIMARY SCHOOL 03 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "074",
+      "polling_centre_name": "MALAVA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707403",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MALAVA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-080-01",
+      "polling_station_code": "037201100708001",
+      "station_name": "MUCHANJA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHI SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1838",
+      "portal_source_label": "27/11/2025 - MNA MUCHANJA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "080",
+      "polling_centre_name": "MUCHANJA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100708001",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MUCHANJA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-113-01",
+      "polling_station_code": "037201100711301",
+      "station_name": "MUSUNGU PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHI SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1839",
+      "portal_source_label": "27/11/2025 - MNA MUSUNGU PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "113",
+      "polling_centre_name": "MUSUNGU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100711301",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MUSUNGU PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-071-02",
+      "polling_station_code": "037201100707102",
+      "station_name": "SAMITS! PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1007",
+      "ward_name": "SHI SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1818",
+      "portal_source_label": "27/11/2025 - MNA SAMITSI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "071",
+      "polling_centre_name": "SAMITS! PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707102",
+        "printed/portal ward SHI SHIRUGU-MUGAI",
+        "printed/portal centre SAMITS! PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-070-01",
+      "polling_station_code": "037201100707001",
+      "station_name": "KALENDA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1816",
+      "portal_source_label": "27/11/2025 - MNA KALENDA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "070",
+      "polling_centre_name": "KALENDA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707001",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre KALENDA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-079-01",
+      "polling_station_code": "037201100707901",
+      "station_name": "LUKALA KABRAS PRIMARY SCHOOL OF2- RODE __037201100707901",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1836",
+      "portal_source_label": "27/11/2025 - MNA LUKALA KABRAS  PRIMARY  SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "079",
+      "polling_centre_name": "LUKALA KABRAS PRIMARY SCHOOL OF2- RODE __037201100707901",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707901",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre LUKALA KABRAS PRIMARY SCHOOL OF2- RODE __037201100707901"
+      ]
+    },
+    {
+      "stream_key": "201-1007-079-02",
+      "polling_station_code": "037201100707902",
+      "station_name": "LUKALA KABRAS PRIMARY SCHOOL POLLING STATION2OF2 DE 037201100707902",
+      "stream_no": 2,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1837",
+      "portal_source_label": "27/11/2025 - MNA LUKALA KABRAS  PRIMARY  SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "079",
+      "polling_centre_name": "LUKALA KABRAS PRIMARY SCHOOL POLLING STATION2OF2 DE 037201100707902",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707902",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre LUKALA KABRAS PRIMARY SCHOOL POLLING STATION2OF2 DE 037201100707902"
+      ]
+    },
+    {
+      "stream_key": "201-1007-077-01",
+      "polling_station_code": "037201100707701",
+      "station_name": "LUTALI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1832",
+      "portal_source_label": "27/11/2025 - MNA LUTALI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "077",
+      "polling_centre_name": "LUTALI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707701",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre LUTALI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-077-02",
+      "polling_station_code": "037201100707702",
+      "station_name": "LUTALI PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1833",
+      "portal_source_label": "27/11/2025 - MNA LUTALI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "077",
+      "polling_centre_name": "LUTALI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707702",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre LUTALI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-074-04",
+      "polling_station_code": "037201100707404",
+      "station_name": "MALAVA PRIMARY SCHOOL",
+      "stream_no": 4,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1827",
+      "portal_source_label": "27/11/2025 - MNA MALAVA PRIMARY SCHOOL 04 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "074",
+      "polling_centre_name": "MALAVA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707404",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre MALAVA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-073-02",
+      "polling_station_code": "037201100707302",
+      "station_name": "MALEKHA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1823",
+      "portal_source_label": "27/11/2025 - MNA MALEKHA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "073",
+      "polling_centre_name": "MALEKHA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707302",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre MALEKHA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-072-02",
+      "polling_station_code": "037201100707202",
+      "station_name": "MNA SHIRUGU PRIMARY SCHOOL REPORTED",
+      "stream_no": 2,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1821",
+      "portal_source_label": "27/11/2025 - MNA SHIRUGU PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "072",
+      "polling_centre_name": "MNA SHIRUGU PRIMARY SCHOOL REPORTED",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100707202",
+        "printed/portal centre MNA SHIRUGU PRIMARY SCHOOL REPORTED"
+      ]
+    },
+    {
+      "stream_key": "201-1007-075-01",
+      "polling_station_code": "037201100707501",
+      "station_name": "MUGAI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1828",
+      "portal_source_label": "27/11/2025 - MNA MUGAI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "075",
+      "polling_centre_name": "MUGAI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707501",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre MUGAI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-075-02",
+      "polling_station_code": "037201100707502",
+      "station_name": "MUGAI PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1829",
+      "portal_source_label": "27/11/2025 - MNA MUGAI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "075",
+      "polling_centre_name": "MUGAI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707502",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre MUGAI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-071-01",
+      "polling_station_code": "037201100707101",
+      "station_name": "SAMITSI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1817",
+      "portal_source_label": "27/11/2025 - MNA SAMITSI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "071",
+      "polling_centre_name": "SAMITSI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707101",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre SAMITSI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-071-03",
+      "polling_station_code": "037201100707103",
+      "station_name": "SAMITS| PRIMARY SCHOOL",
+      "stream_no": 3,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1819",
+      "portal_source_label": "27/11/2025 - MNA SAMITSI PRIMARY SCHOOL 03 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "071",
+      "polling_centre_name": "SAMITS| PRIMARY SCHOOL",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100707103",
+        "printed/portal centre SAMITS| PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-076-02",
+      "polling_station_code": "037201100707602",
+      "station_name": "SHEYWE PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1831",
+      "portal_source_label": "27/11/2025 - MNA SHEYWE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "076",
+      "polling_centre_name": "SHEYWE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707602",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre SHEYWE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-072-01",
+      "polling_station_code": "037201100707201",
+      "station_name": "SHIRUGU PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1820",
+      "portal_source_label": "27/11/2025 - MNA SHIRUGU PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "072",
+      "polling_centre_name": "SHIRUGU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707201",
+        "printed/portal ward SHIRUGU-MUGAI",
+        "printed/portal centre SHIRUGU PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1007-116-01",
+      "polling_station_code": "037201100711601",
+      "station_name": "MALAVA TOWN MARKET",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI ADENOE T0G7 EC TONS SIONINE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1842",
+      "portal_source_label": "27/11/2025 - MNA MALAVA TOWN MARKET 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "116",
+      "polling_centre_name": "MALAVA TOWN MARKET",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100711601",
+        "printed/portal ward SHIRUGU-MUGAI ADENOE T0G7 EC TONS SIONINE",
+        "printed/portal centre MALAVA TOWN MARKET"
+      ]
+    },
+    {
+      "stream_key": "201-1007-073-01",
+      "polling_station_code": "037201100707301",
+      "station_name": "MALEKHA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1007",
+      "ward_name": "SHIRUGU-MUGAI ’",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1822",
+      "portal_source_label": "27/11/2025 - MNA MALEKHA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "073",
+      "polling_centre_name": "MALEKHA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100707301",
+        "printed/portal ward SHIRUGU-MUGAI ’",
+        "printed/portal centre MALEKHA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-083-01",
+      "polling_station_code": "037201100808301",
+      "station_name": "CHEVOSO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1008",
+      "ward_name": "SOUTH KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1848",
+      "portal_source_label": "27/11/2025 - MNA CHEVOSO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "083",
+      "polling_centre_name": "CHEVOSO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100808301",
+        "printed/portal ward SOUTH KABRAS",
+        "printed/portal centre CHEVOSO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-096-01",
+      "polling_station_code": "037201100809601",
+      "station_name": "FWETERE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1008",
+      "ward_name": "SOUTH KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1871",
+      "portal_source_label": "27/11/2025 - MNA IFWETERE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "096",
+      "polling_centre_name": "FWETERE PRIMARY SCHOOL",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100809601",
+        "printed/portal centre FWETERE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-096-02",
+      "polling_station_code": "037201100809602",
+      "station_name": "FWETERE PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1008",
+      "ward_name": "SOUTH KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1872",
+      "portal_source_label": "27/11/2025 - MNA IFWETERE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "096",
+      "polling_centre_name": "FWETERE PRIMARY SCHOOL",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100809602",
+        "printed/portal centre FWETERE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-091-02",
+      "polling_station_code": "037201100809102",
+      "station_name": "INGAVIRA PRIMARY SCHOOL POLLING STATION20F2°",
+      "stream_no": 2,
+      "ward_code": "1008",
+      "ward_name": "SOUTH KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1863",
+      "portal_source_label": "27/11/2025 - MNA INGAVIRA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "091",
+      "polling_centre_name": "INGAVIRA PRIMARY SCHOOL POLLING STATION20F2°",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100809102",
+        "printed/portal centre INGAVIRA PRIMARY SCHOOL POLLING STATION20F2°"
+      ]
+    },
+    {
+      "stream_key": "201-1008-086-02",
+      "polling_station_code": "037201100808602",
+      "station_name": "LUNYINYA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1008",
+      "ward_name": "SOUTH KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1855",
+      "portal_source_label": "27/11/2025 - MNA LUNYINYA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "086",
+      "polling_centre_name": "LUNYINYA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100808602",
+        "printed/portal ward SOUTH KABRAS",
+        "printed/portal centre LUNYINYA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-090-01",
+      "polling_station_code": "037201100809001",
+      "station_name": "MALIMAL! PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1008",
+      "ward_name": "SOUTH KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1860",
+      "portal_source_label": "27/11/2025 - MNA MALIMALI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "090",
+      "polling_centre_name": "MALIMAL! PRIMARY SCHOOL",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100809001",
+        "printed/portal centre MALIMAL! PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-094-02",
+      "polling_station_code": "037201100809402",
+      "station_name": "MNA MATENDE PRIMARY SCHOOL REPORTED",
+      "stream_no": 2,
+      "ward_code": "1008",
+      "ward_name": "SOUTH KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1869",
+      "portal_source_label": "27/11/2025 - MNA MATENDE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "094",
+      "polling_centre_name": "MNA MATENDE PRIMARY SCHOOL REPORTED",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100809402",
+        "printed/portal centre MNA MATENDE PRIMARY SCHOOL REPORTED"
+      ]
+    },
+    {
+      "stream_key": "201-1008-082-02",
+      "polling_station_code": "037201100808202",
+      "station_name": "SHAMBERERE PRIMARY SCHOOL POLLING STATION20F2 GE 037201100808202 WAG AP ENDENT EC CE AIRBAG NTEL OMMISSION, WOROE UNE DENDENTEL E(OMNDEPENDEN ONT EU, CLEAN) DENN ECTOMSSIONIND",
+      "stream_no": 2,
+      "ward_code": "1008",
+      "ward_name": "SOUTH KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1847",
+      "portal_source_label": "27/11/2025 - MNA SHAMBERERE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "082",
+      "polling_centre_name": "SHAMBERERE PRIMARY SCHOOL POLLING STATION20F2 GE 037201100808202 WAG AP ENDENT EC CE AIRBAG NTEL OMMISSION, WOROE UNE DENDENTEL E(OMNDEPENDEN ONT EU, CLEAN) DENN ECTOMSSIONIND",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100808202",
+        "printed/portal centre SHAMBERERE PRIMARY SCHOOL POLLING STATION20F2 GE 037201100808202 WAG AP ENDENT EC CE AIRBAG NTEL OMMISSION, WOROE UNE DENDENTEL E(OMNDEPENDEN ONT EU, CLEAN) DENN ECTOMSSIONIND"
+      ]
+    },
+    {
+      "stream_key": "201-1008-092-01",
+      "polling_station_code": "037201100809201",
+      "station_name": "ST. GERALD SASALA SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1008",
+      "ward_name": "SOUTH KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1864",
+      "portal_source_label": "27/11/2025 - MNA ST. GERALD SASALA SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "092",
+      "polling_centre_name": "ST. GERALD SASALA SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100809201",
+        "printed/portal ward SOUTH KABRAS",
+        "printed/portal centre ST. GERALD SASALA SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1008-094-01",
+      "polling_station_code": "037201100809401",
+      "station_name": "MATENDE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1008",
+      "ward_name": "SOUTH KABRAS XT",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1868",
+      "portal_source_label": "27/11/2025 - MNA MATENDE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "094",
+      "polling_centre_name": "MATENDE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100809401",
+        "printed/portal ward SOUTH KABRAS XT",
+        "printed/portal centre MATENDE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1004-025-03",
+      "polling_station_code": "037201100402503",
+      "station_name": "SHIANDA PRIMARY SCHOOL",
+      "stream_no": 3,
+      "ward_code": "1004",
+      "ward_name": "STAB RAS CADENOK04 ECHOS SSIONINO",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1735",
+      "portal_source_label": "27/11/2025 - MNA SHIANDA PRIMARY SCHOOL 03 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "025",
+      "polling_centre_name": "SHIANDA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100402503",
+        "printed/portal ward STAB RAS CADENOK04 ECHOS SSIONINO",
+        "printed/portal centre SHIANDA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-P77171806-01",
+      "polling_station_code": "037201833477171806",
+      "station_name": "CHEGULO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1755",
+      "portal_source_label": "27/11/2025 - MNA CHEGULO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P40654007-01",
+      "polling_station_code": "037201161940654007",
+      "station_name": "CHEPTULI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1806",
+      "portal_source_label": "27/11/2025 - MNA CHEPTULI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P47732351-01",
+      "polling_station_code": "037201237947732351",
+      "station_name": "CHIVELI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1744",
+      "portal_source_label": "27/11/2025 - MNA CHIVELI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P23916779-01",
+      "polling_station_code": "037201412323916779",
+      "station_name": "EMUSALI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1867",
+      "portal_source_label": "27/11/2025 - MNA EMUSALI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P57004034-02",
+      "polling_station_code": "037201395257004034",
+      "station_name": "HAMUTUA PRIMARY  SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1808",
+      "portal_source_label": "27/11/2025 - MNA HAMUTUA PRIMARY  SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P44354900-02",
+      "polling_station_code": "037201630144354900",
+      "station_name": "IKOLI PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1739",
+      "portal_source_label": "27/11/2025 - MNA IKOLI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P41380899-02",
+      "polling_station_code": "037201596041380899",
+      "station_name": "IMBIAKALO PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1695",
+      "portal_source_label": "27/11/2025 - MNA IMBIAKALO PRIMARY SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P42566024-01",
+      "polling_station_code": "037201856542566024",
+      "station_name": "INGAVIRA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1862",
+      "portal_source_label": "27/11/2025 - MNA INGAVIRA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P18317987-01",
+      "polling_station_code": "037201942818317987",
+      "station_name": "ISANJIRO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1721",
+      "portal_source_label": "27/11/2025 - MNA ISANJIRO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P48233641-01",
+      "polling_station_code": "037201703348233641",
+      "station_name": "KAKUNGA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1844",
+      "portal_source_label": "27/11/2025 - MNA KAKUNGA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P01941119-02",
+      "polling_station_code": "037201984701941119",
+      "station_name": "KAKUNGA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1845",
+      "portal_source_label": "27/11/2025 - MNA KAKUNGA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P71489579-01",
+      "polling_station_code": "037201679071489579",
+      "station_name": "KIMANG'ETI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1708",
+      "portal_source_label": "27/11/2025 - MNA KIMANG'ETI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P31940485-01",
+      "polling_station_code": "037201727131940485",
+      "station_name": "KOKOYO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1728",
+      "portal_source_label": "27/11/2025 - MNA KOKOYO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P83835521-01",
+      "polling_station_code": "037201434683835521",
+      "station_name": "KUVASALI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1740",
+      "portal_source_label": "27/11/2025 - MNA KUVASALI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P98629852-02",
+      "polling_station_code": "037201276598629852",
+      "station_name": "LUYESHE PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1835",
+      "portal_source_label": "27/11/2025 - MNA LUYESHE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P56045984-02",
+      "polling_station_code": "037201165156045984",
+      "station_name": "MAKUCHE PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1758",
+      "portal_source_label": "27/11/2025 - MNA MAKUCHE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P88388860-01",
+      "polling_station_code": "037201149088388860",
+      "station_name": "MALAVA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1824",
+      "portal_source_label": "27/11/2025 - MNA MALAVA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P65730301-01",
+      "polling_station_code": "037201873265730301",
+      "station_name": "MALICHI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1715",
+      "portal_source_label": "27/11/2025 - MNA MALICHI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P44786224-02",
+      "polling_station_code": "037201747344786224",
+      "station_name": "MALICHI PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1716",
+      "portal_source_label": "27/11/2025 - MNA MALICHI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P61891114-02",
+      "polling_station_code": "037201153761891114",
+      "station_name": "MATIOLI PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1762",
+      "portal_source_label": "27/11/2025 - MNA MATIOLI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P04015401-01",
+      "polling_station_code": "037201130804015401",
+      "station_name": "MUKAVAKAVA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1763",
+      "portal_source_label": "27/11/2025 - MNA MUKAVAKAVA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P59997303-02",
+      "polling_station_code": "037201131759997303",
+      "station_name": "MUTSUMA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1676",
+      "portal_source_label": "27/11/2025 - MNA MUTSUMA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P84454161-02",
+      "polling_station_code": "037201900284454161",
+      "station_name": "NAMAGARA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1794",
+      "portal_source_label": "27/11/2025 - MNA NAMAGARA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P74973542-01",
+      "polling_station_code": "037201318274973542",
+      "station_name": "SAMBULI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1840",
+      "portal_source_label": "27/11/2025 - MNA SAMBULI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P93099160-01",
+      "polling_station_code": "037201524593099160",
+      "station_name": "SAWAWA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1692",
+      "portal_source_label": "27/11/2025 - MNA SAWAWA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P25153860-01",
+      "polling_station_code": "037201510225153860",
+      "station_name": "SHAMBERERE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1846",
+      "portal_source_label": "27/11/2025 - MNA SHAMBERERE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-4007-076-01",
+      "polling_station_code": "037201400707601",
+      "station_name": "SHEYWE PRIMARY SCHOOL 1OF2000",
+      "stream_no": 1,
+      "ward_code": "4007",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1830",
+      "portal_source_label": "27/11/2025 - MNA SHEYWE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "076",
+      "polling_centre_name": "SHEYWE PRIMARY SCHOOL 1OF2000",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201400707601",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre SHEYWE PRIMARY SCHOOL 1OF2000"
+      ]
+    },
+    {
+      "stream_key": "201-P37428401-01",
+      "polling_station_code": "037201539437428401",
+      "station_name": "SHIHOME PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1859",
+      "portal_source_label": "27/11/2025 - MNA SHIHOME PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P99233004-01",
+      "polling_station_code": "037201094199233004",
+      "station_name": "SHIKOKHWE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1841",
+      "portal_source_label": "27/11/2025 - MNA SHIKOKHWE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P16400411-02",
+      "polling_station_code": "037201853016400411",
+      "station_name": "SHITIRIRA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1705",
+      "portal_source_label": "27/11/2025 - MNA SHITIRIRA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P20624381-02",
+      "polling_station_code": "037201423120624381",
+      "station_name": "ST. GERALD SASALA SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1865",
+      "portal_source_label": "27/11/2025 - MNA ST. GERALD SASALA SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P91215708-01",
+      "polling_station_code": "037201556391215708",
+      "station_name": "ST. JOSEPH LUNYU K PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1804",
+      "portal_source_label": "27/11/2025 - MNA ST. JOSEPH LUNYU K PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P42136568-01",
+      "polling_station_code": "037201973142136568",
+      "station_name": "TERESIA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1797",
+      "portal_source_label": "27/11/2025 - MNA TERESIA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P41639996-02",
+      "polling_station_code": "037201683341639996",
+      "station_name": "TERESIA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1798",
+      "portal_source_label": "27/11/2025 - MNA TERESIA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P97777075-01",
+      "polling_station_code": "037201389097777075",
+      "station_name": "TUMBENI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1706",
+      "portal_source_label": "27/11/2025 - MNA TUMBENI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P96901649-01",
+      "polling_station_code": "037201678596901649",
+      "station_name": "VASHELE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1766",
+      "portal_source_label": "27/11/2025 - MNA VASHELE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-P25588891-01",
+      "polling_station_code": "037201093825588891",
+      "station_name": "WAVOKA PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "UNRESOLVED",
+      "ward_name": "WARD TO VERIFY",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1773",
+      "portal_source_label": "27/11/2025 - MNA WAVOKA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "stream_key": "201-1002-002-02",
+      "polling_station_code": "037201100200202",
+      "station_name": "BUKHAKUNGA PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1678",
+      "portal_source_label": "27/11/2025 - MNA BUKHAKUNGA PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "002",
+      "polling_centre_name": "BUKHAKUNGA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200202",
+        "printed/portal ward WEST KABRAS",
+        "printed/portal centre BUKHAKUNGA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-002-08",
+      "polling_station_code": "037201100200208",
+      "station_name": "BUKHAKUNGA PRIMARY SCHOOL",
+      "stream_no": 8,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1679",
+      "portal_source_label": "27/11/2025 - MNA BUKHAKUNGA PRIMARY SCHOOL 03 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "002",
+      "polling_centre_name": "BUKHAKUNGA PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200208",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre BUKHAKUNGA PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-002-01",
+      "polling_station_code": "037201100200201",
+      "station_name": "BUKHAKUNGA PRIMARY SCHOOL POLLING STATIONTOF3 DE 037201100200201",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1677",
+      "portal_source_label": "27/11/2025 - MNA BUKHAKUNGA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "002",
+      "polling_centre_name": "BUKHAKUNGA PRIMARY SCHOOL POLLING STATIONTOF3 DE 037201100200201",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100200201",
+        "printed/portal centre BUKHAKUNGA PRIMARY SCHOOL POLLING STATIONTOF3 DE 037201100200201"
+      ]
+    },
+    {
+      "stream_key": "201-1002-006-03",
+      "polling_station_code": "037201100200603",
+      "station_name": "BULUP! PRIMARY SCHOOL",
+      "stream_no": 3,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1688",
+      "portal_source_label": "27/11/2025 - MNA BULUPI PRIMARY SCHOOL 03 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "006",
+      "polling_centre_name": "BULUP! PRIMARY SCHOOL",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100200603",
+        "printed/portal centre BULUP! PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-006-01",
+      "polling_station_code": "037201100200601",
+      "station_name": "BULUPI PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1686",
+      "portal_source_label": "27/11/2025 - MNA BULUPI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "006",
+      "polling_centre_name": "BULUPI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200601",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre BULUPI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-006-02",
+      "polling_station_code": "037201100200602",
+      "station_name": "BULUPI PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1687",
+      "portal_source_label": "27/11/2025 - MNA BULUPI PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "006",
+      "polling_centre_name": "BULUPI PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200602",
+        "printed/portal ward WEST KABRAS",
+        "printed/portal centre BULUPI PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-003-02",
+      "polling_station_code": "037201100200302",
+      "station_name": "BURUNDU PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1681",
+      "portal_source_label": "27/11/2025 - MNA BURUNDU PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "003",
+      "polling_centre_name": "BURUNDU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200302",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre BURUNDU PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-011-01",
+      "polling_station_code": "037201100201101",
+      "station_name": "IMBIAKALO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1694",
+      "portal_source_label": "27/11/2025 - MNA IMBIAKALO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "011",
+      "polling_centre_name": "IMBIAKALO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100201101",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre IMBIAKALO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-007-01",
+      "polling_station_code": "037201100200701",
+      "station_name": "INGWE PRIMARY SCHOOL POLLING STATIONTOFF",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1689",
+      "portal_source_label": "27/11/2025 - MNA INGWE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "007",
+      "polling_centre_name": "INGWE PRIMARY SCHOOL POLLING STATIONTOFF",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200701",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre INGWE PRIMARY SCHOOL POLLING STATIONTOFF"
+      ]
+    },
+    {
+      "stream_key": "201-1002-100-01",
+      "polling_station_code": "037201100210001",
+      "station_name": "INOULUSIA PRIMARY SCHOOL #",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1699",
+      "portal_source_label": "27/11/2025 - MNA INDULUSIA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "100",
+      "polling_centre_name": "INOULUSIA PRIMARY SCHOOL #",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100210001",
+        "printed/portal centre INOULUSIA PRIMARY SCHOOL #"
+      ]
+    },
+    {
+      "stream_key": "201-1002-010-04",
+      "polling_station_code": "037201100201004",
+      "station_name": "KAMUCHISU PRIMARY SCHOOL",
+      "stream_no": 4,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1693",
+      "portal_source_label": "27/11/2025 - MNA KAMUCHISU PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "010",
+      "polling_centre_name": "KAMUCHISU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100201004",
+        "printed/portal ward WEST KABRAS",
+        "printed/portal centre KAMUCHISU PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-004-01",
+      "polling_station_code": "037201100200401",
+      "station_name": "LUKUME PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1682",
+      "portal_source_label": "27/11/2025 - MNA LUKUME PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "004",
+      "polling_centre_name": "LUKUME PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200401",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre LUKUME PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-004-02",
+      "polling_station_code": "037201100200402",
+      "station_name": "LUKUME PRIMARY SCHOOL 20F2",
+      "stream_no": 2,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1683",
+      "portal_source_label": "27/11/2025 - MNA LUKUME PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "004",
+      "polling_centre_name": "LUKUME PRIMARY SCHOOL 20F2",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100200402",
+        "printed/portal centre LUKUME PRIMARY SCHOOL 20F2"
+      ]
+    },
+    {
+      "stream_key": "201-1002-005-01",
+      "polling_station_code": "037201100200501",
+      "station_name": "MAYUGE PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1684",
+      "portal_source_label": "27/11/2025 - MNA MAYUGE PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "005",
+      "polling_centre_name": "MAYUGE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200501",
+        "printed/portal ward WEST KABRAS",
+        "printed/portal centre MAYUGE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-005-02",
+      "polling_station_code": "037201100200502",
+      "station_name": "MAYUGE PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1685",
+      "portal_source_label": "27/11/2025 - MNA MAYUGE PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "005",
+      "polling_centre_name": "MAYUGE PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200502",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MAYUGE PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-099-01",
+      "polling_station_code": "037201100209901",
+      "station_name": "MUKOKO PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1698",
+      "portal_source_label": "27/11/2025 - MNA MUKOKO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "099",
+      "polling_centre_name": "MUKOKO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100209901",
+        "printed/portal ward WEST KABRAS",
+        "printed/portal centre MUKOKO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-008-02",
+      "polling_station_code": "037201100200802",
+      "station_name": "MUKONGOLO PRIMARY SCHOOL",
+      "stream_no": 2,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1691",
+      "portal_source_label": "27/11/2025 - MNA MUKONGOLO PRIMARY SCHOOL 02 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "008",
+      "polling_centre_name": "MUKONGOLO PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200802",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MUKONGOLO PRIMARY SCHOOL"
+      ]
+    },
+    {
+      "stream_key": "201-1002-008-01",
+      "polling_station_code": "037201100200801",
+      "station_name": "MUKONGOLO PRIMARY SCHOOL POLLING STATION4OF2",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1690",
+      "portal_source_label": "27/11/2025 - MNA MUKONGOLO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "008",
+      "polling_centre_name": "MUKONGOLO PRIMARY SCHOOL POLLING STATION4OF2",
+      "identity_confidence": 0.93,
+      "identity_evidence": [
+        "printed station code 037201100200801",
+        "printed/portal centre MUKONGOLO PRIMARY SCHOOL POLLING STATION4OF2"
+      ]
+    },
+    {
+      "stream_key": "201-1002-097-01",
+      "polling_station_code": "037201100209701",
+      "station_name": "MUSIDI PRIMARY SCHOOL LOFT",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1696",
+      "portal_source_label": "27/11/2025 - MNA MUSIDI PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "097",
+      "polling_centre_name": "MUSIDI PRIMARY SCHOOL LOFT",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100209701",
+        "printed/portal ward WARD TO VERIFY",
+        "printed/portal centre MUSIDI PRIMARY SCHOOL LOFT"
+      ]
+    },
+    {
+      "stream_key": "201-1002-001-01",
+      "polling_station_code": "037201100200101",
+      "station_name": "MUTSUMA PRIMARY SCHOOL POLLING STATION1OF200 DE 037201100200101",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1675",
+      "portal_source_label": "27/11/2025 - MNA MUTSUMA PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "001",
+      "polling_centre_name": "MUTSUMA PRIMARY SCHOOL POLLING STATION1OF200 DE 037201100200101",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200101",
+        "printed/portal ward WEST KABRAS",
+        "printed/portal centre MUTSUMA PRIMARY SCHOOL POLLING STATION1OF200 DE 037201100200101"
+      ]
+    },
+    {
+      "stream_key": "201-1002-098-01",
+      "polling_station_code": "037201100209801",
+      "station_name": "SE EE CRE SOOO ROLE I TATION LOB NUD ARIESCOMMMOEPENDENTEL EN CO",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1697",
+      "portal_source_label": "27/11/2025 - MNA MWIKHUPO PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "098",
+      "polling_centre_name": "SE EE CRE SOOO ROLE I TATION LOB NUD ARIESCOMMMOEPENDENTEL EN CO",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100209801",
+        "printed/portal ward WEST KABRAS",
+        "printed/portal centre SE EE CRE SOOO ROLE I TATION LOB NUD ARIESCOMMMOEPENDENTEL EN CO"
+      ]
+    },
+    {
+      "stream_key": "201-1002-003-01",
+      "polling_station_code": "037201100200301",
+      "station_name": "BURUNDU PRIMARY SCHOOL",
+      "stream_no": 1,
+      "ward_code": "1002",
+      "ward_name": "WEST KABRAS GORES DENC2 EC RAN - SIONINDE",
+      "registered": null,
+      "portal_source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=1680",
+      "portal_source_label": "27/11/2025 - MNA BURUNDU PRIMARY SCHOOL 01 Reported",
+      "reference_state": "FORM_HEADER_OCR",
+      "polling_centre_code": "003",
+      "polling_centre_name": "BURUNDU PRIMARY SCHOOL",
+      "identity_confidence": 0.98,
+      "identity_evidence": [
+        "printed station code 037201100200301",
+        "printed/portal ward WEST KABRAS GORES DENC2 EC RAN - SIONINDE",
+        "printed/portal centre BURUNDU PRIMARY SCHOOL"
+      ]
+    }
+  ],
+  "ward_summary": [
+    {
+      "code": "1005",
+      "name": "BUTALI/CHEGULO",
+      "streams": 9,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1005",
+      "name": "BUTALI/CHEGULO ’",
+      "streams": 1,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1005",
+      "name": "BUTALICHEGULO",
+      "streams": 3,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1005",
+      "name": "BUTALIICHEGULO",
+      "streams": 10,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1005",
+      "name": "BUTALVCHEGULO",
+      "streams": 3,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1003",
+      "name": "CHEMUCHE",
+      "streams": 24,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1004",
+      "name": "EAST KABRAS",
+      "streams": 16,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1008",
+      "name": "LOE CROITERNBRAG N TEL OMMISS ATTI SO REPENDE",
+      "streams": 12,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1006",
+      "name": "MANDA-SHIVANGA",
+      "streams": 27,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1007",
+      "name": "SHI SHIRUGU-MUGAI",
+      "streams": 7,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1007",
+      "name": "SHIRUGU-MUGAI",
+      "streams": 14,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1007",
+      "name": "SHIRUGU-MUGAI ADENOE T0G7 EC TONS SIONINE",
+      "streams": 1,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1007",
+      "name": "SHIRUGU-MUGAI ’",
+      "streams": 1,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1008",
+      "name": "SOUTH KABRAS",
+      "streams": 9,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1008",
+      "name": "SOUTH KABRAS XT",
+      "streams": 1,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1004",
+      "name": "STAB RAS CADENOK04 ECHOS SSIONINO",
+      "streams": 1,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "4007",
+      "name": "WARD TO VERIFY",
+      "streams": 1,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "UNRESOLVED",
+      "name": "WARD TO VERIFY",
+      "streams": 36,
+      "registered": null,
+      "reference_state": "PORTAL_BOOTSTRAP"
+    },
+    {
+      "code": "1002",
+      "name": "WEST KABRAS",
+      "streams": 21,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    },
+    {
+      "code": "1002",
+      "name": "WEST KABRAS GORES DENC2 EC RAN - SIONINDE",
+      "streams": 1,
+      "registered": null,
+      "reference_state": "FORM_HEADER_OCR"
+    }
+  ],
+  "hierarchy_reconciled_from_forms": 162
 }

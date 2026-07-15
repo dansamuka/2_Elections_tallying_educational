@@ -1,0 +1,144 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "15b48fe22ebf05f9-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201021394113449/v1_15b48fe22ebf.pdf",
+  "source_sha256": "15b48fe22ebf05f9410e420f26392c65d0a4d3cfe856cb4997d203d7116454f2",
+  "source_filename": "v1_15b48fe22ebf.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/15b48fe22ebf05f9.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1006-111-03",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.25577142857142854,
+  "text_length": 2368,
+  "text_preview": "Se eae\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MUNANGA PRIMARY SCHOOL POLLING STATION 1 of 4 Code __ 037201100611103\nWard MANDA-SHIVANGA Code _ 1006\nConstituency MALAVA Wine eae) CT OR Ay | Code __ 201\nCounty KAKAMEGA Code tCHORLAND BO EPEN EN\nNumber of votes cast in favour of each candidate: \\DEK\nNo. of Valid Votes Obtained ,\n1. ANGATIA JAMES SHINACHI ; SSN Tg STONIND ERS recor SDE eco oC\n| 2. JASON SHIVAKALE BRUCE ONINDEPE ) Srcces > 3 0.00\n|_3. MANYASI JOAB BURUDI FORA See eaensultaucaeert oan soxeenrteneeee of\n| 4. MWANGA EDGAR BUSIEGA VON nan AOE —=—9 06\n|. 5. NALWABENJAMIN. Se ee\n[8 NDAKWADAVIDATHMAN. Se LMP ORERA | — = 030\n[7 OYUG! GEORGE NGAIRA MISSION RAN anther ND ARI <= -—+—- Hod\n~ PRLPANYAKO SETH AMBUSINI\n_ LS TUVE! WILBERFORCE INDAL | Pepe re oe acum eae aaa\n[Total numberof vaid votes cast aL S/ONINE\nPolling Station Counts \\ x Se gt hronte ~ Decisionts) on disputed votes if any OU ene Oe Tes ca Rai\n{{2.| Tota Number of Rejected Ballot Papers; aM Shavers OL be SER CRS os ya eS\n[3.| Tt Numer Rejection Oi to ala Papers RIED TIS Renae cocincenereme\nSe eet ener ald esa oO OR Fee Eh eee eee re\nDeclaration NDE _ Be axes ALANDEOU, PENT ELECT JONSUNDA es Ec A Deon > na Att.\nWe, the undersigned, being present when the results of the count sane announced, do hereby declare that the results show, ‘allo. Be Gye :\n_ and accurate count of the ballots in UNAN 1A PA) -SCrtoo Polling Station M AL a A, TO Cppat TGR\n35) Presiding Officer: fAUL WEYO- SHIUNDU Signature: CAD ya 2 “OFER Oe\nDeputy Presiding Officer: _ + UR ke ane o48IND CRE SA ~ Signature: FRR Date <e6— O25\nAgents or Candidates iitpresent) = ERS enna LANDON NONOEN Tanase\na a ae Be\n- IFRANCS ED AR BS OTe BA Beneio| pee ee\n© -SIPALIMONA nd Tages G41 3b AP SLE ie Seam ares\n, os eee RN Bee Soe ae ee EN\n| Cee ee ee einen ece meee oe\nes ee ee ee\nee acacia sees see See eae cee |\nq rm\n| Soe eS ae ecco comet te\nReasons for Refusal to Sign {if any) ne WOPNONDENTELEC IA ANC SE CTORALANDB ONDE PrNDENTEL! LON 3\n\"Presiding Officer's Comments: ELECT NWOe pee cuit ini case wo ALAND BON Eee ECR, C\nFORCING. ie: Nl ROK) ANDES AAD CPEs PHL Go AQT NDS EgDEPENDE v4 B.C % RSs\nUNDA st Serr RU HOME RECUR Poe rene Scr one oo Nogricer J\nyi ‘ S) y > WG Ohya NIND * “ t ye INDE DEN $f ANE UND, VE oro:\nNOE gS slap Sey PLU TAL oT Gn ey ame us oe",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 23,
+        "confidence": 0.43,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 23,
+            "confidence": 0.43,
+            "score": 0.43,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 4,
+            "confidence": 0.18,
+            "score": 0.18,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 22,
+        "confidence": 0.38499999999999995,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 22,
+            "confidence": 0.38499999999999995,
+            "score": 0.38499999999999995,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 24,
+        "confidence": 0.38499999999999995,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "anchored-cell-ocr anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": "full-page-text anchored by '2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid si cast,'",
+      "total_cast": "derived: total_valid (22) + rejected (2)",
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:47:27.403406Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100611103",
+    "constituency_code": "201",
+    "ward_code": "1006",
+    "polling_centre_code": "111",
+    "stream_no": 3,
+    "stream_key": "201-1006-111-03",
+    "ward_name": "MANDA-SHIVANGA",
+    "polling_centre_name": "MUNANGA PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100611103",
+      "printed/portal ward MANDA-SHIVANGA",
+      "printed/portal centre MUNANGA PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

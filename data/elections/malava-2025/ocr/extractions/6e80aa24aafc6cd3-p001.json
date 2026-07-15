@@ -1,0 +1,123 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "6e80aa24aafc6cd3-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201412323916779/v1_6e80aa24aafc.pdf",
+  "source_sha256": "6e80aa24aafc6cd32d2b09305121517459cab379e05b4b48b7b3ac9492e300fd",
+  "source_filename": "v1_6e80aa24aafc.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/6e80aa24aafc6cd3.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P23916779-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 2278,
+  "text_preview": "SZ en ; ;\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTIONRESULTS __\nAT THE POLLING STATION\nName of Polling Station EMUSALI PRIMARY SCHOOL POLLING STATION 1 of 4\nwich pilin a See ey\nes pinaecy 2 uss AMMAN ons ceVORRA Cec T ORO nD Esco a OE PENO LAOH Ce See ae\nHi sep gcc a eer oe TO A\n. Z f ~ SO Le\nNumber of votes cast in favour of each candidate: |\nEMD GIBCO ESCO DEPENDS ENE Se mis SOTO TA APSE Votes Obtained :\n1, ANGATIA JAMES SHINACHI wey — RALAI : Fore\n|/2. JASON SHIVAKALE BRUCE FNDeN COMPOS —— OG\n_[ 3. MANYASI JOAB BURUDI correc Seo Domino eae oer LOSE pale oma TERY\nTMWANGA. EDGAR BUSIEGR bess Sere nen aa aay me estearce eB 8)\n| 5. NALWA BENJAMIN | NDE ee rors LIS\n_ [6 NDAKWA DAVID ATHMAN ee apace eee\n[1 OYUGIGEORGENGAIRA BEN MTL A\n__ | 8 PANYAKO SETH AMBUSINI my : bt orm oem cen eee O\n| 9. TUVEIWILBERFORCE INDAI ; Ean oriaeeer aa elena ee 1 rae\n~ | Total number of valid votes cast SENDENTELEC TGqiM Ie so caer ernest\nRe Paltng Station Counts SES ON SPEN UNDA | Detisionts) on disputed votes itany NO LECTOM”\nft [Tea Nant: feasts tern te alg Seton apap “fee a ie\nSSA A ES Sees oye) | amine ae Ae iT\nWe, the undersigned, being present when the results of the count were announced, lo Hees eGTon DEBE CU py CPC SCOMMISS)\n~~ andaccurate count of the ballots in EMUSALI PRINARM CCHOOL Poiting Station RIAL Pahite, Sos “s sitet oy\nBOE ELECy MM isan ° . pF BALAN NINO meneNy Not o >= Ae 5 — Constituency.\n‘Presiding Officer: __ DRUNI NINIAS| WIANDUN G, Signature. Af > J\" sPie:’ 2p\n| Deputy Presiding Officer: FAITH KHAOYA CHIKANTAY | Signature: FEET \\orrican 2 7- ll -2025\n_ Agents or Candidates {if present) OBO ENDENTELEC ESO NDARIESCC ELEC re MMMM OURO eG OUNT EL\n. oe Sard Tel. Hal: tested = e\nERE aneeoNe Regerell Oba fonpteent qa Rrra.\n‘ A ¥: ‘ - : f yr iy\n» [Silos OKkOTH ET iat SS Hh Re a oe Psa\nERE UONCA_a2gsieas| “DAP - Koreas See TLR\nts} YpRIAN LUMUiBs | 666006! Sef RONG SP es aes nie\n1 et SAS WSR ee Hep tcmee oe |\ncee a I ees Pree ates gar ee SUN OES\nReasons for Refusal to Sign {ifany) DENTELEC TF OMMguoanDErE co eeSCOMMISSION ANDO NN et\nPresiding Officer’sComments: SN MOARIESCOMi- ORAL apa QUNOres eae WTELECTORA/ ¢ /OMe rE NOE Nees\n‘ ‘ SO fl } UNI SAAS So : j } ; ° RAISE a @) x Bay; ‘ STORAL A f : , <<\noS SORONL Minh g Wanbunos \\.%, SP T-ll-2095. 00",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:14:03.184880Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "EMUSALI PRIMARY SCHOOL",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre EMUSALI PRIMARY SCHOOL"
+    ]
+  }
+}

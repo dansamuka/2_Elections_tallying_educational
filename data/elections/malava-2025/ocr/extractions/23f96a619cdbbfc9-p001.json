@@ -1,0 +1,149 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "23f96a619cdbbfc9-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201953676474805/v1_23f96a619cdb.pdf",
+  "source_sha256": "23f96a619cdbbfc9cb94cba6e3e4b70b0c725393e7f1c2b51c8dc17b3d68873b",
+  "source_filename": "v1_23f96a619cdb.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/23f96a619cdbbfc9.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1002-007-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24068571428571428,
+  "text_length": 2710,
+  "text_preview": "SIH\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station INGWE PRIMARY SCHOOL POLLING STATIONToff Code __037201100200701\nWat PENDENT 06) o@ MREOT MABRAS ENTE: <-S COMMISSION iO 08 Pout ec PENDENTELE CD MINDEPENOT Woh. o DegenDe ale ECTop SSIONINDE\nCareheuenayS=' uc RANE COMMISSION PENTEL ECTO ECAC SN GON cnTELECTOR./ SIONINDEPENY 2.00 0° igi, c\\ SaOR:\nGCaiiiitg ounneP ET <cO PS RARAMEG A: ECTORA) 7 ENDENTELEC' (OW pVig@ oh ECTORAL AW VOEPENDENTE pat, Sage <1 HARLAND OENDENT\nNumber of votes cast in favour of each candidate: i :\nName of Candidate No. of Valid Votes Obtained :\n{ ANGATIA JAMES SHINAGH Rapier einem CH NTIEY 2 ff ~\n2. JASON SHIVAKALE BRUCE Peteaereeae A Pnununemarorars cetd (E\n3. MANYASIJOAB BURUD eo ae oe ue a\n4. MWANGA EDGAR BUSIEGA ROMA ANON PELE TORRNNR RS esr GUROAREE COLO\n[5 NALWA BENJAMIN SES 06]\n6. NDAKWA DAVID ATHMAN : SRRBNCaSeHe Veli. sorccmmruser aon 4\n_ [7 OYUGI GEORGE NGAIRA _ SORIA “dhe 1.7 AORN OH HE\n[8 PANYAKOSETHAMBUSINN == 5 6 660)\n9. TUVEI WILBERFORCE INDAL Saar eae ETE\n[Total number of valid votes cast Se a ee ee\nPolling Station Counts o Le 7, _Decision{s) on disputed votesifany pate CER\n[1] Tt Number of ReisterdVters nthe Pling Salon, [-——— QE] AE | Sener ft Perl winds Noeof Cadac ase |\nToalNunberlReecedBalet Pes tilt\n3. | Yul Number a Rejection OhecedtobaltPapes t——-O@ Bl |2\n: bs eae soni eat ahiosoN ete eS ON\n| ToatnanberaaidVeestess” fe QI EO\nWe, the uftlersigned, being present when the results of the count were i Det do hereby declare that the results shown above are true\nff | 2988 agzurate\\count of the ballots in IVAW EF ELMAR SUP “spiting Station — AKA AC AVA Constituency.\n© phes idiigy fffcer: EREDAR CK. OTC (20 Signature: At 7 OMMISS' Plater 2 [=U -2ora\nDeputy Py Siding officer: | A W Mes ASAHA : Signature: Be a Mt Deter Sed AN eres!\n* Agents or Candidates {if present) ot : a 3 UA ‘ ESCO} RALAN\nLZ INIwitsa Mimmanuer Anscoyif] DAP-K lO F4ssu Ae [p7-t1-9d0:\n: me Pease a Stet\nBeer Oe END ANE Iss TELE SG Otani Ocimape PENT SCneort WESC anal au Neo eo TELeCa\nSME Y aS <8 A BPERDEN Te] SSCOMMIDSIGR ONE Cee NMTELECTORA/ 4 SIONINDEPENDS CONDE vat omal ANDBOL Na, ADENTELEC OW HNOR SCO\nPK SS ie WTELECTOR at SSiONINDEPENC SCO NAC eS RALANOBOUYSPENDENTELE GON Wp 20014 NDARIESCOMLEC TOR ALAND OE SAS Naa\nReasons for Refusal to Sign (if any) SMM Epa ANS NDBO . NDBO, NDENTEL ECONO\nAte Agente PREcewr SiQnweD END wt oS\n‘Presiding Officer's Comments: at AoRe hema yo\nEp PEAcCEFUL Coen tee he Bhnssiona tas dea anf RO Norra re aiicaa nso SG\nee NG PZE 2x CA AA PD NTELI STOR INDE? sie ON OAR RPRES PENDENTE NS aCe\ni rower / aa ELECTORAL Dee f 3 AIS ANDBOU Oe clin ep eats\nee So eon fe Ee en Spon Mi espe",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 4,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 4,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 13,
+            "confidence": 0.039999999999999994,
+            "score": 0.039999999999999994,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 956,
+            "confidence": 0.53,
+            "score": 0.53,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVEI! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:53:58.125146Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100200701",
+    "constituency_code": "201",
+    "ward_code": "1002",
+    "polling_centre_code": "007",
+    "stream_no": 1,
+    "stream_key": "201-1002-007-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "INGWE PRIMARY SCHOOL POLLING STATIONTOFF",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100200701",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre INGWE PRIMARY SCHOOL POLLING STATIONTOFF"
+    ],
+    "applied_to_register": true
+  }
+}

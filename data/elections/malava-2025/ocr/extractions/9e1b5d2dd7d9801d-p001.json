@@ -1,0 +1,96 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "9e1b5d2dd7d9801d-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201581281828756/v1_9e1b5d2dd7d9.pdf",
+  "source_sha256": "9e1b5d2dd7d9801d8b22d834c62b6c9a7cc1f739648c541f2e1e2c8a7178cc56",
+  "source_filename": "v1_9e1b5d2dd7d9.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/9e1b5d2dd7d9801d.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1007-074-03",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract",
+  "confidence": 0.3342857142857143,
+  "text_length": 2795,
+  "text_preview": "eo es eee Nae Be? oS\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MALAVA PRIMARY SCHOOL POLLING STATION 3 of 4 Code __.037201100707403\nWard SHIRUGU-MUGAI BEdenOE OF FC Top 7 SIONINDE\nEanetitranays> Oo MAL AVES COMMISSIO( MOENTELEC TONE ONG pV OU en TELECTOR 4) SONINDEPENT CaCl ot Cnc OT ORAL 4 vn INDEPEN\nCadite anne PE. CO Wp ARAM Che ECTORA ENDENTELECT COM int ONT ECTORALAyy NOEPENDENTE wi SOO ade <1 (RRL ANDES (PENDENTE\nNumber of votes cast in favour of each candidate: DEPES ,\nName of Candidate\n1, ANGATIA JAMES SHINACHI\n2. JASON SHIVAKALE BRUCE ; BSR ye EC Orta fe RINDEPERUEN COS pepe peli roe CIEE\n3, MANYASI JOAB BURUDI |\n4. MWANGA EDGAR BUSIEGA |\n5. NALWA BENJAMIN REN!\n6_ NDAKWA DAVID ATHMAN Sra Sorcerer emo em 21\n1. OYUGI GEORGE NGAIRA MMISSION ANOBOUND!\n[8 PANYAKO SETH AMBUSINI , !\n\"| 9. TUVE! WILBERFORCE INDAI :\nTotal number of valid votes cast ass REMERON EITPES LTO LARNER ATE OL\nPollingStationCounts = ecisionts) on disputed votes if any }\nTt Nur of Registered Voters nthe FalingSiaion, | —— SZ]\n[2 [Toaninierattepcestalo Pers fp.\n[3 Taal Number ofRgecion ede todaletPaws [ppp | [2\nDeclaration .°So\\ji5- 8 Os NE ¢ iit SSO QUNDAMES CO 47S RALANDB ROOT wa :\nWe, the undersigned, being present when the results of the count were gf ounced, Wy ereby declare that the results shown above are true\nand accurate count of the ballots in ASV PN. RIMAR Ee. pou Be OF an AVA __ Constituency. -\nPresiding Officer: «sf V\"{U > Jase 2 ASX __ ERRE SIQNG? _ Al: Scans a Date PRONE rors\n; Deputy Presiding Officer: BRENDAK UATSWENTE NOF irae: Pa _ Date 2 ee Rlazeac\n: Agents or Candidates {if present) _ Se N SUPEND el cone a Hc ORALAN\nia] Aisles [haere] Ry atemantGnae | Wome | seme | |\na Rteae AMR (97Ti271| @PK TAI) ee 7\n&\nPSC Pi N Wunimbal S¥4ct¢ i louie - KENIA — beyoeyoed JS Ta zlib:\nBE eee tO NEN aiet GOS gers rey PAGO One PENT Seed pear ALAR PMD ED cont NTEL Sco essY\nPIS oS BOUNDARIES Og LECTOR Opera et Oe RRB Coral gaslON A ROU Te C SOLO LE Getis On ng aNDEW™ ARE Scan oe ce pater\nfo Somrreenr™ cquncei en cceae Seite Serge Oe oe TT Ve IIa Ceres\n$I OR Soe PENDENT SSCOMMISSIPN NC EGO UfirELECTORA/ 4 SONINDEPENDS CON pede 90 onl ANDDOUNDERDENTELES Oni oP CON\nBOSE ceek oe OPN TELEC TOmal/SSIONINDEY Eke co apie * IESE RAL ANDBO Le PENDENTELEC ON WO 5) OD UNDARIEBCOm ECTORAL IGE WN oO\nReasons for Refusal to Sign (if any) Se DENTELECTCOMMSSIONINDE aes NOB OP CEPEND Ge\ne ° 3 “45, Somaatanir : eee: “ s pic —— * - See .\nPresiding Officer's Comments: _- Satan LANDBON Ss 10H) EST ORR\nROLLING QTATION. CLOSED fat YOO HRS. VOTING ENDED\nFINO ARE ONIONS SOUNDER EUENDA RicGP BMS Oe QPRESIDING Fog: PANO Dp\nNDENT Feat TOY MEL BARASA (OFFICER J A DENT (ies 7 SIRE PENDNOARIES ope\nTB NOU BRUIETEVS ee ; AOHOETENDEN TELE SCOMMISSI AUS",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 21,
+        "confidence": 0.78
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.78
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "6_ NDAKWA DAVID ATHMAN Sra Sorcerer emo em 21",
+      "candidate_DAPK": "[8 PANYAKO SETH AMBUSINI , !",
+      "candidate_WT": "\"| 9. TUVE! WILBERFORCE INDAI :",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:24:25.675813Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100707403",
+    "constituency_code": "201",
+    "ward_code": "1007",
+    "polling_centre_code": "074",
+    "stream_no": 3,
+    "stream_key": "201-1007-074-03",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "MALAVA PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100707403",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre MALAVA PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

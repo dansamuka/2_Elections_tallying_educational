@@ -1,0 +1,162 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "edf44cf46a2ef00f-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201491305868713/v1_edf44cf46a2e.pdf",
+  "source_sha256": "edf44cf46a2ef00f2be02e0843135195f56a49e884ff243e76ff9515ef21c563",
+  "source_filename": "v1_edf44cf46a2e.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/edf44cf46a2ef00f.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1006-055-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3490857142857143,
+  "text_length": 2878,
+  "text_preview": "See) )hLrhmh—“‘<“‘<“‘“‘iaR HQ |\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station LURALE PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100605502\nWard MANDA-SHIVANGA Code __ 1006 pS/ONINDE\nCee RseMtySS uC MALAVAL COMMISSlon VOENTEL ECTORS <0 pM A oOUWIELECTOR 4 SONINDEPEN CaCO ce NOS ch CAMO RAL Au, ENDEDENT\nCounty KAKAMEGA : Code __ 037\nNumber of votes cast in favour of each candidate: ; ,\n[Name of Candidate ARIESCON No. of Valid Votes Obtained ENDED\n__ |1. ANGATIA JAMES SHINACHI : :\n[2 JASON SHIVAKALE BRUCE\n| 3. MANYASI JOAB BURUDI : Set Par Coc ORAEAROI PE RDENTEC a SOMES ANUSTEND EDT\n'|_4. MWANGA EDGAR BUSIEGA | Paes bottom coma een TeTec Tom NOES Cero URONf CD COLO\n~ |_5. NALWA BENJAMIN RNOBOUND 3 Fee ot A NRMP Oye ORAL APOP IDET ERE nie SCC NOM\n_ [6 NDAKWA DAVID ATHMAN : OS Sa er SSC OMM STON RDBOUN Pe Peeler Meo PRES\n[7 OYUGI GEORGE NGAIRA SIO a aa STON MIDE PER RTESO RSE TOELEM\n[8 PANYAKO SETH AMBUSINI NDEB pS Peraig SaINUEPONOENTE, eSCOMMTOCE DOSEN a pee NOE [LRU\n| 9. TUVEI WILBERFORCE INDAI Dr se ee RUE TERE TU MMOS RECN UEC YOO BOU\n[Total number of valid votes cast MS SIONINOE PENS RRO NEC mM UCN TES ORNS RS TON Rema ed Af gh\nLECT, HONINDE a ¢ te f x uae > ViIG “s . w ta <] \\ ss\nPolling StationCounts OMe. DBOUN CNOE Decision{s} on disputed votesifany ALAN\n{1. | Total Number of Registered Voters in the Polling Station; Serial Number of Ballot Papers} with disputed vote\nra. | Total Number ofRejectedBallt Papers OOS) [ee\n[3 [Total Number of Rejection Objecied to Ballot Papers; -——-— (OO) (2 ee\n© Taal Nanberotepiivoes; OOO) ke\nfa [taliban nies ope SG | fhe ee\n_ We, the undersigned, being present when t e results of the count were announced, do hereby deg fathe results shown above are true.\n~ and-accurate count of the ballots in SPAg POMALT Polling Station Z Aan ue Aion, » Constituency.\nae is i Ec>Miissonino® wo ad Mr tN ; EN . a Cet ri ree e ef “ok ‘ ¢ s\nPresiding Officer: tN ARID Kea __. Signature: = creek Date ZT—'l- 2025\n\"Deputy Presiding officer: SOthiNG OPA) Signature: Nec 7 Date a al [2028\n[ie] naetcnai ane ase | Pac\n[aero an mote |J2sres| HCP peau gis7 WZ pe yi-2t\n[RAST ViAH HAMASAMAL2¢29228¢, UNA bimausear pdhetvere 7-1-2\n| 3. Apr 76K -n-nanzhce '203623|¢ | BAP-K ota reyseg INGotas, l2z2/ujzcl'\nGah se oe TEAC ORAL an ONINDEF Eps ao ee OM MOAR oe yn aN BP OUT ELEC Iced Ml Saumunner eat oP. aie a\nBs eee crepes epee eae Seer jammer Moe ERED Peas Sy\nPEI aoe LEC TOM ScronNDETE Secon I Ae Sf AL ANDEOL 1 GP ENDENTELEC ON Ogee) UNDARIES Co, CTORAL ANC OLS SE\n\" ReasonsforRefusaltoSign(ifany) me DBO VOEPENDENTEL <%\nea a RN TEL CC! SunOS gales” OM cal AND Tex ise osc omM cca erE CUMOAT Ec UGS\nCo Bee CT ons’ wed SARE An FAP RU oO\nSO fSIEM Eo BEARD FP REA Vo Soe Tel Er G OMI ame eIDE? GNCALONN\naS sien CA Hes COM NCEE PRUNE Daa TSIE” teMSSION One eC EC On ABU NET ENDS OU Nk",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 3,
+        "confidence": 0.73,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.73,
+            "score": 0.73,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '6. NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by '8. PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "anchored-cell-ocr anchored by '9. TUVEI WILBERFORCE INDAI'",
+      "registered": "full-page-text anchored by '1. | Total Number of Registered Voters i in the Polling Station;'",
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'Total Number of Valid Votes Cast;'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:18:13.067779Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100605502",
+    "constituency_code": "201",
+    "ward_code": "1006",
+    "polling_centre_code": "055",
+    "stream_no": 2,
+    "stream_key": "201-1006-055-02",
+    "ward_name": "MANDA-SHIVANGA",
+    "polling_centre_name": "LURALE PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100605502",
+      "printed/portal ward MANDA-SHIVANGA",
+      "printed/portal centre LURALE PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

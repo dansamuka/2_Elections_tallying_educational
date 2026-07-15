@@ -1,0 +1,153 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "071afb0eb0b28c52-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201630144354900/v1_071afb0eb0b2.pdf",
+  "source_sha256": "071afb0eb0b28c52c68e7ad8534bc7656f060a36b3de4e722f82f84d0cc0a533",
+  "source_filename": "v1_071afb0eb0b2.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/071afb0eb0b28c52.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P44354900-02",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.40937142857142855,
+  "text_length": 2562,
+  "text_preview": "S| tC (a\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS u\nAT THE POLLING STATION\nName of Polling Station IKOLI PRIMARY SCHOOL POLLING STATION 2 of 2 c 037\nIKOLI PRIMARY SCHOOL POLLING STATION20(2\nWard EAST KABRAS er e pects ee\nEDEN CC SERB RASRAB) ENTE 2 SCOMsISSION ONS SOINOLDENDENTE OME PENDENT Ke GO SE\nConstituency MALAVA 2A aE MUSSER TE\nSul CLAVE OMS SIOUADENTEL ECTON CO NOL OUN AT ELECTOR SION NE PENDENT ONE\nDolly HAKAN RON Sar\nA SlONNDE SAT eee\nNumber of votes cast in favour of each candidate:\nNo. of Valid Votes Obtained\n“4. ANGATIA JAMES SHINACHI : Sea LRSM EAA SSeeT Ieee\n_ [2 JASON SHIVAKALE BRUCE | cea ESO caM HOUTe reese Teen OR\n3. MANYASI JOAB BURUDI | —~ Gert\n4. MWANGA EDGAR BUSIEGA OO\n5. NALWA BENJAMIN - te O09\n_| 6. NDAKWA DAVID ATHMAN a1\n7. OYUGI GEORGE NGAIRA AND OOUNDAR eS eesnieerennAl Rosaceae TN\n8. PANYAKO SETH AMBUSINI NINE ——— po\n9, TUVEI WILBERFORCE INDAL SOTERA AT aa OC NT of\n~_ | Total number of valid votes cast. ONINDE! See 062\n_ Polling Station Counts _ MS DBOUTATEA Decision{s} on disputed votes if any _ Or C Ons\n~_ [1,] Total Number of Registered Voters in the Polling Station; [———— > 4] 7 MIO Aa\nFlNunbe Reece alt Pees: OO ee\n13. Total Number of Rejection Objected to Ballot Papers; —— 000 cos po appoUNGAeeeN Teg BOL eS OUN\n[a [Tolvenberotepuediies | O06) fp\n5 ToalonierafvaidVoescast | S| Sea eee\nScpauieetien ! r ORAL ENO! . : 0 . SOUND . » ¥ . ROE! BY carta ORO REAR\n_ We, the undersigned, being present v the results.of the unt were announced, do he PEEL Top asi qminBeres oC ory cP eSCOME\nand accurate count of the ballots in NRO PRE Nee Polling siete i! MA ths speueete oo bove are true\npac NDENTELECTO@ROSSIQNINDS WE Coe nV Cee oes Constituency.\nPresiding Officer = 1 NAC MWC MAS hc Signature: Sie are Pa Q-\\\\-262\neo SSIONINDE ROUND AF OGLAS MACHAR I. NINO! oN ABIES Sen DRE Ne eed EON\n» Deputy Presiding Officer: LAY ART A Signature: | BOS hate O71] eS\n- Agents or Candidates {if present) . AND he ANDEF ra ; MOA TOO Gur\n[eal _neneatcinait caso | aero | Paya Cnaite | Taconic | mre | a\n[TIPADE MuRowas\n[2 MUSES-SHKOKU OKA libessuy| BOP pyaysiady gecus—\nSGISTEAM Kuti SHR aDI0cII6] USA praise oy Relig\n6s RSA Sa Sir SED ri PRC Se Beate\nre ae cae es Ra EE )\nSeances ee ee\n: CS vgs eo Seay eo eee we meee !\n3 Lea SET ONES SET? CE ON CIE esate\nUS en eS nine SRA ree SHEARS Kec eteT PS]\nReasons for Refusal to Sign (if any) OMe can Seek MI AI :\nPresiding Officer's Comments; _ ELECT! a Nijiat S PATELE sano =\nPOLANG Fede KOS Gi OGG Cope aoo A 10 NERENDENTELES\n‘PO: SELINELENR: Shiai si SPO. DouGERS MACHARIA",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 7,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 62,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 62,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 0,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": "full-page-text anchored by 'Total Number of Registered Voters in the Polling Staton'",
+      "rejected": null,
+      "total_valid": "full-page-text anchored by 'of Valid Votes Cast;'",
+      "total_cast": null,
+      "rejection_objections": "13. Total Number of Rejection Objected to Ballot Papers; —— 000 cos po appoUNGAeeeN Teg BOL eS OUN",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:27:52.336298Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "IKOLI PRIMARY SCHOOL C IKOLI PRIMARY SCHOOL POLLING STATION20(",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre IKOLI PRIMARY SCHOOL C IKOLI PRIMARY SCHOOL POLLING STATION20("
+    ]
+  }
+}

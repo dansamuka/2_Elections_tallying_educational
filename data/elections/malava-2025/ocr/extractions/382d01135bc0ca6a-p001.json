@@ -1,0 +1,105 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "382d01135bc0ca6a-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201444086204625/v1_382d01135bc0.pdf",
+  "source_sha256": "382d01135bc0ca6a3a805875a928bc1fd69bf1835dd4a3f015ffc1047222ff8a",
+  "source_filename": "v1_382d01135bc0.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/382d01135bc0ca6a.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1008-087-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.11247908745247147,
+  "text_length": 2861,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MAHIRA PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100808702\nWigtd? ENDENTE 06 oc CNET PARADIS NTE: SCOMMISSIO” 10 0%, phat cpENDENTELE CT MINDEPENDE WOR oR en0e We EC Ton SSIONINDE\nCari Grondy SS oni O MARANA. OMMISSION,, PENTEL EC TOT CKG aC oO. cuTELECTOR 4) STONINDEPENT CO nee git c1 I ORAL ay VNOEPENI\nality oni o€ PCE COP COARAMRE AE ECTORA, g ENDENTELECT CON vio hE ECTORAL AND NOE PENDENT E sal SRS cc RRL ANDRO PENDE\nNumber of votes cast in favour of each candidate: NDEPEND CAR So Nate\nName of Candidate aNINDEPENDE ARIES | No. of Valid Votes Obtained FT\n1, ANGATIA JAMES SHINACHI 04] OT\n_ | 2. JASON SHIVAKALE BRUCE uss RS Grreraeannucin anes meron cocanmiasmmanl 73d fp\ni. MANYAS! JOB BURUDI—— ‘hereon atures aera\n| MWANGA EDGAR BUSIEGA (essere panera sae oem yt\n[Te NALWABENJAMIN, Sooo cannes oer a ea\n| [6 NDAKWADAVIDATHMAN )\n[1 OYUGIGEORGENGARA lee eee nrmeemerrnnnen U TL\ncg AMMO BETA MBL argon vont See ceneennuntin comp ERO\ntoa nhie alse gORDE MEA ere Be Serer oemernune cee ort\n[Foinunbersfvidwis cat\nPol g Station Counts Pree Geet uiNTSSIONINDE a eC _Decisionts} on disputed votes if any _ SOaNeROMDENTEL $40 Ay\n_ |. ] Tt uber f Registered aes ne Paling Staton, 5 5 J\n|e fToanunberatReecetiote Paes Je\n[a Taal umber econ dieted obatetPaprs 00] [2\n(S [loatNanber ah idWoestast a)\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare thgitfe réSuits shown above are true\n_and accurate count of the ballots in WIA AD IMARH \"Ss Fpl. Polling Station 4 _{Vi4\" \"ae, = Constituency.\n\"Presiding Officer: COLE S|US NANGA WAmMUKOYA —— signature: “eT aia Mee] Dalle 2ors\n~ Deputy Presiding Officer: MBALAIA ABD U(AMDE signature: “47 Nokric@ay 21 ln 2026\nSS CRagipet er a gla fd preengidScSk is Ge 9 RAL ANDROL NEP EAIGENTELECT ON TON Caso NOARIESCORLECTORMLANDO NEN SORE’ eis\ni] Ramla en | iota | Ara ae\n- BOTH MuLaMA. Baleeags| UDA eaqogenial Bs et\n[2 EN ATA Luke 13262562) ) Dev fprqoisupqo| ie bp naa\n- LSIEDWARD MukonGa aie ss6 | pap biog) | Be pices)\n[Al Bowrace Juma tae 7384] kena Mota lpvasi tonal pap bot pang:\na a iz1To. FHATCRO azequqsg | Dep opiquisg | Bae lap und\nReasons for Refusal to Sign {if any) Teton ett LEC TCOMM Secon OE SR ALAND EY DEPENDS TELECON SEO\n| --Presidin Officer's Comments: TELE ONINT OP ¢ oe - th : LA SADE pene ISSIONIN REOUNDA eros\n“SLECTION: STARTED AT OGOIH GH” AnD eppEeD AT [TOlHASe\n7h ORE CC GATOS A esi Die AEE eV 18 CO EE BN Caine scifi COS WS NOB EN TeL ps Ol s unn INDE ea Oa\n2eUNOAS Ce mOE RBM Ga RM a MARUI Me eamifua Potencaiow cones Oyen eciony anrmrPexor ews)\nESCOMN —teley PPh PENDENTEL ECT OMMISRIONIN an OPCS ROR EER EE © RUAN on NOEPENDET oust Ne ECO 5) ANDBOUND ARYL ON\nparts SEO NOT Ese BOE cvs ; aah OU PEN SECTOR ROSE ont Ries RtEC HS OB <",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:15:30.263303Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100808702",
+    "constituency_code": "201",
+    "ward_code": "1008",
+    "polling_centre_code": "087",
+    "stream_no": 2,
+    "stream_key": "201-1008-087-02",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "MAHIRA PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100808702",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre MAHIRA PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

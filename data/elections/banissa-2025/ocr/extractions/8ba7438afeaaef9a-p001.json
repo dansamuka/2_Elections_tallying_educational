@@ -1,0 +1,122 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "8ba7438afeaaef9a-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040019600101/v1_8ba7438afeaa.pdf",
+  "source_sha256": "8ba7438afeaaef9a84a915f973c9a4f8fc391853473808002fa9fe198f68a5df",
+  "source_filename": "v1_8ba7438afeaa.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/8ba7438afeaaef9a.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0196-001-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.23553333333333332,
+  "text_length": 2505,
+  "text_preview": "ig Li ipg —ipp I ag a ae I Ia, yo Za IE\n_a271125-013023 = Z we ac}\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station LULIS PRIMARY SCHOOL POLLING STATION 4 of 2 Code __ 009040019600101\nWek? ENDENT. (06 @ cNRARAPENDENTE/ < SCOMMISSION OE Oe pu pENDENTELE -ONINDEPENDE' oN CEO Rett DE @196 £C Ton SSIONINDE\nConstituency BANISSA Code __040 i\nCounty MANDERA Code __009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained\n|_1. HASSAN AHMED MAALIM\n2. MOHAMED NURDIN MAALIM ESRSoNUareLEC Tora TOMA DE PENDET ON POSS CORRE OROMERE\nTotal number of valid votes cast [ori tORROAND RSET ROE TEC SO RERDER UME RODS NDP\nPolling Station Counts Decision({s} on disputed votes if any\nToa Number of Registered Votersin the Peling San,\n[2.| Tot Number of ejected alot Papers Me omno MERE WASCKON Er Toma ance greet PUREE CoCo noeouN ol\nTotal Number of Rejection Objected to Ballot Papers; | ———._ 600) PE ROS CONN NOB OLE NDENTELEC TPR INOS Sao NDARIESC ALEG\nTt Numero isputed Vis ESRI ere SCS aoe RET\nTt Nant Valid Votes ast PESTS Eso PS CS nT aR at\nDeclaration\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in 200 Lis Pim mK Polling Station = A ALSS Pe Constituency.\n) ~ <r,\nPresiding Officer: ADR ATH pA. 2 ABD) —__ signature: S pate 27a N-2sts\nDeputy Presiding Officer: LSmatt Go u Choy. Signature: _LSpie= Date QI\nAgents or Candidates {if present) ‘FGA .G-\\\nNo.| Name of Candidate or Agent ID/Passport No. | Party Name/Independent Candidate <bae™ ¥ I\nRE Sar SION Near tue eg ae’ aS OM eninge NOARTESC nal gsc Er INO ELEC OMBISSION NON CaO\nseen ea Ietaeiatae eee aie Ree oe\nBS ToP ENTELECTOR A, SSIONINDEPEN aoa Sexes RAL ANDEOU ys ENOENTELEC RON WO EERE NOARIESC One CTORALANOB GEN WN SgNOET OMItg\nEa AORN AOR LE ENR a CaS SOU OARE Sc ge LECTORA ASSES ON oe sf COMMAS. ANDBOUNDAES SOOM ECan\nFig ee te © ae ae os oe ee\nIE ASK ERIONIND EE COUND a aie SCOMY BSNL OU Oe nbENTE, eSCOMuE GLONINOE REL CNUTON EcTORal SS MDNINAP SE NDE LCE OM Sg\nBde an Sen mere escrimns caJONN GOH CC SON UNON Ec TORN SOOM KAN EE NOES BWR NOG ONS OR OE PE re OAT TOR NOE GEC ORM\nReasons for Refusal to Sign (if any) s\nPresiding Officer's Comments: . ae\nTes eA Cee eo TCL th ELEC Ton)\nBeOS CN NT 8 nice ELE 8S BOS a0 EN cerceiee AN a ESO OP ne ORAL ye in OA Rien ee SION WOVE OO\n. FACE py\nBp f2 2+ Ye) rate.\nBUND A SSP Pye CTE",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 484,
+        "confidence": 0.28,
+        "source": "certified-register-hint",
+        "alternatives": [
+          {
+            "value": 484,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "certified-register-hint",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 0,
+        "confidence": 0.009999999999999998,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.009999999999999998,
+            "score": 0.009999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 600,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by '2. MOHAMED NURDIN MAALIM'",
+      "registered": "certified-register-hint anchored by '4.| Total Number of Registered Voters in the Polling Station;'",
+      "rejected": "anchored-cell-ocr anchored by '2.1 Total Number of Rejected Ballot Papers'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "Total Number of Rejection Objected to Ballot Papers; | ———._ 600) PE ROS CONN NOB OLE NDENTELEC TPR INOS Sao NDARIESC ALEG",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2443,
+        3334
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "PASS"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:18:51.441619Z"
+}

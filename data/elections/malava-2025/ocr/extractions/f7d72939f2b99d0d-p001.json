@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "f7d72939f2b99d0d-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201648536648273/v1_f7d72939f2b9.pdf",
+  "source_sha256": "f7d72939f2b99d0d1123d3e9dc206355f9d1421cf4ef5bfa722df4a5e2167bd9",
+  "source_filename": "v1_f7d72939f2b9.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/f7d72939f2b99d0d.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1003-017-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.1288,
+  "text_length": 2558,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station CHIMORON! PRIMARY SCHOOL POLLING STATION 2 of 2 Code __ 037201100301702\nWard CHEMUCHE Code __1003_ TONINDE\nConsituenty SoC CCM ONA. Cc OMMISSIOW AOENTELECTOTI CAG OC GO uTELECTOR«) SIONINDEPENT CU ot SRG cLBMNORAL ay UNOEPEN!\nTOUR cnn DEPE NS COLD IAMEGNL ECTOR A/C ENDENTELEC TOW pice OnE CTORAL AWD DEPENDENTS. ial AC nme CWO ANDRO PENDENT!\nNumber of votes cast in favour of each candidate:\n1. ANGATIA JAMES SHINACHI Mi gSIONNOE\n_ [2 JASON SHIVAKALE BRUCE : Sear eee eee em\n3. MANYASI JOAB BURUDI_ se\n[a MWANGA EDGAR BUSIEGA aia Se eC RRS RRR T\nFS NALWA BENIAMIN :\n@ NOAKWA DAVID ATHMAN Ss acer rere toon ee\n[7 OYUGI GEORGE NGAIRA Soe te nemo ear ee\n- [a PANYAKO SETH AMBUSINI fe” C7.)\n_ | 9. TUVE! WILBERFORCE INDAI | 0)\n- [Total number of valid votes cast AISSIONINOEY,\n) Polling Station Counts reece NDR OAR rc Decision{s) on disputed votesifany yet oe! ORAL 4\n[Tot Niet Reystre Waters n he Paling Sans [-—— 27.1] [Str ont ar el wih dt ie] Ras Ga doe]\nTan GG Wt ia Pa oe Lona reel Paseo ann, on ree ee UN\n| [a Ta tonberr econ aces otal OOO [2\n- |S [testnanber aides toss\nDeclaration PENT SCS BOUND , ENDENTELE SONS UGS ore BOI) TORALATT enO= CON Loe) cCOMMIGS!\nWe, the undersigned, being present when the results of the count were announced dohere by-declare that the results shown above are true\n“and accurate count of the ballots in C.HiMIo Kon | PRmMARY Poti g Station SPAALAV Aq Constituency.\nPresiding Officer: AGQREY MvNYET! SHIVACH Signatongt Prope? i Date LI—\\\\—2pes\n- Deputy Presiding Officer: DENNIS ONYANG. ONENS Siguatepee aN oa Oe Date LOT = Nanas\nSy Agents or Candidates [if present) Oe ; DBOUAE ENDENTELES Lx ND Ele AL SP ENORDEN\nfie] inestnaaneriom [Ghana] Ryness | Gua [Sem [ ow\n~~ [aIClLepnsort Crtiwunl (23560909). BA P= K LOWS bebcey [pecans a4 |t |\npL Bl. KWAITA p662357) BCP e799 94sq@ Yugo |az/y)roas\nSee eM oN ag BONS ag DOU re Ee COMM sa ani peP NDR aE nal ANSP NDE De DENTEL SSOP Ga\nee\nSEARS 0 Sen TELEC Tonal SSiONINDEME es GPG aE Sf RAL ANDBOUY SPENDENTELEC ON Og Seo UNDARIESCoys: ECTORALANUOE LW Siren\n~ Reasons for Refusal to Sign {if any) we SNOCO ENTE #MIS530) | r ne, ives\nPresiding Officer's Comments: re a . RIE Oy : MISSION, oe\n’ bes . . ad ls tL NO eh { = , ‘ NDEPE PT 4 A Be Le ; 4 ant fe\nPeo AGGteEY pita SOVACE Fo Eo NCQ AHES, ONIN EDENDEN Cae\nOo Stegnatuce Ab OEP ae Oe ARIESC OMI Bs ISTHE goo ce OMNIS ONUND EP EY ANDAT ans\nECTORRAORY at “SAN yal PS COMMS Gare ANP OO Sere oe 0 MNS ONNONG TS PEE INDEPENDENT : ,",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 34,
+        "confidence": 0.33999999999999997,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 34,
+            "confidence": 0.33999999999999997,
+            "score": 0.33999999999999997,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 0,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "anchored-cell-ocr anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:29:43.092803Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100301702",
+    "constituency_code": "201",
+    "ward_code": "1003",
+    "polling_centre_code": "017",
+    "stream_no": 2,
+    "stream_key": "201-1003-017-02",
+    "ward_name": "CHEMUCHE",
+    "polling_centre_name": "CHIMORON! PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100301702",
+      "printed/portal ward CHEMUCHE",
+      "printed/portal centre CHIMORON! PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

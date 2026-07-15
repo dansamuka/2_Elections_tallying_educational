@@ -1,0 +1,135 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "219c079e7560f610-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201040571003555/v1_219c079e7560.pdf",
+  "source_sha256": "219c079e7560f61036bb7d40ea254af514f744ad6dff156707cf22c68ddef3ad",
+  "source_filename": "v1_219c079e7560.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/219c079e7560f610.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1003-013-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24068571428571428,
+  "text_length": 2659,
+  "text_preview": "31 B39 riot\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MUKHONJE PRIMARY SCHOOL POLLING STATION 1of2 ge 037201100301301\nWIRRBPE DENTE: Soe? nORREMIMHMENOEN TE, 5 SCOMMISSION WOR O® pS utO- DENDENTELE (ON NDEPENDEN bec iNaa So i RATAN\nes eemreracy SS a CMA AME c OMISSION VEN TEL ECTOREAG pia GON eu TELECTOR *SIONINDEPENDE: Omaha! RESCUES SteaND ET\nBiase onancP Scop RAMRM cco Pena ee ECTS GIN RRS SCTORAL AGN Orpe UE TE Ser gnegaC OMT NOES LORDA\nNumber of votes cast in favour of each candidate: DEP)\nName of Candidate No. of Valid Votes Obtained\n1, ANGATIA JAMES SHINACH! ECTOR SENTEL Eco MM\n2. JASON SHIVAKALE BRUCE ee\n3. MANYASI JOAB BURUDI 3 CEN : 3 DOZ\n“4. MWANGA EDGAR BUSIEGA | SOA e a BSTOMRS EP EL MSarTE COM pepe US Cea E rea wie\n| 5. NALWA BENJAMIN OO |\n16. NDAKWA DAVID ATHMAN SRE NTELRCTogE eorOMTeDe, Nese RON TEC TOR ) |\n_| 7. OYUGI GEORGE NGAIRA ul 3)\n_ | 8. PANYAKO SETH AMBUSINI eae © 01)\n| 9. TUVEI WILBERFORCE INDAI i QgDeNoAsins SOLES ner i\n-| Total number of valid votes cast — DENTE! : pL ANeRoUND = Bou\ni ENTE = eae! eraes\nPolling Station Counts kore) Decision{s} on disputed votes if any, 3¢ < uN 44\nTotal Number of Registered Voters inthe Polling Station; +\" | Name Candidate assigned th oie\nff tomtnunierdeedtatet res OP ZI\n~ {3, Total Number of Rejection Objected toBaliotPaperss FOO} [2 7\nDeclaration — ON, SIALANDEOUNS PENDENTE ON, SON Ere SCO EBCN\n\"We, the undersigned, being present when the results of the count were announced, do hereby declare that the & \\. Shown 4 at\n\"and accurate count of the ballots inMUKHONTE PRIMARY ‘SCHOOL Poiting Station - ’ Me LA ae OREO abo RoaaNGAr\npresiding Officer: MERCELYNE LUVALUL ACENA\\4 signature Wie] \\WOFFICRRY 2.2\nDeputy Presiding Office: MEKSOM ANZAL A Signature: A EE io niNDEP poe os Se\nAgents or Candidates lif present) COE eon, . PENDE wf ~ | uw BOON LE\n[a] _Mineonsaterazan [mot | Petits cnaane | Telcout | sm | ony |\n=p Ee ey hth af}—}P» 4\nGe SRE 2 a IE EE |\nce ay aang ores eae Semen gr Cesena |\n; 4 :\nSe i eeas Uo I vende! ana eGR” Mecanne Gaacemee eee\nBas = Ua See\n1? SRC scree Seance Sear rena AOSD Se TE Deere\nPA obo pele SCOMMISS OR ALANDBO UNE 2A id SIONMIDERE yp NDARIESCON a Meta ge MN DENDENTEY\nFe Ge oe eal ONNDE RE PEMDARIESC RA AIRC C OR ger ENDENTE/ gS COMMISSION NON Sco QOUN TELEC TOMA ONINDEPENDE oul _\n! Urs cee rae cai earns Ihe oSt RIE NU RIUM pect Rags een\nReasons for Refusal to Sign (if any) Oe cere DENT RALS PEN: Ow iND ag\n: ee Peete - Sea ee ee : ND ARIES COMME DOUGH\nPresiding Officer's Comments: c Se NBOUN ea SOF Ay QUIN\n: SOS plusiou es Noa unaRle Sa Sts St is ear\nSlats an a Nieaaep Norem Jo",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 16,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 16,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVEI! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:48:11.221280Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100301301",
+    "constituency_code": "201",
+    "ward_code": "1003",
+    "polling_centre_code": "013",
+    "stream_no": 1,
+    "stream_key": "201-1003-013-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "MUKHONJE PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100301301",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre MUKHONJE PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

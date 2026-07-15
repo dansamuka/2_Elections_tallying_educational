@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "88af0c23e969c0fc-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201935916546252/v1_88af0c23e969.pdf",
+  "source_sha256": "88af0c23e969c0fc87e91b6decae612153da87bfb980f01e486d853c9037ba4d",
+  "source_filename": "v1_88af0c23e969.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/88af0c23e969c0fc.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1005-040-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.16045714285714285,
+  "text_length": 1877,
+  "text_preview": "rrr rE eee es\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station TANDE PRIMARY SCHOOL POLLING STATION 1 of 2 Code __037201100504001\nOe INES SEES DARIESCOMp DEPENDENTS EW coo\nWard BUTALI/CHEGULO ’ Code TEM ECS RACAN\nConstituency MALAVA Code 201\nCounty KAKAMEGA oye ONS UMS oOURER\nNumber of votes cast in favour of each candidate:\nName of Candidate =) No. of Valid Votes Obtained\n1. ANGATIA JAMES SHINACHI ei eT =\n2. JASON SHIVAKALE BRUCE Oe 00:\n3. MANYASI JOAB BURUDI y OO\n[4 MWANGA EDGAR BUSIEGA _——————— a 957\n| 5 NALWA BENJAMIN ; Nr AOD\n| 6. NDAKWA DAVID ATHMAN CORAL ANDES UAT atisnccunomanee Aa\n[7 OYUGI GEORGE NGAIRA aaron\na PANYAKO SETH AMBUSIN\n| [ 8 TUVEI WILBERFORCE INDAI S008\nToslamberchaideeseet OO ee\nwo Polling Station Counts bance es } BOY, NDC eS EC _ Decision{s} on disputed votes ifany a et EC\n[| at antes teint olin F-—— 5 O [ sett hha aa pc]\nRAC heck ote OMA eee (Ol | Reema, CNR ear ae\n-_{3.| Total Number of Rejection Objected to Ballot Papers; |-——_—OVOC) FSC a ND OUNDAMTEG TEL EGrORALR POET b\nrR ORNS OEP: Bae Tal Mee ea\nWe, the undersigned, being present when the results of the count were announced, do hereby-declare that the result aX RALANDE\nand accurate count of the ballots in TANDE P RIMARY Polite Station 10 AWA A yi Az Wie Sioned\nc RA pn fay 69 On wad . - ek Sa » AG ra wy eh soap ee pee\n_ Presiding omer: TRORTE KUTIALD WEKESA A pe MOTHS py. 2.7-1)-2021\nsee aa ll nian armament @ ait ee\nAgents or Candidates {if present) (Spice I \"083 \\ OFFICER ARIESCOSLECT GON AN DBO\nwe BENT oun uv Ey 1 e4azauel NAD Ie lp7ouerzn eke 15991\nBL STIs SAD san ep any ter cope :\nReasons for Refusal to Sign (if any) SK wT A AMISSION, OUN\n“POLLING STATION WAS CLOSSED AT |} OORT\n. SORE et ENR ae Ftp ok oe\nx10 p i re ER QUNOARI EG’ a a 7 ae ial\nmnasoe DENDENTEL ESCOMgA SiON SAWN ec TORALAROMNpE 2Q]—)|-2Oo% JING fF",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "-_{3.| Total Number of Rejection Objected to Ballot Papers; |-——_—OVOC) FSC a ND OUNDAMTEG TEL EGrORALR POET b",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:52:12.073578Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100504001",
+    "constituency_code": "201",
+    "ward_code": "1005",
+    "polling_centre_code": "040",
+    "stream_no": 1,
+    "stream_key": "201-1005-040-01",
+    "ward_name": "BUTALI/CHEGULO ’",
+    "polling_centre_name": "TANDE PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100504001",
+      "printed/portal ward BUTALI/CHEGULO ’",
+      "printed/portal centre TANDE PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

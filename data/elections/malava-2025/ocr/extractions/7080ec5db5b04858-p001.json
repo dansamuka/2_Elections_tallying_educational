@@ -1,0 +1,137 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "7080ec5db5b04858-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201075622424649/v1_7080ec5db5b0.pdf",
+  "source_sha256": "7080ec5db5b048583691a5200e90053b655684ab3af40c3785eb3c1925b621fb",
+  "source_filename": "v1_7080ec5db5b0.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/7080ec5db5b04858.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1008-087-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.15737142857142855,
+  "text_length": 2395,
+  "text_preview": "Ohh Te ee\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MAHIRA PRIMARY SCHOOL POLLING STATION 1 of 2 Code __037201100808701\nSEES ARBRE NEO RNG BLAME SLO, ARIES COMP NOE PENDENTELEN CGC __037201100808701\nWard SOUTH KABRAS Serta\nEN pet oA BAS N TEL 6-5 COMMISSION, sO 1 0% PSC INOC DE NDENTEL EC OMNDEPENDEN B® Cun DEN ECTAMISSIONN\nConstituency MALAVA gTELEC Code __ 201\nCounty Sa SE ECT ORAL 2 NOENTELECT CON poe REL ECTORAL Ah NOE DENDENTEL Sn On Cade WANES PENDENT\nNumber of votes cast in favour of each candidate:\n[Name of Candidate To oF Valid Votes Obtained |\n_1. ANGATIA JAMES SHINACHI\n~_ [2 AASON sHIVAKALE BRUCE pe\n3 MANVASI JOAB BURUDI Lanne MOEPENC\nfda ENGR EDGAR BUSIEGR, 00)\nSOUND EUR EERIE ES i NO | 00)\n26D AND EICAIS OA VIDALCHIMIAN ESCOMns i\nNOT = AISI aOR ESRD SueSCOMMISSIOW ADE\n[8 PANYAKO SETH AMBUSINI | : re]\nLA ae 2c ISON Se ee cen LISTON LANE ESET\n| Total number of valid votes cast ee\nPolling Station Counts ~ a N NOBOU { ae -Decisionts} on disputed votes if ‘aa or “ a\n[tal rr of Retreats he Plng Satan: | Se\n| ithinirdeecedsate Pes od he\n__[3.| Total Number of Rejection Objected to Ballot Papers; i—ood Paenen ance uur pen es :\nCONS hn lat Numi Nai Mates DARKO CC AR SPOR Oe EE SEBS oe ils SION Nc EOUN ARIES” UR ae PCO pe enges\nDeclaration ENE ON Ee pL OURS PENDE NTE ontoks i DARIE FScom ENTEU\n_ We, the undersigned, being present when the results of the count were announced, do hereby ge aMbe results shaun BP Ses QRALANO\nand accurate count of the ballots in MIAH IRA PRIMARY SCHOOL Polling Station _ Kise oe meee Sebati\nPresiding Officer: ET} ONILA Asia ESIMB tL) Signature: _ LseeagiOING | Date =|)- 202.\nDeputy Presiding Officer: I EME EN Ho Signature: Ae: CER J Date , —(1- 2024\n__ Agents or Candidates [if present) SPEND ES RIESCORLEC TOR WTAE NTEl\n> [1 fABaadan mduvnleal JG74cn UKA lomazaaiel pda ato:\na = 2 [FA G AO\nSoa : ve Ld 9 $ AYS I RA Soy RS f£ ya 20\n220037'| Dp le4220382) Bae 5) do\nee fara ae se aa Sere\nas SE Oc oar os OMNDEP cn Ce WAL ANGBO UE PENDENTELE ON SOM EGON aR {erELESor SABO REM\nuN Reasons for Refusal to Sign (if any) NE ROR pNOSDENTELEC? mn pest OM A CAC OM\nPresiding Officer's Comments: NTELE Seas. } MigeoRAL RA LROR WEN GMISSIONINA BOUND,\nPEIRONaA NASAL EP PRED NE, IMENETI FACEENEIN RET cron aay ON vor peND 25)\nLECTORN tad OARIESCOMMg CORAL ANDRO eee yi Wwe DTH=NH2 O27 6 iON |",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 22,
+        "confidence": 0.19999999999999998,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 22,
+            "confidence": 0.19999999999999998,
+            "score": 0.19999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.16999999999999998,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.16999999999999998,
+            "score": 0.16999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 24,
+        "confidence": 0.16999999999999998,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": "anchored-cell-ocr anchored by '12.| Total Number of Rejected Ballot Papers;'",
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid votes cast'",
+      "total_cast": "derived: total_valid (2) + rejected (22)",
+      "rejection_objections": "__[3.| Total Number of Rejection Objected to Ballot Papers; i—ood Paenen ance uur pen es :",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:51:13.390579Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100808701",
+    "constituency_code": "201",
+    "ward_code": "1008",
+    "polling_centre_code": "087",
+    "stream_no": 1,
+    "stream_key": "201-1008-087-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "MAHIRA PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100808701",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre MAHIRA PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

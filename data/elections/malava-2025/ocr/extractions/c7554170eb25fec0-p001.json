@@ -1,0 +1,147 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "c7554170eb25fec0-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201709511566334/v1_c7554170eb25.pdf",
+  "source_sha256": "c7554170eb25fec047b8ceaedf938373c40bca029a69fd9f06cdd4ecb25b664d",
+  "source_filename": "v1_c7554170eb25.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/c7554170eb25fec0.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1008-094-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24028571428571427,
+  "text_length": 2172,
+  "text_preview": "32.\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MATENDE PRIMARY SCHOOL POLLING STATION 1 of 2 Code __037201100809401\nWard SOUTH KABRAS xt Code 1008\nConstituency MALAVA om GOR cL AMOR ALA INDEPEN\nCounty KAKAMEGA : Code 087 Non\nNumber of votes cast in favour of each candidate: PRL eF are\n| NameofCandidate Sef NO. 0F Valid Votes Obtained Ow\n1, ANGATIA JAMES SHINACHI 8\n[2 JASON SHIVAKALE BRUCE SS Le\n|_3. MANYASI JOAB BURUDI , fe fees ORA Anode PNUERTEMSaEO eA RRDSOONTA APA\n4. MWANGA EDGAR BUSIEGA (ene OOF\n|S. NALWA BENJAMIN {0\n6 NDAKWADAVIDATHMAN 05}\n[7 OYUGI GEORGE NGAIRA : [007]\n8.\\ PANYAKO SETH AMBUSINI''9'29(0820 70a nics CO eA PEROT Su EATS\n| 9 TUVEILWILBERFORCEINDAL\n[itnobertvwes cat\nSELINA EBRD TBRERIR wire e9 cece out SSIONINDE ae UNDARIESCEE Decisionls) on disputed votesifany = i ALAN\n[fiat nur of Regier Votre Potng aon, SOF | wane ote il wi aspaie| Ne Tend oped oe]\n2. | Total Number of Rejected Ballot Papers; of 03) (qe Ne\n[a Taatnnber a Recon ene oBaltPeps [p00] 2)\n- |S | fontonincsatiaestets SY fe\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results’Shown are true\nand accurate count of the ballots in DART EVO PER VCRONY | Polling Station MRL Aha « oes Con ituency.\n\"residing Officer: A OW ADD GAmw EL Duma. Signature: EO gap soOult2 02s\n_ Deputy Presiding Officer: PI ILI : ONA ANG AMA _. Signai ree a by ARTE 2025\nSs - Agents or Candidates (if present) ee ALANDEOUy) ENDENTEL SON NDARIESC, BEC ALANTE OE ON ae\nial hanna [in| Ae | Wn | some [|\nPET DO WSO WU cote [42-29 N60) OHS peo Opes 3d FRR\n21 ArpHOW Coho leeswecr | DCP eo gsqemas| go-ahead\nBOK Ge KSeNDEN Taadls SOA ANOnr ARIES IRI C p Pc ON aerENR AOAC ouINISS OO NedOO OU UTE ECTe Ct Misay aNDEPe SCONE IES Aan\n5 ea Tas ae an «Sie SOO\nee SSS eee ee\nINP Gc on ache NDen Te Scomunssig Maeno ON\" re ECTORAY BONMDETENDLCON Sac oen, ANOLON Anew ELECTRON GM 1\n; Reasons for Refusal to Sign {if any) Aw ‘ por WIND! eek RALANDAGMOEPENDEN i i\nah - <S a TE: Ae ee ed: . or . ot 4 p 7\nP.O SLEONARD SAtwEL TuMA EB ONIN ORT EC TORALANONINDEPENDEN Ural SOs\neas eee on een Ear ee tee",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": 82070,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 82070,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.0,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 3,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 22,
+        "confidence": 0.265,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 22,
+            "confidence": 0.265,
+            "score": 0.265,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 25,
+        "confidence": 0.265,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": "anchored-cell-ocr anchored by '1.| Total Number of Registered Voters in the Paling Station'",
+      "rejected": "full-page-text anchored by '2] Total Number of Rejected Ballot Papers; _'",
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid: votes cast'",
+      "total_cast": "derived: total_valid (22) + rejected (3)",
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:33:46.007280Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100809401",
+    "constituency_code": "201",
+    "ward_code": "1008",
+    "polling_centre_code": "094",
+    "stream_no": 1,
+    "stream_key": "201-1008-094-01",
+    "ward_name": "SOUTH KABRAS XT",
+    "polling_centre_name": "MATENDE PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100809401",
+      "printed/portal ward SOUTH KABRAS XT",
+      "printed/portal centre MATENDE PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

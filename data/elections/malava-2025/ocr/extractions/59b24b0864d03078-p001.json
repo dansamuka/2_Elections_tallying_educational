@@ -1,0 +1,142 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "59b24b0864d03078-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201852512832698/v1_59b24b0864d0.pdf",
+  "source_sha256": "59b24b0864d03078c33fbb13fe2452d6ae972cdfb5b9cea91604889c36511d38",
+  "source_filename": "v1_59b24b0864d0.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/59b24b0864d03078.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1004-035-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.17314285714285713,
+  "text_length": 2803,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MUKHUYU PRIMARY SCHOOL POLLING STATION 1 of 1 Code __037201100403501\nWard SENDENTE 00! oc hEAST RABRADEN Ty K-SCOnmiSSIO™, OE 0 pau cpENDENTELE -GNINDEPENOE oP Se Gee nDENO ECTOn SSIONINDE\nCons hituenagS? uc BAVA. cOMMISSIOn PENTEL ECTON £19 ps0 60M cu TELECTOR 4; SJONINDEPENO 2CO Deh pec: SANORAL AO VINDEPENI\nCoulity aun? ET <cO AP RARAMEGK: ECTORA) 2 ENDENTELECT COM Noe NUT ECTORALA iin NOE PENDENTES ait. WC hada 7 OORLANDBG 5 ENDENTI\nNumber of votes cast in favour of each candidate:\n__ | 1. ANGATIA JAMES SHINACHI | 08]\n_ [2 JASON SHIVAKALE BRUCE Soa ea ete oy\n“3. MANYASI JOAB BURUD\nFa MWANGA EDGAR BUSIEGA a ae eaten ey 55\n5. NALWA BENJAMIN | 009)\n\\ Ss DAAC ATR\n[7 OYUGI GEORGE NGAIRA 088\n| | PANYAKO SETH AMBUSINT a!\n| [9 TUVEI WILBERFORCE NDA F765)\n- [Total number of valid votes cast ITELECTOR, AG sean sea ALTIMA MOP SPOORUREE One oof\nPolling Station Counts nT! DeQUME ENDER Decision{s} on disputed votes if any Tes SE ee SI ALAN\n[Ft ube of ResteredVoersin te Poling Satons [—— 5 FE\n~{2:{ Total Number of Rejected Ballot Papers; EO OJ [.\n[| TaslNonieratRoecion ies ttstatPaes ——— OOO} [2\n[a Freetnnieraiepasiioes, = OQOO [ae\n[Pit nner scat ph ee fy Co et ee ces rein\nDeclaration = Enesco NDBOUNS DENTELES Ou OlNESNOn GUNA LECTORALAY Wee hick\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above aretrue\nand accurate count of the ballots in MUKHU}U PRIMARY SCHOOL _ Polling Station MA LAA PSNOEN nso men\nPresiding Officer: MULVN. RABE csownoes SOU aruescON\" nepal EO BBLS ouncsicy ae 27-11-22!\nDeputy Presiding Officer: Muto tt Widhiniescomecronn DBO Signature: Ao pate 2 7—l(-\"20%\nx Agents or Candidates {if present) IALANDBOUSCPENT NTELEC TONS RIES RALAND ECT roms\nLAL TBRUAN IceND) STRANDUA 36020727 | DARPA 4 O55 RP —— ai Robe\n2 IRENsSO Ww MALONEO 10699951 D-Op OTN S196) URAnge D7-)2aps\n¥ SLU KE Rlmnns (20674 UR LO tgm nash kek [2p tde.\nSESIE oe och Sruissi oc WOa uur ARIE Toe Sy ec One penta OA Rien ans OORT OOO NTE Ee TOM ae an pereN CONC ESE\nNt ne Na Me OLN GP re oC OM alo tae PENS eNO RSC a a PA oer eL ECO Oo\neee amet ee a eee ee ee\nSo RTMNE GC 08 iser EDEN IVE Scommssigh NCO CoGOME ELEC ond/ SSIONMDEPENORP ONG cc on ANDOOR A ENDENTEL ECT ORMRG Gon\nIIIT? CENTELEC Toma SSIONINDEY Ces ON A SSGEA Al ANDS CU GPENDEN TELECON WSO eel NDARIE dco gLECTORAL ANONOE NNN\n_ Reasons for Refusal to Sign (if any) AMI SSIONIN' NES CTR ALAND MDEDENDENTELE CSIC nS\n‘Presiding Officer's Comments: nO , aNOP SCOMM a! Y WDBR DEN aha MISSION DARI Ss\neRe WAS NO DiSpOTED VOTE. THE . ING ANS COONTIVG\nPOS NAME ~ Mutou Mezy SEcrona, oR EB Ne Poss PEPE GNDARIES ORM ees\nrf Dee: 217 I-02 Cp OF Ficer, PAN NOARIES CORES: a‘",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": 222,
+        "confidence": 0.06,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 222,
+            "confidence": 0.06,
+            "score": 0.06,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2000,
+            "confidence": 0.07999999999999999,
+            "score": 0.07999999999999999,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": "anchored-cell-ocr anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVE]! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": "full-page-text anchored by '2. | Total Number of Rejected Ballot Papers;'",
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:43:01.322037Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100403501",
+    "constituency_code": "201",
+    "ward_code": "1004",
+    "polling_centre_code": "035",
+    "stream_no": 1,
+    "stream_key": "201-1004-035-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "MUKHUYU PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100403501",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre MUKHUYU PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

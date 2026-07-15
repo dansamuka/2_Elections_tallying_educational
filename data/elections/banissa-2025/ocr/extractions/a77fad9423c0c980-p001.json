@@ -1,0 +1,136 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "banissa-2025",
+  "page_id": "a77fad9423c0c980-p001",
+  "source_path": "data/public/elections/banissa-2025/forms/009040020005801/v1_a77fad9423c0.pdf",
+  "source_sha256": "a77fad9423c0c980527cf7ebef6bb01aacfd27b9a8fbb9ae904df624e9ccf594",
+  "source_filename": "v1_a77fad9423c0.pdf",
+  "public_url": "../data/public/elections/banissa-2025/forms/uploaded/a77fad9423c0c980.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "040-0200-058-01",
+  "match_method": "POLLING_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3322666666666666,
+  "text_length": 2465,
+  "text_preview": "3 = - : = = | 7 - 5 - uo = = y abs EB = = | g : = : SZ\nJ = cad 46, 142 TEL Ll Sp =I = = LI = = GE Z = ga we a [a] : Z eS a a\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station GESREBKI PRIMARY SCHOOL POLLING STATION 4 of 4 Code __ 009040020005801\nWard KILIWEHIRI Code __ 9200\nConstituency BANISSA ! z Goda: ci O400RAL ayn WNOEPENt\nCounty MANDERA Code __ 009\nNumber of votes cast in favour of each candidate:\nName of Candidate No. of Valid Votes Obtained : |\n1. HASSAN AHMED MALIN See Lea Vy\n2. MOHAMED NURDIN MAALIW oan orca te el\nTotal number of valid votes cast J 20)\nPolling Station Counts Decision{s} on disputed votes if any\nTotal Number of Registered Valarsinthe Paling Staion\n2 | Total Number of Rejected Blot Papers ESion eclomscan uh Ocgantte| CoM TSB oun oe\nTotal Number of Rejection Objected to Ballot Papers; a <<) BIO CONN ANB OL eR MDENTELEC Pano Mao INDARIESCORLEG\n4 [Totter Disp Vis ESR iusto Coes eR\n5 [Tt Nur ofa oes Cos SE wr TE TRS ct ama Seen 7\nDeclaration a Se,\nWe, the undersigned, being present when the results of the count were announced, do Hereby declare that the results shown above are true :\nand accurate count of the ballots in UESRE BK PRIMARY Polling Station. te aN A Constituency.\ny Re ANDCELE 7 : 2\nPresiding Officer: ABD ISsack TERAWY\\ Signature: Ess Date 21-l1-2025\nDeputy Presiding Officer: AE DIAAZAK MusTAEA tSignat OF RRRIRD fy. Date 2 (=1\\-202\nAgents or Candidates (if present) .\nFT BRAKIM Manta 12978262i) UPA lenzszoure Wana\n2 THAWwA Iaeanim JeQen (3096/13/38 | WDA etarpeesq7| HR fo 7-em\nea SOA NENTS CaM EMEINOA TIES en Nye CORNET NSE ELEC TEM MISS ONgNON ECO NELEC TONY\nRSS TRaDEPENDENTE] ESCOMMISS UN Ga@eoeOeNTELECTPRAL a 6/ONINDEPEN ECON ec SC yan ANOBOUND g NDENTELEC ONO\nSSPE nen TEL EC TORS SIONINDEPELZZCT CASES COR ALANDEOUWp ENOENTELEG WON WOOT TONYINOARIESC One CLORAL ANOD DENN ot LEN OM\nSON ANCE SLE FEN Ge elo ue NOARE SC REL CORA ASaenS Ou ove cc oMmaaiC AMDOOUNO NSTC OunofeccuonT\naR Se SeONIND aS Una ie SCONY ACO MoerbeN Te eSCony ccionINONLC MOM Ecromar oo Panes SENDEN RSD oS\nRee er NDEN ocean sslON TON <cOyuNO NE cToRa SOOM GAT oe HDEN WIN SRNL OF ono EAN cL ORNS UPLOAD\nReasons for Refusal to Sign {if any) _ UN\nSee ete ee Saas ee ee ee ee\nPresiding Officer's Comments:\nTe E poke Be STATION Se ao EN DEI SUGES : vil.\nP o's NAME: ABDI [ssACK IBRAHIM\nSeer eats —,\nMeer : fe a ou O25 fo ! y'\nSee a ect a hate taal fiE.B.c\\\nAPRESIDING | :\nROFFICER J a",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 18,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_UPA": {
+        "value": 12978262,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 12978262,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 34,
+        "confidence": 0.28,
+        "source": "certified-register-hint",
+        "alternatives": [
+          {
+            "value": 34,
+            "confidence": 0.28,
+            "score": 0.28,
+            "source": "certified-register-hint",
+            "observations": 1
+          },
+          {
+            "value": 1,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 20,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 20,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '1. HASSAN AHMED MAALIM'",
+      "candidate_UPA": "full-page-text anchored by 'UPA'",
+      "registered": "certified-register-hint anchored by '1.| Total Number of Registered Voters in the Polling Station;'",
+      "rejected": null,
+      "total_valid": "full-page-text anchored by 'Total number of valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 5,
+      "page_size": [
+        2443,
+        3303
+      ],
+      "candidate_list_complete": true
+    }
+  },
+  "checks": {
+    "V01": "FAIL",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "PASS"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T17:41:57.486682Z"
+}

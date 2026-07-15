@@ -1,0 +1,157 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "509be5fec9579c42-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201745387010130/v1_509be5fec957.pdf",
+  "source_sha256": "509be5fec9579c421ca585bc486f4a067b2952a6a4ec75b053df4372a1a434ca",
+  "source_filename": "v1_509be5fec957.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/509be5fec9579c42.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1007-073-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.41502857142857136,
+  "text_length": 2794,
+  "text_preview": "I\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station MALEKHA PRIMARY SCHOOL POLLING STATION 2 of 2 Code __ 037201100707302\nSR en nee RBI NOARIES COM, WOE PENDENTE DEN SCO __037201100707302\nWard SHIRUGU-MUGAI Code 1007\nMPRISSUO AIS Ce Gls RMN acs STC ETFS OAT A ROL ee SOT DEP ENE a PSS ~\nConstituency MALAVA Code __201\nCounty KAKAMEGA Code __037\nPRE eS Speer ORAL A PNDENTELECT COW OE ONAN ECTORALAW MINDED WDENTEL CN LONBR_ AND BO UPENDENTE\nNumber of votes cast in favour of each candidate: 0\"\nNo. of Valid Votes Obtained MEO\n| 1. ANGATIA JAMES SHINACHI SE 0\n|_2. JASON SHIVAKALE BRUCE 3 |\n3. MANYASIJOABBURUDI 000)\n4. MWANGAEDGAR BUSIEGA\n~ | 5. NALWA BENJAMIN, S08\n| 6 NDAKWADAVIDATHMAN Be) onacasrnsusexerspsucimmaaeeesse eee eT\n[7 OYUGIGEORGENGAIRA A OL\n8. PANYAKO SETH AMBUSINI ube ES Sa ea EE a egy:\n8 TUVE! WILBERFORCE INDAI es a eee eee 7,7,\nOT Se YR SN ry SUN neler ase nase cL Ae\nPolli y Station Counts _ Bee SOL PEN NO ARIES CO Decision{s} on disputec votesifany OP GEN TELECTOR AL 4\n[i flostanter rege eine aig itn, | EEO Go] [Sette and wh dante enc Gale pe —]\n'{2.| Total Number of Rejected Ballot Papers; IAA PON Tt Loe so nec OL ANDB OLS paMiGNT aS SSO x at OUNOARICGE”\n| Total Number of Rejection Objected toBallotPapers; | MOO) Face nee ANOS OLE TEL EGIORN be CTO rie SOMO\nBo Lene, ae INES Toe RR Aoe eR aT rena cere\ntt ag Se woo TOM RADA Raat assonn Teel es Se\n‘We, the undersigned, being present vhen the results of the count were announced, do hereby declare that the,results shown above are true _\nand accurate count of the Bp in MATERA bbl oa\" TLISKITE) PDIM -02.. potting Station A 7 (AN earns Lonstittuency,\nPresiding Officer: [| —i/ 47AV\\ ['/ UL LUCH EVELEL - Signature: uh 7s CULE force: “NW -2025\nDeputy Presiding Officer: NONI CAH SOYIE Bi genceure NGAG } 28 ed BRE ves {= 202\n051 SC Oak Ee e080 BONEN SSION SANDS NDER Ses’ ENDENSARIE Se OF) oes aol\nAgents or Candidates {ifpresent) = UN = RON UN COnji CTORALM IER = CONIPSRIO\naps | SHAPAYA AMBANII2Z5C/724| BCP... bisqabseqar Azer 7 jk\n121 BeAz WAFULA 7/51 129/366 (2) DARK\" O7i/G09/9| Se Br.i).33\nRACY AMBALE Hy. paszoqge | UDA} OUI47248| fa 7. at\neee Ee Soh Oat anDOO OSLO ad clon AbOE RESET NONae TRAN SEA MOAR IRN EEC on SE :\nFBS ae amok nar Asati NO Ag DEN ESSER Cop oUNDNT IES Ohigc OPALAROE DES eae\nBe ea ee AR sa Ro One ENI Seeet O\nSoG dOBOUNDA MESA nELECTORAL Sean GeT nel PRIS RU NAN Sere Way ances Seer\nf oo ae ee\nSaat es FRESE PRIN SHEARS SSNS GL RNAV Bi\n_-Reasonsfor RefusaltoSign(itany) cieOMinssronin Roepe TORALANDa Gt OEPENDENTELE GON OA\nNEF Presiding Officer's Comments: NTE OGMOeNe 35 DAR 3c i RAL A SOF poet gcomel NOs IRE ieee ER SS\nVOTING WAS KONE SMoCTH pws THERE VAL YO LES BBE EOS\nANN 2278 0500, RTO ARE TATE, ie eee Oa TeTE cope TORN toe eae",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 77,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 77,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.315,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.315,
+            "score": 0.355,
+            "source": "anchored-cell-ocr",
+            "observations": 2
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 4,
+        "confidence": 0.315,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVE! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": "full-page-text anchored by 'Total Number of Rejected Ballot Papers;'",
+      "total_valid": "anchored-cell-ocr anchored by 'Tot number of valid votes cast'",
+      "total_cast": "derived: total_valid (2) + rejected (2)",
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:36:45.104308Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100707302",
+    "constituency_code": "201",
+    "ward_code": "1007",
+    "polling_centre_code": "073",
+    "stream_no": 2,
+    "stream_key": "201-1007-073-02",
+    "ward_name": "SHIRUGU-MUGAI",
+    "polling_centre_name": "MALEKHA PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100707302",
+      "printed/portal ward SHIRUGU-MUGAI",
+      "printed/portal centre MALEKHA PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

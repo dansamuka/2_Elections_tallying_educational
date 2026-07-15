@@ -1,0 +1,152 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "0893efcd1bd84bc4-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201633842444042/v1_0893efcd1bd8.pdf",
+  "source_sha256": "0893efcd1bd84bc4b1aff7f41802a589b666a4182f7722f35f310ab02d53b10f",
+  "source_filename": "v1_0893efcd1bd8.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/0893efcd1bd84bc4.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1006-059-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.3250285714285714,
+  "text_length": 2357,
+  "text_preview": "a oe\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station FUVUYE PRIMARY SCHOOL POLLING STATION 2 of 2 —___—~_____ Code __ 037201100605902\nWard _ MANDA-SHIVANGA Ts Code 21006 £07 oS Sionioe\nConstituency ___MALAVA ESE PENDEN TESORO RO EROS A COMTI er ITT pS OR NGO €LEMMORAL A ONINDE De\nCounty __ KAKAMEGA Code __ 037\nNumber of votes cast in favour of each candidate: ;\nNo. of Valid Votes Obtained\n_1. ANGATIA JAMES SHINACHI RE SRE NDENTETEC rg SSTONNUE RS ree re SOE ee eee ©O0)\n| 2. JASON SHIVAKALE BRUCE , Su ete rib erereee toa ongsCo aSCEDE\n_ |. 3 MANYASIJOABBURUDI | |e NNT TH DTA\n[4 MWANGA EDGAR BUSIEGA Pes sree a rerecrante eats\n|S. NALWA BENJAMIN ANDBOUNDAR EA :\n\"8 NDAKWA DAVID ATHMAN rc rea ese emee\ngee a 2 Sees Rear earne ieece ame ene\n| 8 PANYAKO SETH AMBUSINI indent : See ornare Tene a I EG\n_ |.9. TUVE! WILBERFORCE INDAI_ LESCOmmis: ag ae a a Ayiem rE\n[Total number of valid votes cast. et eee rect accel aac eh\n‘Polting StationCounts ' Decision{s} on disputed votes if any oUsRecesoerrn SSAA\n[1] Total Number of Registered Voters inthe Pong Station, | Serta ie wih cst wie | me o Candi ssid al]\nfee es ene ee ogi eee\nee ae a TS § CNR een cee\n, Declaration ass NIN NOE CON eee st ANDBOUy PEN; BLE ae gn i My OF vA noe ewe Now\nWe, the undersigned, being present when the results of the count were ang6unced yeh reby declare that the results shown above are true\n_ and accurate count of the ballots in UVV YE PRIMAR SeHore| Polling Stat ny TAAL AV A Constituency,\nPresiding Officer: [ 4(1A) Y KA GUN ZA DARIESC! © Signtuges. Po \\ Date 27 — Jr202¢\n_ Deputy Presiding Officer: SURGON Ce “Signature! ery Date 2 7-()-2025\n. Agents or Candidates {if present) ‘ UNpE LECTION EON NSO ARIESCORLECS OOM . VO SSI\n[el tetcnate nen [arse | iichammanonan [lenis Tapes [I\ntlsymen NOUURE 2aj722 66) SAP je Te2é8ee44 I yes—~127 frifias\nL21CLIRGS Mohan pS TOA la zustrunal Cewee fae\n: Se nes Pn ec as een Seem\nr Reasons for Refusal to Sign {if any) . Set PROS ENTEL! MISSION 7 oR SOU EPENDE? ELE=0 Sens\nPresiding Officer's Com Pity EN TELECT OOS AC ONO ae Flee ALAND cxi entgct ONDE PE CU RS\nPELECU TONED Pg CANES, PED SMopcHk suing oh BG A s< RINDEPENGEN ARIES MMS? INANE\nRES Te olin Nee AR e Abn noe BERET os oor oat as =e\nrele ca WY rege StS ee NE HEAD! me ING ENDEN ELECT ON Oe peee OuInDETENDENTa/ ESCOMMIS x",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 48,
+            "confidence": 0.16999999999999998,
+            "score": 0.16999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by '9. TUVEI WILBERF ORCE INDAI .'",
+      "registered": "full-page-text anchored by '| 1. | Total Number of Registered Voters i in the Polling Staton;'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:28:37.057625Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100605902",
+    "constituency_code": "201",
+    "ward_code": "1006",
+    "polling_centre_code": "059",
+    "stream_no": 2,
+    "stream_key": "201-1006-059-02",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "FUVUYE PRIMARY SCHOOL —___—~",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100605902",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre FUVUYE PRIMARY SCHOOL —___—~"
+    ],
+    "applied_to_register": true
+  }
+}

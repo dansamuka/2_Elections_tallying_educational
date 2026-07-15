@@ -1,0 +1,133 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "237594be541479f2-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201727131940485/v1_237594be5414.pdf",
+  "source_sha256": "237594be541479f2ff47be64a7de04f9d274f38178acfca89ff16f10cc5a3b3b",
+  "source_filename": "v1_237594be5414.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/237594be541479f2.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P31940485-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.2251,
+  "text_length": 2981,
+  "text_preview": "oe Eee en\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station KOKOYO PRIMARY SCHOOL POLLING STATION 1 of 1 Code __ 087201100310301\nWid PA PENDENTEL (oe% << °c NEAIEIEMENDEN TE: --SCOMMISSIO® a0 0 put ic PENDENTEL ECT INDEPEND™ 0h 2\" Gopenibe Rs CT SIONINDE\nMoniatreny SSC MARANA. COMMIS Sion, DENT ELEC TON AC NEC EOL ct ELECT Oa | HONINDEPEN Ce CU eS, ci CMNORAL ai INDEPEN\nGol hepiqninoeP et. cOl pS MARAMEGALECTORA:) ENDENTELES’ 7 OW evict oh eCTORALAND SDEPENDEN TE gl SC Oge 1 Ol\nNumber of votes cast in favour of each candidate: See ‘DAR a .\n[1 ANGATIA JAMES SHINAGHI | ——— =)\n[2 JASON SHIVAKALE BRUCE pe Sart ee oer rore oes TH\n~_E MANYASI JOAB BURUDI SG Rg poe cee PETC Sa\naC MWANGA EOGAR BUSIEGA easier gter ter een oom et\neae race et nt ae sesame oaeaeerer NC TT\n6. NDAKWA DAVID ATHMAN Acre 7\nPTOWGIGEORGENGAIRA\n[a panvano Ser aweusin a\n_ | 9. TUVE] WILBERFORCE INDAI Ta: cet or aeerrncarmemnneremccsuaare 6521\n[Total number of valid votes cast Tonga SSIONINOE alee Rear Lee on OR OL RENO OMT oN Con E po ea\nWOERDENTELECTopMISSIONINDED alec Cana ALAND WO! anther CONC ANDEC ENTE SO MOARIEW Ohrhygde\nPolling Station Counts - - Decision{s) on disputed votesifany\n~ [i [Tt Numer ofegjtere Vein te Ping Salon, [=] |] {Stir ot Pp what] nee ona ed ne |\nRit salle neni iSla Poa or oen eo ope Teer ous Oa ropa TO neue\nFl Tost nbs Rec Oecd wtalaPaaS app a ae ce fou\nSift Tole lamibe af ispubed es 2-5 68 et nD Op Here eer EDDE Te, a Caen aRIESCOMMIG PRALADBO D i-S9 oO MISS ONIN\nJe otiinnattlatesteg oe be| teet an seep eo\nBedlaaationnnn SsiomnpereNoccO eve so On ANDBOUNSPENDENTELEC gut NOta SION INDARIESC LECTORAL ANODE NOC ON SocNDE COMMISS\n_ We, the undersigned, being present when the results of the count were announced, oH dee Seer that the results shown above are true\n~ and accurate count of the ballots in KO KO¥O. PRIMARY SC Hoo Polling’Statiorm ae ______—_ Constituency.\n“cBrediding Offiters SHAINNRAS SARA BAS Cian Signature! SPINS Conn ssi ie Lg PLeaows.\n_ Deputy Presiding Officer: OSEP Ho KALIVO Ks rt — Signature: BI ec: Date 22 TM =2 O25\nS ~ Agents or Candidates (if present) _ ae BOUGPE et Ss a Pr SCOMLECTORALAND® Deh sMts\n(career es a\n— LATAM OS ON DANG 1369750] DAP Koso 55599] eet [az n-2028\n[2iBonenGe wna [eanoosea | DoP (meas red ae [pa\nLa Alere KOTIALO 20177663 | UDA op qog 2G ypoo sh RP rents\nER TTATAIO. CiNDABI” Tetiyogaq | BNA orensesro lh ide > Rr--end\nOTE ee ca RIES eRe ON cern AOA mie uISS CON CR gpO ON TEL EC TCU SainINDEPe SgCoMNOS ESE\nRNB Ge OR re FENDEN TC ESCOMMISSIE SOON OSeD BON frTELEGTORA/ ¢ SONINDEPENDS CON pug c 2c eal ANDBOUN Dg NDENTELESLNOL SAON in\nPS See oP OP NTELEC TORY SSIONINDEY EN gong ene Sf AL ANDBOL /yePENDENTELEC ON NOP EOO AUNDARIESCOMLECTORAL ANU WOP SN any\nr ‘Reasons for Refusal to Sign (if any) ne Cheers Ona, BRET SU GPCR ene O OA ANDY MOE PENDENT xs\n__ Presiding Officer's Comments: EON, ae JOE PENDES, af PReg ot\nPS OoN AME US BASRA DOARAZA PATE 27 iphgege mT",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 20177663,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 20177663,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": 6521,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6521,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 771,
+        "confidence": 0.4525,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 771,
+            "confidence": 0.4525,
+            "score": 0.4525,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": "full-page-text anchored by 'TUVEI WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by '| Total number “J valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:35:37.684393Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "KOKOYO PRIMARY SCHOOL",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre KOKOYO PRIMARY SCHOOL"
+    ]
+  }
+}

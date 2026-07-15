@@ -1,0 +1,135 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "59cf4f65e24d4247-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201468218457243/v1_59cf4f65e24d.pdf",
+  "source_sha256": "59cf4f65e24d42479bd15f472937de3a2de09dcab49263f19d09a603d26d104d",
+  "source_filename": "v1_59cf4f65e24d.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/59cf4f65e24d4247.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1002-006-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.17188571428571428,
+  "text_length": 2730,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station BULUPI PRIMARY SCHOOL POLLING STATION 1 of 3 Code __037201100200601\nWard WEST KABRAS : Code _.1002 |\nCaiiesenay S22 CLANK COMMISSIOW, PENTEL EC TON AC EAC oOU Cu TELECTOR a) HONINDEPENS gCU egg cI ORAL Ay INDEPENT\nthaulitpronimpe? EN. COWS RRRAMEGAR: ECTORA) SP EMDENTELEC. COW pig hE” SECTORAL AW NOEPENDENTE. pt? SS Cae 23 ORL ANDBO | PENDENTE\nNumber of votes cast in favour of each candidate: NOEPENA\n[1 ANGATIA JAMES SHINACHI\nelite aa SER aie Bele Sear\n3. MANYASI JOAB BURUD! z Sea Ceara anmenrase rnanumasrriontnorvenrtwancereael (oad\n[Qo MWANGAEDGARBUSIEGA ————— 6\n5 NALWABENJAMIN,\n| 6. NDAKWA DAVID ATHMAN NOOO Pe ae ESC OMMOSIO RD EUUNONE Pestear cme SONNE DS GEM\nORR SONGS eus ORE BISA Se sCOMMISSIOg | ANDBOUNON co Froau ce mrstoNtDE ne MNORRTERS DCEO C oun NON OSE\n_ [8 PANYAKO SETH AMBUSINI PEA NDARI Beaeec OanDe auowre Become pose peeeneN LEY Beays\n4 STRIVE) WALBERE REI INIA. tO? ENDEN 7, {SCOMMISS OG Of Seago REE Og Seo ARE TN oe eon) OG\n[Total number of valid votes cast TOR gt SSIONINDE a ecole renal ANoa DEPENDENT teen CON ROO) Pg\nPolling StationCounts SC eccisionts) on disputed votesifany\n- [a [Tort Namba of Registered Votersin he Paling Staten; [55 2]\n_ OF sb Teta Number ot Rejected Ballat-Paperss' O° Soe SSO) OFF faq taser ORCA NOBC ert SS e920 it) won OUNDANEST\n|p. ]Toatnumberr Recon Oise tobaletPapers [O00] fz. P|\n-[S [toaitamieratveiavoestets oe |\n__ We, the undersigned, being present when the results of the count were announced, do hereby q pape results shown above are true\nand accurate count of the ballots in PDLUPE PRININRY “SCHOOL Polling Station - f WAAR ARVs Constituancy.\nPresiding Officer: J JL.LAN ANGUNDSA KEXA Signature: | CRIs | Date Tl - 25\n~“Deputy Presiding Officer: VCR ALL LUCHO MBO 030 Signatures’ Woaticre Date A[-||-2025\nSenor DENTE E missT Oe ECTOR NDI com SOE BL ANDRRUNG SOMPENTELEC Oui oh ¢ NA\n‘ Agents orCandidates{ifpresent) = ECT ONO COMI NDARIESCOMAECTORAL AND! gS SC ROEN OuuMss\n{aT AMOC. = CHINACH( | 33tpe rr | DARKO Claeererl Be ah baoa\nSg ont BOUND GN DEW Te EC TOR GES gee ONDE MEAT OMMEEURAT ANDBOU WORE OONE tSSIONIND BOUNDARIES CE eeu KORN\nHOPS 65 OSPR oerENDEN Te ESCoMMISSIp NO UNCNeeIpO\" EEL ECTORA, 4 SIONINDEPENDEC ON edger mnt ANDEGUNG LNDENTELECT OM ON CC ON bu\nSPIE A ae oP CEN TELECOM SSIONINDEY Ste sCORIS ACS RAL ANDBOUy SP ENDENTELEC ON NOP cas UNDARIERCOsECTORALAND GB oat ORG\nReasons for Refusal to Sign (ifany) a NO = Missioninve® ax bet . OL DEPENDENTE DON Se\nEP atin RNa aN AAI LEN TELEC TOS NOS, ASC OWN Tip ARIESCOMg/ ORAL ANOBOUT SER NOE. OMMISSIONINDBOUNDARIES TORIC\nvo DATES 2 =e Secor DLANDEOUN Dg NDENTELES. oO Scop cTORALANDE OCS OM",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.07999999999999999,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.07999999999999999,
+            "score": 0.07999999999999999,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": "anchored-cell-ocr anchored by '(4. | Total Number of Registered Votersin the Paling Sian'",
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:17:06.341069Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100200601",
+    "constituency_code": "201",
+    "ward_code": "1002",
+    "polling_centre_code": "006",
+    "stream_no": 1,
+    "stream_key": "201-1002-006-01",
+    "ward_name": "WARD TO VERIFY",
+    "polling_centre_name": "BULUPI PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100200601",
+      "printed/portal ward WARD TO VERIFY",
+      "printed/portal centre BULUPI PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

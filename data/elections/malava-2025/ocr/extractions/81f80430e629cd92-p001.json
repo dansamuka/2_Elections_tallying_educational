@@ -1,0 +1,104 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "81f80430e629cd92-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201321634959898/v1_81f80430e629.pdf",
+  "source_sha256": "81f80430e629cd9267c095d14612cece31dad24d3559784fbcff5b4ec56818de",
+  "source_filename": "v1_81f80430e629.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/81f80430e629cd92.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1008-096-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.12065930902111323,
+  "text_length": 2685,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION *\nName of Polling Station |FWETERE PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100809602\nWard \"ENDENT. 00) NRA RABRIAS TEL Bc OMMISSION a0 OW Fe ac DENDE MIELE CT INDE PEND 02 CO penne WE ECTOg SSIONINDE\nConghitwenay SSO MANE COMMISSION), PENTELECTON CAG pt ae 20' euTELECTORa) SIONINDEPEN ECO Oe oii 1 oe OEPENI\nDoutitp nin dEPE™ .cO ors WANAMEGRE, ECTORA) 2 ENDENTELEC! OW ioe Oh e CTORAL Any NOEPENDENTE. iat” SC nme 5 WOR ANDBG, PENDENTE\nNumber of votes cast in favour of each candidate: _ .\n| Name ofCandidate Nf Valid Votes Obtained\nPapi oriae rere ae She a ea ere ee) a\n2. JASON SHIVAKALE BRUCE\n3. MANYASI JOAB BURUDI\n| 4. MWANGA EDGAR BUSIEGA 000 |\nBONS eg eee eet tan A oredr mearnsii certo, 5\nq: NOBRUA BMEASRIANS Noses a nnee opp aoe ae\n[7 OYUGI GEORGE NGAIRA In ee con ten eam gt\nei hityaitD Beret msialai scoot unite hh) grea tg ee a\nSe ee ee ee erry\n- [Total number of valid votes cast Se CTORg BG Seas CARNAL T Tae SNOT oe\nPolling Station Counts _ € : amissie Biren Decision{s} on disputed votes if any OUNCE rE Ray NI\nFi ft Munbet Rept Varin Paling Satin, [-———G 2] [Stn ln Ppe i wn died]. Rel Code plOnie—]\nee Ceara Ge Say oTC As MC aT oe eRe\n[| Tl WonbrofRoecin Ohad oBaltPamrs: | G Oo] [2\n| totam tonto | fee\nDeclaration ONINDEPEND : ONL IDBOUSEPENDENT i , wD. i iO RALANDE! x - AMIS\n~ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results shoxpgibove areque\nand accurate count of the ballots in IEW ETE iE PRIMAL Polling Station Fh ALAA a :\nPresiding Officer: “EWA MoLEnJE Keres IN SC ‘Signature: Se Date PAs be anes\nDeputy Presiding Officer: MwiauRA NYAKIO Jegesa ‘Signature: fs > 201 Dates ZB Lice rae /h\nAgents or Candidates (if present) 20Ur ] ELEC. eZ SONNE , : Ong CTORALAND CAMISSIC\n[EP BAVIS WAPA laure s Sal BAP Jowzaaibge| Deer [ate\n[2IMiLbRes uAANoae | DOP pn bsseid eo cdg\nL 3[EmmMAnvel MUCHHAE [ZelZ8ot | KeryA Mésa lose rsiqeat eee =,\n{Sa IEB WARD mAKobe [O1Rsaue | UU BA lptadoastatl eA [Q7- hy\nSN ee\nSoo Ps Go enocOUNDARIESC7ELECTORA geo ato ce OMMGSiog LAN DE OUNDT SURGE Ce calON NOE eh eyADARIES CONT SSUES\nee ee ee eee\nNSN ASE 000 ure Lec Tom SSion Des et co we SL RAL ANDEOL pS PENDENTELEC ON WOES ON NOARIECOgLECTORAL ANOS OE a BSE\n- Reasons for Refusal to Sign (if any) watt ; sei LECT COM OEP Se Seere LAND BADER ENDENTEL Ecc\nSooo ssgounceye ;\nresiding Officer’s Comments: SiON on yr all me 0\" See COM ' i é ou RIEST ORR Oe ec\nPEUX Motente Kearny [FEB SY op ctona awn DeoeN Guess\n6 RIES, er hk SIDING rn as\nMes EL Re cOMini SP pRESIDING F ‘ We :\nnam CIN, ESCOMMIGASRAL A} \" pone richR F E EP ’ i ‘",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:08:36.056017Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100809602",
+    "constituency_code": "201",
+    "ward_code": "1008",
+    "polling_centre_code": "096",
+    "stream_no": 2,
+    "stream_key": "201-1008-096-02",
+    "ward_name": null,
+    "polling_centre_name": "FWETERE PRIMARY SCHOOL",
+    "confidence": 0.93,
+    "evidence": [
+      "printed station code 037201100809602",
+      "printed/portal centre FWETERE PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

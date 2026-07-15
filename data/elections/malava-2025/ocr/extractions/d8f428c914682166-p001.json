@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "d8f428c914682166-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201593579328666/v1_d8f428c91468.pdf",
+  "source_sha256": "d8f428c91468216674eb84bd4a3f1bb7d5130f37dc9361a52ff6fad9f1232b8b",
+  "source_filename": "v1_d8f428c91468.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/d8f428c914682166.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1006-061-01",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.10719999999999999,
+  "text_length": 2543,
+  "text_preview": "iB\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS —\nAT THE POLLING STATION\nName of Polling Station BISUNU PRIMARY SCHOOL POLLING STATION 1 of 2 Code __037201100606101\nWard MANDA-SHIVANGA Code __ 1006\nCanstitwercy! Sc MRE ANA. cOMMISSIOn DENTE ECTON CAC oN COU cu TELECTORA | SONINDEPENTT 6CT oe RR cL DAMORAL Ay oVINDEPENE\nauitpnnDe Pe 6CO nt RARE INE. ECTORA | ENDENTELEC 7 ON ph of ohh eCTORALAND VOEPENDEN TE. ses\", Sage <1 NOE AND EO PENDENTE\nNumber of votes cast in favour of each candidate: ‘ :\n[ Name of Candidate No oF Valid Votes Obtained\n1\" ANGATIA JAMES SHINAGHI i ———— 02 I\n2 IASON SHIVARALEBRUGE ne\nq. MANYASI JOAB BURUDI ee\ni MWANGA EDGAR BUSIEGA oe unre REL Tee\n[FE NALWA BENGAMIN ear een Ae omen agora eae ocd\nfas MOA DAVIE RRAR Rennes cient oe ee aaa teenage\nNNOESESQYMGREBORGE MGATRA? (fc sCOMMISSiog ANOBOUNDPE 5 Poe et OT ri Oi\nE asPAnyaRO Ser AMBUGIAI scone owes noe reece ea\n5 Satan WaLeRPORCE BAT serene as unset sf eee one\n» [Total number of valid votes cast ee 262\n~ Polling Station Counts _ eSoeN unISSIONINDE RE UNDARIESCS, Decision{s} on disputed votesifany = ENTELECTORA,\n[foe Number of Reiter Vtrsin the Pling San; T———— 1, 7S |] [Sn ttPper dwn nae | NonselCoaitaioe]\nTani alReecedtalt Pes OT |.\n[3 Toalnunbe ef Reecion ene oBalotPmes —4———— poo] [2\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\n\"and accurate count of the ballots in BISUNY PRIMARY SCHOOL Potting Siation We MYA LAVA Constituency.\nPresiding Officer: BILHA INGASIANI SAMA\" y 1p Se So Date 2 PIA 2025\n\"Deputy Presiding Officer: <lOat) ANI AKORE OrGaALic psig Roo NOB es ADRES OE LODE ghd\n. Agents or Candidates (if present) eo on NDE Ue ENOE OFFICER. PrSNOARESCORLECT ALAND’ PRE NOEN Onniaiss\n~ TTIENW ER CINE mAPeSAloolozuikl) Mo pe atecanl GR atte\nPRG Aron Mocwido39 Cyaat Kno ce larsrecaree Gee anak\ner ZY WONT Ao NS CP TATE gle ere L971 pe\nSee DAS git nDBOUNDARIES oat ECTOR AN Dar Co al pra COM MISS /On gANDBOUN TEL ESE Gals slONINDEPGhip/DARIESCO'N RNAP CONN ert\nCPIOE SoS 08 ePFERDEN TE CSCOMMISSIGNOUNR CRE oO WTELECTORA( g STONINDEPENDS CONN} dex 50 peal ANOEOLN LNDENTELESSE AARON CON\nReasons for Refusal to Sign {ifany) AOS UNTELEC COM imaneeraDE® Se eee ORAL ANDI OR PENDENTELEC OSC nisS\nPresiding Officer's Comments: __ guitoh ec omn yn MS i ee OENAE Ow ’ Oo REPENDS. :\nESO LEDS ll BY age ns PMD nese aioe cacao ys\n) : CEES. ut PEND ME RIES iN? tok S AGEN Ol SSiO ete ? yee! € ORA + ‘DE bie\nELECTORAL re OR NOE ec ONG Fl OUN Meera oe uM :",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 82,
+        "confidence": 0.15999999999999998,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 82,
+            "confidence": 0.15999999999999998,
+            "score": 0.15999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 262,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 262,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "anchored-cell-ocr anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": null,
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": "full-page-text anchored by 'Ss] Total Number of Valid Votes es Cast;'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:25:10.279258Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100606101",
+    "constituency_code": "201",
+    "ward_code": "1006",
+    "polling_centre_code": "061",
+    "stream_no": 1,
+    "stream_key": "201-1006-061-01",
+    "ward_name": "MANDA-SHIVANGA",
+    "polling_centre_name": "BISUNU PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100606101",
+      "printed/portal ward MANDA-SHIVANGA",
+      "printed/portal centre BISUNU PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}

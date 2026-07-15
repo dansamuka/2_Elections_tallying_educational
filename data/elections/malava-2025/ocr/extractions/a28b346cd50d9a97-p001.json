@@ -1,0 +1,140 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "a28b346cd50d9a97-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201389097777075/v1_a28b346cd50d.pdf",
+  "source_sha256": "a28b346cd50d9a97d23b39d679272e04a45ec909cdd5ad8a19bcaa6d8748661e",
+  "source_filename": "v1_a28b346cd50d.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/a28b346cd50d9a97.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-P97777075-01",
+  "match_method": "STATION_NAME_AND_STREAM",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24068571428571428,
+  "text_length": 2460,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station TUMBENI PRIMARY SCHOOL POLLING STATION 1 of 2 Code __037204100301501\nWard CHEMUCHE Code __ 1003\nMane Gtrenay!SS cul << MEE AVA 5 OMMISSIOn, PENTELECT ON EAG SAO COU WTELECTOR4/ SIONINDEPENOL COV eh pail LTORAL An VINOEPENL\nCounty KAKAMEGA V Code __037\nNumber of votes cast in favour of each candidate: ;\n| Name of Candidate __| No. of Valid Votes Obtained\n1, ANGATIA JAMES SHINACH| Oe od\n2. JASON SHIVAKALE BRUCE \\ or\n[3 MANYASI JOAB BURUDI OCT\n4. MWANGA EDGAR BUSIEGA Jo 002)\n6. NALWA BENJAMIN RiNTELECT\n8. NDAKWA DAVID ATHMAN 162)\n_ [-T. OYUGI GEORGE NGAIRA | _—— 100)\n| 8 PANYAKO SETH AMBUSINI Pa (fp\n__ | 9 TUVEI WILBERFORCE INDAT Sone Cota emery\nTotal number of valid votes cast Wnt cesraysueccsnaeearinmsauelmmpensaan maceeenenee eS\n: Polling Station Counts _ ~ S gannisse ENDS Decision(s} on disputed votes if any ERO EN MISSI 4\nTotal Nunteof epee Vetes thePling Son; |_———— 1.5] | Swine dso Peri dae] tose coos]\n<sschON HENNE ERR BAER PREG SOE rer ONT Tees ec OCA NDE Gg Parc SUN GaN cps OUNDA RIC\n[8:|raatNunbet ec iced totoltPenes Gag] f2 RT\n_ We, the undersigned, being present when the results of the count were announced, do hereby declare that the results showgbove are ye _\n_ and accurate count of the ballots in TUMBEN? PRIMARY SCHeLPotting Station —MALP Paitin Eokstimeney\\\\\nPresiding Office: CELECTINE AMBACA Signature: ___-<erbeser Date AARAIin 2 OR\nDeputy Presiding Officer: WJ LLIFFE MULnwoR Signature: =< DREicEaf,\neputy oe Mest omnis see one : oe eRe RE SNDBOUNEENG ra ay, eis\nAgents or Candidates {if present) Oe ote SOUAP ENDENTELEC VON One CON Omg EC TORALAN SON dre\n[2 IMARBLE VAMUTALA 7861033 [DAP OK pte327709 | 7 fade lira |\n© PEL Byatt “UROL een ST OR eases! pty ba es\npeo SAECO ANDOU ea Sd Se Daag eS aer ae Pe nee Noe Hear sO NOES OE\n3 Ea ee eee\nPBS a OF eee MENDEN Tey COC OMMISSIBN ON C52 90 Ere LECTORA SIONINDEPENDE CONN ofa unt ANDBOL ADENDENTeL EC TRAPS EC NI\n\"Reasons for RefusaltoSign(ifany) = Dysarts EE ORALAND BH DEPENBENTELE GON SNO\nPresiding Officer'sComments: = Sg RALANDE DENSA itis ON Nag pEOUNDARIESroRIc ge\n+ We nt \\ : S OR? ack iy ake - rr >. 5: 2. C aes +y- on ) VA x “af sac h 1A f ” \\ os + z .\nP+O) CELESTUNE AMBASA PRES ares pesconins ee © osete ih Sch in a as\nASA paar oct N ELECT o Man SSION NS AUG EC TOA ANS MDI RH SNARE un ANDEOL? Re oun roe\nHee aa al Sun SOR Lak! NEPER ant CER [ te et Ra Ke WP iE :",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 162,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 162,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 1,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '6. NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by '8. PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by '9. TUVEI WILBERFORCE INDAI |'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:12:55.366631Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "CHEMUCHE",
+    "polling_centre_name": "TUMBENI PRIMARY SCHOOL",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward CHEMUCHE",
+      "printed/portal centre TUMBENI PRIMARY SCHOOL"
+    ]
+  }
+}

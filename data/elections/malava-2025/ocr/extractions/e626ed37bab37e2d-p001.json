@@ -1,0 +1,134 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "e626ed37bab37e2d-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201328401804087/v1_e626ed37bab3.pdf",
+  "source_sha256": "e626ed37bab37e2dd2e7afb233bd17b3dac3e9786d50e0816e5b663626fa51a5",
+  "source_filename": "v1_e626ed37bab3.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/e626ed37bab37e2d.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1005-052-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.21165714285714282,
+  "text_length": 2593,
+  "text_preview": "BUY ¥ ,\nMEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS\nAT THE POLLING STATION\nName of Polling Station NAMUSHIYA PRIMARY SCHOOL POLLING STATION20f2 0 Rode 037201100505202\nWard BUTALIICHEGULO ~___ Code __ 1005\nCons fitwaray'S> qu! <c MLANA. COMMISSION, PENTEL ECTOV ECAC pe aC cOU en TELECTOR, / MONINDEPENL cone) gil ci aor\nCou hitpiqnmpe? C= oc» AMEE LECTORA/ 2 ENDENTELEC OW py oe ODE SECTORAL Alyn NDE PENDENT ES ai SC Ciage -< ean (DEN\nNumber of votes cast in favour of each candidate:\n| Name ofCandidate | No of Valid Votes Obtained\n_ 1 ANGATIA JAMES SHINACHI : fo oe DER TERE cra OSTOMMDET enc Stee DON TETECTOS DIN\n2. JASON SHIVAKALE BRUCE a ee ae en een\n3. MANYASIJOAB BURUDI <\nEMME EDGAR BRIER Sone ren coon ore eee ae a\na SES ESSAI Osco avn anne ae Cg\n6. NDAKWA DAVID ATHMAN Serres hoon DROS NSN e eestar ok ane OOM PR RELEM\nELLER eet etree Bee eee emer ee eee\nPa paNvako SETH AMBUSINE SSS SOT\n[9 TUVEIWILBERFORCEINDAL\nHodnmbsovavesat PP FO]\nPolling Station Counts pio Decisionts) ondisputed votesifany =\nTt Nr of Registered aersn the Peling Slatin; |—Z5S_COGQ)| | tial windpae| Rael elon\n‘|o.[ToaNinberalReeaevbale Pes eboney |:\n-— [Pett None FRojcin CertedtobaltPopews | ———-O00| [2\nCoN Masia Numb fat ates DRG 965 Cc Os NARMS COME Lor ABA Lie eat 608 re PMA ae OUNGARIES” RN CAE MDEPENREN\nCo Fad eeations nilsson seneNOS ONS Ss Ceac oN anDBOLCE Pep aes ECOGNS LEB’ ORALANDB GES HS PSE NOEN MMISSIOG\n_ We, the undersigned, being present when the results of the count were announce, do WBppby dectalfe that the resylts shown above are true\nand TO iageaeearme Bice EE SH? Ve Hi a) i) +} Polling ign MAL AVL. _ Constituency, -—\nPresiding Officer: “V7 LAN ZA NSP KOBERT — signatte._Darrbet — pate 2 =t/-Q0 i\nDeputy Presiding Officer: L wLOY xen SABIESCOMEC) z vi SRC ORY, cetera ore Date QS 2 Reed NE\nAgents or Candidates {if present) Oe ALAN uN at on NINN OARIESCOSLECTORALAN tok nSSI\nin| meaner | are] Prpnearai | adn [ame [ow]\nRMAs 2 Kitben Casta CP etyucttel Be athe\n(2 Detog yw INDiRy. | we well Dap IpPoagp cee ah eal)\nSa (YU NR CLS EP 0 ay eR ES 1 ae ega eyr\nAl ew Nara yagzers ayo vey le este AAO Tash\nBe ee ee\nSe ue SU ee eae ee\nNSS PIS ease OPENTELECTORA SS/ONINDEM Resa Reale SP RALANDBO UWSP ENDENTELEC ON WO 26) NDARIEGCOLECTORAL ANCE SE’\n\" ReasonsforRefusaltoSign(ifany) == RALAND EMO nen TELE ONIN\nPresiding Officer’sComments:; = RI NDARIES ys Wy SS Set\nSues tate ge em ee ocean oh Bod Be, Ce aeearer A\nBeh icon ey St Waa ak 2s MeN Riss Seca pT Ne\nieee PU aa Breet Oyen ne esse a NDEI Se St MEME NOATES Genre\nRO RE cen AT orbs ab Sirens ear cada AOE, \" canine OS . =",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 32,
+        "confidence": 0.57,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 32,
+            "confidence": 0.57,
+            "score": 0.57,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": 2,
+        "confidence": 0.35,
+        "source": "anchored-cell-ocr",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.35,
+            "score": 0.35,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "anchored-cell-ocr anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": null,
+      "registered": null,
+      "rejected": null,
+      "total_valid": "anchored-cell-ocr anchored by 'Total number of valid votes cast'",
+      "total_cast": null,
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:08:58.163795Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100505202",
+    "constituency_code": "201",
+    "ward_code": "1005",
+    "polling_centre_code": "052",
+    "stream_no": 2,
+    "stream_key": "201-1005-052-02",
+    "ward_name": null,
+    "polling_centre_name": "NAMUSHIYA PRIMARY SCHOOL POLLING STATION20F2 RODE 037201100505202",
+    "confidence": 0.93,
+    "evidence": [
+      "printed station code 037201100505202",
+      "printed/portal centre NAMUSHIYA PRIMARY SCHOOL POLLING STATION20F2 RODE 037201100505202"
+    ],
+    "applied_to_register": true
+  }
+}

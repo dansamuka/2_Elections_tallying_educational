@@ -1,0 +1,156 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.14-layout-v2",
+  "election_id": "malava-2025",
+  "page_id": "0f650198e0ba7583-p001",
+  "source_path": "data/public/elections/malava-2025/forms/037201687821914966/v1_0f650198e0ba.pdf",
+  "source_sha256": "0f650198e0ba7583de1bf75afdf3f50db63d847ee9894bf5da4f97e8decfe420",
+  "source_filename": "v1_0f650198e0ba.pdf",
+  "public_url": "../data/public/elections/malava-2025/forms/uploaded/0f650198e0ba7583.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": "201-1003-018-02",
+  "match_method": "FORM_HEADER_CODE",
+  "engine": "tesseract+layout-handwriting",
+  "confidence": 0.24068571428571428,
+  "text_length": 2658,
+  "text_preview": "MEMBER OF THE NATIONAL ASSEMBLY BY-ELECTION RESULTS yy\nAT THE POLLING STATION MISSI\nName of Polling Station SHIVIKHWA PRIMARY SCHOOL POLLING STATION 2 of 2 Code __037201100301802\nWard CHEMUCHE Code _ 1003 (\nCate Gtnancys® wi CALAVA. cOMMISSIOyy WOENTELECTON ECO pant OU cut ELECTORA, S/ONINDEPENL <CU ne Site ceo €%\nCounty KAKAMEGA Code __037 b*. :\nNumber of votes cast in favour of each candidate: oy }\nName of Candidate No. of Valid Votes Obtained SF}\n1. ANGATIA JAMES SHINACHI\n2. JASON SHIVAKALE BRUCE Gere LECT Ona TCMINDEPENUE SL OMS POON eC TORACANG RD OR\n3, MANYASI JOAB BURUDI Berea oc 1ORACANDG g(t PHDEN TEC Ene oCOROT ONS SND ECON LPNS\n: 4. MWANGA EDGAR BUSIEGA IO Vane TALBOTS RNa aaa 7\nj 6. NALWA BENJAMIN\n6. NDAKWA DAVID ATHMAN,\n[7 OYUGI GEORGE NGAIRA\n8. PANYAKO SETH AMBUSINI\n| 9. TUVEL WILBERFORCE INDAI KA Dee TANT MANORS E07\nTol ribo fad votes cat Eger irre meenernune oto yh\n“Polling Station Counts + Decision{s} on disputed votes if any een\n[| Tota Number fRestre Voters inte Poling Staion, L————>} 1] [seiner wih nde] nef red it\nToalNuner Roscoe Panes OO [te\n‘os Total Number of Rejection Objected to Ballot Papers; —_—— 0) 0 | ACO Hh NOB OUMPARIESNTELE TOR Oe OCRRCE OE RIESCOMMIS\nfe fToaiNanisraepacions, = OOD [2\n|s:[TosiNunieratisioesc, TAI |e oe\nDeclaration — WINDEPEN . scorn h eee COME OE DESO PEN: rt\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\n- and accurate count of the ballots in SHIVIKHWA | se Polling Station -MALAVA Constituency.\nves i ‘ na | ¢ i r Roan — -_ w\n. Presiding Officer: DEM Mick IN GANT is 4) AKDTAA Signature: PAPE Date QIU DO2S\nDeputy Presiding officer: ZAKATo LNOS MKASA Signature: wh Os 7, 4 Date 2 1—((-202\nENDEN oor Ara BONINDEFEN Po one pS :\n; QRALANDE Dg viIND Ew » WpPREST\nAgents or Candidates {if present) ¢ BC ax o FicER :\nie] nantes [ome | Prt nn | mae Ses [|\np. [SHAT D R BRRNSA MNaASuyobey DC PL ——_ PTZI2 73885 Qa as or il-24\n— L2|Moses M FolA Sugar! U- DA: pioTpebus uD po-tr2s\n[aoms NW MMtste [aso A yz) Seg rt\n| 4 \\EpicK WIM Aon 24509013 | DAP ta eaHen Le ~ Rata) --2\nFo Oe AES CO gL ECTOR A DE pe eae a OSs RIES CO esl Ong NOBOUNTE Cat OUR wS SO NDE ARIES yn nL MU etct a aerl\nROP ISG ON oePERDEN TR <SCOMMISSIPR UNCC OE rE: ECT ORAL g SIONINDEPENDE CON DWV dees cma ANDBOLW ag MDENTELEC TORR S20\nsiS S\\N eo 0 8 OENTELEC TOM SSIONINDEY Etre OPUS ESP RAL ANDO LW EPENDENTELEC ON WOE. ESO UNDARIEBCOMLECTORAL ANOS OETA pec\n_ Reasons for Refusal to Sign (if any) noe SSIONTT . NOBG :\n_ Presiding Officer's Comments: NDENDE | VoRpEOUNDARIEC OR\nrESCOMN =SOM 3 ND Fick QT) AZS 2 IRESIEENG:\nwt AN CEI ER a",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 1,
+            "confidence": 0.009999999999999998,
+            "score": 0.009999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DAPK": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_WT": {
+        "value": 9,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 3,
+            "confidence": 0.19999999999999998,
+            "score": 0.19999999999999998,
+            "source": "anchored-cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_valid": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "total_cast": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejection_objections": {
+        "value": 0,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by 'NDAKWA DAVID ATHMAN'",
+      "candidate_DAPK": "full-page-text anchored by 'PANYAKO SETH AMBUSINI'",
+      "candidate_WT": "full-page-text anchored by 'TUVEI! WILBERFORCE INDAI'",
+      "registered": null,
+      "rejected": null,
+      "total_valid": null,
+      "total_cast": null,
+      "rejection_objections": "‘os Total Number of Rejection Objected to Ballot Papers; —_—— 0) 0 | ACO Hh NOB OUMPARIESNTELE TOR Oe OCRRCE OE RIESCOMMIS",
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 6,
+      "page_size": [
+        2381,
+        3367
+      ],
+      "candidate_list_complete": false
+    }
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "NOT_RUN",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-14T18:32:18.211581Z",
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "037201100301802",
+    "constituency_code": "201",
+    "ward_code": "1003",
+    "polling_centre_code": "018",
+    "stream_no": 2,
+    "stream_key": "201-1003-018-02",
+    "ward_name": "CHEMUCHE",
+    "polling_centre_name": "SHIVIKHWA PRIMARY SCHOOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 037201100301802",
+      "printed/portal ward CHEMUCHE",
+      "printed/portal centre SHIVIKHWA PRIMARY SCHOOL"
+    ],
+    "applied_to_register": true
+  }
+}
