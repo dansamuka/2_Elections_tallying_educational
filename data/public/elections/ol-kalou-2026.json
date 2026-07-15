@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1784077917493,
-  "generated_at": "2026-07-15T01:11:57.493874Z",
+  "seq": 1784078049658,
+  "generated_at": "2026-07-15T01:14:09.658223Z",
   "mode": "LIVE",
   "election_id": "ol-kalou-2026",
   "election": {
@@ -30,11 +30,11 @@
     "stream_roster_bootstrapped": false
   },
   "pipeline_health": {
-    "watcher": "NEVER_RUN",
+    "watcher": "UPDATED",
     "extractor": "MANUAL_REVIEW",
-    "last_portal_ok": null,
-    "last_sync_completed": null,
-    "last_sync_changed": null,
+    "last_portal_ok": "2026-07-15T01:14:09.471311Z",
+    "last_sync_completed": "2026-07-15T01:14:09.657167Z",
+    "last_sync_changed": "2026-07-15T01:14:09.657167Z",
     "worker_id": "github-actions-or-manual"
   },
   "coverage": {
@@ -207,28 +207,83 @@
       "schema": "kenya.election.ocr-summary.v1",
       "pipeline_version": "2026.07.14-layout-v2",
       "election_id": "ol-kalou-2026",
-      "generated_at": null,
-      "engine_mode": null,
-      "engines_available": [],
+      "generated_at": "2026-07-15T01:14:09.651947Z",
+      "engine_mode": "auto",
+      "engines_available": [
+        "tesseract"
+      ],
       "documents_total": 0,
       "pages_total": 0,
       "pages_processed": 0,
+      "layout_assisted_pages": 0,
       "form35a_detected": 0,
       "form35b_detected": 0,
       "streams_matched": 0,
       "review_rows": 0,
       "routes": {},
       "errors": [],
+      "hierarchy": {
+        "changed": false,
+        "mapped": 0,
+        "unresolved": 0,
+        "errors": []
+      },
+      "review_queue": "data/elections/ol-kalou-2026/ocr/review_queue.csv",
+      "inventory": "data/elections/ol-kalou-2026/ocr/document_inventory.json",
       "auto_publication": false,
-      "note": "Historical OCR has not been run for this election."
+      "note": "OCR output is a pre-fill only. Handwritten cells are read with layout anchors and arithmetic reconciliation, but no historical stream is added to the public tally until human review and statutory validation are complete."
     },
     "portal_sync": {
       "schema": "kenya.election.portal-sync.v1",
       "election_id": "ol-kalou-2026",
-      "state": "NEVER_RUN",
-      "last_completed_at": null,
-      "last_changed_at": null,
-      "message": "The IEBC portal sync has not run for this election."
+      "state": "UPDATED",
+      "last_started_at": "2026-07-15T01:13:42.165678Z",
+      "last_completed_at": "2026-07-15T01:14:09.657167Z",
+      "last_changed_at": "2026-07-15T01:14:09.657167Z",
+      "portal_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
+      "engine_mode": "auto",
+      "archive": {
+        "election_id": "ol-kalou-2026",
+        "status": "UPDATED",
+        "changed": true,
+        "discovered": 0,
+        "matched": 0,
+        "downloaded": 0,
+        "unique_downloads": 0,
+        "duplicate_assignments": 0,
+        "failed_downloads": 0,
+        "new_downloads": 0,
+        "changed_downloads": 0,
+        "unmatched": 0,
+        "portal_reported": 0,
+        "portal_expected": 144,
+        "stream_roster_bootstrapped": false
+      },
+      "ocr": {
+        "ran": true,
+        "pages_processed": 0,
+        "review_rows": 0,
+        "errors": 0
+      },
+      "coverage": {
+        "streams_total": 144,
+        "stream_rows_loaded": 144,
+        "published": 0,
+        "in_review": 0,
+        "conflicted": 0,
+        "awaiting": 144,
+        "reference_only": 144,
+        "archived_untranscribed": 0,
+        "ocr_review": 0,
+        "registered_total": 73480,
+        "registered_reported": 0,
+        "registered_pct": 0.0,
+        "excluded": {
+          "count": 0,
+          "reason": null
+        }
+      },
+      "message": "New or changed IEBC forms were downloaded and the dashboard was rebuilt."
     },
     "portal_discovered": 0,
     "portal_downloaded": 0,
