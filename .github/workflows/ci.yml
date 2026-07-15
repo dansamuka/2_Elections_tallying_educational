@@ -20,7 +20,7 @@ jobs:
         run: pip install -e '.[dev,pdf,historical-ocr]'
       - run: ruff check src tests scripts
       - name: Run Python tests with a clear first failure
-        run: pytest -vv --maxfail=1
+        run: python -m pytest -vv --maxfail=1
       - run: python -m compileall -q src scripts tests
       - run: python -m olkalou_engine.cli --root . archive-documents banissa-2025
       - run: python -m olkalou_engine.cli --root . archive-ocr banissa-2025 --engine embedded
