@@ -76,6 +76,19 @@ class Settings(BaseSettings):
 
     ocr_mode: str = Field(default="none", alias="OCR_MODE")
     gcv_credentials_json: Path | None = Field(default=None, alias="GCV_CREDENTIALS_JSON")
+    # Selective handwritten-number cloud OCR. Requests are bounded per run and
+    # remain review-only evidence; they never enable automatic publication.
+    gcv_crop_max_requests: int = Field(default=250, ge=0, alias="GCV_CROP_MAX_REQUESTS")
+    gcv_crop_max_attempts: int = Field(default=3, ge=1, le=5, alias="GCV_CROP_MAX_ATTEMPTS")
+    gcv_crop_timeout_seconds: float = Field(
+        default=20.0, ge=1.0, le=120.0, alias="GCV_CROP_TIMEOUT_SECONDS"
+    )
+    gcv_crop_min_local_confidence: float = Field(
+        default=0.86, ge=0.0, le=1.0, alias="GCV_CROP_MIN_LOCAL_CONFIDENCE"
+    )
+    gcv_crop_min_prefill_confidence: float = Field(
+        default=0.65, ge=0.0, le=1.0, alias="GCV_CROP_MIN_PREFILL_CONFIDENCE"
+    )
     aws_region: str = Field(default="af-south-1", alias="AWS_REGION")
     form_roi_map: Path = Field(default=Path("data/reference/form35a_roi.json"), alias="FORM_ROI_MAP")
 

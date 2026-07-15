@@ -84,17 +84,27 @@ def _forms(count: int) -> list[PortalForm]:
     ]
 
 
-def test_repository_malava_profile_is_review_only_and_waits_for_198_forms() -> None:
+def test_repository_malava_profile_remains_review_only_before_or_after_bootstrap() -> None:
     bundle = load_historical_bundle(REPO_ROOT, "malava-2025")
-    assert bundle.streams == []
     assert bundle.profile["portal"]["expected_forms"] == 198
     assert bundle.profile["ocr"]["benchmark_only"] is True
+    # The repository may legitimately contain either the pre-sync empty roster
+    # or the completed 198-row portal/form-header review roster. Neither state
+    # is a certified register and neither may publish a constituency result.
+    assert len(bundle.streams) in {0, 198}
+    if bundle.streams:
+        assert all(row.get("registered") is None for row in bundle.streams)
+        assert all(
+            row.get("reference_state") in {"PORTAL_BOOTSTRAP", "FORM_HEADER_OCR"}
+            for row in bundle.streams
+        )
     payload = build_archive_payload(bundle)
     assert payload["status"] == "OCR_BENCHMARK"
     assert payload["reference"]["complete"] is False
     assert payload["reference"]["candidate_list_complete"] is False
     assert payload["archive"]["stream_results_complete"] is False
     assert payload["archive"]["tally_source"] == "NO_VERIFIED_TALLY"
+    assert payload["coverage"]["published"] == 0
 
 
 def test_portal_bootstrap_requires_exact_complete_assignment_count(tmp_path: Path) -> None:

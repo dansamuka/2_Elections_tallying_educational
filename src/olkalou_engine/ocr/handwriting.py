@@ -273,6 +273,14 @@ def _crop_variants(crop):
     ]
 
 
+def _encode_png(image) -> bytes:
+    cv2 = _cv2()
+    ok, encoded = cv2.imencode(".png", image)
+    if not ok:
+        raise RuntimeError("unable to encode deskewed numeric crop")
+    return encoded.tobytes()
+
+
 def read_digit_candidates(crop, *, maximum: int | None = None) -> list[OCRCandidate]:
     pytesseract = _tesseract()
     from pytesseract import Output
@@ -327,6 +335,8 @@ def extract_form35a_numeric_cells(
     page_image: Path,
     candidates: list[dict[str, Any]],
     reference: dict[str, Any] | None,
+    *,
+    include_crop_bytes: bool = False,
 ) -> dict[str, Any]:
     """Read handwritten Form 35A numeric cells using printed labels as anchors.
 
@@ -370,7 +380,7 @@ def extract_form35a_numeric_cells(
         crop = image[y0:y1, x0:x1]
         guesses = read_digit_candidates(crop, maximum=maximum)
         top = guesses[0] if guesses else None
-        fields[field] = {
+        field_result: dict[str, Any] = {
             "value": top.value if top else None,
             "confidence": top.confidence if top else 0.0,
             "source": "anchored-cell-ocr",
@@ -387,6 +397,12 @@ def extract_form35a_numeric_cells(
             "anchor": line.text,
             "crop": [x0, y0, x1 - x0, y1 - y0],
         }
+        if include_crop_bytes:
+            # Private in-memory evidence only. The cloud reader consumes and
+            # removes this value before any JSON is written. The bytes are from
+            # the same deskewed page used to calculate the coordinates.
+            field_result["_crop_png"] = _encode_png(crop)
+        fields[field] = field_result
 
     for candidate in candidates:
         read_anchored(f"candidate_{candidate['id']}", _candidate_labels(candidate), "candidate")
@@ -430,8 +446,13 @@ def _option_rows(
     parsed = parsed_fields.get(field, {})
     add(parsed.get("value"), parsed.get("confidence", 0.0) * 0.72, "full-page-text")
     cell = cell_fields.get(field, {})
-    for candidate in cell.get("candidates", [])[:4]:
-        add(candidate.get("value"), candidate.get("confidence"), "anchored-cell-ocr", int(candidate.get("observations", 1)))
+    for candidate in cell.get("candidates", [])[:6]:
+        add(
+            candidate.get("value"),
+            candidate.get("confidence"),
+            str(candidate.get("source") or "anchored-cell-ocr"),
+            int(candidate.get("observations", 1)),
+        )
     if reference_value is not None:
         # A register value is a weak hint, never publication authority. Give it
         # enough weight to defeat an obvious row-number hallucination (1/2),
@@ -574,5 +595,6 @@ def reconcile_form35a_fields(
         "anchors_found": cell_result.get("anchors_found", 0),
         "page_size": cell_result.get("page_size"),
         "candidate_list_complete": bool(candidate_list_complete),
+        "cloud_crop_ocr": cell_result.get("cloud_crop_ocr"),
     }
     return parsed

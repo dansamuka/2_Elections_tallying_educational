@@ -65,7 +65,7 @@ def build_parser() -> argparse.ArgumentParser:
     realtime_once.add_argument(
         "--engine",
         default=None,
-        choices=["auto", "embedded", "tesseract", "gcv", "textract", "dual-cloud"],
+        choices=["auto", "embedded", "tesseract", "tesseract-gcv-crop", "gcv", "textract", "dual-cloud"],
     )
     realtime_once.add_argument("--rebuild", action="store_true")
 
@@ -124,13 +124,27 @@ def build_parser() -> argparse.ArgumentParser:
     archive_ocr.add_argument(
         "--engine",
         default="auto",
-        choices=["auto", "embedded", "tesseract", "gcv", "textract", "dual-cloud"],
+        choices=["auto", "embedded", "tesseract", "tesseract-gcv-crop", "gcv", "textract", "dual-cloud"],
     )
     archive_ocr.add_argument(
         "--include", action="append", default=[], help="Additional file or directory to scan"
     )
     archive_ocr.add_argument("--rebuild", action="store_true", help="Re-run existing extraction records")
     archive_ocr.set_defaults(_archive_command=True)
+
+    archive_ocr_pilot = sub.add_parser(
+        "archive-ocr-pilot",
+        help="Run a bounded OCR sample into an isolated output directory without changing election data",
+    )
+    archive_ocr_pilot.add_argument("election_id")
+    archive_ocr_pilot.add_argument(
+        "--engine",
+        default="tesseract-gcv-crop",
+        choices=["auto", "embedded", "tesseract", "tesseract-gcv-crop", "gcv", "textract", "dual-cloud"],
+    )
+    archive_ocr_pilot.add_argument("--max-pages", type=int, default=20)
+    archive_ocr_pilot.add_argument("--output-dir", type=Path, required=True)
+    archive_ocr_pilot.set_defaults(_archive_command=True)
 
     archive_sync = sub.add_parser(
         "archive-sync",
@@ -141,7 +155,7 @@ def build_parser() -> argparse.ArgumentParser:
     archive_sync.add_argument(
         "--engine",
         default=None,
-        choices=["auto", "embedded", "tesseract", "gcv", "textract", "dual-cloud"],
+        choices=["auto", "embedded", "tesseract", "tesseract-gcv-crop", "gcv", "textract", "dual-cloud"],
     )
     archive_sync.add_argument("--rebuild", action="store_true", help="Re-run existing OCR extraction records")
     archive_sync.add_argument("--links-only", action="store_true", help="Discover links without downloading or OCR")
@@ -194,6 +208,7 @@ def main() -> None:
         "archive-run",
         "archive-documents",
         "archive-ocr",
+        "archive-ocr-pilot",
         "archive-provisional",
     }:
         bundle = load_historical_bundle(settings.root, args.election_id)
@@ -239,6 +254,32 @@ def main() -> None:
             include = [Path(value) for value in args.include]
             inventory = inventory_documents(bundle, include)
             print(json.dumps(inventory, indent=2))
+            return
+        if args.command == "archive-ocr-pilot":
+            output_dir = (
+                args.output_dir
+                if args.output_dir.is_absolute()
+                else settings.root / args.output_dir
+            )
+            resolved_output = output_dir.resolve()
+            protected_roots = [
+                bundle.election_dir.resolve(),
+                (settings.root / "data" / "public").resolve(),
+            ]
+            if any(resolved_output == root or root in resolved_output.parents for root in protected_roots):
+                raise SystemExit(
+                    "archive-ocr-pilot output must be outside data/elections and data/public"
+                )
+            summary = run_historical_ocr(
+                bundle,
+                settings,
+                engine_mode=args.engine,
+                rebuild=True,
+                output_dir=resolved_output,
+                max_pages=args.max_pages,
+                reconcile_hierarchy=False,
+            )
+            print(json.dumps({"pilot": summary, "production_data_changed": False}, indent=2))
             return
         if args.command == "archive-ocr":
             include = [Path(value) for value in args.include]
