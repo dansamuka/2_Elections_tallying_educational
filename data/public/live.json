@@ -1,13 +1,13 @@
 {
   "schema": "olkalou.live.v2",
-  "seq": 1784203547510,
-  "generated_at": "2026-07-16T12:05:47.510517Z",
+  "seq": 1784211510407,
+  "generated_at": "2026-07-16T14:18:30.407694Z",
   "election": {
     "constituency": "OL KALOU",
     "code": "091",
     "date": "2026-07-16"
   },
-  "status": "POLLING",
+  "status": "COUNTING",
   "reference": {
     "complete": false,
     "errors": [
