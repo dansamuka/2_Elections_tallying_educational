@@ -1,23 +1,23 @@
 {
   "meta": {
     "election_id": "ol-kalou-2026",
-    "generated_at": "2026-07-16T07:56:55.800771+00:00",
-    "collection_cursor": "2026-07-16T07:56:55.800771+00:00",
-    "mode": "demo",
+    "generated_at": "2026-07-16T09:24:40.356008+00:00",
+    "collection_cursor": "2026-07-16T09:24:40.356008+00:00",
+    "mode": "live",
     "disclaimer": "This dashboard measures online discussion, not voter intention. X users and news coverage are not representative of Ol Kalou voters. Sentiment models can misread sarcasm, Kikuyu, Kiswahili, Sheng, names, quotations, and political slogans. Official election information and results come from IEBC.",
     "alert_disclaimer": "Alerts reflect volume and repetition in public conversation, not confirmed events. Only entries marked 'officially confirmed' have been verified by an authority."
   },
   "summary": {
-    "total_relevant_items": 20,
-    "x_items": 15,
-    "news_items": 3,
-    "unique_source_estimate": 17,
+    "total_relevant_items": 0,
+    "x_items": 0,
+    "news_items": 0,
+    "unique_source_estimate": 0,
     "duplicated_share": 0.0,
     "overall_balance": {
-      "positive": 6,
-      "neutral": 2,
-      "negative": 9,
-      "unscored": 3
+      "positive": 0,
+      "neutral": 0,
+      "negative": 0,
+      "unscored": 0
     }
   },
   "timeline": [
@@ -62,6 +62,18 @@
         "nyagah_samuel": 40.0
       },
       "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T09:24:40.356008+00:00",
+      "total_items": 0,
+      "overall": {
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0,
+        "unscored": 0
+      },
+      "candidates": {},
+      "active_alerts": 0
     }
   ],
   "candidates": [
@@ -69,29 +81,8 @@
       "id": "nyagah_samuel",
       "name": "Samuel Muchina Nyagah",
       "party": "UDA",
-      "suppressed": false,
-      "mention_count": 6,
-      "positive": 3,
-      "neutral": 1,
-      "negative": 1,
-      "unscored": 1,
-      "net_sentiment_index": 40.0,
-      "momentum": [
-        {
-          "t": "2026-07-16T07:56:55.521856+00:00",
-          "net_sentiment_index": 40.0
-        },
-        {
-          "t": "2026-07-16T07:56:55.676821+00:00",
-          "net_sentiment_index": 40.0
-        }
-      ],
-      "source_mix": {
-        "x": 4,
-        "news": 1,
-        "manual": 1
-      },
-      "confidence": "higher"
+      "suppressed": true,
+      "reason": "Fewer than 5 independent items this window."
     },
     {
       "id": "ngotho_sammy",
@@ -157,11 +148,7 @@
     },
     {
       "topic": "security",
-      "suppressed": false,
-      "item_count": 10,
-      "positive": 2,
-      "negative": 7,
-      "confidence": "higher"
+      "suppressed": true
     },
     {
       "topic": "integrity",
@@ -192,51 +179,10 @@
       "suppressed": true
     }
   ],
-  "trending_terms": [
-    {
-      "term": "polling station",
-      "count": 9
-    },
-    {
-      "term": "clash",
-      "count": 6
-    }
-  ],
-  "trending_hashtags": [
-    {
-      "tag": "#olkaloubyelection",
-      "count": 6
-    }
-  ],
-  "sources": [
-    {
-      "outlet": "example-news.co.ke",
-      "count": 3
-    }
-  ],
-  "articles": [
-    {
-      "headline": "Nyagah closes campaign in Ol Kalou",
-      "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:56:55.793969+00:00",
-      "url": null,
-      "sentiment_label": "positive"
-    },
-    {
-      "headline": "IEBC reports smooth opening",
-      "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:56:55.793969+00:00",
-      "url": null,
-      "sentiment_label": "unscored"
-    },
-    {
-      "headline": "Security deployed after clash reported",
-      "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:56:55.793969+00:00",
-      "url": null,
-      "sentiment_label": "positive"
-    }
-  ],
+  "trending_terms": [],
+  "trending_hashtags": [],
+  "sources": [],
+  "articles": [],
   "institutional_statements": [
     {
       "id": "amnesty-kenya-2026-07-12",
@@ -267,23 +213,12 @@
   "quality": {
     "exact_and_near_duplicate_rate": 0.0,
     "repost_share": 0.0,
-    "source_concentration": 0.15,
-    "unsupported_language_share": 0.15,
+    "source_concentration": 0.0,
+    "unsupported_language_share": 0.0,
     "anomaly_flags": [],
-    "sampling_warnings": []
+    "sampling_warnings": [
+      "No new items collected this run - check collector logs and API credentials."
+    ]
   },
-  "alerts": [
-    {
-      "id": "ol-kalou-2026:security",
-      "category": "security",
-      "status": "reported",
-      "first_seen": "2026-07-16T07:56:55.515481+00:00",
-      "last_updated": "2026-07-16T07:56:55.793969+00:00",
-      "item_count": 10,
-      "independent_source_count": 9,
-      "confidence": "higher",
-      "summary": "10 independent items across 9 sources mention security-related terms in the current window.",
-      "override_applied": false
-    }
-  ]
+  "alerts": []
 }
