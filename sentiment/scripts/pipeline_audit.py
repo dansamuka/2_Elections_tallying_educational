@@ -41,6 +41,8 @@ def build_audit_record(items: list, cfg: dict, generated_at: str, alerts: list) 
             "topic": item.get("topic"),
             "topic_confidence": item.get("topic_confidence"),
             "candidate_ids": item.get("candidate_ids", []),
+            "matched_keywords": item.get("matched_keywords", []),
+            "hashtags": item.get("hashtags", []),
             "language": item.get("language"),
             "sentiment_label": item.get("sentiment_label"),
             "sentiment_score": item.get("sentiment_score"),

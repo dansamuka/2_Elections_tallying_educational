@@ -6,8 +6,8 @@
 <title>Ol Kalou — Public Conversation Observatory</title>
 <style>
   :root{
-    --ink:#15140f; --ink-2:#1d1c15; --ink-3:#242217; --paper:#ece6d6; --paper-dim:#b8b09a;
-    --rule:#3a3826; --brass:#b8934a; --brass-bright:#d9ac5c;
+    --ink:#15140f; --ink-2:#1d1c15; --ink-3:#242217; --paper:#ece6d6; --paper-dim:#b8b09a; --paper-dimmer:#8a8368;
+    --rule:#3a3826; --rule-bright:#4d4a33; --brass:#b8934a; --brass-bright:#d9ac5c; --brass-dim:#8a713b;
     --pos:#7a9b6e; --neg:#b5514a; --neu:#8d876f; --unscored:#5c5847;
     --watch:#5c5847; --reported:#c99a3e; --corroborated:#d4772f; --confirmed:#b5514a; --retracted:#5c5847;
     --mono: "IBM Plex Mono","SFMono-Regular",Menlo,Consolas,monospace;
@@ -21,11 +21,11 @@
     background-size: 100% 34px;
   }
   a{color:var(--brass-bright);}
-  .wrap{max-width:1220px; margin:0 auto; padding:20px 24px 80px;}
+  .wrap{max-width:1240px; margin:0 auto; padding:20px 24px 80px;}
 
   .masthead{display:flex; justify-content:space-between; align-items:flex-end; border-bottom:2px solid var(--brass); padding-bottom:14px; margin-bottom:6px; flex-wrap:wrap; gap:12px;}
-  .masthead h1{font-family:var(--serif); font-weight:400; font-size:28px; margin:0; letter-spacing:0.5px;}
-  .masthead .eyebrow{font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--brass); margin-bottom:4px;}
+  .masthead h1{font-family:var(--serif); font-weight:400; font-size:29px; margin:0; letter-spacing:0.3px;}
+  .masthead .eyebrow{font-size:11px; text-transform:uppercase; letter-spacing:2.5px; color:var(--brass); margin-bottom:4px;}
   .clock{font-family:var(--mono); font-size:13px; color:var(--paper-dim); text-align:right;}
   .clock b{color:var(--brass-bright); font-size:16px;}
 
@@ -33,7 +33,7 @@
   .freshness span b{color:var(--paper);}
 
   .pulse-dot{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; position:relative; top:1px;}
-  .pulse-dot.live{background:var(--pos); box-shadow:0 0 0 0 rgba(122,155,110,0.6); animation:pulse 2.2s infinite;}
+  .pulse-dot.live{background:var(--pos); animation:pulse 2.2s infinite;}
   .pulse-dot.stale{background:var(--brass-bright);}
   @keyframes pulse{
     0%{box-shadow:0 0 0 0 rgba(122,155,110,0.55);}
@@ -44,37 +44,66 @@
   .notice{border:1px solid var(--brass); background:rgba(184,147,74,0.08); padding:12px 16px; font-size:12.5px; color:var(--paper-dim); margin-bottom:22px;}
   .notice b{color:var(--brass-bright);}
 
-  .section-label{font-family:var(--serif); font-size:12px; text-transform:uppercase; letter-spacing:3px; color:var(--brass); margin:34px 0 12px; display:flex; align-items:center; gap:10px;}
+  .section-label{font-family:var(--serif); font-size:12px; text-transform:uppercase; letter-spacing:3px; color:var(--brass); margin:34px 0 12px; display:flex; align-items:baseline; gap:10px;}
   .section-label::after{content:""; flex:1; height:1px; background:var(--rule);}
+  .section-sub{font-family:var(--mono); font-size:10.5px; text-transform:none; letter-spacing:0; color:var(--paper-dimmer);}
+
+  /* ---------------- hero ---------------- */
+  .hero{position:relative; border:1px solid var(--rule); background:var(--ink-2); padding:26px 28px; overflow:hidden;}
+  .hero-chart-bg{position:absolute; left:0; right:0; bottom:0; height:70%; opacity:0.35; pointer-events:none;}
+  .hero-content{position:relative; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;}
+  .hero-figure .eyebrow{font-size:11px; text-transform:uppercase; letter-spacing:2.5px; color:var(--brass); margin-bottom:6px;}
+  .hero-number{font-family:var(--serif); font-size:64px; line-height:1; color:var(--paper); font-variant-numeric:tabular-nums;}
+  .hero-caption{font-size:12.5px; color:var(--paper-dim); margin-top:6px; max-width:420px;}
+  .mood-badge{display:inline-flex; align-items:center; gap:8px; border:1px solid currentColor; padding:8px 14px; font-size:12px; text-transform:uppercase; letter-spacing:1.5px;}
+  .mood-badge.positive{color:var(--pos);} .mood-badge.negative{color:var(--neg);} .mood-badge.mixed{color:var(--brass-bright);}
+  .hero-stats{display:flex; gap:26px; flex-wrap:wrap; position:relative;}
+  .hero-stat .num{font-family:var(--serif); font-size:22px; color:var(--paper); font-variant-numeric:tabular-nums;}
+  .hero-stat .label{font-size:10.5px; text-transform:uppercase; letter-spacing:1px; color:var(--paper-dim); margin-top:2px;}
 
   .scorecards{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule);}
   .scorecard{background:var(--ink); padding:14px 16px;}
   .scorecard .num{font-family:var(--serif); font-size:26px; color:var(--paper); font-variant-numeric:tabular-nums;}
   .scorecard .label{font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--paper-dim); margin-top:2px;}
 
-  /* --- trend chart panel --- */
+  /* ---------------- trend chart ---------------- */
   .trend-panel{border:1px solid var(--rule); background:var(--ink-2); padding:16px 18px 10px;}
   .trend-panel svg{display:block; width:100%; height:auto; overflow:visible;}
   .trend-legend{display:flex; gap:16px; flex-wrap:wrap; font-size:11px; color:var(--paper-dim); margin-top:10px;}
   .trend-legend .sw{display:inline-block; width:9px; height:9px; margin-right:5px; position:relative; top:1px;}
   .trend-empty{color:var(--paper-dim); font-style:italic; font-size:13px; padding:20px 0;}
 
-  table{width:100%; border-collapse:collapse; font-size:13px;}
-  th{text-align:left; font-size:10.5px; text-transform:uppercase; letter-spacing:1px; color:var(--brass); border-bottom:1px solid var(--rule); padding:8px 10px; font-weight:400;}
-  td{padding:9px 10px; border-bottom:1px solid var(--rule); vertical-align:middle;}
-  tr:hover td{background:rgba(184,147,74,0.05);}
-  .num-cell{font-variant-numeric:tabular-nums;}
+  /* ---------------- trending terms ---------------- */
+  .term-cloud{display:flex; flex-wrap:wrap; gap:10px 14px; align-items:baseline; padding:6px 2px;}
+  .term-pill{color:var(--paper); border-bottom:1px solid var(--rule-bright); padding-bottom:1px; white-space:nowrap;}
+  .term-pill .count{color:var(--paper-dimmer); font-size:0.7em; margin-left:4px;}
+  .term-cloud-empty{color:var(--paper-dim); font-style:italic; font-size:13px;}
+  .term-groups{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  @media (max-width:720px){ .term-groups{grid-template-columns:1fr;} }
+  .term-group-label{font-size:10.5px; text-transform:uppercase; letter-spacing:1px; color:var(--brass); margin-bottom:8px;}
 
-  .bal-bar{display:flex; height:8px; width:120px; border:1px solid var(--rule); overflow:hidden;}
+  /* ---------------- candidate leaderboard ---------------- */
+  .leaderboard{display:flex; flex-direction:column; gap:1px; background:var(--rule); border:1px solid var(--rule);}
+  .cand-card{background:var(--ink); padding:16px 18px; display:grid; grid-template-columns:28px 1fr auto; gap:16px; align-items:center;}
+  .cand-rank{font-family:var(--serif); font-size:20px; color:var(--brass-dim); text-align:center;}
+  .cand-name-row{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;}
+  .cand-name{font-family:var(--serif); font-size:17px; color:var(--paper);}
+  .cand-party{font-size:11px; color:var(--paper-dim);}
+  .cand-meta-row{display:flex; align-items:center; gap:18px; margin-top:8px; flex-wrap:wrap;}
+  .cand-stat-block{text-align:right;}
+  .cand-stat-block .num{font-family:var(--serif); font-size:20px; font-variant-numeric:tabular-nums;}
+  .cand-stat-block .label{font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--paper-dim);}
+  .net-sentiment{font-family:var(--serif); font-size:20px; font-variant-numeric:tabular-nums;}
+  .net-sentiment.up{color:var(--pos);} .net-sentiment.down{color:var(--neg);} .net-sentiment.flat{color:var(--paper-dim);}
+  .spark{display:block; vertical-align:middle;}
+  .bal-bar{display:flex; height:8px; width:140px; border:1px solid var(--rule); overflow:hidden;}
   .bal-bar div{height:100%; width:0; transition:width 0.7s cubic-bezier(.2,.8,.3,1);}
   .badge{display:inline-block; padding:2px 7px; font-size:10.5px; text-transform:uppercase; letter-spacing:0.5px; border:1px solid currentColor;}
   .badge.low{color:var(--paper-dim);} .badge.moderate{color:var(--brass-bright);} .badge.higher{color:var(--pos);}
-  .suppressed-row td{color:var(--paper-dim); font-style:italic;}
+  .cand-card.suppressed{grid-template-columns:28px 1fr; color:var(--paper-dim); font-style:italic; font-size:12.5px;}
+  .mentions-disclaimer{font-size:11px; color:var(--paper-dim); font-style:italic; margin-top:10px;}
 
-  .net-sentiment{font-family:var(--serif); font-size:16px; font-variant-numeric:tabular-nums;}
-  .net-sentiment.up{color:var(--pos);} .net-sentiment.down{color:var(--neg);} .net-sentiment.flat{color:var(--paper-dim);}
-  .spark{display:block; vertical-align:middle;}
-
+  /* ---------------- election environment ---------------- */
   .topic-bars{display:flex; flex-direction:column; gap:10px;}
   .topic-row{display:grid; grid-template-columns:150px 1fr auto; align-items:center; gap:12px; font-size:13px;}
   .topic-row .topic-name{text-transform:capitalize; color:var(--paper);}
@@ -83,11 +112,7 @@
   .topic-count{font-size:11.5px; color:var(--paper-dim); font-variant-numeric:tabular-nums; white-space:nowrap;}
   .topic-suppressed{color:var(--paper-dim); font-style:italic; font-size:12.5px;}
 
-  .donut-row{display:flex; gap:28px; flex-wrap:wrap; align-items:center;}
-  .donut-block{display:flex; align-items:center; gap:12px;}
-  .donut-legend{font-size:11.5px; color:var(--paper-dim); line-height:1.7;}
-  .donut-label{font-size:10.5px; text-transform:uppercase; letter-spacing:1px; color:var(--brass); margin-bottom:8px;}
-
+  /* ---------------- alerts ---------------- */
   .alerts{display:flex; flex-direction:column; gap:10px;}
   .alert-card{border:1px solid var(--rule); border-left:4px solid var(--watch); padding:14px 16px; background:var(--ink-2); opacity:0; transform:translateY(4px); animation:alert-in 0.4s ease forwards;}
   @keyframes alert-in{ to{ opacity:1; transform:translateY(0); } }
@@ -106,6 +131,24 @@
   .alert-summary{margin-top:8px; font-size:13px;}
   .alert-disclaimer-note{font-size:11px; color:var(--paper-dim); font-style:italic; margin-top:16px;}
   .no-alerts{color:var(--paper-dim); font-style:italic; font-size:13px; padding:8px 0;}
+
+  /* ---------------- news river ---------------- */
+  .news-river{display:flex; flex-direction:column;}
+  .news-card{display:grid; grid-template-columns:1fr auto; gap:12px; padding:14px 4px; border-bottom:1px solid var(--rule); align-items:baseline;}
+  .news-card:hover{background:rgba(184,147,74,0.05);}
+  .news-headline{font-family:var(--serif); font-size:15.5px; color:var(--paper); text-decoration:none;}
+  .news-headline:hover{color:var(--brass-bright);}
+  .news-meta{font-size:11px; color:var(--paper-dim); margin-top:4px;}
+  .news-sentiment{font-size:10.5px; text-transform:uppercase; letter-spacing:1px; white-space:nowrap;}
+  .news-sentiment.positive{color:var(--pos);} .news-sentiment.negative{color:var(--neg);}
+  .news-sentiment.neutral, .news-sentiment.unscored{color:var(--paper-dim);}
+  .news-empty{color:var(--paper-dim); font-style:italic; font-size:13px; padding:12px 4px;}
+
+  /* ---------------- quality ---------------- */
+  .donut-row{display:flex; gap:28px; flex-wrap:wrap; align-items:center;}
+  .donut-block{display:flex; align-items:center; gap:12px;}
+  .donut-legend{font-size:11.5px; color:var(--paper-dim); line-height:1.7;}
+  .donut-label{font-size:10.5px; text-transform:uppercase; letter-spacing:1px; color:var(--brass); margin-bottom:8px;}
 
   .footer-links{margin-top:50px; padding-top:16px; border-top:1px solid var(--rule); font-size:12px; color:var(--paper-dim); display:flex; gap:18px; flex-wrap:wrap;}
   .mode-flag{position:fixed; top:0; left:0; right:0; background:var(--brass); color:var(--ink); text-align:center; font-size:11px; letter-spacing:1px; padding:4px; text-transform:uppercase; display:none; z-index:10;}
@@ -140,21 +183,17 @@
 
   <div class="notice" id="disclaimerBox">Loading disclaimer…</div>
 
-  <div class="section-label">Core scorecards</div>
-  <div class="scorecards" id="scorecards"></div>
+  <div class="hero" id="hero"></div>
 
-  <div class="section-label">Conversation trend</div>
+  <div class="section-label">Conversation trend<span class="section-sub">sentiment balance over time, active alerts overlaid</span></div>
   <div class="trend-panel" id="trendPanel"></div>
 
+  <div class="section-label">Trending terms<span class="section-sub">aggregate, non-attributable — every term traces to the configured topic vocabulary</span></div>
+  <div id="termCloudWrap"></div>
+
   <div class="section-label">Candidate conversation</div>
-  <table id="candidatesTable">
-    <thead><tr>
-      <th>Candidate</th><th>Party</th><th>Mentions</th><th>Balance</th>
-      <th>Net sentiment</th><th>Momentum</th><th>Source mix (X / news / manual)</th><th>Confidence</th>
-    </tr></thead>
-    <tbody></tbody>
-  </table>
-  <div class="alert-disclaimer-note">Mention share and sentiment are shown independently. High visibility is not the same as support.</div>
+  <div class="leaderboard" id="leaderboard"></div>
+  <div class="mentions-disclaimer">Ranked by mention volume, not sentiment. Mention share and sentiment are shown independently — high visibility is not the same as support.</div>
 
   <div class="section-label">Election environment</div>
   <div class="topic-bars" id="topicBars"></div>
@@ -163,11 +202,8 @@
   <div class="alert-disclaimer-note" id="alertDisclaimer" style="margin-bottom:10px;"></div>
   <div class="alerts" id="alerts"></div>
 
-  <div class="section-label">News framing</div>
-  <table id="articlesTable">
-    <thead><tr><th>Headline</th><th>Outlet</th><th>Sentiment</th><th>Time</th></tr></thead>
-    <tbody></tbody>
-  </table>
+  <div class="section-label">News framing<span class="section-sub">title, source, timestamp, and link only — never republished in full</span></div>
+  <div class="news-river" id="newsRiver"></div>
 
   <div class="section-label">Coordination &amp; quality</div>
   <div class="donut-row" id="qualityDonuts"></div>
@@ -180,8 +216,9 @@
     Candidate-topic cells with fewer than five independent items are suppressed. Alerts require corroboration across
     multiple independent sources before they're shown — a single post, however repeated, never triggers one on its own.
     No indicator on this page predicts a winner or converts sentiment into vote share. Official results come from IEBC.
-    Charts on this page are drawn only from already-aggregated counts described above — nothing here is computed from
-    or reveals individual posts.
+    Nothing on this page reproduces individual posts, usernames, or links to individual accounts — trending terms and
+    hashtags are aggregate counts against a pre-configured vocabulary, and news items link only to already-public
+    articles.
   </div>
 
   <div class="footer-links">
@@ -195,8 +232,8 @@
 const DEMO_FALLBACK = {
   "meta": {
     "election_id": "ol-kalou-2026",
-    "generated_at": "2026-07-16T07:24:16.573571+00:00",
-    "collection_cursor": "2026-07-16T07:24:16.573571+00:00",
+    "generated_at": "2026-07-16T07:48:58.245978+00:00",
+    "collection_cursor": "2026-07-16T07:48:58.245978+00:00",
     "mode": "demo",
     "disclaimer": "This dashboard measures online discussion, not voter intention. X users and news coverage are not representative of Ol Kalou voters. Sentiment models can misread sarcasm, Kikuyu, Kiswahili, Sheng, names, quotations, and political slogans. Official election information and results come from IEBC.",
     "alert_disclaimer": "Alerts reflect volume and repetition in public conversation, not confirmed events. Only entries marked 'officially confirmed' have been verified by an authority."
@@ -216,7 +253,7 @@ const DEMO_FALLBACK = {
   },
   "timeline": [
     {
-      "t": "2026-07-15T23:54:16.601761+00:00",
+      "t": "2026-07-16T00:18:58.283704+00:00",
       "total_items": 18,
       "overall": {
         "positive": 6,
@@ -230,7 +267,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T00:09:16.601761+00:00",
+      "t": "2026-07-16T00:33:58.283704+00:00",
       "total_items": 21,
       "overall": {
         "positive": 7,
@@ -244,7 +281,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T00:24:16.601761+00:00",
+      "t": "2026-07-16T00:48:58.283704+00:00",
       "total_items": 19,
       "overall": {
         "positive": 7,
@@ -258,7 +295,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T00:39:16.601761+00:00",
+      "t": "2026-07-16T01:03:58.283704+00:00",
       "total_items": 23,
       "overall": {
         "positive": 8,
@@ -272,7 +309,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T00:54:16.601761+00:00",
+      "t": "2026-07-16T01:18:58.283704+00:00",
       "total_items": 18,
       "overall": {
         "positive": 8,
@@ -286,7 +323,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T01:09:16.601761+00:00",
+      "t": "2026-07-16T01:33:58.283704+00:00",
       "total_items": 20,
       "overall": {
         "positive": 9,
@@ -300,7 +337,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T01:24:16.601761+00:00",
+      "t": "2026-07-16T01:48:58.283704+00:00",
       "total_items": 22,
       "overall": {
         "positive": 8,
@@ -314,7 +351,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T01:39:16.601761+00:00",
+      "t": "2026-07-16T02:03:58.283704+00:00",
       "total_items": 20,
       "overall": {
         "positive": 9,
@@ -328,7 +365,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T01:54:16.601761+00:00",
+      "t": "2026-07-16T02:18:58.283704+00:00",
       "total_items": 23,
       "overall": {
         "positive": 9,
@@ -342,7 +379,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T02:09:16.601761+00:00",
+      "t": "2026-07-16T02:33:58.283704+00:00",
       "total_items": 19,
       "overall": {
         "positive": 7,
@@ -356,7 +393,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T02:24:16.601761+00:00",
+      "t": "2026-07-16T02:48:58.283704+00:00",
       "total_items": 23,
       "overall": {
         "positive": 9,
@@ -370,7 +407,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T02:39:16.601761+00:00",
+      "t": "2026-07-16T03:03:58.283704+00:00",
       "total_items": 20,
       "overall": {
         "positive": 6,
@@ -384,7 +421,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T02:54:16.601761+00:00",
+      "t": "2026-07-16T03:18:58.283704+00:00",
       "total_items": 20,
       "overall": {
         "positive": 7,
@@ -398,7 +435,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T03:09:16.601761+00:00",
+      "t": "2026-07-16T03:33:58.283704+00:00",
       "total_items": 20,
       "overall": {
         "positive": 5,
@@ -412,7 +449,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T03:24:16.601761+00:00",
+      "t": "2026-07-16T03:48:58.283704+00:00",
       "total_items": 16,
       "overall": {
         "positive": 4,
@@ -426,7 +463,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T03:39:16.601761+00:00",
+      "t": "2026-07-16T04:03:58.283704+00:00",
       "total_items": 18,
       "overall": {
         "positive": 5,
@@ -440,7 +477,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T03:54:16.601761+00:00",
+      "t": "2026-07-16T04:18:58.283704+00:00",
       "total_items": 20,
       "overall": {
         "positive": 4,
@@ -454,7 +491,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T04:09:16.601761+00:00",
+      "t": "2026-07-16T04:33:58.283704+00:00",
       "total_items": 19,
       "overall": {
         "positive": 4,
@@ -468,7 +505,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T04:24:16.601761+00:00",
+      "t": "2026-07-16T04:48:58.283704+00:00",
       "total_items": 22,
       "overall": {
         "positive": 4,
@@ -482,7 +519,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T04:39:16.601761+00:00",
+      "t": "2026-07-16T05:03:58.283704+00:00",
       "total_items": 19,
       "overall": {
         "positive": 3,
@@ -496,7 +533,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T04:54:16.601761+00:00",
+      "t": "2026-07-16T05:18:58.283704+00:00",
       "total_items": 20,
       "overall": {
         "positive": 4,
@@ -510,7 +547,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T05:09:16.601761+00:00",
+      "t": "2026-07-16T05:33:58.283704+00:00",
       "total_items": 20,
       "overall": {
         "positive": 4,
@@ -524,7 +561,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T05:24:16.601761+00:00",
+      "t": "2026-07-16T05:48:58.283704+00:00",
       "total_items": 19,
       "overall": {
         "positive": 4,
@@ -538,7 +575,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T05:39:16.601761+00:00",
+      "t": "2026-07-16T06:03:58.283704+00:00",
       "total_items": 21,
       "overall": {
         "positive": 4,
@@ -552,7 +589,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T05:54:16.601761+00:00",
+      "t": "2026-07-16T06:18:58.283704+00:00",
       "total_items": 19,
       "overall": {
         "positive": 5,
@@ -566,7 +603,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T06:09:16.601761+00:00",
+      "t": "2026-07-16T06:33:58.283704+00:00",
       "total_items": 19,
       "overall": {
         "positive": 5,
@@ -580,7 +617,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T06:24:16.601761+00:00",
+      "t": "2026-07-16T06:48:58.283704+00:00",
       "total_items": 22,
       "overall": {
         "positive": 7,
@@ -594,7 +631,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T06:39:16.601761+00:00",
+      "t": "2026-07-16T07:03:58.283704+00:00",
       "total_items": 23,
       "overall": {
         "positive": 7,
@@ -608,7 +645,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T06:54:16.601761+00:00",
+      "t": "2026-07-16T07:18:58.283704+00:00",
       "total_items": 20,
       "overall": {
         "positive": 8,
@@ -622,7 +659,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T07:09:16.601761+00:00",
+      "t": "2026-07-16T07:33:58.283704+00:00",
       "total_items": 19,
       "overall": {
         "positive": 9,
@@ -636,7 +673,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T07:24:16.573571+00:00",
+      "t": "2026-07-16T07:48:58.245978+00:00",
       "total_items": 20,
       "overall": {
         "positive": 6,
@@ -664,127 +701,127 @@ const DEMO_FALLBACK = {
       "net_sentiment_index": 40.0,
       "momentum": [
         {
-          "t": "2026-07-15T23:54:16.601761+00:00",
+          "t": "2026-07-16T00:18:58.283704+00:00",
           "net_sentiment_index": 37.8
         },
         {
-          "t": "2026-07-16T00:09:16.601761+00:00",
+          "t": "2026-07-16T00:33:58.283704+00:00",
           "net_sentiment_index": 43.7
         },
         {
-          "t": "2026-07-16T00:24:16.601761+00:00",
+          "t": "2026-07-16T00:48:58.283704+00:00",
           "net_sentiment_index": 46.7
         },
         {
-          "t": "2026-07-16T00:39:16.601761+00:00",
+          "t": "2026-07-16T01:03:58.283704+00:00",
           "net_sentiment_index": 47.8
         },
         {
-          "t": "2026-07-16T00:54:16.601761+00:00",
+          "t": "2026-07-16T01:18:58.283704+00:00",
           "net_sentiment_index": 52.3
         },
         {
-          "t": "2026-07-16T01:09:16.601761+00:00",
+          "t": "2026-07-16T01:33:58.283704+00:00",
           "net_sentiment_index": 49.4
         },
         {
-          "t": "2026-07-16T01:24:16.601761+00:00",
+          "t": "2026-07-16T01:48:58.283704+00:00",
           "net_sentiment_index": 56.4
         },
         {
-          "t": "2026-07-16T01:39:16.601761+00:00",
+          "t": "2026-07-16T02:03:58.283704+00:00",
           "net_sentiment_index": 55.2
         },
         {
-          "t": "2026-07-16T01:54:16.601761+00:00",
+          "t": "2026-07-16T02:18:58.283704+00:00",
           "net_sentiment_index": 52.5
         },
         {
-          "t": "2026-07-16T02:09:16.601761+00:00",
+          "t": "2026-07-16T02:33:58.283704+00:00",
           "net_sentiment_index": 57.5
         },
         {
-          "t": "2026-07-16T02:24:16.601761+00:00",
+          "t": "2026-07-16T02:48:58.283704+00:00",
           "net_sentiment_index": 56.3
         },
         {
-          "t": "2026-07-16T02:39:16.601761+00:00",
+          "t": "2026-07-16T03:03:58.283704+00:00",
           "net_sentiment_index": 53.7
         },
         {
-          "t": "2026-07-16T02:54:16.601761+00:00",
+          "t": "2026-07-16T03:18:58.283704+00:00",
           "net_sentiment_index": 50.4
         },
         {
-          "t": "2026-07-16T03:09:16.601761+00:00",
+          "t": "2026-07-16T03:33:58.283704+00:00",
           "net_sentiment_index": 49.2
         },
         {
-          "t": "2026-07-16T03:24:16.601761+00:00",
+          "t": "2026-07-16T03:48:58.283704+00:00",
           "net_sentiment_index": 47.6
         },
         {
-          "t": "2026-07-16T03:39:16.601761+00:00",
+          "t": "2026-07-16T04:03:58.283704+00:00",
           "net_sentiment_index": 45.4
         },
         {
-          "t": "2026-07-16T03:54:16.601761+00:00",
+          "t": "2026-07-16T04:18:58.283704+00:00",
           "net_sentiment_index": 39.1
         },
         {
-          "t": "2026-07-16T04:09:16.601761+00:00",
+          "t": "2026-07-16T04:33:58.283704+00:00",
           "net_sentiment_index": 33.3
         },
         {
-          "t": "2026-07-16T04:24:16.601761+00:00",
+          "t": "2026-07-16T04:48:58.283704+00:00",
           "net_sentiment_index": 32.8
         },
         {
-          "t": "2026-07-16T04:39:16.601761+00:00",
+          "t": "2026-07-16T05:03:58.283704+00:00",
           "net_sentiment_index": 30.8
         },
         {
-          "t": "2026-07-16T04:54:16.601761+00:00",
+          "t": "2026-07-16T05:18:58.283704+00:00",
           "net_sentiment_index": 25.9
         },
         {
-          "t": "2026-07-16T05:09:16.601761+00:00",
+          "t": "2026-07-16T05:33:58.283704+00:00",
           "net_sentiment_index": 27.7
         },
         {
-          "t": "2026-07-16T05:24:16.601761+00:00",
+          "t": "2026-07-16T05:48:58.283704+00:00",
           "net_sentiment_index": 27.2
         },
         {
-          "t": "2026-07-16T05:39:16.601761+00:00",
+          "t": "2026-07-16T06:03:58.283704+00:00",
           "net_sentiment_index": 23.8
         },
         {
-          "t": "2026-07-16T05:54:16.601761+00:00",
+          "t": "2026-07-16T06:18:58.283704+00:00",
           "net_sentiment_index": 28.1
         },
         {
-          "t": "2026-07-16T06:09:16.601761+00:00",
+          "t": "2026-07-16T06:33:58.283704+00:00",
           "net_sentiment_index": 28.9
         },
         {
-          "t": "2026-07-16T06:24:16.601761+00:00",
+          "t": "2026-07-16T06:48:58.283704+00:00",
           "net_sentiment_index": 27.6
         },
         {
-          "t": "2026-07-16T06:39:16.601761+00:00",
+          "t": "2026-07-16T07:03:58.283704+00:00",
           "net_sentiment_index": 31.8
         },
         {
-          "t": "2026-07-16T06:54:16.601761+00:00",
+          "t": "2026-07-16T07:18:58.283704+00:00",
           "net_sentiment_index": 33.6
         },
         {
-          "t": "2026-07-16T07:09:16.601761+00:00",
+          "t": "2026-07-16T07:33:58.283704+00:00",
           "net_sentiment_index": 36.1
         },
         {
-          "t": "2026-07-16T07:24:16.573571+00:00",
+          "t": "2026-07-16T07:48:58.245978+00:00",
           "net_sentiment_index": 40.0
         }
       ],
@@ -894,6 +931,22 @@ const DEMO_FALLBACK = {
       "suppressed": true
     }
   ],
+  "trending_terms": [
+    {
+      "term": "polling station",
+      "count": 9
+    },
+    {
+      "term": "clash",
+      "count": 6
+    }
+  ],
+  "trending_hashtags": [
+    {
+      "tag": "#olkaloubyelection",
+      "count": 6
+    }
+  ],
   "sources": [
     {
       "outlet": "example-news.co.ke",
@@ -904,21 +957,21 @@ const DEMO_FALLBACK = {
     {
       "headline": "Nyagah closes campaign in Ol Kalou",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:24:16.568760+00:00",
+      "timestamp": "2026-07-16T07:48:58.239104+00:00",
       "url": null,
       "sentiment_label": "positive"
     },
     {
       "headline": "IEBC reports smooth opening",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:24:16.568760+00:00",
+      "timestamp": "2026-07-16T07:48:58.239104+00:00",
       "url": null,
       "sentiment_label": "unscored"
     },
     {
       "headline": "Security deployed after clash reported",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:24:16.568760+00:00",
+      "timestamp": "2026-07-16T07:48:58.239104+00:00",
       "url": null,
       "sentiment_label": "positive"
     }
@@ -936,8 +989,8 @@ const DEMO_FALLBACK = {
       "id": "ol-kalou-2026:security",
       "category": "security",
       "status": "reported",
-      "first_seen": "2026-07-16T07:22:20.556730+00:00",
-      "last_updated": "2026-07-16T07:24:16.568760+00:00",
+      "first_seen": "2026-07-16T07:48:58.239104+00:00",
+      "last_updated": "2026-07-16T07:48:58.239104+00:00",
       "item_count": 10,
       "independent_source_count": 9,
       "confidence": "higher",
@@ -956,6 +1009,7 @@ const CATEGORY_LABEL = {
   integrity: "Bribery / integrity", misinformation: "Misinformation",
   logistics: "Logistics"
 };
+const CATEGORY_ABBR = { admin:"ADM", security:"SEC", integrity:"INT", misinformation:"MIS", logistics:"LOG" };
 const COLORS = { pos:'#7a9b6e', neu:'#8d876f', neg:'#b5514a', unscored:'#5c5847', brass:'#b8934a', rule:'#3a3826', reported:'#c99a3e' };
 
 function tickClock(){
@@ -975,7 +1029,7 @@ function animateNumber(el, to){
   const from = parseFloat(el.dataset.rawValue || '0') || 0;
   if (typeof to !== 'number' || isNaN(to)) { el.textContent = to; return; }
   el.dataset.rawValue = to;
-  const duration = 600, start = performance.now();
+  const duration = 700, start = performance.now();
   function tick(now){
     const p = Math.min(1, (now - start) / duration);
     const eased = 1 - Math.pow(1 - p, 3);
@@ -1027,11 +1081,25 @@ function sparkline(values, {width=90, height=26, color=COLORS.brass, fill=false}
   </svg>`;
 }
 
-function trendChart(timeline, width=1140, height=180){
+// Faint full-width area chart used as hero background texture (total item volume over time).
+function heroBackgroundChart(timeline, width=1100, height=140){
+  if (!timeline || timeline.length < 2) return '';
+  const vals = timeline.map(p => p.total_items || 0);
+  const max = Math.max(1, ...vals);
+  const step = width / (vals.length - 1);
+  const coords = vals.map((v,i) => [i*step, height - (v/max)*height]);
+  const path = coords.map((c,i)=>(i===0?'M':'L')+c[0].toFixed(1)+','+c[1].toFixed(1)).join(' ');
+  const area = `${path} L${width},${height} L0,${height} Z`;
+  return `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" style="width:100%;height:100%;">
+    <path d="${area}" fill="${COLORS.brass}" opacity="0.5"></path>
+  </svg>`;
+}
+
+function trendChart(timeline, alerts, width=1160, height=190){
   if (!timeline || timeline.length < 2){
     return `<div class="trend-empty">Not enough history yet to draw a trend — check back after a few refreshes.</div>`;
   }
-  const padL = 6, padB = 20, padT = 10, padR = 6;
+  const padL = 6, padB = 20, padT = 18, padR = 6;
   const innerW = width - padL - padR, innerH = height - padT - padB;
   const n = timeline.length;
   const stepX = innerW / (n - 1);
@@ -1042,7 +1110,7 @@ function trendChart(timeline, width=1140, height=180){
   });
   const maxTotal = Math.max(1, ...totals);
 
-  const layers = ['unscored','negative','neutral','positive']; // stack order bottom-to-top
+  const layers = ['unscored','negative','neutral','positive'];
   const colorFor = { positive: COLORS.pos, neutral: COLORS.neu, negative: COLORS.neg, unscored: COLORS.unscored };
 
   let cumulative = new Array(n).fill(0);
@@ -1057,11 +1125,25 @@ function trendChart(timeline, width=1140, height=180){
     areas.push(`<path d="${d}" fill="${colorFor[key]}" opacity="0.75"><title>${key}</title></path>`);
   });
 
-  // active-alerts overlay as a thin dashed line, scaled to its own max
   const alertVals = timeline.map(p => p.active_alerts || 0);
   const maxAlerts = Math.max(1, ...alertVals);
   const alertPts = alertVals.map((v,i) => [padL + i*stepX, padT + innerH - (v / maxAlerts) * (innerH*0.9)]);
   const alertPath = alertPts.map((p,i)=> (i===0?'M':'L')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+
+  // Annotate alert onset moments directly on the chart, Economist-tracker style.
+  let markers = '';
+  (alerts || []).forEach(a => {
+    if (!a.first_seen) return;
+    const firstSeenTime = new Date(a.first_seen).getTime();
+    let closestIdx = 0, closestDiff = Infinity;
+    timeline.forEach((p, i) => {
+      const diff = Math.abs(new Date(p.t).getTime() - firstSeenTime);
+      if (diff < closestDiff) { closestDiff = diff; closestIdx = i; }
+    });
+    const x = padL + closestIdx * stepX;
+    markers += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${padT+innerH}" stroke="${COLORS.reported}" stroke-width="1" stroke-dasharray="2,2" opacity="0.7"><title>${CATEGORY_LABEL[a.category]||a.category} — ${STATUS_LABEL[a.status]||a.status}</title></line>
+      <text x="${x}" y="${padT-5}" font-size="9" fill="${COLORS.reported}" text-anchor="middle">${CATEGORY_ABBR[a.category]||'?'}</text>`;
+  });
 
   const label = i => new Date(timeline[i].t).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
   const xLabels = [0, Math.floor((n-1)/2), n-1].map(i => `<text x="${padL + i*stepX}" y="${height-4}" font-size="10" fill="${COLORS.brass}" text-anchor="${i===0?'start':(i===n-1?'end':'middle')}">${label(i)}</text>`);
@@ -1069,6 +1151,7 @@ function trendChart(timeline, width=1140, height=180){
   return `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" style="width:100%;height:${height}px;">
     ${areas.join('')}
     <path d="${alertPath}" fill="none" stroke="${COLORS.reported}" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.85"><title>Active alerts</title></path>
+    ${markers}
     ${xLabels.join('')}
   </svg>`;
 }
@@ -1087,6 +1170,34 @@ function donutChart(pct, {size=88, stroke=10, color=COLORS.brass, label=''} = {}
 
 // ---------- render functions ----------
 
+function renderHero(data){
+  const s = data.summary;
+  const scored = s.overall_balance.positive + s.overall_balance.negative;
+  let mood = 'mixed', moodLabel = 'Mixed / no clear lean';
+  if (scored > 0){
+    const ratio = (s.overall_balance.positive - s.overall_balance.negative) / scored;
+    if (ratio > 0.15) { mood = 'positive'; moodLabel = 'Leans positive'; }
+    else if (ratio < -0.15) { mood = 'negative'; moodLabel = 'Leans negative'; }
+  }
+  document.getElementById('hero').innerHTML = `
+    <div class="hero-chart-bg">${heroBackgroundChart(data.timeline)}</div>
+    <div class="hero-content">
+      <div class="hero-figure">
+        <div class="eyebrow">Items analyzed this window</div>
+        <div class="hero-number" id="heroNumber" data-raw-value="0">0</div>
+        <div class="hero-caption">Across X public search and news coverage, aggregated and de-duplicated. This measures volume of discussion, not voter intention.</div>
+        <div style="margin-top:12px;"><span class="mood-badge ${mood}">${moodLabel}</span></div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">${data.summary.unique_source_estimate}</div><div class="label">Unique sources (this run)</div></div>
+        <div class="hero-stat"><div class="num">${data.alerts.length}</div><div class="label">Active alerts</div></div>
+        <div class="hero-stat"><div class="num">${data.candidates.filter(c=>!c.suppressed).length}/${data.candidates.length}</div><div class="label">Candidates with signal</div></div>
+      </div>
+    </div>
+  `;
+  animateNumber(document.getElementById('heroNumber'), s.total_relevant_items);
+}
+
 function renderScorecards(target, cards){
   const existing = target.querySelectorAll('.scorecard .num');
   if (existing.length === cards.length){
@@ -1103,37 +1214,71 @@ function renderScorecards(target, cards){
 
 function renderTrend(data){
   const el = document.getElementById('trendPanel');
-  el.innerHTML = trendChart(data.timeline) + `
+  el.innerHTML = trendChart(data.timeline, data.alerts) + `
     <div class="trend-legend">
       <span><span class="sw" style="background:${COLORS.pos}"></span>Positive</span>
       <span><span class="sw" style="background:${COLORS.neu}"></span>Neutral</span>
       <span><span class="sw" style="background:${COLORS.neg}"></span>Negative</span>
       <span><span class="sw" style="background:${COLORS.unscored}"></span>Unscored</span>
       <span><span class="sw" style="background:none;border-top:2px dashed ${COLORS.reported}"></span>Active alerts (dashed)</span>
+      <span>Dotted verticals mark when an alert first appeared</span>
     </div>`;
 }
 
-function renderCandidates(data){
-  const tbody = document.querySelector('#candidatesTable tbody');
-  tbody.innerHTML = data.candidates.map(c=>{
-    if(c.suppressed){
-      return `<tr class="suppressed-row"><td>${escapeHtml(c.name)}</td><td>${escapeHtml(c.party)}</td><td colspan="6">Suppressed — ${escapeHtml(c.reason)}</td></tr>`;
-    }
+function renderTermCloud(data){
+  const terms = data.trending_terms || [];
+  const tags = data.trending_hashtags || [];
+  const wrap = document.getElementById('termCloudWrap');
+  if (!terms.length && !tags.length){
+    wrap.innerHTML = `<div class="term-cloud-empty">Not enough independent items yet this window to surface trending terms without risking identifying a single post.</div>`;
+    return;
+  }
+  const maxCount = Math.max(1, ...terms.map(t=>t.count), ...tags.map(t=>t.count));
+  const sizeFor = c => (12 + (c / maxCount) * 14).toFixed(1);
+  const termsHtml = terms.length ? terms.map(t => `<span class="term-pill" style="font-size:${sizeFor(t.count)}px" title="${t.count} independent items">${escapeHtml(t.term)}<span class="count">${t.count}</span></span>`).join('') : `<span class="term-cloud-empty">None yet</span>`;
+  const tagsHtml = tags.length ? tags.map(t => `<span class="term-pill" style="font-size:${sizeFor(t.count)}px" title="${t.count} independent items">${escapeHtml(t.tag)}<span class="count">${t.count}</span></span>`).join('') : `<span class="term-cloud-empty">None yet</span>`;
+  wrap.innerHTML = `<div class="term-groups">
+    <div><div class="term-group-label">Topic terms</div><div class="term-cloud">${termsHtml}</div></div>
+    <div><div class="term-group-label">Hashtags</div><div class="term-cloud">${tagsHtml}</div></div>
+  </div>`;
+}
+
+function renderLeaderboard(data){
+  const el = document.getElementById('leaderboard');
+  const shown = data.candidates.filter(c => !c.suppressed).sort((a,b) => b.mention_count - a.mention_count);
+  const suppressed = data.candidates.filter(c => c.suppressed);
+
+  let html = shown.map((c, i) => {
     const momentumVals = (c.momentum||[]).map(m => m.net_sentiment_index);
     const trendDir = momentumVals.length >= 2 && momentumVals[momentumVals.length-1] != null && momentumVals[0] != null
       ? (momentumVals[momentumVals.length-1] > momentumVals[0] ? 'up' : (momentumVals[momentumVals.length-1] < momentumVals[0] ? 'down' : 'flat'))
       : 'flat';
-    return `<tr>
-      <td>${escapeHtml(c.name)}</td><td>${escapeHtml(c.party)}</td>
-      <td class="num-cell">${c.mention_count}</td>
-      <td>${balBar(c.positive,c.neutral,c.negative,c.unscored)}</td>
-      <td><span class="net-sentiment ${trendDir}">${c.net_sentiment_index ?? '—'}</span></td>
-      <td>${sparkline(momentumVals, {width:80, height:24, color: trendDir==='up'?COLORS.pos:(trendDir==='down'?COLORS.neg:COLORS.brass), fill:true})}</td>
-      <td class="num-cell">${c.source_mix.x} / ${c.source_mix.news} / ${c.source_mix.manual}</td>
-      <td><span class="badge ${c.confidence}">${c.confidence}</span></td>
-    </tr>`;
+    return `<div class="cand-card">
+      <div class="cand-rank">${i+1}</div>
+      <div>
+        <div class="cand-name-row"><span class="cand-name">${escapeHtml(c.name)}</span><span class="cand-party">${escapeHtml(c.party)}</span><span class="badge ${c.confidence}">${c.confidence}</span></div>
+        <div class="cand-meta-row">
+          ${balBar(c.positive,c.neutral,c.negative,c.unscored)}
+          <span style="font-size:11.5px;color:var(--paper-dim)">X ${c.source_mix.x} · News ${c.source_mix.news} · Manual ${c.source_mix.manual}</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div class="cand-stat-block"><div class="num">${c.mention_count}</div><div class="label">Mentions</div></div>
+        <div class="cand-stat-block">
+          <div class="net-sentiment ${trendDir}">${c.net_sentiment_index ?? '—'}</div>
+          <div class="label">Net sentiment</div>
+        </div>
+        ${sparkline(momentumVals, {width:70, height:30, color: trendDir==='up'?COLORS.pos:(trendDir==='down'?COLORS.neg:COLORS.brass), fill:true})}
+      </div>
+    </div>`;
   }).join('');
-  activateBalBars(tbody);
+
+  if (suppressed.length){
+    html += suppressed.map(c => `<div class="cand-card suppressed"><div class="cand-rank">—</div><div>${escapeHtml(c.name)} (${escapeHtml(c.party)}) — ${escapeHtml(c.reason)}</div></div>`).join('');
+  }
+
+  el.innerHTML = html;
+  activateBalBars(el);
 }
 
 function renderTopics(data){
@@ -1191,19 +1336,20 @@ function renderAlerts(data){
   `).join('');
 }
 
-function renderArticles(data){
-  const tbody = document.querySelector('#articlesTable tbody');
+function renderNews(data){
+  const el = document.getElementById('newsRiver');
   if(!data.articles.length){
-    tbody.innerHTML = '<tr><td colspan="4" style="color:var(--paper-dim);font-style:italic;">No news items in the current window.</td></tr>';
+    el.innerHTML = '<div class="news-empty">No news items in the current window.</div>';
     return;
   }
-  tbody.innerHTML = data.articles.map(a=>`
-    <tr>
-      <td>${a.url ? `<a href="${a.url}" target="_blank" rel="noopener">${escapeHtml(a.headline||'(untitled)')}</a>` : escapeHtml(a.headline||'(untitled)')}</td>
-      <td>${escapeHtml(a.outlet||'—')}</td>
-      <td>${escapeHtml(a.sentiment_label||'unscored')}</td>
-      <td>${a.timestamp ? new Date(a.timestamp).toLocaleString() : '—'}</td>
-    </tr>`).join('');
+  el.innerHTML = data.articles.map(a => `
+    <div class="news-card">
+      <div>
+        ${a.url ? `<a class="news-headline" href="${a.url}" target="_blank" rel="noopener">${escapeHtml(a.headline||'(untitled)')}</a>` : `<span class="news-headline">${escapeHtml(a.headline||'(untitled)')}</span>`}
+        <div class="news-meta">${escapeHtml(a.outlet||'Unknown outlet')} · ${a.timestamp ? new Date(a.timestamp).toLocaleString() : '—'}</div>
+      </div>
+      <span class="news-sentiment ${a.sentiment_label||'unscored'}">${a.sentiment_label||'unscored'}</span>
+    </div>`).join('');
 }
 
 function renderQuality(data){
@@ -1243,19 +1389,13 @@ function render(data, isDemo){
   updateFreshness(data);
   document.getElementById('disclaimerBox').innerHTML = '<b>Read this first:</b> ' + escapeHtml(data.meta.disclaimer);
 
-  renderScorecards(document.getElementById('scorecards'), [
-    {value:data.summary.total_relevant_items, label:'Total relevant items'},
-    {value:data.summary.x_items, label:'X items'},
-    {value:data.summary.news_items, label:'News items'},
-    {value:data.summary.unique_source_estimate, label:'Unique source estimate'},
-    {value:Math.round(data.summary.duplicated_share*100)+'%', label:'Duplicated share'},
-  ]);
-
+  renderHero(data);
   renderTrend(data);
-  renderCandidates(data);
+  renderTermCloud(data);
+  renderLeaderboard(data);
   renderTopics(data);
   renderAlerts(data);
-  renderArticles(data);
+  renderNews(data);
   renderQuality(data);
 }
 
@@ -1285,7 +1425,7 @@ async function refresh(){
       lastGeneratedAt = d.meta.generated_at;
       render(d, d.meta.mode === 'demo');
     } else {
-      updateFreshness(d); // still tick the "X min ago" label even with no new data
+      updateFreshness(d);
     }
     return;
   }

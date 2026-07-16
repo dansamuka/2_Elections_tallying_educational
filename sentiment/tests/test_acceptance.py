@@ -69,9 +69,17 @@ class AcceptanceTests(unittest.TestCase):
         html = open(os.path.join(REPO_ROOT, "frontend", "sentiment.html")).read()
         self.assertIn("DEMO_FALLBACK", html)
         self.assertIn("render(DEMO_FALLBACK, true)", html)
-        # Sanity check the chart functions this dashboard relies on are present.
-        for fn in ("function trendChart", "function sparkline", "function donutChart"):
+        for fn in ("function trendChart", "function sparkline", "function donutChart",
+                   "function renderHero", "function renderLeaderboard", "function renderNews",
+                   "function renderTermCloud"):
             self.assertIn(fn, html)
+
+    def test_18_dashboard_never_shows_individual_post_text_or_links(self):
+        """The dashboard must never render raw post text, usernames, or per-post links -
+        only aggregate terms/hashtags and news article links (title/source/timestamp/link only)."""
+        html = open(os.path.join(REPO_ROOT, "frontend", "sentiment.html")).read()
+        for forbidden in ("raw_text", "author_ref", "platform_id", "a.url_x", "tweet_url"):
+            self.assertNotIn(forbidden, html)
 
     def test_10_module_never_touches_tallying_paths(self):
         """No script in this module writes outside data/, config/, or docs/sentiment/."""
@@ -128,6 +136,17 @@ class AcceptanceTests(unittest.TestCase):
         with open(PUBLIC_PATH) as f:
             after = json.load(f)
         self.assertEqual(len(after["timeline"]), before_len + 1)
+
+
+    def test_19_trending_terms_respect_suppression_floor(self):
+        """A term/hashtag used by fewer than the configured floor of items must never surface -
+        same privacy logic as the five-item candidate/topic floor."""
+        cfg = json.load(open(os.path.join(ROOT, "config", "sentiment_config.json")))
+        floor = cfg["display_thresholds"]["min_independent_items_for_cell"]
+        for t in self.payload.get("trending_terms", []):
+            self.assertGreaterEqual(t["count"], floor)
+        for t in self.payload.get("trending_hashtags", []):
+            self.assertGreaterEqual(t["count"], floor)
 
 
 if __name__ == "__main__":

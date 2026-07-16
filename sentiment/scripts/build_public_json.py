@@ -78,8 +78,8 @@ def make_demo_items() -> list:
     now = datetime.now(timezone.utc).isoformat()
     demo = [
         # Nyagah mentions - enough volume/diversity to clear the 5-item candidate floor
-        {"source_type": "x", "raw_text": "Nyagah's rally in Ol Kalou today was poa, good turnout and peaceful.", "author_ref": "u1", "timestamp": now},
-        {"source_type": "x", "raw_text": "Samuel Nyagah team says momentum is building in Ol Kalou ahead of the vote.", "author_ref": "u2", "timestamp": now},
+        {"source_type": "x", "raw_text": "Nyagah's rally in Ol Kalou today was poa, good turnout and peaceful. #OlKalouByElection", "author_ref": "u1", "timestamp": now},
+        {"source_type": "x", "raw_text": "Samuel Nyagah team says momentum is building in Ol Kalou ahead of the vote. #OlKalou", "author_ref": "u2", "timestamp": now},
         {"source_type": "x", "raw_text": "Not everyone is happy, some say Nyagah's promises are hovyo and won't be kept.", "author_ref": "u3", "timestamp": now},
         {"source_type": "news", "raw_text": "Nyagah closes campaign with a rally in Ol Kalou town, UDA candidate confident.", "headline": "Nyagah closes campaign in Ol Kalou", "outlet": "example-news.co.ke", "timestamp": now},
         {"source_type": "x", "raw_text": "Muchina Nyagah supporters singing in the streets of Ol Kalou this morning.", "author_ref": "u4", "timestamp": now},
@@ -91,11 +91,11 @@ def make_demo_items() -> list:
 
         # Security cluster - deliberately over the stricter security alert threshold
         # (min_items=10, min_sources=3, min_confidence=0.75) to exercise the alert path end to end.
-        {"source_type": "x", "raw_text": "Heard a scuffle and clash broke out near a polling station in Ol Kalou, police called.", "author_ref": "u6", "timestamp": now},
-        {"source_type": "x", "raw_text": "Another account: confirmed clash and teargas near Ol Kalou polling station, very tense unrest.", "author_ref": "u7", "timestamp": now},
-        {"source_type": "x", "raw_text": "Third post: violence and intimidation reported at Ol Kalou polling station, security officers on site.", "author_ref": "u8", "timestamp": now},
-        {"source_type": "x", "raw_text": "Fourth account describing the same clash and teargas near the Ol Kalou polling station.", "author_ref": "u9", "timestamp": now},
-        {"source_type": "x", "raw_text": "Police and security officers moved in after violence and a scuffle broke out in Ol Kalou.", "author_ref": "u10", "timestamp": now},
+        {"source_type": "x", "raw_text": "Heard a scuffle and clash broke out near a polling station in Ol Kalou, police called. #OlKalouByElection", "author_ref": "u6", "timestamp": now},
+        {"source_type": "x", "raw_text": "Another account: confirmed clash and teargas near Ol Kalou polling station, very tense unrest. #OlKalouByElection", "author_ref": "u7", "timestamp": now},
+        {"source_type": "x", "raw_text": "Third post: violence and intimidation reported at Ol Kalou polling station, security officers on site. #OlKalouByElection", "author_ref": "u8", "timestamp": now},
+        {"source_type": "x", "raw_text": "Fourth account describing the same clash and teargas near the Ol Kalou polling station. #OlKalouByElection", "author_ref": "u9", "timestamp": now},
+        {"source_type": "x", "raw_text": "Police and security officers moved in after violence and a scuffle broke out in Ol Kalou. #OlKalouByElection", "author_ref": "u10", "timestamp": now},
         {"source_type": "news", "raw_text": "Security officers deployed after clash and unrest reported near an Ol Kalou polling station.", "headline": "Security deployed after clash reported", "outlet": "example-news.co.ke", "timestamp": now},
         {"source_type": "x", "raw_text": "Fifth person also describing violence, teargas, and police intimidation near the station.", "author_ref": "u11", "timestamp": now},
         {"source_type": "x", "raw_text": "Sixth witness account of the clash, teargas and security officers responding in Ol Kalou.", "author_ref": "u12", "timestamp": now},
@@ -194,6 +194,31 @@ def main():
             "confidence": conf["label"],
         })
 
+    # ---- trending terms & hashtags (aggregate only - every term traces back to
+    # config/sentiment_config.json's topic_keywords, not to an arbitrary phrase
+    # lifted from one post; same suppression floor as everything else so a rare
+    # term used by only one or two people never surfaces on its own) ----
+    from collections import Counter
+    keyword_counts = Counter()
+    hashtag_counts = Counter()
+    for i in items:
+        weight = i.get("frequency", 1)
+        for kw in i.get("matched_keywords", []):
+            keyword_counts[kw.lower()] += weight
+        for tag in i.get("hashtags", []):
+            hashtag_counts[tag] += weight
+
+    trending_terms = [
+        {"term": term, "count": count}
+        for term, count in keyword_counts.most_common(30)
+        if count >= min_cell
+    ][:15]
+    trending_hashtags = [
+        {"tag": tag, "count": count}
+        for tag, count in hashtag_counts.most_common(30)
+        if count >= min_cell
+    ][:10]
+
     # ---- articles (Section 4.5 - title/source/timestamp/link only) ----
     articles_out = [
         {
@@ -276,6 +301,8 @@ def main():
         "timeline": timeline_out,
         "candidates": candidates_out,
         "topics": topics_out,
+        "trending_terms": trending_terms,
+        "trending_hashtags": trending_hashtags,
         "sources": [{"outlet": k, "count": v} for k, v in sorted(outlet_counts.items(), key=lambda kv: -kv[1])],
         "articles": articles_out,
         "quality": quality,

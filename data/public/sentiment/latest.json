@@ -1,8 +1,8 @@
 {
   "meta": {
     "election_id": "ol-kalou-2026",
-    "generated_at": "2026-07-16T07:30:00.212374+00:00",
-    "collection_cursor": "2026-07-16T07:30:00.212374+00:00",
+    "generated_at": "2026-07-16T07:49:12.460851+00:00",
+    "collection_cursor": "2026-07-16T07:49:12.460851+00:00",
     "mode": "demo",
     "disclaimer": "This dashboard measures online discussion, not voter intention. X users and news coverage are not representative of Ol Kalou voters. Sentiment models can misread sarcasm, Kikuyu, Kiswahili, Sheng, names, quotations, and political slogans. Official election information and results come from IEBC.",
     "alert_disclaimer": "Alerts reflect volume and repetition in public conversation, not confirmed events. Only entries marked 'officially confirmed' have been verified by an authority."
@@ -22,7 +22,7 @@
   },
   "timeline": [
     {
-      "t": "2026-07-16T07:30:00.003498+00:00",
+      "t": "2026-07-16T07:49:12.196281+00:00",
       "total_items": 20,
       "overall": {
         "positive": 6,
@@ -36,7 +36,7 @@
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T07:30:00.118226+00:00",
+      "t": "2026-07-16T07:49:12.343805+00:00",
       "total_items": 20,
       "overall": {
         "positive": 6,
@@ -50,7 +50,7 @@
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T07:30:00.212374+00:00",
+      "t": "2026-07-16T07:49:12.460851+00:00",
       "total_items": 20,
       "overall": {
         "positive": 6,
@@ -78,11 +78,11 @@
       "net_sentiment_index": 40.0,
       "momentum": [
         {
-          "t": "2026-07-16T07:30:00.003498+00:00",
+          "t": "2026-07-16T07:49:12.196281+00:00",
           "net_sentiment_index": 40.0
         },
         {
-          "t": "2026-07-16T07:30:00.118226+00:00",
+          "t": "2026-07-16T07:49:12.343805+00:00",
           "net_sentiment_index": 40.0
         }
       ],
@@ -192,6 +192,22 @@
       "suppressed": true
     }
   ],
+  "trending_terms": [
+    {
+      "term": "polling station",
+      "count": 9
+    },
+    {
+      "term": "clash",
+      "count": 6
+    }
+  ],
+  "trending_hashtags": [
+    {
+      "tag": "#olkaloubyelection",
+      "count": 6
+    }
+  ],
   "sources": [
     {
       "outlet": "example-news.co.ke",
@@ -202,21 +218,21 @@
     {
       "headline": "Nyagah closes campaign in Ol Kalou",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:30:00.207730+00:00",
+      "timestamp": "2026-07-16T07:49:12.454359+00:00",
       "url": null,
       "sentiment_label": "positive"
     },
     {
       "headline": "IEBC reports smooth opening",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:30:00.207730+00:00",
+      "timestamp": "2026-07-16T07:49:12.454359+00:00",
       "url": null,
       "sentiment_label": "unscored"
     },
     {
       "headline": "Security deployed after clash reported",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:30:00.207730+00:00",
+      "timestamp": "2026-07-16T07:49:12.454359+00:00",
       "url": null,
       "sentiment_label": "positive"
     }
@@ -234,8 +250,8 @@
       "id": "ol-kalou-2026:security",
       "category": "security",
       "status": "reported",
-      "first_seen": "2026-07-16T07:29:59.998666+00:00",
-      "last_updated": "2026-07-16T07:30:00.207730+00:00",
+      "first_seen": "2026-07-16T07:49:12.189504+00:00",
+      "last_updated": "2026-07-16T07:49:12.454359+00:00",
       "item_count": 10,
       "independent_source_count": 9,
       "confidence": "higher",
