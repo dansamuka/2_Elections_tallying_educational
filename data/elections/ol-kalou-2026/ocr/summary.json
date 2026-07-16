@@ -2,38 +2,27 @@
   "schema": "kenya.election.ocr-summary.v1",
   "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
   "election_id": "ol-kalou-2026",
-  "generated_at": "2026-07-16T18:13:57.670328Z",
+  "generated_at": "2026-07-16T19:39:47.671082Z",
   "engine_mode": "auto",
   "engines_available": [
     "gcv"
   ],
-  "documents_total": 9,
-  "pages_total": 9,
-  "pages_available": 9,
-  "pages_selected": 9,
+  "documents_total": 20,
+  "pages_total": 20,
+  "pages_available": 20,
+  "pages_selected": 20,
   "page_limit": null,
   "pilot": false,
-  "pages_processed": 9,
-  "layout_assisted_pages": 7,
-  "form35a_detected": 9,
+  "pages_processed": 20,
+  "layout_assisted_pages": 18,
+  "form35a_detected": 20,
   "form35b_detected": 0,
   "streams_matched": 0,
   "review_rows": 0,
   "routes": {
-    "QUARANTINE": 9
+    "QUARANTINE": 20
   },
-  "errors": [
-    {
-      "page_id": "04d445ee0071f75d-p001",
-      "engine": "layout-handwriting",
-      "message": "(-8, '')"
-    },
-    {
-      "page_id": "13fcd600bbd63541-p001",
-      "engine": "layout-handwriting",
-      "message": "(-8, '')"
-    }
-  ],
+  "errors": [],
   "hierarchy": {
     "changed": false,
     "mapped": 0,
@@ -43,11 +32,11 @@
   "cloud_crop_ocr": {
     "engine": "gcv-document-text-crop",
     "request_limit": 250,
-    "requests": 82,
-    "fields_considered": 82,
-    "responses": 82,
-    "usable_values": 31,
-    "rejected_values": 51,
+    "requests": 122,
+    "fields_considered": 122,
+    "responses": 122,
+    "usable_values": 41,
+    "rejected_values": 81,
     "failures": 0,
     "retries": 0,
     "skipped_request_limit": 0
