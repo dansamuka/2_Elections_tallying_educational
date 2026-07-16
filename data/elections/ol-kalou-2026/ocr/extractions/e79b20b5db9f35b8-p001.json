@@ -1,0 +1,276 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
+  "election_id": "ol-kalou-2026",
+  "page_id": "e79b20b5db9f35b8-p001",
+  "source_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_e79b20b5db9f.pdf",
+  "source_sha256": "e79b20b5db9f35b8d96e85f2b80205eee15655d6c9858fc569b23e7627644a0b",
+  "source_filename": "v1_e79b20b5db9f.pdf",
+  "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/e79b20b5db9f35b8.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "gcv+layout-handwriting+gcv-crop",
+  "confidence": 0.5272615384615384,
+  "text_length": 6335,
+  "text_preview": "FORM 35 A\nINDEPENDENT ELECTORAL AND BOUNDARIES COMMISSIONE\nNA160726-108781\nELECTORALANDBOU\nCOMMISSIONINDEPENDENT\nESCOMMISSIONINDEPENDENTEL\nSSIONINDEPENDENTELECTO\nNDENTELECTORALANDBOUNDS\nOUNDARIES COMMISSIONINDEPEN\nALANDBOUNDARIES COMMISSIONINDE\nANDBOUN\nSSIC\nUND Ward\nDENTEL\nMISSIONINDEPENDENTELE CORALANDE\nPENDENTELLECT\nANDBOUN\nANDROUND\nESCOMMISSIONINDEPEND\nNDBOUNDAR\nIEBC\nYour Your Future\n(Reg. 79(2)(b))\nMEMBER OF NATIONAL ASSEMBLY BY-ELECTION RESULTS IONINDEPENDENTELECTOR\nUND Name of Polling Station KAMANDE PRIMARY POLLING STATION 1 of 2\nDRO Constituency\nLECT County\nPENDENTEL\nAT THE POLLING STATION\nFLECTORAL WODARIESCOMMISSION\nKAIMBAGA\nOL KALOU\nNYANDARUA\nDER Number of votes cast in favour of each candidate:\nSHINE Name of Candidate\n0801\nDEPE\nUND\nNDEN\nRIES\n1. ABDIFATAH HUSSEIN ABDULLAHI\n2. TIMOTHY KAMAU KARIUKI\nTELE 3. WILSON MWANIKI KIGWA\nSCOM\nECTO\nMISS\nRALA\nSIONI\n4. EDWIN KARIIRI MUCHIRI\n5. EDWARD MATHENGE MWANIKI\nANDE 6. RACHAEL WANGUI NJOROGE\nOUNDA. SAMUEL MUCHINA NYAGAH\nIDEPT\nENDE\nARIES\nTELE\nORA\n8. STEPHEN WANYOIKE WAITHAKA\nOMM9. SAMMY DOUGLAS KAMAU WAWERU\nSSION Total number of valid votes cast\nANDBO\nDEPENDENT\nPolling Station Counts\nUNDA\nENTE\nESCO\nLECTO\nMISSI\nALAND\nINDER\nJUND\nDEN\nESCO\nLECTOR\nSINDARI\nTEL\nANDBO\nENDENTE\nDENTELECT\nBOUNDA\n1. Total Number of Registered Voters in the Polling Station;\n2. Total Number of Rejected Ballot Papers;\nMMISSIONINDEPENDE\nOBOUND\nNDBOL\n3. Total Number of Rejection Objected to Ballot Papers;\n4. Total Number of Disputed Votes;\n5. Total Number of Valid Votes Cast;\nEND\nMISSIONIN\nALANI\nINDE\nDeclaration OR\nCOMM\nSIONINDEPENDE\nWe, the undersigned, being ARIESCOM\nOUNDAR\nNDENT\nESC\nECTOR\nAISSIONIN\nLANDS\nQU\nDEPENDENT\nSCOM\n547\nLIONING\nNDENTELE\nCOMMISSIONINDEPE\nDARIESCOMMISSION\nANDARIESCOM\nSONINDEPEND\nEPENDENT ELECTORAL AND\nTELECTORALANDBOUNDARIESCO\nOUNDARI\nOUNDARIESCO\nOUNDARIESCOMMISSIONINDS\nENTELECTORALANDBOUNDARI\nLECTORALANDE\nEPENDENTELECTORALANDBOUNDARIESCOMMISSIONINDEPENDEN\nENTELECTORALANDBOUNDARIESCOMMISSIONINDEP\nCTORALANDBOUNDARIESCOMMISSIONINDEPEN\nCOMMISSIONINDEPENDENTELECTORALANDE\nNo. of Valid Votes Obtained\nANDBOUNDARIES\nCode\n018091045604501ISSIONINDEP\nCode 0456\nCode 091\nCode 018\nSOUNDA\nOR Decision(s) on disputed votes if any ONIDA\nARIE\nLABOUNT\nWINDEPEND\nNDARI\nNDENTE\nESCO\nTELECT\nORA\nCOMMISSION\nLAND\nNINDI\nDBOU\nEPEN\nUNDAF\nDENT\nRIEBC\nLECT\nMIMISS\nONINE\nEPEND\nDARIE\nTELE\n000\n000\n002\n000ALA\nDDOBROU\n000\n032 COMM\n000 SIGN\nNDBC\n22EPEN\nNDARI\nNDENTELL\nCOMM\nECTORAL\nOMMISSIONE\nTORALANDBO\nELECT\nISSION\nDENTELE\nSerial number of Ballot Paper (s) with disputed vote EP Name of Candidate assigned the vote\n004 1.\n000 2\n000\nDDD 3.\n264\nORALANDBOUNDARIESO\nTONINDEPE\nARIESCOMMISSIONINDEPENDENTELECTORAL\npresent when the results of the\nTORALANDBOUNDAunt were SSIONINDE\nand accurate count of the ballots in KAMANDE PRIMARY\nPresiding Officer: MUNGARA\nDeputy Presiding Officer: JULIA\nESCO\nNDEPENDE\nECTORA\nONINDE\nUND Agents or Candidates (if present)\nDENT\nESCO\nCTOR\nSSION\nANDER\nJEPE\nDAR\nNTEL\nCOMM\nORA\nONIN\nBOU\nENDE\nRIES\nLECT\nMISS\nNo.\n1.\n2.\nNDE\nES\nName of C",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DCP": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_JUBILEE": {
+        "value": 3,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PNU": {
+        "value": 4,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 4,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PDP": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_KMM": {
+        "value": 5,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_FPK": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 7,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PRP": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_NLP": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 7,
+        "confidence": 0.5903999999999999,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": 4,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DCP": "full-page-text anchored by '9. SAMMY DOUGLAS KAMAU WAWERU'",
+      "candidate_JUBILEE": "full-page-text",
+      "candidate_PNU": "full-page-text anchored by 'ree SIDIN'",
+      "candidate_PDP": "full-page-text anchored by '6. RACHAEL WANGUI NJOROGE'",
+      "candidate_KMM": "full-page-text anchored by '5. EDWARD MATHENGE MWANIKI'",
+      "candidate_FPK": "full-page-text anchored by 'FA\\\\TA'",
+      "candidate_PRP": "full-page-text anchored by 'Timon Nie'",
+      "candidate_NLP": "full-page-text anchored by '5. EDWARD MATHENGE MWANIKI'",
+      "registered": "full-page-text anchored by '1. | Total Number of Registered Voters in the Poling Station, | = 547 |'",
+      "rejected": "full-page-text anchored by 'ST TED BALLOT PAPEAS'",
+      "total_valid": "full-page-text anchored by 'Total Number of Valid Votes Cast;'",
+      "total_cast": "derived: total_valid (5) + rejected (2)",
+      "rejection_objections": "3. Total Number of Rejection Objected to Ballot Papers;",
+      "disputed_votes": "4. Total Number of Disputed Votes;"
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 11,
+      "page_size": [
+        2382,
+        3369
+      ],
+      "candidate_list_complete": true,
+      "cloud_crop_ocr": {
+        "engine": "gcv-document-text-crop",
+        "attempted_fields": 11,
+        "successful_responses": 0,
+        "usable_values": 0,
+        "skipped_request_limit": 11,
+        "failures": [],
+        "selective": true,
+        "minimum_local_confidence": 0.86,
+        "minimum_cloud_prefill_confidence": 0.65,
+        "run_stats": {
+          "engine": "gcv-document-text-crop",
+          "request_limit": 250,
+          "requests": 250,
+          "fields_considered": 261,
+          "responses": 250,
+          "usable_values": 90,
+          "rejected_values": 160,
+          "failures": 0,
+          "retries": 0,
+          "skipped_request_limit": 11
+        }
+      }
+    }
+  },
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "018091045604501",
+    "constituency_code": "091",
+    "ward_code": "0456",
+    "polling_centre_code": "045",
+    "stream_no": 1,
+    "stream_key": "091-0456-045-01",
+    "ward_name": "KAIMBAGA",
+    "polling_centre_name": "KAMANDE PRIMARY DRO",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 018091045604501",
+      "printed/portal ward KAIMBAGA",
+      "printed/portal centre KAMANDE PRIMARY DRO"
+    ]
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-16T23:48:54.317915Z"
+}

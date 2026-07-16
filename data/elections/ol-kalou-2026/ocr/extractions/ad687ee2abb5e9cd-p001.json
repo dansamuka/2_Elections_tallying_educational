@@ -1,0 +1,308 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
+  "election_id": "ol-kalou-2026",
+  "page_id": "ad687ee2abb5e9cd-p001",
+  "source_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_ad687ee2abb5.pdf",
+  "source_sha256": "ad687ee2abb5e9cd74b70680533690e1c7d58a0113977bba437c1b7c06075edf",
+  "source_filename": "v1_ad687ee2abb5.pdf",
+  "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/ad687ee2abb5e9cd.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "gcv+layout-handwriting+gcv-crop",
+  "confidence": 0.5255911470264447,
+  "text_length": 6721,
+  "text_preview": "13.845\nFORM 35 A\nINDEPENDENT\nNA160726-108692\nELECTORALANDBOU\nSCOMMISSIONINDEPENDENT\nESCOMMISSIONINDEPENDENTEL\nSSIONINDEPENDENTELECTO\nNDENTELECTORALANDBOUNDA\nALANDBOUNDARIESCOMMISSIONINDER\nOUNDARIESCOMMISSIONINDEPEN\nANDBOUN\nMISSION\nECTOR\nMISSIONINDEPENDENTE\nURAL LANDB\nHIND Name of Polling Station A.C OL KALOU PRIMARY\nGUNDA Ward\nOBOUN\nP500 Constituency\nRIESC\nLECT County\nPENDE\nLAND BOUNDARIES COMMISSIONE\nTELECTOR\nTELECTORALANDBOUND\nANDBOUNDARIESCOMMISSIONINDEPE\nRESTORALANDBOUNDARIESCOMMISSION\nPLECTORALAN\nREN\nPANDBOUNDARIE\nIEBC\nTout You Trail Estere\n(Reg. 79(2)(b))\nPCPENT ELECTORAL AND E\nLANDBOUNDARIE\nMEMBER OF NATIONAL ASSEMBLY BY-ELECTION RESULTSJONINDEPENDENTELECTOR\nKARAU\nOL KALOU\nNYANDARUA\nAT THE POLLING STATION\nNOEP Number of votes cast in favour of each candidate:\nALAN\nONING Name of Candidate\nJERE\nJUNDA\nRIES\n1. ABDIFATAH HUSSEIN ABDULLAHI\nINDEN 2. TIMOTHY KAMAU KARIUKI\nCOM\nTELE 3. WILSON MWANIKI KIGWA\nMISS\nECTO 4. EDWIN KARIIRI MUCHIRI\nSIONI\nDEP\nENDE\nTELEC\nRALA 5. EDWARD MATHENGE MWANIKI\nANDBOU6. RACHAEL WANGUI NJOROGE\nOUNDARY. SAMUEL MUCHINA NYAGAH\nARIESC8. STEPHEN WANYOIKE WAITHAKA\nOMM 9N SAMMY DOUGLAS KAMAU WAWERU\nSSION Total number of valid votes cast\nORA\nANDBO\nDEPENDENTELEC\nUNDA\nINDE\nPolling Station Counts\nENTE\nESCO\nECTO\nMISSI\nALAND\nINDER\nOUND\nIDENT\nESCO\n23\nIND\nCOMMIS\nANDEC\nSSIONINDENDENTELECTOR\nBOUNDARI CONCOR\nMENTELECTORALA\n1. Total Number of Registered Voters in the Polling Station;\n2. Total Number of Rejected Ballot Papers;\nMISSION\nSIONING\nENTELECT\nOUNDARIE\nOUNDARIESCO\nOUNDARIESCOMMISSIONIND\nS STATION 4 of 7 COMMISSIONINDEPENDENTELECTORALANDBOUNDARI\nWINDEP\nESCOMMIS\nSSIONINDEP\nDAR\nDEPENDENTE\nBOUNDARIESCOMMIS\nARIESCOMM\nELECTORALANDBO\nTELECTORALANDBOUNDARIESCO\nDARIESCOMMISSIONINDEPENDENTELECTORALANDBOUNLIAMESCOMMISSIONINDEPENDEN\nECTO\nSIONINDEPEN\nNo. of Valid Votes Obtained\nANDE\nENDE\nSCOMM\nCOMMISSIONINDEPEND TO Decision(s) on disputed votes if any\nNOBOUND\nEN\n3. Total Number of Rejection Objected to Ballot Papers;\n4. Total Number of Disputed Votes;\n5. Total Number of Valid Votes Cast;\nECTORA\nMISSIC INDEPENDENTEL\nALAND\nINDER\nOUNDAR\nWDENT\nESCO\nECTOR\nARIESCOM\nDeclaration\nMISSIONING\nLANDE\nDEPENDI\nUNDARIESC\nDENT\nESCO\nCTOR\nSSION\nANDER\nDEPEN\nDARI\nNTEL\nCOMM\nORAL\nONING\nENDE\nRIES\nLECT\nAMISS\nALAN\nVINDE\nOUND\nSOUN\nCOMMIS\nTORALANDBOUND\nSENTE\nDEPENDENTELECT\nDARIESCOMMISSUND\nORALANDBOU\nISSIONINDEPENDENTEL TOR\n=681\n001 1.\n000 2\nJON DEP\nBOUNDARIES\nENT\nCENTELECTORALANDBOUNDARIESCOMMISSIONINDEP\nCTORALANDBOUNDARIESCOMMISSIONINDEPEN\nCOMMISSIONINDEPENDENTELECTORALANDP\nANDBOUNDAR\nCode P018091045300604SSIONINDEP\nCode 0453\nCode\n091\nCode 018\nCOMMISS\nLECTO\nLONIND\nOUNDA\nTELECTO\nISSIONI\nDBOUNDARIES\nLAOUNT\nWINDEPEND\nNDARI\nENTE\nESCO\nDENTELECT\nESCOMMI\nTELECTORA\nCOMMISSION\nCOTLAND\nSONINDI\n-000\n00\nDBOL\nEPEN\nNDAF\nDENT\nUESCO\n-002 ECT\nMMISS\nONINE\n000ALAN\n000 BOU\nPEND\n000ARIE\n028 COMM\nTELE\nTORA\n000SION\nNDBC\n293 PEN\n324EL\nSerial number of Ballot Paper (s) with disputed vote EP Name of Candidate assigned the voteOUNDARI\n000 3.\n3244\nRALANDBOUNDARIESCO\nARIESCOMMISSIONINDEPENDENTELEC",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DCP": {
+        "value": 1,
+        "confidence": 0.8404547146388462,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.8404547146388462,
+            "score": 0.8404547146388462,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 0,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_JUBILEE": {
+        "value": 2,
+        "confidence": 0.8455981556326151,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.8455981556326151,
+            "score": 0.8455981556326151,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 3,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PNU": {
+        "value": 0,
+        "confidence": 0.8213773264334752,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.8213773264334752,
+            "score": 0.8213773264334752,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 4,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PDP": {
+        "value": 3,
+        "confidence": 0.0,
+        "source": "cell-ocr",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_KMM": {
+        "value": 5,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_FPK": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PRP": {
+        "value": 1,
+        "confidence": 0.8404547146388462,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.8404547146388462,
+            "score": 0.8404547146388462,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 0,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_NLP": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 22,
+            "confidence": 0.18999999999999997,
+            "score": 0.18999999999999997,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 7,
+        "confidence": 0.5903999999999999,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": 4,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DCP": "gcv-document-text-crop anchored by '2. TIMOTHY KAMAU KARIUKI'",
+      "candidate_JUBILEE": "gcv-document-text-crop anchored by '3. WILSON MWANIKI KIGWA'",
+      "candidate_PNU": "gcv-document-text-crop anchored by '4. EDWIN KARIIRI MUCHIRI'",
+      "candidate_PDP": "cell-ocr anchored by '[& RACHAEL WANGUINJOROGE 90'",
+      "candidate_KMM": "full-page-text anchored by '5. EDWARD MATHENGE MWANIT J 104'",
+      "candidate_FPK": "full-page-text",
+      "candidate_PRP": "gcv-document-text-crop anchored by '2. TIMOTHY KAMAU KARIUKI'",
+      "candidate_NLP": null,
+      "registered": "full-page-text anchored by '[4.| Total Number of Disputed Votes;'",
+      "rejected": "full-page-text anchored by '[4.| Total Number of Disputed Votes;'",
+      "total_valid": "full-page-text anchored by 'Total Number of Valid Votes Cast'",
+      "total_cast": "derived: total_valid (5) + rejected (2)",
+      "rejection_objections": "3. Total Number of Rejection Objected to Ballot Papers;",
+      "disputed_votes": "4. Total Number of Disputed Votes;"
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 11,
+      "page_size": [
+        2382,
+        3369
+      ],
+      "candidate_list_complete": true,
+      "cloud_crop_ocr": {
+        "engine": "gcv-document-text-crop",
+        "attempted_fields": 11,
+        "successful_responses": 11,
+        "usable_values": 4,
+        "skipped_request_limit": 0,
+        "failures": [],
+        "selective": true,
+        "minimum_local_confidence": 0.86,
+        "minimum_cloud_prefill_confidence": 0.65,
+        "run_stats": {
+          "engine": "gcv-document-text-crop",
+          "request_limit": 250,
+          "requests": 203,
+          "fields_considered": 203,
+          "responses": 203,
+          "usable_values": 75,
+          "rejected_values": 128,
+          "failures": 0,
+          "retries": 0,
+          "skipped_request_limit": 0
+        }
+      }
+    }
+  },
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "018091045300604",
+    "constituency_code": "091",
+    "ward_code": "0453",
+    "polling_centre_code": "006",
+    "stream_no": 4,
+    "stream_key": "091-0453-006-04",
+    "ward_name": "KARAU",
+    "polling_centre_name": "A.C OL KALOU PRIMARY GUNDA",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 018091045300604",
+      "printed/portal ward KARAU",
+      "printed/portal centre A.C OL KALOU PRIMARY GUNDA"
+    ]
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-16T23:46:29.704694Z"
+}
