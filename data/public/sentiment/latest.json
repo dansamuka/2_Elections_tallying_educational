@@ -1,8 +1,8 @@
 {
   "meta": {
     "election_id": "ol-kalou-2026",
-    "generated_at": "2026-07-16T09:24:40.356008+00:00",
-    "collection_cursor": "2026-07-16T09:24:40.356008+00:00",
+    "generated_at": "2026-07-16T10:22:20.536019+00:00",
+    "collection_cursor": "2026-07-16T10:22:20.536019+00:00",
     "mode": "live",
     "disclaimer": "This dashboard measures online discussion, not voter intention. X users and news coverage are not representative of Ol Kalou voters. Sentiment models can misread sarcasm, Kikuyu, Kiswahili, Sheng, names, quotations, and political slogans. Official election information and results come from IEBC.",
     "alert_disclaimer": "Alerts reflect volume and repetition in public conversation, not confirmed events. Only entries marked 'officially confirmed' have been verified by an authority."
@@ -65,6 +65,18 @@
     },
     {
       "t": "2026-07-16T09:24:40.356008+00:00",
+      "total_items": 0,
+      "overall": {
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0,
+        "unscored": 0
+      },
+      "candidates": {},
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T10:22:20.536019+00:00",
       "total_items": 0,
       "overall": {
         "positive": 0,
