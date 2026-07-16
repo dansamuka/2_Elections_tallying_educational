@@ -313,7 +313,22 @@
       }
     }
   },
-  "form_identity": null,
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "BOL",
+    "polling_centre_name": "THABA ECDE",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward BOL",
+      "printed/portal centre THABA ECDE"
+    ]
+  },
   "checks": {
     "V01": "FAIL",
     "V02": "PASS",

@@ -2,27 +2,33 @@
   "schema": "kenya.election.ocr-summary.v1",
   "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
   "election_id": "ol-kalou-2026",
-  "generated_at": "2026-07-16T19:39:47.671082Z",
+  "generated_at": "2026-07-16T20:38:44.529349Z",
   "engine_mode": "auto",
   "engines_available": [
     "gcv"
   ],
-  "documents_total": 20,
-  "pages_total": 20,
-  "pages_available": 20,
-  "pages_selected": 20,
+  "documents_total": 32,
+  "pages_total": 32,
+  "pages_available": 32,
+  "pages_selected": 32,
   "page_limit": null,
   "pilot": false,
-  "pages_processed": 20,
-  "layout_assisted_pages": 18,
-  "form35a_detected": 20,
+  "pages_processed": 32,
+  "layout_assisted_pages": 29,
+  "form35a_detected": 32,
   "form35b_detected": 0,
   "streams_matched": 0,
   "review_rows": 0,
   "routes": {
-    "QUARANTINE": 20
+    "QUARANTINE": 32
   },
-  "errors": [],
+  "errors": [
+    {
+      "page_id": "c18eb597e578bf6f-p001",
+      "engine": "layout-handwriting",
+      "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+    }
+  ],
   "hierarchy": {
     "changed": false,
     "mapped": 0,
@@ -35,8 +41,8 @@
     "requests": 122,
     "fields_considered": 122,
     "responses": 122,
-    "usable_values": 41,
-    "rejected_values": 81,
+    "usable_values": 65,
+    "rejected_values": 57,
     "failures": 0,
     "retries": 0,
     "skipped_request_limit": 0

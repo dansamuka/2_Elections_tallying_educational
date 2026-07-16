@@ -1,0 +1,109 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
+  "election_id": "ol-kalou-2026",
+  "page_id": "c18eb597e578bf6f-p001",
+  "source_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_c18eb597e578.pdf",
+  "source_sha256": "c18eb597e578bf6f7e9b8f49f5b085e553f2dbbde27c8b92a80650726d035779",
+  "source_filename": "v1_c18eb597e578.pdf",
+  "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/c18eb597e578bf6f.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "gcv",
+  "confidence": 0.7923076923076923,
+  "text_length": 7192,
+  "text_preview": "FORM 35 A\nINDEPENDENT ELECTORAL AND BOUNDARIES COMMISSION\nNA160726-108787\nELECTORALANDBOU\nESCOMMISSIONINDEPENDEN\nCOMMISSIONINDEPENDENT\nNDENTELECTORALANDBOUND\nOUNDARIESCOMMISSIONINDEPENT\nALANDBOUNDARIESCOMMISSIONINDER\nLANDBOU\nCTO\nMISSIONINDEPENDENTELECT\nANDS\nIEBC\nTour Vete Font Future\n(Reg. 79(2)(b))\nPEMENT ELECTORAL\nDAY\nBOUNDARIE\nSSIONINDEPENDENTELECT MEMBER OF NATIONAL ASSEMBLY BY-ELECTION RESULTS HONINDEPENDENTELECTOR\nJUND Ward\nPENDENTELECTORALANDBOUND AT THE POLLING STATION\nHUND Name of Polling Station GITHIMA NURSERY POLLING STATION 1 of 7SSIONIN\nLANDBOUNDARIESCOMMISSIONINDEPEND\nLECTORALANDBOUNDARIESCOMMISSION\nSBD Constituency\nLEC County\nA\n080\nDEPE\nUND\nNDEN\nRIES\nLECTORALAND\nKAIMBAGA\nOL KALOU\nNYANDARUA\nUNDARIES\nNumber of votes cast in favour of each candidate:\nName of Candidate\n1. ABDIFATAH HUSSEIN ABDULLAHI\n2. TIMOTHY KAMAU KARIUKI\nTELE 3. WILSON MWANIKI KIGWA\nSCOM\nECTO\nIMISS\nHONI\nDARIESC\nENT\n4. EDWIN KARIIRI MUCHIRI.COM\nRALA 5. EDWARD MATHENGE MWANIKI\nANDE 6. RACHAEL WANGUI NJOROGE\nDEP\nENDE\nOUND 7. SAMUEL MUCHINA NYAGAH\nARIE 8 STEPHEN WANYOIKE WAITHAKA\nTELE\nOMM\nORA\nANDBO\n9. SAMMY DOUGLAS KAMAU WAWERU\nSSION Total number of valid votes cast\nDEPENDENTEL\nUNDA\nDENT\nWINDEPEN\nPolling Station Counts\nTEL\nSINDARIES OMMIS\nENTELECTORANDBOO\nBOUNDARY COME\nSSIONINDENDENT\n2. Total Number of Rejected Ballot Papers;\nMISSI\nENDENTE\nMISSION\nINDENDENTELE\nRA\nNDBOUNDARIANDBO\nNDARIE\nOUNDARIESCOMMISSIONING\nBOUNDARI\nBOUNDARIESGO\nARCOMMISSIONINDEPENDENTELECTORALANDBOUNDARI\nOBODARIESCOMMISSIONIN\nANDE INDARIESCOM\nDENTELECTORALANDBOUNDARIESCOMMISS\nPolling Station;\nNDEPENDENTE\nSONINDEPEN\nTELECTORALANDBO\nENTELECTORALANDBOUNDARIESCO\nDEPENDENTELECTORALANDBOUNDARIESCOMMISSIONINDEPENDEN\nCENTELECTORALANDBOUNDARIESCOMMISSIONINDER\nTORALANDBOUNDARIESCOMMISSIONINDEPENT\nNo. of Valid Votes Obtained\n1. Total Number of Registered Voters in the POMMISSIONINDEPENDECTOR Decision(s) on disputed votes if any ONIND\nESCO\nLECTO\nMISSI\nALAND\nANDER\nOUND\nNDENT\nESCO\nNDBOU\n3. Total Number of Rejection Objected to Ballot Papers;\n4. Total Number of Disputed Votes;\n5. Total Number of Valid Votes Cast;\nLECTOR\nMISSIONIN\nALAND\nCOMM\nECTOR\nDeclaration ORALAND\nINDE\nOUNDA\nNDENT\nESCOMM\nECTOR\nMISSIO\nLANDE\nANDBOU\nCOMMISSIONINDEPENDENT\nENTE\nTOP\nMM\nDEPENDENT\nORALANDBOLARI\nHINDARIESCOMMISS\n178\n000 1.\nSC\nSION DEP\nRIES\nCOMMISSION STORA\nCode PE\nCode 0456\nCode 091\nCode\n018\nBOUN\nELECTO\nISSION\nDBOU\nALANDBOUND\nONINDEPENDE\nDBOUNDAR\nUNDARIESCO!\nEPENDENTE\nDENTFLECT\n-OOD\nOMMIS\nCTORA\nMISSION\nALAND\nNIND\nDBOU\nEPENT\nINDAR\nIESCO\nDODDENT\n4001 LECT\nMISS\nCORALAN\nETONING\n0000BOU\nEPEND\n000 DARIE\nENTELE\nDIG COMM\nTORA\nNDBC\n000SION\nH03 EPEN\n423\nRIESCOMMISSIONI\nNDARI\nENTELI\nCOMM\nECTORAL\nSerial number of Ballot Paper (s) with disputed vote EPE Name of Candidate assigned the vote BOUNDARI\n000 2\n000 3.\n23 4\nTURALANDBOUNDARIESCON\nARIESCOMMISSIONINDEPENDENTELECTORA\nTORALANDBOUNDARIES COMMISSIONINDEP\nПРЕМ\nWe, the undersigned, being present when the results of the count\nand accurate count of the ballots in GITHIMA NURSERS\nPresiding Officer: JULIAH",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7,
+        "confidence": 0.78
+      },
+      "candidate_DCP": {
+        "value": 9,
+        "confidence": 0.78
+      },
+      "candidate_JUBILEE": {
+        "value": 3,
+        "confidence": 0.78
+      },
+      "candidate_PNU": {
+        "value": 4,
+        "confidence": 0.78
+      },
+      "candidate_PDP": {
+        "value": 6,
+        "confidence": 0.78
+      },
+      "candidate_KMM": {
+        "value": 5,
+        "confidence": 0.78
+      },
+      "candidate_FPK": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_PRP": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "candidate_NLP": {
+        "value": 8,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.82
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.82
+      },
+      "total_cast": {
+        "value": 7,
+        "confidence": 0.82
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": 4,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "OUND 7. SAMUEL MUCHINA NYAGAH",
+      "candidate_DCP": "9. SAMMY DOUGLAS KAMAU WAWERU",
+      "candidate_JUBILEE": "TELE 3. WILSON MWANIKI KIGWA",
+      "candidate_PNU": "4. EDWIN KARIIRI MUCHIRI.COM",
+      "candidate_PDP": "ANDE 6. RACHAEL WANGUI NJOROGE",
+      "candidate_KMM": "RALA 5. EDWARD MATHENGE MWANIKI",
+      "candidate_FPK": "1. ABDIFATAH HUSSEIN ABDULLAHI",
+      "candidate_PRP": "2. TIMOTHY KAMAU KARIUKI",
+      "candidate_NLP": "ARIE 8 STEPHEN WANYOIKE WAITHAKA",
+      "registered": "1. Total Number of Registered Voters in the POMMISSIONINDEPENDECTOR Decision(s) on disputed votes if any ONIND",
+      "rejected": "2. Total Number of Rejected Ballot Papers;",
+      "total_valid": "5. Total Number of Valid Votes Cast;",
+      "total_cast": "derived: total_valid (5) + rejected (2)",
+      "rejection_objections": "3. Total Number of Rejection Objected to Ballot Papers;",
+      "disputed_votes": "4. Total Number of Disputed Votes;"
+    }
+  },
+  "form_identity": null,
+  "checks": {
+    "V01": "FAIL",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-16T20:37:12.084920Z"
+}
