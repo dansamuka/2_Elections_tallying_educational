@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ol Kalou — Public Conversation Observatory</title>
+<style>
+  :root{
+    --ink:#15140f; --ink-2:#1d1c15; --paper:#ece6d6; --paper-dim:#b8b09a;
+    --rule:#3a3826; --brass:#b8934a; --brass-bright:#d9ac5c;
+    --pos:#7a9b6e; --neg:#b5514a; --neu:#8d876f; --unscored:#5c5847;
+    --watch:#5c5847; --reported:#c99a3e; --corroborated:#d4772f; --confirmed:#b5514a; --retracted:#5c5847;
+    --mono: "IBM Plex Mono","SFMono-Regular",Menlo,Consolas,monospace;
+    --serif: "Iowan Old Style","Georgia","Times New Roman",serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--ink); color:var(--paper);
+    font-family:var(--mono); font-size:14px; line-height:1.5;
+    background-image: linear-gradient(var(--ink-2) 1px, transparent 1px);
+    background-size: 100% 34px;
+  }
+  a{color:var(--brass-bright);}
+  .wrap{max-width:1180px; margin:0 auto; padding:20px 24px 80px;}
+
+  .masthead{display:flex; justify-content:space-between; align-items:flex-end; border-bottom:2px solid var(--brass); padding-bottom:14px; margin-bottom:6px; flex-wrap:wrap; gap:12px;}
+  .masthead h1{font-family:var(--serif); font-weight:400; font-size:28px; margin:0; letter-spacing:0.5px;}
+  .masthead .eyebrow{font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--brass); margin-bottom:4px;}
+  .clock{font-family:var(--mono); font-size:13px; color:var(--paper-dim); text-align:right;}
+  .clock b{color:var(--brass-bright); font-size:16px;}
+
+  .freshness{display:flex; gap:22px; flex-wrap:wrap; font-size:12px; color:var(--paper-dim); margin:10px 0 18px; padding-bottom:14px; border-bottom:1px solid var(--rule);}
+  .freshness span b{color:var(--paper);}
+
+  .notice{border:1px solid var(--brass); background:rgba(184,147,74,0.08); padding:12px 16px; font-size:12.5px; color:var(--paper-dim); margin-bottom:22px;}
+  .notice b{color:var(--brass-bright);}
+
+  .section-label{font-family:var(--serif); font-size:12px; text-transform:uppercase; letter-spacing:3px; color:var(--brass); margin:34px 0 12px; display:flex; align-items:center; gap:10px;}
+  .section-label::after{content:""; flex:1; height:1px; background:var(--rule);}
+
+  .scorecards{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule);}
+  .scorecard{background:var(--ink); padding:14px 16px;}
+  .scorecard .num{font-family:var(--serif); font-size:26px; color:var(--paper);}
+  .scorecard .label{font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--paper-dim); margin-top:2px;}
+
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  th{text-align:left; font-size:10.5px; text-transform:uppercase; letter-spacing:1px; color:var(--brass); border-bottom:1px solid var(--rule); padding:8px 10px; font-weight:400;}
+  td{padding:9px 10px; border-bottom:1px solid var(--rule); vertical-align:top;}
+  tr:hover td{background:rgba(184,147,74,0.05);}
+  .num-cell{font-variant-numeric:tabular-nums;}
+
+  .bal-bar{display:flex; height:8px; width:120px; border:1px solid var(--rule);}
+  .bal-bar div{height:100%;}
+  .badge{display:inline-block; padding:2px 7px; font-size:10.5px; text-transform:uppercase; letter-spacing:0.5px; border:1px solid currentColor;}
+  .badge.low{color:var(--paper-dim);} .badge.moderate{color:var(--brass-bright);} .badge.higher{color:var(--pos);}
+  .suppressed-row td{color:var(--paper-dim); font-style:italic;}
+
+  .alerts{display:flex; flex-direction:column; gap:10px;}
+  .alert-card{border:1px solid var(--rule); border-left:4px solid var(--watch); padding:14px 16px; background:var(--ink-2);}
+  .alert-card.status-reported{border-left-color:var(--reported);}
+  .alert-card.status-corroborated{border-left-color:var(--corroborated);}
+  .alert-card.status-officially_confirmed{border-left-color:var(--confirmed);}
+  .alert-card.status-retracted{border-left-color:var(--retracted); opacity:0.6;}
+  .alert-head{display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;}
+  .alert-status{font-size:11px; text-transform:uppercase; letter-spacing:1.5px; padding:3px 8px; border:1px solid currentColor;}
+  .status-reported .alert-status{color:var(--reported);}
+  .status-corroborated .alert-status{color:var(--corroborated);}
+  .status-officially_confirmed .alert-status{color:var(--confirmed);}
+  .status-watch .alert-status{color:var(--watch);}
+  .status-retracted .alert-status{color:var(--retracted); text-decoration:line-through;}
+  .alert-meta{font-size:11.5px; color:var(--paper-dim); margin-top:8px; display:flex; gap:16px; flex-wrap:wrap;}
+  .alert-summary{margin-top:8px; font-size:13px;}
+  .alert-disclaimer-note{font-size:11px; color:var(--paper-dim); font-style:italic; margin-top:16px;}
+  .no-alerts{color:var(--paper-dim); font-style:italic; font-size:13px; padding:8px 0;}
+
+  .footer-links{margin-top:50px; padding-top:16px; border-top:1px solid var(--rule); font-size:12px; color:var(--paper-dim); display:flex; gap:18px; flex-wrap:wrap;}
+  .mode-flag{position:fixed; top:0; left:0; right:0; background:var(--brass); color:var(--ink); text-align:center; font-size:11px; letter-spacing:1px; padding:4px; text-transform:uppercase; display:none;}
+</style>
+</head>
+<body>
+<div class="mode-flag" id="modeFlag">Demo data — live collection unavailable</div>
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <div class="eyebrow">Election-Day Public Conversation Observatory</div>
+      <h1>Ol Kalou Parliamentary By-Election</h1>
+    </div>
+    <div class="clock">
+      <div>East Africa Time</div>
+      <b id="eatClock">--:--:--</b>
+    </div>
+  </div>
+
+  <div class="freshness" id="freshness">
+    <span>Last build: <b id="generatedAt">—</b></span>
+    <span>Mode: <b id="modeLabel">—</b></span>
+    <span><a href="#methodology">Methodology &amp; limitations ↓</a></span>
+  </div>
+
+  <div class="notice" id="disclaimerBox">Loading disclaimer…</div>
+
+  <div class="section-label">Core scorecards</div>
+  <div class="scorecards" id="scorecards"></div>
+
+  <div class="section-label">Candidate conversation</div>
+  <table id="candidatesTable">
+    <thead><tr>
+      <th>Candidate</th><th>Party</th><th>Mentions</th><th>Balance</th>
+      <th>Net sentiment</th><th>Source mix (X / news / manual)</th><th>Confidence</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+  <div class="alert-disclaimer-note">Mention share and sentiment are shown independently. High visibility is not the same as support.</div>
+
+  <div class="section-label">Election environment</div>
+  <table id="topicsTable">
+    <thead><tr><th>Topic</th><th>Items</th><th>Balance</th><th>Confidence</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="section-label">Early alerts</div>
+  <div class="alert-disclaimer-note" id="alertDisclaimer" style="margin-bottom:10px;"></div>
+  <div class="alerts" id="alerts"></div>
+
+  <div class="section-label">News framing</div>
+  <table id="articlesTable">
+    <thead><tr><th>Headline</th><th>Outlet</th><th>Sentiment</th><th>Time</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="section-label">Coordination &amp; quality</div>
+  <div class="scorecards" id="qualityCards"></div>
+
+  <div class="section-label" id="methodology">Methodology &amp; limitations</div>
+  <div class="notice">
+    Sentiment is estimated with VADER (English) plus a small hand-built Kiswahili/Sheng lexicon with negation
+    handling; content the models can't confidently read is labelled <b>unscored</b> rather than forced into a score.
+    Candidate-topic cells with fewer than five independent items are suppressed. Alerts require corroboration across
+    multiple independent sources before they're shown — a single post, however repeated, never triggers one on its own.
+    No indicator on this page predicts a winner or converts sentiment into vote share. Official results come from IEBC.
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">← Back to tallying dashboard</a>
+    <span>Shared election id: ol-kalou-2026</span>
+  </div>
+</div>
+
+<script>
+const DEMO_FALLBACK = {"meta": {"election_id": "ol-kalou-2026", "generated_at": "2026-07-16T06:30:30.254833+00:00", "collection_cursor": "2026-07-16T06:30:30.254833+00:00", "mode": "demo", "disclaimer": "This dashboard measures online discussion, not voter intention. X users and news coverage are not representative of Ol Kalou voters. Sentiment models can misread sarcasm, Kikuyu, Kiswahili, Sheng, names, quotations, and political slogans. Official election information and results come from IEBC.", "alert_disclaimer": "Alerts reflect volume and repetition in public conversation, not confirmed events. Only entries marked 'officially confirmed' have been verified by an authority."}, "summary": {"total_relevant_items": 20, "x_items": 15, "news_items": 3, "unique_source_estimate": 17, "duplicated_share": 0.0, "overall_balance": {"positive": 6, "neutral": 2, "negative": 9, "unscored": 3}}, "timeline": [], "candidates": [{"id": "nyagah_samuel", "name": "Samuel Muchina Nyagah", "party": "UDA", "suppressed": false, "mention_count": 6, "positive": 3, "neutral": 1, "negative": 1, "unscored": 1, "net_sentiment_index": 40.0, "source_mix": {"x": 4, "news": 1, "manual": 1}, "confidence": "higher"}, {"id": "ngotho_sammy", "name": "Sammy Kamau Ngotho", "party": "DCP", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "kigwa_wilson", "name": "Wilson Kigwa", "party": "Jubilee Party", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "kamau_timothy", "name": "Timothy Kamau", "party": "People's Renaissance Movement", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "muchiri_edwin", "name": "Edwin Muchiri", "party": "PNU", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "waithaka_stephen", "name": "Stephen Wanyoike Waithaka", "party": "National Liberal Party", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "njoroge_rachael", "name": "Rachael Wangui Njoroge", "party": "People's Democratic Party", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "mathenge_edward", "name": "Edward Mathenge / Edward Mwaniki", "party": "Kenya Moja Movement", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "abdullahi_abdifatah", "name": "Abdifatah Hussein Abdullahi", "party": "Federal Party of Kenya", "suppressed": true, "reason": "Fewer than 5 independent items this window."}], "topics": [{"topic": "admin", "suppressed": true}, {"topic": "security", "suppressed": false, "item_count": 10, "positive": 2, "negative": 7, "confidence": "higher"}, {"topic": "integrity", "suppressed": true}, {"topic": "misinformation", "suppressed": true}, {"topic": "accessibility", "suppressed": true}, {"topic": "results", "suppressed": true}, {"topic": "logistics", "suppressed": true}, {"topic": "local_economy", "suppressed": true}, {"topic": "weather", "suppressed": true}], "sources": [{"outlet": "example-news.co.ke", "count": 3}], "articles": [{"headline": "Nyagah closes campaign in Ol Kalou", "outlet": "example-news.co.ke", "timestamp": "2026-07-16T06:30:30.248482+00:00", "url": null, "sentiment_label": "positive"}, {"headline": "IEBC reports smooth opening", "outlet": "example-news.co.ke", "timestamp": "2026-07-16T06:30:30.248482+00:00", "url": null, "sentiment_label": "unscored"}, {"headline": "Security deployed after clash reported", "outlet": "example-news.co.ke", "timestamp": "2026-07-16T06:30:30.248482+00:00", "url": null, "sentiment_label": "positive"}], "quality": {"exact_and_near_duplicate_rate": 0.0, "repost_share": 0.0, "source_concentration": 0.15, "unsupported_language_share": 0.15, "anomaly_flags": [], "sampling_warnings": []}, "alerts": [{"id": "ol-kalou-2026:security", "category": "security", "status": "reported", "first_seen": "2026-07-16T06:30:30.248482+00:00", "last_updated": "2026-07-16T06:30:30.248482+00:00", "item_count": 10, "independent_source_count": 9, "confidence": "higher", "summary": "10 independent items across 9 sources mention security-related terms in the current window.", "override_applied": false}]};
+const STATUS_LABEL = {
+  watch: "Watch", reported: "Reported", corroborated: "Corroborated",
+  officially_confirmed: "Officially confirmed", retracted: "Retracted"
+};
+const CATEGORY_LABEL = {
+  admin: "Polling administration", security: "Security / unrest",
+  integrity: "Bribery / integrity", misinformation: "Misinformation",
+  logistics: "Logistics"
+};
+
+function tickClock(){
+  const el = document.getElementById('eatClock');
+  const now = new Date(new Date().toLocaleString('en-US', {timeZone:'Africa/Nairobi'}));
+  el.textContent = now.toLocaleTimeString('en-GB');
+}
+setInterval(tickClock, 1000); tickClock();
+
+function balBar(pos, neu, neg, unscored){
+  const total = pos+neu+neg+unscored || 1;
+  const seg = (n,c)=> n ? `<div style="width:${(n/total*100)}%;background:${c}"></div>` : '';
+  return `<div class="bal-bar">${seg(pos,'var(--pos)')}${seg(neu,'var(--neu)')}${seg(neg,'var(--neg)')}${seg(unscored,'var(--unscored)')}</div>`;
+}
+
+function renderScorecards(target, cards){
+  target.innerHTML = cards.map(c=>`<div class="scorecard"><div class="num">${c.value}</div><div class="label">${c.label}</div></div>`).join('');
+}
+
+function renderCandidates(data){
+  const tbody = document.querySelector('#candidatesTable tbody');
+  tbody.innerHTML = data.candidates.map(c=>{
+    if(c.suppressed){
+      return `<tr class="suppressed-row"><td>${c.name}</td><td>${c.party}</td><td colspan="5">Suppressed — ${c.reason}</td></tr>`;
+    }
+    return `<tr>
+      <td>${c.name}</td><td>${c.party}</td>
+      <td class="num-cell">${c.mention_count}</td>
+      <td>${balBar(c.positive,c.neutral,c.negative,c.unscored)}</td>
+      <td class="num-cell">${c.net_sentiment_index ?? '—'}</td>
+      <td class="num-cell">${c.source_mix.x} / ${c.source_mix.news} / ${c.source_mix.manual}</td>
+      <td><span class="badge ${c.confidence}">${c.confidence}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function renderTopics(data){
+  const tbody = document.querySelector('#topicsTable tbody');
+  tbody.innerHTML = data.topics.map(t=>{
+    if(t.suppressed){
+      return `<tr class="suppressed-row"><td>${t.topic}</td><td colspan="3">Suppressed — fewer than the minimum independent items this window.</td></tr>`;
+    }
+    return `<tr>
+      <td>${t.topic}</td><td class="num-cell">${t.item_count}</td>
+      <td>${balBar(t.positive,0,t.negative,0)}</td>
+      <td><span class="badge ${t.confidence}">${t.confidence}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function renderAlerts(data){
+  const el = document.getElementById('alerts');
+  document.getElementById('alertDisclaimer').textContent = data.meta.alert_disclaimer || '';
+  if(!data.alerts || !data.alerts.length){
+    el.innerHTML = '<div class="no-alerts">No alerts crossing the corroboration threshold this window.</div>';
+    return;
+  }
+  el.innerHTML = data.alerts.map(a=>`
+    <div class="alert-card status-${a.status}">
+      <div class="alert-head">
+        <b>${CATEGORY_LABEL[a.category] || a.category}</b>
+        <span class="alert-status">${STATUS_LABEL[a.status] || a.status}</span>
+      </div>
+      <div class="alert-summary">${a.summary}</div>
+      <div class="alert-meta">
+        <span>${a.item_count} items</span>
+        <span>${a.independent_source_count} independent sources</span>
+        <span>Confidence: ${a.confidence}</span>
+        <span>First seen: ${a.first_seen ? new Date(a.first_seen).toLocaleString() : '—'}</span>
+        ${a.override_applied ? '<span>· Human-reviewed status</span>' : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderArticles(data){
+  const tbody = document.querySelector('#articlesTable tbody');
+  if(!data.articles.length){
+    tbody.innerHTML = '<tr><td colspan="4" style="color:var(--paper-dim);font-style:italic;">No news items in the current window.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = data.articles.map(a=>`
+    <tr>
+      <td>${a.url ? `<a href="${a.url}" target="_blank" rel="noopener">${a.headline||'(untitled)'}</a>` : (a.headline||'(untitled)')}</td>
+      <td>${a.outlet||'—'}</td>
+      <td>${a.sentiment_label||'unscored'}</td>
+      <td>${a.timestamp ? new Date(a.timestamp).toLocaleString() : '—'}</td>
+    </tr>`).join('');
+}
+
+function render(data, isDemo){
+  document.getElementById('modeFlag').style.display = isDemo ? 'block' : 'none';
+  document.getElementById('generatedAt').textContent = new Date(data.meta.generated_at).toLocaleString();
+  document.getElementById('modeLabel').textContent = data.meta.mode;
+  document.getElementById('disclaimerBox').innerHTML = '<b>Read this first:</b> ' + data.meta.disclaimer;
+
+  renderScorecards(document.getElementById('scorecards'), [
+    {value:data.summary.total_relevant_items, label:'Total relevant items'},
+    {value:data.summary.x_items, label:'X items'},
+    {value:data.summary.news_items, label:'News items'},
+    {value:data.summary.unique_source_estimate, label:'Unique source estimate'},
+    {value:(data.summary.duplicated_share*100).toFixed(0)+'%', label:'Duplicated share'},
+  ]);
+
+  renderCandidates(data);
+  renderTopics(data);
+  renderAlerts(data);
+  renderArticles(data);
+
+  renderScorecards(document.getElementById('qualityCards'), [
+    {value:(data.quality.exact_and_near_duplicate_rate*100).toFixed(0)+'%', label:'Duplicate rate'},
+    {value:(data.quality.source_concentration*100).toFixed(0)+'%', label:'Source concentration'},
+    {value:(data.quality.unsupported_language_share*100).toFixed(0)+'%', label:'Unsupported language'},
+    {value:data.quality.anomaly_flags.length, label:'Anomaly flags'},
+    {value:data.quality.sampling_warnings.length, label:'Sampling warnings'},
+  ]);
+}
+
+// Path differs between local/dev layout (frontend/ and data/ as siblings under
+// repo root) and the deployed _site/ layout the pages.yml build step produces
+// (this file and data/public/ end up as siblings at the site root). Rather than
+// coupling this file to that build script, try both relative candidates.
+async function loadLatestJson(){
+  const candidates = [
+    './data/public/sentiment/latest.json',
+    '../data/public/sentiment/latest.json',
+  ];
+  for (const path of candidates){
+    try{
+      const r = await fetch(path, {cache:'no-store'});
+      if (r.ok) return await r.json();
+    } catch(e) { /* try next candidate */ }
+  }
+  return null;
+}
+
+loadLatestJson().then(d=>{
+  if (d) { render(d, d.meta.mode === 'demo'); return; }
+  // Section 11 test 8: dashboard loads in demo mode when the live JSON is unavailable.
+  render(DEMO_FALLBACK, true);
+});
+</script>
+</body>
+</html>

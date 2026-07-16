@@ -1,0 +1,79 @@
+{
+  "election_id": "ol-kalou-2026",
+  "election_name": "Ol Kalou Parliamentary By-Election",
+  "election_date": "2026-07-16",
+  "timezone": "Africa/Nairobi",
+  "observation_window": {
+    "start_local": "05:30",
+    "end_local": "20:00",
+    "note": "Scheduled collection only runs inside this window on election day; a manual workflow_dispatch run can override it for testing or post-election research."
+  },
+
+  "candidates": [
+    {"id": "nyagah_samuel",   "name": "Samuel Muchina Nyagah",              "party": "UDA",  "aliases": ["Nyagah", "Samuel Nyagah", "Muchina Nyagah"]},
+    {"id": "ngotho_sammy",    "name": "Sammy Kamau Ngotho",                 "party": "DCP",  "aliases": ["Ngotho", "Sammy Ngotho", "Kamau Ngotho"]},
+    {"id": "kigwa_wilson",    "name": "Wilson Kigwa",                       "party": "Jubilee Party", "aliases": ["Kigwa"]},
+    {"id": "kamau_timothy",   "name": "Timothy Kamau",                     "party": "People's Renaissance Movement", "aliases": ["Timothy Kamau"]},
+    {"id": "muchiri_edwin",   "name": "Edwin Muchiri",                      "party": "PNU",  "aliases": ["Muchiri"]},
+    {"id": "waithaka_stephen","name": "Stephen Wanyoike Waithaka",          "party": "National Liberal Party", "aliases": ["Waithaka", "Wanyoike Waithaka"]},
+    {"id": "njoroge_rachael", "name": "Rachael Wangui Njoroge",            "party": "People's Democratic Party", "aliases": ["Njoroge", "Rachael Njoroge", "Wangui Njoroge"]},
+    {"id": "mathenge_edward", "name": "Edward Mathenge / Edward Mwaniki",  "party": "Kenya Moja Movement", "aliases": ["Mathenge", "Edward Mwaniki", "Mwaniki"]},
+    {"id": "abdullahi_abdifatah", "name": "Abdifatah Hussein Abdullahi",   "party": "Federal Party of Kenya", "aliases": ["Abdifatah", "Abdullahi", "Abdifatah Abdullahi"]}
+  ],
+
+  "place_terms": ["Ol Kalou", "OlKalou", "Ol-Kalou", "Nyandarua"],
+
+  "election_terms": [
+    "by-election", "byelection", "IEBC", "polling station", "ballot", "tallying",
+    "returning officer", "voter", "candidate", "MP seat", "parliamentary seat"
+  ],
+
+  "topic_keywords": {
+    "admin": ["IEBC", "polling station", "returning officer", "queue", "turnout", "ballot paper", "voter register", "opened late", "delayed opening"],
+    "security": ["violence", "clash", "scuffle", "teargas", "intimidation", "assault", "police", "security officers", "unrest"],
+    "integrity": ["bribe", "bribery", "vote buying", "handout", "inducement", "cash for votes", "misuse of public resources"],
+    "misinformation": ["fake", "hoax", "rumor", "rumour", "debunked", "false claim", "misleading", "doctored"],
+    "accessibility": ["disability", "elderly", "wheelchair", "voter assistance", "PWD"],
+    "results": ["tally", "provisional result", "results transmission", "Form 34", "Form 35"],
+    "logistics": ["blackout", "power outage", "road block", "transport", "fuel", "matatu", "boda boda"],
+    "local_economy": ["potato", "dairy", "milk", "market day", "farming", "cooperative", "jobs"],
+    "weather": ["rain", "storm", "flood", "weather", "sunny", "cold"]
+  },
+
+  "spam_terms_exclude": ["giveaway", "airtime promo", "follow for follow", "crypto", "forex signal"],
+
+  "sentiment_thresholds": {
+    "positive_min": 0.20,
+    "negative_max": -0.20
+  },
+
+  "display_thresholds": {
+    "min_independent_items_for_cell": 5
+  },
+
+  "alert_thresholds": {
+    "_comment": "These are stricter than display_thresholds.min_independent_items_for_cell on purpose - alerting is higher-stakes than displaying a sentiment cell.",
+    "generic_min_items": 8,
+    "generic_min_independent_sources": 2,
+    "security_min_items": 10,
+    "security_min_independent_sources": 3,
+    "security_min_topic_confidence": 0.75,
+    "integrity_min_items": 10,
+    "integrity_min_independent_sources": 3,
+    "integrity_min_topic_confidence": 0.75,
+    "default_min_topic_confidence": 0.55,
+    "rolling_window_minutes": 30,
+    "max_new_watch_alerts_per_run": 10
+  },
+
+  "x_search": {
+    "mode_env_var": "SENTIMENT_X_MODE",
+    "modes": ["public_search", "private_home", "hybrid"],
+    "base_query": "(\"Ol Kalou\" OR OlKalou OR #OlKalou OR #OlKalouByElection)"
+  },
+
+  "gdelt": {
+    "query": "Ol Kalou Kenya by-election",
+    "max_records": 75
+  }
+}

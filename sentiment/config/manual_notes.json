@@ -1,0 +1,4 @@
+{
+  "_readme": "Add verified incident notes here by hand. 'status' must be one of reported, corroborated, officially_confirmed. Only set officially_confirmed if you have an actual authority statement to point to.",
+  "notes": []
+}

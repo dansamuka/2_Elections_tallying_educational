@@ -1,0 +1,4 @@
+{
+  "_readme": "Hand-edit this file to force an alert's status regardless of what the automated pipeline computed. The build step applies these last, so they always win. Valid status values: watch, reported, corroborated, officially_confirmed, retracted. Leave 'overrides' empty in normal operation.",
+  "overrides": []
+}
