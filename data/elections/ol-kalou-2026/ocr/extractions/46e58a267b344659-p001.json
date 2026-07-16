@@ -1,0 +1,312 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
+  "election_id": "ol-kalou-2026",
+  "page_id": "46e58a267b344659-p001",
+  "source_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_46e58a267b34.pdf",
+  "source_sha256": "46e58a267b3446594ca897ff0f2a2815dce2f846ef5fab7d53b0f494c8627738",
+  "source_filename": "v1_46e58a267b34.pdf",
+  "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/46e58a267b344659.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "gcv+layout-handwriting+gcv-crop",
+  "confidence": 0.7005262134802016,
+  "text_length": 6518,
+  "text_preview": "13.972\nFORM 35 A\nINDEPENDENT ELECTORAL AND BOUNDARIES COMMIS\nNA160726-108819\nLECTORALANDBOU\nCOMMISSIONINDEPENDENT\nESCOMMISSIONINDEPENDENTEL\nSSIONINDEPENDENTELECTO\nNDENTELECTORALANDBOUNDA\nOUNDARIESCOMMISSIONINDEPEND\nALANDBOUNDARIESCOMMISSIONINDER\nANDSQU\nND Ward\nMISSIONINDEPENDENTELE\nANDBOUNDA\nCOMMISSIONINDEPENDE\nSENDE\nDBOUNDA\nIEBC\nYour Yale You Fature\nBOUNDARIES COM\n(Reg. 79(2)(b))\nMEMBER OF NATIONAL ASSEMBLY BY-ELECTION RESULTS IONINDEPENDENTELECTOR\nENDENTELECTORALANDBOU\nLECTORALANDBOUNDARIES.COMMISSION\nName of Polling Station MARANI PRIMARY SCHOOL POLLING STATION 1 of 1\nDEL Constituency\nRICSC\nLEGT County\nPENDENTEN\nDEP\nRURII\nOL KALOU\nNYANDARUA\nAT THE POLLING STATION\nOUNDARIE\nUNDA\nDEPEND\nUNDA\nNumber of votes cast in favour of each candidate:\nName of Candidate\nEPE 1. ABDIFATAH HUSSEIN ABDULLAHI\nAINDA\nNDEN\nRIES\nCOM\n2. TIMOTHY KAMAU KARIUKI\nTELE 3. WILSON MWANIKI KIGWA\nECTO 4. EDWIN KARIIRI MUCHIRI\nMISS\nRALA\nSONIN\nANDB\nDEPE\nENDE\n5.\n6.\nENT\nEDWARD MATHENGE MWANIKI\nRACHAEL WANGUI NJOROGE\nOUND 7. SAMUEL MUCHINA NYAGAH\nTELEC\nORAL\nARIES 8. STEPHEN WANYOIKE WAITHAKA\nOMM 9. SAMMY DOUGLAS KAMAU WAWERU\nSSION Total number of valid votes cast\nANDBO\nDEPENDENT\nUNDA Polling Station Counts\nENTE\nESCO\n1.\nANDB\nSOUNDA\nDENTEL\nTotal Number of Registered Voters in the Polling Station;\n2. Total Number of Rejected Ballot Papers;\nCOMMISSIONINDEPEND\nNDBOUND\nDENTEL\n3. Total Number of Rejection Objected to Ballot Papers;\n4. Total Number of Disputed Votes;\nECTO\nMISSIO\nALAND\nANDER\nOUND\nDENT\nESCO\nLECTO\nALAND\nANDER\n5. Total Number of Valid Votes Cast;\nMISSIONIND\nOUNDAM\nADENT\nESCOMM\nECTOR\nMISSIONIN\nLANDE\nDeclaration\nOMM\nCTORAL\nISSIONINDEPENDEN\nARIESC\nORAL\nEN\nDENT\nONIN\nANDB\nEND\nOPENDE ELECTORAL AND C\nELECTORALANDBO\nTELECTORALANDBOUNDARIESCO\nESCOMMISSIONIND\nLECTORALANDBOUNDARIE\nNDEPENDENTELECTORALANDBOUNDARIESCOMMISSIONINDEPENDEN\nTELECTORALANDBOUNDARIESCOMMISSIONINDER\nTORALANDBOUNDARIESCOMMISSIONINDEPEN\nMISSIONINDEPENDENTELECTORALANDP\nCode 0180910457071011SSIONINDER\nECTO\nNo. of Valid Votes Obtained\nDecision(s) on disputed votes if any\nDBOUN\nARIESCOMMISS\n89\nSerial number of Ballot Paper (s) with disputed vote\n00 1.\n2.\nLECTOR 3.\nRIESCOMMIS\n060 4\nTORALANDBOUNDARIESCOM\nARIESCOMMISSIONINDEPENDENTELECTORAL\nTORALANDBOUNDARIESEDAMISSIONIN\nOUNDA\nCode 0457\nCode 091\nCode 018\nLANBOUND\nINDEPENDE\nNDART\nDENTP\nESCO\nELECT\nMIS\nTORA\nMISSIGT\nLAND\nMISSIONINDE\nDROV\nEPENT\nNDAS\nDENT\nESCO\n-000\n000\n000\n0.00\n001 OBOU\n000ARIE\n021 COMM\nIMISS\nRALAN\nONINE\nPEND\nTELE\nTORA\nNDBC\n000ION\n038 PEN\n060\nDARI\nWTEL!\nCOMM\nLECTORAL\nDBOUNDARIESCOMMISSION:\nDENTELECTORALANDBO\nName of Candidate assigned the vote\nENTEL\nCOMMISSIONE\nRAL\nDEPE\nRIES\nSEDEPEN\nDBOUNDARIESCOMMISSION\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that the results shown above are true\nand accurate count of the ballots in MARANI PRIMARY SCHOOL Polling Station\nin\nPresiding Officer: JOHN NDEHI KAMAU\nESCOR\nNDEPENDE\nUNDAR\nZANDY\nDeputy Presiding Officer: GRACE MumBi MAINA\nAgents or Candidates (if present)\nNo.\nDENT\nES",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 21,
+        "confidence": 0.9334206779797872,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 21,
+            "confidence": 0.9334206779797872,
+            "score": 0.9334206779797872,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 7,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DCP": {
+        "value": 38,
+        "confidence": 0.8441829601923625,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 38,
+            "confidence": 0.8441829601923625,
+            "score": 0.8441829601923625,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 22339535,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_JUBILEE": {
+        "value": 32697028,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 32697028,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PNU": {
+        "value": 4,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 4,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 28,
+            "confidence": 0.07,
+            "score": 0.07,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PDP": {
+        "value": 0,
+        "confidence": 0.8658961411565542,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.8658961411565542,
+            "score": 0.8658961411565542,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 900,
+            "confidence": 0.5,
+            "score": 0.5,
+            "source": "cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_KMM": {
+        "value": 22399197,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 22399197,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_FPK": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PRP": {
+        "value": 38,
+        "confidence": 0.8441829601923625,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 38,
+            "confidence": 0.8441829601923625,
+            "score": 0.8441829601923625,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_NLP": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": 2,
+        "confidence": 0.873547129662691,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.873547129662691,
+            "score": 0.873547129662691,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 234,
+        "confidence": 0.7568109060588636,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 234,
+            "confidence": 0.7568109060588636,
+            "score": 0.7568109060588636,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 239,
+        "confidence": 0.5903999999999999,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": 4,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "gcv-document-text-crop anchored by '7. SAMUEL MUCHINA NYAGAH'",
+      "candidate_DCP": "gcv-document-text-crop anchored by '9. SAMMY DOUGLAS KAMAU WAWERU'",
+      "candidate_JUBILEE": "full-page-text anchored by '2 bee'",
+      "candidate_PNU": "full-page-text anchored by 'PRESIDING |'",
+      "candidate_PDP": "gcv-document-text-crop anchored by '6. RACHAEL WANGUI NJOROGE'",
+      "candidate_KMM": "full-page-text anchored by 'The) oe on ae'",
+      "candidate_FPK": "full-page-text",
+      "candidate_PRP": "gcv-document-text-crop anchored by '9. SAMMY DOUGLAS KAMAU WAWERU'",
+      "candidate_NLP": "full-page-text anchored by '8. STEPHEN WANYOIKE WAITHAKA'",
+      "registered": "gcv-document-text-crop anchored by '1. | Total Number of Registered Voters in the Poting Station, | 88 |'",
+      "rejected": "gcv-document-text-crop anchored by '[3.| Total Number of Rejection Objected to BallotPapers; | |'",
+      "total_valid": "full-page-text anchored by 'Total number of valid votes cast'",
+      "total_cast": "derived: total_valid (5) + rejected (234)",
+      "rejection_objections": "3. Total Number of Rejection Objected to Ballot Papers;",
+      "disputed_votes": "4. Total Number of Disputed Votes;"
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 11,
+      "page_size": [
+        2382,
+        3369
+      ],
+      "candidate_list_complete": true,
+      "cloud_crop_ocr": {
+        "engine": "gcv-document-text-crop",
+        "attempted_fields": 11,
+        "successful_responses": 11,
+        "usable_values": 6,
+        "skipped_request_limit": 0,
+        "failures": [],
+        "selective": true,
+        "minimum_local_confidence": 0.86,
+        "minimum_cloud_prefill_confidence": 0.65,
+        "run_stats": {
+          "engine": "gcv-document-text-crop",
+          "request_limit": 250,
+          "requests": 22,
+          "fields_considered": 22,
+          "responses": 22,
+          "usable_values": 10,
+          "rejected_values": 12,
+          "failures": 0,
+          "retries": 0,
+          "skipped_request_limit": 0
+        }
+      }
+    }
+  },
+  "form_identity": null,
+  "checks": {
+    "V01": "FAIL",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-16T22:39:26.061519Z"
+}

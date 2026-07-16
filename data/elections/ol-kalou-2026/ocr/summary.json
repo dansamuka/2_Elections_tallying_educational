@@ -2,25 +2,25 @@
   "schema": "kenya.election.ocr-summary.v1",
   "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
   "election_id": "ol-kalou-2026",
-  "generated_at": "2026-07-16T21:46:47.736266Z",
+  "generated_at": "2026-07-16T22:43:45.743731Z",
   "engine_mode": "auto",
   "engines_available": [
     "gcv"
   ],
-  "documents_total": 44,
-  "pages_total": 44,
-  "pages_available": 44,
-  "pages_selected": 44,
+  "documents_total": 55,
+  "pages_total": 55,
+  "pages_available": 55,
+  "pages_selected": 55,
   "page_limit": null,
   "pilot": false,
-  "pages_processed": 44,
-  "layout_assisted_pages": 41,
-  "form35a_detected": 44,
+  "pages_processed": 55,
+  "layout_assisted_pages": 52,
+  "form35a_detected": 55,
   "form35b_detected": 0,
   "streams_matched": 0,
   "review_rows": 0,
   "routes": {
-    "QUARANTINE": 44
+    "QUARANTINE": 55
   },
   "errors": [],
   "hierarchy": {
@@ -32,11 +32,11 @@
   "cloud_crop_ocr": {
     "engine": "gcv-document-text-crop",
     "request_limit": 250,
-    "requests": 138,
-    "fields_considered": 138,
-    "responses": 138,
-    "usable_values": 59,
-    "rejected_values": 79,
+    "requests": 126,
+    "fields_considered": 126,
+    "responses": 126,
+    "usable_values": 54,
+    "rejected_values": 72,
     "failures": 0,
     "retries": 0,
     "skipped_request_limit": 0
