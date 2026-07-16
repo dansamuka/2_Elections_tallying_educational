@@ -64,6 +64,27 @@ used in production if a live payload is ever missing.
       alerts (not built here - addendum Section D), or is the public panel
       plus manual override enough for this election?
 
+## Official references & institutional statements
+
+Two narrow, deliberately-scoped additions:
+
+- **`config/official_references.json`** - cited links to institutional channels only
+  (currently IEBC's official X account and website). These are never scraped or
+  analyzed, just linked, the same way SPECIFICATION.md Section 13 already links
+  to IEBC's site.
+- **`config/institutional_statements.json`** - human-curated, verified statements
+  from credible institutions (e.g. an Amnesty Kenya press statement), added by
+  hand after confirming the statement independently. Treated identically to a
+  news article (title/source/timestamp/link, Section 4.5) - the only difference
+  is provenance (human-verified vs. automated GDELT collection).
+
+**What deliberately isn't here:** a feed of any named political figure's personal
+account (candidates, party leaders, government officials) or any private
+citizen's account. That's a firm boundary, not a placeholder for later -
+automated collection/analysis of named individuals' personal statements during
+a live election is out of scope for this tool regardless of how public the
+person is. `test_20` in the acceptance suite locks this in.
+
 ## Traceability & evidence trail
 
 Every run produces a private audit record (`data/private/sentiment/audit/*.json`)

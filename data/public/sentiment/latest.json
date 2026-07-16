@@ -1,8 +1,8 @@
 {
   "meta": {
     "election_id": "ol-kalou-2026",
-    "generated_at": "2026-07-16T07:49:12.460851+00:00",
-    "collection_cursor": "2026-07-16T07:49:12.460851+00:00",
+    "generated_at": "2026-07-16T07:56:55.800771+00:00",
+    "collection_cursor": "2026-07-16T07:56:55.800771+00:00",
     "mode": "demo",
     "disclaimer": "This dashboard measures online discussion, not voter intention. X users and news coverage are not representative of Ol Kalou voters. Sentiment models can misread sarcasm, Kikuyu, Kiswahili, Sheng, names, quotations, and political slogans. Official election information and results come from IEBC.",
     "alert_disclaimer": "Alerts reflect volume and repetition in public conversation, not confirmed events. Only entries marked 'officially confirmed' have been verified by an authority."
@@ -22,7 +22,7 @@
   },
   "timeline": [
     {
-      "t": "2026-07-16T07:49:12.196281+00:00",
+      "t": "2026-07-16T07:56:55.521856+00:00",
       "total_items": 20,
       "overall": {
         "positive": 6,
@@ -36,7 +36,7 @@
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T07:49:12.343805+00:00",
+      "t": "2026-07-16T07:56:55.676821+00:00",
       "total_items": 20,
       "overall": {
         "positive": 6,
@@ -50,7 +50,7 @@
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T07:49:12.460851+00:00",
+      "t": "2026-07-16T07:56:55.800771+00:00",
       "total_items": 20,
       "overall": {
         "positive": 6,
@@ -78,11 +78,11 @@
       "net_sentiment_index": 40.0,
       "momentum": [
         {
-          "t": "2026-07-16T07:49:12.196281+00:00",
+          "t": "2026-07-16T07:56:55.521856+00:00",
           "net_sentiment_index": 40.0
         },
         {
-          "t": "2026-07-16T07:49:12.343805+00:00",
+          "t": "2026-07-16T07:56:55.676821+00:00",
           "net_sentiment_index": 40.0
         }
       ],
@@ -218,23 +218,50 @@
     {
       "headline": "Nyagah closes campaign in Ol Kalou",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:49:12.454359+00:00",
+      "timestamp": "2026-07-16T07:56:55.793969+00:00",
       "url": null,
       "sentiment_label": "positive"
     },
     {
       "headline": "IEBC reports smooth opening",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:49:12.454359+00:00",
+      "timestamp": "2026-07-16T07:56:55.793969+00:00",
       "url": null,
       "sentiment_label": "unscored"
     },
     {
       "headline": "Security deployed after clash reported",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:49:12.454359+00:00",
+      "timestamp": "2026-07-16T07:56:55.793969+00:00",
       "url": null,
       "sentiment_label": "positive"
+    }
+  ],
+  "institutional_statements": [
+    {
+      "id": "amnesty-kenya-2026-07-12",
+      "title": "Amnesty Kenya calls for investigation into election offences ahead of Ol Kalou by-election",
+      "source": "Amnesty International Kenya",
+      "url": "https://www.amnestykenya.org/authorities-must-investigate-election-offences-and-safeguard-the-integrity-of-the-ol-kalou-by-election/",
+      "timestamp": "2026-07-12T00:00:00+03:00",
+      "summary": "Amnesty Kenya urged IEBC, the ODPP, and the EACC to investigate and prosecute reported voter inducement, misuse of public resources, and campaign-period violence ahead of the by-election, and asked IEBC to confirm the vote would not proceed under conditions it could not certify as credible.",
+      "verified_via": [
+        "Amnesty International Kenya's own official statement page",
+        "Independent coverage: Daily Nation, The Star, Kenyans.co.ke, KBC Digital, Kahawatungu"
+      ]
+    }
+  ],
+  "official_references": [
+    {
+      "label": "IEBC official X account",
+      "handle": "@IEBCKenya",
+      "url": "https://x.com/IEBCKenya",
+      "note": "Authoritative source for official notices, gazette information, and results."
+    },
+    {
+      "label": "IEBC website",
+      "url": "https://www.iebc.or.ke/news/",
+      "note": "Official election preparedness updates and results."
     }
   ],
   "quality": {
@@ -250,8 +277,8 @@
       "id": "ol-kalou-2026:security",
       "category": "security",
       "status": "reported",
-      "first_seen": "2026-07-16T07:49:12.189504+00:00",
-      "last_updated": "2026-07-16T07:49:12.454359+00:00",
+      "first_seen": "2026-07-16T07:56:55.515481+00:00",
+      "last_updated": "2026-07-16T07:56:55.793969+00:00",
       "item_count": 10,
       "independent_source_count": 9,
       "confidence": "higher",

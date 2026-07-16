@@ -34,8 +34,13 @@ class AcceptanceTests(unittest.TestCase):
         for forbidden_key in ("raw_text", "author_ref", "platform_id", "normalized_text", "redacted_text"):
             self.assertNotIn(f'"{forbidden_key}"', self.payload_str,
                               f"Forbidden field '{forbidden_key}' leaked into public payload")
-        self.assertNotIn("@", self.payload_str.replace("@election", ""),  # crude handle sniff, allow the word "email" etc if ever added
-                          "Possible @handle leaked into public payload")
+        # official_references is a deliberate, human-reviewed citation allowlist (e.g. IEBC's
+        # own official handle) - exempt it from the crude handle-sniff below, which exists to
+        # catch handles leaking out of collected items, not out of a curated reference list.
+        payload_minus_refs = {k: v for k, v in self.payload.items() if k != "official_references"}
+        payload_minus_refs_str = json.dumps(payload_minus_refs).replace("@election", "")
+        self.assertNotIn("@", payload_minus_refs_str,
+                          "Possible @handle leaked into public payload outside official_references")
 
     def test_03_candidate_aliases_resolve(self):
         """Every configured candidate id appears in the output (suppressed or not)."""
@@ -147,6 +152,18 @@ class AcceptanceTests(unittest.TestCase):
             self.assertGreaterEqual(t["count"], floor)
         for t in self.payload.get("trending_hashtags", []):
             self.assertGreaterEqual(t["count"], floor)
+
+
+    def test_20_official_references_excludes_political_figures_and_private_citizens(self):
+        """Official references may only cite institutional/official channels (e.g. IEBC) -
+        never a political figure's personal account or a private citizen's handle."""
+        cfg = json.load(open(os.path.join(ROOT, "config", "official_references.json")))
+        banned_substrings = ["ruto", "gachagua", "waiguru", "mbarire", "kinuthia", "npsofficial"]
+        for ref in cfg.get("official_references", []):
+            blob = json.dumps(ref).lower()
+            for banned in banned_substrings:
+                self.assertNotIn(banned, blob,
+                                  f"Found '{banned}' in official_references - only institutional channels belong here")
 
 
 if __name__ == "__main__":

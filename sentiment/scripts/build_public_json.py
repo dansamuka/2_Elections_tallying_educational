@@ -35,6 +35,8 @@ MODULE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # thi
 REPO_ROOT = os.path.dirname(MODULE_ROOT)  # actual repo root - data/public/ that pages.yml deploys lives here
 CONFIG_PATH = os.path.join(MODULE_ROOT, "config", "sentiment_config.json")
 OVERRIDES_PATH = os.path.join(MODULE_ROOT, "config", "incident_overrides.json")
+OFFICIAL_REFS_PATH = os.path.join(MODULE_ROOT, "config", "official_references.json")
+INSTITUTIONAL_STATEMENTS_PATH = os.path.join(MODULE_ROOT, "config", "institutional_statements.json")
 PRIVATE_DIR = os.path.join(MODULE_ROOT, "data", "private", "sentiment")  # self-contained, never published
 AUDIT_DIR = os.path.join(PRIVATE_DIR, "audit")  # private evidence trail - see pipeline_audit.py
 PUBLIC_PATH = os.path.join(REPO_ROOT, "data", "public", "sentiment", "latest.json")
@@ -117,6 +119,8 @@ def main():
     cfg = load_json(CONFIG_PATH, {})
     alias_index = build_alias_index(cfg["candidates"])
     overrides = load_json(OVERRIDES_PATH, {"overrides": []}).get("overrides", [])
+    official_references = load_json(OFFICIAL_REFS_PATH, {"official_references": []}).get("official_references", [])
+    institutional_statements = load_json(INSTITUTIONAL_STATEMENTS_PATH, {"statements": []}).get("statements", [])
     previous_public = load_json(PUBLIC_PATH, {})
     previous_alerts = {a["id"]: a for a in previous_public.get("alerts", [])}
     previous_timeline = previous_public.get("timeline", [])
@@ -305,6 +309,8 @@ def main():
         "trending_hashtags": trending_hashtags,
         "sources": [{"outlet": k, "count": v} for k, v in sorted(outlet_counts.items(), key=lambda kv: -kv[1])],
         "articles": articles_out,
+        "institutional_statements": institutional_statements,
+        "official_references": official_references,
         "quality": quality,
         "alerts": alerts_out,
     }

@@ -144,6 +144,15 @@
   .news-sentiment.neutral, .news-sentiment.unscored{color:var(--paper-dim);}
   .news-empty{color:var(--paper-dim); font-style:italic; font-size:13px; padding:12px 4px;}
 
+  /* ---------------- institutional statements (human-verified, distinct from auto-collected news) ---------------- */
+  .inst-card{border:1px solid var(--rule); border-left:3px solid var(--brass); background:var(--ink-2); padding:14px 16px; margin-bottom:10px;}
+  .inst-tag{font-size:10px; text-transform:uppercase; letter-spacing:1.5px; color:var(--brass); margin-bottom:6px;}
+  .inst-title{font-family:var(--serif); font-size:15.5px; color:var(--paper); text-decoration:none; display:block;}
+  .inst-title:hover{color:var(--brass-bright);}
+  .inst-summary{font-size:12.5px; color:var(--paper-dim); margin-top:6px;}
+  .inst-meta{font-size:11px; color:var(--paper-dimmer); margin-top:8px;}
+  .inst-empty{color:var(--paper-dim); font-style:italic; font-size:13px;}
+
   /* ---------------- quality ---------------- */
   .donut-row{display:flex; gap:28px; flex-wrap:wrap; align-items:center;}
   .donut-block{display:flex; align-items:center; gap:12px;}
@@ -202,6 +211,9 @@
   <div class="alert-disclaimer-note" id="alertDisclaimer" style="margin-bottom:10px;"></div>
   <div class="alerts" id="alerts"></div>
 
+  <div class="section-label">Notable institutional statements<span class="section-sub">human-verified before publication — never auto-scraped</span></div>
+  <div id="institutionalStatements"></div>
+
   <div class="section-label">News framing<span class="section-sub">title, source, timestamp, and link only — never republished in full</span></div>
   <div class="news-river" id="newsRiver"></div>
 
@@ -225,6 +237,7 @@
     <a href="index.html">← Back to tallying dashboard</a>
     <span>Shared election id: ol-kalou-2026</span>
     <span>Auto-refreshes every 60s</span>
+    <span id="officialRefs"></span>
   </div>
 </div>
 
@@ -232,8 +245,8 @@
 const DEMO_FALLBACK = {
   "meta": {
     "election_id": "ol-kalou-2026",
-    "generated_at": "2026-07-16T07:48:58.245978+00:00",
-    "collection_cursor": "2026-07-16T07:48:58.245978+00:00",
+    "generated_at": "2026-07-16T07:54:52.697194+00:00",
+    "collection_cursor": "2026-07-16T07:54:52.697194+00:00",
     "mode": "demo",
     "disclaimer": "This dashboard measures online discussion, not voter intention. X users and news coverage are not representative of Ol Kalou voters. Sentiment models can misread sarcasm, Kikuyu, Kiswahili, Sheng, names, quotations, and political slogans. Official election information and results come from IEBC.",
     "alert_disclaimer": "Alerts reflect volume and repetition in public conversation, not confirmed events. Only entries marked 'officially confirmed' have been verified by an authority."
@@ -253,7 +266,7 @@ const DEMO_FALLBACK = {
   },
   "timeline": [
     {
-      "t": "2026-07-16T00:18:58.283704+00:00",
+      "t": "2026-07-16T00:25:47.640447+00:00",
       "total_items": 18,
       "overall": {
         "positive": 6,
@@ -267,7 +280,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T00:33:58.283704+00:00",
+      "t": "2026-07-16T00:40:47.640447+00:00",
       "total_items": 21,
       "overall": {
         "positive": 7,
@@ -281,7 +294,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T00:48:58.283704+00:00",
+      "t": "2026-07-16T00:55:47.640447+00:00",
       "total_items": 19,
       "overall": {
         "positive": 7,
@@ -295,7 +308,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T01:03:58.283704+00:00",
+      "t": "2026-07-16T01:10:47.640447+00:00",
       "total_items": 23,
       "overall": {
         "positive": 8,
@@ -309,7 +322,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T01:18:58.283704+00:00",
+      "t": "2026-07-16T01:25:47.640447+00:00",
       "total_items": 18,
       "overall": {
         "positive": 8,
@@ -323,7 +336,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T01:33:58.283704+00:00",
+      "t": "2026-07-16T01:40:47.640447+00:00",
       "total_items": 20,
       "overall": {
         "positive": 9,
@@ -337,7 +350,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T01:48:58.283704+00:00",
+      "t": "2026-07-16T01:55:47.640447+00:00",
       "total_items": 22,
       "overall": {
         "positive": 8,
@@ -351,7 +364,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T02:03:58.283704+00:00",
+      "t": "2026-07-16T02:10:47.640447+00:00",
       "total_items": 20,
       "overall": {
         "positive": 9,
@@ -365,7 +378,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T02:18:58.283704+00:00",
+      "t": "2026-07-16T02:25:47.640447+00:00",
       "total_items": 23,
       "overall": {
         "positive": 9,
@@ -379,7 +392,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T02:33:58.283704+00:00",
+      "t": "2026-07-16T02:40:47.640447+00:00",
       "total_items": 19,
       "overall": {
         "positive": 7,
@@ -393,7 +406,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T02:48:58.283704+00:00",
+      "t": "2026-07-16T02:55:47.640447+00:00",
       "total_items": 23,
       "overall": {
         "positive": 9,
@@ -407,7 +420,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T03:03:58.283704+00:00",
+      "t": "2026-07-16T03:10:47.640447+00:00",
       "total_items": 20,
       "overall": {
         "positive": 6,
@@ -421,7 +434,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T03:18:58.283704+00:00",
+      "t": "2026-07-16T03:25:47.640447+00:00",
       "total_items": 20,
       "overall": {
         "positive": 7,
@@ -435,7 +448,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T03:33:58.283704+00:00",
+      "t": "2026-07-16T03:40:47.640447+00:00",
       "total_items": 20,
       "overall": {
         "positive": 5,
@@ -449,7 +462,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T03:48:58.283704+00:00",
+      "t": "2026-07-16T03:55:47.640447+00:00",
       "total_items": 16,
       "overall": {
         "positive": 4,
@@ -463,7 +476,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T04:03:58.283704+00:00",
+      "t": "2026-07-16T04:10:47.640447+00:00",
       "total_items": 18,
       "overall": {
         "positive": 5,
@@ -477,7 +490,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T04:18:58.283704+00:00",
+      "t": "2026-07-16T04:25:47.640447+00:00",
       "total_items": 20,
       "overall": {
         "positive": 4,
@@ -491,7 +504,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T04:33:58.283704+00:00",
+      "t": "2026-07-16T04:40:47.640447+00:00",
       "total_items": 19,
       "overall": {
         "positive": 4,
@@ -505,7 +518,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T04:48:58.283704+00:00",
+      "t": "2026-07-16T04:55:47.640447+00:00",
       "total_items": 22,
       "overall": {
         "positive": 4,
@@ -519,7 +532,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 0
     },
     {
-      "t": "2026-07-16T05:03:58.283704+00:00",
+      "t": "2026-07-16T05:10:47.640447+00:00",
       "total_items": 19,
       "overall": {
         "positive": 3,
@@ -533,7 +546,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T05:18:58.283704+00:00",
+      "t": "2026-07-16T05:25:47.640447+00:00",
       "total_items": 20,
       "overall": {
         "positive": 4,
@@ -547,7 +560,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T05:33:58.283704+00:00",
+      "t": "2026-07-16T05:40:47.640447+00:00",
       "total_items": 20,
       "overall": {
         "positive": 4,
@@ -561,7 +574,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T05:48:58.283704+00:00",
+      "t": "2026-07-16T05:55:47.640447+00:00",
       "total_items": 19,
       "overall": {
         "positive": 4,
@@ -575,7 +588,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T06:03:58.283704+00:00",
+      "t": "2026-07-16T06:10:47.640447+00:00",
       "total_items": 21,
       "overall": {
         "positive": 4,
@@ -589,7 +602,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T06:18:58.283704+00:00",
+      "t": "2026-07-16T06:25:47.640447+00:00",
       "total_items": 19,
       "overall": {
         "positive": 5,
@@ -603,7 +616,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T06:33:58.283704+00:00",
+      "t": "2026-07-16T06:40:47.640447+00:00",
       "total_items": 19,
       "overall": {
         "positive": 5,
@@ -617,7 +630,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T06:48:58.283704+00:00",
+      "t": "2026-07-16T06:55:47.640447+00:00",
       "total_items": 22,
       "overall": {
         "positive": 7,
@@ -631,7 +644,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T07:03:58.283704+00:00",
+      "t": "2026-07-16T07:10:47.640447+00:00",
       "total_items": 23,
       "overall": {
         "positive": 7,
@@ -645,7 +658,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T07:18:58.283704+00:00",
+      "t": "2026-07-16T07:25:47.640447+00:00",
       "total_items": 20,
       "overall": {
         "positive": 8,
@@ -659,7 +672,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T07:33:58.283704+00:00",
+      "t": "2026-07-16T07:40:47.640447+00:00",
       "total_items": 19,
       "overall": {
         "positive": 9,
@@ -673,7 +686,7 @@ const DEMO_FALLBACK = {
       "active_alerts": 1
     },
     {
-      "t": "2026-07-16T07:48:58.245978+00:00",
+      "t": "2026-07-16T07:54:52.697194+00:00",
       "total_items": 20,
       "overall": {
         "positive": 6,
@@ -701,127 +714,127 @@ const DEMO_FALLBACK = {
       "net_sentiment_index": 40.0,
       "momentum": [
         {
-          "t": "2026-07-16T00:18:58.283704+00:00",
+          "t": "2026-07-16T00:25:47.640447+00:00",
           "net_sentiment_index": 37.8
         },
         {
-          "t": "2026-07-16T00:33:58.283704+00:00",
+          "t": "2026-07-16T00:40:47.640447+00:00",
           "net_sentiment_index": 43.7
         },
         {
-          "t": "2026-07-16T00:48:58.283704+00:00",
+          "t": "2026-07-16T00:55:47.640447+00:00",
           "net_sentiment_index": 46.7
         },
         {
-          "t": "2026-07-16T01:03:58.283704+00:00",
+          "t": "2026-07-16T01:10:47.640447+00:00",
           "net_sentiment_index": 47.8
         },
         {
-          "t": "2026-07-16T01:18:58.283704+00:00",
+          "t": "2026-07-16T01:25:47.640447+00:00",
           "net_sentiment_index": 52.3
         },
         {
-          "t": "2026-07-16T01:33:58.283704+00:00",
+          "t": "2026-07-16T01:40:47.640447+00:00",
           "net_sentiment_index": 49.4
         },
         {
-          "t": "2026-07-16T01:48:58.283704+00:00",
+          "t": "2026-07-16T01:55:47.640447+00:00",
           "net_sentiment_index": 56.4
         },
         {
-          "t": "2026-07-16T02:03:58.283704+00:00",
+          "t": "2026-07-16T02:10:47.640447+00:00",
           "net_sentiment_index": 55.2
         },
         {
-          "t": "2026-07-16T02:18:58.283704+00:00",
+          "t": "2026-07-16T02:25:47.640447+00:00",
           "net_sentiment_index": 52.5
         },
         {
-          "t": "2026-07-16T02:33:58.283704+00:00",
+          "t": "2026-07-16T02:40:47.640447+00:00",
           "net_sentiment_index": 57.5
         },
         {
-          "t": "2026-07-16T02:48:58.283704+00:00",
+          "t": "2026-07-16T02:55:47.640447+00:00",
           "net_sentiment_index": 56.3
         },
         {
-          "t": "2026-07-16T03:03:58.283704+00:00",
+          "t": "2026-07-16T03:10:47.640447+00:00",
           "net_sentiment_index": 53.7
         },
         {
-          "t": "2026-07-16T03:18:58.283704+00:00",
+          "t": "2026-07-16T03:25:47.640447+00:00",
           "net_sentiment_index": 50.4
         },
         {
-          "t": "2026-07-16T03:33:58.283704+00:00",
+          "t": "2026-07-16T03:40:47.640447+00:00",
           "net_sentiment_index": 49.2
         },
         {
-          "t": "2026-07-16T03:48:58.283704+00:00",
+          "t": "2026-07-16T03:55:47.640447+00:00",
           "net_sentiment_index": 47.6
         },
         {
-          "t": "2026-07-16T04:03:58.283704+00:00",
+          "t": "2026-07-16T04:10:47.640447+00:00",
           "net_sentiment_index": 45.4
         },
         {
-          "t": "2026-07-16T04:18:58.283704+00:00",
+          "t": "2026-07-16T04:25:47.640447+00:00",
           "net_sentiment_index": 39.1
         },
         {
-          "t": "2026-07-16T04:33:58.283704+00:00",
+          "t": "2026-07-16T04:40:47.640447+00:00",
           "net_sentiment_index": 33.3
         },
         {
-          "t": "2026-07-16T04:48:58.283704+00:00",
+          "t": "2026-07-16T04:55:47.640447+00:00",
           "net_sentiment_index": 32.8
         },
         {
-          "t": "2026-07-16T05:03:58.283704+00:00",
+          "t": "2026-07-16T05:10:47.640447+00:00",
           "net_sentiment_index": 30.8
         },
         {
-          "t": "2026-07-16T05:18:58.283704+00:00",
+          "t": "2026-07-16T05:25:47.640447+00:00",
           "net_sentiment_index": 25.9
         },
         {
-          "t": "2026-07-16T05:33:58.283704+00:00",
+          "t": "2026-07-16T05:40:47.640447+00:00",
           "net_sentiment_index": 27.7
         },
         {
-          "t": "2026-07-16T05:48:58.283704+00:00",
+          "t": "2026-07-16T05:55:47.640447+00:00",
           "net_sentiment_index": 27.2
         },
         {
-          "t": "2026-07-16T06:03:58.283704+00:00",
+          "t": "2026-07-16T06:10:47.640447+00:00",
           "net_sentiment_index": 23.8
         },
         {
-          "t": "2026-07-16T06:18:58.283704+00:00",
+          "t": "2026-07-16T06:25:47.640447+00:00",
           "net_sentiment_index": 28.1
         },
         {
-          "t": "2026-07-16T06:33:58.283704+00:00",
+          "t": "2026-07-16T06:40:47.640447+00:00",
           "net_sentiment_index": 28.9
         },
         {
-          "t": "2026-07-16T06:48:58.283704+00:00",
+          "t": "2026-07-16T06:55:47.640447+00:00",
           "net_sentiment_index": 27.6
         },
         {
-          "t": "2026-07-16T07:03:58.283704+00:00",
+          "t": "2026-07-16T07:10:47.640447+00:00",
           "net_sentiment_index": 31.8
         },
         {
-          "t": "2026-07-16T07:18:58.283704+00:00",
+          "t": "2026-07-16T07:25:47.640447+00:00",
           "net_sentiment_index": 33.6
         },
         {
-          "t": "2026-07-16T07:33:58.283704+00:00",
+          "t": "2026-07-16T07:40:47.640447+00:00",
           "net_sentiment_index": 36.1
         },
         {
-          "t": "2026-07-16T07:48:58.245978+00:00",
+          "t": "2026-07-16T07:54:52.697194+00:00",
           "net_sentiment_index": 40.0
         }
       ],
@@ -957,23 +970,50 @@ const DEMO_FALLBACK = {
     {
       "headline": "Nyagah closes campaign in Ol Kalou",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:48:58.239104+00:00",
+      "timestamp": "2026-07-16T07:54:52.689161+00:00",
       "url": null,
       "sentiment_label": "positive"
     },
     {
       "headline": "IEBC reports smooth opening",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:48:58.239104+00:00",
+      "timestamp": "2026-07-16T07:54:52.689161+00:00",
       "url": null,
       "sentiment_label": "unscored"
     },
     {
       "headline": "Security deployed after clash reported",
       "outlet": "example-news.co.ke",
-      "timestamp": "2026-07-16T07:48:58.239104+00:00",
+      "timestamp": "2026-07-16T07:54:52.689161+00:00",
       "url": null,
       "sentiment_label": "positive"
+    }
+  ],
+  "institutional_statements": [
+    {
+      "id": "amnesty-kenya-2026-07-12",
+      "title": "Amnesty Kenya calls for investigation into election offences ahead of Ol Kalou by-election",
+      "source": "Amnesty International Kenya",
+      "url": "https://www.amnestykenya.org/authorities-must-investigate-election-offences-and-safeguard-the-integrity-of-the-ol-kalou-by-election/",
+      "timestamp": "2026-07-12T00:00:00+03:00",
+      "summary": "Amnesty Kenya urged IEBC, the ODPP, and the EACC to investigate and prosecute reported voter inducement, misuse of public resources, and campaign-period violence ahead of the by-election, and asked IEBC to confirm the vote would not proceed under conditions it could not certify as credible.",
+      "verified_via": [
+        "Amnesty International Kenya's own official statement page",
+        "Independent coverage: Daily Nation, The Star, Kenyans.co.ke, KBC Digital, Kahawatungu"
+      ]
+    }
+  ],
+  "official_references": [
+    {
+      "label": "IEBC official X account",
+      "handle": "@IEBCKenya",
+      "url": "https://x.com/IEBCKenya",
+      "note": "Authoritative source for official notices, gazette information, and results."
+    },
+    {
+      "label": "IEBC website",
+      "url": "https://www.iebc.or.ke/news/",
+      "note": "Official election preparedness updates and results."
     }
   ],
   "quality": {
@@ -989,8 +1029,8 @@ const DEMO_FALLBACK = {
       "id": "ol-kalou-2026:security",
       "category": "security",
       "status": "reported",
-      "first_seen": "2026-07-16T07:48:58.239104+00:00",
-      "last_updated": "2026-07-16T07:48:58.239104+00:00",
+      "first_seen": "2026-07-16T07:54:52.689161+00:00",
+      "last_updated": "2026-07-16T07:54:52.689161+00:00",
       "item_count": 10,
       "independent_source_count": 9,
       "confidence": "higher",
@@ -1336,6 +1376,29 @@ function renderAlerts(data){
   `).join('');
 }
 
+function renderInstitutionalStatements(data){
+  const el = document.getElementById('institutionalStatements');
+  const statements = data.institutional_statements || [];
+  if (!statements.length){
+    el.innerHTML = '<div class="inst-empty">No human-verified institutional statements logged this window.</div>';
+    return;
+  }
+  el.innerHTML = statements.map(s => `
+    <div class="inst-card">
+      <div class="inst-tag">${escapeHtml(s.source || 'Institutional statement')}</div>
+      ${s.url ? `<a class="inst-title" href="${s.url}" target="_blank" rel="noopener">${escapeHtml(s.title)}</a>` : `<span class="inst-title">${escapeHtml(s.title)}</span>`}
+      <div class="inst-summary">${escapeHtml(s.summary || '')}</div>
+      <div class="inst-meta">${s.timestamp ? new Date(s.timestamp).toLocaleDateString() : ''}${s.verified_via ? ' · Verified via: ' + s.verified_via.map(escapeHtml).join('; ') : ''}</div>
+    </div>`).join('');
+}
+
+function renderOfficialRefs(data){
+  const refs = data.official_references || [];
+  const el = document.getElementById('officialRefs');
+  if (!refs.length) { el.textContent = ''; return; }
+  el.innerHTML = 'Official channels: ' + refs.map(r => `<a href="${r.url}" target="_blank" rel="noopener">${escapeHtml(r.label)}</a>`).join(' · ');
+}
+
 function renderNews(data){
   const el = document.getElementById('newsRiver');
   if(!data.articles.length){
@@ -1395,8 +1458,10 @@ function render(data, isDemo){
   renderLeaderboard(data);
   renderTopics(data);
   renderAlerts(data);
+  renderInstitutionalStatements(data);
   renderNews(data);
   renderQuality(data);
+  renderOfficialRefs(data);
 }
 
 // Path differs between local/dev layout (frontend/ and data/ as siblings under

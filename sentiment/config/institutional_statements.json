@@ -1,0 +1,14 @@
+{
+  "_readme": "Add verified institutional/NGO statements here by hand, after confirming the statement independently (its own official page plus at least one other credible outlet). Summaries must be paraphrased, not quoted verbatim - keep any direct quote under 15 words and use at most one per entry. This file is functionally the same as a news article per SPECIFICATION.md Section 4.5 (title/source/timestamp/link only) - the difference is provenance (human-verified institutional statement vs. automated GDELT collection), not treatment.",
+  "statements": [
+    {
+      "id": "amnesty-kenya-2026-07-12",
+      "title": "Amnesty Kenya calls for investigation into election offences ahead of Ol Kalou by-election",
+      "source": "Amnesty International Kenya",
+      "url": "https://www.amnestykenya.org/authorities-must-investigate-election-offences-and-safeguard-the-integrity-of-the-ol-kalou-by-election/",
+      "timestamp": "2026-07-12T00:00:00+03:00",
+      "summary": "Amnesty Kenya urged IEBC, the ODPP, and the EACC to investigate and prosecute reported voter inducement, misuse of public resources, and campaign-period violence ahead of the by-election, and asked IEBC to confirm the vote would not proceed under conditions it could not certify as credible.",
+      "verified_via": ["Amnesty International Kenya's own official statement page", "Independent coverage: Daily Nation, The Star, Kenyans.co.ke, KBC Digital, Kahawatungu"]
+    }
+  ]
+}

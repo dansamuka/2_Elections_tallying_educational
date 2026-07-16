@@ -1,0 +1,16 @@
+{
+  "_readme": "Cited reference links only - these are never scraped, followed, or run through sentiment analysis. They exist so the dashboard can point to authoritative official channels, the same way SPECIFICATION.md Section 13 already links to IEBC's site.",
+  "official_references": [
+    {
+      "label": "IEBC official X account",
+      "handle": "@IEBCKenya",
+      "url": "https://x.com/IEBCKenya",
+      "note": "Authoritative source for official notices, gazette information, and results."
+    },
+    {
+      "label": "IEBC website",
+      "url": "https://www.iebc.or.ke/news/",
+      "note": "Official election preparedness updates and results."
+    }
+  ]
+}
