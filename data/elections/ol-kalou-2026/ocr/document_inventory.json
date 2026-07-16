@@ -1,15 +1,151 @@
 {
   "schema": "kenya.election.ocr-inventory.v1",
   "election_id": "ol-kalou-2026",
-  "generated_at": "2026-07-15T11:26:54.541953Z",
+  "generated_at": "2026-07-16T18:10:27.566308Z",
   "roots": [
     "data/elections/ol-kalou-2026/documents",
     "data/elections/ol-kalou-2026/forms",
     "data/uploads/ol-kalou-2026",
     "data/public/elections/ol-kalou-2026/forms"
   ],
-  "documents_total": 0,
-  "pages_total": 0,
+  "documents_total": 9,
+  "pages_total": 9,
   "duplicates_collapsed": 0,
-  "documents": []
+  "documents": [
+    {
+      "sha256": "04d445ee0071f75dd73dd426e76cdae8bad4a370920d2fda15d616eff66adbdf",
+      "path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_04d445ee0071.pdf",
+      "aliases": [
+        "data/public/elections/ol-kalou-2026/forms/unmatched/v1_04d445ee0071.pdf"
+      ],
+      "filename": "v1_04d445ee0071.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 524841,
+      "pages": 1,
+      "modified_at": "2026-07-16T18:10:26.062296Z",
+      "public_path": "data/public/elections/ol-kalou-2026/forms/uploaded/04d445ee0071f75d.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/04d445ee0071f75d.pdf"
+    },
+    {
+      "sha256": "0c1d010a17c7dab568b02c3d4ba4b595a3a5f8df368d2fd220f4d931e604e614",
+      "path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_0c1d010a17c7.pdf",
+      "aliases": [
+        "data/public/elections/ol-kalou-2026/forms/unmatched/v1_0c1d010a17c7.pdf"
+      ],
+      "filename": "v1_0c1d010a17c7.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 541577,
+      "pages": 1,
+      "modified_at": "2026-07-16T18:10:26.307621Z",
+      "public_path": "data/public/elections/ol-kalou-2026/forms/uploaded/0c1d010a17c7dab5.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/0c1d010a17c7dab5.pdf"
+    },
+    {
+      "sha256": "13fcd600bbd6354147f006a1a8565e086c2a124011fe52685d00dbd09841ae42",
+      "path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_13fcd600bbd6.pdf",
+      "aliases": [
+        "data/public/elections/ol-kalou-2026/forms/unmatched/v1_13fcd600bbd6.pdf"
+      ],
+      "filename": "v1_13fcd600bbd6.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 539508,
+      "pages": 1,
+      "modified_at": "2026-07-16T18:10:26.788873Z",
+      "public_path": "data/public/elections/ol-kalou-2026/forms/uploaded/13fcd600bbd63541.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/13fcd600bbd63541.pdf"
+    },
+    {
+      "sha256": "349245b383bece42a34a4909d1768166cd1b4cfdfb0cb713c3098d9a6d62eaa4",
+      "path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_349245b383be.pdf",
+      "aliases": [
+        "data/public/elections/ol-kalou-2026/forms/unmatched/v1_349245b383be.pdf"
+      ],
+      "filename": "v1_349245b383be.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 544273,
+      "pages": 1,
+      "modified_at": "2026-07-16T18:10:25.612959Z",
+      "public_path": "data/public/elections/ol-kalou-2026/forms/uploaded/349245b383bece42.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/349245b383bece42.pdf"
+    },
+    {
+      "sha256": "3b2d9ecc68f0c08cf4db08c68d1924f940a62c4d4c85d643be8d3bd4042df074",
+      "path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_3b2d9ecc68f0.pdf",
+      "aliases": [
+        "data/public/elections/ol-kalou-2026/forms/unmatched/v1_3b2d9ecc68f0.pdf"
+      ],
+      "filename": "v1_3b2d9ecc68f0.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 496241,
+      "pages": 1,
+      "modified_at": "2026-07-16T18:10:27.269509Z",
+      "public_path": "data/public/elections/ol-kalou-2026/forms/uploaded/3b2d9ecc68f0c08c.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/3b2d9ecc68f0c08c.pdf"
+    },
+    {
+      "sha256": "651511a84e73f0db645310ccd536de6de3b194bf0ae3ac3d104a0484ba36b478",
+      "path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_651511a84e73.pdf",
+      "aliases": [
+        "data/public/elections/ol-kalou-2026/forms/unmatched/v1_651511a84e73.pdf"
+      ],
+      "filename": "v1_651511a84e73.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 523459,
+      "pages": 1,
+      "modified_at": "2026-07-16T18:10:24.956360Z",
+      "public_path": "data/public/elections/ol-kalou-2026/forms/uploaded/651511a84e73f0db.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/651511a84e73f0db.pdf"
+    },
+    {
+      "sha256": "726cc97d23e8eccfd8f37697ef254c77ce8a85173b417e5a8d3854e5f366e877",
+      "path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_726cc97d23e8.pdf",
+      "aliases": [
+        "data/public/elections/ol-kalou-2026/forms/unmatched/v1_726cc97d23e8.pdf"
+      ],
+      "filename": "v1_726cc97d23e8.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 534799,
+      "pages": 1,
+      "modified_at": "2026-07-16T18:10:27.510056Z",
+      "public_path": "data/public/elections/ol-kalou-2026/forms/uploaded/726cc97d23e8eccf.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/726cc97d23e8eccf.pdf"
+    },
+    {
+      "sha256": "bb588c545b41e776b03dbc7957b03769d48fbf8e156efb41e89036091ed7b3af",
+      "path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_bb588c545b41.pdf",
+      "aliases": [
+        "data/public/elections/ol-kalou-2026/forms/unmatched/v1_bb588c545b41.pdf"
+      ],
+      "filename": "v1_bb588c545b41.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 521333,
+      "pages": 1,
+      "modified_at": "2026-07-16T18:10:26.548762Z",
+      "public_path": "data/public/elections/ol-kalou-2026/forms/uploaded/bb588c545b41e776.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/bb588c545b41e776.pdf"
+    },
+    {
+      "sha256": "f487e1a1f069068b888b75b455271106bc1ea2ce80ff52a6f5b26682aafb8c87",
+      "path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_f487e1a1f069.pdf",
+      "aliases": [
+        "data/public/elections/ol-kalou-2026/forms/unmatched/v1_f487e1a1f069.pdf"
+      ],
+      "filename": "v1_f487e1a1f069.pdf",
+      "extension": ".pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 517426,
+      "pages": 1,
+      "modified_at": "2026-07-16T18:10:27.030345Z",
+      "public_path": "data/public/elections/ol-kalou-2026/forms/uploaded/f487e1a1f069068b.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/f487e1a1f069068b.pdf"
+    }
+  ]
 }

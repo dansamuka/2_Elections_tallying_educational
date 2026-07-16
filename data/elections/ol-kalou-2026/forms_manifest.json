@@ -1,16 +1,405 @@
 {
   "schema": "kenya.election.forms-manifest.v1",
   "election_id": "ol-kalou-2026",
-  "forms": {},
+  "forms": {
+    "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6640": {
+      "stream_key": null,
+      "polling_station_code": null,
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6640",
+      "source_label": "16/07/2026 - MNA MUNYEKI PRIMARY 02 Reported",
+      "form_type": "35A",
+      "county_name": "NYANDARUA",
+      "constituency_name": "OL KALOU",
+      "ward_name": "KARAU",
+      "ward_code": null,
+      "polling_centre_name": "MUNYEKI PRIMARY",
+      "polling_centre_code": null,
+      "hierarchy_path": [
+        "NYANDARUA",
+        "OL KALOU",
+        "KARAU",
+        "MUNYEKI PRIMARY"
+      ],
+      "discovered_at": "2026-07-16T18:10:24.956690Z",
+      "checked_at": "2026-07-16T18:10:24.956693Z",
+      "sha256": "651511a84e73f0db645310ccd536de6de3b194bf0ae3ac3d104a0484ba36b478",
+      "version": 1,
+      "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_651511a84e73.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_651511a84e73.pdf",
+      "downloaded_at": "2026-07-16T18:10:24.956779Z",
+      "content_type": "application/pdf",
+      "etag": null,
+      "last_modified": null,
+      "versions": [
+        {
+          "version": 1,
+          "sha256": "651511a84e73f0db645310ccd536de6de3b194bf0ae3ac3d104a0484ba36b478",
+          "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_651511a84e73.pdf",
+          "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_651511a84e73.pdf",
+          "downloaded_at": "2026-07-16T18:10:24.956660Z"
+        }
+      ],
+      "extracted_files": []
+    },
+    "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6654": {
+      "stream_key": null,
+      "polling_station_code": null,
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6654",
+      "source_label": "16/07/2026 - MNA ST JOSEPH PRIMARY SCHOOL 01 Reported",
+      "form_type": "35A",
+      "county_name": "NYANDARUA",
+      "constituency_name": "OL KALOU",
+      "ward_name": "KARAU",
+      "ward_code": null,
+      "polling_centre_name": "ST JOSEPH PRIMARY SCHOOL",
+      "polling_centre_code": null,
+      "hierarchy_path": [
+        "NYANDARUA",
+        "OL KALOU",
+        "KARAU",
+        "ST JOSEPH PRIMARY SCHOOL"
+      ],
+      "discovered_at": "2026-07-16T18:10:25.613274Z",
+      "checked_at": "2026-07-16T18:10:25.613277Z",
+      "sha256": "349245b383bece42a34a4909d1768166cd1b4cfdfb0cb713c3098d9a6d62eaa4",
+      "version": 1,
+      "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_349245b383be.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_349245b383be.pdf",
+      "downloaded_at": "2026-07-16T18:10:25.613356Z",
+      "content_type": "application/pdf",
+      "etag": null,
+      "last_modified": null,
+      "versions": [
+        {
+          "version": 1,
+          "sha256": "349245b383bece42a34a4909d1768166cd1b4cfdfb0cb713c3098d9a6d62eaa4",
+          "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_349245b383be.pdf",
+          "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_349245b383be.pdf",
+          "downloaded_at": "2026-07-16T18:10:25.613247Z"
+        }
+      ],
+      "extracted_files": []
+    },
+    "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6685": {
+      "stream_key": null,
+      "polling_station_code": null,
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6685",
+      "source_label": "16/07/2026 - MNA WANJURA PRIMARY 01 Reported",
+      "form_type": "35A",
+      "county_name": "NYANDARUA",
+      "constituency_name": "OL KALOU",
+      "ward_name": "KANJUIRI RANGE",
+      "ward_code": null,
+      "polling_centre_name": "WANJURA PRIMARY",
+      "polling_centre_code": null,
+      "hierarchy_path": [
+        "NYANDARUA",
+        "OL KALOU",
+        "KANJUIRI RANGE",
+        "WANJURA PRIMARY"
+      ],
+      "discovered_at": "2026-07-16T18:10:26.062583Z",
+      "checked_at": "2026-07-16T18:10:26.062586Z",
+      "sha256": "04d445ee0071f75dd73dd426e76cdae8bad4a370920d2fda15d616eff66adbdf",
+      "version": 1,
+      "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_04d445ee0071.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_04d445ee0071.pdf",
+      "downloaded_at": "2026-07-16T18:10:26.062664Z",
+      "content_type": "application/pdf",
+      "etag": null,
+      "last_modified": null,
+      "versions": [
+        {
+          "version": 1,
+          "sha256": "04d445ee0071f75dd73dd426e76cdae8bad4a370920d2fda15d616eff66adbdf",
+          "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_04d445ee0071.pdf",
+          "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_04d445ee0071.pdf",
+          "downloaded_at": "2026-07-16T18:10:26.062559Z"
+        }
+      ],
+      "extracted_files": []
+    },
+    "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6754": {
+      "stream_key": null,
+      "polling_station_code": null,
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6754",
+      "source_label": "16/07/2026 - MNA GITHUNGURI PRIMARY 01 Reported",
+      "form_type": "35A",
+      "county_name": "NYANDARUA",
+      "constituency_name": "OL KALOU",
+      "ward_name": "RURII",
+      "ward_code": null,
+      "polling_centre_name": "GITHUNGURI PRIMARY",
+      "polling_centre_code": null,
+      "hierarchy_path": [
+        "NYANDARUA",
+        "OL KALOU",
+        "RURII",
+        "GITHUNGURI PRIMARY"
+      ],
+      "discovered_at": "2026-07-16T18:10:26.307908Z",
+      "checked_at": "2026-07-16T18:10:26.307911Z",
+      "sha256": "0c1d010a17c7dab568b02c3d4ba4b595a3a5f8df368d2fd220f4d931e604e614",
+      "version": 1,
+      "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_0c1d010a17c7.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_0c1d010a17c7.pdf",
+      "downloaded_at": "2026-07-16T18:10:26.307990Z",
+      "content_type": "application/pdf",
+      "etag": null,
+      "last_modified": null,
+      "versions": [
+        {
+          "version": 1,
+          "sha256": "0c1d010a17c7dab568b02c3d4ba4b595a3a5f8df368d2fd220f4d931e604e614",
+          "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_0c1d010a17c7.pdf",
+          "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_0c1d010a17c7.pdf",
+          "downloaded_at": "2026-07-16T18:10:26.307887Z"
+        }
+      ],
+      "extracted_files": []
+    },
+    "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6755": {
+      "stream_key": null,
+      "polling_station_code": null,
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6755",
+      "source_label": "16/07/2026 - MNA GITHUNGURI PRIMARY 02 Reported",
+      "form_type": "35A",
+      "county_name": "NYANDARUA",
+      "constituency_name": "OL KALOU",
+      "ward_name": "RURII",
+      "ward_code": null,
+      "polling_centre_name": "GITHUNGURI PRIMARY",
+      "polling_centre_code": null,
+      "hierarchy_path": [
+        "NYANDARUA",
+        "OL KALOU",
+        "RURII",
+        "GITHUNGURI PRIMARY"
+      ],
+      "discovered_at": "2026-07-16T18:10:26.549049Z",
+      "checked_at": "2026-07-16T18:10:26.549053Z",
+      "sha256": "bb588c545b41e776b03dbc7957b03769d48fbf8e156efb41e89036091ed7b3af",
+      "version": 1,
+      "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_bb588c545b41.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_bb588c545b41.pdf",
+      "downloaded_at": "2026-07-16T18:10:26.549147Z",
+      "content_type": "application/pdf",
+      "etag": null,
+      "last_modified": null,
+      "versions": [
+        {
+          "version": 1,
+          "sha256": "bb588c545b41e776b03dbc7957b03769d48fbf8e156efb41e89036091ed7b3af",
+          "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_bb588c545b41.pdf",
+          "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_bb588c545b41.pdf",
+          "downloaded_at": "2026-07-16T18:10:26.549029Z"
+        }
+      ],
+      "extracted_files": []
+    },
+    "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6756": {
+      "stream_key": null,
+      "polling_station_code": null,
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6756",
+      "source_label": "16/07/2026 - MNA GITHUNGURI PRIMARY 03 Reported",
+      "form_type": "35A",
+      "county_name": "NYANDARUA",
+      "constituency_name": "OL KALOU",
+      "ward_name": "RURII",
+      "ward_code": null,
+      "polling_centre_name": "GITHUNGURI PRIMARY",
+      "polling_centre_code": null,
+      "hierarchy_path": [
+        "NYANDARUA",
+        "OL KALOU",
+        "RURII",
+        "GITHUNGURI PRIMARY"
+      ],
+      "discovered_at": "2026-07-16T18:10:26.789193Z",
+      "checked_at": "2026-07-16T18:10:26.789196Z",
+      "sha256": "13fcd600bbd6354147f006a1a8565e086c2a124011fe52685d00dbd09841ae42",
+      "version": 1,
+      "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_13fcd600bbd6.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_13fcd600bbd6.pdf",
+      "downloaded_at": "2026-07-16T18:10:26.789274Z",
+      "content_type": "application/pdf",
+      "etag": null,
+      "last_modified": null,
+      "versions": [
+        {
+          "version": 1,
+          "sha256": "13fcd600bbd6354147f006a1a8565e086c2a124011fe52685d00dbd09841ae42",
+          "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_13fcd600bbd6.pdf",
+          "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_13fcd600bbd6.pdf",
+          "downloaded_at": "2026-07-16T18:10:26.789172Z"
+        }
+      ],
+      "extracted_files": []
+    },
+    "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6768": {
+      "stream_key": null,
+      "polling_station_code": null,
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6768",
+      "source_label": "16/07/2026 - MNA RURII PRIMARY SCHOOL 01 Reported",
+      "form_type": "35A",
+      "county_name": "NYANDARUA",
+      "constituency_name": "OL KALOU",
+      "ward_name": "RURII",
+      "ward_code": null,
+      "polling_centre_name": "RURII PRIMARY SCHOOL",
+      "polling_centre_code": null,
+      "hierarchy_path": [
+        "NYANDARUA",
+        "OL KALOU",
+        "RURII",
+        "RURII PRIMARY SCHOOL"
+      ],
+      "discovered_at": "2026-07-16T18:10:27.030639Z",
+      "checked_at": "2026-07-16T18:10:27.030642Z",
+      "sha256": "f487e1a1f069068b888b75b455271106bc1ea2ce80ff52a6f5b26682aafb8c87",
+      "version": 1,
+      "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_f487e1a1f069.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_f487e1a1f069.pdf",
+      "downloaded_at": "2026-07-16T18:10:27.030724Z",
+      "content_type": "application/pdf",
+      "etag": null,
+      "last_modified": null,
+      "versions": [
+        {
+          "version": 1,
+          "sha256": "f487e1a1f069068b888b75b455271106bc1ea2ce80ff52a6f5b26682aafb8c87",
+          "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_f487e1a1f069.pdf",
+          "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_f487e1a1f069.pdf",
+          "downloaded_at": "2026-07-16T18:10:27.030612Z"
+        }
+      ],
+      "extracted_files": []
+    },
+    "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6772": {
+      "stream_key": null,
+      "polling_station_code": null,
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6772",
+      "source_label": "16/07/2026 - MNA KAHONGE PRIMARY SCHOOL 01 Reported",
+      "form_type": "35A",
+      "county_name": "NYANDARUA",
+      "constituency_name": "OL KALOU",
+      "ward_name": "RURII",
+      "ward_code": null,
+      "polling_centre_name": "KAHONGE PRIMARY SCHOOL",
+      "polling_centre_code": null,
+      "hierarchy_path": [
+        "NYANDARUA",
+        "OL KALOU",
+        "RURII",
+        "KAHONGE PRIMARY SCHOOL"
+      ],
+      "discovered_at": "2026-07-16T18:10:27.269797Z",
+      "checked_at": "2026-07-16T18:10:27.269801Z",
+      "sha256": "3b2d9ecc68f0c08cf4db08c68d1924f940a62c4d4c85d643be8d3bd4042df074",
+      "version": 1,
+      "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_3b2d9ecc68f0.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_3b2d9ecc68f0.pdf",
+      "downloaded_at": "2026-07-16T18:10:27.269875Z",
+      "content_type": "application/pdf",
+      "etag": null,
+      "last_modified": null,
+      "versions": [
+        {
+          "version": 1,
+          "sha256": "3b2d9ecc68f0c08cf4db08c68d1924f940a62c4d4c85d643be8d3bd4042df074",
+          "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_3b2d9ecc68f0.pdf",
+          "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_3b2d9ecc68f0.pdf",
+          "downloaded_at": "2026-07-16T18:10:27.269775Z"
+        }
+      ],
+      "extracted_files": []
+    },
+    "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6773": {
+      "stream_key": null,
+      "polling_station_code": null,
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6773",
+      "source_label": "16/07/2026 - MNA JM HOSPITAL NURSERY SCHOOL 01 Reported",
+      "form_type": "35A",
+      "county_name": "NYANDARUA",
+      "constituency_name": "OL KALOU",
+      "ward_name": "RURII",
+      "ward_code": null,
+      "polling_centre_name": "JM HOSPITAL NURSERY SCHOOL",
+      "polling_centre_code": null,
+      "hierarchy_path": [
+        "NYANDARUA",
+        "OL KALOU",
+        "RURII",
+        "JM HOSPITAL NURSERY SCHOOL"
+      ],
+      "discovered_at": "2026-07-16T18:10:27.510378Z",
+      "checked_at": "2026-07-16T18:10:27.510382Z",
+      "sha256": "726cc97d23e8eccfd8f37697ef254c77ce8a85173b417e5a8d3854e5f366e877",
+      "version": 1,
+      "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_726cc97d23e8.pdf",
+      "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_726cc97d23e8.pdf",
+      "downloaded_at": "2026-07-16T18:10:27.510458Z",
+      "content_type": "application/pdf",
+      "etag": null,
+      "last_modified": null,
+      "versions": [
+        {
+          "version": 1,
+          "sha256": "726cc97d23e8eccfd8f37697ef254c77ce8a85173b417e5a8d3854e5f366e877",
+          "archive_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_726cc97d23e8.pdf",
+          "public_url": "../data/public/elections/ol-kalou-2026/forms/unmatched/v1_726cc97d23e8.pdf",
+          "downloaded_at": "2026-07-16T18:10:27.510357Z"
+        }
+      ],
+      "extracted_files": []
+    }
+  },
   "index": {
     "etag": null,
     "last_modified": null
   },
-  "last_portal_ok": "2026-07-15T01:14:09.471311Z",
-  "discovered_count": 0,
+  "last_portal_ok": "2026-07-16T18:10:27.510761Z",
+  "discovered_count": 9,
   "matched_count": 0,
-  "downloaded_count": 0,
-  "portal_reported": 0,
+  "downloaded_count": 9,
+  "portal_reported": 9,
   "portal_expected": 144,
-  "unmatched": []
+  "unmatched": [
+    {
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6640",
+      "source_label": "16/07/2026 - MNA MUNYEKI PRIMARY 02 Reported"
+    },
+    {
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6654",
+      "source_label": "16/07/2026 - MNA ST JOSEPH PRIMARY SCHOOL 01 Reported"
+    },
+    {
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6685",
+      "source_label": "16/07/2026 - MNA WANJURA PRIMARY 01 Reported"
+    },
+    {
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6754",
+      "source_label": "16/07/2026 - MNA GITHUNGURI PRIMARY 01 Reported"
+    },
+    {
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6755",
+      "source_label": "16/07/2026 - MNA GITHUNGURI PRIMARY 02 Reported"
+    },
+    {
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6756",
+      "source_label": "16/07/2026 - MNA GITHUNGURI PRIMARY 03 Reported"
+    },
+    {
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6768",
+      "source_label": "16/07/2026 - MNA RURII PRIMARY SCHOOL 01 Reported"
+    },
+    {
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6772",
+      "source_label": "16/07/2026 - MNA KAHONGE PRIMARY SCHOOL 01 Reported"
+    },
+    {
+      "source_url": "https://forms.iebc.or.ke/index.php?r=site%2Fdownload&id=6773",
+      "source_label": "16/07/2026 - MNA JM HOSPITAL NURSERY SCHOOL 01 Reported"
+    }
+  ]
 }

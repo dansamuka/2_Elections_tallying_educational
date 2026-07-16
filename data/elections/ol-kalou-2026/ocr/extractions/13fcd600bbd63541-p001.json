@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
+  "election_id": "ol-kalou-2026",
+  "page_id": "13fcd600bbd63541-p001",
+  "source_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_13fcd600bbd6.pdf",
+  "source_sha256": "13fcd600bbd6354147f006a1a8565e086c2a124011fe52685d00dbd09841ae42",
+  "source_filename": "v1_13fcd600bbd6.pdf",
+  "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/13fcd600bbd63541.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "gcv",
+  "confidence": 0.7323076923076923,
+  "text_length": 7123,
+  "text_preview": "FORM 35 A\nNA160726-108804\nELECTORALANDBOUT\nCOMMISSIONINDEPENDENT\nESCOMMISSIONINDEPENDENTEL\nSSIONINDEPENDENTELECTO\nNDENTELECTORALANDBOUND\nOUNDARIESCOMMISSIONINDEPENT\nALANDBOUNDARIESCOMMISSIONINDE\nANDBOUN\nMISSIO\nUND Ward\nDBOU\nELECTORAL AN\nCOMMISSION\nIEBC\nTour Tour Fuere\nENDENT ELECTORAL A\nBOUNDAR BOUNDARIE\nAND BOUNGAN\nCOMM\n(Reg. 79(2)(b))\nMEMBER OF NATIONAL ASSEMBLY BY-ELECTION RESULTS ONINDEPENDENTELECTOR\nMISSIONINDEPENDENTELECTORALANDE\nPENDENTELECTORALANDBOUND\nANDBOUNDARIESCOMMISSIONINDEPEND\nLECTORAL ALANDARIESCOMMISSION\nUND Name of Polling Station GITHUNGURI PRIMARY POLLING STATION 3 of 3\nDBOT Constituency\nRIESC\nLECT County\nPENDENTEL\nALAN\nSNING Name of Candidate\nRURII\nPENC\nOL KALOU\nNYANDARUA\nES\nAT THE POLLING STATION\nUNDARIES\nMISSION\nSIONIN\nDENTELL\nCOMMISSIONIND\nDEP Number of votes cast in favour of each candidate:\nOBO\nJEPE\nUND\n1. ABDIFATAH HUSSEIN ABDULLAHI\nNDEN 2. TIMOTHY KAMAU KARIUKI\nRIEST\nSCOM\nTELE 3. WILSON MWANIKI KIGWA\nMISS\nECTOR 4. EDWIN KARIIRI MUCHIRI.COM\nSIONI\nDEP\nNDE\nINDBOU\nINDEPENDEN\nSTORALANDBOUND RIESCOR\nINDEPENDENTELECT\nRALAND 5. EDWARD MATHENGE MWANIKIOUNDARIES MISS\nANDEO 6.DRACHAEL WANGUI NJOROGE DARIESCOMMI\nENDE\nOUNDAR SAMUEL MUCHINA NYAGAH\nTELE\nARIE C8. STEPHEN WANYOIKE WAITHAKA\nCOMM\nORA\nANDBO\nESCO\n9. SAMMY DOUGLAS KAMAU WAWERU\nSSION Total number of valid votes cast\nDEPENDENTELECTOMIS\nNINDEPE ENTER\nENTELECTORANDBOO\nJNDA Polling Station Counts INDARIES OMMIS\nDENTS\nESCO\nENTELECTOR\nELECTORALANDB\nANDBOUN\nDEPENDE\nBOUNDARIESCOMM\nESCOMMIS\nORA\nISSIONINDEPE\nISSIONINDENDENTELECTORAL SOUNDAR\nBOUNDARIE OONINDEPENDENT\n1. Total Number of Registered Voters in the Polling Station;\n2. Total Number of Rejected Ballot Papers;\nLECTO\nMISSI\nALAN\nINDER\nJUND\nNDENT\nESCO\nLECTOR\nBOUNDARI\nBOUNDARIESCO\nSIONT\nTELECTORALANDBO\nENTELECTORALANDBOUNDARIESCO\nANDBOUNDARIESECTORALANDE\nCode P018091045705303SSIONINDEP\nOUNDARIESCOMMISSIONIND\nOBOUNDARIESCOMMISSIONINDEPENDENTELECTORALANDBOUNDARIESCOMMISSIONINDEPENDEN\nPARSCOMMISSIONINDEPENDENTELECTORALANDBOUNDAR\nUNDARIESCOMMISSIONINDEPENDENTECTORALANDBOUNDARIESCOMMISSIONINDEPEN\nAND INDARIESCOMMISTONINDE DENTELECTORALANDBOUNDARIESCOMMISSIONINDEP\nDENTELECTORALANDBOUNDARIESCOMMIS\nECTO\nEPENDENTELE\nSIONING\nNo. of Valid Votes Obtained\nNDEPEND\nOMMISSIONINDEPENDE CTOR Decision(s) on disputed votes if any\nNDBOU\nDEN\n3. Total Number of Rejection Objected to Ballot Papers;\n4. Total Number of Disputed Votes;\n5. Total Number of Valid Votes Cast;\nMISSIONINDEPEN\nALAND\nINDER\nDeclaration\nCOUNDAR\nNDENT\nESCOM\nECTOR\nMISSIONIN\nLANDE\nMMISSIO\nCOMM\nCTORALANDBO\nBOUR\nENTER\nMISSIONINDEPENDENTEL TOR\nANDLENDARIES COMMISS INDER\n488\n002 1.\n000 2\nOBO\nRALANDBOU ARE\nDEPENDENTELECT\nALA\nARIES\nANDBOUNDA\nCOMMISSIONINDEPENDENT\nCode DE\n0457\n091\nCode\nCode 018\nISSION\nLA SOUND\nWINDEPENDY\nNDBOUNDARY\nEPENDENTE\nNDARIESCO\nRENTELECT\nOMMIF\nECTORA\nOMMISSION\nLAND\nPNING\nDBOU\nEPEND\nUNDAF\n000\n000 DENT\nRIESCO\nMMISS\n000 LECT\n000RALAR\n000BOUT\n000 PARIE\nONING\nEPEND\nTELE\n039 COMM\nTORA\n001SION\n274\nANDBC\nDEPEN\nNDARI\nENTELI\n314NTEL\nSerial number of Ballot Paper (s) with disputed ",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DCP": {
+        "value": 9,
+        "confidence": 0.78
+      },
+      "candidate_JUBILEE": {
+        "value": 3,
+        "confidence": 0.78
+      },
+      "candidate_PNU": {
+        "value": 4,
+        "confidence": 0.78
+      },
+      "candidate_PDP": {
+        "value": 6,
+        "confidence": 0.78
+      },
+      "candidate_KMM": {
+        "value": 5,
+        "confidence": 0.78
+      },
+      "candidate_FPK": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_PRP": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "candidate_NLP": {
+        "value": 27631953,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.82
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.82
+      },
+      "total_cast": {
+        "value": 7,
+        "confidence": 0.82
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": 4,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DCP": "9. SAMMY DOUGLAS KAMAU WAWERU",
+      "candidate_JUBILEE": "TELE 3. WILSON MWANIKI KIGWA",
+      "candidate_PNU": "ECTOR 4. EDWIN KARIIRI MUCHIRI.COM",
+      "candidate_PDP": "ANDEO 6.DRACHAEL WANGUI NJOROGE DARIESCOMMI",
+      "candidate_KMM": "RALAND 5. EDWARD MATHENGE MWANIKIOUNDARIES MISS",
+      "candidate_FPK": "1. ABDIFATAH HUSSEIN ABDULLAHI",
+      "candidate_PRP": "NDEN 2. TIMOTHY KAMAU KARIUKI",
+      "candidate_NLP": "STEPHEN MWANGI 27631953",
+      "registered": "1. Total Number of Registered Voters in the Polling Station;",
+      "rejected": "2. Total Number of Rejected Ballot Papers;",
+      "total_valid": "5. Total Number of Valid Votes Cast;",
+      "total_cast": "derived: total_valid (5) + rejected (2)",
+      "rejection_objections": "3. Total Number of Rejection Objected to Ballot Papers;",
+      "disputed_votes": "4. Total Number of Disputed Votes;"
+    }
+  },
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "018091045705303",
+    "constituency_code": "091",
+    "ward_code": "0457",
+    "polling_centre_code": "053",
+    "stream_no": 3,
+    "stream_key": "091-0457-053-03",
+    "ward_name": "RURII",
+    "polling_centre_name": "GITHUNGURI PRIMARY DBOT",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 018091045705303",
+      "printed/portal ward RURII",
+      "printed/portal centre GITHUNGURI PRIMARY DBOT"
+    ]
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-16T18:11:31.153782Z"
+}

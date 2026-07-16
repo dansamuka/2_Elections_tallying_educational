@@ -1,7 +1,7 @@
 {
   "schema": "kenya.election.archive.v1",
-  "seq": 1784114814708,
-  "generated_at": "2026-07-15T11:26:54.708506Z",
+  "seq": 1784225637680,
+  "generated_at": "2026-07-16T18:13:57.680468Z",
   "mode": "LIVE",
   "election_id": "ol-kalou-2026",
   "election": {
@@ -13,7 +13,7 @@
     "date": "2026-07-16",
     "position": "Member of the National Assembly"
   },
-  "status": "PRE_POLL",
+  "status": "COUNTING",
   "reference": {
     "complete": false,
     "errors": [
@@ -31,10 +31,10 @@
   },
   "pipeline_health": {
     "watcher": "UPDATED",
-    "extractor": "MANUAL_REVIEW",
-    "last_portal_ok": "2026-07-15T01:14:09.471311Z",
-    "last_sync_completed": "2026-07-15T11:26:54.707290Z",
-    "last_sync_changed": "2026-07-15T11:26:54.707290Z",
+    "extractor": "OCR_REVIEW_READY",
+    "last_portal_ok": "2026-07-16T18:10:27.510761Z",
+    "last_sync_completed": "2026-07-16T18:13:57.677814Z",
+    "last_sync_changed": "2026-07-16T18:13:57.677814Z",
     "worker_id": "github-actions-or-manual"
   },
   "coverage": {
@@ -207,32 +207,56 @@
       "schema": "kenya.election.ocr-summary.v1",
       "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
       "election_id": "ol-kalou-2026",
-      "generated_at": "2026-07-15T11:26:54.701825Z",
+      "generated_at": "2026-07-16T18:13:57.670328Z",
       "engine_mode": "auto",
       "engines_available": [
-        "tesseract"
+        "gcv"
       ],
-      "documents_total": 0,
-      "pages_total": 0,
-      "pages_available": 0,
-      "pages_selected": 0,
+      "documents_total": 9,
+      "pages_total": 9,
+      "pages_available": 9,
+      "pages_selected": 9,
       "page_limit": null,
       "pilot": false,
-      "pages_processed": 0,
-      "layout_assisted_pages": 0,
-      "form35a_detected": 0,
+      "pages_processed": 9,
+      "layout_assisted_pages": 7,
+      "form35a_detected": 9,
       "form35b_detected": 0,
       "streams_matched": 0,
       "review_rows": 0,
-      "routes": {},
-      "errors": [],
+      "routes": {
+        "QUARANTINE": 9
+      },
+      "errors": [
+        {
+          "page_id": "04d445ee0071f75d-p001",
+          "engine": "layout-handwriting",
+          "message": "(-8, '')"
+        },
+        {
+          "page_id": "13fcd600bbd63541-p001",
+          "engine": "layout-handwriting",
+          "message": "(-8, '')"
+        }
+      ],
       "hierarchy": {
         "changed": false,
         "mapped": 0,
         "unresolved": 0,
         "errors": []
       },
-      "cloud_crop_ocr": null,
+      "cloud_crop_ocr": {
+        "engine": "gcv-document-text-crop",
+        "request_limit": 250,
+        "requests": 82,
+        "fields_considered": 82,
+        "responses": 82,
+        "usable_values": 31,
+        "rejected_values": 51,
+        "failures": 0,
+        "retries": 0,
+        "skipped_request_limit": 0
+      },
       "review_queue": "data/elections/ol-kalou-2026/ocr/review_queue.csv",
       "inventory": "data/elections/ol-kalou-2026/ocr/document_inventory.json",
       "auto_publication": false,
@@ -242,33 +266,33 @@
       "schema": "kenya.election.portal-sync.v1",
       "election_id": "ol-kalou-2026",
       "state": "UPDATED",
-      "last_started_at": "2026-07-15T11:26:26.153059Z",
-      "last_completed_at": "2026-07-15T11:26:54.707290Z",
-      "last_changed_at": "2026-07-15T11:26:54.707290Z",
+      "last_started_at": "2026-07-16T18:09:56.030163Z",
+      "last_completed_at": "2026-07-16T18:13:57.677814Z",
+      "last_changed_at": "2026-07-16T18:13:57.677814Z",
       "portal_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
       "engine_mode": "auto",
       "archive": {
         "election_id": "ol-kalou-2026",
-        "status": "NO_CHANGE",
-        "changed": false,
-        "discovered": 0,
+        "status": "UPDATED",
+        "changed": true,
+        "discovered": 9,
         "matched": 0,
-        "downloaded": 0,
-        "unique_downloads": 0,
+        "downloaded": 9,
+        "unique_downloads": 9,
         "duplicate_assignments": 0,
         "failed_downloads": 0,
-        "new_downloads": 0,
+        "new_downloads": 9,
         "changed_downloads": 0,
-        "unmatched": 0,
-        "portal_reported": 0,
+        "unmatched": 9,
+        "portal_reported": 9,
         "portal_expected": 144,
         "stream_roster_bootstrapped": false
       },
       "ocr": {
         "ran": true,
-        "pages_processed": 0,
+        "pages_processed": 9,
         "review_rows": 0,
-        "errors": 0
+        "errors": 2
       },
       "coverage": {
         "streams_total": 144,
@@ -290,12 +314,12 @@
       },
       "message": "New or changed IEBC forms were downloaded and the dashboard was rebuilt."
     },
-    "portal_discovered": 0,
-    "portal_downloaded": 0,
-    "portal_unique_files": 0,
+    "portal_discovered": 9,
+    "portal_downloaded": 9,
+    "portal_unique_files": 9,
     "portal_duplicate_assignments": 0,
     "portal_failed_downloads": 0,
-    "portal_unmatched": 0
+    "portal_unmatched": 9
   },
   "wards": [
     {
