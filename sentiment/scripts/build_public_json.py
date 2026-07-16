@@ -27,21 +27,18 @@ import pipeline_classify
 import pipeline_sentiment
 import pipeline_confidence
 import pipeline_alerts
+import pipeline_audit
 from lib.candidate_alias import build_alias_index
 from lib.redact import to_public_safe, assert_no_secrets_leaked
 
-# MODULE_ROOT = this "sentiment/" folder (holds config/, scripts/, tests/).
-# REPO_ROOT = one level up - the actual repo root, where the EXISTING
-# data/public/ folder lives (data/public/elections, data/public/live.json,
-# etc). pages.yml's build step only copies repo-root data/public/. into the
-# deployed site, so the alert/sentiment JSON has to land there too, not in a
-# module-local data/public/ that the real deploy pipeline never sees.
-MODULE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REPO_ROOT = os.path.dirname(MODULE_ROOT)
+MODULE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # this "sentiment/" folder
+REPO_ROOT = os.path.dirname(MODULE_ROOT)  # actual repo root - data/public/ that pages.yml deploys lives here
 CONFIG_PATH = os.path.join(MODULE_ROOT, "config", "sentiment_config.json")
 OVERRIDES_PATH = os.path.join(MODULE_ROOT, "config", "incident_overrides.json")
 PRIVATE_DIR = os.path.join(MODULE_ROOT, "data", "private", "sentiment")  # self-contained, never published
+AUDIT_DIR = os.path.join(PRIVATE_DIR, "audit")  # private evidence trail - see pipeline_audit.py
 PUBLIC_PATH = os.path.join(REPO_ROOT, "data", "public", "sentiment", "latest.json")
+TIMELINE_MAX_POINTS = 500  # ~5 days of history at a 15-minute cadence, keeps payload size sane
 
 REQUIRED_NOTICE = (
     "This dashboard measures online discussion, not voter intention. X users and "
@@ -122,6 +119,7 @@ def main():
     overrides = load_json(OVERRIDES_PATH, {"overrides": []}).get("overrides", [])
     previous_public = load_json(PUBLIC_PATH, {})
     previous_alerts = {a["id"]: a for a in previous_public.get("alerts", [])}
+    previous_timeline = previous_public.get("timeline", [])
     previous_cursor = previous_public.get("meta", {}).get("collection_cursor")
 
     raw_items = make_demo_items() if args.demo else load_raw_items()
@@ -156,6 +154,14 @@ def main():
         scored = pos + neg + neu
         net_index = round(((pos - neg) / scored) * 100, 1) if scored else None
 
+        # Momentum (Section 4.3): net-sentiment history from prior runs, capped
+        # to the last 40 points (~10 hours at 15-min cadence) so a candidate
+        # card doesn't need to carry the whole multi-day timeline itself.
+        momentum = [
+            {"t": p.get("t"), "net_sentiment_index": p.get("candidates", {}).get(cand["id"])}
+            for p in previous_timeline[-40:]
+        ]
+
         candidates_out.append({
             "id": cand["id"], "name": cand["name"], "party": cand["party"],
             "suppressed": False,
@@ -163,6 +169,7 @@ def main():
             "positive": pos, "neutral": neu, "negative": neg,
             "unscored": conf["item_count"] - scored,
             "net_sentiment_index": net_index,
+            "momentum": momentum,
             "source_mix": {"x": conf["x_count"], "news": conf["news_count"], "manual": conf["manual_count"]},
             "confidence": conf["label"],
         })
@@ -228,8 +235,27 @@ def main():
     # ---- alerts (Addendum) ----
     alerts_out = pipeline_alerts.generate(items, cfg, previous_alerts, overrides)
 
-    # ---- final payload ----
     generated_at = datetime.now(timezone.utc).isoformat()
+
+    # ---- timeline (Section 4.3 "momentum over time" + overall trend chart) ----
+    # One point per run. Candidate values are None for suppressed/no-data candidates
+    # rather than 0, so the dashboard can render a gap instead of a misleading flat line.
+    overall_balance = {
+        "positive": sum(1 for i in items if i.get("sentiment_label") == "positive"),
+        "neutral": sum(1 for i in items if i.get("sentiment_label") == "neutral"),
+        "negative": sum(1 for i in items if i.get("sentiment_label") == "negative"),
+        "unscored": sum(1 for i in items if i.get("sentiment_label") == "unscored"),
+    }
+    timeline_point = {
+        "t": generated_at,
+        "total_items": total_relevant,
+        "overall": overall_balance,
+        "candidates": {c["id"]: c.get("net_sentiment_index") for c in candidates_out if not c["suppressed"]},
+        "active_alerts": len(alerts_out),
+    }
+    timeline_out = (previous_timeline + [timeline_point])[-TIMELINE_MAX_POINTS:]
+
+    # ---- final payload ----
     payload = {
         "meta": {
             "election_id": cfg["election_id"],
@@ -245,14 +271,9 @@ def main():
             "news_items": len(articles_out),
             "unique_source_estimate": len({a for i in items for a in i.get("author_buckets", set())}),
             "duplicated_share": quality["repost_share"],
-            "overall_balance": {
-                "positive": sum(1 for i in items if i.get("sentiment_label") == "positive"),
-                "neutral": sum(1 for i in items if i.get("sentiment_label") == "neutral"),
-                "negative": sum(1 for i in items if i.get("sentiment_label") == "negative"),
-                "unscored": sum(1 for i in items if i.get("sentiment_label") == "unscored"),
-            },
+            "overall_balance": overall_balance,
         },
-        "timeline": [],  # populated by successive runs appending a point; left for the Actions workflow to accumulate
+        "timeline": timeline_out,
         "candidates": candidates_out,
         "topics": topics_out,
         "sources": [{"outlet": k, "count": v} for k, v in sorted(outlet_counts.items(), key=lambda kv: -kv[1])],
@@ -270,7 +291,15 @@ def main():
     with open(PUBLIC_PATH, "w") as f:
         json.dump(payload, f, indent=2)
 
+    # ---- private audit trail (traceability) ----
+    # Deliberately written AFTER the public payload and to a path this module's
+    # own .gitignore excludes - see pipeline_audit.py's docstring for why this
+    # must never become a GitHub Actions artifact on this public repo.
+    audit_record = pipeline_audit.build_audit_record(items, cfg, generated_at, alerts_out)
+    audit_path = pipeline_audit.write_audit_record(audit_record, AUDIT_DIR)
+
     print(f"Wrote {PUBLIC_PATH} ({total_relevant} items, {len(alerts_out)} active alerts).")
+    print(f"Wrote private audit record to {audit_path} (not committed, not published - see workflow's evidence-trail step).")
 
 
 if __name__ == "__main__":

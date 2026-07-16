@@ -97,9 +97,35 @@ jobs:
         if: steps.window.outputs.should_run == 'true'
         run: cd sentiment/scripts && python3 build_public_json.py --mode live
 
-      - name: Clear private raw layer
+      - name: Push evidence trail to private repo (optional, for traceability)
         if: steps.window.outputs.should_run == 'true'
-        run: rm -f sentiment/data/private/sentiment/*_raw.jsonl
+        env:
+          EVIDENCE_REPO: ${{ vars.EVIDENCE_REPO }}
+          EVIDENCE_REPO_TOKEN: ${{ secrets.EVIDENCE_REPO_TOKEN }}
+        run: |
+          if [ -z "$EVIDENCE_REPO" ] || [ -z "$EVIDENCE_REPO_TOKEN" ]; then
+            echo "EVIDENCE_REPO / EVIDENCE_REPO_TOKEN not configured - skipping evidence trail push. Raw data for this run will simply be discarded below (safe default, no traceability)."
+            exit 0
+          fi
+          AUDIT_DIR="sentiment/data/private/sentiment/audit"
+          if [ -z "$(ls -A "$AUDIT_DIR" 2>/dev/null)" ]; then
+            echo "No audit files produced this run - nothing to push."
+            exit 0
+          fi
+          rm -rf /tmp/evidence_repo
+          git clone --depth 1 "https://${EVIDENCE_REPO_TOKEN}@github.com/${EVIDENCE_REPO}.git" /tmp/evidence_repo
+          mkdir -p /tmp/evidence_repo/runs
+          cp "$AUDIT_DIR"/*.json /tmp/evidence_repo/runs/
+          cd /tmp/evidence_repo
+          git config user.name "sentiment-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add runs/
+          git diff --quiet --cached || git commit -m "Evidence trail $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
+
+      - name: Clear private raw and audit layers
+        if: steps.window.outputs.should_run == 'true'
+        run: rm -f sentiment/data/private/sentiment/*_raw.jsonl sentiment/data/private/sentiment/audit/*.json
 
       - name: Commit public payload
         if: steps.window.outputs.should_run == 'true'

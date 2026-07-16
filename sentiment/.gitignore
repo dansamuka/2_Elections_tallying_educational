@@ -1,6 +1,7 @@
 # Private raw ingestion layer must never be committed - Section 3.2 / Section 5.
 data/private/sentiment/*.jsonl
 data/private/sentiment/*.json
+data/private/sentiment/audit/
 !data/private/sentiment/.gitkeep
 __pycache__/
 *.pyc

@@ -13,7 +13,7 @@ import sys
 import unittest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # sentiment/ module root
-REPO_ROOT = os.path.dirname(ROOT)  # actual repo root - one level up
+REPO_ROOT = os.path.dirname(ROOT)  # actual repo root - one level up (frontend/, data/public/ live here)
 SCRIPTS = os.path.join(ROOT, "scripts")
 PUBLIC_PATH = os.path.join(REPO_ROOT, "data", "public", "sentiment", "latest.json")
 
@@ -69,6 +69,9 @@ class AcceptanceTests(unittest.TestCase):
         html = open(os.path.join(REPO_ROOT, "frontend", "sentiment.html")).read()
         self.assertIn("DEMO_FALLBACK", html)
         self.assertIn("render(DEMO_FALLBACK, true)", html)
+        # Sanity check the chart functions this dashboard relies on are present.
+        for fn in ("function trendChart", "function sparkline", "function donutChart"):
+            self.assertIn(fn, html)
 
     def test_10_module_never_touches_tallying_paths(self):
         """No script in this module writes outside data/, config/, or docs/sentiment/."""
@@ -110,6 +113,21 @@ class AcceptanceTests(unittest.TestCase):
         alerts = pa.generate(items, cfg, {}, overrides)
         self.assertEqual(alerts[0]["status"], "retracted")
         self.assertTrue(alerts[0]["override_applied"])
+
+
+    def test_16_audit_directory_is_gitignored(self):
+        """The private audit trail (raw text, unhashed author refs) must never be committable."""
+        gitignore = open(os.path.join(ROOT, ".gitignore")).read()
+        self.assertIn("data/private/sentiment/audit/", gitignore)
+
+    def test_17_timeline_accumulates_across_runs(self):
+        """A second run should append to, not replace, the timeline."""
+        before_len = len(self.payload["timeline"])
+        subprocess.run([sys.executable, "build_public_json.py", "--demo", "--mode", "demo"],
+                        cwd=SCRIPTS, check=True)
+        with open(PUBLIC_PATH) as f:
+            after = json.load(f)
+        self.assertEqual(len(after["timeline"]), before_len + 1)
 
 
 if __name__ == "__main__":

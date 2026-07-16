@@ -14,7 +14,7 @@ means I couldn't hit the live X/GDELT endpoints from here):**
 - GDELT news collector (`collect_news_gdelt.py`)
 - Manual incident notes (`collect_manual_notes.py`)
 - Early-alert logic per the addendum: corroboration thresholds, severity ladder, human override hook
-- Dashboard (`frontend/sentiment.html`, linked from the existing nav) with a bundled demo fallback
+- Dashboard (`docs/sentiment/index.html`) with a bundled demo fallback
 - GitHub Actions workflow with observation-window gating and cursor advancement
 - 9 automated acceptance tests (`tests/test_acceptance.py`) - all passing
 
@@ -32,10 +32,8 @@ means I couldn't hit the live X/GDELT endpoints from here):**
    `X_ACCESS_TOKEN_SECRET`, `X_USER_ID` for authenticated home-timeline mode,
    and set the repository variable `SENTIMENT_X_MODE` to `private_home` or
    `hybrid`.
-4. Nothing extra needed for Pages - `frontend/sentiment.html` and
-   `data/public/sentiment/latest.json` both sit inside the paths your existing
-   `.github/workflows/pages.yml` already copies into `_site/`, so it's live as
-   soon as it's on `main`.
+4. Confirm GitHub Pages serves `docs/` (or wherever your Pages source is
+   configured) so `docs/sentiment/index.html` is reachable.
 5. Run the workflow once manually (`workflow_dispatch`, `override_window: true`)
    to confirm collectors run without errors before relying on the schedule.
 
@@ -66,18 +64,44 @@ used in production if a live payload is ever missing.
       alerts (not built here - addendum Section D), or is the public panel
       plus manual override enough for this election?
 
-## Integration note (found while wiring this into the real repo)
+## Traceability & evidence trail
 
-The spec's architecture diagram assumed a `docs/`-based Pages source, but this
-repo's actual `.github/workflows/pages.yml` builds `_site/` from `frontend/` +
-`data/public/` only. So: the dashboard lives at `frontend/sentiment.html` (flat,
-matching `archive.html`/`methodology.html`), and `build_public_json.py` writes
-to the repo-root `data/public/sentiment/latest.json` - NOT a module-local
-`sentiment/data/public/`, which the real deploy pipeline never sees. The
-dashboard's fetch tries `./data/public/...` then `../data/public/...` in
-sequence so it resolves correctly in both the deployed `_site/` layout and a
-local dev checkout, without needing to touch the existing `pages.yml` sed
-rewrite step.
+Every run produces a private audit record (`data/private/sentiment/audit/*.json`)
+with the fields deliberately excluded from the public payload restored: raw
+post/article text, the real (unhashed) author reference, platform ID, and -
+critically - which alert (if any) each item contributed to via
+`contributed_to_alert`. That's what you pull up if an alert ever needs to be
+traced back to the specific posts behind it.
+
+**This never touches the public repo or its Actions artifacts.** On a public
+GitHub repo, anyone signed in can view and download Actions artifacts and logs
+from workflow runs - so instead, the workflow pushes each run's audit file to
+a **separate, genuinely private repo** you control.
+
+**One-time setup:**
+1. Create a new **private** GitHub repo, e.g. `dansamuka/ol-kalou-evidence-private`
+2. Generate a fine-grained PAT scoped to *only that repo*, `Contents: Read and write`
+3. In `2_Elections_tallying_educational`'s repo settings:
+   - Add secret `EVIDENCE_REPO_TOKEN` = that token
+   - Add repo variable `EVIDENCE_REPO` = `dansamuka/ol-kalou-evidence-private`
+
+That's it - the workflow's "Push evidence trail" step is a no-op until both
+of those are set (safe default: without them, raw data for each run is simply
+discarded after processing, same as before this feature existed).
+
+**Finding the evidence behind a specific alert:**
+1. Note the alert's `id` (e.g. `ol-kalou-2026:security`) and roughly when it appeared
+2. In the private evidence repo, open `runs/`, find the audit file closest to that time
+3. Filter its `items` array for `"contributed_to_alert": "ol-kalou-2026:security"` -
+   that's your list of raw posts, with real timestamps and (unhashed) author
+   references, that fed that alert
+
+**Retention is a policy decision, not a code default** - the pipeline doesn't
+delete anything from the evidence repo itself. Decide up front: who else (if
+anyone) gets access to that private repo, and when you'll purge it (e.g. 30
+days after results are certified). Treat it like any sensitive access log -
+restrict collaborators, don't make it public, and don't keep it longer than
+you need it for.
 
 ## Known simplifications worth knowing about
 

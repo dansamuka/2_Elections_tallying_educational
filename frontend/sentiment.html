@@ -6,7 +6,7 @@
 <title>Ol Kalou — Public Conversation Observatory</title>
 <style>
   :root{
-    --ink:#15140f; --ink-2:#1d1c15; --paper:#ece6d6; --paper-dim:#b8b09a;
+    --ink:#15140f; --ink-2:#1d1c15; --ink-3:#242217; --paper:#ece6d6; --paper-dim:#b8b09a;
     --rule:#3a3826; --brass:#b8934a; --brass-bright:#d9ac5c;
     --pos:#7a9b6e; --neg:#b5514a; --neu:#8d876f; --unscored:#5c5847;
     --watch:#5c5847; --reported:#c99a3e; --corroborated:#d4772f; --confirmed:#b5514a; --retracted:#5c5847;
@@ -21,7 +21,7 @@
     background-size: 100% 34px;
   }
   a{color:var(--brass-bright);}
-  .wrap{max-width:1180px; margin:0 auto; padding:20px 24px 80px;}
+  .wrap{max-width:1220px; margin:0 auto; padding:20px 24px 80px;}
 
   .masthead{display:flex; justify-content:space-between; align-items:flex-end; border-bottom:2px solid var(--brass); padding-bottom:14px; margin-bottom:6px; flex-wrap:wrap; gap:12px;}
   .masthead h1{font-family:var(--serif); font-weight:400; font-size:28px; margin:0; letter-spacing:0.5px;}
@@ -29,8 +29,17 @@
   .clock{font-family:var(--mono); font-size:13px; color:var(--paper-dim); text-align:right;}
   .clock b{color:var(--brass-bright); font-size:16px;}
 
-  .freshness{display:flex; gap:22px; flex-wrap:wrap; font-size:12px; color:var(--paper-dim); margin:10px 0 18px; padding-bottom:14px; border-bottom:1px solid var(--rule);}
+  .freshness{display:flex; align-items:center; gap:22px; flex-wrap:wrap; font-size:12px; color:var(--paper-dim); margin:10px 0 18px; padding-bottom:14px; border-bottom:1px solid var(--rule);}
   .freshness span b{color:var(--paper);}
+
+  .pulse-dot{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; position:relative; top:1px;}
+  .pulse-dot.live{background:var(--pos); box-shadow:0 0 0 0 rgba(122,155,110,0.6); animation:pulse 2.2s infinite;}
+  .pulse-dot.stale{background:var(--brass-bright);}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(122,155,110,0.55);}
+    70%{box-shadow:0 0 0 8px rgba(122,155,110,0);}
+    100%{box-shadow:0 0 0 0 rgba(122,155,110,0);}
+  }
 
   .notice{border:1px solid var(--brass); background:rgba(184,147,74,0.08); padding:12px 16px; font-size:12.5px; color:var(--paper-dim); margin-bottom:22px;}
   .notice b{color:var(--brass-bright);}
@@ -40,27 +49,52 @@
 
   .scorecards{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule);}
   .scorecard{background:var(--ink); padding:14px 16px;}
-  .scorecard .num{font-family:var(--serif); font-size:26px; color:var(--paper);}
+  .scorecard .num{font-family:var(--serif); font-size:26px; color:var(--paper); font-variant-numeric:tabular-nums;}
   .scorecard .label{font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--paper-dim); margin-top:2px;}
+
+  /* --- trend chart panel --- */
+  .trend-panel{border:1px solid var(--rule); background:var(--ink-2); padding:16px 18px 10px;}
+  .trend-panel svg{display:block; width:100%; height:auto; overflow:visible;}
+  .trend-legend{display:flex; gap:16px; flex-wrap:wrap; font-size:11px; color:var(--paper-dim); margin-top:10px;}
+  .trend-legend .sw{display:inline-block; width:9px; height:9px; margin-right:5px; position:relative; top:1px;}
+  .trend-empty{color:var(--paper-dim); font-style:italic; font-size:13px; padding:20px 0;}
 
   table{width:100%; border-collapse:collapse; font-size:13px;}
   th{text-align:left; font-size:10.5px; text-transform:uppercase; letter-spacing:1px; color:var(--brass); border-bottom:1px solid var(--rule); padding:8px 10px; font-weight:400;}
-  td{padding:9px 10px; border-bottom:1px solid var(--rule); vertical-align:top;}
+  td{padding:9px 10px; border-bottom:1px solid var(--rule); vertical-align:middle;}
   tr:hover td{background:rgba(184,147,74,0.05);}
   .num-cell{font-variant-numeric:tabular-nums;}
 
-  .bal-bar{display:flex; height:8px; width:120px; border:1px solid var(--rule);}
-  .bal-bar div{height:100%;}
+  .bal-bar{display:flex; height:8px; width:120px; border:1px solid var(--rule); overflow:hidden;}
+  .bal-bar div{height:100%; width:0; transition:width 0.7s cubic-bezier(.2,.8,.3,1);}
   .badge{display:inline-block; padding:2px 7px; font-size:10.5px; text-transform:uppercase; letter-spacing:0.5px; border:1px solid currentColor;}
   .badge.low{color:var(--paper-dim);} .badge.moderate{color:var(--brass-bright);} .badge.higher{color:var(--pos);}
   .suppressed-row td{color:var(--paper-dim); font-style:italic;}
 
+  .net-sentiment{font-family:var(--serif); font-size:16px; font-variant-numeric:tabular-nums;}
+  .net-sentiment.up{color:var(--pos);} .net-sentiment.down{color:var(--neg);} .net-sentiment.flat{color:var(--paper-dim);}
+  .spark{display:block; vertical-align:middle;}
+
+  .topic-bars{display:flex; flex-direction:column; gap:10px;}
+  .topic-row{display:grid; grid-template-columns:150px 1fr auto; align-items:center; gap:12px; font-size:13px;}
+  .topic-row .topic-name{text-transform:capitalize; color:var(--paper);}
+  .topic-track{height:14px; background:var(--ink-3); border:1px solid var(--rule); position:relative; overflow:hidden;}
+  .topic-fill-seg{position:absolute; top:0; height:100%;}
+  .topic-count{font-size:11.5px; color:var(--paper-dim); font-variant-numeric:tabular-nums; white-space:nowrap;}
+  .topic-suppressed{color:var(--paper-dim); font-style:italic; font-size:12.5px;}
+
+  .donut-row{display:flex; gap:28px; flex-wrap:wrap; align-items:center;}
+  .donut-block{display:flex; align-items:center; gap:12px;}
+  .donut-legend{font-size:11.5px; color:var(--paper-dim); line-height:1.7;}
+  .donut-label{font-size:10.5px; text-transform:uppercase; letter-spacing:1px; color:var(--brass); margin-bottom:8px;}
+
   .alerts{display:flex; flex-direction:column; gap:10px;}
-  .alert-card{border:1px solid var(--rule); border-left:4px solid var(--watch); padding:14px 16px; background:var(--ink-2);}
+  .alert-card{border:1px solid var(--rule); border-left:4px solid var(--watch); padding:14px 16px; background:var(--ink-2); opacity:0; transform:translateY(4px); animation:alert-in 0.4s ease forwards;}
+  @keyframes alert-in{ to{ opacity:1; transform:translateY(0); } }
   .alert-card.status-reported{border-left-color:var(--reported);}
   .alert-card.status-corroborated{border-left-color:var(--corroborated);}
   .alert-card.status-officially_confirmed{border-left-color:var(--confirmed);}
-  .alert-card.status-retracted{border-left-color:var(--retracted); opacity:0.6;}
+  .alert-card.status-retracted{border-left-color:var(--retracted); opacity:0.6 !important;}
   .alert-head{display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;}
   .alert-status{font-size:11px; text-transform:uppercase; letter-spacing:1.5px; padding:3px 8px; border:1px solid currentColor;}
   .status-reported .alert-status{color:var(--reported);}
@@ -74,7 +108,13 @@
   .no-alerts{color:var(--paper-dim); font-style:italic; font-size:13px; padding:8px 0;}
 
   .footer-links{margin-top:50px; padding-top:16px; border-top:1px solid var(--rule); font-size:12px; color:var(--paper-dim); display:flex; gap:18px; flex-wrap:wrap;}
-  .mode-flag{position:fixed; top:0; left:0; right:0; background:var(--brass); color:var(--ink); text-align:center; font-size:11px; letter-spacing:1px; padding:4px; text-transform:uppercase; display:none;}
+  .mode-flag{position:fixed; top:0; left:0; right:0; background:var(--brass); color:var(--ink); text-align:center; font-size:11px; letter-spacing:1px; padding:4px; text-transform:uppercase; display:none; z-index:10;}
+
+  @media (prefers-reduced-motion: reduce){
+    .alert-card{animation:none; opacity:1; transform:none;}
+    .pulse-dot.live{animation:none;}
+    .bal-bar div{transition:none;}
+  }
 </style>
 </head>
 <body>
@@ -93,7 +133,7 @@
   </div>
 
   <div class="freshness" id="freshness">
-    <span>Last build: <b id="generatedAt">—</b></span>
+    <span><span class="pulse-dot" id="pulseDot"></span>Last build: <b id="generatedAt">—</b> <span id="agoLabel"></span></span>
     <span>Mode: <b id="modeLabel">—</b></span>
     <span><a href="#methodology">Methodology &amp; limitations ↓</a></span>
   </div>
@@ -103,21 +143,21 @@
   <div class="section-label">Core scorecards</div>
   <div class="scorecards" id="scorecards"></div>
 
+  <div class="section-label">Conversation trend</div>
+  <div class="trend-panel" id="trendPanel"></div>
+
   <div class="section-label">Candidate conversation</div>
   <table id="candidatesTable">
     <thead><tr>
       <th>Candidate</th><th>Party</th><th>Mentions</th><th>Balance</th>
-      <th>Net sentiment</th><th>Source mix (X / news / manual)</th><th>Confidence</th>
+      <th>Net sentiment</th><th>Momentum</th><th>Source mix (X / news / manual)</th><th>Confidence</th>
     </tr></thead>
     <tbody></tbody>
   </table>
   <div class="alert-disclaimer-note">Mention share and sentiment are shown independently. High visibility is not the same as support.</div>
 
   <div class="section-label">Election environment</div>
-  <table id="topicsTable">
-    <thead><tr><th>Topic</th><th>Items</th><th>Balance</th><th>Confidence</th></tr></thead>
-    <tbody></tbody>
-  </table>
+  <div class="topic-bars" id="topicBars"></div>
 
   <div class="section-label">Early alerts</div>
   <div class="alert-disclaimer-note" id="alertDisclaimer" style="margin-bottom:10px;"></div>
@@ -130,7 +170,8 @@
   </table>
 
   <div class="section-label">Coordination &amp; quality</div>
-  <div class="scorecards" id="qualityCards"></div>
+  <div class="donut-row" id="qualityDonuts"></div>
+  <div class="scorecards" id="qualityCards" style="margin-top:16px;"></div>
 
   <div class="section-label" id="methodology">Methodology &amp; limitations</div>
   <div class="notice">
@@ -139,16 +180,773 @@
     Candidate-topic cells with fewer than five independent items are suppressed. Alerts require corroboration across
     multiple independent sources before they're shown — a single post, however repeated, never triggers one on its own.
     No indicator on this page predicts a winner or converts sentiment into vote share. Official results come from IEBC.
+    Charts on this page are drawn only from already-aggregated counts described above — nothing here is computed from
+    or reveals individual posts.
   </div>
 
   <div class="footer-links">
     <a href="index.html">← Back to tallying dashboard</a>
     <span>Shared election id: ol-kalou-2026</span>
+    <span>Auto-refreshes every 60s</span>
   </div>
 </div>
 
 <script>
-const DEMO_FALLBACK = {"meta": {"election_id": "ol-kalou-2026", "generated_at": "2026-07-16T06:30:30.254833+00:00", "collection_cursor": "2026-07-16T06:30:30.254833+00:00", "mode": "demo", "disclaimer": "This dashboard measures online discussion, not voter intention. X users and news coverage are not representative of Ol Kalou voters. Sentiment models can misread sarcasm, Kikuyu, Kiswahili, Sheng, names, quotations, and political slogans. Official election information and results come from IEBC.", "alert_disclaimer": "Alerts reflect volume and repetition in public conversation, not confirmed events. Only entries marked 'officially confirmed' have been verified by an authority."}, "summary": {"total_relevant_items": 20, "x_items": 15, "news_items": 3, "unique_source_estimate": 17, "duplicated_share": 0.0, "overall_balance": {"positive": 6, "neutral": 2, "negative": 9, "unscored": 3}}, "timeline": [], "candidates": [{"id": "nyagah_samuel", "name": "Samuel Muchina Nyagah", "party": "UDA", "suppressed": false, "mention_count": 6, "positive": 3, "neutral": 1, "negative": 1, "unscored": 1, "net_sentiment_index": 40.0, "source_mix": {"x": 4, "news": 1, "manual": 1}, "confidence": "higher"}, {"id": "ngotho_sammy", "name": "Sammy Kamau Ngotho", "party": "DCP", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "kigwa_wilson", "name": "Wilson Kigwa", "party": "Jubilee Party", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "kamau_timothy", "name": "Timothy Kamau", "party": "People's Renaissance Movement", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "muchiri_edwin", "name": "Edwin Muchiri", "party": "PNU", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "waithaka_stephen", "name": "Stephen Wanyoike Waithaka", "party": "National Liberal Party", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "njoroge_rachael", "name": "Rachael Wangui Njoroge", "party": "People's Democratic Party", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "mathenge_edward", "name": "Edward Mathenge / Edward Mwaniki", "party": "Kenya Moja Movement", "suppressed": true, "reason": "Fewer than 5 independent items this window."}, {"id": "abdullahi_abdifatah", "name": "Abdifatah Hussein Abdullahi", "party": "Federal Party of Kenya", "suppressed": true, "reason": "Fewer than 5 independent items this window."}], "topics": [{"topic": "admin", "suppressed": true}, {"topic": "security", "suppressed": false, "item_count": 10, "positive": 2, "negative": 7, "confidence": "higher"}, {"topic": "integrity", "suppressed": true}, {"topic": "misinformation", "suppressed": true}, {"topic": "accessibility", "suppressed": true}, {"topic": "results", "suppressed": true}, {"topic": "logistics", "suppressed": true}, {"topic": "local_economy", "suppressed": true}, {"topic": "weather", "suppressed": true}], "sources": [{"outlet": "example-news.co.ke", "count": 3}], "articles": [{"headline": "Nyagah closes campaign in Ol Kalou", "outlet": "example-news.co.ke", "timestamp": "2026-07-16T06:30:30.248482+00:00", "url": null, "sentiment_label": "positive"}, {"headline": "IEBC reports smooth opening", "outlet": "example-news.co.ke", "timestamp": "2026-07-16T06:30:30.248482+00:00", "url": null, "sentiment_label": "unscored"}, {"headline": "Security deployed after clash reported", "outlet": "example-news.co.ke", "timestamp": "2026-07-16T06:30:30.248482+00:00", "url": null, "sentiment_label": "positive"}], "quality": {"exact_and_near_duplicate_rate": 0.0, "repost_share": 0.0, "source_concentration": 0.15, "unsupported_language_share": 0.15, "anomaly_flags": [], "sampling_warnings": []}, "alerts": [{"id": "ol-kalou-2026:security", "category": "security", "status": "reported", "first_seen": "2026-07-16T06:30:30.248482+00:00", "last_updated": "2026-07-16T06:30:30.248482+00:00", "item_count": 10, "independent_source_count": 9, "confidence": "higher", "summary": "10 independent items across 9 sources mention security-related terms in the current window.", "override_applied": false}]};
+const DEMO_FALLBACK = {
+  "meta": {
+    "election_id": "ol-kalou-2026",
+    "generated_at": "2026-07-16T07:24:16.573571+00:00",
+    "collection_cursor": "2026-07-16T07:24:16.573571+00:00",
+    "mode": "demo",
+    "disclaimer": "This dashboard measures online discussion, not voter intention. X users and news coverage are not representative of Ol Kalou voters. Sentiment models can misread sarcasm, Kikuyu, Kiswahili, Sheng, names, quotations, and political slogans. Official election information and results come from IEBC.",
+    "alert_disclaimer": "Alerts reflect volume and repetition in public conversation, not confirmed events. Only entries marked 'officially confirmed' have been verified by an authority."
+  },
+  "summary": {
+    "total_relevant_items": 20,
+    "x_items": 15,
+    "news_items": 3,
+    "unique_source_estimate": 17,
+    "duplicated_share": 0.0,
+    "overall_balance": {
+      "positive": 6,
+      "neutral": 2,
+      "negative": 9,
+      "unscored": 3
+    }
+  },
+  "timeline": [
+    {
+      "t": "2026-07-15T23:54:16.601761+00:00",
+      "total_items": 18,
+      "overall": {
+        "positive": 6,
+        "neutral": 2,
+        "negative": 8,
+        "unscored": 2
+      },
+      "candidates": {
+        "nyagah_samuel": 37.8
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T00:09:16.601761+00:00",
+      "total_items": 21,
+      "overall": {
+        "positive": 7,
+        "neutral": 3,
+        "negative": 9,
+        "unscored": 2
+      },
+      "candidates": {
+        "nyagah_samuel": 43.7
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T00:24:16.601761+00:00",
+      "total_items": 19,
+      "overall": {
+        "positive": 7,
+        "neutral": 1,
+        "negative": 7,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 46.7
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T00:39:16.601761+00:00",
+      "total_items": 23,
+      "overall": {
+        "positive": 8,
+        "neutral": 3,
+        "negative": 8,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 47.8
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T00:54:16.601761+00:00",
+      "total_items": 18,
+      "overall": {
+        "positive": 8,
+        "neutral": 1,
+        "negative": 7,
+        "unscored": 2
+      },
+      "candidates": {
+        "nyagah_samuel": 52.3
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T01:09:16.601761+00:00",
+      "total_items": 20,
+      "overall": {
+        "positive": 9,
+        "neutral": 2,
+        "negative": 7,
+        "unscored": 2
+      },
+      "candidates": {
+        "nyagah_samuel": 49.4
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T01:24:16.601761+00:00",
+      "total_items": 22,
+      "overall": {
+        "positive": 8,
+        "neutral": 3,
+        "negative": 8,
+        "unscored": 3
+      },
+      "candidates": {
+        "nyagah_samuel": 56.4
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T01:39:16.601761+00:00",
+      "total_items": 20,
+      "overall": {
+        "positive": 9,
+        "neutral": 2,
+        "negative": 7,
+        "unscored": 2
+      },
+      "candidates": {
+        "nyagah_samuel": 55.2
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T01:54:16.601761+00:00",
+      "total_items": 23,
+      "overall": {
+        "positive": 9,
+        "neutral": 2,
+        "negative": 8,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 52.5
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T02:09:16.601761+00:00",
+      "total_items": 19,
+      "overall": {
+        "positive": 7,
+        "neutral": 2,
+        "negative": 8,
+        "unscored": 2
+      },
+      "candidates": {
+        "nyagah_samuel": 57.5
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T02:24:16.601761+00:00",
+      "total_items": 23,
+      "overall": {
+        "positive": 9,
+        "neutral": 2,
+        "negative": 8,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 56.3
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T02:39:16.601761+00:00",
+      "total_items": 20,
+      "overall": {
+        "positive": 6,
+        "neutral": 3,
+        "negative": 8,
+        "unscored": 3
+      },
+      "candidates": {
+        "nyagah_samuel": 53.7
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T02:54:16.601761+00:00",
+      "total_items": 20,
+      "overall": {
+        "positive": 7,
+        "neutral": 3,
+        "negative": 8,
+        "unscored": 2
+      },
+      "candidates": {
+        "nyagah_samuel": 50.4
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T03:09:16.601761+00:00",
+      "total_items": 20,
+      "overall": {
+        "positive": 5,
+        "neutral": 2,
+        "negative": 9,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 49.2
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T03:24:16.601761+00:00",
+      "total_items": 16,
+      "overall": {
+        "positive": 4,
+        "neutral": 1,
+        "negative": 9,
+        "unscored": 2
+      },
+      "candidates": {
+        "nyagah_samuel": 47.6
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T03:39:16.601761+00:00",
+      "total_items": 18,
+      "overall": {
+        "positive": 5,
+        "neutral": 1,
+        "negative": 10,
+        "unscored": 2
+      },
+      "candidates": {
+        "nyagah_samuel": 45.4
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T03:54:16.601761+00:00",
+      "total_items": 20,
+      "overall": {
+        "positive": 4,
+        "neutral": 1,
+        "negative": 11,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 39.1
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T04:09:16.601761+00:00",
+      "total_items": 19,
+      "overall": {
+        "positive": 4,
+        "neutral": 1,
+        "negative": 11,
+        "unscored": 3
+      },
+      "candidates": {
+        "nyagah_samuel": 33.3
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T04:24:16.601761+00:00",
+      "total_items": 22,
+      "overall": {
+        "positive": 4,
+        "neutral": 3,
+        "negative": 11,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 32.8
+      },
+      "active_alerts": 0
+    },
+    {
+      "t": "2026-07-16T04:39:16.601761+00:00",
+      "total_items": 19,
+      "overall": {
+        "positive": 3,
+        "neutral": 1,
+        "negative": 11,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 30.8
+      },
+      "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T04:54:16.601761+00:00",
+      "total_items": 20,
+      "overall": {
+        "positive": 4,
+        "neutral": 1,
+        "negative": 11,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 25.9
+      },
+      "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T05:09:16.601761+00:00",
+      "total_items": 20,
+      "overall": {
+        "positive": 4,
+        "neutral": 2,
+        "negative": 11,
+        "unscored": 3
+      },
+      "candidates": {
+        "nyagah_samuel": 27.7
+      },
+      "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T05:24:16.601761+00:00",
+      "total_items": 19,
+      "overall": {
+        "positive": 4,
+        "neutral": 3,
+        "negative": 10,
+        "unscored": 2
+      },
+      "candidates": {
+        "nyagah_samuel": 27.2
+      },
+      "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T05:39:16.601761+00:00",
+      "total_items": 21,
+      "overall": {
+        "positive": 4,
+        "neutral": 2,
+        "negative": 11,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 23.8
+      },
+      "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T05:54:16.601761+00:00",
+      "total_items": 19,
+      "overall": {
+        "positive": 5,
+        "neutral": 1,
+        "negative": 9,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 28.1
+      },
+      "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T06:09:16.601761+00:00",
+      "total_items": 19,
+      "overall": {
+        "positive": 5,
+        "neutral": 1,
+        "negative": 9,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 28.9
+      },
+      "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T06:24:16.601761+00:00",
+      "total_items": 22,
+      "overall": {
+        "positive": 7,
+        "neutral": 3,
+        "negative": 8,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 27.6
+      },
+      "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T06:39:16.601761+00:00",
+      "total_items": 23,
+      "overall": {
+        "positive": 7,
+        "neutral": 3,
+        "negative": 9,
+        "unscored": 4
+      },
+      "candidates": {
+        "nyagah_samuel": 31.8
+      },
+      "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T06:54:16.601761+00:00",
+      "total_items": 20,
+      "overall": {
+        "positive": 8,
+        "neutral": 1,
+        "negative": 8,
+        "unscored": 3
+      },
+      "candidates": {
+        "nyagah_samuel": 33.6
+      },
+      "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T07:09:16.601761+00:00",
+      "total_items": 19,
+      "overall": {
+        "positive": 9,
+        "neutral": 1,
+        "negative": 7,
+        "unscored": 2
+      },
+      "candidates": {
+        "nyagah_samuel": 36.1
+      },
+      "active_alerts": 1
+    },
+    {
+      "t": "2026-07-16T07:24:16.573571+00:00",
+      "total_items": 20,
+      "overall": {
+        "positive": 6,
+        "neutral": 2,
+        "negative": 9,
+        "unscored": 3
+      },
+      "candidates": {
+        "nyagah_samuel": 40.0
+      },
+      "active_alerts": 1
+    }
+  ],
+  "candidates": [
+    {
+      "id": "nyagah_samuel",
+      "name": "Samuel Muchina Nyagah",
+      "party": "UDA",
+      "suppressed": false,
+      "mention_count": 6,
+      "positive": 3,
+      "neutral": 1,
+      "negative": 1,
+      "unscored": 1,
+      "net_sentiment_index": 40.0,
+      "momentum": [
+        {
+          "t": "2026-07-15T23:54:16.601761+00:00",
+          "net_sentiment_index": 37.8
+        },
+        {
+          "t": "2026-07-16T00:09:16.601761+00:00",
+          "net_sentiment_index": 43.7
+        },
+        {
+          "t": "2026-07-16T00:24:16.601761+00:00",
+          "net_sentiment_index": 46.7
+        },
+        {
+          "t": "2026-07-16T00:39:16.601761+00:00",
+          "net_sentiment_index": 47.8
+        },
+        {
+          "t": "2026-07-16T00:54:16.601761+00:00",
+          "net_sentiment_index": 52.3
+        },
+        {
+          "t": "2026-07-16T01:09:16.601761+00:00",
+          "net_sentiment_index": 49.4
+        },
+        {
+          "t": "2026-07-16T01:24:16.601761+00:00",
+          "net_sentiment_index": 56.4
+        },
+        {
+          "t": "2026-07-16T01:39:16.601761+00:00",
+          "net_sentiment_index": 55.2
+        },
+        {
+          "t": "2026-07-16T01:54:16.601761+00:00",
+          "net_sentiment_index": 52.5
+        },
+        {
+          "t": "2026-07-16T02:09:16.601761+00:00",
+          "net_sentiment_index": 57.5
+        },
+        {
+          "t": "2026-07-16T02:24:16.601761+00:00",
+          "net_sentiment_index": 56.3
+        },
+        {
+          "t": "2026-07-16T02:39:16.601761+00:00",
+          "net_sentiment_index": 53.7
+        },
+        {
+          "t": "2026-07-16T02:54:16.601761+00:00",
+          "net_sentiment_index": 50.4
+        },
+        {
+          "t": "2026-07-16T03:09:16.601761+00:00",
+          "net_sentiment_index": 49.2
+        },
+        {
+          "t": "2026-07-16T03:24:16.601761+00:00",
+          "net_sentiment_index": 47.6
+        },
+        {
+          "t": "2026-07-16T03:39:16.601761+00:00",
+          "net_sentiment_index": 45.4
+        },
+        {
+          "t": "2026-07-16T03:54:16.601761+00:00",
+          "net_sentiment_index": 39.1
+        },
+        {
+          "t": "2026-07-16T04:09:16.601761+00:00",
+          "net_sentiment_index": 33.3
+        },
+        {
+          "t": "2026-07-16T04:24:16.601761+00:00",
+          "net_sentiment_index": 32.8
+        },
+        {
+          "t": "2026-07-16T04:39:16.601761+00:00",
+          "net_sentiment_index": 30.8
+        },
+        {
+          "t": "2026-07-16T04:54:16.601761+00:00",
+          "net_sentiment_index": 25.9
+        },
+        {
+          "t": "2026-07-16T05:09:16.601761+00:00",
+          "net_sentiment_index": 27.7
+        },
+        {
+          "t": "2026-07-16T05:24:16.601761+00:00",
+          "net_sentiment_index": 27.2
+        },
+        {
+          "t": "2026-07-16T05:39:16.601761+00:00",
+          "net_sentiment_index": 23.8
+        },
+        {
+          "t": "2026-07-16T05:54:16.601761+00:00",
+          "net_sentiment_index": 28.1
+        },
+        {
+          "t": "2026-07-16T06:09:16.601761+00:00",
+          "net_sentiment_index": 28.9
+        },
+        {
+          "t": "2026-07-16T06:24:16.601761+00:00",
+          "net_sentiment_index": 27.6
+        },
+        {
+          "t": "2026-07-16T06:39:16.601761+00:00",
+          "net_sentiment_index": 31.8
+        },
+        {
+          "t": "2026-07-16T06:54:16.601761+00:00",
+          "net_sentiment_index": 33.6
+        },
+        {
+          "t": "2026-07-16T07:09:16.601761+00:00",
+          "net_sentiment_index": 36.1
+        },
+        {
+          "t": "2026-07-16T07:24:16.573571+00:00",
+          "net_sentiment_index": 40.0
+        }
+      ],
+      "source_mix": {
+        "x": 4,
+        "news": 1,
+        "manual": 1
+      },
+      "confidence": "higher"
+    },
+    {
+      "id": "ngotho_sammy",
+      "name": "Sammy Kamau Ngotho",
+      "party": "DCP",
+      "suppressed": true,
+      "reason": "Fewer than 5 independent items this window."
+    },
+    {
+      "id": "kigwa_wilson",
+      "name": "Wilson Kigwa",
+      "party": "Jubilee Party",
+      "suppressed": true,
+      "reason": "Fewer than 5 independent items this window."
+    },
+    {
+      "id": "kamau_timothy",
+      "name": "Timothy Kamau",
+      "party": "People's Renaissance Movement",
+      "suppressed": true,
+      "reason": "Fewer than 5 independent items this window."
+    },
+    {
+      "id": "muchiri_edwin",
+      "name": "Edwin Muchiri",
+      "party": "PNU",
+      "suppressed": true,
+      "reason": "Fewer than 5 independent items this window."
+    },
+    {
+      "id": "waithaka_stephen",
+      "name": "Stephen Wanyoike Waithaka",
+      "party": "National Liberal Party",
+      "suppressed": true,
+      "reason": "Fewer than 5 independent items this window."
+    },
+    {
+      "id": "njoroge_rachael",
+      "name": "Rachael Wangui Njoroge",
+      "party": "People's Democratic Party",
+      "suppressed": true,
+      "reason": "Fewer than 5 independent items this window."
+    },
+    {
+      "id": "mathenge_edward",
+      "name": "Edward Mathenge / Edward Mwaniki",
+      "party": "Kenya Moja Movement",
+      "suppressed": true,
+      "reason": "Fewer than 5 independent items this window."
+    },
+    {
+      "id": "abdullahi_abdifatah",
+      "name": "Abdifatah Hussein Abdullahi",
+      "party": "Federal Party of Kenya",
+      "suppressed": true,
+      "reason": "Fewer than 5 independent items this window."
+    }
+  ],
+  "topics": [
+    {
+      "topic": "admin",
+      "suppressed": true
+    },
+    {
+      "topic": "security",
+      "suppressed": false,
+      "item_count": 10,
+      "positive": 2,
+      "negative": 7,
+      "confidence": "higher"
+    },
+    {
+      "topic": "integrity",
+      "suppressed": true
+    },
+    {
+      "topic": "misinformation",
+      "suppressed": true
+    },
+    {
+      "topic": "accessibility",
+      "suppressed": true
+    },
+    {
+      "topic": "results",
+      "suppressed": true
+    },
+    {
+      "topic": "logistics",
+      "suppressed": true
+    },
+    {
+      "topic": "local_economy",
+      "suppressed": true
+    },
+    {
+      "topic": "weather",
+      "suppressed": true
+    }
+  ],
+  "sources": [
+    {
+      "outlet": "example-news.co.ke",
+      "count": 3
+    }
+  ],
+  "articles": [
+    {
+      "headline": "Nyagah closes campaign in Ol Kalou",
+      "outlet": "example-news.co.ke",
+      "timestamp": "2026-07-16T07:24:16.568760+00:00",
+      "url": null,
+      "sentiment_label": "positive"
+    },
+    {
+      "headline": "IEBC reports smooth opening",
+      "outlet": "example-news.co.ke",
+      "timestamp": "2026-07-16T07:24:16.568760+00:00",
+      "url": null,
+      "sentiment_label": "unscored"
+    },
+    {
+      "headline": "Security deployed after clash reported",
+      "outlet": "example-news.co.ke",
+      "timestamp": "2026-07-16T07:24:16.568760+00:00",
+      "url": null,
+      "sentiment_label": "positive"
+    }
+  ],
+  "quality": {
+    "exact_and_near_duplicate_rate": 0.0,
+    "repost_share": 0.0,
+    "source_concentration": 0.15,
+    "unsupported_language_share": 0.15,
+    "anomaly_flags": [],
+    "sampling_warnings": []
+  },
+  "alerts": [
+    {
+      "id": "ol-kalou-2026:security",
+      "category": "security",
+      "status": "reported",
+      "first_seen": "2026-07-16T07:22:20.556730+00:00",
+      "last_updated": "2026-07-16T07:24:16.568760+00:00",
+      "item_count": 10,
+      "independent_source_count": 9,
+      "confidence": "higher",
+      "summary": "10 independent items across 9 sources mention security-related terms in the current window.",
+      "override_applied": false
+    }
+  ]
+};
+
 const STATUS_LABEL = {
   watch: "Watch", reported: "Reported", corroborated: "Corroborated",
   officially_confirmed: "Officially confirmed", retracted: "Retracted"
@@ -158,6 +956,7 @@ const CATEGORY_LABEL = {
   integrity: "Bribery / integrity", misinformation: "Misinformation",
   logistics: "Logistics"
 };
+const COLORS = { pos:'#7a9b6e', neu:'#8d876f', neg:'#b5514a', unscored:'#5c5847', brass:'#b8934a', rule:'#3a3826', reported:'#c99a3e' };
 
 function tickClock(){
   const el = document.getElementById('eatClock');
@@ -166,45 +965,205 @@ function tickClock(){
 }
 setInterval(tickClock, 1000); tickClock();
 
+// ---------- small helpers ----------
+
+function escapeHtml(s){
+  return (s ?? '').toString().replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function animateNumber(el, to){
+  const from = parseFloat(el.dataset.rawValue || '0') || 0;
+  if (typeof to !== 'number' || isNaN(to)) { el.textContent = to; return; }
+  el.dataset.rawValue = to;
+  const duration = 600, start = performance.now();
+  function tick(now){
+    const p = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(from + (to - from) * eased).toLocaleString();
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+function relTime(iso){
+  const diffMs = Date.now() - new Date(iso).getTime();
+  const mins = Math.round(diffMs / 60000);
+  if (mins < 1) return 'just now';
+  if (mins === 1) return '1 min ago';
+  if (mins < 60) return mins + ' min ago';
+  const hrs = Math.round(mins / 60);
+  return hrs + (hrs === 1 ? ' hr ago' : ' hrs ago');
+}
+
 function balBar(pos, neu, neg, unscored){
   const total = pos+neu+neg+unscored || 1;
-  const seg = (n,c)=> n ? `<div style="width:${(n/total*100)}%;background:${c}"></div>` : '';
+  const seg = (n,c)=> `<div data-w="${(n/total*100)}" style="background:${c}"></div>`;
   return `<div class="bal-bar">${seg(pos,'var(--pos)')}${seg(neu,'var(--neu)')}${seg(neg,'var(--neg)')}${seg(unscored,'var(--unscored)')}</div>`;
 }
 
+function activateBalBars(root){
+  root.querySelectorAll('.bal-bar div').forEach(div => {
+    const w = parseFloat(div.dataset.w || '0');
+    requestAnimationFrame(() => requestAnimationFrame(() => { div.style.width = w + '%'; }));
+  });
+}
+
+// ---------- SVG chart builders ----------
+
+function sparkline(values, {width=90, height=26, color=COLORS.brass, fill=false} = {}){
+  const pts = values.filter(v => typeof v === 'number');
+  if (pts.length < 2) return `<svg class="spark" width="${width}" height="${height}"></svg>`;
+  const min = Math.min(...pts), max = Math.max(...pts);
+  const range = (max - min) || 1;
+  const step = width / (pts.length - 1);
+  const coords = pts.map((v,i) => [i*step, height - ((v - min) / range) * (height - 4) - 2]);
+  const path = coords.map((c,i) => (i===0?'M':'L') + c[0].toFixed(1) + ',' + c[1].toFixed(1)).join(' ');
+  const last = coords[coords.length-1];
+  const areaPath = fill ? `${path} L${width},${height} L0,${height} Z` : '';
+  return `<svg class="spark" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+    ${fill ? `<path d="${areaPath}" fill="${color}" opacity="0.12"></path>` : ''}
+    <path d="${path}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"></path>
+    <circle cx="${last[0]}" cy="${last[1]}" r="2.2" fill="${color}"></circle>
+  </svg>`;
+}
+
+function trendChart(timeline, width=1140, height=180){
+  if (!timeline || timeline.length < 2){
+    return `<div class="trend-empty">Not enough history yet to draw a trend — check back after a few refreshes.</div>`;
+  }
+  const padL = 6, padB = 20, padT = 10, padR = 6;
+  const innerW = width - padL - padR, innerH = height - padT - padB;
+  const n = timeline.length;
+  const stepX = innerW / (n - 1);
+
+  const totals = timeline.map(p => {
+    const o = p.overall || {};
+    return (o.positive||0) + (o.neutral||0) + (o.negative||0) + (o.unscored||0);
+  });
+  const maxTotal = Math.max(1, ...totals);
+
+  const layers = ['unscored','negative','neutral','positive']; // stack order bottom-to-top
+  const colorFor = { positive: COLORS.pos, neutral: COLORS.neu, negative: COLORS.neg, unscored: COLORS.unscored };
+
+  let cumulative = new Array(n).fill(0);
+  let areas = [];
+  layers.forEach(key => {
+    const vals = timeline.map(p => (p.overall || {})[key] || 0);
+    const baseline = cumulative.slice();
+    cumulative = cumulative.map((c,i) => c + vals[i]);
+    const topPoints = cumulative.map((v,i) => [padL + i*stepX, padT + innerH - (v / maxTotal) * innerH]);
+    const bottomPoints = baseline.map((v,i) => [padL + i*stepX, padT + innerH - (v / maxTotal) * innerH]).reverse();
+    const d = 'M' + topPoints.map(p=>p.join(',')).join(' L') + ' L' + bottomPoints.map(p=>p.join(',')).join(' L') + ' Z';
+    areas.push(`<path d="${d}" fill="${colorFor[key]}" opacity="0.75"><title>${key}</title></path>`);
+  });
+
+  // active-alerts overlay as a thin dashed line, scaled to its own max
+  const alertVals = timeline.map(p => p.active_alerts || 0);
+  const maxAlerts = Math.max(1, ...alertVals);
+  const alertPts = alertVals.map((v,i) => [padL + i*stepX, padT + innerH - (v / maxAlerts) * (innerH*0.9)]);
+  const alertPath = alertPts.map((p,i)=> (i===0?'M':'L')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+
+  const label = i => new Date(timeline[i].t).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+  const xLabels = [0, Math.floor((n-1)/2), n-1].map(i => `<text x="${padL + i*stepX}" y="${height-4}" font-size="10" fill="${COLORS.brass}" text-anchor="${i===0?'start':(i===n-1?'end':'middle')}">${label(i)}</text>`);
+
+  return `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" style="width:100%;height:${height}px;">
+    ${areas.join('')}
+    <path d="${alertPath}" fill="none" stroke="${COLORS.reported}" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.85"><title>Active alerts</title></path>
+    ${xLabels.join('')}
+  </svg>`;
+}
+
+function donutChart(pct, {size=88, stroke=10, color=COLORS.brass, label=''} = {}){
+  const r = (size - stroke) / 2, c = size/2, circumference = 2*Math.PI*r;
+  const dash = Math.max(0, Math.min(1, pct)) * circumference;
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+    <circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="${COLORS.rule}" stroke-width="${stroke}"></circle>
+    <circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="${color}" stroke-width="${stroke}"
+      stroke-dasharray="${dash.toFixed(1)} ${circumference.toFixed(1)}" stroke-linecap="round"
+      transform="rotate(-90 ${c} ${c})"><title>${label}</title></circle>
+    <text x="${c}" y="${c+5}" text-anchor="middle" font-size="15" font-family="var(--serif)" fill="var(--paper)">${Math.round(pct*100)}%</text>
+  </svg>`;
+}
+
+// ---------- render functions ----------
+
 function renderScorecards(target, cards){
-  target.innerHTML = cards.map(c=>`<div class="scorecard"><div class="num">${c.value}</div><div class="label">${c.label}</div></div>`).join('');
+  const existing = target.querySelectorAll('.scorecard .num');
+  if (existing.length === cards.length){
+    cards.forEach((c,i) => {
+      if (typeof c.value === 'number') animateNumber(existing[i], c.value);
+      else existing[i].textContent = c.value;
+    });
+    return;
+  }
+  target.innerHTML = cards.map(c=>`<div class="scorecard"><div class="num" data-raw-value="0">${typeof c.value==='number'?'0':c.value}</div><div class="label">${c.label}</div></div>`).join('');
+  const nums = target.querySelectorAll('.num');
+  cards.forEach((c,i) => { if (typeof c.value === 'number') animateNumber(nums[i], c.value); });
+}
+
+function renderTrend(data){
+  const el = document.getElementById('trendPanel');
+  el.innerHTML = trendChart(data.timeline) + `
+    <div class="trend-legend">
+      <span><span class="sw" style="background:${COLORS.pos}"></span>Positive</span>
+      <span><span class="sw" style="background:${COLORS.neu}"></span>Neutral</span>
+      <span><span class="sw" style="background:${COLORS.neg}"></span>Negative</span>
+      <span><span class="sw" style="background:${COLORS.unscored}"></span>Unscored</span>
+      <span><span class="sw" style="background:none;border-top:2px dashed ${COLORS.reported}"></span>Active alerts (dashed)</span>
+    </div>`;
 }
 
 function renderCandidates(data){
   const tbody = document.querySelector('#candidatesTable tbody');
   tbody.innerHTML = data.candidates.map(c=>{
     if(c.suppressed){
-      return `<tr class="suppressed-row"><td>${c.name}</td><td>${c.party}</td><td colspan="5">Suppressed — ${c.reason}</td></tr>`;
+      return `<tr class="suppressed-row"><td>${escapeHtml(c.name)}</td><td>${escapeHtml(c.party)}</td><td colspan="6">Suppressed — ${escapeHtml(c.reason)}</td></tr>`;
     }
+    const momentumVals = (c.momentum||[]).map(m => m.net_sentiment_index);
+    const trendDir = momentumVals.length >= 2 && momentumVals[momentumVals.length-1] != null && momentumVals[0] != null
+      ? (momentumVals[momentumVals.length-1] > momentumVals[0] ? 'up' : (momentumVals[momentumVals.length-1] < momentumVals[0] ? 'down' : 'flat'))
+      : 'flat';
     return `<tr>
-      <td>${c.name}</td><td>${c.party}</td>
+      <td>${escapeHtml(c.name)}</td><td>${escapeHtml(c.party)}</td>
       <td class="num-cell">${c.mention_count}</td>
       <td>${balBar(c.positive,c.neutral,c.negative,c.unscored)}</td>
-      <td class="num-cell">${c.net_sentiment_index ?? '—'}</td>
+      <td><span class="net-sentiment ${trendDir}">${c.net_sentiment_index ?? '—'}</span></td>
+      <td>${sparkline(momentumVals, {width:80, height:24, color: trendDir==='up'?COLORS.pos:(trendDir==='down'?COLORS.neg:COLORS.brass), fill:true})}</td>
       <td class="num-cell">${c.source_mix.x} / ${c.source_mix.news} / ${c.source_mix.manual}</td>
       <td><span class="badge ${c.confidence}">${c.confidence}</span></td>
     </tr>`;
   }).join('');
+  activateBalBars(tbody);
 }
 
 function renderTopics(data){
-  const tbody = document.querySelector('#topicsTable tbody');
-  tbody.innerHTML = data.topics.map(t=>{
-    if(t.suppressed){
-      return `<tr class="suppressed-row"><td>${t.topic}</td><td colspan="3">Suppressed — fewer than the minimum independent items this window.</td></tr>`;
-    }
-    return `<tr>
-      <td>${t.topic}</td><td class="num-cell">${t.item_count}</td>
-      <td>${balBar(t.positive,0,t.negative,0)}</td>
-      <td><span class="badge ${t.confidence}">${t.confidence}</span></td>
-    </tr>`;
-  }).join('');
+  const el = document.getElementById('topicBars');
+  const shown = data.topics.filter(t => !t.suppressed);
+  const suppressed = data.topics.filter(t => t.suppressed);
+  const maxCount = Math.max(1, ...shown.map(t => t.item_count));
+
+  el.innerHTML = shown.map(t => {
+    const posW = t.item_count ? (t.positive / t.item_count) * 100 : 0;
+    const negW = t.item_count ? (t.negative / t.item_count) * 100 : 0;
+    const neuW = Math.max(0, 100 - posW - negW);
+    const barW = (t.item_count / maxCount) * 100;
+    return `<div class="topic-row">
+      <span class="topic-name">${escapeHtml(t.topic.replace(/_/g,' '))}</span>
+      <div class="topic-track">
+        <div class="topic-fill-track" data-w="${barW}" style="position:absolute;left:0;top:0;height:100%;width:0;transition:width 0.9s cubic-bezier(.2,.8,.3,1);overflow:hidden;">
+          <div class="topic-fill-seg" style="left:0;width:${posW}%;background:${COLORS.pos};"></div>
+          <div class="topic-fill-seg" style="left:${posW}%;width:${neuW}%;background:${COLORS.neu};"></div>
+          <div class="topic-fill-seg" style="left:${posW+neuW}%;width:${negW}%;background:${COLORS.neg};"></div>
+        </div>
+      </div>
+      <span class="topic-count">${t.item_count} · <span class="badge ${t.confidence}">${t.confidence}</span></span>
+    </div>`;
+  }).join('') + (suppressed.length ? `<div class="topic-suppressed">${suppressed.length} more topic(s) suppressed this window — fewer than the minimum independent items.</div>` : '');
+
+  el.querySelectorAll('.topic-fill-track').forEach(div => {
+    const w = parseFloat(div.dataset.w || '0');
+    requestAnimationFrame(() => requestAnimationFrame(() => { div.style.width = w + '%'; }));
+  });
 }
 
 function renderAlerts(data){
@@ -214,13 +1173,13 @@ function renderAlerts(data){
     el.innerHTML = '<div class="no-alerts">No alerts crossing the corroboration threshold this window.</div>';
     return;
   }
-  el.innerHTML = data.alerts.map(a=>`
-    <div class="alert-card status-${a.status}">
+  el.innerHTML = data.alerts.map((a,i)=>`
+    <div class="alert-card status-${a.status}" style="animation-delay:${i*80}ms">
       <div class="alert-head">
         <b>${CATEGORY_LABEL[a.category] || a.category}</b>
         <span class="alert-status">${STATUS_LABEL[a.status] || a.status}</span>
       </div>
-      <div class="alert-summary">${a.summary}</div>
+      <div class="alert-summary">${escapeHtml(a.summary)}</div>
       <div class="alert-meta">
         <span>${a.item_count} items</span>
         <span>${a.independent_source_count} independent sources</span>
@@ -240,39 +1199,64 @@ function renderArticles(data){
   }
   tbody.innerHTML = data.articles.map(a=>`
     <tr>
-      <td>${a.url ? `<a href="${a.url}" target="_blank" rel="noopener">${a.headline||'(untitled)'}</a>` : (a.headline||'(untitled)')}</td>
-      <td>${a.outlet||'—'}</td>
-      <td>${a.sentiment_label||'unscored'}</td>
+      <td>${a.url ? `<a href="${a.url}" target="_blank" rel="noopener">${escapeHtml(a.headline||'(untitled)')}</a>` : escapeHtml(a.headline||'(untitled)')}</td>
+      <td>${escapeHtml(a.outlet||'—')}</td>
+      <td>${escapeHtml(a.sentiment_label||'unscored')}</td>
       <td>${a.timestamp ? new Date(a.timestamp).toLocaleString() : '—'}</td>
     </tr>`).join('');
 }
 
+function renderQuality(data){
+  const q = data.quality;
+  document.getElementById('qualityDonuts').innerHTML = `
+    <div class="donut-block">
+      ${donutChart(q.exact_and_near_duplicate_rate, {color: COLORS.neg, label:'Duplicate rate'})}
+      <div class="donut-legend"><div class="donut-label">Duplicate rate</div>Share of items collapsed<br>as exact/near duplicates</div>
+    </div>
+    <div class="donut-block">
+      ${donutChart(q.source_concentration, {color: COLORS.brass, label:'Source concentration'})}
+      <div class="donut-legend"><div class="donut-label">Source concentration</div>Share of news items from<br>the single largest outlet</div>
+    </div>
+    <div class="donut-block">
+      ${donutChart(q.unsupported_language_share, {color: COLORS.unscored, label:'Unsupported language'})}
+      <div class="donut-legend"><div class="donut-label">Unsupported language</div>Share labelled <i>unknown</i><br>rather than force-scored</div>
+    </div>
+  `;
+  renderScorecards(document.getElementById('qualityCards'), [
+    {value:q.anomaly_flags.length, label:'Anomaly flags'},
+    {value:q.sampling_warnings.length, label:'Sampling warnings'},
+    {value:data.summary.unique_source_estimate, label:'Unique source estimate (this run)'},
+  ]);
+}
+
+function updateFreshness(data){
+  document.getElementById('generatedAt').textContent = new Date(data.meta.generated_at).toLocaleString();
+  document.getElementById('agoLabel').textContent = '(' + relTime(data.meta.generated_at) + ')';
+  document.getElementById('modeLabel').textContent = data.meta.mode;
+  const ageMin = (Date.now() - new Date(data.meta.generated_at).getTime()) / 60000;
+  const dot = document.getElementById('pulseDot');
+  dot.className = 'pulse-dot ' + (ageMin < 20 ? 'live' : 'stale');
+}
+
 function render(data, isDemo){
   document.getElementById('modeFlag').style.display = isDemo ? 'block' : 'none';
-  document.getElementById('generatedAt').textContent = new Date(data.meta.generated_at).toLocaleString();
-  document.getElementById('modeLabel').textContent = data.meta.mode;
-  document.getElementById('disclaimerBox').innerHTML = '<b>Read this first:</b> ' + data.meta.disclaimer;
+  updateFreshness(data);
+  document.getElementById('disclaimerBox').innerHTML = '<b>Read this first:</b> ' + escapeHtml(data.meta.disclaimer);
 
   renderScorecards(document.getElementById('scorecards'), [
     {value:data.summary.total_relevant_items, label:'Total relevant items'},
     {value:data.summary.x_items, label:'X items'},
     {value:data.summary.news_items, label:'News items'},
     {value:data.summary.unique_source_estimate, label:'Unique source estimate'},
-    {value:(data.summary.duplicated_share*100).toFixed(0)+'%', label:'Duplicated share'},
+    {value:Math.round(data.summary.duplicated_share*100)+'%', label:'Duplicated share'},
   ]);
 
+  renderTrend(data);
   renderCandidates(data);
   renderTopics(data);
   renderAlerts(data);
   renderArticles(data);
-
-  renderScorecards(document.getElementById('qualityCards'), [
-    {value:(data.quality.exact_and_near_duplicate_rate*100).toFixed(0)+'%', label:'Duplicate rate'},
-    {value:(data.quality.source_concentration*100).toFixed(0)+'%', label:'Source concentration'},
-    {value:(data.quality.unsupported_language_share*100).toFixed(0)+'%', label:'Unsupported language'},
-    {value:data.quality.anomaly_flags.length, label:'Anomaly flags'},
-    {value:data.quality.sampling_warnings.length, label:'Sampling warnings'},
-  ]);
+  renderQuality(data);
 }
 
 // Path differs between local/dev layout (frontend/ and data/ as siblings under
@@ -293,11 +1277,27 @@ async function loadLatestJson(){
   return null;
 }
 
-loadLatestJson().then(d=>{
-  if (d) { render(d, d.meta.mode === 'demo'); return; }
-  // Section 11 test 8: dashboard loads in demo mode when the live JSON is unavailable.
-  render(DEMO_FALLBACK, true);
-});
+let lastGeneratedAt = null;
+async function refresh(){
+  const d = await loadLatestJson();
+  if (d){
+    if (d.meta.generated_at !== lastGeneratedAt){
+      lastGeneratedAt = d.meta.generated_at;
+      render(d, d.meta.mode === 'demo');
+    } else {
+      updateFreshness(d); // still tick the "X min ago" label even with no new data
+    }
+    return;
+  }
+  if (lastGeneratedAt === null){
+    // Section 11 test 8: dashboard loads in demo mode when the live JSON is unavailable.
+    render(DEMO_FALLBACK, true);
+    lastGeneratedAt = 'demo';
+  }
+}
+
+refresh();
+setInterval(refresh, 60000);
 </script>
 </body>
 </html>
