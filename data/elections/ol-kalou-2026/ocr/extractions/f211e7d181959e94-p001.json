@@ -1,0 +1,311 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
+  "election_id": "ol-kalou-2026",
+  "page_id": "f211e7d181959e94-p001",
+  "source_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_f211e7d18195.pdf",
+  "source_sha256": "f211e7d181959e9434b41059bb5502306e42875744b26bb6033d7ff4d6202348",
+  "source_filename": "v1_f211e7d18195.pdf",
+  "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/f211e7d181959e94.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "gcv+layout-handwriting+gcv-crop",
+  "confidence": 0.5371155421143645,
+  "text_length": 6385,
+  "text_preview": "FORM 35 A\nNA160726-108767\nINDEPENDENT ELECTORAL AND BOUNDARIES COMMISSION\nELECTORALANDBOU\nESCOMMISSIONINDEPENDEN\nCOMMISSIONINDEPENDENT\nNDENTELECTORALANDBOUND\nALANDBOUNDARIESCOMMISS\nOUNDARIESCOMMISSIONINDE\nANDBOU\nMISSI\nINDE\nPENDENTELECTORALANDB\nENDENTELECTORALANDBOUND\nLANDBOUNDARIESCOMMISSIONINDEPEN\nLECTORALANDBOUNDARIESCOMMISSIO\nDBOUNDAR\nIEBC\nHOLFENDENT ENT ELECTORAL\nAND\nBOUNDARIES COM\n(Reg. 79(2)(b))\nSSIONINDEPENDENTELECT MEMBER OF NATIONAL ASSEMBLY BY-ELECTION RESULTS TONINDEPENDENTELECTOR\nJURD Ward\nDBO\nECTORALA\nUND Name of Polling Station KIGANJO PRIMARY POLLING STATION 1 of 3\nDBC Constituency\nRIES\nLECT County\nPENDENTE\nONING\nOBO\nDEPE\nUND\nNDER\nRIEST\nSCOM\nKAIMBAGA\nOL KALOU\nNYANDARUA\nAT THE POLLING STATION\nNumber of votes cast in favour of each candidate:\nName of Candidate\n1. ABDIFATAH HUSSEIN ABDULLAHI\n2. TIMOTHY KAMAU KARIUKI\nTELE 3. WILSON MWANIKI KIGWA\nECTOR 4. EDWIN KARIIRI MUCHIRI\nMISS\nRALA\nSIONE\nDEPT\n5. EDWARD MATHENGE MWANIKI\nANDE 6. RACHAEL WANGUI NJOROGE\nENDE\nGUNDA 7. SAMUEL MUCHINA NYAGAH\n(ELE\nARIE 8 STEPHEN WANYOIKE WAITHAKA\nORA\nOMMS9. SAMMY DOUGLAS KAMAU WAWERU\nSION Total number of valid votes cast\nANDBOO\nDEPENDENTEL\nUNDA Polling Station Counts\nENT\nESCO\n1.\nTEL\nJESOM\nSIONIN\nORLANDO\nBOUNDA\nENTEL\nTotal Number of Registered Voters in the Polling Station;\n2. Total Number of Rejected Ballot Papers;\nLECTO\nMISS\nAN\nINDE\nOUND\nDENT\nESCO\nLECTOR\nOMMISSIO\nNDBOL\n3. Total Number of Rejection Objected to Ballot Papers;\n4. Total Number of Disputed Votes;\n5. Total Number of Valid Votes Cast;\nMISSIONINDEPENDENTEL\nALAND\nINDE\nARIESCO\nDeclaration ORA\nOUNDAR\nCOMMISSION\nISSIONINDEPENDENT\nANDBOUN\nARIESCOM\nOU\nDEPENDEN\nRALANOBO\nWe, the undersigned, being present when the results of the\nWDENT\nJESC\nECTOR\nMISSION UND\nLANDE\nSIONIN\nNDENTEL\nCOMMISSIONINDEPEND\nSCOM\nFOUNDARI\nOUNDARIESG\nOUNDARIESCOMMISSIONING\nNTELECTORALANDBOUNDAR\nTELECTORALANDBO\nTELECTORALANDBOUNDARIESCO\nDEPENDENTELECTORALANDBOUNDARESCOMMISSIONINDEPENDEN\nNTELECTORALANDBOUNDARIESCOMMISSIONINDER\nTORALANDBOUNDARIESCOMMISSIONINDEPEN\nCOMMANDBOUNDARIE ECTORALANDE\nNo. of Valid Votes Obtained\nARIESCOM\n503\nDecision(s) on disputed votes if any\n000 1.\n000 2\n000 3.\n273 4\nONINDEPEN\nCode 018091045604001ISSIONINDER\nCode 0456\nCode 091\nCade\n018\nMISSION\nALABOUN\nNINDEPEND\nNDART\nDENTE\nDARIESCO\nDENTELECT\nORA\nMMISSION\nLAND\nDBOL\n000 PENT\n001\n001\nOOALA\n600our\n000DARIE\nUNDAR\nDENTI\nJESCO\nLECTO\nMISS\nONINT\nEPEND\nTELE\n017 COMN\nTORA\nNDBC\n000SION\n253 PEN\n273\nSerial number of Ballot Paper (s) with disputed vote EP Name of Candidate assigned the vote\nLECTURALANDBOUNDARIESCOMIS\nTORALANDBOUNDARIES MISSIONING\nARIESCOMMISSIONINDEPENDENTELECTORALA OBOL\nand accurate count of the ballots in KIGANJO PRIMARY DE\nPresiding Officer: ALICE NJAMBI MATHENGE\nDeputy Presiding Officer: MARCELYHE MAGOMA\nNDEPENDE\nJUNDADESCOMMI\nDENT\nESCO\nCTOR\n3510\nANDE\nDEPF\nDAR\nNTEL\nCOMM\nGRA\nDININ\nLECT\nNDEN\nLECTORA\nNONINDE\nAgents or Candidates (if present)\nNo.\nENDE\nName of Candidate or Agent\n1. JEREMIAH MDUNGU\nNGARI\nTELECTO\nRIB\nMISSIONIND\nENT\nNTELECTOR\nOUN\nDARIESCO\nRIES M",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DCP": {
+        "value": 31480779,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 31480779,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 3,
+            "confidence": 0.31999999999999995,
+            "score": 0.31999999999999995,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_JUBILEE": {
+        "value": 31226524,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 31226524,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 55,
+            "confidence": 0.32999999999999996,
+            "score": 0.32999999999999996,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PNU": {
+        "value": 4,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 4,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PDP": {
+        "value": 1,
+        "confidence": 0.58,
+        "source": "cell-ocr",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.58,
+            "score": 0.58,
+            "source": "cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 25027726,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.18999999999999997,
+            "score": 0.18999999999999997,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_KMM": {
+        "value": 5,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_FPK": {
+        "value": 0,
+        "confidence": 0.7001020474867388,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.7001020474867388,
+            "score": 0.7001020474867388,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PRP": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 3,
+            "confidence": 0.31999999999999995,
+            "score": 0.31999999999999995,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_NLP": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 7,
+        "confidence": 0.5903999999999999,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": 4,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text anchored by '7. | 7. SAMUELMUCHINANYAGAH sd MUCHINA NYAGAH'",
+      "candidate_DCP": "full-page-text anchored by 'Ta RA TIMOTHY KAMAU KARIUKI'",
+      "candidate_JUBILEE": "full-page-text anchored by '| 3. WILSONMWANIKIKIGWA ssid WILSON MWANIKI KIGWA'",
+      "candidate_PNU": "full-page-text anchored by 'en'",
+      "candidate_PDP": "cell-ocr anchored by 'oe | 6. RACHAEL WANGUINJOROGE ss sd WANGUI NJOROGE'",
+      "candidate_KMM": "full-page-text anchored by 'NIATHENGE'",
+      "candidate_FPK": "gcv-document-text-crop anchored by '1. ABDIFATAH HUSSEIN ABDULLAHI'",
+      "candidate_PRP": "full-page-text anchored by 'Ta RA TIMOTHY KAMAU KARIUKI'",
+      "candidate_NLP": "full-page-text anchored by 'NIATHENGE'",
+      "registered": null,
+      "rejected": "full-page-text anchored by 'Serial number of Ballot Paper (s) with disputed vote'",
+      "total_valid": "full-page-text anchored by '[5.| TotalNumber of Vaid Votes Cast;'",
+      "total_cast": "derived: total_valid (5) + rejected (2)",
+      "rejection_objections": "3. Total Number of Rejection Objected to Ballot Papers;",
+      "disputed_votes": "4. Total Number of Disputed Votes;"
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 12,
+      "page_size": [
+        2382,
+        3369
+      ],
+      "candidate_list_complete": true,
+      "cloud_crop_ocr": {
+        "engine": "gcv-document-text-crop",
+        "attempted_fields": 12,
+        "successful_responses": 12,
+        "usable_values": 1,
+        "skipped_request_limit": 0,
+        "failures": [],
+        "selective": true,
+        "minimum_local_confidence": 0.86,
+        "minimum_cloud_prefill_confidence": 0.65,
+        "run_stats": {
+          "engine": "gcv-document-text-crop",
+          "request_limit": 250,
+          "requests": 114,
+          "fields_considered": 114,
+          "responses": 114,
+          "usable_values": 50,
+          "rejected_values": 64,
+          "failures": 0,
+          "retries": 0,
+          "skipped_request_limit": 0
+        }
+      }
+    }
+  },
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "018091045604001",
+    "constituency_code": "091",
+    "ward_code": "0456",
+    "polling_centre_code": "040",
+    "stream_no": 1,
+    "stream_key": "091-0456-040-01",
+    "ward_name": "KAIMBAGA",
+    "polling_centre_name": "KIGANJO PRIMARY DBC",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 018091045604001",
+      "printed/portal ward KAIMBAGA",
+      "printed/portal centre KIGANJO PRIMARY DBC"
+    ]
+  },
+  "checks": {
+    "V01": "FAIL",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-16T21:45:44.367820Z"
+}

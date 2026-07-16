@@ -306,7 +306,22 @@
       }
     }
   },
-  "form_identity": null,
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "RURII",
+    "polling_centre_name": "RURII POLYTECHNIC DRC",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward RURII",
+      "printed/portal centre RURII POLYTECHNIC DRC"
+    ]
+  },
   "checks": {
     "V01": "FAIL",
     "V02": "PASS",
