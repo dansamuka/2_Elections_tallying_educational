@@ -327,7 +327,22 @@
       }
     }
   },
-  "form_identity": null,
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": null,
+    "constituency_code": null,
+    "ward_code": null,
+    "polling_centre_code": null,
+    "stream_no": null,
+    "stream_key": null,
+    "ward_name": "KARAU",
+    "polling_centre_name": "GACHWE PRIMARY",
+    "confidence": 0.65,
+    "evidence": [
+      "printed/portal ward KARAU",
+      "printed/portal centre GACHWE PRIMARY"
+    ]
+  },
   "checks": {
     "V01": "FAIL",
     "V02": "PASS",

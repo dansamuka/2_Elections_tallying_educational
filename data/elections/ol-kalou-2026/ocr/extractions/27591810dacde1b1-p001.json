@@ -1,0 +1,311 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
+  "election_id": "ol-kalou-2026",
+  "page_id": "27591810dacde1b1-p001",
+  "source_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_27591810dacd.pdf",
+  "source_sha256": "27591810dacde1b19b9b668ac213ce4fe5cd3ad1636e5fe5125f5ba4921d96a6",
+  "source_filename": "v1_27591810dacd.pdf",
+  "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/27591810dacde1b1.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "gcv+layout-handwriting+gcv-crop",
+  "confidence": 0.6132944824203376,
+  "text_length": 7124,
+  "text_preview": "FORM 35 A\nINDEPENDEN\nNA160726-108774\nSCOMMISSIONINDEPENDENT\nLECTORALANDBOU\nESCOMMISSIONINDEPENDENTEL\nSSIONINDEPENDENTELECTO\nNDENTELECTORALANDBOUND\nOUNDARIESCOMMISSIONINDEPEN\nALANDBOUNDARIESCOMMISSIONINDE\nANDBOUND\nASSIO\nTORAL\nBALAND BOUN\nNTELECTOR\nMISSION\nIEBC\nYour Vate, w kamere\n(Reg. 79(2)(b))\nOLFENDENT LECTORAL AND COM\nDBOUNDS ANDBOUNDARIE\nMEMBER OF NATIONAL ASSEMBLY BY-ELECTION RESULTELECTORALANDBOUNDARIESCO\nMISSIONINDEPENDENTELECTORALANDE\nPENDENTELECTORALANDBOUND\nLANDBOUNDARIESCOMMISSIONINDEPEND\nLECTORALANDBOUNDARIESCOMMISSION\nHUNDAName of Polling Station RUMATHI PRIMARY POLLING STATION 1 of 1 SIONIN\nJUND Ward END\nDBOU\nMIS\nDECI Constituency\nRIES\nLECT County\nPEND\nKAIMBAGA\nOL KALOU\nNYANDARUA\nENDENT\nMMISSIO\nENDENTELECTOR\nAT THE POLLING STATION\nUNDARIE\nDEP Number of votes cast in favour of each candidate:\nALAT\nNINE Name of Candidate\nDEPE\nUND\n1. ABDIFATAH HUSSEIN ABDULLAHI\nNDER 2. TIMOTHY KAMAU KARIUKI\nRIES\nSCOM\nTELE 3. WILSON MWANIKI KIGWA\nECTOLA4. EDWIN KARIIRI MUCHIRI\nMISS\nSIONI\nRALA 5. EDWARD MATHENGE MWANIKI\nANDED 6. RACHAEL WANGUI NJOROGE\nDEP\nENDE\nDUNDA 7. SAMUEL MUCHINA NYAGAH\nCELE\nARIE C8. STEPHEN WANYOIKE WAITHAKA\nORA\nOMM 9. SAMMY DOUGLAS KAMAU WAWERU\nSSION Total number of valid votes cast\nDEPENDENTELECT\nANDBO\nMISSIONE\nSINDARIESCOMMISS\nUNDA Polling Station Counts\nJENTE\nESCO\nLECTO\nMISSI\nALAND\nANDER\nJUND\nNDENT\nESCO\nLECTOR\nTELECTOR LANDBOONE\nSSIONIND ENDENTE\nBOUNDARY\n1. Total Number of Registered Voters in the Polling Station;\n2. Total Number of Rejected Ballot Papers;\n3.\n4.\nDENTELECTORAL\nOMMISSIONINDE\nMISS\nNDBOUND\nDEN\nTotal Number of Rejection Objected to Ballot Papers; ORA\nTotal Number of Disputed Votes;\n5. Total Number of Valid Votes Cast;\nTORALANDBOUN\nMISSIONINDEPENDENTE COMMISSION DE\nALAND\nINDER\nDeclaration\nSION\nDARIES COMMISSIONINDEPENDENT\nCOUN\nSENTE\nRIES\nCTOR\nSINDE\nORALANDBOL DARI\nWe, the undersigned, being RIESCOMM\nOUNDA\nNDENT\nESCO\nECTOR\nNDEPENDENT\nELECTORAL\nEPENDEN\nESCO\nANDBOUN\nINDEPENDENTE\nUNDARIESCOMMIS\nANDB\nBOUNDAR\nOUNDARI\nOUNDARIESCO\nBOUNDARIESCOMMISSIONIND\nCOMMISSIONINDEPENDENTELECTORALANDBOUNDAR\nELECTORALANDBO\nSIONINDEPENDENTELECTOR\nJUNINDE DENTELECTORALANDBOUNDARIESCOMMISSIONINDEP\nDARIESCOMMISSIONINDEPENDENTELECTORALANDBOUNDAMESCOMMISSIONINDEPENDEN\nONINDEPENDENTECTORALANDBOUNDARIESCOMMISSIONINDEPEN\nRICOMMISSIONINDEPENDENT\nNo. of Valid Votes Obtained\nDELFELECTOR Decision(s) on disputed votes if any\n535 Serial number of Ballot Paper (s) with disputed vote\n004 1.\n000 2\n000 3.\n330 4\nANDBOUN\nTORALANDBOUND\nESCO\nARIESCOMMISSIONINDEPENDENTELECTORAL\nDARIE were SSIONINDE\npresent when the results of the count\nand accurate count of the ballots in RUMATHI PRIMARY\nPresiding Officer: ERIC\nMISSIONIN\nLANDE\nNDEPENDE\nUNDARIESCOMME\nDENT\nESCO\nCTOR\nSSIONN\nANDR\nJEPE\nIDAR\nNTEL\nCOMM\nORA\nDNIN\nBOUT\nENDE\nRIES\nLECT\nAMISS\nALA\nWINDY\nOUN\nNDER\nMESCOM\nORALANDBOUN\nMUHORO\nKIGURU\nDeputy Presiding Officer: ELIZABETH NYAMBURA WAIKWA\nFLECTORA\nONINDE\nAgents or Candidates (if present)\nNDENTELE\nNo.\nName of Candidate or Agent\n1. JOSHUA MWANGI\n2. SAMEL\nMBUGUA\n3. RAPHAEL",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 7,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_DCP": {
+        "value": 0,
+        "confidence": 0.7043853072743667,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.7043853072743667,
+            "score": 0.7043853072743667,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 9,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_JUBILEE": {
+        "value": 1,
+        "confidence": 0.6676045683297244,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.6676045683297244,
+            "score": 0.6676045683297244,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 3,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PNU": {
+        "value": 0,
+        "confidence": 0.7933371331956651,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.7933371331956651,
+            "score": 0.7933371331956651,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 96,
+            "confidence": 0.25,
+            "score": 0.25,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PDP": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_KMM": {
+        "value": 1,
+        "confidence": 0.6655918576500632,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.6655918576500632,
+            "score": 0.6655918576500632,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 5,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_FPK": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PRP": {
+        "value": 0,
+        "confidence": 0.7060973534458562,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 0,
+            "confidence": 0.7060973534458562,
+            "score": 0.7060973534458562,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_NLP": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "registered": {
+        "value": 535,
+        "confidence": 0.9798120515687125,
+        "source": "gcv-document-text-crop",
+        "alternatives": [
+          {
+            "value": 535,
+            "confidence": 0.9798120515687125,
+            "score": 0.9798120515687125,
+            "source": "gcv-document-text-crop",
+            "observations": 1
+          },
+          {
+            "value": 1,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 7,
+        "confidence": 0.5903999999999999,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "disputed_votes": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "full-page-text",
+      "candidate_DCP": "gcv-document-text-crop anchored by '2. TIMOTHY KAMAU KARIUKI'",
+      "candidate_JUBILEE": "gcv-document-text-crop anchored by '3. WILSON MWANIKI KIGWA'",
+      "candidate_PNU": "gcv-document-text-crop anchored by '4. EDWIN KARIIRI MUCHIRI'",
+      "candidate_PDP": "full-page-text anchored by 'Ce'",
+      "candidate_KMM": "gcv-document-text-crop anchored by '3. WILSON MWANIKI KIGWA'",
+      "candidate_FPK": "full-page-text anchored by '1. ABDIFATAH HUSSEIN ABDULLAHI'",
+      "candidate_PRP": "gcv-document-text-crop anchored by '2. TIMOTHY KAMAU KARIUKI'",
+      "candidate_NLP": null,
+      "registered": "gcv-document-text-crop anchored by 'Total Number of Registered Voters in the Polling Station;'",
+      "rejected": "full-page-text anchored by 'Total Number of ca Ballot le aa'",
+      "total_valid": "full-page-text anchored by '5. Total Number of Valid Votes Cast'",
+      "total_cast": "derived: total_valid (5) + rejected (2)",
+      "rejection_objections": null,
+      "disputed_votes": null
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 11,
+      "page_size": [
+        2382,
+        3369
+      ],
+      "candidate_list_complete": true,
+      "cloud_crop_ocr": {
+        "engine": "gcv-document-text-crop",
+        "attempted_fields": 11,
+        "successful_responses": 11,
+        "usable_values": 6,
+        "skipped_request_limit": 0,
+        "failures": [],
+        "selective": true,
+        "minimum_local_confidence": 0.86,
+        "minimum_cloud_prefill_confidence": 0.65,
+        "run_stats": {
+          "engine": "gcv-document-text-crop",
+          "request_limit": 250,
+          "requests": 22,
+          "fields_considered": 22,
+          "responses": 22,
+          "usable_values": 7,
+          "rejected_values": 15,
+          "failures": 0,
+          "retries": 0,
+          "skipped_request_limit": 0
+        }
+      }
+    }
+  },
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "018091045604301",
+    "constituency_code": "091",
+    "ward_code": "0456",
+    "polling_centre_code": "043",
+    "stream_no": 1,
+    "stream_key": "091-0456-043-01",
+    "ward_name": "KAIMBAGA",
+    "polling_centre_name": "RUMATHI PRIMARY SIONIN JUND",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 018091045604301",
+      "printed/portal ward KAIMBAGA",
+      "printed/portal centre RUMATHI PRIMARY SIONIN JUND"
+    ]
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-17T01:10:59.529709Z"
+}
