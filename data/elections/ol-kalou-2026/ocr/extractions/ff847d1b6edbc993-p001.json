@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
+  "election_id": "ol-kalou-2026",
+  "page_id": "ff847d1b6edbc993-p001",
+  "source_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_ff847d1b6edb.pdf",
+  "source_sha256": "ff847d1b6edbc99305f6f7cdd5995d37e9da9ba0d39d1bcd4b176e15903c59f9",
+  "source_filename": "v1_ff847d1b6edb.pdf",
+  "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/ff847d1b6edbc993.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "gcv",
+  "confidence": 0.7323076923076923,
+  "text_length": 6750,
+  "text_preview": "13.903\nFORM 35 A\nNA160726-108750\nELECTORALANDBOO\nINDEPENDENT ELECTORA AND BOUNDARIES COMMISSION\nBCOMMISSIONINDEPENDENT\nESCOMMISSIONINDEPENDEN\nNDENTELECTORALANDBOUND\nBOUNDARIESCOMMISSIONINDEPEN\nALANDBOUNDARIESCOMMISSIONINDE\nANDS OUN\nCTORA\nNDBOUNDARI\nIEBC\nTour Future\nEPENDENT ELECTORAL\n(Reg. 79(2)(b))\nSSIONINDEPENDENTELECTO MEMBER OF NATIONAL ASSEMBLY BY-ELECTION RESULTS ONINDEPENDENTELECTOR\nMISSIONINDEPENDENTELECTORALANDE\nPENDENTELECTORALANDBOUND\nLANDBOUNDARIESCOMMISSIONINDEPENU\nLECTORALANDBOUNDARIESCOMMISSION\nASSIC\nUND/Ward\nDEGUR\nAT THE POLLING STATION\nUND Name of Polling Station GITUAMBA PRIMARY POLLING STATION 2 of 3\nDBC Constituency\nRIES\nLECT County\nPENDENTE\nMIRANGINE\nOL KALOU\nNYANDARUA\nMOEF Number of votes cast in favour of each candidate:\nONING Name of Candidate\nยอด\nSEPER\nSUNDA\nRIES\n1. ABDIFATAH HUSSEIN ABDULLAHI\nINDER 2 TIMOTHY KAMAU KARIUKI\nCOM\nMISS\nTELE 3. WILSON MWANIKI KIGWA\nECTOR. EDWIN KARIIRI MUCHIRI\nRALA 5. EDWARD MATHENGE MWANIKI\nSIONI\nIDEPE\nANDE 6.0 RACHAEL WANGUI NJOROGE\nOUND 7. SAMUEL MUCHINA NYAGAH\nENDE\nTELE\nARIES 8. STEPHEN WANYOIKE WAITHAKA\nORA\nMM 9. SAMMY DOUGLAS KAMAU WAWERU\nSION Total number of valid votes cast\nANDBO\nDEPENDENT\nLECTOMISSION\nMENTEL\nONDA Polling Station Counts INDARIE\nDENTE\nOMMIS\nSSIONINDENDEN\nBOUNDARIE\nMENTELECTO\nENTELECTOR LANDBOUT\n1. Total Number of Registered Voters in the Polling Station;\n2. Total Number of Rejected Ballot Papers;\nESCO\nLECTO\nMISSI\nALAND\nINDER\nOUND\nNDENT\nESCO\nECTOR\nENDENTEL\nMISSION\nSIONING\nDENTELE\nONINDEPENDENTE\nLANDBOUNDARIESCOMMISS\nBOUNDA\nOUNDARI\nOUNDARIES\nELECTORALANDES\nSIONIN\nTELECTORALANDBOUNDARIESCO\nOUNDARIESCOMMISSIONINDA\nDEPENDENTELECTORALANDBOUNDARIE\nCOMMISSIONIN\nDARIESCOM\nDARIESCO\nSIONINDEPENDENTELECTORALANDBOUNDARIESCOMMISSIONINDEPENDEN\nTORALANDBOUNDARIESCOMMISSIONINDEPEN\nMISSION UNDA ENTELECTORALANDE\nUHINDERENTELECTORALANDBOUNDARIESCOMMISSIONINDEP\nSIONINDEPENDE\nNo. of Valid Votes Obtained\nCOMMISSIONINDEPEND FOR Decision(s) on disputed votes if any\nNDBOUN\n3. Total Number of Rejection Objected to Ballot Papers;\n4. Total Number of Disputed Votes;\n5. Total Number of Valid Votes Cast;\nMISSIONING\nALAND\nVINDER\nCOMMI\nECTORA\nNDSOU\nSCOMMISSIONINDEPENDEN\nDeclarationDRALANDBOUNDARIESCOMM\nENTE\nOMM\nNIND\nWe, the undersigned, being present DEPENDENT\nOUNDA\nNDENT\nJESCO\nECTOR\nMISSIO\nLANDE\nORALANDBO\n553\n006 1\n0002\n3.\nENTEL\nONI\nCode 018091045503102SSIONINDEP\nCode 0455\nCode 091\nCode 018\nNDA\nLANDBOUN\nONINDEPEND\nDBOUNDARY\nENDENTE\nRIESCO\nDIENTELECT\nOMMIT\nCTORA\nMMISSION\nLANE\nDBOU\nEPENT\nINDAF\nDENT\nESCO\n000\n000\n003\n003 LECTO\n001\nMISS\nRALA\nONINE\nEPEND\nTELE\n-000\n000 PARIE\n019 COMM\n000SION\n-264 NDARI\nTORA\nNDBC\nDEPEN\n287\nARIESCOMMISSIONS\nSerial number of Ballot Paper (s) with disputed vote EPE Name of Candidate assigned the vote\n- 000\n287 4\nTORALANDBOUNDARIESCO\nENTEL\nARIESCOMMISSIONINDEPENDENTELECTORALOBOD\nDEPE\nTORALANDBOUNDARnt were SSIONINDE\nthe results of the\nand accurate count of the ballots in GITUAMBA PRIMARY\nPresiding Officer: PETER MWANIKI\nNDEPENDE\nUNDARESCO\nDENT\nESCO\nCTOR\nSSION\nOUNDANDENT\nNDE\nESCOMM",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": 7,
+        "confidence": 0.78
+      },
+      "candidate_DCP": {
+        "value": 9,
+        "confidence": 0.78
+      },
+      "candidate_JUBILEE": {
+        "value": 3,
+        "confidence": 0.78
+      },
+      "candidate_PNU": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_PDP": {
+        "value": 34781209,
+        "confidence": 0.78
+      },
+      "candidate_KMM": {
+        "value": 5,
+        "confidence": 0.78
+      },
+      "candidate_FPK": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_PRP": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "candidate_NLP": {
+        "value": 8,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.82
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.82
+      },
+      "total_cast": {
+        "value": 7,
+        "confidence": 0.82
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": 4,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": "OUND 7. SAMUEL MUCHINA NYAGAH",
+      "candidate_DCP": "MM 9. SAMMY DOUGLAS KAMAU WAWERU",
+      "candidate_JUBILEE": "TELE 3. WILSON MWANIKI KIGWA",
+      "candidate_PNU": null,
+      "candidate_PDP": "JOSEPH MWANG: 34781209 PDP",
+      "candidate_KMM": "RALA 5. EDWARD MATHENGE MWANIKI",
+      "candidate_FPK": "1. ABDIFATAH HUSSEIN ABDULLAHI",
+      "candidate_PRP": "INDER 2 TIMOTHY KAMAU KARIUKI",
+      "candidate_NLP": "ARIES 8. STEPHEN WANYOIKE WAITHAKA",
+      "registered": "1. Total Number of Registered Voters in the Polling Station;",
+      "rejected": "2. Total Number of Rejected Ballot Papers;",
+      "total_valid": "5. Total Number of Valid Votes Cast;",
+      "total_cast": "derived: total_valid (5) + rejected (2)",
+      "rejection_objections": "3. Total Number of Rejection Objected to Ballot Papers;",
+      "disputed_votes": "4. Total Number of Disputed Votes;"
+    }
+  },
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "018091045503102",
+    "constituency_code": "091",
+    "ward_code": "0455",
+    "polling_centre_code": "031",
+    "stream_no": 2,
+    "stream_key": "091-0455-031-02",
+    "ward_name": "MIRANGINE",
+    "polling_centre_name": "GITUAMBA PRIMARY DBC",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 018091045503102",
+      "printed/portal ward MIRANGINE",
+      "printed/portal centre GITUAMBA PRIMARY DBC"
+    ]
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-17T04:46:31.668093Z"
+}

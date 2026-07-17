@@ -1,0 +1,301 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
+  "election_id": "ol-kalou-2026",
+  "page_id": "f988df29c9e77c39-p001",
+  "source_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_f988df29c9e7.pdf",
+  "source_sha256": "f988df29c9e77c39b64ce94d9472ff0fd00d5a584b18d0638bf06f7483ba8ace",
+  "source_filename": "v1_f988df29c9e7.pdf",
+  "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/f988df29c9e77c39.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "gcv+layout-handwriting+gcv-crop",
+  "confidence": 0.48326153846153846,
+  "text_length": 6358,
+  "text_preview": "13.926\nFORM 35 A\nINDEPENDENT ELECTORAL AND BOUNDARIES COMMISSION\nNA160726-108773\nELECTORALANDBOUK\nSCOMMISSIONINDEPENDENT\nESCOMMISSIONINDEPENDEN\nSSIONINDEPENDENTELECTO\nNOENTELECTORALANDBOUND\nOUNDARIESCOMMISSIONINDEPEN\nALANDBOUNDARIESCOMMISSIONINDER\nANDROU\nSSIONING\nORAL\nENDENTELECT\nANDBOL\nDBOUNDARI AND\nIEBC\nYour Vala, Your Future\n(Reg. 79(2)(b))\nEPENDENT ELECTONAL AND B\nMEMBER OF NATIONAL ASSEMBLY BY-ELECTION RESULTORALANDBOUNDARIESCO\nPENDENTEL BORALANDE\nLECTORALANDBOUND\nANDBOUNDARIESCOMMISSIONINDEPEND\nLECTORALANDBOUNDARIESCOMMISSION\nUND Name of Polling Station GICHUNGO PRIMARY POLLING STATION 2 of 2\nUND Ward\nDBOL\nDECX Constituency\nRIES\nLECT County\nPENDEN\nALAN\nKAIMBAGA\nOL KALOU\nNYANDARUA\nENDEN\nAT THE POLLING STATION OUNDARIE\nNOEP Number of votes cast in favour of each candidate:\nONING Name of Candidate\nDBO\nJEPE\nUND\nNDEN\nRIEST\n1. ABDIFATAH HUSSEIN ABDULLAHI\n2. TIMOTHY KAMAU KARIUKI\nTELE 3. WILSON MWANIKI KIGWA\nSCOM\nECTO\nMISS\nRALA\nMONI\nDEP\n4. EDWIN KARIIRI MUCHIRI\n5.\nEDWARD MATHENGE MWANIKI\nANDE 6. RACHAEL WANGUI NJOROGE\nDUNDA. SAMUEL MUCHINA NYAGAH\nENDE\nTELE\nARIE 8 STEPHEN WANYOIKE WAITHAKA\nZORA\n9. SAMMY DOUGLAS KAMAU WAWERU\nASION Total number of valid votes cast\nANDBO\nDEPENDEN\nUNDA Polling Station Counts\nENT\n1.\nMENTELECTORA\nOMMISSIONIN\nTotal Number of Registered Voters in the Polling Station;\n2. Total Number of Rejected Ballot Papers;\nNOB\n3. Total Number of Rejection Objected to Ballot Papers;\n4. Total Number of Disputed Votes;\n5. Total Number of Valid Votes Cast;\nDEPENDENTEL\nESCO\nECTO\nMISSI\nALAND\nINDER\nSUND\nNDENT\nESCO\nLECTOR\nMISSION\nALAND\nINDER\nOUNDA\nWDEN\nJESC\nECTOR\nMISSIONIN\nLANDE\nARIESCO\nDeclaration ORA\nPresiding Officer:\nCOMMISSION\nTORALANDBOUND\nSSIONINDEPENDENTE\nOUR\nARIESCOMM\nORALA\nNING\nISSION\nGIONIN\nDENTELE\nCOMMISSIO\nDENTE\nESCOMMIS\nINDER\nFOUNDARIESGO\nBOUNDARIES COMMISSIONIND\nENDENTELECTORALANDBOUNDARIE\nDARIESCOMMISSIO\nLECTORALANDBO\nSONINDEPENDENTELECTOR\nTELECTORALANDBOUNDARIESCOMMISSIONINDER\nINDEPENDENTELECTORALANDBOUNDAMESCOMMISSIONINDEPENDEN\nCOMMISSIONINDEREN ELECTORALANDE\nTORALANDBOUNDARIESCOMMISSIONINDEPEN\nNo. of Valid Votes Obtained\nTOR Decision(s) on disputed votes if any\n659\n005 1.\n000 2\n000 3.\nSCOM 334 4\nCode P018091045604202 SSIONINDEP\nCode 0456\nCode 091\nCode\nNDA\nENTELE\n018\nALA SOUNT\nWINDEPEND\nDARI\nENDENTE\nNDARIESCO\nDEFLECT\nOMMIS\nLECTORA\nCOMMISSIO\nLAND\nOBOL\n000 PENT\n002EN\nINDAR\nDENT\n003 ESCO\nLECTO\nMISS\n000ALA\nONINE\n000DBOUS\nEPEND\n000DARIE\nNTELE\n026COMM\nTORA\nNDBC\n000SION!\n303 PEN\n-334\nNDARI\nENTELY\nCOMM\nCTORA\nOUNDARIESCOMMISSION\nSerial number of Ballot Paper (s) with disputed vote EPE Name of Candidate assigned the vote\nARIESCOMMISSIONINDEPENDENTELECTORA\nTORALANDBOUNDARIES COMMISSIONIN\nTORALANDBOUNDARIESCO VIS\nELECTORA\nSIONINDED OUNDARIESC\nSUNDARIESCOMMISSIO\nDENTEL\nWe, the undersigned, being present when the results of the count were announced, do hereby declare that\nand accurate count of the ballots in GICHUNGO PRIMARY IONINDER\nDEPENDE\nMARTIN\nKINGI\nESSION INDEPENDENTELECTORALANDBOL\nPolling Station\nDeputy Presiding Officer: SALYVIAH MW",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DCP": {
+        "value": 29951995,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 29951995,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_JUBILEE": {
+        "value": 3,
+        "confidence": 0.58,
+        "source": "cell-ocr",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.58,
+            "score": 0.58,
+            "source": "cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 26435402,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PNU": {
+        "value": 4,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 4,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PDP": {
+        "value": 6,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 6,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_KMM": {
+        "value": 3,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 3,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 0,
+            "confidence": 0.18999999999999997,
+            "score": 0.18999999999999997,
+            "source": "cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_FPK": {
+        "value": 1,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 1,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_PRP": {
+        "value": 2,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "candidate_NLP": {
+        "value": 8,
+        "confidence": 0.5616,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 8,
+            "confidence": 0.5616,
+            "score": 0.5616,
+            "source": "full-page-text",
+            "observations": 1
+          },
+          {
+            "value": 0,
+            "confidence": 0.18999999999999997,
+            "score": 0.18999999999999997,
+            "source": "cell-ocr",
+            "observations": 1
+          },
+          {
+            "value": 2,
+            "confidence": 0.0,
+            "score": 0.0,
+            "source": "cell-ocr",
+            "observations": 1
+          }
+        ]
+      },
+      "registered": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 2,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.5903999999999999,
+        "source": "full-page-text",
+        "alternatives": [
+          {
+            "value": 5,
+            "confidence": 0.5903999999999999,
+            "score": 0.5903999999999999,
+            "source": "full-page-text",
+            "observations": 1
+          }
+        ]
+      },
+      "total_cast": {
+        "value": 7,
+        "confidence": 0.5903999999999999,
+        "source": "derived-valid-plus-rejected",
+        "alternatives": []
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": 4,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DCP": "full-page-text anchored by '2. TIMOTHY KAMAU KARIUKI'",
+      "candidate_JUBILEE": "cell-ocr anchored by '3. WILSON MWANIKI KIGWA'",
+      "candidate_PNU": "full-page-text anchored by '(Puy'",
+      "candidate_PDP": "full-page-text anchored by '6. RACHAEL WANGUI NJOROGE'",
+      "candidate_KMM": "full-page-text anchored by '5. EDWARD MATHENGE MWANIK!'",
+      "candidate_FPK": "full-page-text anchored by 'ata.'",
+      "candidate_PRP": "full-page-text anchored by '2. TIMOTHY KAMAU KARIUKI'",
+      "candidate_NLP": "full-page-text anchored by '5. EDWARD MATHENGE MWANIK!'",
+      "registered": null,
+      "rejected": "full-page-text anchored by '3. | Total Number of Rejection Objected to Ballot Papers;'",
+      "total_valid": "full-page-text anchored by '|5. | Total Number of Valid Votes Cast,'",
+      "total_cast": "derived: total_valid (5) + rejected (2)",
+      "rejection_objections": "3. Total Number of Rejection Objected to Ballot Papers;",
+      "disputed_votes": "4. Total Number of Disputed Votes;"
+    },
+    "handwriting": {
+      "schema": "kenya.election.handwriting-cells.v1",
+      "anchors_found": 12,
+      "page_size": [
+        2382,
+        3369
+      ],
+      "candidate_list_complete": true,
+      "cloud_crop_ocr": {
+        "engine": "gcv-document-text-crop",
+        "attempted_fields": 12,
+        "successful_responses": 0,
+        "usable_values": 0,
+        "skipped_request_limit": 12,
+        "failures": [],
+        "selective": true,
+        "minimum_local_confidence": 0.86,
+        "minimum_cloud_prefill_confidence": 0.65,
+        "run_stats": {
+          "engine": "gcv-document-text-crop",
+          "request_limit": 250,
+          "requests": 250,
+          "fields_considered": 437,
+          "responses": 250,
+          "usable_values": 96,
+          "rejected_values": 154,
+          "failures": 0,
+          "retries": 0,
+          "skipped_request_limit": 187
+        }
+      }
+    }
+  },
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "018091045604202",
+    "constituency_code": "091",
+    "ward_code": "0456",
+    "polling_centre_code": "042",
+    "stream_no": 2,
+    "stream_key": "091-0456-042-02",
+    "ward_name": "KAIMBAGA",
+    "polling_centre_name": "GICHUNGO PRIMARY UND",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 018091045604202",
+      "printed/portal ward KAIMBAGA",
+      "printed/portal centre GICHUNGO PRIMARY UND"
+    ]
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-17T04:45:01.014290Z"
+}

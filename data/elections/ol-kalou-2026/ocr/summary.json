@@ -2,36 +2,36 @@
   "schema": "kenya.election.ocr-summary.v1",
   "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
   "election_id": "ol-kalou-2026",
-  "generated_at": "2026-07-17T01:19:53.075827Z",
+  "generated_at": "2026-07-17T04:46:31.671409Z",
   "engine_mode": "auto",
   "engines_available": [
     "gcv"
   ],
-  "documents_total": 101,
-  "pages_total": 101,
-  "pages_available": 101,
-  "pages_selected": 101,
+  "documents_total": 144,
+  "pages_total": 144,
+  "pages_available": 144,
+  "pages_selected": 144,
   "page_limit": null,
   "pilot": false,
-  "pages_processed": 101,
-  "layout_assisted_pages": 96,
-  "form35a_detected": 101,
+  "pages_processed": 144,
+  "layout_assisted_pages": 137,
+  "form35a_detected": 144,
   "form35b_detected": 0,
   "streams_matched": 0,
   "review_rows": 0,
   "routes": {
-    "QUARANTINE": 101
+    "QUARANTINE": 144
   },
   "errors": [
     {
-      "page_id": "0ea527a951810454-p001",
+      "page_id": "1bc42c37b53b6d15-p001",
       "engine": "layout-handwriting",
-      "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+      "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!! Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!! Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!! Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
     },
     {
-      "page_id": "f4d2516020ce35f5-p001",
+      "page_id": "ff847d1b6edbc993-p001",
       "engine": "layout-handwriting",
-      "message": "(-8, 'Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!! Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!! Image too small to scale!! (2x36 vs min width of 3) Line cannot be recognized!!')"
+      "message": "(-8, '')"
     }
   ],
   "hierarchy": {
@@ -43,14 +43,14 @@
   "cloud_crop_ocr": {
     "engine": "gcv-document-text-crop",
     "request_limit": 250,
-    "requests": 230,
-    "fields_considered": 230,
-    "responses": 230,
-    "usable_values": 103,
-    "rejected_values": 127,
+    "requests": 250,
+    "fields_considered": 461,
+    "responses": 250,
+    "usable_values": 96,
+    "rejected_values": 154,
     "failures": 0,
     "retries": 0,
-    "skipped_request_limit": 0
+    "skipped_request_limit": 211
   },
   "review_queue": "data/elections/ol-kalou-2026/ocr/review_queue.csv",
   "inventory": "data/elections/ol-kalou-2026/ocr/document_inventory.json",

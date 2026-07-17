@@ -1,0 +1,125 @@
+{
+  "schema": "kenya.election.ocr-extraction.v1",
+  "pipeline_version": "2026.07.15-layout-v3-gcv-crop",
+  "election_id": "ol-kalou-2026",
+  "page_id": "1bc42c37b53b6d15-p001",
+  "source_path": "data/public/elections/ol-kalou-2026/forms/unmatched/v1_1bc42c37b53b.pdf",
+  "source_sha256": "1bc42c37b53b6d1562bfbccab2dd0a92c68ceb5a5449e63753044ff351f1493f",
+  "source_filename": "v1_1bc42c37b53b.pdf",
+  "public_url": "../data/public/elections/ol-kalou-2026/forms/uploaded/1bc42c37b53b6d15.pdf#page=1",
+  "page_no": 1,
+  "form_type": "35A",
+  "stream_key": null,
+  "match_method": null,
+  "engine": "gcv",
+  "confidence": 0.7323076923076923,
+  "text_length": 6650,
+  "text_preview": "FORM 35 A\nINDEPENDENT ELECTORAL AND BOUNDARIES COMMISSION\nNA160726-108809\nELECTORALANDBOU\nSCOMMISSIONINDEPENDENT\nESCOMMISSIONINDEPENDENTEL\nNDENTELECTORALANDBOUND\nALANDBOUNDARIESCOMMISSIONINDE\nOUNDARIESCOMMISSIONINDEPENT\nANDBOUND\nMISSION\nHUND/Ward\nMISSIONINDEPENDENTELECTORALANDE\nPENDENTELECTORALANDBOUND\nLANDBOUNDARIESCOMMISSIONINDEPENDE\nELECTORALANDBOUNDARIESCOMMISSION\nNDBOUNDARI\nIEBC\nYet Your Felure\nENT CLECIONAL\n(Reg. 79(2)(b))\nSSIONINDEPENDENTELECT MEMBER OF NATIONAL ASSEMBLY BY-ELECTION RESULTS ONINDEPENDENTELECT\nOBOUND\nMMISSI\nNDENT\nLECTORALAND\nJUND Name of Polling Station PASSENGA PRIMARY POLLING STATION 1 of 4\nDBOL Constituency\nRIES\nLECT County\nPENDENT\nRURII\nANDBOUND\nEPENDENT\nOL KALOU\nNYANDARUA\n410\nMISSIONIND\nSIONING\nNDENTELE\nAT THE POLLING STATIONFOUNDARI\nBOVISATIES\nUNDARIES\nNDER Number of votes cast in favour of each candidate:\nALAN\nSNING Name of Candidate\nOROL\nUND\nEPE 1. ABDIFATAH HUSSEIN ABDULLAHI\nRIES\nNDEN 2. TIMOTHY KAMAU KARIUKI\nCOM\nTELE 3. WILSON MWANIKI KIGWA\nECTOR 4. EDWIN KARIIRI MUCHIRI\nMISS\nSONI\nDA\nDEPE\nUNDARIE\nNDENTEL\nRALAND5. EDWARD MATHENGE MWANIKI\nANDE 6. RACHAEL WANGUI NJOROGE\nDEPA\nENDE\nTELEC\nOLINDASSAMUEL MUCHINA NYAGAH\nARIES 8 STEPHEN WANYOIKE WAITHAKA\nOMMS9N SAMMY DOUGLAS KAMAU WAWERU\nSSION Total number of valid votes cast\nTORA\nANDBO\nDEPENDENTE\nONDA Polling Station Counts\nSENTE\nRIES OMMA\nLECTORANDBOOK\nSSIONINDENDENTE\nBOUNDARI\n1. Total Number of Registered Voters in the Polling Station;\n2. Total Number of Rejected Ballot Papers;\nESCO\nECTO\nMISSI\nALAND\nINDER\nSUND\nDENT\nESCO\nECTOR\nMISSION\nLEC\nORA\nDENTELECTORALANDBOUNDARIESCOMMIS\nNDEPENDE\nMMISSIONINDEPENDE\nNDBOUN\n3. Total Number of Rejection Objected to Ballot Papers;\n4. Total Number of Disputed Votes;\n5. Total Number of Valid Votes Cast;\nMISSIONIND\nALAND\nINDER\nOUNDA\nNDENT\nDeclaration\nJESCOMM\nECTOR\nCOMMI\nNDBO\nIONINDEPENDEN\nBOUR\nRIESCOMM\nCENT\nESOM\nALAND\nINDE\nNDEPENDENTE\n558\nOR\nBOUNDAR\nOUNDAR\nSCO\nBOUNDARIESCOMMISSIONIND\nARCOMMISSIONINDEPENDENTELECTORALANDBOUNDAR\nENTELECTORALANDBOUNDARIES\nELECTORALANDBO\nANDBINDARIESCOMA INDECENTELECTORALANDBOUNDARIESCOMMISSIONIND\nUNDARIES\nOLDARIESCOMMISSIONINDEPENDENTELECTORALANDBOUNDARIESCOMMISSIONINDEPEND\nDEPENDENTECTORALANDBOUNDARIESCOMMISSIONINDEPE\nSUDARIE COMMISSION UND AUF ELECTORALAN\nNo. of Valid Votes Obtained\nDecision(s) on disputed votes if any ONINDER\nDEF\nARIESCO\nCode\nCode\n018091045705601MISSIONIND\n0457\nCode 091\nCode\n018\nNDA\nENTED\nISSIONIN\nKALANDBOU\nSIONINDEPEN\nANDBOUNDA\nINDEPENDEN\nUNDARIES\nENDENTELES\nARIESCOM\nENTELECTO\nSCOMMISS\nCOMMI\n000\nEPE\nUND\nDE\nRIES\n001\nCOLLE\nMMIS\nRAL\n000 ON\n000 EPEN\n000 NTE\n066 CO\n000\n242\n310\nCTO\nSSIO\nAND\nDEP\nNDA\nENTE\nCON\nECTOR\nSerial number of Ballot Paper (s) with disputed vote E Name of Candidate assigned the vote BOUNDA\n000 1\n0002\n000 3.\n304\nTURALANDBOUNDARIESCO\nWe, the undersigned, being present when the results of the count\nAISSIONIN\nLANDE\nNDEPEND\nUNDARESCOM\nDENT\nESCO\nCTOR\nBOUN\nCTO\nISSION\nNOBO\nBOUNDARIESCOM\nDBOUNDARIESCOMMISSIO\nMISSION\nNDBOUNDARIES COM\nENTE\nNDEPENDENTELECTORA\nARIESCOMMISSION\nSENELECTORALAND",
+  "parsed": {
+    "fields": {
+      "candidate_UDA": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "candidate_DCP": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "candidate_JUBILEE": {
+        "value": 3,
+        "confidence": 0.78
+      },
+      "candidate_PNU": {
+        "value": 4,
+        "confidence": 0.78
+      },
+      "candidate_PDP": {
+        "value": 6,
+        "confidence": 0.78
+      },
+      "candidate_KMM": {
+        "value": 3,
+        "confidence": 0.78
+      },
+      "candidate_FPK": {
+        "value": 1,
+        "confidence": 0.78
+      },
+      "candidate_PRP": {
+        "value": 2,
+        "confidence": 0.78
+      },
+      "candidate_NLP": {
+        "value": 8,
+        "confidence": 0.78
+      },
+      "registered": {
+        "value": 1,
+        "confidence": 0.82
+      },
+      "rejected": {
+        "value": 2,
+        "confidence": 0.82
+      },
+      "total_valid": {
+        "value": 5,
+        "confidence": 0.82
+      },
+      "total_cast": {
+        "value": 7,
+        "confidence": 0.82
+      },
+      "rejection_objections": {
+        "value": 3,
+        "confidence": 0.82
+      },
+      "disputed_votes": {
+        "value": 4,
+        "confidence": 0.82
+      }
+    },
+    "evidence": {
+      "candidate_UDA": null,
+      "candidate_DCP": "NDEN 2. TIMOTHY KAMAU KARIUKI",
+      "candidate_JUBILEE": "TELE 3. WILSON MWANIKI KIGWA",
+      "candidate_PNU": "ECTOR 4. EDWIN KARIIRI MUCHIRI",
+      "candidate_PDP": "ANDE 6. RACHAEL WANGUI NJOROGE",
+      "candidate_KMM": "TELE 3. WILSON MWANIKI KIGWA",
+      "candidate_FPK": "EPE 1. ABDIFATAH HUSSEIN ABDULLAHI",
+      "candidate_PRP": "NDEN 2. TIMOTHY KAMAU KARIUKI",
+      "candidate_NLP": "ARIES 8 STEPHEN WANYOIKE WAITHAKA",
+      "registered": "1. Total Number of Registered Voters in the Polling Station;",
+      "rejected": "2. Total Number of Rejected Ballot Papers;",
+      "total_valid": "5. Total Number of Valid Votes Cast;",
+      "total_cast": "derived: total_valid (5) + rejected (2)",
+      "rejection_objections": "3. Total Number of Rejection Objected to Ballot Papers;",
+      "disputed_votes": "4. Total Number of Disputed Votes;"
+    }
+  },
+  "form_identity": {
+    "schema": "kenya.election.form35a-identity.v1",
+    "polling_station_code": "018091045705601",
+    "constituency_code": "091",
+    "ward_code": "0457",
+    "polling_centre_code": "056",
+    "stream_no": 1,
+    "stream_key": "091-0457-056-01",
+    "ward_name": "RURII",
+    "polling_centre_name": "PASSENGA PRIMARY DBOL",
+    "confidence": 0.98,
+    "evidence": [
+      "printed station code 018091045705601",
+      "printed/portal ward RURII",
+      "printed/portal centre PASSENGA PRIMARY DBOL"
+    ]
+  },
+  "checks": {
+    "V01": "NOT_RUN",
+    "V02": "PASS",
+    "V03": "NOT_RUN",
+    "V07": "NOT_RUN"
+  },
+  "route": "QUARANTINE",
+  "auto_published": false,
+  "extracted_at": "2026-07-17T04:27:07.964302Z"
+}
