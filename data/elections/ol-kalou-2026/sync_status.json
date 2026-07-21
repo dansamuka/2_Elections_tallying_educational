@@ -1,11 +1,52 @@
 {
   "schema": "kenya.election.portal-sync.v1",
   "election_id": "ol-kalou-2026",
-  "state": "ERROR",
-  "last_started_at": "2026-07-21T17:59:06.260899Z",
-  "last_completed_at": "2026-07-21T18:00:06.906473Z",
+  "state": "NO_CHANGE",
+  "last_started_at": "2026-07-21T19:42:27.695533Z",
+  "last_completed_at": "2026-07-21T19:43:57.567355Z",
   "last_changed_at": "2026-07-17T04:46:31.711171Z",
   "portal_url": "https://forms.iebc.or.ke/index.php?l=2&p=2&r=site%2Findex",
   "engine_mode": "auto",
-  "message": "timed out"
+  "archive": {
+    "election_id": "ol-kalou-2026",
+    "status": "NO_CHANGE",
+    "changed": false,
+    "discovered": 144,
+    "matched": 0,
+    "downloaded": 144,
+    "unique_downloads": 144,
+    "duplicate_assignments": 0,
+    "failed_downloads": 0,
+    "new_downloads": 0,
+    "changed_downloads": 0,
+    "unmatched": 144,
+    "portal_reported": 144,
+    "portal_expected": 144,
+    "stream_roster_bootstrapped": false
+  },
+  "ocr": {
+    "ran": false,
+    "pages_processed": 0,
+    "review_rows": 0,
+    "errors": 0
+  },
+  "coverage": {
+    "streams_total": 144,
+    "stream_rows_loaded": 144,
+    "published": 0,
+    "in_review": 0,
+    "conflicted": 0,
+    "awaiting": 144,
+    "reference_only": 144,
+    "archived_untranscribed": 0,
+    "ocr_review": 0,
+    "registered_total": 73480,
+    "registered_reported": 0,
+    "registered_pct": 0.0,
+    "excluded": {
+      "count": 0,
+      "reason": null
+    }
+  },
+  "message": "The IEBC portal was checked; no new form files were found."
 }
